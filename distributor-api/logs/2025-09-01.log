@@ -1,0 +1,848 @@
+2025-09-01T03:10:47.135Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T03:10:47.136Z [INFO] 🌍 Environment: development
+2025-09-01T03:10:47.136Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T03:10:47.136Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T03:10:47.137Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T03:11:16.705Z [INFO] POST /api/auth/login - 200 - 632.887ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":632.887}
+2025-09-01T03:29:18.632Z [ERROR] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 404 - 1.673ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":404,"responseTime":1.673}
+2025-09-01T03:29:18.651Z [ERROR] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 404 - 0.696ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":404,"responseTime":0.696}
+2025-09-01T03:29:18.655Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.426ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.426}
+2025-09-01T03:29:18.736Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.552ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.552}
+2025-09-01T03:29:18.813Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.483ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.483}
+2025-09-01T03:29:18.848Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.388ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.388}
+2025-09-01T03:29:18.873Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.402ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.402}
+2025-09-01T03:29:19.084Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 6.412ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":6.412}
+2025-09-01T03:29:19.143Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.324ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.324}
+2025-09-01T03:29:19.382Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.464ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.464}
+2025-09-01T03:29:19.446Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.016ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.016}
+2025-09-01T03:29:19.672Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.026ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.026}
+2025-09-01T03:29:19.771Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.378ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.378}
+2025-09-01T03:29:20.059Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.319ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.319}
+2025-09-01T03:29:20.087Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.398ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.398}
+2025-09-01T03:29:20.181Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.326ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.326}
+2025-09-01T03:29:20.332Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.762ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.762}
+2025-09-01T03:29:20.356Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.317ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.317}
+2025-09-01T03:29:20.470Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.296ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.296}
+2025-09-01T03:29:20.502Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.182ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.182}
+2025-09-01T03:29:20.550Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.5ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.5}
+2025-09-01T03:29:20.588Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.406ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.406}
+2025-09-01T03:29:20.652Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.221ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.221}
+2025-09-01T03:29:20.689Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.653ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.653}
+2025-09-01T03:29:20.737Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.359ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.359}
+2025-09-01T03:29:20.758Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.327ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.327}
+2025-09-01T03:29:20.809Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.304ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.304}
+2025-09-01T03:29:20.836Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.308ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.308}
+2025-09-01T03:29:20.975Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 4.477ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":4.477}
+2025-09-01T03:29:21.033Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.327ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.327}
+2025-09-01T03:29:21.161Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.37ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.37}
+2025-09-01T03:29:21.213Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.016ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.016}
+2025-09-01T03:29:21.287Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.832ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.832}
+2025-09-01T03:29:21.368Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.442ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.442}
+2025-09-01T03:29:21.495Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.329ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.329}
+2025-09-01T03:29:21.630Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.777ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.777}
+2025-09-01T03:29:21.763Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.183ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.183}
+2025-09-01T03:29:21.928Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.581ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.581}
+2025-09-01T03:29:22.102Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.321ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.321}
+2025-09-01T03:29:22.200Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.399ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.399}
+2025-09-01T03:29:22.340Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.217ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.217}
+2025-09-01T03:29:22.432Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.474ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.474}
+2025-09-01T03:29:22.521Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.906ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.906}
+2025-09-01T03:29:22.712Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 42.151ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":42.151}
+2025-09-01T03:29:22.865Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 13.813ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":13.813}
+2025-09-01T03:29:22.891Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.367ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.367}
+2025-09-01T03:29:22.956Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.28ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.28}
+2025-09-01T03:29:23.048Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.364ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.364}
+2025-09-01T03:29:23.255Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.247ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.247}
+2025-09-01T03:29:23.357Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.309ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.309}
+2025-09-01T03:29:23.377Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.712ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.712}
+2025-09-01T03:29:23.384Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.315ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.315}
+2025-09-01T03:29:23.551Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 7.72ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":7.72}
+2025-09-01T03:29:23.760Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.289ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.289}
+2025-09-01T03:29:24.016Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 36.038ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":36.038}
+2025-09-01T03:29:24.099Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.401ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.401}
+2025-09-01T03:29:24.154Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 20.883ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":20.883}
+2025-09-01T03:29:24.199Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.299ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.299}
+2025-09-01T03:29:24.317Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.909ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.909}
+2025-09-01T03:29:24.382Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.799ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.799}
+2025-09-01T03:29:24.469Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.527ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.527}
+2025-09-01T03:29:24.473Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.284ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.284}
+2025-09-01T03:29:24.578Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.675ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.675}
+2025-09-01T03:29:24.685Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.778ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.778}
+2025-09-01T03:29:24.732Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.471ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.471}
+2025-09-01T03:29:24.802Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.363ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.363}
+2025-09-01T03:29:24.880Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.576ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.576}
+2025-09-01T03:29:24.963Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.574ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.574}
+2025-09-01T03:29:25.076Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 3.635ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":3.635}
+2025-09-01T03:29:25.122Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.781ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.781}
+2025-09-01T03:29:25.193Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.412ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.412}
+2025-09-01T03:29:25.246Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 5.07ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":5.07}
+2025-09-01T03:29:25.330Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 6.822ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":6.822}
+2025-09-01T03:29:25.366Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.299ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.299}
+2025-09-01T03:29:25.501Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.292ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.292}
+2025-09-01T03:29:25.536Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.273ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.273}
+2025-09-01T03:29:25.711Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.679ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.679}
+2025-09-01T03:29:25.885Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.733ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.733}
+2025-09-01T03:29:26.045Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.223ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.223}
+2025-09-01T03:29:26.170Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.298ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.298}
+2025-09-01T03:29:26.296Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 6.953ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":6.953}
+2025-09-01T03:29:26.603Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.523ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.523}
+2025-09-01T03:29:26.611Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.169ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.169}
+2025-09-01T03:29:26.613Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.287ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.287}
+2025-09-01T03:29:26.619Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.327ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.327}
+2025-09-01T03:29:26.624Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.355ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.355}
+2025-09-01T03:29:26.814Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.007ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.007}
+2025-09-01T03:29:26.905Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 5.741ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":5.741}
+2025-09-01T03:29:27.081Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 3.633ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":3.633}
+2025-09-01T03:29:27.184Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.278ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.278}
+2025-09-01T03:29:27.373Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 3.099ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":3.099}
+2025-09-01T03:29:27.515Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.36ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.36}
+2025-09-01T03:29:27.683Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 2.611ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":2.611}
+2025-09-01T03:29:27.799Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.346ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.346}
+2025-09-01T03:29:28.023Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 1.68ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":1.68}
+2025-09-01T03:29:28.174Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.69ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.69}
+2025-09-01T03:29:28.386Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.529ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.529}
+2025-09-01T03:29:28.493Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.38ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.38}
+2025-09-01T03:29:28.672Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.542ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.542}
+2025-09-01T03:29:28.724Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 404 - 0.353ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":404,"responseTime":0.353}
+2025-09-01T03:30:58.604Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T03:30:58.607Z [INFO] 🌍 Environment: development
+2025-09-01T03:30:58.608Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T03:30:58.608Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T03:30:58.610Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T03:32:07.821Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T03:32:07.825Z [INFO] 🌍 Environment: development
+2025-09-01T03:32:07.826Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T03:32:07.827Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T03:32:07.827Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T03:32:51.108Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T03:32:51.110Z [INFO] 🌍 Environment: development
+2025-09-01T03:32:51.110Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T03:32:51.110Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T03:32:51.110Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T07:33:29.632Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T07:33:29.633Z [INFO] 🌍 Environment: development
+2025-09-01T07:33:29.633Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T07:33:29.634Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T07:33:29.634Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T07:33:52.370Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-01T07:34:05.544Z [INFO] POST /api/auth/login - 200 - 703.412ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":703.412}
+2025-09-01T07:34:36.389Z [INFO] SIGTERM received. Starting graceful shutdown...
+2025-09-01T07:34:36.392Z [INFO] HTTP server closed
+2025-09-01T07:35:09.564Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T07:35:09.565Z [INFO] 🌍 Environment: development
+2025-09-01T07:35:09.565Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T07:35:09.565Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T07:35:09.565Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T07:36:09.609Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 200 - 186.928ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":200,"responseTime":186.928}
+2025-09-01T07:36:09.621Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 200 - 128.846ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":200,"responseTime":128.846}
+2025-09-01T07:36:09.657Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 200 - 174.313ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":200,"responseTime":174.313}
+2025-09-01T07:36:09.676Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 200 - 173.773ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":200,"responseTime":173.773}
+2025-09-01T07:36:09.678Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 200 - 222.954ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":200,"responseTime":222.954}
+2025-09-01T07:36:09.696Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 200 - 216.901ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":200,"responseTime":216.901}
+2025-09-01T07:37:22.294Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-01T07:37:22.298Z [INFO] HTTP server closed
+2025-09-01T07:47:07.920Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T07:47:07.931Z [INFO] 🌍 Environment: development
+2025-09-01T07:47:07.931Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T07:47:07.931Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T07:47:07.932Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T08:00:30.864Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 852.295ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":852.295}
+2025-09-01T08:00:30.874Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 895.737ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":895.737}
+2025-09-01T08:00:30.881Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 876.201ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":876.201}
+2025-09-01T08:00:30.925Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 34.389ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":34.389}
+2025-09-01T08:00:30.940Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 32.941ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":32.941}
+2025-09-01T08:00:30.946Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 27.106ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":27.106}
+2025-09-01T08:00:30.964Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.395ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.395}
+2025-09-01T08:00:30.984Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.535ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.535}
+2025-09-01T08:02:44.556Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 11.749ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":11.749}
+2025-09-01T08:04:44.843Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 17.725ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":17.725}
+2025-09-01T08:06:54.259Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 44.803ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":44.803}
+2025-09-01T08:08:54.505Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.524ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.524}
+2025-09-01T08:10:54.803Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.411ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.411}
+2025-09-01T08:12:55.074Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 52.049ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":52.049}
+2025-09-01T08:14:55.223Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.696ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.696}
+2025-09-01T08:16:55.397Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 11.413ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":11.413}
+2025-09-01T08:19:35.717Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 54.539ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":54.539}
+2025-09-01T08:21:35.968Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.179ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.179}
+2025-09-01T08:23:39.464Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.088ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.088}
+2025-09-01T08:25:39.569Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 45.297ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":45.297}
+2025-09-01T08:27:39.798Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.426ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.426}
+2025-09-01T08:29:40.019Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.262ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.262}
+2025-09-01T08:31:40.235Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 54.584ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":54.584}
+2025-09-01T08:33:40.425Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.057ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.057}
+2025-09-01T08:35:40.593Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.468ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.468}
+2025-09-01T08:37:40.822Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 51.78ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":51.78}
+2025-09-01T08:39:40.998Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.473ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.473}
+2025-09-01T08:41:41.212Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 13.419ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":13.419}
+2025-09-01T08:43:41.445Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 59.226ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":59.226}
+2025-09-01T08:45:41.659Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.98ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.98}
+2025-09-01T08:46:33.465Z [INFO] POST /api/auth/login - 200 - 710.342ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":710.342}
+2025-09-01T08:46:48.875Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 8.85ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":8.85}
+2025-09-01T08:46:48.880Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 12.078ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":12.078}
+2025-09-01T08:46:48.898Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 11.861ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":11.861}
+2025-09-01T08:46:48.908Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 16.86ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":16.86}
+2025-09-01T08:47:41.838Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 22.02ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":22.02}
+2025-09-01T08:49:41.957Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 36.918ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":36.918}
+2025-09-01T08:50:37.927Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 12.015ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":12.015}
+2025-09-01T08:50:37.930Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 7.621ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":7.621}
+2025-09-01T08:50:37.954Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 15.131ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":15.131}
+2025-09-01T08:50:37.984Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 42.933ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":42.933}
+2025-09-01T08:51:50.543Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 4.684ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":4.684}
+2025-09-01T08:53:04.676Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 6.155ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":6.155}
+2025-09-01T08:53:04.678Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 4.754ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":4.754}
+2025-09-01T08:53:04.690Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 7.344ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":7.344}
+2025-09-01T08:53:04.698Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 11.703ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":11.703}
+2025-09-01T08:53:58.550Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.338ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.338}
+2025-09-01T08:55:09.368Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.125ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.125}
+2025-09-01T08:55:58.658Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 54.105ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":54.105}
+2025-09-01T08:57:09.452Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.797ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.797}
+2025-09-01T08:57:58.695Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.84ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.84}
+2025-09-01T08:59:58.743Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.937ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.937}
+2025-09-01T09:00:36.386Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 4.438ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":4.438}
+2025-09-01T09:00:36.387Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 3.815ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":3.815}
+2025-09-01T09:00:36.403Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 12.339ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":12.339}
+2025-09-01T09:00:36.410Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 15.13ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":15.13}
+2025-09-01T09:01:58.854Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 59.394ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":59.394}
+2025-09-01T09:03:08.332Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 6.729ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":6.729}
+2025-09-01T09:03:08.334Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 3.917ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":3.917}
+2025-09-01T09:03:08.343Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 7.382ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":7.382}
+2025-09-01T09:03:08.345Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 5.046ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":5.046}
+2025-09-01T09:03:58.882Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 2.874ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":2.874}
+2025-09-01T09:05:09.749Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 2.939ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":2.939}
+2025-09-01T09:05:58.917Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 2.952ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":2.952}
+2025-09-01T09:07:09.897Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 74.109ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":74.109}
+2025-09-01T09:07:58.976Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.908ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.908}
+2025-09-01T09:09:10.134Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.377ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.377}
+2025-09-01T09:09:43.214Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 13.47ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":13.47}
+2025-09-01T09:09:43.237Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 30.757ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":30.757}
+2025-09-01T09:09:59.078Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.807ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.807}
+2025-09-01T09:10:04.389Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 19.505ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":19.505}
+2025-09-01T09:10:04.392Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 13.067ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":13.067}
+2025-09-01T09:11:59.175Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.566ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.566}
+2025-09-01T09:12:04.535Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.699ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.699}
+2025-09-01T09:13:27.111Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 6.278ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":6.278}
+2025-09-01T09:13:27.135Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 35.672ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":35.672}
+2025-09-01T09:13:44.618Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 15.457ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":15.457}
+2025-09-01T09:13:44.623Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 6.639ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":6.639}
+2025-09-01T09:13:59.229Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.219ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.219}
+2025-09-01T09:15:53.973Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 6.25ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":6.25}
+2025-09-01T09:15:53.975Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 4.807ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":4.807}
+2025-09-01T09:15:53.990Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 14ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":14}
+2025-09-01T09:15:54.028Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 47.811ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":47.811}
+2025-09-01T09:15:59.318Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.1ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.1}
+2025-09-01T09:17:55.066Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.141ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.141}
+2025-09-01T09:17:59.373Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.163ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.163}
+2025-09-01T09:19:59.475Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.575ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.575}
+2025-09-01T09:20:02.107Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 2.934ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":2.934}
+2025-09-01T09:21:59.584Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 55.187ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":55.187}
+2025-09-01T09:23:52.347Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.82ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.82}
+2025-09-01T09:23:59.619Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.851ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.851}
+2025-09-01T09:25:52.515Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.924ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.924}
+2025-09-01T09:25:59.664Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 2.443ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":2.443}
+2025-09-01T09:27:52.678Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 48.56ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":48.56}
+2025-09-01T09:27:59.701Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.061ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.061}
+2025-09-01T09:29:52.747Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.598ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.598}
+2025-09-01T09:29:59.747Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.433ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.433}
+2025-09-01T09:31:59.802Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 14.181ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":14.181}
+2025-09-01T09:33:59.906Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 37.431ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":37.431}
+2025-09-01T09:35:59.952Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.094ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.094}
+2025-09-01T09:38:00.012Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.03ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.03}
+2025-09-01T09:40:00.161Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 89.05ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":89.05}
+2025-09-01T09:42:00.220Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.046ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.046}
+2025-09-01T09:44:00.255Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.684ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.684}
+2025-09-01T09:44:10.985Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 5.654ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":5.654}
+2025-09-01T09:44:10.987Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 4.041ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":4.041}
+2025-09-01T09:44:10.996Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 4.409ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":4.409}
+2025-09-01T09:44:10.997Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 3.316ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":3.316}
+2025-09-01T09:46:00.382Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 69.976ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":69.976}
+2025-09-01T09:48:00.443Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.859ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.859}
+2025-09-01T09:50:00.497Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 6.767ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":6.767}
+2025-09-01T09:52:00.576Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 35.14ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":35.14}
+2025-09-01T09:54:00.630Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.695ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.695}
+2025-09-01T09:56:00.673Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.727ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.727}
+2025-09-01T09:58:00.818Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 67.762ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":67.762}
+2025-09-01T10:00:00.882Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.377ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.377}
+2025-09-01T10:02:00.956Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.954ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.954}
+2025-09-01T10:04:01.101Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 69.042ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":69.042}
+2025-09-01T10:05:22.049Z [INFO] POST /api/auth/login - 200 - 510.125ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":510.125}
+2025-09-01T10:05:24.933Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 14.802ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":14.802}
+2025-09-01T10:05:24.936Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 8.706ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":8.706}
+2025-09-01T10:05:24.955Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 12.37ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":12.37}
+2025-09-01T10:05:24.957Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 8.653ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":8.653}
+2025-09-01T10:05:31.128Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 10.649ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":10.649}
+2025-09-01T10:05:31.130Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 5.559ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":5.559}
+2025-09-01T10:05:31.141Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 8.297ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":8.297}
+2025-09-01T10:05:31.143Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 5.357ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":5.357}
+2025-09-01T10:06:01.138Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.702ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.702}
+2025-09-01T10:07:42.134Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.663ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.663}
+2025-09-01T10:08:01.183Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 7.878ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":7.878}
+2025-09-01T10:09:42.387Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 49.426ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":49.426}
+2025-09-01T10:10:01.250Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 9.327ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":9.327}
+2025-09-01T10:11:42.557Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.037ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.037}
+2025-09-01T10:12:01.341Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.369ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.369}
+2025-09-01T10:13:42.849Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 8.378ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":8.378}
+2025-09-01T10:14:01.449Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 26.609ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":26.609}
+2025-09-01T10:15:03.044Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 44.871ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":44.871}
+2025-09-01T10:15:03.048Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 44.984ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":44.984}
+2025-09-01T10:15:03.049Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 3.221ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":3.221}
+2025-09-01T10:15:03.055Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 3.8ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":3.8}
+2025-09-01T10:15:55.828Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 24.02ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":24.02}
+2025-09-01T10:15:55.846Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 20.125ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":20.125}
+2025-09-01T10:15:55.879Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 12.072ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":12.072}
+2025-09-01T10:15:55.883Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 8.812ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":8.812}
+2025-09-01T10:16:01.576Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 17.681ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":17.681}
+2025-09-01T10:18:01.710Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 3.203ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":3.203}
+2025-09-01T10:18:05.901Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 10.843ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":10.843}
+2025-09-01T10:20:01.789Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 5.373ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":5.373}
+2025-09-01T10:20:06.285Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 36.375ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":36.375}
+2025-09-01T10:22:01.880Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 11.065ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":11.065}
+2025-09-01T10:22:06.537Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 11.204ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":11.204}
+2025-09-01T10:23:30.285Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T10:23:30.287Z [INFO] 🌍 Environment: development
+2025-09-01T10:23:30.287Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T10:23:30.288Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T10:23:30.288Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T10:23:30.289Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-09-01T12:04:37.849Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T12:04:37.849Z [INFO] 🌍 Environment: development
+2025-09-01T12:04:37.849Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T12:04:37.850Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T12:04:37.850Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T12:12:09.102Z [INFO] POST /api/auth/login - 200 - 1038.088ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":1038.088}
+2025-09-01T12:12:16.698Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 127.137ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":127.137}
+2025-09-01T12:12:16.713Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-01 - 304 - 4.892ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-01","statusCode":304,"responseTime":4.892}
+2025-09-01T12:12:16.737Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 207.149ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":207.149}
+2025-09-01T12:12:16.746Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 164.853ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":164.853}
+2025-09-01T12:12:16.763Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 14.042ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":14.042}
+2025-09-01T12:12:16.787Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-01 - 304 - 18.093ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-01","statusCode":304,"responseTime":18.093}
+2025-09-01T12:12:16.806Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 25.339ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":25.339}
+2025-09-01T12:17:58.684Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-01 - 304 - 617.199ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-01","statusCode":304,"responseTime":617.199}
+2025-09-01T12:24:17.683Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T12:24:17.683Z [INFO] 🌍 Environment: development
+2025-09-01T12:24:17.684Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T12:24:17.684Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T12:24:17.684Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T12:25:39.923Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T12:25:39.923Z [INFO] 🌍 Environment: development
+2025-09-01T12:25:39.924Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T12:25:39.924Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T12:25:39.924Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T12:27:44.323Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T12:27:44.324Z [INFO] 🌍 Environment: development
+2025-09-01T12:27:44.324Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T12:27:44.324Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T12:27:44.324Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T12:39:40.382Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T12:39:40.385Z [INFO] 🌍 Environment: development
+2025-09-01T12:39:40.385Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T12:39:40.386Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T12:39:40.386Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T12:43:50.482Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T12:43:50.483Z [INFO] 🌍 Environment: development
+2025-09-01T12:43:50.483Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T12:43:50.483Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T12:43:50.483Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T13:12:50.242Z [ERROR] GET /api/accounting/accounts - 401 - 3.325ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":401,"responseTime":3.325}
+2025-09-01T13:14:14.640Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T13:14:14.641Z [INFO] 🌍 Environment: development
+2025-09-01T13:14:14.641Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T13:14:14.642Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T13:14:14.642Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T13:14:23.254Z [INFO] GET /health - 200 - 56.266ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":56.266}
+2025-09-01T13:14:23.311Z [ERROR] POST /api/auth/login - 400 - 5.582ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":400,"responseTime":5.582}
+2025-09-01T13:15:28.692Z [INFO] GET /health - 200 - 2.58ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":2.58}
+2025-09-01T13:15:29.205Z [INFO] POST /api/auth/login - 200 - 502.619ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":502.619}
+2025-09-01T13:16:12.674Z [INFO] GET /health - 200 - 1.258ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":1.258}
+2025-09-01T13:16:13.076Z [INFO] POST /api/auth/login - 200 - 391.305ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":391.305}
+2025-09-01T13:16:13.232Z [INFO] GET /api/accounting/accounts - 200 - 151.094ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":151.094}
+2025-09-01T13:16:13.276Z [INFO] GET /api/accounting/journal-entries - 200 - 40.299ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":40.299}
+2025-09-01T13:16:13.346Z [ERROR] Error creating journal entry: | Stack: PrismaClientValidationError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create({
+        data: {
+          date: "2025-09-01T13:16:13.278Z",
+          journalNumber: "TEST001",
+          companyName: "Test Company",
+          description: "Test journal entry from API",
+          entries: {
+            create: [
+              {
+                accountId: "cmf13if1h0003uhn24zi9e2g6",
+                description: "Test debit entry",
+                debitAmount: 1000,
+                creditAmount: 0
+              },
+              {
+                accountId: "cmf13if1w0004uhn29klmz8eu",
+                description: "Test credit entry",
+                debitAmount: 0,
+                creditAmount: 1000
+              }
+            ]
+          },
+          totalDebit: 1000,
+          totalCredit: 1000,
+          status: "draft",
+                  ~~~~~~~
+          createdBy: "Test User",
+          createdById: "test-user-id"
+        },
+        include: {
+          entries: true
+        }
+      })
+
+Invalid value for argument `status`. Expected JournalEntryStatus.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:16:13.350Z [ERROR] POST /api/accounting/journal-entries - 500 - 66.284ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":66.284}
+2025-09-01T13:17:38.847Z [INFO] GET /health - 200 - 1.543ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":1.543}
+2025-09-01T13:17:39.222Z [INFO] POST /api/auth/login - 200 - 364.785ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":364.785}
+2025-09-01T13:17:39.243Z [INFO] GET /api/accounting/accounts - 200 - 15.441ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":15.441}
+2025-09-01T13:17:39.268Z [INFO] GET /api/accounting/journal-entries - 200 - 14.507ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":14.507}
+2025-09-01T13:17:39.318Z [ERROR] Error creating journal entry: | Stack: PrismaClientValidationError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create({
+        data: {
+          date: "2025-09-01T13:17:39.271Z",
+          journalNumber: "TEST001",
+          companyName: "Test Company",
+          description: "Test journal entry from API",
+          entries: {
+            create: [
+              {
+                accountId: "cmf13if1h0003uhn24zi9e2g6",
+                description: "Test debit entry",
+                debitAmount: 1000,
+                creditAmount: 0
+              },
+              {
+                accountId: "cmf13if1w0004uhn29klmz8eu",
+                description: "Test credit entry",
+                debitAmount: 0,
+                creditAmount: 1000
+              }
+            ]
+          },
+          totalDebit: 1000,
+          totalCredit: 1000,
+          status: "DRAFT",
+          createdBy: "Test User",
+                     ~~~~~~~~~~~
+          createdById: "test-user-id"
+        },
+        include: {
+          entries: true
+        }
+      })
+
+Argument `createdBy`: Invalid value provided. Expected UserCreateNestedOneWithoutCreatedJournalEntriesInput, provided String.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:17:39.321Z [ERROR] POST /api/accounting/journal-entries - 500 - 43.451ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":43.451}
+2025-09-01T13:19:01.691Z [INFO] GET /health - 200 - 1.327ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":1.327}
+2025-09-01T13:19:02.072Z [INFO] POST /api/auth/login - 200 - 371.556ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":371.556}
+2025-09-01T13:19:02.093Z [INFO] GET /api/accounting/accounts - 200 - 10.076ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":10.076}
+2025-09-01T13:19:02.107Z [INFO] GET /api/accounting/journal-entries - 200 - 7.744ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":7.744}
+2025-09-01T13:19:02.118Z [INFO] GET /api/auth/profile - 200 - 4.213ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":4.213}
+2025-09-01T13:19:02.157Z [INFO] Journal entry created: cmf15bf1x000h6v23i6crmp03
+2025-09-01T13:19:02.162Z [INFO] POST /api/accounting/journal-entries - 201 - 37.745ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":201,"responseTime":37.745}
+2025-09-01T13:19:17.690Z [INFO] GET /health - 200 - 16.251ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":16.251}
+2025-09-01T13:19:18.068Z [INFO] POST /api/auth/login - 200 - 367.329ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":367.329}
+2025-09-01T13:19:18.086Z [INFO] GET /api/accounting/accounts - 200 - 10.755ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":10.755}
+2025-09-01T13:19:18.108Z [INFO] GET /api/accounting/journal-entries - 200 - 17.001ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":17.001}
+2025-09-01T13:19:18.123Z [INFO] GET /api/auth/profile - 200 - 5.224ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":5.224}
+2025-09-01T13:19:18.149Z [ERROR] Error creating journal entry: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create(
+Unique constraint failed on the fields: (`journalNumber`)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:19:18.154Z [ERROR] POST /api/accounting/journal-entries - 500 - 19.88ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":19.88}
+2025-09-01T13:20:09.040Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-01T13:20:09.043Z [INFO] HTTP server closed
+2025-09-01T13:20:42.265Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T13:20:42.266Z [INFO] 🌍 Environment: development
+2025-09-01T13:20:42.266Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T13:20:42.266Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T13:20:42.266Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T13:21:06.901Z [ERROR] POST /api/auth/login - 401 - 177.342ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":177.342}
+2025-09-01T13:21:50.490Z [INFO] POST /api/auth/login - 200 - 386.443ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":386.443}
+2025-09-01T13:22:01.140Z [INFO] GET /api/accounting/accounts - 200 - 248.241ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":248.241}
+2025-09-01T13:22:01.149Z [INFO] GET /api/accounting/accounts - 304 - 5.206ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":5.206}
+2025-09-01T13:22:01.313Z [INFO] GET /api/accounting/journal-entries - 200 - 411.965ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":411.965}
+2025-09-01T13:22:01.371Z [INFO] GET /api/accounting/journal-entries - 304 - 27.533ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":27.533}
+2025-09-01T13:26:34.378Z [INFO] GET /api/accounting/accounts - 304 - 28.363ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":28.363}
+2025-09-01T13:26:34.398Z [INFO] GET /api/accounting/journal-entries - 304 - 69.188ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":69.188}
+2025-09-01T13:26:34.411Z [INFO] GET /api/accounting/accounts - 304 - 23.122ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":23.122}
+2025-09-01T13:26:34.423Z [INFO] GET /api/accounting/journal-entries - 304 - 17.737ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":17.737}
+2025-09-01T13:27:54.377Z [ERROR] Error creating journal entry: | Stack: PrismaClientValidationError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create({
+        data: {
+          date: "2025-09-01T00:00:00.000Z",
+          journalNumber: "JE2025274229",
+          companyName: "Aavash Ganesh",
+          description: "payment received for achar order",
+          entries: {
+            create: [
+              {
+                accountId: "1000",
+                description: "cash received from global account",
+                debitAmount: 20000,
+                creditAmount: 0
+              },
+              {
+                accountId: "1200",
+                description: "product sales to aavashh",
+                debitAmount: 0,
+                creditAmount: 20000
+              }
+            ]
+          },
+          totalDebit: 20000,
+          totalCredit: 20000,
+          status: "draft",
+                  ~~~~~~~
+          createdBy: "Current User",
+          createdById: "current-user-id"
+        },
+        include: {
+          entries: true
+        }
+      })
+
+Invalid value for argument `status`. Expected JournalEntryStatus.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:27:54.379Z [ERROR] POST /api/accounting/journal-entries - 500 - 137.425ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":137.425}
+2025-09-01T13:30:39.008Z [ERROR] Error creating journal entry: | Stack: PrismaClientValidationError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create({
+        data: {
+          date: "2025-09-01T00:00:00.000Z",
+          journalNumber: "JE2025438966",
+          companyName: "Aavash Ganesh",
+          description: "payment received for achar order",
+          entries: {
+            create: [
+              {
+                accountId: "1000",
+                description: "cash received from global account",
+                debitAmount: 20000,
+                creditAmount: 0
+              },
+              {
+                accountId: "1200",
+                description: "product sales to aavashh",
+                debitAmount: 0,
+                creditAmount: 20000
+              }
+            ]
+          },
+          totalDebit: 20000,
+          totalCredit: 20000,
+          status: "DRAFT",
+          createdBy: "Current User",
+                     ~~~~~~~~~~~~~~
+          createdById: "current-user-id"
+        },
+        include: {
+          entries: true
+        }
+      })
+
+Argument `createdBy`: Invalid value provided. Expected UserCreateNestedOneWithoutCreatedJournalEntriesInput, provided String.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:30:39.012Z [ERROR] POST /api/accounting/journal-entries - 500 - 34.503ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":34.503}
+2025-09-01T13:32:17.393Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-01T13:32:17.413Z [INFO] HTTP server closed
+2025-09-01T13:32:43.943Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T13:32:43.945Z [INFO] 🌍 Environment: development
+2025-09-01T13:32:43.945Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T13:32:43.945Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T13:32:43.945Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T13:32:57.374Z [ERROR] Error creating journal entry: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create(
+Foreign key constraint violated: `journal_entries_createdById_fkey (index)`
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:32:57.380Z [ERROR] POST /api/accounting/journal-entries - 500 - 154.297ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":154.297}
+2025-09-01T13:34:20.121Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-01T13:34:20.132Z [INFO] HTTP server closed
+2025-09-01T13:34:51.243Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T13:34:51.249Z [INFO] 🌍 Environment: development
+2025-09-01T13:34:51.251Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T13:34:51.253Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T13:34:51.254Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T13:34:56.428Z [ERROR] Error creating journal entry: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create(
+Foreign key constraint violated: `journal_line_items_accountId_fkey (index)`
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:34:56.479Z [ERROR] POST /api/accounting/journal-entries - 500 - 766.065ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":766.065}
+2025-09-01T13:34:56.893Z [ERROR] Error creating journal entry: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create(
+Foreign key constraint violated: `journal_line_items_accountId_fkey (index)`
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:34:56.895Z [ERROR] POST /api/accounting/journal-entries - 500 - 56.577ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":56.577}
+2025-09-01T13:36:50.912Z [INFO] Journal entry created: cmf15ybq1000bohilcf883ioc
+2025-09-01T13:36:50.915Z [INFO] POST /api/accounting/journal-entries - 201 - 22.179ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":201,"responseTime":22.179}
+2025-09-01T13:40:50.332Z [INFO] GET /api/accounting/journal-entries - 200 - 85ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":85}
+2025-09-01T13:40:50.345Z [INFO] GET /api/accounting/accounts - 304 - 91.834ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":91.834}
+2025-09-01T13:40:50.351Z [INFO] GET /api/accounting/journal-entries - 304 - 15.887ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":15.887}
+2025-09-01T13:40:50.360Z [INFO] GET /api/accounting/accounts - 304 - 11.869ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":11.869}
+2025-09-01T13:41:20.706Z [INFO] Journal entry created: cmf1643w6000gohile0ogc3zl
+2025-09-01T13:41:20.709Z [INFO] POST /api/accounting/journal-entries - 201 - 23.803ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":201,"responseTime":23.803}
+2025-09-01T13:42:22.323Z [INFO] GET /api/accounting/accounts - 304 - 13.219ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":13.219}
+2025-09-01T13:42:22.326Z [INFO] GET /api/accounting/journal-entries - 200 - 22.056ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":22.056}
+2025-09-01T13:42:22.341Z [INFO] GET /api/accounting/accounts - 304 - 12.919ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":12.919}
+2025-09-01T13:42:22.346Z [INFO] GET /api/accounting/journal-entries - 304 - 15.357ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":15.357}
+2025-09-01T13:42:28.424Z [INFO] GET /api/accounting/accounts - 304 - 13.6ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":13.6}
+2025-09-01T13:42:28.439Z [INFO] GET /api/accounting/journal-entries - 304 - 37.685ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":37.685}
+2025-09-01T13:42:28.445Z [INFO] GET /api/accounting/accounts - 304 - 17.052ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":17.052}
+2025-09-01T13:42:28.456Z [INFO] GET /api/accounting/journal-entries - 304 - 14.025ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":14.025}
+2025-09-01T13:43:00.906Z [INFO] Journal entry created: cmf16697h000lohil9encoq9b
+2025-09-01T13:43:00.908Z [INFO] POST /api/accounting/journal-entries - 201 - 25.303ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":201,"responseTime":25.303}
+2025-09-01T13:43:11.177Z [INFO] GET /api/accounting/accounts - 304 - 9.508ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":9.508}
+2025-09-01T13:43:11.179Z [INFO] GET /api/accounting/journal-entries - 200 - 19.322ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":19.322}
+2025-09-01T13:43:11.193Z [INFO] GET /api/accounting/accounts - 304 - 8.776ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":8.776}
+2025-09-01T13:43:11.200Z [INFO] GET /api/accounting/journal-entries - 304 - 12.852ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":12.852}
+2025-09-01T13:45:21.712Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-01T13:46:55.360Z [INFO] GET /health - 200 - 20.049ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":20.049}
+2025-09-01T13:47:09.174Z [ERROR] GET /api/accounting/journal-entries - 401 - 0.277ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":401,"responseTime":0.277}
+2025-09-01T13:49:57.574Z [INFO] GET /api/health - 200 - 0.335ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":0.335}
+2025-09-01T13:49:58.075Z [INFO] POST /api/auth/login - 200 - 483.406ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":483.406}
+2025-09-01T13:49:58.136Z [INFO] GET /api/auth/profile - 200 - 50.444ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":50.444}
+2025-09-01T13:49:58.204Z [INFO] GET /api/accounting/accounts - 200 - 57.125ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":57.125}
+2025-09-01T13:49:58.302Z [INFO] GET /api/accounting/journal-entries - 200 - 66.625ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":66.625}
+2025-09-01T13:49:58.356Z [ERROR] Error creating journal entry: | Stack: PrismaClientValidationError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create({
+        data: {
+          date: "2025-09-01",
+                ~~~~~~~~~~~~
+          journalNumber: "JE2025598306",
+          companyName: "Test Company",
+          description: "Test journal entry for debugging",
+          entries: {
+            create: [
+              {
+                accountId: "cmf13if1h0003uhn24zi9e2g6",
+                description: "Test debit entry",
+                debitAmount: 1000,
+                creditAmount: 0
+              },
+              {
+                accountId: "cmf13if1w0004uhn29klmz8eu",
+                description: "Test credit entry",
+                debitAmount: 0,
+                creditAmount: 1000
+              }
+            ]
+          },
+          totalDebit: 1000,
+          totalCredit: 1000,
+          status: "DRAFT",
+          createdById: "cmf13bjjw0000xz0gnotkjt4c"
+        },
+        include: {
+          entries: true
+        }
+      })
+
+Invalid value for argument `date`: premature end of input. Expected ISO-8601 DateTime.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:49:58.360Z [ERROR] POST /api/accounting/journal-entries - 500 - 41.034ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":41.034}
+2025-09-01T13:53:39.783Z [INFO] GET /api/health - 200 - 0.357ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":0.357}
+2025-09-01T13:53:40.185Z [INFO] POST /api/auth/login - 200 - 370.298ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":370.298}
+2025-09-01T13:53:40.198Z [INFO] GET /api/auth/profile - 200 - 3.875ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":3.875}
+2025-09-01T13:53:40.214Z [INFO] GET /api/accounting/accounts - 200 - 10.56ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":10.56}
+2025-09-01T13:53:40.236Z [INFO] GET /api/accounting/journal-entries - 200 - 11.214ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":11.214}
+2025-09-01T13:53:40.260Z [ERROR] Error creating journal entry: | Stack: PrismaClientValidationError: 
+Invalid `prisma.journalEntry.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:54
+
+  140   });
+  141 }
+  142 
+→ 143 const journalEntry = await prisma.journalEntry.create({
+        data: {
+          date: "2025-09-01",
+                ~~~~~~~~~~~~
+          journalNumber: "JE2025820243",
+          companyName: "Test Company",
+          description: "Test journal entry for debugging",
+          entries: {
+            create: [
+              {
+                accountId: "cmf13if1h0003uhn24zi9e2g6",
+                description: "Test debit entry",
+                debitAmount: 1000,
+                creditAmount: 0
+              },
+              {
+                accountId: "cmf13if1w0004uhn29klmz8eu",
+                description: "Test credit entry",
+                debitAmount: 0,
+                creditAmount: 1000
+              }
+            ]
+          },
+          totalDebit: 1000,
+          totalCredit: 1000,
+          status: "DRAFT",
+          createdById: "cmf13bjjw0000xz0gnotkjt4c"
+        },
+        include: {
+          entries: true
+        }
+      })
+
+Invalid value for argument `date`: premature end of input. Expected ISO-8601 DateTime.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createJournalEntry (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/accounting.controller.ts:143:28)
+2025-09-01T13:53:40.262Z [ERROR] POST /api/accounting/journal-entries - 500 - 14.275ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":500,"responseTime":14.275}
+2025-09-01T13:54:07.373Z [INFO] GET /api/health - 200 - 0.274ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":0.274}
+2025-09-01T13:54:07.779Z [INFO] POST /api/auth/login - 200 - 396.65ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":396.65}
+2025-09-01T13:54:07.794Z [INFO] GET /api/auth/profile - 200 - 5.73ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":5.73}
+2025-09-01T13:54:07.806Z [INFO] GET /api/accounting/accounts - 200 - 6.207ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":6.207}
+2025-09-01T13:54:07.834Z [INFO] GET /api/accounting/journal-entries - 200 - 17.928ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":17.928}
+2025-09-01T13:54:07.866Z [INFO] Journal entry created: cmf16kju9000uohilemc6q3wv
+2025-09-01T13:54:07.869Z [INFO] POST /api/accounting/journal-entries - 201 - 22.399ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":201,"responseTime":22.399}
+2025-09-01T13:54:07.894Z [INFO] GET /api/accounting/journal-entries - 200 - 14.467ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":14.467}
+2025-09-01T13:54:58.612Z [INFO] GET /api/health - 200 - 0.24ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":0.24}
+2025-09-01T13:54:59.033Z [INFO] POST /api/auth/login - 200 - 411.741ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":411.741}
+2025-09-01T13:54:59.068Z [INFO] GET /api/auth/profile - 200 - 30.205ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":30.205}
+2025-09-01T13:54:59.108Z [INFO] GET /api/accounting/accounts - 200 - 33.981ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":33.981}
+2025-09-01T13:54:59.152Z [INFO] GET /api/accounting/journal-entries - 200 - 39.81ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":39.81}
+2025-09-01T13:54:59.183Z [INFO] Journal entry created: cmf16lnfm000zohil8ppn125v
+2025-09-01T13:54:59.185Z [INFO] POST /api/accounting/journal-entries - 201 - 21.63ms | Data: {"method":"POST","url":"/api/accounting/journal-entries","statusCode":201,"responseTime":21.63}
+2025-09-01T13:54:59.201Z [INFO] GET /api/accounting/journal-entries - 200 - 12.606ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":12.606}
+2025-09-01T13:58:10.669Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-01T13:58:10.671Z [INFO] 🌍 Environment: development
+2025-09-01T13:58:10.671Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-01T13:58:10.671Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-01T13:58:10.671Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-01T13:58:10.672Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-09-01T13:58:10.672Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)

@@ -1,0 +1,765 @@
+2025-08-31T08:18:43.304Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T08:18:43.304Z [INFO] 🌍 Environment: development
+2025-08-31T08:18:43.305Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T08:18:43.305Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T08:18:43.305Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T08:48:48.996Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T08:48:48.999Z [INFO] HTTP server closed
+2025-08-31T08:50:19.914Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T08:50:19.915Z [INFO] 🌍 Environment: development
+2025-08-31T08:50:19.915Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T08:50:19.915Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T08:50:19.915Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T08:53:55.695Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T08:53:55.698Z [INFO] HTTP server closed
+2025-08-31T08:57:06.835Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T08:57:06.836Z [INFO] 🌍 Environment: development
+2025-08-31T08:57:06.836Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T08:57:06.836Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T08:57:06.837Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T08:59:01.308Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T08:59:01.310Z [INFO] HTTP server closed
+2025-08-31T08:59:33.896Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T08:59:33.897Z [INFO] 🌍 Environment: development
+2025-08-31T08:59:33.897Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T08:59:33.897Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T08:59:33.897Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T09:03:22.498Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:06:18.083Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:08:43.473Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T09:08:43.473Z [INFO] 🌍 Environment: development
+2025-08-31T09:08:43.474Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T09:08:43.474Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T09:08:43.474Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T09:09:37.880Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T09:09:37.884Z [INFO] HTTP server closed
+2025-08-31T09:09:53.921Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T09:09:53.924Z [INFO] 🌍 Environment: development
+2025-08-31T09:09:53.924Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T09:09:53.925Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T09:09:53.925Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T09:09:54.779Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:09:57.196Z [INFO] POST /api/auth/login - 200 - 1060.857ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":1060.857}
+2025-08-31T09:09:57.851Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:11:06.688Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T09:11:06.690Z [INFO] 🌍 Environment: development
+2025-08-31T09:11:06.690Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T09:11:06.693Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T09:11:06.693Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T09:11:07.731Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:11:08.182Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:11:36.378Z [INFO] POST /api/auth/login - 200 - 491.784ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":491.784}
+2025-08-31T09:11:56.418Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T09:11:56.419Z [INFO] 🌍 Environment: development
+2025-08-31T09:11:56.419Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T09:11:56.419Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T09:11:56.420Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T09:11:58.370Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:11:58.655Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:12:04.735Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:12:44.724Z [INFO] POST /api/auth/login - 200 - 424.631ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":424.631}
+2025-08-31T09:13:03.222Z [ERROR] GET /api/auth/users - 401 - 7.586ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":7.586}
+2025-08-31T09:13:03.233Z [ERROR] GET /api/auth/users - 401 - 1.606ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":1.606}
+2025-08-31T09:14:11.177Z [ERROR] GET /api/auth/users - 401 - 6.543ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":6.543}
+2025-08-31T09:14:11.199Z [ERROR] GET /api/auth/users - 401 - 1.551ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":1.551}
+2025-08-31T09:14:26.628Z [ERROR] GET /api/auth/users - 401 - 0.967ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":0.967}
+2025-08-31T09:14:26.639Z [ERROR] GET /api/auth/users - 401 - 3.148ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":3.148}
+2025-08-31T09:25:17.420Z [INFO] POST /api/auth/register - 201 - 386.479ms | Data: {"method":"POST","url":"/api/auth/register","statusCode":201,"responseTime":386.479}
+2025-08-31T09:25:17.428Z [ERROR] GET /api/auth/users - 401 - 1.374ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":1.374}
+2025-08-31T09:27:51.225Z [ERROR] GET /api/auth/users - 401 - 0.337ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":401,"responseTime":0.337}
+2025-08-31T09:28:01.374Z [INFO] POST /api/auth/login - 200 - 380.814ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":380.814}
+2025-08-31T09:29:24.270Z [INFO] GET /api/auth/users - 200 - 141.996ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":141.996}
+2025-08-31T09:30:39.850Z [INFO] GET /api/auth/users - 200 - 52.729ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":52.729}
+2025-08-31T09:30:39.852Z [INFO] GET /api/auth/users - 200 - 49.918ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":49.918}
+2025-08-31T09:31:36.997Z [INFO] GET /api/auth/users - 304 - 6.805ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":6.805}
+2025-08-31T09:31:37.007Z [INFO] GET /api/auth/users - 304 - 6.806ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":6.806}
+2025-08-31T09:31:51.040Z [INFO] PUT /api/auth/users/cmezhiytt00003m57z4dli9fj/status - 200 - 21.468ms | Data: {"method":"PUT","url":"/api/auth/users/cmezhiytt00003m57z4dli9fj/status","statusCode":200,"responseTime":21.468}
+2025-08-31T09:31:52.602Z [INFO] PUT /api/auth/users/cmezhiytt00003m57z4dli9fj/status - 200 - 17.868ms | Data: {"method":"PUT","url":"/api/auth/users/cmezhiytt00003m57z4dli9fj/status","statusCode":200,"responseTime":17.868}
+2025-08-31T09:34:19.243Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:34:21.992Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:34:23.051Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:37:10.251Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:37:11.763Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:37:11.780Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:47:11.823Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:49:04.947Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:50:03.892Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:50:40.143Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:50:40.805Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:51:25.223Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:52:29.004Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:53:03.664Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:31:54.614Z [INFO] PUT /api/auth/users/cmezet9sw00005x01wwae14q9/status - 200 - 14.939ms | Data: {"method":"PUT","url":"/api/auth/users/cmezet9sw00005x01wwae14q9/status","statusCode":200,"responseTime":14.939}
+2025-08-31T09:53:13.701Z [INFO] SIGTERM received. Starting graceful shutdown...
+2025-08-31T09:53:13.705Z [ERROR] Uncaught Exception | Stack: Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at WriteStream.Socket._writeGeneric (node:net:966:11)
+    at WriteStream.Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at process.gracefulShutdown (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:57:11)
+2025-08-31T09:53:24.860Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T09:53:24.861Z [INFO] 🌍 Environment: development
+2025-08-31T09:53:24.863Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T09:53:24.863Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T09:53:24.863Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T09:53:24.913Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T09:53:24.927Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T10:44:50.747Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T10:44:50.748Z [INFO] 🌍 Environment: development
+2025-08-31T10:44:50.748Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T10:44:50.748Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T10:44:50.748Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T10:49:13.847Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T10:49:13.847Z [INFO] 🌍 Environment: development
+2025-08-31T10:49:13.847Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T10:49:13.848Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T10:49:13.848Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T10:49:13.849Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T10:49:46.150Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T10:49:46.155Z [INFO] 🌍 Environment: development
+2025-08-31T10:49:46.161Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T10:49:46.171Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T10:49:46.171Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T10:49:50.817Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T10:50:20.332Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T10:50:20.339Z [INFO] HTTP server closed
+2025-08-31T10:52:55.957Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T10:52:55.960Z [INFO] 🌍 Environment: development
+2025-08-31T10:52:55.961Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T10:52:55.961Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T10:52:55.962Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T10:52:58.332Z [ERROR] POST /api/auth/login - 401 - 256.471ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":256.471}
+2025-08-31T10:53:29.733Z [ERROR] POST /api/auth/login - 401 - 594.117ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":594.117}
+2025-08-31T10:53:55.900Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T10:53:55.901Z [INFO] 🌍 Environment: development
+2025-08-31T10:53:55.901Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T10:53:55.902Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T10:53:55.902Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T10:53:56.036Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T10:54:41.242Z [INFO] POST /api/auth/login - 200 - 496.602ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":496.602}
+2025-08-31T10:54:50.081Z [INFO] GET /api/auth/users - 200 - 76.621ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":76.621}
+2025-08-31T10:55:16.116Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T10:55:16.117Z [INFO] 🌍 Environment: development
+2025-08-31T10:55:16.117Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T10:55:16.118Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T10:55:16.118Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T10:55:16.123Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:156:24)
+2025-08-31T10:57:01.330Z [INFO] POST /api/auth/login - 200 - 482.267ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":482.267}
+2025-08-31T11:04:11.498Z [INFO] POST /api/auth/login - 200 - 1071.38ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":1071.38}
+2025-08-31T11:04:31.979Z [INFO] POST /api/auth/login - 200 - 365.698ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":365.698}
+2025-08-31T11:04:40.427Z [INFO] GET /api/auth/users - 200 - 197.335ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":197.335}
+2025-08-31T11:04:40.488Z [INFO] GET /api/auth/users - 304 - 28.223ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":28.223}
+2025-08-31T11:04:49.279Z [INFO] DELETE /api/auth/users/cmezhiytt00003m57z4dli9fj - 200 - 29.93ms | Data: {"method":"DELETE","url":"/api/auth/users/cmezhiytt00003m57z4dli9fj","statusCode":200,"responseTime":29.93}
+2025-08-31T11:05:10.363Z [INFO] PUT /api/auth/users/cmezet9sw00005x01wwae14q9 - 200 - 123.255ms | Data: {"method":"PUT","url":"/api/auth/users/cmezet9sw00005x01wwae14q9","statusCode":200,"responseTime":123.255}
+2025-08-31T11:05:20.153Z [INFO] GET /api/auth/users - 200 - 4.527ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":4.527}
+2025-08-31T11:05:20.162Z [INFO] GET /api/auth/users - 304 - 5.908ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":5.908}
+2025-08-31T11:05:28.502Z [INFO] PUT /api/auth/users/cmezet9sw00005x01wwae14q9 - 200 - 15.249ms | Data: {"method":"PUT","url":"/api/auth/users/cmezet9sw00005x01wwae14q9","statusCode":200,"responseTime":15.249}
+2025-08-31T11:32:40.420Z [INFO] GET /api/auth/users - 200 - 43.59ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":43.59}
+2025-08-31T11:32:40.432Z [INFO] GET /api/auth/users - 304 - 4.31ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":4.31}
+2025-08-31T11:49:50.065Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T11:49:50.068Z [INFO] 🌍 Environment: development
+2025-08-31T11:49:50.069Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T11:49:50.069Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T11:49:50.069Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T11:49:50.071Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:146:7)
+2025-08-31T18:15:03.132Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:15:03.134Z [INFO] 🌍 Environment: development
+2025-08-31T18:15:03.136Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:15:03.136Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:15:03.137Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:15:24.997Z [INFO] POST /api/auth/login - 200 - 601.554ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":601.554}
+2025-08-31T18:21:21.516Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:21:21.516Z [INFO] 🌍 Environment: development
+2025-08-31T18:21:21.516Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:21:21.517Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:21:21.517Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:22:09.069Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:22:09.070Z [INFO] 🌍 Environment: development
+2025-08-31T18:22:09.071Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:22:09.071Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:22:09.072Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:22:23.419Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:22:23.419Z [INFO] 🌍 Environment: development
+2025-08-31T18:22:23.419Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:22:23.420Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:22:23.420Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:23:09.673Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:23:09.674Z [INFO] 🌍 Environment: development
+2025-08-31T18:23:09.675Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:23:09.675Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:23:09.675Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:26:33.689Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:26:33.691Z [INFO] 🌍 Environment: development
+2025-08-31T18:26:33.691Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:26:33.692Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:26:33.692Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:26:33.693Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T18:27:23.731Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:27:23.732Z [INFO] 🌍 Environment: development
+2025-08-31T18:27:23.732Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:27:23.732Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:27:23.732Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:27:23.960Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T18:31:41.885Z [INFO] GET /health - 200 - 455.791ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":455.791}
+2025-08-31T18:32:01.335Z [INFO] GET /api/auth/users - 304 - 313.995ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":313.995}
+2025-08-31T18:32:01.343Z [INFO] GET /api/auth/users - 304 - 5.847ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":5.847}
+2025-08-31T18:33:17.564Z [INFO] GET /health - 200 - 41.837ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":41.837}
+2025-08-31T18:33:30.091Z [ERROR] GET /api/distributors - 401 - 0.511ms | Data: {"method":"GET","url":"/api/distributors","statusCode":401,"responseTime":0.511}
+2025-08-31T18:36:37.452Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T18:36:54.330Z [INFO] GET /health - 200 - 6.538ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":6.538}
+2025-08-31T18:40:08.966Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:40:08.968Z [INFO] 🌍 Environment: development
+2025-08-31T18:40:08.969Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:40:08.969Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:40:08.969Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:42:25.398Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T18:42:25.402Z [INFO] HTTP server closed
+2025-08-31T18:45:02.778Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:45:02.779Z [INFO] 🌍 Environment: development
+2025-08-31T18:45:02.779Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:45:02.780Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:45:02.780Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:47:14.877Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T18:47:14.881Z [INFO] HTTP server closed
+2025-08-31T18:47:14.885Z [ERROR] Uncaught Exception | Stack: Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:966:11)
+    at Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Socket.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at process.gracefulShutdown (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:57:11)
+2025-08-31T18:47:46.739Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T18:47:46.740Z [INFO] 🌍 Environment: development
+2025-08-31T18:47:46.740Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T18:47:46.741Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T18:47:46.741Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T18:47:53.396Z [INFO] GET /health - 200 - 17.49ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":17.49}
+2025-08-31T18:48:02.314Z [ERROR] GET /api/distributors - 401 - 0.764ms | Data: {"method":"GET","url":"/api/distributors","statusCode":401,"responseTime":0.764}
+2025-08-31T18:53:37.816Z [ERROR] POST /api/distributors - 403 - 109.686ms | Data: {"method":"POST","url":"/api/distributors","statusCode":403,"responseTime":109.686}
+2025-08-31T19:02:41.272Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:02:41.622Z [INFO] 🌍 Environment: development
+2025-08-31T19:02:41.623Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:02:41.623Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:02:41.623Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:02:42.170Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:02:42.836Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:02:46.407Z [INFO] GET /health - 200 - 12.188ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":12.188}
+2025-08-31T19:02:48.993Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:02:56.497Z [ERROR] POST /api/distributors/dev - 500 - 8.973ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":500,"responseTime":8.973}
+2025-08-31T19:03:30.960Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:03:30.961Z [INFO] 🌍 Environment: development
+2025-08-31T19:03:30.962Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:03:30.963Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:03:30.964Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:03:31.451Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:03:31.581Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:03:31.834Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:04:49.991Z [ERROR] POST /api/distributors/dev - 400 - 35.36ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":35.36}
+2025-08-31T19:07:59.657Z [ERROR] POST /api/distributors/dev - 400 - 10.976ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":10.976}
+2025-08-31T19:09:02.311Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:09:02.312Z [INFO] 🌍 Environment: development
+2025-08-31T19:09:02.315Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:09:02.328Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:09:02.329Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:09:03.963Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:09:04.915Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:09:04.983Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:09:08.065Z [INFO] GET /health - 200 - 13.338ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":13.338}
+2025-08-31T19:10:13.917Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:10:13.928Z [INFO] 🌍 Environment: development
+2025-08-31T19:10:13.930Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:10:13.934Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:10:13.934Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:10:14.608Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:10:15.463Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:10:15.666Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:11:37.934Z [ERROR] POST /api/distributors/dev - 500 - 48.273ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":500,"responseTime":48.273}
+2025-08-31T19:13:44.599Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:13:44.600Z [INFO] 🌍 Environment: development
+2025-08-31T19:13:44.600Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:13:44.600Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:13:44.600Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:14:36.291Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-08-31T19:14:36.301Z [INFO] HTTP server closed
+2025-08-31T19:17:08.306Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:17:08.307Z [INFO] 🌍 Environment: development
+2025-08-31T19:17:08.307Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:17:08.308Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:17:08.308Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:17:08.498Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:17:08.736Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:17:08.757Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:17:30.898Z [INFO] GET /health - 200 - 6.693ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":6.693}
+2025-08-31T19:17:54.710Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:17:54.710Z [INFO] 🌍 Environment: development
+2025-08-31T19:17:54.711Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:17:54.711Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:17:54.711Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:17:54.805Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:17:54.867Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:17:54.872Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:19:53.580Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:19:53.588Z [INFO] 🌍 Environment: development
+2025-08-31T19:19:53.591Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:19:53.593Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:19:53.593Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:19:53.771Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:19:53.851Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:20:17.752Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:20:17.767Z [INFO] 🌍 Environment: development
+2025-08-31T19:20:17.767Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:20:17.767Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:20:17.768Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:20:18.997Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:20:20.363Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:20:21.725Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:20:48.440Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:20:48.454Z [INFO] 🌍 Environment: development
+2025-08-31T19:20:48.457Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:20:48.464Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:20:48.464Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:20:48.842Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:20:49.552Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:20:50.677Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:21:37.184Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:21:37.185Z [INFO] 🌍 Environment: development
+2025-08-31T19:21:37.193Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:21:37.196Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:21:37.198Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:21:37.573Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:21:38.591Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:21:38.964Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:48:37.819Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:48:37.864Z [INFO] 🌍 Environment: development
+2025-08-31T19:48:37.865Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:48:37.866Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:48:37.866Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:48:56.268Z [INFO] GET /api - 200 - 5.144ms | Data: {"method":"GET","url":"/api","statusCode":200,"responseTime":5.144}
+2025-08-31T19:49:06.775Z [ERROR] POST /api/categories/dev - 400 - 321.521ms | Data: {"method":"POST","url":"/api/categories/dev","statusCode":400,"responseTime":321.521}
+2025-08-31T19:49:46.133Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:49:46.134Z [INFO] 🌍 Environment: development
+2025-08-31T19:49:46.134Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:49:46.134Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:49:46.134Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:50:04.205Z [INFO] POST /api/categories/dev - 201 - 81.841ms | Data: {"method":"POST","url":"/api/categories/dev","statusCode":201,"responseTime":81.841}
+2025-08-31T19:50:13.839Z [INFO] POST /api/categories/dev - 201 - 6.695ms | Data: {"method":"POST","url":"/api/categories/dev","statusCode":201,"responseTime":6.695}
+2025-08-31T19:50:46.208Z [ERROR] POST /api/auth/login - 401 - 62.47ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":62.47}
+2025-08-31T19:50:53.649Z [ERROR] GET /api/categories/dev - 404 - 3.208ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":3.208}
+2025-08-31T19:51:01.933Z [INFO] GET /api/categories - 200 - 20.966ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":20.966}
+2025-08-31T19:51:23.787Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:51:23.788Z [INFO] 🌍 Environment: development
+2025-08-31T19:51:23.788Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:51:23.789Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:51:23.789Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:51:37.805Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:51:52.662Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T19:51:52.663Z [INFO] 🌍 Environment: development
+2025-08-31T19:51:52.667Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T19:51:52.667Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T19:51:52.667Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T19:51:55.101Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:52:06.168Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T19:52:45.560Z [ERROR] POST /api/auth/login - 401 - 85.168ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":85.168}
+2025-08-31T19:56:32.499Z [INFO] POST /api/auth/login - 200 - 378.119ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":378.119}
+2025-08-31T19:56:54.744Z [ERROR] GET /api/categories/dev - 404 - 164.356ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":164.356}
+2025-08-31T19:56:54.752Z [ERROR] GET /api/categories/dev - 404 - 3.294ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":3.294}
+2025-08-31T19:57:22.386Z [ERROR] GET /api/categories/dev - 404 - 5.237ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":5.237}
+2025-08-31T19:57:22.389Z [ERROR] GET /api/categories/dev - 404 - 5.135ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":5.135}
+2025-08-31T20:01:18.664Z [INFO] POST /api/categories/dev - 201 - 8.046ms | Data: {"method":"POST","url":"/api/categories/dev","statusCode":201,"responseTime":8.046}
+2025-08-31T20:01:28.003Z [ERROR] POST /api/products/dev - 400 - 93.672ms | Data: {"method":"POST","url":"/api/products/dev","statusCode":400,"responseTime":93.672}
+2025-08-31T20:01:34.522Z [ERROR] GET /api/categories/dev - 404 - 4.167ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":4.167}
+2025-08-31T20:01:34.523Z [ERROR] GET /api/categories/dev - 404 - 3.567ms | Data: {"method":"GET","url":"/api/categories/dev","statusCode":404,"responseTime":3.567}
+2025-08-31T20:05:32.455Z [INFO] GET /api/categories - 200 - 36.331ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":36.331}
+2025-08-31T20:05:43.195Z [ERROR] PUT /api/categories/cmf048w9000004glxxztepj57 - 401 - 2.603ms | Data: {"method":"PUT","url":"/api/categories/cmf048w9000004glxxztepj57","statusCode":401,"responseTime":2.603}
+2025-08-31T20:09:22.721Z [INFO] GET /api/categories - 200 - 15.205ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":15.205}
+2025-08-31T20:09:22.751Z [INFO] GET /api/categories - 304 - 9.515ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":9.515}
+2025-08-31T20:11:45.702Z [INFO] GET /api/categories - 304 - 101.016ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":101.016}
+2025-08-31T20:14:44.735Z [ERROR] POST /api/categories - 403 - 78.247ms | Data: {"method":"POST","url":"/api/categories","statusCode":403,"responseTime":78.247}
+2025-08-31T20:14:49.361Z [ERROR] POST /api/categories - 403 - 11.418ms | Data: {"method":"POST","url":"/api/categories","statusCode":403,"responseTime":11.418}
+2025-08-31T20:16:53.210Z [ERROR] POST /api/categories - 401 - 1.149ms | Data: {"method":"POST","url":"/api/categories","statusCode":401,"responseTime":1.149}
+2025-08-31T20:18:07.310Z [INFO] POST /api/auth/login - 200 - 409.338ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":409.338}
+2025-08-31T20:18:47.235Z [INFO] GET /api/categories - 200 - 34.645ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":34.645}
+2025-08-31T20:19:35.145Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-08-31T20:21:24.747Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T20:21:24.748Z [INFO] 🌍 Environment: development
+2025-08-31T20:21:24.748Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T20:21:24.748Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T20:21:24.749Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T20:24:32.935Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T20:24:32.937Z [INFO] 🌍 Environment: development
+2025-08-31T20:24:32.938Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T20:24:32.938Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T20:24:32.938Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T20:24:32.938Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-08-31T20:24:33.705Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T20:24:33.707Z [INFO] 🌍 Environment: development
+2025-08-31T20:24:33.708Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T20:24:33.708Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T20:24:33.708Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-08-31T20:24:33.709Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-08-31T20:24:34.303Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-08-31T20:24:34.304Z [INFO] 🌍 Environment: development
+2025-08-31T20:24:34.304Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-08-31T20:24:34.304Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-08-31T20:24:34.304Z [INFO] 🔧 Development mode - detailed logging enabled

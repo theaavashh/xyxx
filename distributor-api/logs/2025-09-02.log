@@ -1,0 +1,49 @@
+2025-09-02T02:39:46.814Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-02T02:39:46.817Z [INFO] 🌍 Environment: development
+2025-09-02T02:39:46.818Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-02T02:39:46.818Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-02T02:39:46.818Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-02T02:41:14.258Z [ERROR] POST /api/applications/submit - 400 - 58.92ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":58.92}
+2025-09-02T02:45:45.340Z [INFO] POST /api/applications/submit - 201 - 362.244ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":362.244}
+2025-09-02T03:56:56.235Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-02T03:56:56.239Z [INFO] 🌍 Environment: development
+2025-09-02T03:56:56.239Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-02T03:56:56.241Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-02T03:56:56.244Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-02T04:20:46.940Z [ERROR] POST /api/applications/submit - 400 - 358.463ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":358.463}
+2025-09-02T07:33:03.374Z [ERROR] POST /api/applications/submit - 400 - 306.255ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":306.255}
+2025-09-02T07:40:10.168Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-02T07:40:10.171Z [INFO] 🌍 Environment: development
+2025-09-02T07:40:10.172Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-02T07:40:10.172Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-02T07:40:10.173Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-02T08:00:43.536Z [ERROR] POST /api/applications/submit - 400 - 192.763ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":192.763}
+2025-09-02T08:03:51.713Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-02T08:03:51.718Z [INFO] HTTP server closed
+2025-09-02T08:05:06.726Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-02T08:05:06.726Z [INFO] 🌍 Environment: development
+2025-09-02T08:05:06.726Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-02T08:05:06.727Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-02T08:05:06.727Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-02T08:05:10.251Z [INFO] GET /health - 200 - 8.946ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":8.946}
+2025-09-02T08:06:00.360Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-02T08:06:00.361Z [INFO] 🌍 Environment: development
+2025-09-02T08:06:00.361Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-02T08:06:00.361Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-02T08:06:00.361Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-02T08:07:51.696Z [INFO] POST /api/applications/submit - 201 - 112.92ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":112.92}
+2025-09-02T08:34:00.772Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-02T08:34:00.819Z [INFO] 🌍 Environment: development
+2025-09-02T08:34:00.820Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-02T08:34:00.820Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-02T08:34:00.820Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-02T08:34:00.822Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

@@ -1,0 +1,565 @@
+2025-09-05T04:05:39.859Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T04:05:39.860Z [INFO] 🌍 Environment: development
+2025-09-05T04:05:39.860Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T04:05:39.860Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T04:05:39.860Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T04:06:00.914Z [INFO] POST /api/auth/login - 200 - 503.752ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":503.752}
+2025-09-05T04:07:31.635Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-05T04:07:31.645Z [INFO] HTTP server closed
+2025-09-05T05:52:37.286Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T05:52:37.300Z [INFO] 🌍 Environment: development
+2025-09-05T05:52:37.300Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T05:52:37.301Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T05:52:37.301Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:04:13.690Z [ERROR] GET /api/production/analytics/kpis?period=monthly - 404 - 3.03ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":404,"responseTime":3.03}
+2025-09-05T06:04:13.694Z [ERROR] GET /api/production/analytics/kpis?period=monthly - 404 - 0.818ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":404,"responseTime":0.818}
+2025-09-05T06:04:13.698Z [ERROR] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 404 - 0.922ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":404,"responseTime":0.922}
+2025-09-05T06:04:13.709Z [ERROR] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 404 - 0.431ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":404,"responseTime":0.431}
+2025-09-05T06:04:15.092Z [ERROR] GET /api/production/raw-materials/transactions - 404 - 1.157ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":404,"responseTime":1.157}
+2025-09-05T06:04:15.101Z [ERROR] GET /api/production/raw-materials - 404 - 1.164ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":404,"responseTime":1.164}
+2025-09-05T06:04:15.110Z [ERROR] GET /api/production/raw-materials/transactions - 404 - 1.387ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":404,"responseTime":1.387}
+2025-09-05T06:04:15.120Z [ERROR] GET /api/production/raw-materials - 404 - 1.682ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":404,"responseTime":1.682}
+2025-09-05T06:04:15.128Z [ERROR] GET /api/production/raw-materials/categories - 404 - 0.915ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":404,"responseTime":0.915}
+2025-09-05T06:04:15.136Z [ERROR] GET /api/production/raw-materials/categories - 404 - 0.419ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":404,"responseTime":0.419}
+2025-09-05T06:04:50.215Z [ERROR] GET /api/production/records - 404 - 0.457ms | Data: {"method":"GET","url":"/api/production/records","statusCode":404,"responseTime":0.457}
+2025-09-05T06:04:50.218Z [ERROR] GET /api/production/orders - 404 - 0.482ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":404,"responseTime":0.482}
+2025-09-05T06:04:50.226Z [ERROR] GET /api/production/records - 404 - 0.375ms | Data: {"method":"GET","url":"/api/production/records","statusCode":404,"responseTime":0.375}
+2025-09-05T06:04:50.231Z [ERROR] GET /api/production/orders - 404 - 0.4ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":404,"responseTime":0.4}
+2025-09-05T06:05:09.145Z [ERROR] GET /api/production/analytics/kpis?period=monthly - 404 - 0.93ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":404,"responseTime":0.93}
+2025-09-05T06:05:09.154Z [ERROR] GET /api/production/analytics/kpis?period=monthly - 404 - 1.64ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":404,"responseTime":1.64}
+2025-09-05T06:05:09.167Z [ERROR] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 404 - 1.158ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":404,"responseTime":1.158}
+2025-09-05T06:05:09.176Z [ERROR] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 404 - 0.656ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":404,"responseTime":0.656}
+2025-09-05T06:05:17.520Z [ERROR] GET /api/production/analytics/kpis?period=monthly - 404 - 0.315ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":404,"responseTime":0.315}
+2025-09-05T06:05:17.527Z [ERROR] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 404 - 0.428ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":404,"responseTime":0.428}
+2025-09-05T06:05:17.539Z [ERROR] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 404 - 0.331ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":404,"responseTime":0.331}
+2025-09-05T06:05:17.542Z [ERROR] GET /api/production/analytics/kpis?period=monthly - 404 - 0.354ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":404,"responseTime":0.354}
+2025-09-05T06:05:54.182Z [ERROR] GET /api/production/raw-materials - 404 - 0.43ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":404,"responseTime":0.43}
+2025-09-05T06:05:54.187Z [ERROR] GET /api/production/raw-materials/categories - 404 - 0.548ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":404,"responseTime":0.548}
+2025-09-05T06:05:54.192Z [ERROR] GET /api/production/raw-materials/transactions - 404 - 3.125ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":404,"responseTime":3.125}
+2025-09-05T06:05:54.196Z [ERROR] GET /api/production/raw-materials/categories - 404 - 0.427ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":404,"responseTime":0.427}
+2025-09-05T06:05:54.202Z [ERROR] GET /api/production/raw-materials - 404 - 0.331ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":404,"responseTime":0.331}
+2025-09-05T06:05:54.209Z [ERROR] GET /api/production/raw-materials/transactions - 404 - 0.327ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":404,"responseTime":0.327}
+2025-09-05T06:14:31.721Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:14:31.752Z [INFO] 🌍 Environment: development
+2025-09-05T06:14:31.752Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:14:31.753Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:14:31.753Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:17:50.052Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:17:50.063Z [INFO] 🌍 Environment: development
+2025-09-05T06:17:50.063Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:17:50.064Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:17:50.064Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:18:15.677Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:18:15.678Z [INFO] 🌍 Environment: development
+2025-09-05T06:18:15.678Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:18:15.678Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:18:15.678Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:18:33.348Z [ERROR] GET /api/production/raw-materials - 401 - 21.256ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":401,"responseTime":21.256}
+2025-09-05T06:18:39.398Z [INFO] GET /api/health - 200 - 1.26ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":1.26}
+2025-09-05T06:26:21.569Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:26:21.569Z [INFO] 🌍 Environment: development
+2025-09-05T06:26:21.570Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:26:21.570Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:26:21.570Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:26:40.739Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:26:40.740Z [INFO] 🌍 Environment: development
+2025-09-05T06:26:40.740Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:26:40.740Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:26:40.740Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:26:50.937Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:26:50.937Z [INFO] 🌍 Environment: development
+2025-09-05T06:26:50.938Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:26:50.938Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:26:50.938Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:27:08.923Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:27:08.923Z [INFO] 🌍 Environment: development
+2025-09-05T06:27:08.924Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:27:08.924Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:27:08.924Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:27:31.324Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:27:31.324Z [INFO] 🌍 Environment: development
+2025-09-05T06:27:31.324Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:27:31.324Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:27:31.325Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:31:01.989Z [ERROR] GET /api/production/raw-materials/categories - 401 - 6.457ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":6.457}
+2025-09-05T06:31:01.998Z [ERROR] GET /api/production/raw-materials/categories - 401 - 2.914ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":2.914}
+2025-09-05T06:31:02.008Z [ERROR] GET /api/production/work-centers - 401 - 1.081ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":1.081}
+2025-09-05T06:31:02.014Z [ERROR] GET /api/production/machines - 401 - 1.742ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":1.742}
+2025-09-05T06:31:02.023Z [ERROR] GET /api/production/work-centers - 401 - 5.608ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":5.608}
+2025-09-05T06:31:02.028Z [ERROR] GET /api/production/machines - 401 - 2.951ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":2.951}
+2025-09-05T06:31:36.529Z [ERROR] POST /api/production/raw-materials/categories - 401 - 1.354ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":1.354}
+2025-09-05T06:31:53.225Z [ERROR] GET /api/production/raw-materials/categories - 401 - 2.002ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":2.002}
+2025-09-05T06:31:53.235Z [ERROR] GET /api/production/work-centers - 401 - 4.868ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":4.868}
+2025-09-05T06:31:53.244Z [ERROR] GET /api/production/work-centers - 401 - 1.095ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":1.095}
+2025-09-05T06:31:53.248Z [ERROR] GET /api/production/machines - 401 - 1.12ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":1.12}
+2025-09-05T06:31:53.251Z [ERROR] GET /api/production/raw-materials/categories - 401 - 1.185ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":1.185}
+2025-09-05T06:31:53.257Z [ERROR] GET /api/production/machines - 401 - 1.252ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":1.252}
+2025-09-05T06:32:53.623Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T06:32:56.121Z [INFO] GET /api/health - 200 - 4.5ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":4.5}
+2025-09-05T06:33:03.658Z [INFO] POST /api/auth/login - 200 - 298.315ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":298.315}
+2025-09-05T06:33:16.982Z [INFO] POST /api/auth/login - 200 - 109.799ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":109.799}
+2025-09-05T06:33:23.580Z [ERROR] GET /api/production/raw-materials/categories - 401 - 4.779ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":4.779}
+2025-09-05T06:33:23.608Z [ERROR] GET /api/production/work-centers - 401 - 8.115ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":8.115}
+2025-09-05T06:33:23.641Z [ERROR] GET /api/production/machines - 401 - 2.94ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":2.94}
+2025-09-05T06:33:28.340Z [INFO] GET /api/production/raw-materials/categories - 200 - 224.662ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":224.662}
+2025-09-05T06:33:45.575Z [INFO] GET /api/production/work-centers - 200 - 136.88ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":200,"responseTime":136.88}
+2025-09-05T06:33:53.980Z [INFO] POST /api/production/raw-materials/categories - 201 - 9.668ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":201,"responseTime":9.668}
+2025-09-05T06:34:42.465Z [INFO] POST /api/production/work-centers - 201 - 59.555ms | Data: {"method":"POST","url":"/api/production/work-centers","statusCode":201,"responseTime":59.555}
+2025-09-05T06:34:57.116Z [INFO] POST /api/production/machines - 201 - 21.007ms | Data: {"method":"POST","url":"/api/production/machines","statusCode":201,"responseTime":21.007}
+2025-09-05T06:35:06.542Z [INFO] GET /api/production/raw-materials/categories - 200 - 4.522ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":4.522}
+2025-09-05T06:35:20.683Z [ERROR] GET /api/production/raw-materials/categories - 401 - 9.322ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":9.322}
+2025-09-05T06:35:20.710Z [ERROR] GET /api/production/work-centers - 401 - 21.735ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":21.735}
+2025-09-05T06:35:20.717Z [ERROR] GET /api/production/machines - 401 - 13.909ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":13.909}
+2025-09-05T06:35:22.923Z [ERROR] GET /api/production/raw-materials/categories - 401 - 18.273ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":18.273}
+2025-09-05T06:35:22.925Z [ERROR] GET /api/production/work-centers - 401 - 12.536ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":12.536}
+2025-09-05T06:35:22.927Z [ERROR] GET /api/production/machines - 401 - 7.182ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":7.182}
+2025-09-05T06:35:52.929Z [ERROR] GET /api/production/raw-materials/categories - 401 - 8.67ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":8.67}
+2025-09-05T06:35:52.933Z [ERROR] GET /api/production/work-centers - 401 - 5.408ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":5.408}
+2025-09-05T06:35:52.944Z [ERROR] GET /api/production/machines - 401 - 8.381ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":8.381}
+2025-09-05T06:35:52.945Z [ERROR] GET /api/production/raw-materials/categories - 401 - 3.397ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":3.397}
+2025-09-05T06:35:52.952Z [ERROR] GET /api/production/work-centers - 401 - 5.773ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":5.773}
+2025-09-05T06:35:52.981Z [ERROR] GET /api/production/machines - 401 - 32.103ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":32.103}
+2025-09-05T06:36:39.798Z [INFO] GET /api/health - 200 - 2.333ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":2.333}
+2025-09-05T06:36:49.738Z [INFO] GET /api/production/raw-materials/categories - 200 - 5.684ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":5.684}
+2025-09-05T06:37:10.424Z [ERROR] GET /api/production/raw-materials/categories - 401 - 7.967ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":7.967}
+2025-09-05T06:37:10.427Z [ERROR] GET /api/production/work-centers - 401 - 6.433ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":6.433}
+2025-09-05T06:37:10.434Z [ERROR] GET /api/production/machines - 401 - 4.766ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":4.766}
+2025-09-05T06:37:17.172Z [ERROR] GET /api/production/raw-materials/categories - 401 - 7.675ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":7.675}
+2025-09-05T06:37:17.179Z [ERROR] GET /api/production/work-centers - 401 - 7.113ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":7.113}
+2025-09-05T06:37:17.180Z [ERROR] GET /api/production/machines - 401 - 5.816ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":5.816}
+2025-09-05T06:37:17.191Z [ERROR] GET /api/production/raw-materials/categories - 401 - 5.577ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":5.577}
+2025-09-05T06:37:17.193Z [ERROR] GET /api/production/work-centers - 401 - 4.38ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":4.38}
+2025-09-05T06:37:17.199Z [ERROR] GET /api/production/machines - 401 - 3.803ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":3.803}
+2025-09-05T06:38:22.798Z [INFO] POST /api/auth/login - 200 - 186.634ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":186.634}
+2025-09-05T06:38:30.728Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-05 - 200 - 11.563ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-05","statusCode":200,"responseTime":11.563}
+2025-09-05T06:38:30.732Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 200 - 10.492ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":200,"responseTime":10.492}
+2025-09-05T06:38:30.747Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-05 - 304 - 11.132ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-05","statusCode":304,"responseTime":11.132}
+2025-09-05T06:38:30.755Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-05 - 200 - 12.61ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-05","statusCode":200,"responseTime":12.61}
+2025-09-05T06:38:30.787Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 304 - 19.894ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":304,"responseTime":19.894}
+2025-09-05T06:38:30.788Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-05 - 304 - 9.518ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-05","statusCode":304,"responseTime":9.518}
+2025-09-05T06:38:30.810Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 304 - 13.356ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":304,"responseTime":13.356}
+2025-09-05T06:38:33.860Z [INFO] GET /api/production/records - 200 - 42.658ms | Data: {"method":"GET","url":"/api/production/records","statusCode":200,"responseTime":42.658}
+2025-09-05T06:38:33.861Z [INFO] GET /api/production/orders - 200 - 40.624ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":200,"responseTime":40.624}
+2025-09-05T06:38:33.871Z [INFO] GET /api/production/orders - 304 - 5.168ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":5.168}
+2025-09-05T06:38:33.873Z [INFO] GET /api/production/records - 304 - 9.172ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":9.172}
+2025-09-05T06:38:40.254Z [INFO] GET /api/production/raw-materials/categories - 200 - 15.169ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":15.169}
+2025-09-05T06:38:40.259Z [INFO] GET /api/production/work-centers - 200 - 11.548ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":200,"responseTime":11.548}
+2025-09-05T06:38:40.272Z [INFO] GET /api/production/raw-materials/categories - 304 - 9.914ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":9.914}
+2025-09-05T06:38:40.274Z [INFO] GET /api/production/work-centers - 304 - 8.844ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":8.844}
+2025-09-05T06:38:40.281Z [INFO] GET /api/production/machines - 200 - 32.172ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":200,"responseTime":32.172}
+2025-09-05T06:38:40.291Z [INFO] GET /api/production/machines - 304 - 6.644ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":6.644}
+2025-09-05T06:38:45.847Z [INFO] DELETE /api/production/raw-materials/categories/cmf6gltfe0000y40l43b5m3zn - 200 - 30.168ms | Data: {"method":"DELETE","url":"/api/production/raw-materials/categories/cmf6gltfe0000y40l43b5m3zn","statusCode":200,"responseTime":30.168}
+2025-09-05T06:39:36.504Z [ERROR] GET /api/production/raw-materials/categories - 401 - 36.211ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":36.211}
+2025-09-05T06:39:36.551Z [ERROR] GET /api/production/work-centers - 401 - 59.18ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":401,"responseTime":59.18}
+2025-09-05T06:39:36.594Z [ERROR] GET /api/production/machines - 401 - 20.128ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":401,"responseTime":20.128}
+2025-09-05T06:39:36.790Z [INFO] GET /api/production/work-centers - 304 - 31.793ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":31.793}
+2025-09-05T06:39:36.819Z [INFO] GET /api/production/machines - 304 - 40.113ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":40.113}
+2025-09-05T06:39:36.828Z [INFO] GET /api/production/raw-materials/categories - 200 - 28.054ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":28.054}
+2025-09-05T06:41:44.790Z [INFO] POST /api/production/raw-materials/categories - 201 - 59.446ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":201,"responseTime":59.446}
+2025-09-05T06:41:44.791Z [INFO] POST /api/production/raw-materials/categories - 201 - 46.476ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":201,"responseTime":46.476}
+2025-09-05T06:41:50.750Z [INFO] GET /api/production/raw-materials/categories - 200 - 15.181ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":15.181}
+2025-09-05T06:41:50.754Z [INFO] GET /api/production/raw-materials - 200 - 11.872ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":11.872}
+2025-09-05T06:41:50.756Z [INFO] GET /api/production/raw-materials/transactions - 200 - 8.661ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":200,"responseTime":8.661}
+2025-09-05T06:41:50.771Z [INFO] GET /api/production/raw-materials/categories - 304 - 11.71ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":11.71}
+2025-09-05T06:41:50.774Z [INFO] GET /api/production/raw-materials/transactions - 304 - 7.198ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":7.198}
+2025-09-05T06:41:50.776Z [INFO] GET /api/production/raw-materials - 304 - 12.917ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":12.917}
+2025-09-05T06:43:06.704Z [ERROR] Error creating raw material: | Stack: PrismaClientValidationError: 
+Invalid `prisma.rawMaterial.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:62:47
+
+  59   materialData.materialCode = `RM${String(count + 1).padStart(3, '0')}`;
+  60 }
+  61 
+→ 62 const material = await prisma.rawMaterial.create({
+       data: {
+         materialCode: "2011`",
+         materialName: "Masala ",
+         category: "Food and Beverage",
+                   ~~~~~~~~~~~~~~~~~~~
+         description: "",
+         unit: "gram",
+         minStockLevel: 1200,
+         maxStockLevel: 120000,
+         reorderPoint: 4000,
+         unitCost: 100,
+         supplierId: "",
+         location: "Kamalbinayak",
+         shelfLife: 0
+       },
+       include: {
+         category: true
+       }
+     })
+
+Argument `category`: Invalid value provided. Expected RawMaterialCategoryCreateNestedOneWithoutMaterialsInput, provided String.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createRawMaterial (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:62:22)
+2025-09-05T06:43:06.706Z [ERROR] POST /api/production/raw-materials - 500 - 74.003ms | Data: {"method":"POST","url":"/api/production/raw-materials","statusCode":500,"responseTime":74.003}
+2025-09-05T06:43:10.425Z [ERROR] Error creating raw material: | Stack: PrismaClientValidationError: 
+Invalid `prisma.rawMaterial.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:62:47
+
+  59   materialData.materialCode = `RM${String(count + 1).padStart(3, '0')}`;
+  60 }
+  61 
+→ 62 const material = await prisma.rawMaterial.create({
+       data: {
+         materialCode: "2011`",
+         materialName: "Masala ",
+         category: "Food and Beverage",
+                   ~~~~~~~~~~~~~~~~~~~
+         description: "",
+         unit: "gram",
+         minStockLevel: 1200,
+         maxStockLevel: 120000,
+         reorderPoint: 4000,
+         unitCost: 100,
+         supplierId: "",
+         location: "Kamalbinayak",
+         shelfLife: 0
+       },
+       include: {
+         category: true
+       }
+     })
+
+Argument `category`: Invalid value provided. Expected RawMaterialCategoryCreateNestedOneWithoutMaterialsInput, provided String.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createRawMaterial (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:62:22)
+2025-09-05T06:43:10.430Z [ERROR] POST /api/production/raw-materials - 500 - 18.16ms | Data: {"method":"POST","url":"/api/production/raw-materials","statusCode":500,"responseTime":18.16}
+2025-09-05T06:45:13.672Z [INFO] GET /api/production/raw-materials - 200 - 32.677ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":32.677}
+2025-09-05T06:45:48.042Z [INFO] GET /api/production/raw-materials - 200 - 18.334ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":18.334}
+2025-09-05T06:45:58.099Z [ERROR] Error creating raw material: | Stack: PrismaClientValidationError: 
+Invalid `prisma.rawMaterial.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:62:47
+
+  59   materialData.materialCode = `RM${String(count + 1).padStart(3, '0')}`;
+  60 }
+  61 
+→ 62 const material = await prisma.rawMaterial.create({
+       data: {
+         materialCode: "2011",
+         materialName: "Masala",
+         category: "Food and Beverage",
+                   ~~~~~~~~~~~~~~~~~~~
+         description: "Test material",
+         unit: "gram",
+         minStockLevel: 1200,
+         maxStockLevel: 120000,
+         reorderPoint: 4000,
+         unitCost: 100,
+         location: "Kamalbinayak",
+         shelfLife: 0
+       },
+       include: {
+         category: true
+       }
+     })
+
+Argument `category`: Invalid value provided. Expected RawMaterialCategoryCreateNestedOneWithoutMaterialsInput, provided String.
+    at wn (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:29:1363)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6958)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createRawMaterial (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:62:22)
+2025-09-05T06:45:58.101Z [ERROR] POST /api/production/raw-materials - 500 - 13.3ms | Data: {"method":"POST","url":"/api/production/raw-materials","statusCode":500,"responseTime":13.3}
+2025-09-05T06:48:08.170Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:48:08.172Z [INFO] 🌍 Environment: development
+2025-09-05T06:48:08.172Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:48:08.172Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:48:08.172Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:48:08.184Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T06:49:20.329Z [INFO] POST /api/production/raw-materials - 201 - 218.729ms | Data: {"method":"POST","url":"/api/production/raw-materials","statusCode":201,"responseTime":218.729}
+2025-09-05T06:49:30.794Z [INFO] GET /api/production/raw-materials - 200 - 7.245ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":7.245}
+2025-09-05T06:49:46.289Z [INFO] GET /api/production/raw-materials - 200 - 13.853ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":13.853}
+2025-09-05T06:49:46.299Z [INFO] GET /api/production/raw-materials/transactions - 304 - 12.377ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":12.377}
+2025-09-05T06:49:46.307Z [INFO] GET /api/production/raw-materials - 304 - 11.457ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.457}
+2025-09-05T06:49:46.310Z [INFO] GET /api/production/raw-materials/categories - 304 - 28.438ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":28.438}
+2025-09-05T06:49:46.313Z [INFO] GET /api/production/raw-materials/transactions - 304 - 7.669ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":7.669}
+2025-09-05T06:49:46.320Z [INFO] GET /api/production/raw-materials/categories - 304 - 4.994ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":4.994}
+2025-09-05T06:49:58.591Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T06:49:58.592Z [INFO] 🌍 Environment: development
+2025-09-05T06:49:58.593Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T06:49:58.593Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T06:49:58.594Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T06:49:58.723Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T07:01:34.485Z [ERROR] POST /api/production/raw-materials/categories - 401 - 280.745ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":280.745}
+2025-09-05T07:01:40.403Z [ERROR] POST /api/production/raw-materials/categories - 401 - 10.462ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":10.462}
+2025-09-05T07:03:15.121Z [ERROR] Error creating raw material category: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.rawMaterialCategory.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:164:55
+
+  161 export const createRawMaterialCategory = async (req: Request, res: Response) => {
+  162   try {
+  163     const categoryData = req.body;
+→ 164     const category = await prisma.rawMaterialCategory.create(
+Unique constraint failed on the fields: (`name`)
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createRawMaterialCategory (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:164:22)
+2025-09-05T07:03:15.127Z [ERROR] POST /api/production/raw-materials/categories - 500 - 375.795ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":500,"responseTime":375.795}
+2025-09-05T07:03:52.713Z [INFO] GET /api/production/raw-materials/categories - 200 - 7.847ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":7.847}
+2025-09-05T07:04:05.639Z [INFO] POST /api/production/raw-materials/categories - 201 - 6.315ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":201,"responseTime":6.315}
+2025-09-05T07:06:10.812Z [ERROR] POST /api/production/raw-materials/categories - 401 - 9.673ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":401,"responseTime":9.673}
+2025-09-05T07:07:18.636Z [ERROR] GET /api/accounting/journal-entries - 401 - 63.923ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":401,"responseTime":63.923}
+2025-09-05T07:07:18.659Z [ERROR] GET /api/accounting/accounts - 401 - 62.592ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":401,"responseTime":62.592}
+2025-09-05T07:07:18.739Z [ERROR] GET /api/accounting/journal-entries - 401 - 64.896ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":401,"responseTime":64.896}
+2025-09-05T07:07:18.742Z [ERROR] GET /api/accounting/accounts - 401 - 25.13ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":401,"responseTime":25.13}
+2025-09-05T07:07:22.806Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.936ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.936}
+2025-09-05T07:07:22.813Z [ERROR] GET /api/accounting/trial-balance?asOfDate=2025-09-05 - 401 - 0.402ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-05","statusCode":401,"responseTime":0.402}
+2025-09-05T07:07:22.817Z [ERROR] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-05 - 401 - 0.384ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-05","statusCode":401,"responseTime":0.384}
+2025-09-05T07:07:22.826Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.428ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.428}
+2025-09-05T07:07:22.837Z [ERROR] GET /api/accounting/trial-balance?asOfDate=2025-09-05 - 401 - 0.369ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-05","statusCode":401,"responseTime":0.369}
+2025-09-05T07:07:22.857Z [ERROR] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-05 - 401 - 0.604ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-05","statusCode":401,"responseTime":0.604}
+2025-09-05T07:07:22.905Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.411ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.411}
+2025-09-05T07:07:22.940Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.341ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.341}
+2025-09-05T07:07:23.265Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.327ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.327}
+2025-09-05T07:07:23.349Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 8.827ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":8.827}
+2025-09-05T07:07:23.668Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.365ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.365}
+2025-09-05T07:07:23.739Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.321ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.321}
+2025-09-05T07:07:24.145Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 1.275ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":1.275}
+2025-09-05T07:07:24.185Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.312ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.312}
+2025-09-05T07:07:24.499Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.339ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.339}
+2025-09-05T07:07:24.586Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 14.785ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":14.785}
+2025-09-05T07:07:24.826Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 10.727ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":10.727}
+2025-09-05T07:07:24.903Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.384ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.384}
+2025-09-05T07:07:25.128Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.32ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.32}
+2025-09-05T07:07:25.181Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.348ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.348}
+2025-09-05T07:07:25.413Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 3.19ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":3.19}
+2025-09-05T07:07:25.461Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.286ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.286}
+2025-09-05T07:07:25.776Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.325ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.325}
+2025-09-05T07:07:25.839Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.337ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.337}
+2025-09-05T07:07:26.197Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 2.411ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":2.411}
+2025-09-05T07:07:26.244Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.327ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.327}
+2025-09-05T07:07:26.418Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 2.319ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":2.319}
+2025-09-05T07:07:26.484Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 1.652ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":1.652}
+2025-09-05T07:07:26.723Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.343ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.343}
+2025-09-05T07:07:26.795Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 5.7ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":5.7}
+2025-09-05T07:07:27.007Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 9.993ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":9.993}
+2025-09-05T07:07:27.077Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 11.268ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":11.268}
+2025-09-05T07:07:27.262Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.341ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.341}
+2025-09-05T07:07:27.317Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 8.446ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":8.446}
+2025-09-05T07:07:27.554Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 5.688ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":5.688}
+2025-09-05T07:07:27.627Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.354ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.354}
+2025-09-05T07:07:27.834Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.303ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.303}
+2025-09-05T07:07:27.877Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.282ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.282}
+2025-09-05T07:07:28.192Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.34ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.34}
+2025-09-05T07:07:28.393Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.678ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.678}
+2025-09-05T07:07:28.603Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.275ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.275}
+2025-09-05T07:07:28.726Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.413ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.413}
+2025-09-05T07:07:29.417Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.356ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.356}
+2025-09-05T07:07:29.429Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.329ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.329}
+2025-09-05T07:07:29.633Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 1.03ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":1.03}
+2025-09-05T07:07:29.908Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.318ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.318}
+2025-09-05T07:07:29.926Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 1.797ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":1.797}
+2025-09-05T07:07:30.085Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.281ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.281}
+2025-09-05T07:07:30.119Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 1.781ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":1.781}
+2025-09-05T07:07:30.293Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.476ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.476}
+2025-09-05T07:07:30.395Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.359ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.359}
+2025-09-05T07:07:30.610Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.264ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.264}
+2025-09-05T07:07:30.631Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.295ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.295}
+2025-09-05T07:07:30.810Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.288ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.288}
+2025-09-05T07:07:30.874Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.96ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.96}
+2025-09-05T07:07:31.056Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 4.444ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":4.444}
+2025-09-05T07:07:31.088Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.247ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.247}
+2025-09-05T07:07:31.239Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 11.364ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":11.364}
+2025-09-05T07:07:31.269Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 5.578ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":5.578}
+2025-09-05T07:07:31.366Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.205ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.205}
+2025-09-05T07:07:31.385Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.396ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.396}
+2025-09-05T07:07:31.489Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 5.602ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":5.602}
+2025-09-05T07:07:31.587Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 4.504ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":4.504}
+2025-09-05T07:07:31.708Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.344ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.344}
+2025-09-05T07:07:31.744Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 1.326ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":1.326}
+2025-09-05T07:07:32.093Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.232ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.232}
+2025-09-05T07:07:32.341Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 8.3ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":8.3}
+2025-09-05T07:07:32.551Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 6.678ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":6.678}
+2025-09-05T07:07:32.607Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.306ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.306}
+2025-09-05T07:07:32.789Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.766ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.766}
+2025-09-05T07:07:32.830Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.356ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.356}
+2025-09-05T07:07:33.023Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.267ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.267}
+2025-09-05T07:07:33.066Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.496ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.496}
+2025-09-05T07:07:33.259Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 2.186ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":2.186}
+2025-09-05T07:07:33.307Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 5.938ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":5.938}
+2025-09-05T07:07:33.488Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.345ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.345}
+2025-09-05T07:07:33.547Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.564ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.564}
+2025-09-05T07:07:33.810Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.6ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.6}
+2025-09-05T07:07:33.875Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.303ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.303}
+2025-09-05T07:07:34.096Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.281ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.281}
+2025-09-05T07:07:34.149Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.346ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.346}
+2025-09-05T07:07:34.396Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.339ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.339}
+2025-09-05T07:07:34.461Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.312ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.312}
+2025-09-05T07:07:34.724Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.291ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.291}
+2025-09-05T07:07:34.792Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.971ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.971}
+2025-09-05T07:07:34.965Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 2.053ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":2.053}
+2025-09-05T07:07:35.053Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.3ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.3}
+2025-09-05T07:07:35.481Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.282ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.282}
+2025-09-05T07:07:35.679Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.41ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.41}
+2025-09-05T07:07:36.362Z [ERROR] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-05 - 401 - 0.342ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-05","statusCode":401,"responseTime":0.342}
+2025-09-05T07:10:57.847Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T07:10:57.851Z [INFO] 🌍 Environment: development
+2025-09-05T07:10:57.852Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T07:10:57.853Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T07:10:57.853Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T07:10:57.868Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T07:11:09.107Z [INFO] GET /api/production/raw-materials - 200 - 349.836ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":349.836}
+2025-09-05T07:11:40.453Z [INFO] POST /api/auth/login - 200 - 170.058ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":170.058}
+2025-09-05T07:11:45.858Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 200 - 30.667ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":200,"responseTime":30.667}
+2025-09-05T07:11:45.862Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05 - 200 - 30.713ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2025-09-05&toDate=2025-09-05","statusCode":200,"responseTime":30.713}
+2025-09-05T07:11:45.866Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 52.487ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":52.487}
+2025-09-05T07:11:45.872Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 54.95ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":54.95}
+2025-09-05T07:11:53.859Z [INFO] GET /api/production/raw-materials - 200 - 16.792ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":16.792}
+2025-09-05T07:11:53.862Z [INFO] GET /api/production/raw-materials - 200 - 15.25ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":15.25}
+2025-09-05T07:11:53.869Z [INFO] GET /api/production/raw-materials/categories - 200 - 15.957ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":15.957}
+2025-09-05T07:11:53.870Z [INFO] GET /api/production/raw-materials/categories - 200 - 13.948ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":13.948}
+2025-09-05T07:11:53.879Z [INFO] GET /api/production/raw-materials/transactions - 200 - 12.83ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":200,"responseTime":12.83}
+2025-09-05T07:11:53.884Z [INFO] GET /api/production/raw-materials/transactions - 200 - 10.419ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":200,"responseTime":10.419}
+2025-09-05T07:12:23.745Z [INFO] PUT /api/production/raw-materials/cmf6h5o6w000162jwi6ds6ia7 - 200 - 29.418ms | Data: {"method":"PUT","url":"/api/production/raw-materials/cmf6h5o6w000162jwi6ds6ia7","statusCode":200,"responseTime":29.418}
+2025-09-05T07:16:05.046Z [INFO] GET /api/production/raw-materials - 200 - 36.932ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":36.932}
+2025-09-05T07:16:05.065Z [INFO] GET /api/production/raw-materials/categories - 304 - 32.368ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":32.368}
+2025-09-05T07:16:05.067Z [INFO] GET /api/production/raw-materials/transactions - 304 - 25.842ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":25.842}
+2025-09-05T07:19:49.635Z [INFO] GET /api/production/raw-materials - 200 - 113.546ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":113.546}
+2025-09-05T07:19:49.660Z [INFO] GET /api/production/raw-materials/categories - 200 - 131.094ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":131.094}
+2025-09-05T07:19:49.661Z [INFO] GET /api/production/raw-materials/transactions - 200 - 117.894ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":200,"responseTime":117.894}
+2025-09-05T07:19:49.674Z [INFO] GET /api/production/raw-materials/categories - 304 - 9.103ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":9.103}
+2025-09-05T07:19:49.676Z [INFO] GET /api/production/raw-materials/transactions - 304 - 8.35ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":8.35}
+2025-09-05T07:19:49.680Z [INFO] GET /api/production/raw-materials - 304 - 16.67ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":16.67}
+2025-09-05T07:20:05.094Z [INFO] PUT /api/production/raw-materials/cmf6h5o6w000162jwi6ds6ia7 - 200 - 29.499ms | Data: {"method":"PUT","url":"/api/production/raw-materials/cmf6h5o6w000162jwi6ds6ia7","statusCode":200,"responseTime":29.499}
+2025-09-05T07:21:27.424Z [INFO] GET /api/production/records - 200 - 11.355ms | Data: {"method":"GET","url":"/api/production/records","statusCode":200,"responseTime":11.355}
+2025-09-05T07:21:27.427Z [INFO] GET /api/production/orders - 200 - 11.034ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":200,"responseTime":11.034}
+2025-09-05T07:21:27.436Z [INFO] GET /api/production/records - 304 - 8.181ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":8.181}
+2025-09-05T07:21:27.440Z [INFO] GET /api/production/orders - 304 - 7.643ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":7.643}
+2025-09-05T07:21:56.833Z [INFO] GET /api/production/orders - 304 - 18.474ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":18.474}
+2025-09-05T07:21:56.838Z [INFO] GET /api/production/work-centers - 200 - 18.859ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":200,"responseTime":18.859}
+2025-09-05T07:21:56.845Z [INFO] GET /api/production/schedules - 200 - 15.962ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":200,"responseTime":15.962}
+2025-09-05T07:21:56.851Z [INFO] GET /api/production/orders - 304 - 9.267ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":9.267}
+2025-09-05T07:21:56.858Z [INFO] GET /api/production/work-centers - 304 - 11.154ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":11.154}
+2025-09-05T07:21:56.861Z [INFO] GET /api/production/schedules - 304 - 7.886ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":7.886}
+2025-09-05T07:22:37.081Z [INFO] GET /api/production/records - 304 - 11.503ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":11.503}
+2025-09-05T07:22:37.082Z [INFO] GET /api/production/orders - 304 - 7.564ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":7.564}
+2025-09-05T07:22:37.092Z [INFO] GET /api/production/records - 304 - 7.88ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":7.88}
+2025-09-05T07:22:37.095Z [INFO] GET /api/production/orders - 304 - 8.368ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":8.368}
+2025-09-05T07:24:11.165Z [INFO] GET /api/production/records - 304 - 23.04ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":23.04}
+2025-09-05T07:24:11.171Z [INFO] GET /api/production/orders - 304 - 26.147ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":26.147}
+2025-09-05T07:30:43.291Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T07:30:43.292Z [INFO] 🌍 Environment: development
+2025-09-05T07:30:43.292Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T07:30:43.292Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T07:30:43.292Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T07:30:43.318Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T07:30:48.159Z [INFO] GET /health - 200 - 10.699ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":10.699}
+2025-09-05T07:30:57.869Z [INFO] GET /api/production/raw-materials - 200 - 193.234ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":193.234}
+2025-09-05T07:31:26.352Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T07:31:26.357Z [INFO] 🌍 Environment: development
+2025-09-05T07:31:26.358Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T07:31:26.358Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T07:31:26.358Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T07:31:26.413Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T07:31:41.024Z [INFO] GET /api/production/orders - 304 - 120.919ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":120.919}
+2025-09-05T07:31:41.033Z [INFO] GET /api/production/orders - 304 - 5.302ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":5.302}
+2025-09-05T07:31:41.045Z [INFO] GET /api/production/raw-materials - 200 - 141.563ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":141.563}
+2025-09-05T07:31:41.046Z [INFO] GET /api/production/records - 304 - 152.605ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":152.605}
+2025-09-05T07:31:41.089Z [INFO] GET /api/production/records - 304 - 8.248ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":8.248}
+2025-09-05T07:31:41.095Z [INFO] GET /api/production/raw-materials - 304 - 8.525ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":8.525}
+2025-09-05T07:32:50.583Z [INFO] GET /api/production/orders - 304 - 11.737ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":11.737}
+2025-09-05T07:32:50.595Z [INFO] GET /api/production/work-centers - 304 - 19.433ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":19.433}
+2025-09-05T07:32:50.597Z [INFO] GET /api/production/schedules - 304 - 15.569ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":15.569}
+2025-09-05T07:32:50.605Z [INFO] GET /api/production/orders - 304 - 13.365ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":13.365}
+2025-09-05T07:32:50.611Z [INFO] GET /api/production/work-centers - 304 - 10.94ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":10.94}
+2025-09-05T07:32:50.612Z [INFO] GET /api/production/schedules - 304 - 9.437ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":9.437}
+2025-09-05T07:39:21.471Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T07:39:21.472Z [INFO] 🌍 Environment: development
+2025-09-05T07:39:21.472Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T07:39:21.472Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T07:39:21.473Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T08:32:53.149Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-05T09:05:54.825Z [INFO] GET /uploads/documents/citizenshipId-0mvw_KMJ-1756996162978-649739971.jpeg - 200 - 118.119ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-0mvw_KMJ-1756996162978-649739971.jpeg","statusCode":200,"responseTime":118.119}
+2025-09-05T09:05:55.925Z [ERROR] GET /sw.js - 404 - 31.349ms | Data: {"method":"GET","url":"/sw.js","statusCode":404,"responseTime":31.349}
+2025-09-05T09:06:07.651Z [ERROR] GET /api/v1/health - 404 - 4.136ms | Data: {"method":"GET","url":"/api/v1/health","statusCode":404,"responseTime":4.136}
+2025-09-05T09:06:07.694Z [ERROR] Uncaught Exception | Stack: Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at WriteStream.Socket._writeGeneric (node:net:966:11)
+    at WriteStream.Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.error (node:internal/console/constructor:412:26)
+    at Logger.error (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/logger.ts:54:13)
+2025-09-05T09:07:41.419Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T09:07:41.422Z [INFO] 🌍 Environment: development
+2025-09-05T09:07:41.422Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T09:07:41.422Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T09:07:41.422Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T09:07:41.423Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-09-05T09:07:42.822Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-05T09:07:42.828Z [INFO] 🌍 Environment: development
+2025-09-05T09:07:42.828Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-05T09:07:42.828Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-05T09:07:42.828Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-05T09:07:42.829Z [ERROR] Uncaught Exception | Stack: Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at WriteStream.Socket._writeGeneric (node:net:966:11)
+    at WriteStream.Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)

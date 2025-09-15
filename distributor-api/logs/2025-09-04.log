@@ -1,0 +1,1007 @@
+2025-09-04T10:07:15.505Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T10:07:15.506Z [INFO] 🌍 Environment: development
+2025-09-04T10:07:15.506Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T10:07:15.506Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T10:07:15.507Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T10:24:11.440Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T10:24:11.441Z [INFO] 🌍 Environment: development
+2025-09-04T10:24:11.442Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T10:24:11.443Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T10:24:11.445Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T10:28:07.179Z [ERROR] POST /api/applications/submit - 400 - 25.367ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":25.367}
+2025-09-04T10:53:00.376Z [ERROR] POST /api/applications/submit - 400 - 12.13ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":12.13}
+2025-09-04T10:53:09.063Z [ERROR] POST /api/applications/submit - 400 - 10.55ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":10.55}
+2025-09-04T11:07:59.452Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T11:07:59.453Z [INFO] 🌍 Environment: development
+2025-09-04T11:07:59.453Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T11:07:59.453Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T11:07:59.454Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T11:08:27.600Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T11:08:27.601Z [INFO] 🌍 Environment: development
+2025-09-04T11:08:27.601Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T11:08:27.602Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T11:08:27.604Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T11:10:12.953Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T11:10:12.954Z [INFO] 🌍 Environment: development
+2025-09-04T11:10:12.954Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T11:10:12.954Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T11:10:12.954Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T11:12:15.875Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T11:12:15.876Z [INFO] 🌍 Environment: development
+2025-09-04T11:12:15.876Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T11:12:15.876Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T11:12:15.876Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T11:13:04.738Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T11:13:04.739Z [INFO] 🌍 Environment: development
+2025-09-04T11:13:04.739Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T11:13:04.739Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T11:13:04.740Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T11:20:14.291Z [INFO] GET /api/health - 200 - 4.34ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":4.34}
+2025-09-04T11:21:50.742Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T11:21:50.743Z [INFO] 🌍 Environment: development
+2025-09-04T11:21:50.743Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T11:21:50.743Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T11:21:50.744Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T12:44:02.367Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T12:44:02.369Z [INFO] 🌍 Environment: development
+2025-09-04T12:44:02.369Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T12:44:02.369Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T12:44:02.369Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T12:44:02.370Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-09-04T12:50:04.933Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T12:50:04.935Z [INFO] 🌍 Environment: development
+2025-09-04T12:50:04.938Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T12:50:04.939Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T12:50:04.941Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T12:53:40.032Z [INFO] POST /api/applications/submit - 201 - 563.99ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":563.99}
+2025-09-04T14:29:23.043Z [INFO] POST /api/applications/submit - 201 - 66.404ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":66.404}
+2025-09-04T14:30:49.780Z [INFO] POST /api/auth/login - 200 - 402.206ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":402.206}
+2025-09-04T14:31:13.669Z [INFO] GET /api/accounting/accounts - 304 - 175.17ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":175.17}
+2025-09-04T14:31:13.698Z [INFO] GET /api/accounting/journal-entries - 200 - 221.052ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":221.052}
+2025-09-04T14:31:13.710Z [INFO] GET /api/accounting/accounts - 304 - 10.379ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":10.379}
+2025-09-04T14:31:13.715Z [INFO] GET /api/accounting/journal-entries - 304 - 11.092ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":11.092}
+2025-09-04T14:32:00.335Z [INFO] GET /api/accounting/accounts - 304 - 10.009ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":10.009}
+2025-09-04T14:32:00.342Z [INFO] GET /api/accounting/journal-entries - 304 - 20.852ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":20.852}
+2025-09-04T14:32:00.350Z [INFO] GET /api/accounting/accounts - 304 - 12.971ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":12.971}
+2025-09-04T14:32:00.356Z [INFO] GET /api/accounting/journal-entries - 304 - 9.204ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":9.204}
+2025-09-04T14:32:24.741Z [INFO] GET /api/accounting/accounts - 304 - 15.421ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":15.421}
+2025-09-04T14:32:24.745Z [INFO] GET /api/accounting/journal-entries - 304 - 25.56ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":25.56}
+2025-09-04T14:32:24.761Z [INFO] GET /api/accounting/accounts - 304 - 14.111ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":14.111}
+2025-09-04T14:32:24.765Z [INFO] GET /api/accounting/journal-entries - 304 - 14.192ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":14.192}
+2025-09-04T14:45:45.175Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T14:45:45.176Z [INFO] 🌍 Environment: development
+2025-09-04T14:45:45.177Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T14:45:45.177Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T14:45:45.177Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T14:45:45.290Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T14:46:54.525Z [INFO] GET /api/health - 200 - 3.383ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":3.383}
+2025-09-04T14:47:00.524Z [INFO] GET /api/applications/dev - 200 - 138.833ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":138.833}
+2025-09-04T14:49:40.508Z [INFO] GET /api/applications/dev - 200 - 19.838ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":19.838}
+2025-09-04T14:49:48.597Z [INFO] GET /api/applications/dev - 200 - 14.902ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":14.902}
+2025-09-04T14:49:56.728Z [INFO] GET /api/applications/dev - 200 - 9.123ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":9.123}
+2025-09-04T14:51:34.146Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T14:51:34.154Z [INFO] 🌍 Environment: development
+2025-09-04T14:51:34.156Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T14:51:34.158Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T14:51:34.158Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T14:51:34.254Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T14:52:32.128Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 200 - 242.323ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":200,"responseTime":242.323}
+2025-09-04T14:52:32.174Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 200 - 273.831ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":200,"responseTime":273.831}
+2025-09-04T14:52:32.186Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 200 - 275.972ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":200,"responseTime":275.972}
+2025-09-04T14:52:32.194Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 39.408ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":39.408}
+2025-09-04T14:52:32.252Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 39.126ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":39.126}
+2025-09-04T14:52:32.260Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 13.995ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":13.995}
+2025-09-04T14:52:32.311Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 27.738ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":27.738}
+2025-09-04T14:52:32.342Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 16.618ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":16.618}
+2025-09-04T14:52:35.641Z [INFO] GET /api/accounting/accounts - 304 - 175.689ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":175.689}
+2025-09-04T14:52:35.647Z [INFO] GET /api/accounting/journal-entries - 304 - 186.247ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":186.247}
+2025-09-04T14:52:35.677Z [INFO] GET /api/accounting/accounts - 304 - 24.567ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":24.567}
+2025-09-04T14:52:35.684Z [INFO] GET /api/accounting/journal-entries - 304 - 22.218ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":22.218}
+2025-09-04T14:53:39.343Z [INFO] GET /api/applications/dev - 200 - 135.073ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":135.073}
+2025-09-04T14:54:30.365Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T14:54:30.367Z [INFO] 🌍 Environment: development
+2025-09-04T14:54:30.368Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T14:54:30.371Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T14:54:30.372Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T14:54:42.640Z [INFO] GET /api/health - 200 - 9.745ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":9.745}
+2025-09-04T14:54:50.909Z [INFO] GET /api/applications/dev - 200 - 111.952ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":111.952}
+2025-09-04T14:57:15.281Z [INFO] GET /api/auth/users - 200 - 197.244ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":197.244}
+2025-09-04T14:57:15.297Z [INFO] GET /api/auth/users - 304 - 9.555ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":9.555}
+2025-09-04T14:57:23.376Z [INFO] GET /api/categories - 200 - 189.348ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":189.348}
+2025-09-04T14:57:23.386Z [INFO] GET /api/categories - 304 - 4.114ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":4.114}
+2025-09-04T14:57:41.078Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 15.141ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":15.141}
+2025-09-04T14:57:41.088Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 14.922ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":14.922}
+2025-09-04T14:57:41.107Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 9.93ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":9.93}
+2025-09-04T14:57:41.133Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 20.496ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":20.496}
+2025-09-04T14:57:41.135Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 13.533ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":13.533}
+2025-09-04T14:57:41.160Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 17.318ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":17.318}
+2025-09-04T15:02:14.206Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 102.573ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":102.573}
+2025-09-04T15:02:14.246Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 27.698ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":27.698}
+2025-09-04T15:25:08.746Z [INFO] GET /api/applications/dev - 200 - 370.175ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":370.175}
+2025-09-04T15:25:21.084Z [INFO] GET /api/applications/dev - 200 - 123.448ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":123.448}
+2025-09-04T15:26:04.600Z [INFO] POST /api/auth/login - 200 - 606.112ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":606.112}
+2025-09-04T15:26:12.993Z [INFO] GET /api/applications?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 100.49ms | Data: {"method":"GET","url":"/api/applications?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":100.49}
+2025-09-04T15:26:13.028Z [INFO] GET /api/applications?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 30.443ms | Data: {"method":"GET","url":"/api/applications?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":30.443}
+2025-09-04T15:26:13.082Z [INFO] GET /api/applications?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 74.341ms | Data: {"method":"GET","url":"/api/applications?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":74.341}
+2025-09-04T15:31:51.367Z [ERROR] GET /api/applications - 401 - 2.601ms | Data: {"method":"GET","url":"/api/applications","statusCode":401,"responseTime":2.601}
+2025-09-04T15:32:34.717Z [INFO] GET /api/applications/dev - 200 - 62.192ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":62.192}
+2025-09-04T15:34:30.374Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 16.845ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":16.845}
+2025-09-04T15:34:50.392Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.767ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.767}
+2025-09-04T15:34:50.433Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 33.851ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":33.851}
+2025-09-04T15:34:50.499Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 44.107ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":44.107}
+2025-09-04T15:34:52.407Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 30.458ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":30.458}
+2025-09-04T15:34:53.592Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 94.085ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":94.085}
+2025-09-04T15:34:55.051Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 27.215ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":27.215}
+2025-09-04T15:34:55.131Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 50.132ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":50.132}
+2025-09-04T15:38:16.430Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 45.073ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":45.073}
+2025-09-04T15:38:29.788Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 28.44ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":28.44}
+2025-09-04T15:38:29.828Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 23.082ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":23.082}
+2025-09-04T15:38:40.700Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 17.508ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":17.508}
+2025-09-04T15:38:40.728Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 21.335ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":21.335}
+2025-09-04T15:45:30.257Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 74.906ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":74.906}
+2025-09-04T15:45:30.277Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 17.014ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":17.014}
+2025-09-04T15:45:30.297Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 11.575ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":11.575}
+2025-09-04T15:47:59.575Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 47.653ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":47.653}
+2025-09-04T15:47:59.604Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 103.721ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":103.721}
+2025-09-04T15:47:59.614Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 96.829ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":96.829}
+2025-09-04T15:47:59.619Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 28.17ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":28.17}
+2025-09-04T15:47:59.646Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 21.387ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":21.387}
+2025-09-04T15:47:59.669Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 14.618ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":14.618}
+2025-09-04T15:47:59.706Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 18.442ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":18.442}
+2025-09-04T15:48:00.514Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 20.888ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":20.888}
+2025-09-04T15:48:00.545Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 19.822ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":19.822}
+2025-09-04T15:48:00.578Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 19.846ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":19.846}
+2025-09-04T15:58:57.917Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 80.296ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":80.296}
+2025-09-04T15:58:57.935Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 15.961ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":15.961}
+2025-09-04T15:58:57.966Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 25.309ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":25.309}
+2025-09-04T16:02:25.119Z [INFO] GET /api/applications/dev?page=1&limit=1 - 200 - 15.056ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=1","statusCode":200,"responseTime":15.056}
+2025-09-04T16:08:01.514Z [INFO] GET /uploads/documents/citizenshipId-0mvw_KMJ-1756996162978-649739971.jpeg - 200 - 26.288ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-0mvw_KMJ-1756996162978-649739971.jpeg","statusCode":200,"responseTime":26.288}
+2025-09-04T16:08:05.874Z [INFO] GET /uploads/documents/citizenshipId-0mvw_KMJ-1756996162978-649739971.jpeg - 304 - 0.866ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-0mvw_KMJ-1756996162978-649739971.jpeg","statusCode":304,"responseTime":0.866}
+2025-09-04T16:08:06.076Z [ERROR] GET /favicon.ico - 404 - 1.711ms | Data: {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":1.711}
+2025-09-04T16:08:06.976Z [ERROR] GET /sw.js - 404 - 0.73ms | Data: {"method":"GET","url":"/sw.js","statusCode":404,"responseTime":0.73}
+2025-09-04T16:08:28.101Z [INFO] GET /uploads/documents/companyRegistration-6EW3xxLh-1756996162979-257875340.jpeg - 200 - 4.785ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-6EW3xxLh-1756996162979-257875340.jpeg","statusCode":200,"responseTime":4.785}
+2025-09-04T16:34:19.679Z [ERROR] PUT /api/applications/dev/cmf5eqccz0000gkpuhei2290o/status - 404 - 2.423ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf5eqccz0000gkpuhei2290o/status","statusCode":404,"responseTime":2.423}
+2025-09-04T16:34:27.725Z [ERROR] PUT /api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status - 404 - 4.783ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status","statusCode":404,"responseTime":4.783}
+2025-09-04T16:44:07.101Z [ERROR] PUT /api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status - 404 - 2.429ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status","statusCode":404,"responseTime":2.429}
+2025-09-04T16:46:23.654Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T16:46:23.821Z [INFO] 🌍 Environment: development
+2025-09-04T16:46:23.822Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T16:46:23.822Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T16:46:23.823Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T16:46:24.041Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T16:46:24.240Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T16:50:06.234Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T16:50:06.312Z [INFO] 🌍 Environment: development
+2025-09-04T16:50:06.314Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T16:50:06.314Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T16:50:06.316Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T16:50:06.314Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T16:50:06.313Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T16:50:06.811Z [ERROR] GET /src/main.tsx?v=QLNzCB-jFtkPjSHcjw9Qr - 404 - 4.107ms | Data: {"method":"GET","url":"/src/main.tsx?v=QLNzCB-jFtkPjSHcjw9Qr","statusCode":404,"responseTime":4.107}
+2025-09-04T16:50:06.816Z [ERROR] GET /@vite/client - 404 - 0.59ms | Data: {"method":"GET","url":"/@vite/client","statusCode":404,"responseTime":0.59}
+2025-09-04T16:50:06.825Z [ERROR] GET /@react-refresh - 404 - 2.393ms | Data: {"method":"GET","url":"/@react-refresh","statusCode":404,"responseTime":2.393}
+2025-09-04T16:50:06.836Z [ERROR] GET /sw.js - 404 - 0.262ms | Data: {"method":"GET","url":"/sw.js","statusCode":404,"responseTime":0.262}
+2025-09-04T16:50:07.914Z [ERROR] GET /sw.js - 404 - 0.394ms | Data: {"method":"GET","url":"/sw.js","statusCode":404,"responseTime":0.394}
+2025-09-04T16:52:10.801Z [ERROR] PUT /api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status - 400 - 25.275ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status","statusCode":400,"responseTime":25.275}
+2025-09-04T16:53:40.952Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T16:53:40.959Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T16:53:40.985Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T16:53:41.000Z [INFO] 🌍 Environment: development
+2025-09-04T16:53:41.003Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T16:53:41.006Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T16:53:41.007Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T16:54:20.221Z [INFO] PUT /api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status - 200 - 360.966ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw/status","statusCode":200,"responseTime":360.966}
+2025-09-04T16:54:20.276Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 40.995ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":40.995}
+2025-09-04T16:54:27.127Z [ERROR] DELETE /api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw - 401 - 3.817ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmf5i5fwt0002gkpuwvph2jxw","statusCode":401,"responseTime":3.817}
+2025-09-04T17:24:54.858Z [INFO] POST /api/auth/login - 200 - 2198.048ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":2198.048}
+2025-09-04T17:24:59.793Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 95.544ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":95.544}
+2025-09-04T17:24:59.809Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 5.769ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":5.769}
+2025-09-04T17:24:59.815Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 95.695ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":95.695}
+2025-09-04T17:24:59.832Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 5.062ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":5.062}
+2025-09-04T17:24:59.843Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 135.655ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":135.655}
+2025-09-04T17:24:59.856Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 8.158ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":8.158}
+2025-09-04T17:25:01.944Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 71.397ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":71.397}
+2025-09-04T17:25:01.961Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.345ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.345}
+2025-09-04T17:25:01.974Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 11.237ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":11.237}
+2025-09-04T17:47:49.567Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T17:47:49.572Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T17:47:49.598Z [INFO] 🌍 Environment: development
+2025-09-04T17:47:49.599Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T17:47:49.604Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T17:47:49.605Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T17:48:24.683Z [INFO] POST /api/auth/login - 200 - 530.968ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":530.968}
+2025-09-04T17:48:34.547Z [ERROR] GET /api/applications/dev?status=approved - 400 - 135.524ms | Data: {"method":"GET","url":"/api/applications/dev?status=approved","statusCode":400,"responseTime":135.524}
+2025-09-04T17:48:34.560Z [ERROR] GET /api/applications/dev?status=approved - 400 - 166.329ms | Data: {"method":"GET","url":"/api/applications/dev?status=approved","statusCode":400,"responseTime":166.329}
+2025-09-04T17:49:18.393Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T17:49:18.418Z [INFO] 🌍 Environment: development
+2025-09-04T17:49:18.419Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T17:49:18.420Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T17:49:18.420Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T17:49:19.100Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T17:49:34.623Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T17:49:34.624Z [INFO] 🌍 Environment: development
+2025-09-04T17:49:34.624Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T17:49:34.624Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T17:49:34.624Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T17:49:34.635Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T17:51:29.667Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T17:51:29.671Z [INFO] 🌍 Environment: development
+2025-09-04T17:51:29.673Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T17:51:29.697Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T17:51:29.701Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T17:51:29.865Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T17:51:39.045Z [INFO] GET /api/health - 200 - 2.421ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":2.421}
+2025-09-04T17:51:45.906Z [ERROR] GET /api/applications/dev?status=approved - 400 - 305.407ms | Data: {"method":"GET","url":"/api/applications/dev?status=approved","statusCode":400,"responseTime":305.407}
+2025-09-04T17:51:57.114Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 57.911ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":57.911}
+2025-09-04T17:52:04.413Z [ERROR] GET /api/distributors - 401 - 0.392ms | Data: {"method":"GET","url":"/api/distributors","statusCode":401,"responseTime":0.392}
+2025-09-04T17:52:28.091Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 31.066ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":31.066}
+2025-09-04T17:52:28.111Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.971ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.971}
+2025-09-04T17:53:04.726Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.171ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.171}
+2025-09-04T17:54:21.941Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 7.331ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":7.331}
+2025-09-04T17:54:28.874Z [ERROR] GET /api/distributors?search=Aavash - 401 - 3.694ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash","statusCode":401,"responseTime":3.694}
+2025-09-04T17:55:10.866Z [ERROR] POST /api/distributors/dev - 400 - 7.249ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":7.249}
+2025-09-04T17:55:50.306Z [INFO] POST /api/distributors/dev - 201 - 309.503ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":201,"responseTime":309.503}
+2025-09-04T17:56:03.333Z [ERROR] POST /api/distributors/cmf5pixz000001n4rr5y9bz83/credentials - 401 - 0.769ms | Data: {"method":"POST","url":"/api/distributors/cmf5pixz000001n4rr5y9bz83/credentials","statusCode":401,"responseTime":0.769}
+2025-09-04T17:56:22.861Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T17:56:22.863Z [INFO] 🌍 Environment: development
+2025-09-04T17:56:22.863Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T17:56:22.863Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T17:56:22.864Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T17:56:23.011Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T17:57:06.289Z [INFO] POST /api/distributors/cmf5pixz000001n4rr5y9bz83/credentials - 200 - 232.186ms | Data: {"method":"POST","url":"/api/distributors/cmf5pixz000001n4rr5y9bz83/credentials","statusCode":200,"responseTime":232.186}
+2025-09-04T17:57:30.693Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T17:57:30.694Z [INFO] 🌍 Environment: development
+2025-09-04T17:57:30.694Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T17:57:30.694Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T17:57:30.695Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T17:57:30.874Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T17:57:33.567Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 2.841ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":2.841}
+2025-09-04T17:57:33.742Z [INFO] POST /api/distributors/dev - 201 - 162.812ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":201,"responseTime":162.812}
+2025-09-04T17:57:33.845Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 98.164ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":98.164}
+2025-09-04T17:57:33.949Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 99.839ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":99.839}
+2025-09-04T17:57:33.961Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 2.424ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":2.424}
+2025-09-04T17:57:39.851Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 29.467ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":29.467}
+2025-09-04T17:57:39.869Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.134ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.134}
+2025-09-04T17:57:53.917Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.219ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.219}
+2025-09-04T17:57:53.943Z [ERROR] POST /api/distributors/dev - 400 - 10.346ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":10.346}
+2025-09-04T17:57:58.345Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.958ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.958}
+2025-09-04T17:57:58.369Z [ERROR] POST /api/distributors/dev - 400 - 6.844ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":6.844}
+2025-09-04T18:01:18.586Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:01:18.587Z [INFO] 🌍 Environment: development
+2025-09-04T18:01:18.587Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:01:18.587Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:01:18.587Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:01:34.089Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 7.724ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":7.724}
+2025-09-04T18:01:34.189Z [ERROR] POST /api/distributors/dev - 400 - 80.293ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":80.293}
+2025-09-04T18:01:36.158Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 165.776ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":165.776}
+2025-09-04T18:01:36.168Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.339ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.339}
+2025-09-04T18:01:38.806Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.252ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.252}
+2025-09-04T18:01:38.838Z [ERROR] POST /api/distributors/dev - 400 - 10.482ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":10.482}
+2025-09-04T18:01:40.161Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.122ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.122}
+2025-09-04T18:01:40.195Z [ERROR] POST /api/distributors/dev - 400 - 6.488ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":6.488}
+2025-09-04T18:03:20.825Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-04T18:03:20.826Z [INFO] HTTP server closed
+2025-09-04T18:04:58.209Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:04:58.211Z [INFO] 🌍 Environment: development
+2025-09-04T18:04:58.211Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:04:58.212Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:04:58.212Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:05:19.624Z [ERROR] POST /api/distributors/dev - 400 - 95.968ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":95.968}
+2025-09-04T18:05:32.739Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 120.049ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":120.049}
+2025-09-04T18:05:32.758Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.53ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.53}
+2025-09-04T18:05:32.770Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 8.398ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":8.398}
+2025-09-04T18:05:36.838Z [INFO] PUT /api/applications/dev/cmf5eqccz0000gkpuhei2290o/status - 200 - 86.425ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf5eqccz0000gkpuhei2290o/status","statusCode":200,"responseTime":86.425}
+2025-09-04T18:05:36.898Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 36.055ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":36.055}
+2025-09-04T18:05:39.093Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 24.742ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":24.742}
+2025-09-04T18:05:39.127Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 3.419ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":3.419}
+2025-09-04T18:05:39.149Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 2.843ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":2.843}
+2025-09-04T18:05:39.155Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 80.56ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":80.56}
+2025-09-04T18:05:39.222Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.508ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.508}
+2025-09-04T18:05:39.229Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.448ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.448}
+2025-09-04T18:05:54.330Z [ERROR] POST /api/distributors/dev - 400 - 7.152ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":7.152}
+2025-09-04T18:07:32.502Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-04T18:07:32.510Z [INFO] HTTP server closed
+2025-09-04T18:21:05.027Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:21:05.031Z [INFO] 🌍 Environment: development
+2025-09-04T18:21:05.031Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:21:05.032Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:21:05.032Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:21:15.381Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 83.851ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":83.851}
+2025-09-04T18:21:33.425Z [ERROR] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 409 - 5.936ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":409,"responseTime":5.936}
+2025-09-04T18:21:41.037Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 122.997ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":122.997}
+2025-09-04T18:21:52.578Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 13.571ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":13.571}
+2025-09-04T18:21:52.753Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 161.967ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":161.967}
+2025-09-04T18:21:52.868Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 109.997ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":109.997}
+2025-09-04T18:21:52.876Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.271ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.271}
+2025-09-04T18:21:52.880Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.519ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.519}
+2025-09-04T18:21:59.572Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:21:59.573Z [INFO] 🌍 Environment: development
+2025-09-04T18:21:59.573Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:21:59.573Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:21:59.573Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:24:28.983Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 67.062ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":67.062}
+2025-09-04T18:24:38.300Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 2.579ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":2.579}
+2025-09-04T18:26:00.698Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 96.113ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":96.113}
+2025-09-04T18:26:00.715Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 118.836ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":118.836}
+2025-09-04T18:26:00.718Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 8.666ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":8.666}
+2025-09-04T18:26:00.751Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 17.396ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":17.396}
+2025-09-04T18:26:00.753Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 50.346ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":50.346}
+2025-09-04T18:26:00.768Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 2.413ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":2.413}
+2025-09-04T18:26:00.771Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 3.778ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":3.778}
+2025-09-04T18:26:00.784Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 59.089ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":59.089}
+2025-09-04T18:26:00.789Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 51.664ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":51.664}
+2025-09-04T18:26:00.798Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.953ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.953}
+2025-09-04T18:32:28.064Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 60.208ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":60.208}
+2025-09-04T18:32:28.079Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 66.857ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":66.857}
+2025-09-04T18:32:28.140Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 50.331ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":50.331}
+2025-09-04T18:32:28.142Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 60.06ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":60.06}
+2025-09-04T18:32:28.156Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.495ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.495}
+2025-09-04T18:32:28.162Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 61.218ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":61.218}
+2025-09-04T18:32:28.164Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 56.536ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":56.536}
+2025-09-04T18:32:28.166Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.954ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.954}
+2025-09-04T18:32:28.180Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.727ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.727}
+2025-09-04T18:32:28.186Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 3.074ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":3.074}
+2025-09-04T18:33:04.556Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.614ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.614}
+2025-09-04T18:33:04.572Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.858ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.858}
+2025-09-04T18:33:04.586Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.938ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.938}
+2025-09-04T18:33:39.295Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 6.553ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":6.553}
+2025-09-04T18:33:39.304Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 9.816ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":9.816}
+2025-09-04T18:33:39.322Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 11.839ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":11.839}
+2025-09-04T18:33:39.324Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 9.114ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":9.114}
+2025-09-04T18:33:39.356Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 24.337ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":24.337}
+2025-09-04T18:33:39.358Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 22.282ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":22.282}
+2025-09-04T18:33:39.360Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 11.797ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":11.797}
+2025-09-04T18:33:39.381Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 14.646ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":14.646}
+2025-09-04T18:33:39.397Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.085ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.085}
+2025-09-04T18:33:39.405Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 12.008ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":12.008}
+2025-09-04T18:33:45.020Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.456ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.456}
+2025-09-04T18:33:47.496Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 1.103ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":1.103}
+2025-09-04T18:33:49.968Z [ERROR] GET /api/distributors?search=Aavash%20Ganesh - 401 - 0.663ms | Data: {"method":"GET","url":"/api/distributors?search=Aavash%20Ganesh","statusCode":401,"responseTime":0.663}
+2025-09-04T18:35:59.800Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:35:59.801Z [INFO] 🌍 Environment: development
+2025-09-04T18:35:59.802Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:35:59.802Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:35:59.802Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:36:26.604Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:36:26.605Z [INFO] 🌍 Environment: development
+2025-09-04T18:36:26.605Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:36:26.605Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:36:26.605Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:36:43.440Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 216.003ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":216.003}
+2025-09-04T18:36:43.628Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 173.348ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":173.348}
+2025-09-04T18:36:43.658Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 17.951ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":17.951}
+2025-09-04T18:36:43.693Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 55.724ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":55.724}
+2025-09-04T18:36:56.951Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 29.681ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":29.681}
+2025-09-04T18:36:56.997Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 400 - 8.664ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":400,"responseTime":8.664}
+2025-09-04T18:37:05.387Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 19.024ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":19.024}
+2025-09-04T18:37:05.419Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 400 - 11.248ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":400,"responseTime":11.248}
+2025-09-04T18:37:22.105Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 9.589ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":9.589}
+2025-09-04T18:37:22.258Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 109.522ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":109.522}
+2025-09-04T18:37:22.272Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 10.317ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":10.317}
+2025-09-04T18:37:22.365Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 15.081ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":15.081}
+2025-09-04T18:37:22.368Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 12.543ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":12.543}
+2025-09-04T18:37:29.884Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 12.22ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":12.22}
+2025-09-04T18:37:29.898Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 400 - 2.415ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":400,"responseTime":2.415}
+2025-09-04T18:37:37.393Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 9.696ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":9.696}
+2025-09-04T18:37:37.557Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 150.622ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":150.622}
+2025-09-04T18:37:37.566Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 5.694ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":5.694}
+2025-09-04T18:37:37.599Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 22.448ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":22.448}
+2025-09-04T18:37:37.601Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 11.982ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":11.982}
+2025-09-04T18:40:13.502Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 9.451ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":9.451}
+2025-09-04T18:40:13.621Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 107.062ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":107.062}
+2025-09-04T18:40:13.630Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 5.578ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":5.578}
+2025-09-04T18:40:13.656Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 16.685ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":16.685}
+2025-09-04T18:40:13.657Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 10.633ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":10.633}
+2025-09-04T18:42:38.081Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 47.578ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":47.578}
+2025-09-04T18:42:38.203Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 118.494ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":118.494}
+2025-09-04T18:42:38.260Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 53.44ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":53.44}
+2025-09-04T18:42:38.272Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 5.729ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":5.729}
+2025-09-04T18:42:38.304Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 39.216ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":39.216}
+2025-09-04T18:45:13.182Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 18.081ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":18.081}
+2025-09-04T18:45:13.216Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 18.567ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":18.567}
+2025-09-04T18:45:13.221Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 20.446ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":20.446}
+2025-09-04T18:45:13.224Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 45.608ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":45.608}
+2025-09-04T18:45:13.277Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 17.282ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":17.282}
+2025-09-04T18:45:13.304Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 14.668ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":14.668}
+2025-09-04T18:46:52.175Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 8.888ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":8.888}
+2025-09-04T18:46:55.044Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T18:46:59.746Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 3.696ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":3.696}
+2025-09-04T18:47:13.902Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 2.012ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":2.012}
+2025-09-04T18:47:25.122Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf - 404 - 0.686ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf","statusCode":404,"responseTime":0.686}
+2025-09-04T18:49:12.637Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 115.942ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":115.942}
+2025-09-04T18:49:12.657Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 400 - 3.311ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":400,"responseTime":3.311}
+2025-09-04T18:49:18.340Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 43.266ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":43.266}
+2025-09-04T18:49:18.349Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 45.78ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":45.78}
+2025-09-04T18:49:18.354Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 7.424ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":7.424}
+2025-09-04T18:49:18.366Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 8.121ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":8.121}
+2025-09-04T18:49:18.380Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 5.088ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":5.088}
+2025-09-04T18:49:18.403Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 13.891ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":13.891}
+2025-09-04T18:49:18.407Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 53.364ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":53.364}
+2025-09-04T18:49:18.422Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 9.978ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":9.978}
+2025-09-04T18:49:18.430Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 57.311ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":57.311}
+2025-09-04T18:49:18.431Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.071ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.071}
+2025-09-04T18:49:26.402Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 400 - 8.267ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":400,"responseTime":8.267}
+2025-09-04T18:49:36.450Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 400 - 8.974ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":400,"responseTime":8.974}
+2025-09-04T18:51:20.627Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:51:20.628Z [INFO] 🌍 Environment: development
+2025-09-04T18:51:20.628Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:51:20.630Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:51:20.634Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:51:21.734Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T18:52:29.687Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 84.504ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":84.504}
+2025-09-04T18:52:56.234Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:52:56.240Z [INFO] 🌍 Environment: development
+2025-09-04T18:52:56.241Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:52:56.241Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:52:56.241Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:52:57.318Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T18:54:16.657Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T18:54:16.658Z [INFO] 🌍 Environment: development
+2025-09-04T18:54:16.658Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T18:54:16.658Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T18:54:16.658Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T18:55:11.646Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T18:55:35.535Z [INFO] GET /health - 200 - 14.075ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":14.075}
+2025-09-04T18:55:41.855Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 400 - 72.798ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":400,"responseTime":72.798}
+2025-09-04T18:55:51.299Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 7.261ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":7.261}
+2025-09-04T18:56:51.847Z [ERROR] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 400 - 2.664ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":400,"responseTime":2.664}
+2025-09-04T18:57:10.708Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 93.272ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":93.272}
+2025-09-04T18:57:10.715Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 108.644ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":108.644}
+2025-09-04T18:57:10.727Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 5.52ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":5.52}
+2025-09-04T18:57:10.738Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 6.869ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":6.869}
+2025-09-04T18:57:10.742Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 4.835ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":4.835}
+2025-09-04T18:57:10.751Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 1.512ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":1.512}
+2025-09-04T18:57:10.754Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 35.68ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":35.68}
+2025-09-04T18:57:10.764Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 2.266ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":2.266}
+2025-09-04T18:57:10.765Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 31.985ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":31.985}
+2025-09-04T18:57:10.800Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 1.648ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":1.648}
+2025-09-04T18:57:15.351Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 17.311ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":17.311}
+2025-09-04T18:57:15.947Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 23.757ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":23.757}
+2025-09-04T18:57:15.992Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 25.249ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":25.249}
+2025-09-04T18:57:16.001Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 22.152ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":22.152}
+2025-09-04T18:57:16.025Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 5.889ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":5.889}
+2025-09-04T18:57:16.029Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 5.15ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":5.15}
+2025-09-04T18:57:20.810Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 15.096ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":15.096}
+2025-09-04T18:57:21.353Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 28.249ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":28.249}
+2025-09-04T18:57:21.377Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 6.482ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":6.482}
+2025-09-04T18:57:21.379Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 6.137ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":6.137}
+2025-09-04T18:57:21.389Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 2.185ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":2.185}
+2025-09-04T18:57:21.395Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 1.732ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":1.732}
+2025-09-04T18:58:43.368Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 119.05ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":119.05}
+2025-09-04T18:58:44.395Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 7.331ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":7.331}
+2025-09-04T18:58:44.412Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 6.053ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":6.053}
+2025-09-04T18:58:44.413Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 5.21ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":5.21}
+2025-09-04T18:58:44.436Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 2.738ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":2.738}
+2025-09-04T18:58:44.444Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 1.551ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":1.551}
+2025-09-04T18:58:49.072Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 22.975ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":22.975}
+2025-09-04T18:58:49.648Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 37.046ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":37.046}
+2025-09-04T18:58:49.712Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 44.021ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":44.021}
+2025-09-04T18:58:49.742Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 74.778ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":74.778}
+2025-09-04T18:58:49.756Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 1.996ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":1.996}
+2025-09-04T18:58:49.816Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.811ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.811}
+2025-09-04T18:58:55.409Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 10.989ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":10.989}
+2025-09-04T18:58:55.948Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 26.641ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":26.641}
+2025-09-04T18:58:56.008Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 16.381ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":16.381}
+2025-09-04T18:58:56.020Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 17.084ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":17.084}
+2025-09-04T18:58:56.029Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 3.47ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":3.47}
+2025-09-04T18:58:56.037Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 2.294ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":2.294}
+2025-09-04T18:59:06.605Z [INFO] GET /api/categories - 304 - 173.726ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":173.726}
+2025-09-04T18:59:06.614Z [INFO] GET /api/categories - 304 - 4.738ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":4.738}
+2025-09-04T18:59:47.204Z [INFO] POST /api/categories - 201 - 89.266ms | Data: {"method":"POST","url":"/api/categories","statusCode":201,"responseTime":89.266}
+2025-09-04T18:59:47.211Z [INFO] GET /api/categories - 200 - 2.586ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":2.586}
+2025-09-04T19:00:42.237Z [INFO] POST /api/categories - 201 - 15.933ms | Data: {"method":"POST","url":"/api/categories","statusCode":201,"responseTime":15.933}
+2025-09-04T19:00:42.246Z [INFO] GET /api/categories - 200 - 2.448ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":2.448}
+2025-09-04T19:00:46.541Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 9.509ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":9.509}
+2025-09-04T19:00:46.549Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 18.252ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":18.252}
+2025-09-04T19:00:46.567Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 7.987ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":7.987}
+2025-09-04T19:00:46.574Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 13.808ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":13.808}
+2025-09-04T19:00:46.579Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 13.643ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":13.643}
+2025-09-04T19:00:46.580Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 9.672ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":9.672}
+2025-09-04T19:00:46.601Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 8.818ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":8.818}
+2025-09-04T19:00:46.603Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 7.305ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":7.305}
+2025-09-04T19:00:46.606Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 9.306ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":9.306}
+2025-09-04T19:00:46.607Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 8.417ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":8.417}
+2025-09-04T19:02:05.903Z [INFO] GET /api/categories - 304 - 3.457ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.457}
+2025-09-04T19:02:05.926Z [INFO] GET /api/categories - 304 - 13.131ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":13.131}
+2025-09-04T19:02:30.538Z [INFO] GET /api/categories - 304 - 12.544ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":12.544}
+2025-09-04T19:02:30.563Z [INFO] GET /api/categories - 304 - 12.732ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":12.732}
+2025-09-04T19:05:45.288Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T19:05:45.297Z [INFO] 🌍 Environment: development
+2025-09-04T19:05:45.298Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T19:05:45.301Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T19:05:45.308Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T19:05:45.680Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T19:05:47.474Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T19:06:24.185Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 338.024ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":338.024}
+2025-09-04T19:06:24.224Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 313.747ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":313.747}
+2025-09-04T19:06:24.528Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 330.174ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":330.174}
+2025-09-04T19:06:24.594Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 28.701ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":28.701}
+2025-09-04T19:06:24.607Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 393.715ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":393.715}
+2025-09-04T19:06:24.611Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 338.033ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":338.033}
+2025-09-04T19:06:24.688Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 401.138ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":401.138}
+2025-09-04T19:06:24.697Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 40.997ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":40.997}
+2025-09-04T19:06:24.730Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 24.157ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":24.157}
+2025-09-04T19:06:24.771Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 13.677ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":13.677}
+2025-09-04T19:06:28.326Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.256ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.256}
+2025-09-04T19:06:28.346Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 15.154ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":15.154}
+2025-09-04T19:06:28.371Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 16.653ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":16.653}
+2025-09-04T19:08:41.877Z [INFO] GET /health - 200 - 9.305ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":9.305}
+2025-09-04T19:08:50.265Z [INFO] GET /api/categories?isActive=true - 200 - 84.677ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":84.677}
+2025-09-04T19:08:55.631Z [INFO] GET /api/categories?isActive=true - 200 - 5.132ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":5.132}
+2025-09-04T19:08:55.641Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 17.975ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":17.975}
+2025-09-04T19:08:55.675Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 24.73ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":24.73}
+2025-09-04T19:08:55.679Z [INFO] GET /api/categories?isActive=true - 200 - 24.597ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":24.597}
+2025-09-04T19:08:55.732Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 27.444ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":27.444}
+2025-09-04T19:08:55.741Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 29.757ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":29.757}
+2025-09-04T19:08:55.748Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 24.5ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":24.5}
+2025-09-04T19:08:55.753Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 23.002ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":23.002}
+2025-09-04T19:08:55.805Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 18.614ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":18.614}
+2025-09-04T19:08:55.806Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 17.806ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":17.806}
+2025-09-04T19:08:55.807Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 11.878ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":11.878}
+2025-09-04T19:08:55.812Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 10.906ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":10.906}
+2025-09-04T19:09:14.339Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 198.927ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":198.927}
+2025-09-04T19:09:15.435Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 71.679ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":71.679}
+2025-09-04T19:09:15.565Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 54.813ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":54.813}
+2025-09-04T19:09:15.588Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 37.938ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":37.938}
+2025-09-04T19:09:15.643Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 22.096ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":22.096}
+2025-09-04T19:09:15.650Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 32.186ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":32.186}
+2025-09-04T19:09:28.551Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 17.609ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":17.609}
+2025-09-04T19:09:29.108Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 19.467ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":19.467}
+2025-09-04T19:09:29.160Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 26.607ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":26.607}
+2025-09-04T19:09:29.165Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 19.12ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":19.12}
+2025-09-04T19:09:29.189Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 8.789ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":8.789}
+2025-09-04T19:09:29.198Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 12.524ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":12.524}
+2025-09-04T19:10:21.149Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T19:10:21.156Z [INFO] 🌍 Environment: development
+2025-09-04T19:10:21.156Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T19:10:21.156Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T19:10:21.156Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T19:10:21.928Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T19:10:22.369Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T19:11:27.831Z [INFO] GET /api/categories?isActive=true - 304 - 380.678ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":380.678}
+2025-09-04T19:11:27.874Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 479.329ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":479.329}
+2025-09-04T19:11:28.016Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 114.005ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":114.005}
+2025-09-04T19:11:28.029Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.23ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.23}
+2025-09-04T19:11:28.040Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 147.988ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":147.988}
+2025-09-04T19:11:28.051Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.76ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.76}
+2025-09-04T19:11:44.362Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 269.45ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":269.45}
+2025-09-04T19:11:44.410Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 20.194ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":20.194}
+2025-09-04T19:11:44.427Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 268.914ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":268.914}
+2025-09-04T19:11:44.445Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 320.447ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":320.447}
+2025-09-04T19:11:44.496Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 29.138ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":29.138}
+2025-09-04T19:11:44.509Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 29.813ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":29.813}
+2025-09-04T19:12:50.992Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.202ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.202}
+2025-09-04T19:12:51.005Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.997ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.997}
+2025-09-04T19:12:51.023Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.842ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.842}
+2025-09-04T19:12:52.715Z [INFO] GET /api/categories?isActive=true - 304 - 3.467ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":3.467}
+2025-09-04T19:12:52.720Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 9.906ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":9.906}
+2025-09-04T19:12:52.733Z [INFO] GET /api/categories?isActive=true - 304 - 8.884ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":8.884}
+2025-09-04T19:12:52.744Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 15.979ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":15.979}
+2025-09-04T19:12:52.750Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 9.855ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":9.855}
+2025-09-04T19:12:52.762Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 10.371ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":10.371}
+2025-09-04T19:12:52.781Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 14.749ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":14.749}
+2025-09-04T19:12:52.783Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 7.919ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":7.919}
+2025-09-04T19:12:52.793Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 5.652ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":5.652}
+2025-09-04T19:12:52.802Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.826ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.826}
+2025-09-04T19:12:52.815Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 44.425ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":44.425}
+2025-09-04T19:12:52.841Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.064ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.064}
+2025-09-04T19:15:42.644Z [INFO] GET /api/categories?isActive=true - 304 - 3.611ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":3.611}
+2025-09-04T19:15:42.649Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 12.582ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":12.582}
+2025-09-04T19:15:42.668Z [INFO] GET /api/categories?isActive=true - 304 - 10.348ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":10.348}
+2025-09-04T19:15:42.674Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 10.163ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":10.163}
+2025-09-04T19:15:42.690Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 18.55ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":18.55}
+2025-09-04T19:15:42.702Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 13.829ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":13.829}
+2025-09-04T19:15:42.704Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 16.308ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":16.308}
+2025-09-04T19:15:42.706Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 17.836ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":17.836}
+2025-09-04T19:15:42.714Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.716ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.716}
+2025-09-04T19:15:42.730Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.819ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.819}
+2025-09-04T19:15:42.740Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 4.79ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":4.79}
+2025-09-04T19:15:42.748Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 7.021ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":7.021}
+2025-09-04T19:15:46.848Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 21.999ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":21.999}
+2025-09-04T19:15:47.370Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 13.358ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":13.358}
+2025-09-04T19:15:47.400Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 16.121ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":16.121}
+2025-09-04T19:15:47.404Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 13.109ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":13.109}
+2025-09-04T19:15:47.424Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 6.071ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":6.071}
+2025-09-04T19:15:47.436Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.277ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.277}
+2025-09-04T19:15:56.625Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 17.22ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":17.22}
+2025-09-04T19:15:57.160Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 18.136ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":18.136}
+2025-09-04T19:15:57.202Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 21.993ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":21.993}
+2025-09-04T19:15:57.206Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 13.077ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":13.077}
+2025-09-04T19:15:57.230Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 4.281ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":4.281}
+2025-09-04T19:15:57.234Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 6.453ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":6.453}
+2025-09-04T19:18:55.910Z [INFO] GET /api/categories - 304 - 45.211ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":45.211}
+2025-09-04T19:18:55.916Z [INFO] GET /api/categories - 304 - 2.257ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.257}
+2025-09-04T19:18:57.954Z [INFO] GET /api/categories?isActive=true - 304 - 5.941ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":5.941}
+2025-09-04T19:18:57.970Z [INFO] GET /api/categories?isActive=true - 304 - 8.677ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":8.677}
+2025-09-04T19:18:58.006Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 58.503ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":58.503}
+2025-09-04T19:18:58.028Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 48.35ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":48.35}
+2025-09-04T19:18:58.082Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 63.531ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":63.531}
+2025-09-04T19:18:58.083Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 17.718ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":17.718}
+2025-09-04T19:18:58.095Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 21.807ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":21.807}
+2025-09-04T19:18:58.099Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 77.697ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":77.697}
+2025-09-04T19:18:58.108Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.188ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.188}
+2025-09-04T19:18:58.114Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.425ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.425}
+2025-09-04T19:18:58.120Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.325ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.325}
+2025-09-04T19:18:58.125Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 2.365ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":2.365}
+2025-09-04T19:19:03.924Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 36.156ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":36.156}
+2025-09-04T19:19:03.929Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 36.093ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":36.093}
+2025-09-04T19:19:03.943Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 43.928ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":43.928}
+2025-09-04T19:19:03.945Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 13.287ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":13.287}
+2025-09-04T19:19:03.947Z [INFO] GET /api/accounting/trial-balance?asOfDate=2025-09-04 - 304 - 7.716ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2025-09-04","statusCode":304,"responseTime":7.716}
+2025-09-04T19:19:03.960Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2025-09-04 - 304 - 7.236ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2025-09-04","statusCode":304,"responseTime":7.236}
+2025-09-04T19:21:04.049Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 19.748ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":19.748}
+2025-09-04T19:23:04.218Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2025-09-04 - 304 - 10.555ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2025-09-04","statusCode":304,"responseTime":10.555}
+2025-09-04T19:23:13.919Z [INFO] GET /api/categories - 304 - 3.194ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.194}
+2025-09-04T19:23:13.941Z [INFO] GET /api/categories - 304 - 11.463ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":11.463}
+2025-09-04T19:23:19.595Z [INFO] GET /api/categories - 304 - 4.945ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":4.945}
+2025-09-04T19:23:19.608Z [INFO] GET /api/categories - 304 - 8.944ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":8.944}
+2025-09-04T19:23:41.056Z [INFO] GET /api/categories - 304 - 8.153ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":8.153}
+2025-09-04T19:23:41.070Z [INFO] GET /api/categories - 304 - 6.586ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.586}
+2025-09-04T19:26:13.820Z [INFO] GET /api/categories?isActive=true - 304 - 248.066ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":248.066}
+2025-09-04T19:26:13.879Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 405.567ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":405.567}
+2025-09-04T19:26:13.931Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 351.277ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":351.277}
+2025-09-04T19:26:14.029Z [INFO] GET /api/categories?isActive=true - 200 - 426.569ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":426.569}
+2025-09-04T19:26:14.107Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 211.363ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":211.363}
+2025-09-04T19:26:14.179Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 41.99ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":41.99}
+2025-09-04T19:26:14.183Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 223.216ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":223.216}
+2025-09-04T19:26:14.225Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 304.404ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":304.404}
+2025-09-04T19:26:14.227Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 19.528ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":19.528}
+2025-09-04T19:26:14.242Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 9.579ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":9.579}
+2025-09-04T19:26:14.275Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 328.741ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":328.741}
+2025-09-04T19:26:14.380Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 9.681ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":9.681}
+2025-09-04T19:27:42.806Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T19:28:35.434Z [INFO] POST /api/auth/login - 200 - 415.012ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":415.012}
+2025-09-04T19:28:43.028Z [INFO] GET /api/categories - 304 - 6.555ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.555}
+2025-09-04T19:28:43.051Z [INFO] GET /api/categories - 304 - 11.744ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":11.744}
+2025-09-04T19:28:44.437Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 10.572ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":10.572}
+2025-09-04T19:28:44.438Z [INFO] GET /api/categories?isActive=true - 304 - 10.025ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":10.025}
+2025-09-04T19:28:44.453Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 17.582ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":17.582}
+2025-09-04T19:28:44.456Z [INFO] GET /api/categories?isActive=true - 200 - 16.518ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":16.518}
+2025-09-04T19:28:44.473Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 8.079ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":8.079}
+2025-09-04T19:28:44.475Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 7.897ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":7.897}
+2025-09-04T19:28:44.566Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.88ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.88}
+2025-09-04T19:28:44.572Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 14.056ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":14.056}
+2025-09-04T19:28:44.575Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 16.138ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":16.138}
+2025-09-04T19:28:44.581Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 15.229ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":15.229}
+2025-09-04T19:28:44.597Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 9.217ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":9.217}
+2025-09-04T19:28:44.603Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 7.802ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":7.802}
+2025-09-04T19:28:54.256Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 55.549ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":55.549}
+2025-09-04T19:28:54.767Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 8.024ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":8.024}
+2025-09-04T19:28:54.779Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 4.974ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":4.974}
+2025-09-04T19:28:54.781Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 6.159ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":6.159}
+2025-09-04T19:28:54.796Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 6.327ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":6.327}
+2025-09-04T19:28:54.799Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 4.951ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":4.951}
+2025-09-04T19:28:59.159Z [INFO] GET /api/categories - 304 - 10.557ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":10.557}
+2025-09-04T19:28:59.191Z [INFO] GET /api/categories - 304 - 16.477ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":16.477}
+2025-09-04T19:29:29.499Z [INFO] GET /api/categories?isActive=true - 304 - 23.1ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":23.1}
+2025-09-04T19:29:29.511Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 32.779ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":32.779}
+2025-09-04T19:29:29.513Z [INFO] GET /api/categories?isActive=true - 200 - 25.648ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":25.648}
+2025-09-04T19:29:29.516Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 45.547ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":45.547}
+2025-09-04T19:29:29.552Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 18.459ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":18.459}
+2025-09-04T19:29:29.556Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 17.832ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":17.832}
+2025-09-04T19:29:29.557Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 16.015ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":16.015}
+2025-09-04T19:29:29.563Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 17.561ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":17.561}
+2025-09-04T19:29:29.582Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.174ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.174}
+2025-09-04T19:29:29.611Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 12.804ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":12.804}
+2025-09-04T19:29:29.616Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 9.733ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":9.733}
+2025-09-04T19:29:29.627Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 7.799ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":7.799}
+2025-09-04T19:29:43.305Z [INFO] POST /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 174.185ms | Data: {"method":"POST","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":174.185}
+2025-09-04T19:29:44.379Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 59.772ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":59.772}
+2025-09-04T19:29:44.451Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 40.361ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":40.361}
+2025-09-04T19:29:44.470Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 26.713ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":26.713}
+2025-09-04T19:29:44.523Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 20.728ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":20.728}
+2025-09-04T19:29:44.525Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 12.595ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":12.595}
+2025-09-04T19:31:55.524Z [INFO] GET /api/categories - 304 - 47.932ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":47.932}
+2025-09-04T19:31:55.529Z [INFO] GET /api/categories - 304 - 2.606ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.606}
+2025-09-04T19:36:37.539Z [INFO] GET /api/categories - 304 - 3.979ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.979}
+2025-09-04T19:36:37.569Z [INFO] GET /api/categories - 304 - 20.088ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":20.088}
+2025-09-04T19:37:18.935Z [INFO] GET /api/categories?isActive=true - 304 - 123.042ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":123.042}
+2025-09-04T19:37:18.953Z [INFO] GET /api/categories?isActive=true - 200 - 70.614ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":70.614}
+2025-09-04T19:37:18.964Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 161.354ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":161.354}
+2025-09-04T19:37:18.968Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 92.235ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":92.235}
+2025-09-04T19:37:19.004Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 34.224ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":34.224}
+2025-09-04T19:37:19.008Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 33.41ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":33.41}
+2025-09-04T19:37:19.017Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 6.3ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":6.3}
+2025-09-04T19:37:19.020Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 6.055ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":6.055}
+2025-09-04T19:37:19.022Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.352ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.352}
+2025-09-04T19:37:19.028Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.602ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.602}
+2025-09-04T19:37:19.034Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.426ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.426}
+2025-09-04T19:37:19.042Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.01ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.01}
+2025-09-04T19:37:25.631Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 21.283ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":21.283}
+2025-09-04T19:37:26.145Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 8.591ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":8.591}
+2025-09-04T19:37:26.157Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 6.153ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":6.153}
+2025-09-04T19:37:26.162Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 7.629ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":7.629}
+2025-09-04T19:37:26.181Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 7.385ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":7.385}
+2025-09-04T19:37:26.184Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 6.019ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":6.019}
+2025-09-04T19:39:33.404Z [INFO] GET /api/categories?isActive=true - 304 - 2.813ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":2.813}
+2025-09-04T19:39:33.414Z [INFO] GET /api/categories?isActive=true - 304 - 7.283ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":7.283}
+2025-09-04T19:39:33.422Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 23.068ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":23.068}
+2025-09-04T19:39:33.437Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 6.959ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":6.959}
+2025-09-04T19:39:33.447Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 13.631ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":13.631}
+2025-09-04T19:39:33.450Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 13.992ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":13.992}
+2025-09-04T19:39:33.464Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 9.555ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":9.555}
+2025-09-04T19:39:33.469Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 7.698ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":7.698}
+2025-09-04T19:39:33.480Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.912ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.912}
+2025-09-04T19:39:33.486Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 2.832ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":2.832}
+2025-09-04T19:39:33.492Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 32.714ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":32.714}
+2025-09-04T19:39:33.525Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.246ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.246}
+2025-09-04T19:39:34.628Z [INFO] GET /api/categories - 304 - 5.762ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":5.762}
+2025-09-04T19:39:34.646Z [INFO] GET /api/categories - 304 - 11.087ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":11.087}
+2025-09-04T19:39:42.642Z [INFO] GET /api/categories?isActive=true - 304 - 9.621ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":9.621}
+2025-09-04T19:39:42.659Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 35.512ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":35.512}
+2025-09-04T19:39:42.680Z [INFO] GET /api/categories?isActive=true - 304 - 24.065ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":24.065}
+2025-09-04T19:39:42.713Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 17.474ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":17.474}
+2025-09-04T19:39:42.722Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 51.395ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":51.395}
+2025-09-04T19:39:42.729Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 26.77ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":26.77}
+2025-09-04T19:39:42.745Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 5.793ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":5.793}
+2025-09-04T19:39:42.751Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 8.458ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":8.458}
+2025-09-04T19:39:42.754Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 9.421ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":9.421}
+2025-09-04T19:39:42.758Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 9.434ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":9.434}
+2025-09-04T19:39:42.769Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.357ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.357}
+2025-09-04T19:39:42.778Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.389ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.389}
+2025-09-04T19:39:46.280Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 14.87ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":14.87}
+2025-09-04T19:39:46.805Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 17.361ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":17.361}
+2025-09-04T19:39:46.837Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 17.751ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":17.751}
+2025-09-04T19:39:46.843Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 14.282ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":14.282}
+2025-09-04T19:39:46.873Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 10.696ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":10.696}
+2025-09-04T19:39:46.886Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 7.448ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":7.448}
+2025-09-04T19:45:02.930Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 56.167ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":56.167}
+2025-09-04T19:45:08.750Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 79.774ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":79.774}
+2025-09-04T19:45:09.272Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 12.154ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":12.154}
+2025-09-04T19:45:09.312Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 23.952ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":23.952}
+2025-09-04T19:45:09.335Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 7.899ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":7.899}
+2025-09-04T19:45:09.348Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 52.513ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":52.513}
+2025-09-04T19:45:09.368Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 11.47ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":11.47}
+2025-09-04T19:45:16.953Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 35.568ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":35.568}
+2025-09-04T19:45:17.015Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 29.373ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":29.373}
+2025-09-04T19:45:17.029Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 37.194ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":37.194}
+2025-09-04T19:45:17.066Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 11.869ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":11.869}
+2025-09-04T19:45:17.104Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 21.24ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":21.24}
+2025-09-04T19:45:17.119Z [INFO] GET /api/categories?isActive=true - 304 - 193.22ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":193.22}
+2025-09-04T19:47:30.478Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 14.915ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":14.915}
+2025-09-04T19:47:31.010Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 23.303ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":23.303}
+2025-09-04T19:47:31.042Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 13.576ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":13.576}
+2025-09-04T19:47:31.047Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 12.328ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":12.328}
+2025-09-04T19:47:31.073Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 8.791ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":8.791}
+2025-09-04T19:47:31.076Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 5.496ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":5.496}
+2025-09-04T19:51:44.472Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 57.034ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":57.034}
+2025-09-04T19:51:45.096Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 109.351ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":109.351}
+2025-09-04T19:51:45.112Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 8.821ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":8.821}
+2025-09-04T19:51:45.120Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 3.818ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":3.818}
+2025-09-04T19:51:45.134Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 29.317ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":29.317}
+2025-09-04T19:51:45.141Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.013ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.013}
+2025-09-04T19:55:07.277Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T19:55:07.279Z [INFO] 🌍 Environment: development
+2025-09-04T19:55:07.279Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T19:55:07.280Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T19:55:07.280Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T19:55:11.619Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 81.48ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":81.48}
+2025-09-04T19:55:11.722Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 97.822ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":97.822}
+2025-09-04T19:55:11.739Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 10.306ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":10.306}
+2025-09-04T19:55:11.750Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 122.177ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":122.177}
+2025-09-04T19:55:11.761Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.838ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.838}
+2025-09-04T19:55:16.051Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 92.231ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":92.231}
+2025-09-04T19:55:16.585Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 22.47ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":22.47}
+2025-09-04T19:55:16.634Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 23.581ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":23.581}
+2025-09-04T19:55:16.644Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 23.156ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":23.156}
+2025-09-04T19:55:16.654Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 6.375ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":6.375}
+2025-09-04T19:55:16.669Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.417ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.417}
+2025-09-04T19:55:22.058Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 18.813ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":18.813}
+2025-09-04T19:55:22.607Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 34.533ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":34.533}
+2025-09-04T19:55:22.668Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 20.73ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":20.73}
+2025-09-04T19:55:22.674Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 16.933ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":16.933}
+2025-09-04T19:55:22.710Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 9.006ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":9.006}
+2025-09-04T19:55:22.727Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 11.638ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":11.638}
+2025-09-04T19:55:43.261Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.47ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.47}
+2025-09-04T19:55:43.281Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.315ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.315}
+2025-09-04T19:55:43.298Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.854ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.854}
+2025-09-04T19:55:47.004Z [INFO] PUT /api/applications/dev/cmf29n3ho0000sgioeo5ldsj9/status - 200 - 79.907ms | Data: {"method":"PUT","url":"/api/applications/dev/cmf29n3ho0000sgioeo5ldsj9/status","statusCode":200,"responseTime":79.907}
+2025-09-04T19:55:47.038Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 12.252ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":12.252}
+2025-09-04T19:55:49.495Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 19.614ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":19.614}
+2025-09-04T19:55:49.566Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 50.931ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":50.931}
+2025-09-04T19:55:49.587Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 56.21ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":56.21}
+2025-09-04T19:55:49.594Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 52.69ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":52.69}
+2025-09-04T19:55:49.622Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 200 - 28.151ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":200,"responseTime":28.151}
+2025-09-04T19:55:49.661Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 28.177ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":28.177}
+2025-09-04T19:55:49.676Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 33.589ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":33.589}
+2025-09-04T19:55:49.688Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 200 - 40.027ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":200,"responseTime":40.027}
+2025-09-04T19:55:49.716Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 80.259ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":80.259}
+2025-09-04T19:55:49.724Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 25.732ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":25.732}
+2025-09-04T19:55:49.741Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 17.955ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":17.955}
+2025-09-04T19:55:49.767Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 14.484ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":14.484}
+2025-09-04T19:55:49.779Z [INFO] GET /api/categories?isActive=true - 304 - 301.37ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":301.37}
+2025-09-04T19:55:49.787Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 27.268ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":27.268}
+2025-09-04T19:55:49.793Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 30.693ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":30.693}
+2025-09-04T19:55:49.834Z [INFO] GET /api/categories?isActive=true - 200 - 305.133ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":305.133}
+2025-09-04T19:56:03.051Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 18.853ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":18.853}
+2025-09-04T19:56:03.577Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 15.202ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":15.202}
+2025-09-04T19:56:03.623Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 18.545ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":18.545}
+2025-09-04T19:56:03.633Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 15.269ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":15.269}
+2025-09-04T19:56:03.639Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 200 - 26.647ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":200,"responseTime":26.647}
+2025-09-04T19:56:03.654Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 5.989ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":5.989}
+2025-09-04T19:56:03.671Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 7.86ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":7.86}
+2025-09-04T19:56:03.680Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 6.367ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":6.367}
+2025-09-04T19:56:57.431Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-04T19:56:57.435Z [INFO] HTTP server closed
+2025-09-04T19:59:00.136Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T19:59:00.137Z [INFO] 🌍 Environment: development
+2025-09-04T19:59:00.137Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T19:59:00.137Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T19:59:00.138Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T19:59:05.625Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 166.658ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":166.658}
+2025-09-04T19:59:05.741Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 304 - 99.888ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":304,"responseTime":99.888}
+2025-09-04T19:59:05.766Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 10.604ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":10.604}
+2025-09-04T19:59:05.777Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 304 - 126.286ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":304,"responseTime":126.286}
+2025-09-04T19:59:05.790Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 304 - 154.447ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":304,"responseTime":154.447}
+2025-09-04T19:59:05.804Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 18.829ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":18.829}
+2025-09-04T19:59:05.815Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 8.659ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":8.659}
+2025-09-04T19:59:09.602Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate - 200 - 8.068ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/deactivate","statusCode":200,"responseTime":8.068}
+2025-09-04T19:59:10.149Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 27.264ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":27.264}
+2025-09-04T19:59:10.201Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 20.002ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":20.002}
+2025-09-04T19:59:10.210Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 19.081ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":19.081}
+2025-09-04T19:59:10.216Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 200 - 20.766ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":200,"responseTime":20.766}
+2025-09-04T19:59:10.230Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 8.013ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":8.013}
+2025-09-04T19:59:10.246Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 8.088ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":8.088}
+2025-09-04T19:59:10.249Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 4.429ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":4.429}
+2025-09-04T19:59:29.857Z [INFO] PATCH /api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate - 200 - 20.872ms | Data: {"method":"PATCH","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/activate","statusCode":200,"responseTime":20.872}
+2025-09-04T19:59:30.385Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 20.278ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":20.278}
+2025-09-04T19:59:30.422Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 15.213ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":15.213}
+2025-09-04T19:59:30.435Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 200 - 17.072ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":200,"responseTime":17.072}
+2025-09-04T19:59:30.451Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 15.24ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":15.24}
+2025-09-04T19:59:30.455Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 200 - 14.74ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":200,"responseTime":14.74}
+2025-09-04T19:59:30.463Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 3.123ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":3.123}
+2025-09-04T19:59:30.472Z [INFO] GET /api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials - 304 - 4.126ms | Data: {"method":"GET","url":"/api/distributors/cmf5pl5t20000iyazdtwqi3rf/credentials","statusCode":304,"responseTime":4.126}
+2025-09-04T20:02:05.467Z [INFO] SIGINT received. Starting graceful shutdown...
+2025-09-04T20:02:05.477Z [INFO] HTTP server closed
+2025-09-04T20:02:49.871Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T20:02:49.871Z [INFO] 🌍 Environment: development
+2025-09-04T20:02:49.872Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T20:02:49.872Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T20:02:49.872Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T20:02:54.062Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 112.873ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":112.873}
+2025-09-04T20:04:38.442Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-09-04T20:04:38.443Z [INFO] 🌍 Environment: development
+2025-09-04T20:04:38.444Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-09-04T20:04:38.444Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-09-04T20:04:38.444Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-09-04T20:04:38.733Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T20:04:39.181Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-09-04T20:05:34.444Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 86.173ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":86.173}
+2025-09-04T20:07:17.711Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 24.316ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":24.316}
+2025-09-04T20:07:29.960Z [INFO] GET /api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw - 200 - 88.614ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5i5fwt0002gkpuwvph2jxw","statusCode":200,"responseTime":88.614}
+2025-09-04T20:07:37.181Z [INFO] GET /api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o - 200 - 5.233ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf5eqccz0000gkpuhei2290o","statusCode":200,"responseTime":5.233}
+2025-09-04T20:07:48.098Z [INFO] GET /api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9 - 200 - 7.933ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmf29n3ho0000sgioeo5ldsj9","statusCode":200,"responseTime":7.933}

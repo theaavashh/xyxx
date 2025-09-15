@@ -1,0 +1,23 @@
+import { Request, Response } from 'express';
+export declare const getRawMaterials: (req: Request, res: Response) => Promise<void>;
+export declare const getRawMaterialById: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
+export declare const createRawMaterial: (req: Request, res: Response) => Promise<void>;
+export declare const updateRawMaterial: (req: Request, res: Response) => Promise<void>;
+export declare const deleteRawMaterial: (req: Request, res: Response) => Promise<void>;
+export declare const getRawMaterialCategories: (req: Request, res: Response) => Promise<void>;
+export declare const getRawMaterialTransactions: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionOrders: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionOrderById: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
+export declare const createProductionOrder: (req: Request, res: Response) => Promise<void>;
+export declare const updateProductionOrder: (req: Request, res: Response) => Promise<void>;
+export declare const updateProductionOrderStatus: (req: Request, res: Response) => Promise<void>;
+export declare const deleteProductionOrder: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionRecords: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionRecordById: (req: Request, res: Response) => Promise<Response<any, Record<string, any>>>;
+export declare const createProductionRecord: (req: Request, res: Response) => Promise<void>;
+export declare const getWorkCenters: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionSchedules: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionKPIs: (req: Request, res: Response) => Promise<void>;
+export declare const getProductionReport: (req: Request, res: Response) => Promise<void>;
+export declare const exportProductionReport: (req: Request, res: Response) => Promise<void>;
+//# sourceMappingURL=production.controller.d.ts.map

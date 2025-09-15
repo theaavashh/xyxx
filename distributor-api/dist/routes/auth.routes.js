@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_controller_1 = require("@/controllers/auth.controller");
+const auth_schema_1 = require("@/schemas/auth.schema");
+const validation_middleware_1 = require("@/middleware/validation.middleware");
+const auth_middleware_1 = require("@/middleware/auth.middleware");
+const rate_limit_middleware_1 = require("@/middleware/rate-limit.middleware");
+const router = (0, express_1.Router)();
+router.post('/register', rate_limit_middleware_1.authLimiter, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(auth_schema_1.RegisterSchema), auth_controller_1.register);
+router.post('/login', rate_limit_middleware_1.authLimiter, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(auth_schema_1.LoginSchema), auth_controller_1.login);
+router.post('/logout', auth_controller_1.logout);
+router.get('/profile', auth_middleware_1.authenticateToken, auth_controller_1.getProfile);
+router.put('/profile', auth_middleware_1.authenticateToken, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(auth_schema_1.UpdateProfileSchema), auth_controller_1.updateProfile);
+router.post('/change-password', auth_middleware_1.authenticateToken, rate_limit_middleware_1.passwordResetLimiter, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(auth_schema_1.ChangePasswordSchema), auth_controller_1.changePassword);
+router.post('/refresh-token', auth_middleware_1.authenticateToken, auth_controller_1.refreshToken);
+router.get('/users', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'MANAGERIAL', 'SALES_MANAGER'), auth_controller_1.getAllUsers);
+router.put('/users/:userId/status', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'MANAGERIAL', 'SALES_MANAGER'), auth_controller_1.updateUserStatus);
+router.put('/users/:userId', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'MANAGERIAL', 'SALES_MANAGER'), auth_controller_1.updateUser);
+router.delete('/users/:userId', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'MANAGERIAL', 'SALES_MANAGER'), auth_controller_1.deleteUser);
+exports.default = router;
+//# sourceMappingURL=auth.routes.js.map

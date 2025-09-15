@@ -1,0 +1,790 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model for authentication and authorization
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  username    String   @unique
+  fullName    String
+  password    String
+  address     String
+  department  String
+  position    String
+  role        UserRole @default(SALES_REPRESENTATIVE)
+  isActive    Boolean  @default(true)
+  applicationId String? @unique // Link to the distributor application
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Email verification fields
+  isVerified    Boolean   @default(false)
+  verifiedAt    DateTime?
+
+  // Relations
+  reviewedApplications DistributorApplication[] @relation("ReviewedBy")
+  createdApplications  DistributorApplication[] @relation("CreatedBy")
+  distributorProfile   DistributorProfile?
+  createdJournalEntries JournalEntry[] @relation("JournalEntryCreatedBy")
+  postedJournalEntries JournalEntry[] @relation("JournalEntryPostedBy")
+  assignedCategories   DistributorCategory[]
+
+  @@map("users")
+}
+
+// Distributor Application model
+model DistributorApplication {
+  id        String            @id @default(cuid())
+  status    ApplicationStatus @default(PENDING)
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @updatedAt
+
+  // Personal Details
+  fullName           String
+  age                Int
+  gender             String
+  citizenshipNumber  String
+  issuedDistrict     String
+  mobileNumber       String
+  email              String?
+  permanentAddress   String
+  temporaryAddress   String?
+
+  // Business Details
+  companyName             String
+  registrationNumber      String
+  panVatNumber            String
+  officeAddress           String
+  operatingArea           String
+  desiredDistributorArea  String
+  currentBusiness         String
+  businessType            String
+
+  // Staff and Infrastructure
+  salesManCount               Int     @default(0)
+  salesManExperience          String?
+  deliveryStaffCount          Int     @default(0)
+  deliveryStaffExperience     String?
+  accountAssistantCount       Int     @default(0)
+  accountAssistantExperience  String?
+  otherStaffCount             Int     @default(0)
+  otherStaffExperience        String?
+  warehouseSpace              Float   @default(0)
+  warehouseDetails            String?
+  truckCount                  Int     @default(0)
+  truckDetails                String?
+  fourWheelerCount            Int     @default(0)
+  fourWheelerDetails          String?
+  twoWheelerCount             Int     @default(0)
+  twoWheelerDetails           String?
+  cycleCount                  Int     @default(0)
+  cycleDetails                String?
+  thelaCount                  Int     @default(0)
+  thelaDetails                String?
+
+  // Business Information
+  productCategory   String
+  yearsInBusiness   Int
+  monthlySales      String
+  storageFacility   String
+
+  // Retailer Requirements
+  preferredProducts     String
+  monthlyOrderQuantity  String
+  paymentPreference     String
+  creditDays            Int?
+  deliveryPreference    String
+
+  // Partnership Details (optional)
+  partnerFullName           String?
+  partnerAge                Int?
+  partnerGender             String?
+  partnerCitizenshipNumber  String?
+  partnerIssuedDistrict     String?
+  partnerMobileNumber       String?
+  partnerEmail              String?
+  partnerPermanentAddress   String?
+  partnerTemporaryAddress   String?
+
+  // Additional Information
+  additionalInfo1 String?
+  additionalInfo2 String?
+  additionalInfo3 String?
+
+  // Documents (file paths)
+  citizenshipId       String?
+  companyRegistration String?
+  panVatRegistration  String?
+  officePhoto         String?
+  areaMap             String?
+
+  // Declaration
+  declaration Boolean
+  signature   String
+  date        String
+  
+  // Agreement and Signature
+  agreementAccepted         Boolean @default(false)
+  distributorSignatureName  String @default("")
+  distributorSignatureDate  String @default("")
+
+  // Review Information
+  reviewNotes String?
+  reviewedAt  DateTime?
+
+  // Relations
+  reviewedBy            User?                        @relation("ReviewedBy", fields: [reviewedById], references: [id])
+  reviewedById          String?
+  createdBy             User?                        @relation("CreatedBy", fields: [createdById], references: [id])
+  createdById           String?
+  currentTransactions   CurrentTransaction[]
+  productsToDistribute  ProductToDistribute[]
+  areaCoverageDetails   AreaCoverageDetail[]
+  applicationHistory    ApplicationStatusHistory[]
+
+  @@map("distributor_applications")
+}
+
+// Current Transactions model
+model CurrentTransaction {
+  id       String @id @default(cuid())
+  company  String
+  products String
+  turnover String
+
+  // Relations
+  application   DistributorApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String
+
+  @@map("current_transactions")
+}
+
+// Products to Distribute model
+model ProductToDistribute {
+  id                    String @id @default(cuid())
+  productName           String
+  monthlySalesCapacity  String
+
+  // Relations
+  application   DistributorApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String
+
+  @@map("products_to_distribute")
+}
+
+// Area Coverage Details model
+model AreaCoverageDetail {
+  id                 String @id @default(cuid())
+  distributionArea   String
+  populationEstimate String
+  competitorBrand    String
+
+  // Relations
+  application   DistributorApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String
+
+  @@map("area_coverage_details")
+}
+
+// Application Status History model for tracking changes
+model ApplicationStatusHistory {
+  id          String            @id @default(cuid())
+  status      ApplicationStatus
+  notes       String?
+  changedBy   String
+  changedAt   DateTime          @default(now())
+
+  // Relations
+  application   DistributorApplication @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  applicationId String
+
+  @@map("application_status_history")
+}
+
+// Distributor Profile model (for approved/created distributors)
+model DistributorProfile {
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Personal Details
+  firstName     String
+  lastName      String
+  phoneNumber   String
+  address       String
+  dateOfBirth   DateTime
+  nationalId    String
+
+  // Company Details
+  companyName       String
+  companyType       String
+  registrationNumber String
+  panNumber         String
+  vatNumber         String?
+  establishedDate   DateTime
+  companyAddress    String
+  website           String?
+  description       String?
+
+  // Status and Management
+  status        DistributorStatus @default(ACTIVE)
+  documents     String?  // JSON string of document paths
+
+  // Administrative fields
+  createdBy     String
+  approvedBy    String?
+  approvedAt    DateTime?
+
+  // Relations
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId        String   @unique
+
+  @@map("distributor_profiles")
+}
+
+// Enums
+enum UserRole {
+  ADMIN
+  MANAGERIAL
+  SALES_MANAGER
+  SALES_REPRESENTATIVE
+  DISTRIBUTOR
+}
+
+enum ApplicationStatus {
+  PENDING
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+  REQUIRES_CHANGES
+}
+
+enum DistributorStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+// Category model for product organization
+model Category {
+  id          String   @id @default(cuid())
+  title       String   @unique
+  description String?
+  slug        String   @unique // URL-friendly version of title
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Administrative fields
+  createdBy   String
+  updatedBy   String?
+  
+  // Relations
+  products    Product[]
+  distributors DistributorCategory[]
+  
+  @@map("categories")
+}
+
+// Product model
+model Product {
+  id             String   @id @default(cuid())
+  name           String
+  description    String?
+  sku            String?  @unique // Stock Keeping Unit
+  price          Decimal? @db.Decimal(10, 2) // Price in NPR
+  costPrice      Decimal? @db.Decimal(10, 2) // Cost price for profit calculation
+  stockQuantity  Int      @default(0)
+  minStockLevel  Int      @default(0) // Minimum stock level for alerts
+  isActive       Boolean  @default(true)
+  
+  // Product specifications
+  weight         Float?   // Weight in kg
+  dimensions     String?  // JSON string for length, width, height
+  brand          String?
+  model          String?
+  color          String?
+  size           String?
+  
+  // Images and documents
+  images         String?  // JSON array of image paths
+  documents      String?  // JSON array of document paths
+  
+  // SEO and display
+  slug           String   @unique // URL-friendly version of name
+  tags           String?  // JSON array of tags for search
+  
+  // Timestamps
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  
+  // Administrative fields
+  createdBy      String
+  updatedBy      String?
+  
+  // Relations
+  category       Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId     String
+  
+  @@map("products")
+}
+
+enum ProductStatus {
+  ACTIVE
+  INACTIVE
+  OUT_OF_STOCK
+  DISCONTINUED
+}
+
+// Accounting Models
+
+enum AccountType {
+  ASSET
+  LIABILITY
+  EQUITY
+  REVENUE
+  EXPENSE
+}
+
+enum JournalEntryStatus {
+  DRAFT
+  POSTED
+  VOID
+}
+
+enum TransactionType {
+  DEBIT
+  CREDIT
+}
+
+// Chart of Accounts
+model Account {
+  id          String      @id @default(cuid())
+  code        String      @unique // Account code (e.g., 1000, 2000)
+  name        String      // Account name
+  type        AccountType
+  description String?
+  isActive    Boolean     @default(true)
+  parentId    String?     // For hierarchical accounts
+  sortOrder   Int         @default(0)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  
+  // Relations
+  parent      Account?    @relation("AccountHierarchy", fields: [parentId], references: [id])
+  children    Account[]   @relation("AccountHierarchy")
+  journalLines JournalLineItem[]
+  ledgerEntries LedgerEntry[]
+  
+  @@map("accounts")
+}
+
+// Journal Entry Header
+model JournalEntry {
+  id              String              @id @default(cuid())
+  journalNumber   String              @unique // Auto-generated (JE20240825001)
+  date            DateTime
+  referenceNumber String?             // External reference
+  description     String
+  companyName     String              // Company/Individual name
+  status          JournalEntryStatus  @default(DRAFT)
+  totalDebit      Decimal             @db.Decimal(12, 2)
+  totalCredit     Decimal             @db.Decimal(12, 2)
+  postedAt        DateTime?           // When entry was posted
+  postedBy        String?             // User ID who posted
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  
+  // Relations
+  entries         JournalLineItem[]
+  ledgerEntries   LedgerEntry[]
+  partyTransactions PartyTransaction[]
+  createdBy       User                @relation("JournalEntryCreatedBy", fields: [createdById], references: [id])
+  createdById     String
+  postedByUser    User?               @relation("JournalEntryPostedBy", fields: [postedBy], references: [id])
+  
+  @@map("journal_entries")
+}
+
+// Journal Entry Line Items
+model JournalLineItem {
+  id              String          @id @default(cuid())
+  journalEntryId  String
+  accountId       String
+  description     String?
+  debitAmount     Decimal         @db.Decimal(12, 2) @default(0)
+  creditAmount    Decimal         @db.Decimal(12, 2) @default(0)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  
+  // Relations
+  journalEntry    JournalEntry    @relation(fields: [journalEntryId], references: [id], onDelete: Cascade)
+  account         Account         @relation(fields: [accountId], references: [id])
+  
+  @@map("journal_line_items")
+}
+
+// Ledger Entries (for account balances)
+model LedgerEntry {
+  id              String          @id @default(cuid())
+  accountId       String
+  journalEntryId  String
+  date            DateTime
+  description     String
+  debitAmount     Decimal         @db.Decimal(12, 2) @default(0)
+  creditAmount    Decimal         @db.Decimal(12, 2) @default(0)
+  balance         Decimal         @db.Decimal(12, 2) // Running balance
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  
+  // Relations
+  account         Account         @relation(fields: [accountId], references: [id])
+  journalEntry    JournalEntry    @relation(fields: [journalEntryId], references: [id])
+  
+  @@map("ledger_entries")
+}
+
+// Party Ledger (Customers/Suppliers)
+model PartyLedger {
+  id              String          @id @default(cuid())
+  partyType       String          // CUSTOMER or SUPPLIER
+  partyName       String
+  contactPerson   String?
+  phone           String?
+  email           String?
+  address         String?
+  openingBalance  Decimal         @db.Decimal(12, 2) @default(0)
+  currentBalance  Decimal         @db.Decimal(12, 2) @default(0)
+  isActive        Boolean         @default(true)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  
+  // Relations
+  transactions    PartyTransaction[]
+  
+  @@map("party_ledgers")
+}
+
+// Party Transactions
+model PartyTransaction {
+  id              String          @id @default(cuid())
+  partyLedgerId   String
+  journalEntryId  String?
+  date            DateTime
+  description     String
+  debitAmount     Decimal         @db.Decimal(12, 2) @default(0)
+  creditAmount    Decimal         @db.Decimal(12, 2) @default(0)
+  balance         Decimal         @db.Decimal(12, 2) // Running balance
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  
+  // Relations
+  partyLedger     PartyLedger     @relation(fields: [partyLedgerId], references: [id], onDelete: Cascade)
+  journalEntry    JournalEntry?   @relation(fields: [journalEntryId], references: [id])
+  
+  @@map("party_transactions")
+}
+
+// Distributor-Category junction table for many-to-many relationship
+model DistributorCategory {
+  id           String   @id @default(cuid())
+  distributorId String
+  categoryId   String
+  assignedAt   DateTime @default(now())
+  assignedBy   String   // Admin who assigned the category
+  
+  // Relations
+  distributor  User     @relation(fields: [distributorId], references: [id], onDelete: Cascade)
+  category     Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  @@unique([distributorId, categoryId])
+  @@map("distributor_categories")
+}
+
+// Production Management Models
+
+// Raw Material Category
+model RawMaterialCategory {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  materials   RawMaterial[]
+  
+  @@map("raw_material_categories")
+}
+
+// Raw Material
+model RawMaterial {
+  id              String   @id @default(cuid())
+  materialCode    String   @unique
+  materialName    String
+  categoryId      String
+  description     String?
+  unit            String   @default("kg")
+  currentStock    Float    @default(0)
+  minStockLevel   Float    @default(0)
+  maxStockLevel   Float    @default(0)
+  reorderPoint    Float    @default(0)
+  unitCost        Decimal  @db.Decimal(10, 2) @default(0)
+  supplierId      String?
+  supplierName    String?
+  location        String?
+  shelfLife       Int?     // in days
+  batchNumber     String?
+  expiryDate      DateTime?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  category        RawMaterialCategory @relation(fields: [categoryId], references: [id])
+  transactions    RawMaterialTransaction[]
+  materialUsage   ProductionMaterialUsage[]
+  
+  @@map("raw_materials")
+}
+
+// Raw Material Transaction
+model RawMaterialTransaction {
+  id              String   @id @default(cuid())
+  materialId      String
+  transactionType String   // purchase, consumption, adjustment, transfer
+  quantity        Float
+  unitCost        Decimal  @db.Decimal(10, 2)
+  totalCost       Decimal  @db.Decimal(10, 2)
+  referenceNumber String?
+  referenceType   String?  // purchase_order, production_order, adjustment
+  batchNumber     String?
+  location        String?
+  createdBy       String
+  createdAt       DateTime @default(now())
+  
+  // Relations
+  material        RawMaterial @relation(fields: [materialId], references: [id], onDelete: Cascade)
+  
+  @@map("raw_material_transactions")
+}
+
+// Work Center
+model WorkCenter {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  code        String   @unique
+  description String?
+  capacity    Int      @default(10)
+  efficiency  Float    @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  machines    Machine[]
+  orders      ProductionOrder[]
+  schedules   ProductionSchedule[]
+  
+  @@map("work_centers")
+}
+
+// Machine
+model Machine {
+  id              String   @id @default(cuid())
+  name            String
+  code            String   @unique
+  workCenterId    String
+  type            String?
+  model           String?
+  capacity        Int      @default(1)
+  efficiency      Float    @default(0)
+  status          String   @default("operational") // operational, maintenance, breakdown
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  workCenter      WorkCenter @relation(fields: [workCenterId], references: [id])
+  machineUsage    ProductionMachineUsage[]
+  
+  @@map("machines")
+}
+
+// Production Order
+model ProductionOrder {
+  id                String   @id @default(cuid())
+  orderNumber       String   @unique
+  productId         String
+  productName       String
+  quantity          Int
+  priority          String   @default("medium") // low, medium, high, urgent
+  status            String   @default("planned") // planned, scheduled, in_progress, completed, cancelled
+  plannedStartDate  DateTime
+  plannedEndDate    DateTime
+  actualStartDate   DateTime?
+  actualEndDate     DateTime?
+  workCenterId      String?
+  assignedWorkers   String[] // Array of user IDs
+  assignedMachines  String[] // Array of machine IDs
+  estimatedDuration Int      @default(0) // in hours
+  actualDuration    Int?     // in hours
+  notes             String?
+  createdBy         String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relations
+  workCenter        WorkCenter? @relation(fields: [workCenterId], references: [id])
+  records           ProductionRecord[]
+  scheduledOrders   ScheduledOrder[]
+  
+  @@map("production_orders")
+}
+
+// Production Record
+model ProductionRecord {
+  id                String   @id @default(cuid())
+  productionOrderId String
+  batchNumber       String
+  quantityPlanned   Int
+  quantityProduced  Int
+  quantityRejected  Int
+  quantityAccepted  Int
+  startTime         DateTime
+  endTime           DateTime
+  duration          Float    // in hours
+  workCenter        String
+  shift             String   @default("morning") // morning, afternoon, night
+  operatorId        String
+  operatorName      String
+  supervisorId      String?
+  supervisorName    String?
+  qualityPassed     Boolean  @default(false)
+  qualityCheckedBy  String?
+  qualityCheckedAt  DateTime?
+  qualityNotes      String?
+  notes             String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relations
+  productionOrder   ProductionOrder @relation(fields: [productionOrderId], references: [id])
+  materialUsage     ProductionMaterialUsage[]
+  machineUsage      ProductionMachineUsage[]
+  qualityMetrics    QualityMetric[]
+  
+  @@map("production_records")
+}
+
+// Production Material Usage
+model ProductionMaterialUsage {
+  id                String   @id @default(cuid())
+  productionRecordId String
+  materialId        String
+  quantityUsed      Float
+  unit              String
+  unitCost          Decimal  @db.Decimal(10, 2)
+  totalCost         Decimal  @db.Decimal(10, 2)
+  batchNumber       String?
+  wastage           Float    @default(0)
+  wastagePercentage Float    @default(0)
+  createdAt         DateTime @default(now())
+  
+  // Relations
+  productionRecord  ProductionRecord @relation(fields: [productionRecordId], references: [id], onDelete: Cascade)
+  material          RawMaterial @relation(fields: [materialId], references: [id])
+  
+  @@map("production_material_usage")
+}
+
+// Production Machine Usage
+model ProductionMachineUsage {
+  id                String   @id @default(cuid())
+  productionRecordId String
+  machineId         String
+  startTime         DateTime
+  endTime           DateTime
+  duration          Float    // in hours
+  efficiency        Float    @default(0)
+  maintenanceRequired Boolean @default(false)
+  createdAt         DateTime @default(now())
+  
+  // Relations
+  productionRecord  ProductionRecord @relation(fields: [productionRecordId], references: [id], onDelete: Cascade)
+  machine           Machine @relation(fields: [machineId], references: [id])
+  
+  @@map("production_machine_usage")
+}
+
+// Quality Metric
+model QualityMetric {
+  id                String   @id @default(cuid())
+  productionRecordId String
+  metricName        String
+  targetValue       Float
+  actualValue       Float
+  unit              String
+  tolerance         Float    @default(0)
+  passed            Boolean  @default(false)
+  notes             String?
+  createdAt         DateTime @default(now())
+  
+  // Relations
+  productionRecord  ProductionRecord @relation(fields: [productionRecordId], references: [id], onDelete: Cascade)
+  
+  @@map("quality_metrics")
+}
+
+// Production Schedule
+model ProductionSchedule {
+  id                String   @id @default(cuid())
+  scheduleDate      DateTime
+  workCenterId      String
+  shift             String   @default("morning")
+  totalPlannedHours Float    @default(0)
+  efficiency        Float    @default(0)
+  status            String   @default("planned") // planned, in_progress, completed
+  createdBy         String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relations
+  workCenter        WorkCenter @relation(fields: [workCenterId], references: [id])
+  scheduledOrders   ScheduledOrder[]
+  
+  @@map("production_schedules")
+}
+
+// Scheduled Order
+model ScheduledOrder {
+  id                String   @id @default(cuid())
+  scheduleId        String
+  productionOrderId String
+  startTime         DateTime
+  endTime           DateTime
+  duration          Float    // in hours
+  priority          String   @default("medium")
+  status            String   @default("scheduled") // scheduled, in_progress, completed, cancelled
+  assignedWorkers   String[] // Array of user IDs
+  assignedMachines  String[] // Array of machine IDs
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  // Relations
+  schedule          ProductionSchedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  productionOrder   ProductionOrder @relation(fields: [productionOrderId], references: [id])
+  
+  @@map("scheduled_orders")
+}
