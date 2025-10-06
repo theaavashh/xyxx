@@ -117,4 +117,24 @@ router.delete('/:id/credentials',
   deleteDistributorCredentials
 );
 
+// Find distributor by application
+router.get('/find-by-application/:applicationId', 
+  authenticateToken,
+  authorize('ADMIN', 'SALES_MANAGER', 'SALES_REPRESENTATIVE'),
+  findDistributorByApplication
+);
+
+// Activate/Deactivate distributor routes
+router.patch('/:id/activate', 
+  authenticateToken,
+  authorize('ADMIN', 'SALES_MANAGER'),
+  activateDistributor
+);
+
+router.patch('/:id/deactivate', 
+  authenticateToken,
+  authorize('ADMIN', 'SALES_MANAGER'),
+  deactivateDistributor
+);
+
 export default router;

@@ -28,6 +28,7 @@ export declare const partyLedgerController: {
     createParty(req: Request, res: Response): Promise<Response>;
     updateParty(req: Request, res: Response): Promise<Response>;
     deleteParty(req: Request, res: Response): Promise<Response>;
+    getAgingAnalysis(req: Request, res: Response): Promise<Response>;
 };
 export declare const purchaseEntryController: {
     getPurchaseEntries(req: Request, res: Response): Promise<Response>;
@@ -36,6 +37,36 @@ export declare const purchaseEntryController: {
     updatePurchaseEntry(req: Request, res: Response): Promise<Response>;
     markAsPaid(req: Request, res: Response): Promise<Response>;
     deletePurchaseEntry(req: Request, res: Response): Promise<Response>;
+    createPurchaseJournalEntry(purchaseEntry: any): Promise<void>;
+    createPaymentJournalEntry(purchaseEntry: any, paymentData: any): Promise<void>;
+};
+export declare const salesEntryController: {
+    getSalesEntries(req: Request, res: Response): Promise<Response>;
+    getSalesEntryById(req: Request, res: Response): Promise<Response>;
+    createSalesEntry(req: Request, res: Response): Promise<Response>;
+    updateSalesEntry(req: Request, res: Response): Promise<Response>;
+    markAsPaid(req: Request, res: Response): Promise<Response>;
+    deleteSalesEntry(req: Request, res: Response): Promise<Response>;
+    createSalesJournalEntry(salesEntry: any): Promise<void>;
+    createPaymentJournalEntry(salesEntry: any, paymentData: any): Promise<void>;
+};
+export declare const salesReturnController: {
+    getSalesReturns(req: Request, res: Response): Promise<Response>;
+    getSalesReturnById(req: Request, res: Response): Promise<Response>;
+    createSalesReturn(req: Request, res: Response): Promise<Response>;
+    updateSalesReturn(req: Request, res: Response): Promise<Response>;
+    processReturn(req: Request, res: Response): Promise<Response>;
+    deleteSalesReturn(req: Request, res: Response): Promise<Response>;
+    createSalesReturnJournalEntry(salesReturn: any): Promise<void>;
+};
+export declare const purchaseReturnController: {
+    getPurchaseReturns(req: Request, res: Response): Promise<Response>;
+    getPurchaseReturnById(req: Request, res: Response): Promise<Response>;
+    createPurchaseReturn(req: Request, res: Response): Promise<Response>;
+    updatePurchaseReturn(req: Request, res: Response): Promise<Response>;
+    processReturn(req: Request, res: Response): Promise<Response>;
+    deletePurchaseReturn(req: Request, res: Response): Promise<Response>;
+    createPurchaseReturnJournalEntry(purchaseReturn: any): Promise<void>;
 };
 export declare const vatReportController: {
     getVATReports(req: Request, res: Response): Promise<Response>;
@@ -53,9 +84,11 @@ export declare const balanceSheetController: {
     getBalanceSheetHistory(req: Request, res: Response): Promise<Response>;
     getFinancialRatios(req: Request, res: Response): Promise<Response>;
 };
-export declare const debtorsCreditors: {
+export declare const debtorsCreditorsController: {
     getDebtorsCreditors(req: Request, res: Response): Promise<Response>;
     getAgingAnalysis(req: Request, res: Response): Promise<Response>;
+    getPartyTransactions(req: Request, res: Response): Promise<Response>;
+    markTransactionAsPaid(req: Request, res: Response): Promise<Response>;
 };
 export declare const purchaseSalesReportsController: {
     getReports(req: Request, res: Response): Promise<Response>;

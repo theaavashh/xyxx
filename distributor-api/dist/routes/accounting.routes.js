@@ -43,8 +43,8 @@ router.get('/trial-balance/history', accounting_controller_1.trialBalanceControl
 router.get('/balance-sheet', accounting_controller_1.balanceSheetController.generateBalanceSheet);
 router.get('/balance-sheet/history', accounting_controller_1.balanceSheetController.getBalanceSheetHistory);
 router.get('/balance-sheet/ratios', accounting_controller_1.balanceSheetController.getFinancialRatios);
-router.get('/debtors-creditors', accounting_controller_1.debtorsCreditors.getDebtorsCreditors);
-router.get('/debtors-creditors/aging', accounting_controller_1.debtorsCreditors.getAgingAnalysis);
+router.get('/debtors-creditors', accounting_controller_1.debtorsCreditorsController.getDebtorsCreditors);
+router.get('/debtors-creditors/aging', accounting_controller_1.debtorsCreditorsController.getAgingAnalysis);
 router.get('/purchase-sales-reports', accounting_controller_1.purchaseSalesReportsController.getReports);
 router.post('/purchase-sales-reports/generate', accounting_controller_1.purchaseSalesReportsController.generateReport);
 router.get('/mis-reports', accounting_controller_1.misReportController.getMISReports);

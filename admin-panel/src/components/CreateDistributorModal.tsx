@@ -154,21 +154,23 @@ const CreateDistributorModal = React.memo(function CreateDistributorModal({
   // Memoized default values - prevent re-creation on every render
   const defaultValues = useMemo((): Partial<CreateDistributorFormData> => {
     if (editMode && initialData) {
+      // Create a deep copy of the initial data to prevent shared state issues
+      const safeInitialData = JSON.parse(JSON.stringify(initialData));
       return {
-        firstName: initialData.fullName?.split(' ')[0] || '',
-        lastName: initialData.fullName?.split(' ').slice(1).join(' ') || '',
-        email: initialData.email || '',
-        phoneNumber: initialData.mobileNumber || '',
-        address: initialData.permanentAddress || '',
+        firstName: safeInitialData.fullName?.split(' ')[0] || '',
+        lastName: safeInitialData.fullName?.split(' ').slice(1).join(' ') || '',
+        email: safeInitialData.email || '',
+        phoneNumber: safeInitialData.mobileNumber || '',
+        address: safeInitialData.permanentAddress || '',
         dateOfBirth: '',
-        nationalId: initialData.citizenshipNumber || '',
-        companyName: initialData.companyName || '',
-        companyType: (initialData.businessType as any) || '',
-        registrationNumber: initialData.registrationNumber || '',
-        panNumber: initialData.panVatNumber || '',
-        vatNumber: initialData.panVatNumber || '',
+        nationalId: safeInitialData.citizenshipNumber || '',
+        companyName: safeInitialData.companyName || '',
+        companyType: (safeInitialData.businessType as any) || '',
+        registrationNumber: safeInitialData.registrationNumber || '',
+        panNumber: safeInitialData.panVatNumber || '',
+        vatNumber: safeInitialData.panVatNumber || '',
         establishedDate: '',
-        companyAddress: initialData.officeAddress || '',
+        companyAddress: safeInitialData.officeAddress || '',
         website: '',
         description: '',
         username: ''

@@ -3,11 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getApplicationStats = exports.deleteApplication = exports.updateApplicationStatusDev = exports.updateApplicationStatus = exports.getApplicationById = exports.getApplications = exports.submitApplication = void 0;
+exports.sendOfferLetter = exports.getApplicationStats = exports.deleteApplication = exports.updateApplicationStatusDev = exports.updateApplicationStatus = exports.getApplicationById = exports.getApplications = exports.submitApplication = void 0;
 const client_1 = require("@prisma/client");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const error_middleware_1 = require("../middleware/error.middleware");
 const upload_middleware_1 = require("../middleware/upload.middleware");
+const mailjet_service_1 = __importDefault(require("../services/mailjet.service"));
 const prisma = new client_1.PrismaClient();
 exports.submitApplication = (0, error_middleware_1.asyncHandler)(async (req, res) => {
     let applicationData;
@@ -416,6 +417,50 @@ exports.updateApplicationStatus = (0, error_middleware_1.asyncHandler)(async (re
             }
         }
     });
+    if (updateData.status === 'APPROVED') {
+        try {
+            const createdUser = await prisma.user.findFirst({
+                where: { applicationId: id },
+                include: {
+                    assignedCategories: {
+                        include: {
+                            category: {
+                                select: {
+                                    id: true,
+                                    title: true,
+                                    description: true
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            const emailData = {
+                applicationId: updatedApplication.id,
+                fullName: updatedApplication.fullName,
+                email: updatedApplication.email,
+                companyName: updatedApplication.companyName,
+                distributionArea: updatedApplication.desiredDistributorArea,
+                businessType: updatedApplication.businessType,
+                reviewNotes: updateData.reviewNotes
+            };
+            if (createdUser) {
+                const credentials = {
+                    username: createdUser.username,
+                    email: createdUser.email,
+                    password: 'Temporary password - please change after first login',
+                    categories: createdUser.assignedCategories.map(ac => ac.category)
+                };
+                await mailjet_service_1.default.notifyDistributorApproved(emailData, credentials);
+            }
+            else {
+                await mailjet_service_1.default.notifyDistributorApproved(emailData);
+            }
+        }
+        catch (emailError) {
+            console.error('Failed to send approval email:', emailError);
+        }
+    }
     const response = {
         success: true,
         message: 'आवेदनको स्थिति सफलतापूर्वक अपडेट भयो',
@@ -539,6 +584,55 @@ exports.updateApplicationStatusDev = (0, error_middleware_1.asyncHandler)(async 
             }
         }
     });
+    if (updateData.status === 'APPROVED') {
+        try {
+            const createdUser = await prisma.user.findFirst({
+                where: {
+                    OR: [
+                        { email: updatedApplication.email || '' },
+                        { fullName: updatedApplication.fullName }
+                    ]
+                },
+                include: {
+                    assignedCategories: {
+                        include: {
+                            category: {
+                                select: {
+                                    id: true,
+                                    title: true,
+                                    description: true
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            const emailData = {
+                applicationId: updatedApplication.id,
+                fullName: updatedApplication.fullName,
+                email: updatedApplication.email,
+                companyName: updatedApplication.companyName,
+                distributionArea: updatedApplication.desiredDistributorArea,
+                businessType: updatedApplication.businessType,
+                reviewNotes: updateData.reviewNotes
+            };
+            if (createdUser) {
+                const credentials = {
+                    username: createdUser.username,
+                    email: createdUser.email,
+                    password: 'Temporary password - please change after first login',
+                    categories: createdUser.assignedCategories.map(ac => ac.category)
+                };
+                await mailjet_service_1.default.notifyDistributorApproved(emailData, credentials);
+            }
+            else {
+                await mailjet_service_1.default.notifyDistributorApproved(emailData);
+            }
+        }
+        catch (emailError) {
+            console.error('Failed to send approval email:', emailError);
+        }
+    }
     const response = {
         success: true,
         message: 'आवेदनको स्थिति सफलतापूर्वक अपडेट भयो',
@@ -662,5 +756,43 @@ exports.getApplicationStats = (0, error_middleware_1.asyncHandler)(async (req, r
         data: stats
     };
     res.status(200).json(response);
+});
+exports.sendOfferLetter = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { distributorId, products, additionalData, distributorInfo } = req.body;
+    if (!distributorId || !products || !distributorInfo) {
+        const response = {
+            success: false,
+            message: 'Missing required fields',
+            error: 'MISSING_REQUIRED_FIELDS'
+        };
+        res.status(400).json(response);
+        return;
+    }
+    try {
+        await mailjet_service_1.default.sendDistributorOfferLetter({
+            ...distributorInfo,
+            applicationId: distributorId
+        }, products, additionalData);
+        const response = {
+            success: true,
+            message: 'Offer letter sent successfully',
+            data: {
+                distributorId,
+                emailSent: true,
+                productsCount: products.length,
+                sentAt: new Date().toISOString()
+            }
+        };
+        res.status(200).json(response);
+    }
+    catch (error) {
+        console.error('Error sending offer letter:', error);
+        const response = {
+            success: false,
+            message: 'Failed to send offer letter',
+            error: 'EMAIL_SEND_FAILED'
+        };
+        res.status(500).json(response);
+    }
 });
 //# sourceMappingURL=distributor.controller.js.map

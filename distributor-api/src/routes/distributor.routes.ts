@@ -6,7 +6,8 @@ import {
   updateApplicationStatus,
   updateApplicationStatusDev,
   deleteApplication,
-  getApplicationStats
+  getApplicationStats,
+  sendOfferLetter
 } from '@/controllers/distributor.controller';
 import { DistributorApplicationSchema, ApplicationUpdateSchema, ApplicationUpdateDevSchema } from '@/schemas/distributor.schema';
 import { validate, sanitizeInput } from '@/middleware/validation.middleware';
@@ -89,6 +90,13 @@ router.delete('/:id',
   authorize('ADMIN', 'SALES_MANAGER'),
   canAccessApplication,
   deleteApplication
+);
+
+// Send offer letter endpoint
+router.post('/send-offer-letter',
+  authenticateToken,
+  authorize('ADMIN', 'SALES_MANAGER'),
+  sendOfferLetter
 );
 
 export default router;

@@ -9,16 +9,27 @@ const distributor_routes_1 = __importDefault(require("./distributor.routes"));
 const distributors_routes_1 = __importDefault(require("./distributors.routes"));
 const categories_routes_1 = __importDefault(require("./categories.routes"));
 const products_routes_1 = __importDefault(require("./products.routes"));
+const order_routes_1 = __importDefault(require("./order.routes"));
 const accounting_routes_1 = __importDefault(require("./accounting.routes"));
+const accounting_comprehensive_routes_1 = __importDefault(require("./accounting-comprehensive.routes"));
 const production_routes_1 = __importDefault(require("./production.routes"));
+const sales_1 = __importDefault(require("./sales"));
+const test_controller_1 = require("../controllers/test.controller");
 const router = (0, express_1.Router)();
 router.use('/auth', auth_routes_1.default);
 router.use('/applications', distributor_routes_1.default);
 router.use('/distributors', distributors_routes_1.default);
 router.use('/categories', categories_routes_1.default);
 router.use('/products', products_routes_1.default);
+router.use('/orders', order_routes_1.default);
 router.use('/accounting', accounting_routes_1.default);
+router.use('/accounting', accounting_comprehensive_routes_1.default);
 router.use('/production', production_routes_1.default);
+router.use('/sales', sales_1.default);
+if (process.env.NODE_ENV === 'development') {
+    router.post('/test/email', test_controller_1.testEmail);
+    router.post('/test/email-without-credentials', test_controller_1.testEmailWithoutCredentials);
+}
 router.get('/health', (req, res) => {
     res.status(200).json({
         success: true,
@@ -45,6 +56,7 @@ router.get('/', (req, res) => {
                 distributors: '/api/distributors',
                 categories: '/api/categories',
                 products: '/api/products',
+                orders: '/api/orders',
                 accounting: '/api/accounting',
                 production: '/api/production',
                 health: '/api/health'

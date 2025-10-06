@@ -4,8 +4,12 @@ import distributorRoutes from './distributor.routes';
 import distributorsRoutes from './distributors.routes';
 import categoriesRoutes from './categories.routes';
 import productsRoutes from './products.routes';
+import orderRoutes from './order.routes';
 import accountingRoutes from './accounting.routes';
+import accountingComprehensiveRoutes from './accounting-comprehensive.routes';
 import productionRoutes from './production.routes';
+import salesRoutes from './sales';
+import { testEmail, testEmailWithoutCredentials } from '../controllers/test.controller';
 
 const router = Router();
 
@@ -15,8 +19,17 @@ router.use('/applications', distributorRoutes);
 router.use('/distributors', distributorsRoutes);
 router.use('/categories', categoriesRoutes);
 router.use('/products', productsRoutes);
+router.use('/orders', orderRoutes);
 router.use('/accounting', accountingRoutes);
+router.use('/accounting', accountingComprehensiveRoutes);
 router.use('/production', productionRoutes);
+router.use('/sales', salesRoutes);
+
+// Test email endpoints (development only)
+if (process.env.NODE_ENV === 'development') {
+  router.post('/test/email', testEmail);
+  router.post('/test/email-without-credentials', testEmailWithoutCredentials);
+}
 
 // Health check endpoint
 router.get('/health', (req, res) => {
@@ -47,6 +60,7 @@ router.get('/', (req, res) => {
         distributors: '/api/distributors',
         categories: '/api/categories',
         products: '/api/products',
+        orders: '/api/orders',
         accounting: '/api/accounting',
         production: '/api/production',
         health: '/api/health'

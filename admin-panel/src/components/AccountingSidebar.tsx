@@ -11,7 +11,10 @@ import {
   BarChart3,
   FileText,
   LogOut,
-  AlertCircle
+  AlertCircle,
+  RotateCcw,
+  Receipt,
+  CreditCard
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -57,6 +60,36 @@ const navigationItems: NavigationItem[] = [
     title: 'Accounting Dashboard',
     icon: Calculator,
     path: '/dashboard/accounting'
+  },
+  {
+    id: 'party-ledger',
+    title: 'Party Ledger',
+    icon: Users,
+    path: '/dashboard/accounting/party'
+  },
+  {
+    id: 'purchase-entry',
+    title: 'Purchase Entry',
+    icon: ShoppingCart,
+    path: '/dashboard/accounting/purchase'
+  },
+  {
+    id: 'purchase-return',
+    title: 'Purchase Return',
+    icon: RotateCcw,
+    path: '/dashboard/accounting/purchase-return'
+  },
+  {
+    id: 'sales-return',
+    title: 'Sales Return',
+    icon: RotateCcw,
+    path: '/dashboard/accounting/sales-return'
+  },
+  {
+    id: 'invoice',
+    title: 'Invoice',
+    icon: Receipt,
+    path: '/dashboard/accounting/invoice'
   },
   {
     id: 'balance-sheet',

@@ -11,6 +11,7 @@ import {
 } from '../types';
 import { asyncHandler } from '../middleware/error.middleware';
 import { getFilePaths } from '../middleware/upload.middleware';
+import mailjetEmailService from '../services/mailjet.service';
 
 const prisma = new PrismaClient();
 
@@ -542,6 +543,43 @@ export const saveDistributorCredentials = asyncHandler(async (req: Authenticated
 
     return updatedDistributor;
   });
+
+  // Send email notification with credentials
+  try {
+    // Find the application associated with this distributor
+    const application = await prisma.distributorApplication.findFirst({
+      where: {
+        OR: [
+          { email: result.email },
+          { fullName: { contains: result.username, mode: 'insensitive' } }
+        ]
+      }
+    });
+
+    if (application) {
+      const emailData = {
+        applicationId: application.id,
+        fullName: application.fullName,
+        email: result.email,
+        companyName: application.companyName,
+        distributionArea: application.desiredDistributorArea,
+        businessType: application.businessType,
+        reviewNotes: 'Credentials have been set for your approved application'
+      };
+
+      const credentials = {
+        username: result.username,
+        email: result.email,
+        password: password, // Send the actual password
+        categories: categories || []
+      };
+
+      await mailjetEmailService.notifyDistributorApproved(emailData, credentials);
+    }
+  } catch (emailError) {
+    console.error('Failed to send credentials email:', emailError);
+    // Don't fail the credentials saving process if email fails
+  }
 
   const response: ApiResponse = {
     success: true,

@@ -26,7 +26,8 @@ import {
   DollarSign,
   Scale,
   UserCheck,
-  Settings
+  Settings,
+  RotateCcw
 } from 'lucide-react';
 import { getRoleDisplayName } from '@/lib/utils';
 import Breadcrumb, { getBreadcrumbItems } from './Breadcrumb';
@@ -64,6 +65,9 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'ledger', label: 'Ledger Management', icon: FileText },
         { id: 'party-ledger', label: 'Party Ledger', icon: Users },
         { id: 'purchase-entry', label: 'Purchase Entry', icon: ShoppingCart },
+        { id: 'purchase-return', label: 'Purchase Return', icon: RotateCcw },
+        { id: 'sales-return', label: 'Sales Return', icon: RotateCcw },
+        { id: 'invoice', label: 'Invoice', icon: Receipt },
         { id: 'debtors-creditors', label: 'Debtors & Creditors', icon: CreditCard },
         { id: 'purchase-sales-reports', label: 'Purchase & Sales Reports', icon: BarChart3 },
         { id: 'vat-report', label: 'VAT Report (Nepal)', icon: Receipt },
@@ -89,6 +93,9 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'ledger', label: 'Ledger Management', icon: FileText },
         { id: 'party-ledger', label: 'Party Ledger', icon: Users },
         { id: 'purchase-entry', label: 'Purchase Entry', icon: ShoppingCart },
+        { id: 'purchase-return', label: 'Purchase Return', icon: RotateCcw },
+        { id: 'sales-return', label: 'Sales Return', icon: RotateCcw },
+        { id: 'invoice', label: 'Invoice', icon: Receipt },
         { id: 'debtors-creditors', label: 'Debtors & Creditors', icon: CreditCard },
         { id: 'purchase-sales-reports', label: 'Purchase & Sales Reports', icon: BarChart3 },
         { id: 'vat-report', label: 'VAT Report (Nepal)', icon: Receipt },
@@ -107,6 +114,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'orders', label: 'Orders', icon: ShoppingCart },
         { id: 'customers', label: 'Distributors', icon: Users },
         { id: 'approved-distributors', label: 'Approved Distributors', icon: UserCheck },
+        { id: 'distributor-sales', label: 'Distributor Sales', icon: TrendingUp },
         { id: 'categories', label: 'Categories', icon: FolderOpen },
         { id: 'products', label: 'Products', icon: Package },
         { id: 'create-distributor', label: 'Create Distributor', icon: UserPlus },
@@ -252,6 +260,9 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                   '/ledger': 'ledger',
                   '/party-ledger': 'party-ledger',
                   '/purchase-entry': 'purchase-entry',
+                  '/purchase-return': 'purchase-return',
+                  '/sales-return': 'sales-return',
+                  '/invoice': 'invoice',
                   '/debtors-creditors': 'debtors-creditors',
                   '/purchase-sales-reports': 'purchase-sales-reports',
                   '/vat-report': 'vat-report',
@@ -263,6 +274,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                   '/production-records': 'production-records',
                   '/production-planning': 'production-planning',
                   '/configuration': 'configuration',
+                  '/distributor-sales': 'distributor-sales',
                   '/reports': 'reports'
                 };
                 const tab = tabMap[href] || 'dashboard';

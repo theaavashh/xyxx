@@ -127,12 +127,12 @@ export declare const CurrentTransactionSchema: z.ZodObject<{
     products: z.ZodOptional<z.ZodString>;
     turnover: z.ZodOptional<z.ZodString>;
 }, "strip", z.ZodTypeAny, {
-    company?: string | undefined;
     products?: string | undefined;
+    company?: string | undefined;
     turnover?: string | undefined;
 }, {
-    company?: string | undefined;
     products?: string | undefined;
+    company?: string | undefined;
     turnover?: string | undefined;
 }>;
 export declare const CurrentTransactionsSchema: z.ZodObject<{
@@ -141,24 +141,24 @@ export declare const CurrentTransactionsSchema: z.ZodObject<{
         products: z.ZodOptional<z.ZodString>;
         turnover: z.ZodOptional<z.ZodString>;
     }, "strip", z.ZodTypeAny, {
-        company?: string | undefined;
         products?: string | undefined;
+        company?: string | undefined;
         turnover?: string | undefined;
     }, {
-        company?: string | undefined;
         products?: string | undefined;
+        company?: string | undefined;
         turnover?: string | undefined;
     }>, "many">;
 }, "strip", z.ZodTypeAny, {
     currentTransactions: {
-        company?: string | undefined;
         products?: string | undefined;
+        company?: string | undefined;
         turnover?: string | undefined;
     }[];
 }, {
     currentTransactions: {
-        company?: string | undefined;
         products?: string | undefined;
+        company?: string | undefined;
         turnover?: string | undefined;
     }[];
 }>;
@@ -475,24 +475,24 @@ export declare const DistributorApplicationSchema: z.ZodObject<{
             products: z.ZodOptional<z.ZodString>;
             turnover: z.ZodOptional<z.ZodString>;
         }, "strip", z.ZodTypeAny, {
-            company?: string | undefined;
             products?: string | undefined;
+            company?: string | undefined;
             turnover?: string | undefined;
         }, {
-            company?: string | undefined;
             products?: string | undefined;
+            company?: string | undefined;
             turnover?: string | undefined;
         }>, "many">;
     }, "strip", z.ZodTypeAny, {
         currentTransactions: {
-            company?: string | undefined;
             products?: string | undefined;
+            company?: string | undefined;
             turnover?: string | undefined;
         }[];
     }, {
         currentTransactions: {
-            company?: string | undefined;
             products?: string | undefined;
+            company?: string | undefined;
             turnover?: string | undefined;
         }[];
     }>;
@@ -664,8 +664,8 @@ export declare const DistributorApplicationSchema: z.ZodObject<{
     };
     currentTransactions: {
         currentTransactions: {
-            company?: string | undefined;
             products?: string | undefined;
+            company?: string | undefined;
             turnover?: string | undefined;
         }[];
     };
@@ -769,8 +769,8 @@ export declare const DistributorApplicationSchema: z.ZodObject<{
     };
     currentTransactions: {
         currentTransactions: {
-            company?: string | undefined;
             products?: string | undefined;
+            company?: string | undefined;
             turnover?: string | undefined;
         }[];
     };

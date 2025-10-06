@@ -27,6 +27,7 @@ import { Distributor } from '@/types';
 import { formatDate } from '@/lib/utils';
 import CreateDistributorModal from './CreateDistributorModal';
 import ViewDistributorModal from './ViewDistributorModal';
+import DistributorApprovalModal from './DistributorApprovalModal';
 import toast from 'react-hot-toast';
 import { config } from '@/lib/config';
 import { useDistributorApplications } from '@/hooks/useDistributorApplications';
@@ -37,6 +38,7 @@ export default function DistributorManagement() {
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [isApprovalModalOpen, setIsApprovalModalOpen] = useState(false);
   const [selectedDistributor, setSelectedDistributor] = useState<DistributorApplication | null>(null);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -61,16 +63,26 @@ export default function DistributorManagement() {
   // Memoized modal event handlers to prevent infinite re-renders
   const handleCloseCreateModal = useCallback(() => {
     setIsCreateModalOpen(false);
+    setSelectedDistributor(null);
+    setIsEditing(false);
   }, []);
 
   const handleCreateSuccess = useCallback(() => {
     // Re-fetch applications after successful creation
     refetch();
     setIsCreateModalOpen(false);
+    setSelectedDistributor(null);
+    setIsEditing(false);
   }, [refetch]);
 
   const handleCloseViewModal = useCallback(() => {
     setIsViewModalOpen(false);
+    setSelectedDistributor(null);
+  }, []);
+
+  const handleCloseApprovalModal = useCallback(() => {
+    setIsApprovalModalOpen(false);
+    setSelectedDistributor(null);
   }, []);
 
   // Update filters when search term or status changes
@@ -88,13 +100,17 @@ export default function DistributorManagement() {
   };
 
   const handleEditDistributor = (distributor: DistributorApplication) => {
-    setSelectedDistributor(distributor);
+    // Create a deep copy to prevent shared state issues
+    const distributorCopy = JSON.parse(JSON.stringify(distributor));
+    setSelectedDistributor(distributorCopy);
     setIsEditing(true);
     setIsCreateModalOpen(true);
   };
 
   const handleViewDistributor = (distributor: DistributorApplication) => {
-    setSelectedDistributor(distributor);
+    // Create a deep copy to prevent shared state issues
+    const distributorCopy = JSON.parse(JSON.stringify(distributor));
+    setSelectedDistributor(distributorCopy);
     setIsViewModalOpen(true);
   };
 
@@ -109,11 +125,62 @@ export default function DistributorManagement() {
   };
 
   const handleApproveDistributor = async (distributorId: string) => {
-    const notes = prompt('Enter approval notes (optional):');
+    const distributor = applications.find(app => app.id === distributorId);
+    if (distributor) {
+      // Create a deep copy to prevent shared state issues
+      const distributorCopy = JSON.parse(JSON.stringify(distributor));
+      setSelectedDistributor(distributorCopy);
+      setIsApprovalModalOpen(true);
+    }
+  };
+
+  const handleApprovalSubmit = async (distributorId: string, products: any[], additionalData: any) => {
     try {
-      await approveApplication(distributorId, notes || undefined);
+      // First approve the application
+      await approveApplication(distributorId, 'Approved with offer letter');
+      
+      // Then send the offer letter email
+      await sendOfferLetter(distributorId, products, additionalData);
+      
     } catch (error) {
-      console.error('Failed to approve application:', error);
+      console.error('Failed to approve and send offer letter:', error);
+      throw error;
+    }
+  };
+
+  const sendOfferLetter = async (distributorId: string, products: any[], additionalData: any) => {
+    const distributor = applications.find(app => app.id === distributorId);
+    if (!distributor) return;
+
+    try {
+      const response = await fetch('http://localhost:5000/api/applications/send-offer-letter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          distributorId,
+          products,
+          additionalData,
+          distributorInfo: {
+            fullName: distributor.fullName,
+            email: distributor.email,
+            contactNumber: distributor.mobileNumber,
+            address: distributor.permanentAddress,
+            companyName: distributor.companyName,
+            distributionArea: distributor.desiredDistributorArea
+          }
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send offer letter');
+      }
+
+      toast.success('Offer letter sent successfully!');
+    } catch (error) {
+      console.error('Error sending offer letter:', error);
+      throw error;
     }
   };
 
@@ -375,6 +442,7 @@ export default function DistributorManagement() {
 
       {/* Modals */}
       <CreateDistributorModal
+        key={`create-${selectedDistributor?.id || 'new'}`}
         isOpen={isCreateModalOpen}
         onClose={handleCloseCreateModal}
         onSuccess={handleCreateSuccess}
@@ -383,9 +451,18 @@ export default function DistributorManagement() {
       />
 
       <ViewDistributorModal
+        key={`view-${selectedDistributor?.id || 'new'}`}
         isOpen={isViewModalOpen}
         onClose={handleCloseViewModal}
         distributor={selectedDistributor as any}
+      />
+
+      <DistributorApprovalModal
+        key={`approval-${selectedDistributor?.id || 'new'}`}
+        isOpen={isApprovalModalOpen}
+        onClose={handleCloseApprovalModal}
+        onApprove={handleApprovalSubmit}
+        distributor={selectedDistributor}
       />
     </div>
   );

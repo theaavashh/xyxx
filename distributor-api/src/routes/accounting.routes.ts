@@ -9,7 +9,7 @@ import {
   vatReportController,
   trialBalanceController,
   balanceSheetController,
-  debtorsCreditors,
+  debtorsCreditorsController,
   purchaseSalesReportsController,
   misReportController
 } from '../controllers/accounting.controller';
@@ -74,8 +74,8 @@ router.get('/balance-sheet/history', balanceSheetController.getBalanceSheetHisto
 router.get('/balance-sheet/ratios', balanceSheetController.getFinancialRatios);
 
 // Debtors & Creditors Routes
-router.get('/debtors-creditors', debtorsCreditors.getDebtorsCreditors);
-router.get('/debtors-creditors/aging', debtorsCreditors.getAgingAnalysis);
+router.get('/debtors-creditors', debtorsCreditorsController.getDebtorsCreditors);
+router.get('/debtors-creditors/aging', debtorsCreditorsController.getAgingAnalysis);
 
 // Purchase & Sales Reports Routes
 router.get('/purchase-sales-reports', purchaseSalesReportsController.getReports);

@@ -37,6 +37,8 @@ model User {
   createdJournalEntries JournalEntry[] @relation("JournalEntryCreatedBy")
   postedJournalEntries JournalEntry[] @relation("JournalEntryPostedBy")
   assignedCategories   DistributorCategory[]
+  salesData           SalesData[]
+  orders              Order[]
 
   @@map("users")
 }
@@ -787,4 +789,72 @@ model ScheduledOrder {
   productionOrder   ProductionOrder @relation(fields: [productionOrderId], references: [id])
   
   @@map("scheduled_orders")
+}
+
+// Sales Data model for distributor monthly sales tracking
+model SalesData {
+  id            String   @id @default(cuid())
+  distributorId String
+  year          Int
+  month         Int
+  day           Int
+  row           Int
+  cellId        String   // e.g., "day_1_1", "day_2_1"
+  value         String
+  type          String   @default("text") // text, number, date, formula
+  formula       String?  // For formula cells
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Relations
+  distributor   User     @relation(fields: [distributorId], references: [id], onDelete: Cascade)
+  
+  @@unique([distributorId, year, month, day, row])
+  @@map("sales_data")
+}
+
+// Order Management Models
+model Order {
+  id              String      @id @default(cuid())
+  orderNumber     String      @unique @default(cuid())
+  status          OrderStatus @default(PENDING)
+  totalAmount     Float
+  totalQuantity   Int
+  notes           String?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  
+  // Relations
+  distributorId   String
+  distributor     User        @relation(fields: [distributorId], references: [id], onDelete: Cascade)
+  items           OrderItem[]
+  
+  @@map("orders")
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  quantity    Int
+  unitPrice   Float
+  totalPrice  Float
+  unit        String
+  productName String
+  categoryName String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  orderId     String
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  
+  @@map("order_items")
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
 }

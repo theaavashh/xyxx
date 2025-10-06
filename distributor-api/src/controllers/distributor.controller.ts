@@ -13,6 +13,7 @@ import {
 } from '../types';
 import { asyncHandler } from '../middleware/error.middleware';
 import { getFilePaths } from '../middleware/upload.middleware';
+import mailjetEmailService from '../services/mailjet.service';
 
 const prisma = new PrismaClient();
 
@@ -510,6 +511,57 @@ export const updateApplicationStatus = asyncHandler(async (req: AuthenticatedReq
     }
   });
 
+  // Send email notification if application is approved
+  if (updateData.status === 'APPROVED') {
+    try {
+      // Get the created user account for credentials
+      const createdUser = await prisma.user.findFirst({
+        where: { applicationId: id },
+        include: {
+          assignedCategories: {
+            include: {
+              category: {
+                select: {
+                  id: true,
+                  title: true,
+                  description: true
+                }
+              }
+            }
+          }
+        }
+      });
+
+      const emailData = {
+        applicationId: updatedApplication.id,
+        fullName: updatedApplication.fullName,
+        email: updatedApplication.email,
+        companyName: updatedApplication.companyName,
+        distributionArea: updatedApplication.desiredDistributorArea,
+        businessType: updatedApplication.businessType,
+        reviewNotes: updateData.reviewNotes
+      };
+
+      if (createdUser) {
+        // Send email with credentials
+        const credentials = {
+          username: createdUser.username,
+          email: createdUser.email,
+          password: 'Temporary password - please change after first login',
+          categories: createdUser.assignedCategories.map(ac => ac.category)
+        };
+        
+        await mailjetEmailService.notifyDistributorApproved(emailData, credentials);
+      } else {
+        // Send email without credentials (credentials will be set later)
+        await mailjetEmailService.notifyDistributorApproved(emailData);
+      }
+    } catch (emailError) {
+      console.error('Failed to send approval email:', emailError);
+      // Don't fail the approval process if email fails
+    }
+  }
+
   const response: ApiResponse = {
     success: true,
     message: 'आवेदनको स्थिति सफलतापूर्वक अपडेट भयो',
@@ -652,6 +704,62 @@ export const updateApplicationStatusDev = asyncHandler(async (req: Request, res:
       }
     }
   });
+
+  // Send email notification if application is approved (dev version)
+  if (updateData.status === 'APPROVED') {
+    try {
+      // Get the created user account for credentials
+      const createdUser = await prisma.user.findFirst({
+        where: {
+          OR: [
+            { email: updatedApplication.email || '' },
+            { fullName: updatedApplication.fullName }
+          ]
+        },
+        include: {
+          assignedCategories: {
+            include: {
+              category: {
+                select: {
+                  id: true,
+                  title: true,
+                  description: true
+                }
+              }
+            }
+          }
+        }
+      });
+
+      const emailData = {
+        applicationId: updatedApplication.id,
+        fullName: updatedApplication.fullName,
+        email: updatedApplication.email,
+        companyName: updatedApplication.companyName,
+        distributionArea: updatedApplication.desiredDistributorArea,
+        businessType: updatedApplication.businessType,
+        reviewNotes: updateData.reviewNotes
+      };
+
+      if (createdUser) {
+        // Send email with credentials
+        const credentials = {
+          username: createdUser.username,
+          email: createdUser.email,
+          password: 'Temporary password - please change after first login',
+          categories: createdUser.assignedCategories.map(ac => ac.category)
+        };
+        
+        await mailjetEmailService.notifyDistributorApproved(emailData, credentials);
+      } else {
+        // Send email without credentials (credentials will be set later)
+        await mailjetEmailService.notifyDistributorApproved(emailData);
+      }
+    } catch (emailError) {
+      console.error('Failed to send approval email:', emailError);
+      // Don't fail the approval process if email fails
+    }
+  }
 
   const response: ApiResponse = {
     success: true,
@@ -806,4 +914,52 @@ export const getApplicationStats = asyncHandler(async (req: Request, res: Respon
   };
 
   res.status(200).json(response);
+});
+
+// Send offer letter to approved distributor
+export const sendOfferLetter = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+  const { distributorId, products, additionalData, distributorInfo } = req.body;
+
+  if (!distributorId || !products || !distributorInfo) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'Missing required fields',
+      error: 'MISSING_REQUIRED_FIELDS'
+    };
+    res.status(400).json(response);
+    return;
+  }
+
+  try {
+    // Send the offer letter email
+    await mailjetEmailService.sendDistributorOfferLetter(
+      {
+        ...distributorInfo,
+        applicationId: distributorId
+      },
+      products,
+      additionalData
+    );
+
+    const response: ApiResponse = {
+      success: true,
+      message: 'Offer letter sent successfully',
+      data: {
+        distributorId,
+        emailSent: true,
+        productsCount: products.length,
+        sentAt: new Date().toISOString()
+      }
+    };
+
+    res.status(200).json(response);
+  } catch (error) {
+    console.error('Error sending offer letter:', error);
+    const response: ApiResponse = {
+      success: false,
+      message: 'Failed to send offer letter',
+      error: 'EMAIL_SEND_FAILED'
+    };
+    res.status(500).json(response);
+  }
 });

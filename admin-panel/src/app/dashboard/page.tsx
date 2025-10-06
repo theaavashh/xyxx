@@ -31,6 +31,10 @@ import MISReport from '@/components/MISReport';
 import LedgerManagement from '@/components/LedgerManagement';
 import ApprovedDistributors from '@/components/ApprovedDistributors';
 import ConfigurationManagement from '@/components/ConfigurationManagement';
+import PurchaseReturn from '@/components/PurchaseReturn';
+import SalesReturn from '@/components/SalesReturn';
+import Invoice from '@/components/Invoice';
+import DistributorSalesViewer from '@/components/DistributorSalesViewer';
 
 // Placeholder components for modules not yet implemented
 function VATBillsComponent() {
@@ -122,7 +126,7 @@ export default function DashboardPage() {
       
       // Sales role components
       case 'orders':
-        return (user.role === 'SALES_MANAGER' || user.role === 'SALES_REPRESENTATIVE' || user.role === 'ADMIN') ? 
+        return (user.role === 'SALES_MANAGER' || user.role === 'SALES_REPRESENTATIVE' || user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
           <OrderManagement /> : <div>Access Denied</div>;
       case 'customers':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER' || user.role === 'SALES_REPRESENTATIVE') ? 
@@ -178,6 +182,15 @@ export default function DashboardPage() {
       case 'purchase-entry':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
           <PurchaseEntry /> : <div>Access Denied</div>;
+      case 'purchase-return':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+          <PurchaseReturn /> : <div>Access Denied</div>;
+      case 'sales-return':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+          <SalesReturn /> : <div>Access Denied</div>;
+      case 'invoice':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+          <Invoice /> : <div>Access Denied</div>;
       case 'debtors-creditors':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
           <DebtorsCreditors /> : <div>Access Denied</div>;
@@ -196,6 +209,9 @@ export default function DashboardPage() {
       case 'mis-report':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
           <MISReport /> : <div>Access Denied</div>;
+      case 'distributor-sales':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
+          <DistributorSalesViewer /> : <div>Access Denied</div>;
       
       default:
         return <Dashboard />;

@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.exportProductionReport = exports.getProductionReport = exports.getProductionKPIs = exports.getProductionSchedules = exports.getWorkCenters = exports.createProductionRecord = exports.getProductionRecordById = exports.getProductionRecords = exports.deleteProductionOrder = exports.updateProductionOrderStatus = exports.updateProductionOrder = exports.createProductionOrder = exports.getProductionOrderById = exports.getProductionOrders = exports.getRawMaterialTransactions = exports.getRawMaterialCategories = exports.deleteRawMaterial = exports.updateRawMaterial = exports.createRawMaterial = exports.getRawMaterialById = exports.getRawMaterials = void 0;
+exports.exportProductionReport = exports.getProductionReport = exports.getProductionKPIs = exports.getProductionSchedules = exports.deleteMachine = exports.updateMachine = exports.createMachine = exports.getMachines = exports.deleteWorkCenter = exports.updateWorkCenter = exports.createWorkCenter = exports.getWorkCenters = exports.createProductionRecord = exports.getProductionRecordById = exports.getProductionRecords = exports.deleteProductionOrder = exports.updateProductionOrderStatus = exports.updateProductionOrder = exports.createProductionOrder = exports.getProductionOrderById = exports.getProductionOrders = exports.getRawMaterialTransactions = exports.deleteRawMaterialCategory = exports.updateRawMaterialCategory = exports.createRawMaterialCategory = exports.getRawMaterialCategories = exports.deleteRawMaterial = exports.updateRawMaterial = exports.createRawMaterial = exports.getRawMaterialById = exports.getRawMaterials = void 0;
 const client_1 = require("@prisma/client");
 const logger_1 = __importDefault(require("../utils/logger"));
 const prisma = new client_1.PrismaClient();
@@ -57,17 +57,31 @@ const createRawMaterial = async (req, res) => {
             const count = await prisma.rawMaterial.count();
             materialData.materialCode = `RM${String(count + 1).padStart(3, '0')}`;
         }
+        let categoryId = materialData.categoryId;
+        if (materialData.category && !categoryId) {
+            const category = await prisma.rawMaterialCategory.findFirst({
+                where: { name: materialData.category }
+            });
+            if (category) {
+                categoryId = category.id;
+            }
+            else {
+                return res.status(400).json({ error: 'Category not found' });
+            }
+        }
+        const { category, ...createData } = materialData;
+        createData.categoryId = categoryId;
         const material = await prisma.rawMaterial.create({
-            data: materialData,
+            data: createData,
             include: {
                 category: true
             }
         });
-        res.status(201).json(material);
+        return res.status(201).json(material);
     }
     catch (error) {
         logger_1.default.error('Error creating raw material:', error);
-        res.status(500).json({ error: 'Failed to create raw material' });
+        return res.status(500).json({ error: 'Failed to create raw material' });
     }
 };
 exports.createRawMaterial = createRawMaterial;
@@ -75,18 +89,34 @@ const updateRawMaterial = async (req, res) => {
     try {
         const { id } = req.params;
         const updateData = req.body;
+        let categoryId = updateData.categoryId;
+        if (updateData.category && !categoryId) {
+            const category = await prisma.rawMaterialCategory.findFirst({
+                where: { name: updateData.category }
+            });
+            if (category) {
+                categoryId = category.id;
+            }
+            else {
+                return res.status(400).json({ error: 'Category not found' });
+            }
+        }
+        const { category, ...updateFields } = updateData;
+        if (categoryId) {
+            updateFields.categoryId = categoryId;
+        }
         const material = await prisma.rawMaterial.update({
             where: { id },
-            data: updateData,
+            data: updateFields,
             include: {
                 category: true
             }
         });
-        res.json(material);
+        return res.json(material);
     }
     catch (error) {
         logger_1.default.error('Error updating raw material:', error);
-        res.status(500).json({ error: 'Failed to update raw material' });
+        return res.status(500).json({ error: 'Failed to update raw material' });
     }
 };
 exports.updateRawMaterial = updateRawMaterial;
@@ -118,6 +148,50 @@ const getRawMaterialCategories = async (req, res) => {
     }
 };
 exports.getRawMaterialCategories = getRawMaterialCategories;
+const createRawMaterialCategory = async (req, res) => {
+    try {
+        const categoryData = req.body;
+        const category = await prisma.rawMaterialCategory.create({
+            data: categoryData
+        });
+        res.status(201).json(category);
+    }
+    catch (error) {
+        logger_1.default.error('Error creating raw material category:', error);
+        res.status(500).json({ error: 'Failed to create category' });
+    }
+};
+exports.createRawMaterialCategory = createRawMaterialCategory;
+const updateRawMaterialCategory = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        const category = await prisma.rawMaterialCategory.update({
+            where: { id },
+            data: updateData
+        });
+        res.json(category);
+    }
+    catch (error) {
+        logger_1.default.error('Error updating raw material category:', error);
+        res.status(500).json({ error: 'Failed to update category' });
+    }
+};
+exports.updateRawMaterialCategory = updateRawMaterialCategory;
+const deleteRawMaterialCategory = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await prisma.rawMaterialCategory.delete({
+            where: { id }
+        });
+        res.json({ message: 'Category deleted successfully' });
+    }
+    catch (error) {
+        logger_1.default.error('Error deleting raw material category:', error);
+        res.status(500).json({ error: 'Failed to delete category' });
+    }
+};
+exports.deleteRawMaterialCategory = deleteRawMaterialCategory;
 const getRawMaterialTransactions = async (req, res) => {
     try {
         const { materialId } = req.query;
@@ -339,22 +413,107 @@ const createProductionRecord = async (req, res) => {
         const startTime = new Date(recordData.startTime);
         const endTime = new Date(recordData.endTime);
         const duration = (endTime.getTime() - startTime.getTime()) / (1000 * 60 * 60);
-        const record = await prisma.productionRecord.create({
-            data: {
-                ...recordData,
-                duration,
-                quantityAccepted: recordData.quantityProduced - recordData.quantityRejected
-            },
-            include: {
-                productionOrder: {
-                    select: {
-                        orderNumber: true,
-                        productName: true
+        const result = await prisma.$transaction(async (tx) => {
+            const record = await tx.productionRecord.create({
+                data: {
+                    productionOrderId: recordData.productionOrderId,
+                    batchNumber: recordData.batchNumber,
+                    quantityPlanned: recordData.quantityProduced,
+                    quantityProduced: recordData.quantityProduced,
+                    quantityRejected: recordData.quantityRejected,
+                    quantityAccepted: recordData.quantityProduced - recordData.quantityRejected,
+                    startTime: startTime,
+                    endTime: endTime,
+                    duration,
+                    workCenter: recordData.workCenter,
+                    shift: recordData.shift,
+                    operatorId: recordData.operatorId,
+                    operatorName: recordData.operatorId,
+                    supervisorId: recordData.supervisorId,
+                    supervisorName: recordData.supervisorId,
+                    notes: recordData.notes,
+                    productionOrder: {
+                        connect: { id: recordData.productionOrderId }
+                    }
+                },
+                include: {
+                    productionOrder: {
+                        select: {
+                            orderNumber: true,
+                            productName: true
+                        }
+                    }
+                }
+            });
+            if (recordData.materialsUsed && recordData.materialsUsed.length > 0) {
+                for (const materialUsage of recordData.materialsUsed) {
+                    if (materialUsage.materialId && materialUsage.quantityUsed > 0) {
+                        const material = await tx.rawMaterial.findUnique({
+                            where: { id: materialUsage.materialId }
+                        });
+                        if (material) {
+                            const totalUsed = materialUsage.quantityUsed + (materialUsage.wastage || 0);
+                            const totalCost = totalUsed * Number(material.unitCost);
+                            await tx.productionMaterialUsage.create({
+                                data: {
+                                    productionRecordId: record.id,
+                                    materialId: materialUsage.materialId,
+                                    quantityUsed: materialUsage.quantityUsed,
+                                    unit: material.unit,
+                                    unitCost: material.unitCost,
+                                    totalCost: totalCost,
+                                    wastage: materialUsage.wastage || 0,
+                                    wastagePercentage: materialUsage.quantityUsed > 0 ?
+                                        ((materialUsage.wastage || 0) / materialUsage.quantityUsed) * 100 : 0
+                                }
+                            });
+                        }
+                        const totalUsed = materialUsage.quantityUsed + (materialUsage.wastage || 0);
+                        await tx.rawMaterial.update({
+                            where: { id: materialUsage.materialId },
+                            data: {
+                                currentStock: {
+                                    decrement: totalUsed
+                                }
+                            }
+                        });
+                        if (material) {
+                            await tx.rawMaterialTransaction.create({
+                                data: {
+                                    materialId: materialUsage.materialId,
+                                    transactionType: 'consumption',
+                                    quantity: totalUsed,
+                                    unitCost: material.unitCost,
+                                    totalCost: totalUsed * Number(material.unitCost),
+                                    referenceNumber: record.batchNumber,
+                                    referenceType: 'production_order',
+                                    batchNumber: record.batchNumber,
+                                    createdBy: recordData.operatorId
+                                }
+                            });
+                        }
                     }
                 }
             }
+            if (recordData.qualityMetrics && recordData.qualityMetrics.length > 0) {
+                for (const metric of recordData.qualityMetrics) {
+                    await tx.qualityMetric.create({
+                        data: {
+                            productionRecordId: record.id,
+                            metricName: metric.metricName,
+                            targetValue: 0,
+                            actualValue: metric.actualValue,
+                            unit: 'unit',
+                            tolerance: 0,
+                            passed: true,
+                            notes: metric.notes
+                        }
+                    });
+                }
+            }
+            return record;
         });
-        res.status(201).json(record);
+        res.status(201).json(result);
     }
     catch (error) {
         logger_1.default.error('Error creating production record:', error);
@@ -384,6 +543,122 @@ const getWorkCenters = async (req, res) => {
     }
 };
 exports.getWorkCenters = getWorkCenters;
+const createWorkCenter = async (req, res) => {
+    try {
+        const workCenterData = req.body;
+        const workCenter = await prisma.workCenter.create({
+            data: workCenterData,
+            include: {
+                machines: true
+            }
+        });
+        res.status(201).json(workCenter);
+    }
+    catch (error) {
+        logger_1.default.error('Error creating work center:', error);
+        res.status(500).json({ error: 'Failed to create work center' });
+    }
+};
+exports.createWorkCenter = createWorkCenter;
+const updateWorkCenter = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        const workCenter = await prisma.workCenter.update({
+            where: { id },
+            data: updateData,
+            include: {
+                machines: true
+            }
+        });
+        res.json(workCenter);
+    }
+    catch (error) {
+        logger_1.default.error('Error updating work center:', error);
+        res.status(500).json({ error: 'Failed to update work center' });
+    }
+};
+exports.updateWorkCenter = updateWorkCenter;
+const deleteWorkCenter = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await prisma.workCenter.delete({
+            where: { id }
+        });
+        res.json({ message: 'Work center deleted successfully' });
+    }
+    catch (error) {
+        logger_1.default.error('Error deleting work center:', error);
+        res.status(500).json({ error: 'Failed to delete work center' });
+    }
+};
+exports.deleteWorkCenter = deleteWorkCenter;
+const getMachines = async (req, res) => {
+    try {
+        const machines = await prisma.machine.findMany({
+            include: {
+                workCenter: true
+            },
+            orderBy: { name: 'asc' }
+        });
+        res.json(machines);
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching machines:', error);
+        res.status(500).json({ error: 'Failed to fetch machines' });
+    }
+};
+exports.getMachines = getMachines;
+const createMachine = async (req, res) => {
+    try {
+        const machineData = req.body;
+        const machine = await prisma.machine.create({
+            data: machineData,
+            include: {
+                workCenter: true
+            }
+        });
+        res.status(201).json(machine);
+    }
+    catch (error) {
+        logger_1.default.error('Error creating machine:', error);
+        res.status(500).json({ error: 'Failed to create machine' });
+    }
+};
+exports.createMachine = createMachine;
+const updateMachine = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        const machine = await prisma.machine.update({
+            where: { id },
+            data: updateData,
+            include: {
+                workCenter: true
+            }
+        });
+        res.json(machine);
+    }
+    catch (error) {
+        logger_1.default.error('Error updating machine:', error);
+        res.status(500).json({ error: 'Failed to update machine' });
+    }
+};
+exports.updateMachine = updateMachine;
+const deleteMachine = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await prisma.machine.delete({
+            where: { id }
+        });
+        res.json({ message: 'Machine deleted successfully' });
+    }
+    catch (error) {
+        logger_1.default.error('Error deleting machine:', error);
+        res.status(500).json({ error: 'Failed to delete machine' });
+    }
+};
+exports.deleteMachine = deleteMachine;
 const getProductionSchedules = async (req, res) => {
     try {
         const { workCenterId, date } = req.query;

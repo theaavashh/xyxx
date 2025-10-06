@@ -186,11 +186,10 @@ export default function LoginForm() {
 
               <div className="mt-8 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
                 <div className="text-center">
-                  <p className="text-sm font-semibold text-gray-700 mb-2">Demo Credentials</p>
-                  <div className="space-y-1 text-sm text-gray-600">
-                    <p><span className="font-medium">Email:</span> distributor@example.com</p>
-                    <p><span className="font-medium">Password:</span> password123</p>
-                  </div>
+                  <p className="text-sm font-semibold text-gray-700 mb-2">Need Access?</p>
+                  <p className="text-sm text-gray-600">
+                    Contact your administrator to get distributor credentials
+                  </p>
                 </div>
               </div>
             </div>

@@ -44,11 +44,27 @@ class HttpClient {
     }
 
     if (!response.ok) {
+      // Better error message handling
+      let errorMessage = data.message || data.error || `HTTP Error ${response.status}`;
+      
+      // If message is empty or just whitespace, provide a more descriptive message
+      if (!errorMessage || errorMessage.trim() === '') {
+        errorMessage = `HTTP Error ${response.status}: ${response.statusText || 'Unknown error'}`;
+      }
+      
       const error: ApiError = {
-        message: data.message || `HTTP Error ${response.status}`,
+        message: errorMessage,
         status: response.status,
         details: data,
       };
+      
+      console.log('HTTP Error Response:', {
+        status: response.status,
+        statusText: response.statusText,
+        data,
+        errorMessage
+      });
+      
       throw error;
     }
 
@@ -133,19 +149,44 @@ class HttpClient {
 export const httpClient = new HttpClient(config.apiUrl);
 
 // API Error handler utility
-export const handleApiError = (error: ApiError, showToast = true) => {
-  console.error('API Error:', error);
+export const handleApiError = (error: ApiError | Error | any, showToast = true) => {
+  // Safely log the error with better handling for empty objects
+  if (error && typeof error === 'object') {
+    // Check if it's an empty object or has no meaningful properties
+    const hasProperties = Object.keys(error).length > 0;
+    const hasMessage = error.message && error.message.trim() !== '';
+    const hasStatus = error.status !== undefined && error.status !== null;
+    
+    if (hasProperties && (hasMessage || hasStatus)) {
+      console.error('API Error:', error);
+    } else {
+      console.error('API Error: Empty or invalid error object:', error);
+    }
+  } else if (error) {
+    console.error('API Error:', error);
+  } else {
+    console.error('API Error: Unknown error occurred');
+  }
+  
+  // Normalize error object with better fallbacks
+  const normalizedError: ApiError = {
+    message: (error?.message && error.message.trim() !== '') 
+      ? error.message 
+      : 'An unknown error occurred',
+    status: (error?.status !== undefined && error.status !== null) 
+      ? error.status 
+      : 0,
+    details: error?.details || (error && Object.keys(error).length > 0 ? error : null)
+  };
   
   if (showToast) {
-    let message = error.message;
+    let message = normalizedError.message;
     
     // Handle specific error cases
-    switch (error.status) {
+    switch (normalizedError.status) {
       case 401:
-        message = 'Unauthorized. Please login again.';
-        // Redirect to login or clear auth tokens
-        localStorage.removeItem(config.tokenKey);
-        localStorage.removeItem(config.userKey);
+        message = 'Unauthorized. Please login to access this feature.';
+        // Don't clear tokens automatically, let the user decide
         break;
       case 403:
         message = 'Access denied. You do not have permission to perform this action.';
@@ -165,12 +206,23 @@ export const handleApiError = (error: ApiError, showToast = true) => {
       case 0:
         message = 'Network error. Please check your connection.';
         break;
+      default:
+        // For unknown errors, don't show toast to avoid spam
+        if (normalizedError.status && normalizedError.status >= 400) {
+          message = `Request failed with status ${normalizedError.status}`;
+        } else {
+          // Don't show toast for network errors or unknown issues
+          return normalizedError;
+        }
     }
     
-    toast.error(message);
+    // Only show toast for critical errors, not for authentication issues
+    if (normalizedError.status !== 401) {
+      toast.error(message);
+    }
   }
   
-  return error;
+  return normalizedError;
 };
 
 // API wrapper with error handling
@@ -188,7 +240,16 @@ export const apiCall = async <T>(
     
     return response.data || null;
   } catch (error) {
-    handleApiError(error as ApiError);
+    // Add debugging information to understand what type of error we're getting
+    console.log('apiCall caught error:', {
+      type: typeof error,
+      constructor: error?.constructor?.name,
+      isError: error instanceof Error,
+      keys: error && typeof error === 'object' ? Object.keys(error) : 'not an object',
+      error
+    });
+    
+    handleApiError(error);
     return null;
   }
 };

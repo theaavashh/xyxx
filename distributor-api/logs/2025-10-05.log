@@ -1,0 +1,50 @@
+2025-10-05T06:16:15.374Z [INFO] Mailjet service initialized successfully
+2025-10-05T06:16:21.476Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-05T06:17:00.890Z [INFO] Mailjet service initialized successfully
+2025-10-05T06:17:13.099Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-05T06:17:13.100Z [INFO] 🌍 Environment: development
+2025-10-05T06:17:13.101Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-05T06:17:13.101Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-05T06:17:13.102Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-05T06:29:36.122Z [INFO] Mailjet service initialized successfully
+2025-10-05T06:29:41.780Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-05T06:29:41.782Z [INFO] 🌍 Environment: development
+2025-10-05T06:29:41.783Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-05T06:29:41.783Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-05T06:29:41.791Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-05T06:29:55.480Z [INFO] GET /api/categories - 200 - 397.774ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":397.774}
+2025-10-05T06:30:54.380Z [ERROR] POST /api/auth/login - 401 - 474.297ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":474.297}
+2025-10-05T06:31:08.922Z [ERROR] POST /api/auth/login - 401 - 408.694ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":408.694}
+2025-10-05T06:31:29.230Z [ERROR] POST /api/auth/login - 401 - 15.564ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":15.564}
+2025-10-05T06:32:09.861Z [ERROR] GET /api/v1/products - 404 - 1.121ms | Data: {"method":"GET","url":"/api/v1/products","statusCode":404,"responseTime":1.121}
+2025-10-05T06:32:09.988Z [ERROR] GET /favicon.ico - 404 - 0.317ms | Data: {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":0.317}
+2025-10-05T06:32:29.495Z [ERROR] GET /api/v1/ - 404 - 0.583ms | Data: {"method":"GET","url":"/api/v1/","statusCode":404,"responseTime":0.583}
+2025-10-05T06:33:05.858Z [ERROR] GET /api/v1/health - 404 - 0.997ms | Data: {"method":"GET","url":"/api/v1/health","statusCode":404,"responseTime":0.997}
+2025-10-05T06:33:09.636Z [ERROR] GET /api/v1/health - 404 - 0.535ms | Data: {"method":"GET","url":"/api/v1/health","statusCode":404,"responseTime":0.535}
+2025-10-05T06:33:46.981Z [ERROR] GET /api/v1/health - 404 - 0.386ms | Data: {"method":"GET","url":"/api/v1/health","statusCode":404,"responseTime":0.386}
+2025-10-05T06:33:52.329Z [ERROR] GET /api/v1/health - 404 - 0.309ms | Data: {"method":"GET","url":"/api/v1/health","statusCode":404,"responseTime":0.309}
+2025-10-05T06:34:13.529Z [INFO] GET /api - 200 - 0.649ms | Data: {"method":"GET","url":"/api","statusCode":200,"responseTime":0.649}
+2025-10-05T06:34:13.953Z [ERROR] GET /favicon.ico - 404 - 0.397ms | Data: {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":0.397}
+2025-10-05T06:34:14.602Z [ERROR] GET /sw.js - 404 - 1.109ms | Data: {"method":"GET","url":"/sw.js","statusCode":404,"responseTime":1.109}
+2025-10-05T06:34:26.306Z [INFO] GET /api - 200 - 0.93ms | Data: {"method":"GET","url":"/api","statusCode":200,"responseTime":0.93}
+2025-10-05T06:48:25.954Z [INFO] Mailjet service initialized successfully
+2025-10-05T06:48:28.762Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-05T06:48:28.762Z [INFO] 🌍 Environment: development
+2025-10-05T06:48:28.762Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-05T06:48:28.762Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-05T06:48:28.763Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-05T06:48:28.763Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

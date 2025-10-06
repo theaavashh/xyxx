@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { 
   Users, 
   UserCheck, 
@@ -179,13 +179,16 @@ export default function ApprovedDistributors() {
   };
 
   // Create or update credentials
-  const saveCredentials = async (applicationId: string) => {
+  const saveCredentials = useCallback(async (applicationId: string) => {
     try {
       // Find the distributor that corresponds to this application
       const distributor = distributors.find(d => d.id === applicationId);
       if (!distributor) {
         throw new Error('Application not found');
       }
+      
+      // Create a deep copy to prevent shared state issues
+      const safeDistributor = JSON.parse(JSON.stringify(distributor));
       
       const currentForm = credentialForms[applicationId];
       if (!currentForm) {
@@ -194,7 +197,7 @@ export default function ApprovedDistributors() {
       
 
       // Use the userId if we already have it, otherwise find it
-      let userId = distributor.userId;
+      let userId = safeDistributor.userId;
       
       if (!userId) {
         try {
@@ -216,24 +219,24 @@ export default function ApprovedDistributors() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            firstName: distributor.fullName.split(' ')[0] || 'Distributor',
-            lastName: distributor.fullName.split(' ').slice(1).join(' ') || 'User',
-            email: currentForm.email || distributor.email || `${distributor.id}@distributor.local`,
-            username: currentForm.username || `dist_${distributor.id.slice(-8)}`,
+            firstName: safeDistributor.fullName.split(' ')[0] || 'Distributor',
+            lastName: safeDistributor.fullName.split(' ').slice(1).join(' ') || 'User',
+            email: currentForm.email || safeDistributor.email || `${safeDistributor.id}@distributor.local`,
+            username: currentForm.username || `dist_${safeDistributor.id.slice(-8)}`,
             password: currentForm.password || 'temp123',
-            phoneNumber: distributor.mobileNumber || '9843803568',
-            address: distributor.permanentAddress || 'Nepal',
+            phoneNumber: safeDistributor.mobileNumber || '9843803568',
+            address: safeDistributor.permanentAddress || 'Nepal',
             dateOfBirth: '1990-01-01', // Default date
-            nationalId: distributor.citizenshipNumber || '0000000000',
-            companyName: distributor.companyName || 'Distributor Company',
+            nationalId: safeDistributor.citizenshipNumber || '0000000000',
+            companyName: safeDistributor.companyName || 'Distributor Company',
             companyType: 'SOLE_PROPRIETORSHIP', // Default company type
-            registrationNumber: distributor.registrationNumber || 'REG123456',
-            panNumber: distributor.panVatNumber || 'PAN123456',
-            vatNumber: distributor.panVatNumber || 'VAT123456',
+            registrationNumber: safeDistributor.registrationNumber || 'REG123456',
+            panNumber: safeDistributor.panVatNumber || 'PAN123456',
+            vatNumber: safeDistributor.panVatNumber || 'VAT123456',
             establishedDate: '2020-01-01', // Default date
-            companyAddress: distributor.officeAddress || 'Nepal',
+            companyAddress: safeDistributor.officeAddress || 'Nepal',
             website: '',
-            description: `Distributor for ${distributor.desiredDistributorArea || 'Nepal'}`
+            description: `Distributor for ${safeDistributor.desiredDistributorArea || 'Nepal'}`
           }),
         });
 
@@ -298,12 +301,7 @@ export default function ApprovedDistributors() {
         // Clear any existing password visibility states
         setShowPassword({});
         
-        // Also refresh from server to ensure consistency
-        setTimeout(() => {
-          fetchApprovedDistributors().catch((error: unknown) => {
-            console.error('Error refreshing from server:', error);
-          });
-        }, 1000); // Wait 1 second for the server to process
+        // Note: Removed automatic page refresh for immediate UI updates
       } else {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Failed to save credentials');
@@ -312,17 +310,19 @@ export default function ApprovedDistributors() {
       console.error('Error saving credentials:', error);
       toast.error((error as Error).message || 'Failed to save credentials');
     }
-  };
+  }, [distributors, credentialForms, availableCategories]);
 
   // Toggle distributor account status (activate/deactivate)
-  const toggleDistributorStatus = async (applicationId: string) => {
+  const toggleDistributorStatus = useCallback(async (applicationId: string) => {
     const distributor = distributors.find(d => d.id === applicationId);
     if (!distributor) {
       toast.error('Distributor not found');
       return;
     }
 
-    const isCurrentlyActive = distributor.isActive;
+    // Create a deep copy to prevent shared state issues
+    const safeDistributor = JSON.parse(JSON.stringify(distributor));
+    const isCurrentlyActive = safeDistributor.isActive;
     const action = isCurrentlyActive ? 'deactivate' : 'activate';
     const actionText = isCurrentlyActive ? 'deactivate' : 'activate';
 
@@ -331,7 +331,7 @@ export default function ApprovedDistributors() {
     }
 
     try {
-      let userId = distributor.userId;
+      let userId = safeDistributor.userId;
       
       // If userId is not available, try to find it using the find-by-application endpoint
       if (!userId) {
@@ -344,15 +344,15 @@ export default function ApprovedDistributors() {
 
       // If still no userId, try the old method as fallback
       if (!userId) {
-        const userResponse = await fetch(`http://localhost:5000/api/distributors?search=${distributor.fullName}`);
+        const userResponse = await fetch(`http://localhost:5000/api/distributors?search=${safeDistributor.fullName}`);
         if (!userResponse.ok) {
           throw new Error('Failed to find distributor account');
         }
         
         const userData = await userResponse.json();
         const user = userData.data?.find((u: any) => 
-          u.fullName === distributor.fullName || 
-          u.email === distributor.email
+          u.fullName === safeDistributor.fullName || 
+          u.email === safeDistributor.email
         );
         
         if (!user) {
@@ -385,12 +385,7 @@ export default function ApprovedDistributors() {
           })
         );
         
-        // Also refresh from server to ensure consistency
-        setTimeout(() => {
-          fetchApprovedDistributors().catch(error => {
-            console.error('Error refreshing from server:', error);
-          });
-        }, 500);
+        // Note: Removed automatic page refresh for immediate UI updates
       } else {
         const errorData = await response.json();
         throw new Error(errorData.message || `Failed to ${actionText} account`);
@@ -399,16 +394,16 @@ export default function ApprovedDistributors() {
       console.error(`Error ${action}ing account:`, error);
       toast.error(`Failed to ${actionText} account`);
     }
-  };
+  }, [distributors]);
 
   // Generate random password
-  const generatePassword = (distributorId: string) => {
+  const generatePassword = useCallback((distributorId: string) => {
     if (editingDistributorId === distributorId) {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
-    let password = '';
-    for (let i = 0; i < 12; i++) {
-      password += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+      let password = '';
+      for (let i = 0; i < 12; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
       setCredentialForms(prev => ({ 
         ...prev, 
         [distributorId]: { 
@@ -417,66 +412,71 @@ export default function ApprovedDistributors() {
         } 
       }));
     }
-  };
+  }, [editingDistributorId]);
 
   // Toggle password visibility
-  const togglePasswordVisibility = (distributorId: string) => {
+  const togglePasswordVisibility = useCallback((distributorId: string) => {
     if (editingDistributorId === distributorId) {
-    setShowPassword(prev => ({
-      ...prev,
-      [distributorId]: !prev[distributorId]
-    }));
+      setShowPassword(prev => ({
+        ...prev,
+        [distributorId]: !prev[distributorId]
+      }));
     }
-  };
+  }, [editingDistributorId]);
 
   // Start editing credentials
-  const startEditing = (distributor: ApprovedDistributor) => {
+  const startEditing = useCallback((distributor: ApprovedDistributor) => {
     // Clear any existing editing state first
     setEditingCredentials(null);
     setEditingDistributorId(null);
     setCredentialForms({});
     setShowPassword({});
     
+    // Create a deep copy of the distributor to prevent shared state issues
+    const safeDistributor = JSON.parse(JSON.stringify(distributor));
+    
     // Prepare form data
     const formData = {
-      username: distributor.credentials?.username || '',
-      email: distributor.credentials?.email || distributor.email || '',
-      password: distributor.credentials?.password || '',
-      categories: distributor.credentials?.categories?.map(cat => cat.id) || []
+      username: safeDistributor.credentials?.username || '',
+      email: safeDistributor.credentials?.email || safeDistributor.email || '',
+      password: safeDistributor.credentials?.password || '',
+      categories: safeDistributor.credentials?.categories?.map(cat => cat.id) || []
     };
     
     // Use a single state update to set everything at once
-    setCredentialForms({ [distributor.id]: formData });
-    setEditingCredentials(distributor.id);
-    setEditingDistributorId(distributor.id);
-  };
+    setCredentialForms({ [safeDistributor.id]: formData });
+    setEditingCredentials(safeDistributor.id);
+    setEditingDistributorId(safeDistributor.id);
+  }, []);
 
   // Cancel editing
-  const cancelEditing = () => {
+  const cancelEditing = useCallback(() => {
     // Clear all form data and editing state
     setCredentialForms({});
     setEditingCredentials(null);
     setEditingDistributorId(null);
     setShowPassword({});
-  };
+  }, []);
 
   useEffect(() => {
     fetchApprovedDistributors();
     fetchCategories();
   }, []);
 
-  // Filter distributors
-  const filteredDistributors = distributors.filter(distributor => {
-    const matchesSearch = distributor.fullName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         distributor.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         distributor.companyName?.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesFilter = filterStatus === 'all' || 
-                         (filterStatus === 'with-credentials' && distributor.credentials) ||
-                         (filterStatus === 'without-credentials' && !distributor.credentials);
-    
-    return matchesSearch && matchesFilter;
-  });
+  // Filter distributors with memoization for better performance
+  const filteredDistributors = useMemo(() => {
+    return distributors.filter(distributor => {
+      const matchesSearch = distributor.fullName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           distributor.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           distributor.companyName?.toLowerCase().includes(searchTerm.toLowerCase());
+      
+      const matchesFilter = filterStatus === 'all' || 
+                           (filterStatus === 'with-credentials' && distributor.credentials) ||
+                           (filterStatus === 'without-credentials' && !distributor.credentials);
+      
+      return matchesSearch && matchesFilter;
+    });
+  }, [distributors, searchTerm, filterStatus]);
 
   if (loading) {
     return (
@@ -546,7 +546,7 @@ export default function ApprovedDistributors() {
           </div>
         ) : (
           filteredDistributors.map((distributor) => (
-            <div key={distributor.id} className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-200">
+            <div key={`distributor-${distributor.id}-${distributor.isActive ? 'active' : 'inactive'}`} className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow duration-200">
               {/* Card Header */}
               <div className="p-6 border-b border-gray-100">
                 <div className="flex items-start justify-between">
@@ -687,7 +687,7 @@ export default function ApprovedDistributors() {
 
                 {/* Edit Credentials Form */}
                 {editingCredentials === distributor.id && editingDistributorId === distributor.id && (
-                  <div key={`edit-form-${distributor.id}`} className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                  <div key={`edit-form-${distributor.id}-${Date.now()}`} className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
                     <h4 className="text-sm font-semibold text-gray-900 mb-4">Set Credentials</h4>
                     <div className="space-y-4">
                           <div>

@@ -7,6 +7,7 @@ exports.activateDistributor = exports.deactivateDistributor = exports.findDistri
 const client_1 = require("@prisma/client");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const error_middleware_1 = require("../middleware/error.middleware");
+const mailjet_service_1 = __importDefault(require("../services/mailjet.service"));
 const prisma = new client_1.PrismaClient();
 exports.createDistributor = (0, error_middleware_1.asyncHandler)(async (req, res) => {
     if (!req.user && process.env.NODE_ENV !== 'development') {
@@ -428,6 +429,37 @@ exports.saveDistributorCredentials = (0, error_middleware_1.asyncHandler)(async 
         }
         return updatedDistributor;
     });
+    try {
+        const application = await prisma.distributorApplication.findFirst({
+            where: {
+                OR: [
+                    { email: result.email },
+                    { fullName: { contains: result.username, mode: 'insensitive' } }
+                ]
+            }
+        });
+        if (application) {
+            const emailData = {
+                applicationId: application.id,
+                fullName: application.fullName,
+                email: result.email,
+                companyName: application.companyName,
+                distributionArea: application.desiredDistributorArea,
+                businessType: application.businessType,
+                reviewNotes: 'Credentials have been set for your approved application'
+            };
+            const credentials = {
+                username: result.username,
+                email: result.email,
+                password: password,
+                categories: categories || []
+            };
+            await mailjet_service_1.default.notifyDistributorApproved(emailData, credentials);
+        }
+    }
+    catch (emailError) {
+        console.error('Failed to send credentials email:', emailError);
+    }
     const response = {
         success: true,
         message: 'डिस्ट्रिब्युटर क्रेडेन्शियल्स सफलतापूर्वक सेभ भयो',

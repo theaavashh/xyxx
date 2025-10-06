@@ -1,234 +1,465 @@
 'use client';
 
-import { useState } from 'react';
-import { Plus, Minus, ShoppingCart, Search } from 'lucide-react';
-import { mockProducts } from '@/lib/mockData';
-import { formatCurrency } from '@/lib/utils';
-import { Product, OrderItem } from '@/types';
+import { useState, useEffect } from 'react';
+import { Package, RefreshCw, Tag, ShoppingCart, Plus, Minus, Send, Trash2 } from 'lucide-react';
+import { useAuth } from './AuthProvider';
+import { apiClient } from '@/lib/api';
 import toast from 'react-hot-toast';
 
+interface Category {
+  id: string;
+  title: string;
+  description?: string;
+}
+
+interface OrderItem {
+  id: string;
+  categoryId: string;
+  categoryTitle: string;
+  subcategory: string;
+  quantity: number;
+  unit: string;
+  unitPrice: number;
+  totalPrice: number;
+}
+
+interface OrderSummary {
+  totalItems: number;
+  totalQuantity: number;
+  totalAmount: number;
+}
+
 export default function Products() {
-  const [products] = useState<Product[]>(mockProducts);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [cart, setCart] = useState<OrderItem[]>([]);
-  const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [orderItems, setOrderItems] = useState<OrderItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [submittingOrder, setSubmittingOrder] = useState(false);
+  const { user } = useAuth();
 
-  const categories = ['all', ...Array.from(new Set(products.map(p => p.category)))];
+  const fetchDistributorCategories = async () => {
+    try {
+      setRefreshing(true);
+      
+      if (!user) {
+        toast.error('User not authenticated');
+        setLoading(false);
+        setRefreshing(false);
+        return;
+      }
 
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const updateQuantity = (productId: string, change: number) => {
-    setQuantities(prev => {
-      const current = prev[productId] || 0;
-      const newQuantity = Math.max(0, current + change);
-      return { ...prev, [productId]: newQuantity };
-    });
+      // Get distributor credentials to see assigned categories
+      const credentialsResponse = await apiClient.get<{ success: boolean; data: any }>(`/distributors/${user.id}/credentials`);
+      
+      if (credentialsResponse.success && credentialsResponse.data) {
+        // Extract categories from the response - the structure is { categories: [...] }
+        const categoryList = credentialsResponse.data.categories || [];
+        
+        setCategories(categoryList);
+        
+        if (categoryList.length === 0) {
+          toast('No categories assigned to you yet', { icon: 'ℹ️' });
+        }
+      } else {
+        setCategories([]);
+        toast.error('Failed to fetch distributor categories');
+      }
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      setCategories([]);
+      toast.error('Failed to load categories');
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
   };
 
-  const addToCart = (product: Product) => {
-    const quantity = quantities[product.id] || 0;
-    if (quantity === 0) {
-      toast.error('Please select a quantity');
-      return;
+  useEffect(() => {
+    if (user) {
+      fetchDistributorCategories();
     }
+  }, [user]);
 
-    const existingItem = cart.find(item => item.productId === product.id);
+  const handleRefresh = () => {
+    fetchDistributorCategories();
+  };
+
+  // Generate sample pricing data (in real app, this would come from API)
+  const getSamplePricing = (categoryTitle: string, subcategory: string) => {
+    const basePrices: { [key: string]: number } = {
+      'Mutton Achar': 500,
+      'Pork Achar': 450,
+      'Chicken Achar': 400,
+      'Product A': 300,
+      'Product B': 350,
+      'Product C': 250,
+    };
+    
+    const units: { [key: string]: string } = {
+      'Mutton Achar': '500gm',
+      'Pork Achar': '250gm',
+      'Chicken Achar': '1kg',
+      'Product A': '500gm',
+      'Product B': '750gm',
+      'Product C': '250gm',
+    };
+
+    return {
+      unitPrice: basePrices[subcategory] || 300,
+      unit: units[subcategory] || '500gm'
+    };
+  };
+
+  const addToOrder = (category: Category, subcategory: string) => {
+    const existingItem = orderItems.find(
+      item => item.categoryId === category.id && item.subcategory === subcategory
+    );
+
     if (existingItem) {
-      setCart(prev => prev.map(item =>
-        item.productId === product.id
-          ? { ...item, quantity: item.quantity + quantity, totalPrice: (item.quantity + quantity) * item.pricePerUnit }
+      // Update quantity of existing item
+      setOrderItems(prev => prev.map(item => 
+        item.id === existingItem.id 
+          ? { 
+              ...item, 
+              quantity: item.quantity + 1,
+              totalPrice: (item.quantity + 1) * item.unitPrice
+            }
           : item
       ));
     } else {
+      // Add new item
+      const pricing = getSamplePricing(category.title, subcategory);
       const newItem: OrderItem = {
-        productId: product.id,
-        productName: product.name,
-        quantity,
-        pricePerUnit: product.pricePerUnit,
-        totalPrice: quantity * product.pricePerUnit,
+        id: `${category.id}-${subcategory}-${Date.now()}`,
+        categoryId: category.id,
+        categoryTitle: category.title,
+        subcategory,
+        quantity: 1,
+        unit: pricing.unit,
+        unitPrice: pricing.unitPrice,
+        totalPrice: pricing.unitPrice
       };
-      setCart(prev => [...prev, newItem]);
+      setOrderItems(prev => [...prev, newItem]);
     }
-
-    setQuantities(prev => ({ ...prev, [product.id]: 0 }));
-    toast.success(`${product.name} added to cart`);
+    toast.success(`${subcategory} added to order`);
   };
 
-  const removeFromCart = (productId: string) => {
-    setCart(prev => prev.filter(item => item.productId !== productId));
-    toast.success('Item removed from cart');
+  const updateQuantity = (itemId: string, newQuantity: number) => {
+    if (newQuantity <= 0) {
+      removeFromOrder(itemId);
+      return;
+    }
+    
+    setOrderItems(prev => prev.map(item => 
+      item.id === itemId 
+        ? { 
+            ...item, 
+            quantity: newQuantity,
+            totalPrice: newQuantity * item.unitPrice
+          }
+        : item
+    ));
   };
 
-  const getTotalAmount = () => {
-    return cart.reduce((total, item) => total + item.totalPrice, 0);
+  const removeFromOrder = (itemId: string) => {
+    setOrderItems(prev => prev.filter(item => item.id !== itemId));
+    toast.success('Item removed from order');
   };
 
-  const placeOrder = () => {
-    if (cart.length === 0) {
-      toast.error('Cart is empty');
+  const calculateOrderSummary = (): OrderSummary => {
+    return orderItems.reduce(
+      (summary, item) => ({
+        totalItems: summary.totalItems + 1,
+        totalQuantity: summary.totalQuantity + item.quantity,
+        totalAmount: summary.totalAmount + item.totalPrice
+      }),
+      { totalItems: 0, totalQuantity: 0, totalAmount: 0 }
+    );
+  };
+
+  const handleSubmitOrder = async () => {
+    if (orderItems.length === 0) {
+      toast.error('Please add items to your order');
       return;
     }
 
-    // Here you would normally send the order to your API
-    toast.success('Order placed successfully!');
-    setCart([]);
+    setSubmittingOrder(true);
+    try {
+      const orderData = {
+        items: orderItems.map(item => ({
+          quantity: item.quantity,
+          unitPrice: item.unitPrice,
+          unit: item.unit,
+          subcategory: item.subcategory,
+          categoryTitle: item.categoryTitle
+        })),
+        notes: `Order submitted by ${user?.name || 'Distributor'}`
+      };
+
+      const response = await fetch('http://localhost:5000/api/orders/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('distributor_token')}`
+        },
+        body: JSON.stringify(orderData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success(`Order #${result.data.orderNumber} submitted successfully! Total: ₹${result.data.totalAmount}`);
+        setOrderItems([]);
+      } else {
+        toast.error(result.message || 'Failed to submit order');
+      }
+    } catch (error) {
+      console.error('Order submission error:', error);
+      toast.error('Failed to submit order. Please try again.');
+    } finally {
+      setSubmittingOrder(false);
+    }
   };
+
+  const clearOrder = () => {
+    setOrderItems([]);
+    toast.success('Order cleared');
+  };
+
+  if (loading) {
+    return (
+      <div className="py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="flex items-center justify-center h-64">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const orderSummary = calculateOrderSummary();
 
   return (
     <div className="py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-semibold text-gray-900">Products</h1>
-          {cart.length > 0 && (
-            <div className="bg-blue-100 px-4 py-2 rounded-lg">
-              <span className="text-blue-800 font-medium">
-                Cart: {cart.length} items - {formatCurrency(getTotalAmount())}
-              </span>
+        <div className="mb-6">
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-2xl font-semibold text-gray-900 mb-2">Product Orders</h1>
+              <p className="text-gray-600">Order products from your assigned categories</p>
+            </div>
+            <div className="flex gap-3">
+              {orderItems.length > 0 && (
+                <button
+                  onClick={clearOrder}
+                  className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 flex items-center"
+                >
+                  <Trash2 className="h-4 w-4 mr-2" />
+                  Clear Order
+                </button>
+              )}
+              <button
+                onClick={handleRefresh}
+                disabled={refreshing}
+                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 flex items-center"
+              >
+                <RefreshCw className={`h-4 w-4 mr-2 ${refreshing ? 'animate-spin' : ''}`} />
+                Refresh
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Categories for Ordering */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+          <div className="px-6 py-4 border-b border-gray-200">
+            <h2 className="text-lg font-semibold text-gray-900">
+              Available Products ({categories.length} categories)
+            </h2>
+            <p className="text-sm text-gray-600 mt-1">Click on any product to add it to your order</p>
+          </div>
+          
+          {categories.length === 0 ? (
+            <div className="px-6 py-12 text-center">
+              <div className="text-gray-400 mb-4">
+                <Package className="mx-auto h-12 w-12" />
+              </div>
+              <p className="text-gray-500 text-lg">No categories assigned to you yet</p>
+              <p className="text-gray-400">Contact your administrator to get product categories assigned</p>
+            </div>
+          ) : (
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categories.map((category, index) => (
+                  <div key={category.id} className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                        <Tag className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">{category.title}</h3>
+                        <p className="text-sm text-gray-500">Category #{index + 1}</p>
+                      </div>
+                    </div>
+                    
+                    {category.description && (
+                      <div className="space-y-2">
+                        <p className="text-sm font-medium text-gray-700">Available Products:</p>
+                        <div className="grid gap-2">
+                          {category.description.split(',').map((subcat, idx) => {
+                            const pricing = getSamplePricing(category.title, subcat.trim());
+                            return (
+                              <div
+                                key={idx}
+                                className="bg-white rounded-lg p-3 border border-blue-200 hover:border-blue-300 transition-colors cursor-pointer group"
+                                onClick={() => addToOrder(category, subcat.trim())}
+                              >
+                                <div className="flex justify-between items-center">
+                                  <div>
+                                    <p className="font-medium text-gray-900 group-hover:text-blue-700">
+                                      {subcat.trim()}
+                                    </p>
+                                    <p className="text-xs text-gray-500">{pricing.unit}</p>
+                                  </div>
+                                  <div className="text-right">
+                                    <p className="font-semibold text-blue-600">₹{pricing.unitPrice}</p>
+                                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                                      <Plus className="h-3 w-3 text-blue-600" />
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
 
-        {/* Search and Filter */}
-        <div className="mb-6 flex flex-col sm:flex-row gap-4">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <select
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-          >
-            {categories.map(category => (
-              <option key={category} value={category}>
-                {category === 'all' ? 'All Categories' : category}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Products Grid */}
-          <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map((product) => (
-                <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <div className="h-48 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">No Image</span>
-                  </div>
-                  <div className="p-4">
-                    <div className="mb-2">
-                      <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
-                      <span className="inline-block px-2 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded">
-                        {product.category}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-3">{product.description}</p>
-                    <div className="flex justify-between items-center mb-3">
-                      <span className="text-lg font-bold text-gray-900">
-                        {formatCurrency(product.pricePerUnit)}/{product.unit}
-                      </span>
-                      <span className="text-sm text-gray-500">
-                        Stock: {product.availableQuantity}
-                      </span>
-                    </div>
-
-                    {/* Quantity Controls */}
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center space-x-2">
-                        <button
-                          onClick={() => updateQuantity(product.id, -1)}
-                          className="p-1 rounded-full hover:bg-gray-100"
-                          disabled={!quantities[product.id]}
-                        >
-                          <Minus className="h-4 w-4" />
-                        </button>
-                        <span className="w-8 text-center font-medium">
-                          {quantities[product.id] || 0}
-                        </span>
-                        <button
-                          onClick={() => updateQuantity(product.id, 1)}
-                          className="p-1 rounded-full hover:bg-gray-100"
-                          disabled={quantities[product.id] >= product.availableQuantity}
-                        >
-                          <Plus className="h-4 w-4" />
-                        </button>
-                      </div>
-                      <button
-                        onClick={() => addToCart(product)}
-                        className="flex items-center px-3 py-1 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700"
-                      >
-                        <ShoppingCart className="h-4 w-4 mr-1" />
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        {/* Order Table */}
+        {orderItems.length > 0 && (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 mb-6">
+            <div className="px-6 py-4 border-b border-gray-200">
+              <div className="flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-gray-900">Your Order</h2>
+                <span className="text-sm text-gray-500">{orderSummary.totalItems} item{orderSummary.totalItems !== 1 ? 's' : ''}</span>
+              </div>
             </div>
-          </div>
-
-          {/* Cart Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md p-4 sticky top-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Order Cart</h3>
-              
-              {cart.length === 0 ? (
-                <p className="text-gray-500 text-center py-8">Your cart is empty</p>
-              ) : (
-                <>
-                  <div className="space-y-3 mb-4">
-                    {cart.map((item) => (
-                      <div key={item.productId} className="flex justify-between items-start text-sm">
-                        <div className="flex-1">
-                          <p className="font-medium text-gray-900">{item.productName}</p>
-                          <p className="text-gray-600">
-                            {item.quantity} × {formatCurrency(item.pricePerUnit)}
-                          </p>
+            
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unit Price</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quantity</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {orderItems.map((item) => (
+                    <tr key={item.id} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div>
+                          <div className="text-sm font-medium text-gray-900">{item.subcategory}</div>
+                          <div className="text-sm text-gray-500">{item.categoryTitle}</div>
                         </div>
-                        <div className="text-right">
-                          <p className="font-medium">{formatCurrency(item.totalPrice)}</p>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{item.unit}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">₹{item.unitPrice}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="flex items-center space-x-2">
                           <button
-                            onClick={() => removeFromCart(item.productId)}
-                            className="text-red-600 hover:text-red-800 text-xs"
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"
                           >
-                            Remove
+                            <Minus className="h-3 w-3 text-gray-600" />
+                          </button>
+                          <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
+                          <button
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"
+                          >
+                            <Plus className="h-3 w-3 text-gray-600" />
                           </button>
                         </div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="border-t pt-3 mb-4">
-                    <div className="flex justify-between items-center">
-                      <span className="font-semibold">Total:</span>
-                      <span className="font-bold text-lg">{formatCurrency(getTotalAmount())}</span>
-                    </div>
-                  </div>
-                  
-                  <button
-                    onClick={placeOrder}
-                    className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 font-medium"
-                  >
-                    Place Order
-                  </button>
-                </>
-              )}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">₹{item.totalPrice}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <button
+                          onClick={() => removeFromOrder(item.id)}
+                          className="text-red-600 hover:text-red-900 p-1 rounded-full hover:bg-red-50"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Order Summary and Submit */}
+        {orderItems.length > 0 && (
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-200">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">{orderSummary.totalItems}</div>
+                  <div className="text-sm text-gray-600">Items</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">{orderSummary.totalQuantity}</div>
+                  <div className="text-sm text-gray-600">Total Qty</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-green-600">₹{orderSummary.totalAmount}</div>
+                  <div className="text-sm text-gray-600">Total Amount</div>
+                </div>
+              </div>
+              
+              <button
+                onClick={handleSubmitOrder}
+                disabled={submittingOrder}
+                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 disabled:opacity-50 flex items-center font-medium"
+              >
+                {submittingOrder ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4 mr-2" />
+                    Submit Order
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Empty Order State */}
+        {categories.length > 0 && orderItems.length === 0 && (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <ShoppingCart className="h-8 w-8 text-gray-400" />
+            </div>
+            <h3 className="text-lg font-medium text-gray-900 mb-2">Your order is empty</h3>
+            <p className="text-gray-500 mb-4">Add products from the categories above to create your order</p>
+            <p className="text-sm text-gray-400">Click on any product card to add it to your order</p>
+          </div>
+        )}
       </div>
     </div>
   );

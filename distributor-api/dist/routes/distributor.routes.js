@@ -36,5 +36,6 @@ router.get('/stats', auth_middleware_1.authenticateToken, (0, auth_middleware_1.
 router.get('/:id', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER', 'SALES_REPRESENTATIVE'), auth_middleware_1.canAccessApplication, distributor_controller_1.getApplicationById);
 router.put('/:id/status', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER', 'SALES_REPRESENTATIVE'), auth_middleware_1.canAccessApplication, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(distributor_schema_1.ApplicationUpdateSchema), distributor_controller_1.updateApplicationStatus);
 router.delete('/:id', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), auth_middleware_1.canAccessApplication, distributor_controller_1.deleteApplication);
+router.post('/send-offer-letter', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), distributor_controller_1.sendOfferLetter);
 exports.default = router;
 //# sourceMappingURL=distributor.routes.js.map

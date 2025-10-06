@@ -37,5 +37,8 @@ router.delete('/:id', auth_middleware_1.authenticateToken, (0, auth_middleware_1
 router.get('/:id/credentials', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), distributors_controller_1.getDistributorCredentials);
 router.post('/:id/credentials', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), distributors_controller_1.saveDistributorCredentials);
 router.delete('/:id/credentials', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), distributors_controller_1.deleteDistributorCredentials);
+router.get('/find-by-application/:applicationId', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER', 'SALES_REPRESENTATIVE'), distributors_controller_1.findDistributorByApplication);
+router.patch('/:id/activate', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), distributors_controller_1.activateDistributor);
+router.patch('/:id/deactivate', auth_middleware_1.authenticateToken, (0, auth_middleware_1.authorize)('ADMIN', 'SALES_MANAGER'), distributors_controller_1.deactivateDistributor);
 exports.default = router;
 //# sourceMappingURL=distributors.routes.js.map

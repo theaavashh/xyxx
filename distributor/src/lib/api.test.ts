@@ -7,13 +7,14 @@ export async function testApiConnection() {
     console.log('Testing API connection...');
     
     // Test health endpoint
-    const healthResponse = await fetch('http://localhost:5000/api/health');
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const healthResponse = await fetch(`${baseUrl}/health`);
     const healthData = await healthResponse.json();
     console.log('Health check:', healthData);
     
     // Test applications endpoint (this might fail if no auth, but we can see the response)
     try {
-      const appsResponse = await fetch('http://localhost:5000/api/applications');
+      const appsResponse = await fetch(`${baseUrl}/applications`);
       const appsData = await appsResponse.json();
       console.log('Applications endpoint response:', appsData);
     } catch (error) {

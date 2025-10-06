@@ -17,6 +17,7 @@ import {
   BookOpen,
   FileText,
   ShoppingCart,
+  Package,
   CreditCard,
   PieChart,
   ArrowRight,
@@ -24,6 +25,9 @@ import {
 } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 import { mockVATBills, mockTrialBalance, mockBalanceSheet, mockMISReport } from '@/lib/mockData';
+import AccountingDemo from './AccountingDemo';
+import SalesEntry from './SalesEntry';
+import PurchaseEntry from './PurchaseEntry';
 
 interface AccountingModuleProps {
   title: string;
@@ -126,11 +130,19 @@ export default function AccountingDashboard() {
       onClick: () => setActiveModule('party')
     },
     {
-      title: 'Purchase Entry',
-      description: 'Record purchase transactions with Nepal VAT (13%) calculations',
+      title: 'Sales Entry',
+      description: 'Create sales invoices with auto-fetched customer data',
       icon: ShoppingCart,
+      color: 'bg-blue-500',
+      stats: 'Auto customer fetch',
+      onClick: () => setActiveModule('sales')
+    },
+    {
+      title: 'Purchase Entry',
+      description: 'Record purchase transactions with auto-fetched supplier data',
+      icon: Package,
       color: 'bg-orange-500',
-      stats: 'Auto VAT calculation',
+      stats: 'Auto supplier fetch',
       onClick: () => setActiveModule('purchase')
     },
     {
@@ -180,6 +192,14 @@ export default function AccountingDashboard() {
       color: 'bg-cyan-500',
       stats: `${profitMargin.toFixed(1)}% profit margin`,
       onClick: () => setActiveModule('mis')
+    },
+    {
+      title: 'Auto-Fetch Demo',
+      description: 'See how customer and supplier data auto-fetches across all features',
+      icon: Users,
+      color: 'bg-indigo-500',
+      stats: 'Interactive demo',
+      onClick: () => setActiveModule('demo')
     }
   ];
 
@@ -317,13 +337,15 @@ export default function AccountingDashboard() {
             {activeModule === 'journal' && <div>Journal Entry Component</div>}
             {activeModule === 'ledger' && <div>Ledger Management Component</div>}
             {activeModule === 'party' && <div>Party Ledger Component</div>}
-            {activeModule === 'purchase' && <div>Purchase Entry Component</div>}
+            {activeModule === 'sales' && <SalesEntry />}
+            {activeModule === 'purchase' && <PurchaseEntry />}
             {activeModule === 'debtors' && <div>Debtors & Creditors Component</div>}
             {activeModule === 'reports' && <div>Purchase & Sales Reports Component</div>}
             {activeModule === 'vat' && <div>VAT Report Component</div>}
             {activeModule === 'balance' && <div>Balance Sheet Component</div>}
             {activeModule === 'trial' && <div>Trial Balance Component</div>}
             {activeModule === 'mis' && <div>MIS Report Component</div>}
+            {activeModule === 'demo' && <AccountingDemo />}
           </div>
         </div>
       )}
