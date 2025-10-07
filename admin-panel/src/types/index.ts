@@ -263,6 +263,14 @@ export interface DashboardStats {
   pendingVATBills: number;
   totalDistributors?: number;
   activeDistributors?: number;
+  // Today's specific metrics
+  todayRevenue?: number;
+  todayOrders?: number;
+  todayNewDistributors?: number;
+  todayCompletedOrders?: number;
+  todayPendingPayments?: number;
+  todayProductionOutput?: number;
+  todayEmployeeAttendance?: number;
 }
 
 // Form Types

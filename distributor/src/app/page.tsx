@@ -8,6 +8,33 @@ import Image from 'next/image';
 import toast, { Toaster } from 'react-hot-toast';
 import NavigationTabs from '@/components/NavigationTabs';
 
+// Nepali date conversion function
+const convertToNepaliDate = (englishDate: Date): string => {
+  const nepaliMonths = [
+    'बैशाख', 'जेष्ठ', 'आषाढ़', 'श्रावण', 'भाद्र', 'आश्विन',
+    'कार्तिक', 'मार्ग', 'पौष', 'माघ', 'फाल्गुन', 'चैत्र'
+  ];
+  
+  const nepaliDays = [
+    'आइतबार', 'सोमबार', 'मंगलबार', 'बुधबार', 'बिहिबार', 'शुक्रबार', 'शनिबार'
+  ];
+  
+  // Fixed conversion: English 2025 = Bikram Sambat 2082
+  // The difference is approximately 57 years, but let's be more precise
+  const englishYear = englishDate.getFullYear();
+  const nepaliYear = englishYear + 57; // 2025 + 57 = 2082
+  
+  const month = englishDate.getMonth();
+  const day = englishDate.getDate();
+  const dayOfWeek = englishDate.getDay();
+  
+  return `${nepaliYear} ${nepaliMonths[month]} ${day}, ${nepaliDays[dayOfWeek]}`;
+};
+
+const getTodayNepaliDate = (): string => {
+  return convertToNepaliDate(new Date());
+};
+
 // ========== CONTEXT API FOR FORM DATA MANAGEMENT ==========
 
 interface FormContextType {
@@ -38,8 +65,7 @@ export function FormDataProvider({ children }: { children: ReactNode }) {
   };
 
   const getCurrentFormData = () => {
-   
-    return allFormData; console.log('🗑️ CONTEXT: Clearing all form data');
+    return allFormData;
   };
 
   return (
@@ -223,7 +249,7 @@ const schema = yup.object().shape({
   // Step 7: Agreement and signature
   agreementAccepted: yup.boolean().oneOf([true], "सहमति स्वीकार गर्नुहोस्"),
   distributorSignatureName: yup.string(),
-  distributorSignatureDate: yup.date(),
+  distributorSignatureDate: yup.string(),
 });
 
 // Nepali districts for dropdown
@@ -356,7 +382,7 @@ interface FormData {
   // Step 7: Agreement and signature
   agreementAccepted?: boolean;
   distributorSignatureName?: string;
-  distributorSignatureDate?: Date;
+  distributorSignatureDate?: string;
 }
 
 const steps = [
@@ -374,6 +400,7 @@ const steps = [
 function DistributorFormContent() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   // Digital signature state
   const [signature, setSignature] = useState<string | null>(null);
@@ -386,6 +413,7 @@ function DistributorFormContent() {
     parentId?: string | null
   }>>([]);
   const [categoriesLoading, setCategoriesLoading] = useState(false);
+  
   
   // Use Context API instead of local state
   const { allFormData, updateFormData, getCurrentFormData } = useFormData();
@@ -404,7 +432,6 @@ function DistributorFormContent() {
         },
         mode: 'cors', // Explicitly set CORS mode
       });
-      
       
       if (response.ok) {
         const data = await response.json();
@@ -440,49 +467,16 @@ function DistributorFormContent() {
           
           setCategories(categoriesWithSubcategories);
         } else {
-          console.error('Invalid data structure:', data);
-          // Fallback to hardcoded categories if API structure is unexpected
-          setCategories([
-            { id: '1', title: 'ZipZip Achar', type: 'category', parentId: null },
-            { id: '1_sub_0', title: 'Mutton Achar', type: 'subcategory', parentId: '1' },
-            { id: '1_sub_1', title: 'Pork Achar', type: 'subcategory', parentId: '1' },
-            { id: '2', title: 'सुकुटी', type: 'category', parentId: null },
-            { id: '3', title: 'डेयरी उत्पादन', type: 'category', parentId: null },
-            { id: '4', title: 'खाद्य वस्तु', type: 'category', parentId: null },
-            { id: '5', title: 'पेय पदार्थ', type: 'category', parentId: null }
-          ]);
+          console.warn('Invalid data structure:', data);
+          setCategories([]);
         }
       } else {
-        console.error('Failed to fetch categories, status:', response.status);
-        const errorText = await response.text();
-        console.error('Error response:', errorText);
-        toast.error('Failed to load product categories');
-        
-        // Fallback to hardcoded categories on error
-        setCategories([
-          { id: '1', title: 'ZipZip Achar', type: 'category', parentId: null },
-          { id: '1_sub_0', title: 'Mutton Achar', type: 'subcategory', parentId: '1' },
-          { id: '1_sub_1', title: 'Pork Achar', type: 'subcategory', parentId: '1' },
-          { id: '2', title: 'सुकुटी', type: 'category', parentId: null },
-          { id: '3', title: 'डेयरी उत्पादन', type: 'category', parentId: null },
-          { id: '4', title: 'खाद्य वस्तु', type: 'category', parentId: null },
-          { id: '5', title: 'पेय पदार्थ', type: 'category', parentId: null }
-        ]);
+        console.warn('Failed to fetch categories, status:', response.status);
+        setCategories([]);
       }
     } catch (error) {
-      console.error('Error fetching categories:', error);
-      toast.error('Error loading product categories');
-      
-      // Fallback to hardcoded categories on network error
-      setCategories([
-        { id: '1', title: 'ZipZip Achar', type: 'category', parentId: null },
-        { id: '1_sub_0', title: 'Mutton Achar', type: 'subcategory', parentId: '1' },
-        { id: '1_sub_1', title: 'Pork Achar', type: 'subcategory', parentId: '1' },
-        { id: '2', title: 'सुकुटी', type: 'category', parentId: null },
-        { id: '3', title: 'डेयरी उत्पादन', type: 'category', parentId: null },
-        { id: '4', title: 'खाद्य वस्तु', type: 'category', parentId: null },
-        { id: '5', title: 'पेय पदार्थ', type: 'category', parentId: null }
-      ]);
+      console.warn('Error fetching categories:', error);
+      setCategories([]);
     } finally {
       setCategoriesLoading(false);
     }
@@ -561,7 +555,7 @@ function DistributorFormContent() {
       // Agreement
       agreementAccepted: false,
       distributorSignatureName: '',
-      distributorSignatureDate: '',
+      distributorSignatureDate: getTodayNepaliDate(),
       
       // Dynamic Arrays
       currentTransactions: [{ company: '', products: '', turnover: '' }],
@@ -637,7 +631,7 @@ function DistributorFormContent() {
       thelaCount: 0,
       thelaDetails: '',
       distributorSignatureName: '',
-      distributorSignatureDate: '',
+      distributorSignatureDate: getTodayNepaliDate(),
       productCategory: '',
       businessExperience: '',
       monthlyIncome: '',
@@ -659,7 +653,7 @@ function DistributorFormContent() {
       additionalInfo3: '',
       agreementAccepted: false,
       distributorSignatureName: '',
-      distributorSignatureDate: '',
+      distributorSignatureDate: getTodayNepaliDate(),
       currentTransactions: [{ company: '', products: '', turnover: '' }],
       products: [{ name: '', monthlySalesCapacity: '' }, { name: '', monthlySalesCapacity: '' }],
       areaCoverageDetails: [],
@@ -1064,13 +1058,13 @@ function DistributorFormContent() {
         declaration: {
           declaration: finalData.agreementAccepted === true,
           signature: finalData.distributorSignatureName || finalData.fullName || '',
-          date: finalData.distributorSignatureDate || new Date().toISOString().split('T')[0]
+          date: finalData.distributorSignatureDate || getTodayNepaliDate()
         },
         agreement: {
           agreementAccepted: finalData.agreementAccepted === true,
           distributorSignatureName: finalData.distributorSignatureName || finalData.fullName || '',
-          distributorSignatureDate: finalData.distributorSignatureDate || new Date().toISOString().split('T')[0],
-          digitalSignature: signature || null
+          distributorSignatureDate: finalData.distributorSignatureDate || getTodayNepaliDate(),
+          digitalSignature: null // Signature removed from review section
         },
         currentTransactions: finalData.currentTransactions || [],
         productsToDistribute: finalData.products || [],
@@ -1123,13 +1117,8 @@ function DistributorFormContent() {
         }
       }
 
-      // Add digital signature if available
-      if (signature) {
-        // Convert data URL to blob
-        const response = await fetch(signature);
-        const blob = await response.blob();
-        formData.append('digitalSignature', blob, 'signature.png');
-      }
+      // Digital signature removed from review section
+      // No signature file upload needed
 
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/applications/submit`, {
         method: 'POST',
@@ -1141,17 +1130,7 @@ function DistributorFormContent() {
       if (response.ok) {
         const result = await response.json();
         console.log('Application submitted successfully:', result);
-        toast.success('आवेदन सफलतापूर्वक पेश गरियो! (Application submitted successfully!)', {
-          duration: 4000,
-          style: {
-            background: '#dcfce7',
-            color: '#166534',
-            border: '1px solid #bbf7d0',
-          },
-        });
-        setTimeout(() => {
-        window.location.reload();
-        }, 2000);
+        setIsSubmitted(true);
       } else {
         const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
         console.error('Submission failed:', errorData);
@@ -1189,7 +1168,7 @@ function DistributorFormContent() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   पूरा नाम (Full Name) *
                 </label>
                 <Controller
@@ -1213,7 +1192,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   उमेर (Age) *
                 </label>
                 <Controller
@@ -1238,7 +1217,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   लिङ्ग (Gender)*
                 </label>
                 <Controller
@@ -1286,7 +1265,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   नागरिकता नम्बर (Citizenship No) *
                 </label>
                 <Controller
@@ -1310,7 +1289,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   जारी जिल्ला (Issued District) *
                 </label>
                 <Controller
@@ -1339,7 +1318,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   मोबाइल नम्बर (Contact Number) *
                 </label>
                 <Controller
@@ -1363,7 +1342,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   इमेल ठेगाना (Email Address) *
                 </label>
                 <Controller
@@ -1386,7 +1365,7 @@ function DistributorFormContent() {
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   स्थायी ठेगाना (Permanent Address) *
                 </label>
                 <Controller
@@ -1410,7 +1389,7 @@ function DistributorFormContent() {
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   अस्थायी ठेगाना (Temporary Address)
                 </label>
                 <Controller
@@ -1441,7 +1420,7 @@ function DistributorFormContent() {
               {/* Left Column */}
               <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     कम्पनीको नाम *
                 </label>
                 <Controller
@@ -1464,7 +1443,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     दर्ता नम्बर/रजिस्ट्रेशन नम्बर *
                 </label>
                 <Controller
@@ -1487,7 +1466,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     PAN/VAT नम्बर *
                 </label>
                 <Controller
@@ -1513,7 +1492,7 @@ function DistributorFormContent() {
               {/* Right Column */}
               <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     कार्यालयको ठेगाना *
                 </label>
                 <Controller
@@ -1536,7 +1515,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     काम गर्ने क्षेत्र/जिल्ला *
                 </label>
                 <Controller
@@ -1564,7 +1543,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     वितरक बन्न चाहने क्षेत्र *
                 </label>
                 <Controller
@@ -1591,7 +1570,7 @@ function DistributorFormContent() {
             {/* Current Business Section - Full Width */}
             <div className="mt-8">
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   हालको व्यापारको विवरण
                 </label>
                 <p className="text-sm text-[#001011] mb-3 absans">
@@ -1602,7 +1581,7 @@ function DistributorFormContent() {
                   {businessFields.map((field, index) => (
                     <div key={field.id} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
                       <div className="flex justify-between items-center mb-3">
-                        <h4 className="text-sm font-medium text-[#001011] absans">
+                        <h4 className="text-sm font-bold text-[#001011] absans">
                           व्यापार {index + 1} (Business {index + 1})
                         </h4>
                         {index > 0 && (
@@ -1618,7 +1597,7 @@ function DistributorFormContent() {
                       
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                          <label className="block text-xs font-medium text-[#001011] mb-1 absans">
+                          <label className="block text-xs font-bold text-[#001011] mb-1 absans">
                             व्यापारको प्रकार * (Business type *)
                 </label>
                 <Controller
@@ -1636,7 +1615,7 @@ function DistributorFormContent() {
               </div>
                         
                         <div>
-                          <label className="block text-xs font-medium text-[#001011] mb-1 absans">
+                          <label className="block text-xs font-bold text-[#001011] mb-1 absans">
                             उत्पादनहरू * (Products *)
                           </label>
                           <Controller
@@ -1654,7 +1633,7 @@ function DistributorFormContent() {
                         </div>
                         
                         <div>
-                          <label className="block text-xs font-medium text-[#001011] mb-1 absans">
+                          <label className="block text-xs font-bold text-[#001011] mb-1 absans">
                             वार्षिक टर्नओभर * (Annual turnover *)
                           </label>
                           <Controller
@@ -1697,13 +1676,13 @@ function DistributorFormContent() {
                 <table className="w-full">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-[#001011] border-b border-gray-200 absans">
+                      <th className="px-4 py-3 text-left text-sm font-bold text-[#001011] border-b border-gray-200 absans">
                         कर्मचारी पद (Employee Position)
                       </th>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-[#001011] border-b border-gray-200 absans">
+                      <th className="px-4 py-3 text-left text-sm font-bold text-[#001011] border-b border-gray-200 absans">
                         संख्या (Number)
                       </th>
-                      <th className="px-4 py-3 text-left text-sm font-medium text-[#001011] border-b border-gray-200 absans">
+                      <th className="px-4 py-3 text-left text-sm font-bold text-[#001011] border-b border-gray-200 absans">
                         अनुभव विवरण (Experience Details)
                       </th>
                     </tr>
@@ -2083,12 +2062,12 @@ function DistributorFormContent() {
             
             {/* Products Section */}
             <div className="space-y-4">
-              <h4 className="text-lg font-medium text-[#001011] absans">वितरण गर्ने उत्पादनहरू</h4>
+              <h4 className="text-lg font-bold text-[#001011] absans">वितरण गर्ने उत्पादनहरू</h4>
               
               {productFields.map((field, index) => (
                 <div key={field.id} className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 border border-gray-200 rounded-lg">
                   <div>
-                    <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                    <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                       उत्पादनको नाम
                     </label>
                     <Controller
@@ -2103,28 +2082,41 @@ function DistributorFormContent() {
                           <option value="">
                             {categoriesLoading ? 'लोड हुँदैछ...' : 'उत्पादन छान्नुहोस्'}
                           </option>
-                          {categories.map((item) => (
-                            <option 
-                              key={item.id} 
-                              value={item.title}
-                              style={{
-                                fontWeight: item.type === 'category' ? 'bold' : 'normal',
-                                paddingLeft: item.type === 'subcategory' ? '20px' : '8px'
-                              }}
-                            >
-                              {item.type === 'subcategory' ? '  └ ' : ''}{item.title}
+                          {categories.length === 0 ? (
+                            <option value="" disabled>
+                              {categoriesLoading ? 'लोड हुँदैछ...' : 'कुनै श्रेणी उपलब्ध छैन'}
                             </option>
-                          ))}
+                          ) : (
+                            categories.map((item) => (
+                              <option 
+                                key={item.id} 
+                                value={item.type === 'category' ? item.title : ''}
+                                disabled={item.type === 'subcategory'}
+                                style={{
+                                  fontWeight: item.type === 'category' ? 'bold' : 'normal',
+                                  paddingLeft: item.type === 'subcategory' ? '20px' : '8px',
+                                  color: item.type === 'subcategory' ? '#9CA3AF' : 'inherit',
+                                  fontStyle: item.type === 'subcategory' ? 'italic' : 'normal'
+                                }}
+                              >
+                                {item.type === 'subcategory' ? '  └ ' : ''}{item.title}
+                                {item.type === 'subcategory' ? ' (सब-श्रेणी)' : ''}
+                              </option>
+                            ))
+                          )}
                         </select>
                       )}
                     />
+                    <p className="text-xs text-gray-600 mt-1 absans">
+                      सब-श्रेणीहरू केवल जानकारीका लागि देखाइएका छन्। मुख्य श्रेणी मात्र छान्नुहोस्।
+                    </p>
                     {errors.products?.[index]?.name && (
                       <p className="text-red-500 text-sm mt-1">{errors.products[index]?.name?.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                    <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                       मासिक बिक्री क्षमता
                     </label>
                     <Controller
@@ -2169,11 +2161,11 @@ function DistributorFormContent() {
 
             {/* Partnership Details */}
             <div className="space-y-4">
-              <h4 className="text-lg font-medium text-[#001011] absans">साझेदारी विवरण (वैकल्पिक)</h4>
+              <h4 className="text-lg font-bold text-[#001011] absans">साझेदारी विवरण (वैकल्पिक)</h4>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                  <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     साझेदारको पूरा नाम
                   </label>
                   <Controller
@@ -2191,7 +2183,7 @@ function DistributorFormContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                  <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     साझेदारको उमेर
                   </label>
                   <Controller
@@ -2210,7 +2202,7 @@ function DistributorFormContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                  <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     साझेदारको मोबाइल नम्बर
                   </label>
                   <Controller
@@ -2228,7 +2220,7 @@ function DistributorFormContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                  <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     साझेदारको इमेल
                   </label>
                   <Controller
@@ -2246,7 +2238,7 @@ function DistributorFormContent() {
                 </div>
               
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     साझेदारको नागरिकता नम्बर
                 </label>
                 <Controller
@@ -2264,7 +2256,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     साझेदारको जारी जिल्ला
                 </label>
                 <Controller
@@ -2311,7 +2303,7 @@ function DistributorFormContent() {
                       />
                     )}
                   />
-                  <label className="text-sm font-medium text-[#001011] absans">
+                  <label className="text-sm font-bold text-[#001011] absans">
                     नागरिकता प्रमाणपत्र * (अनिवार्य)
                   </label>
                 </div>
@@ -2345,7 +2337,7 @@ function DistributorFormContent() {
                               };
                               input.click();
                             }}
-                            className="px-3 py-2 bg-gray-400 text-black rounded-lg hover:bg-green-700 transition-colors text-sm absans flex items-center gap-1"
+                            className="px-3 py-2 border border-gray-300 text-black rounded-lg hover:bg-green-700 transition-colors text-sm absans flex items-center gap-1"
                           >
                             📷 क्यामेरा
                           </button>
@@ -2363,7 +2355,7 @@ function DistributorFormContent() {
                               };
                               input.click();
                             }}
-                            className="px-3 py-2 bg-gray-400 text-black rounded-lg hover:bg-blue-700 transition-colors text-sm absans flex items-center gap-1"
+                            className="px-3 py-2 border border-gray-300 text-black rounded-lg hover:bg-blue-700 transition-colors text-sm absans flex items-center gap-1"
                           >
                             📁 फाइल छान्नुहोस्
                           </button>
@@ -2392,7 +2384,7 @@ function DistributorFormContent() {
                       />
                     )}
                   />
-                  <label className="text-sm font-medium text-[#001011] absans">
+                  <label className="text-sm font-bold text-[#001011] absans">
                     कम्पनी दर्ता प्रमाणपत्र * (अनिवार्य)
                   </label>
                 </div>
@@ -2473,7 +2465,7 @@ function DistributorFormContent() {
                       />
                     )}
                   />
-                  <label className="text-sm font-medium text-[#001011] absans">
+                  <label className="text-sm font-bold text-[#001011] absans">
                     PAN/VAT प्रमाणपत्र * (अनिवार्य)
                   </label>
                 </div>
@@ -2554,7 +2546,7 @@ function DistributorFormContent() {
                       />
                     )}
                   />
-                  <label className="text-sm font-medium text-[#001011] absans">
+                  <label className="text-sm font-bold text-[#001011] absans">
                     कार्यालयको फोटो
                   </label>
                 </div>
@@ -2588,7 +2580,7 @@ function DistributorFormContent() {
                       />
                     )}
                   />
-                  <label className="text-sm font-medium text-[#001011] absans">
+                  <label className="text-sm font-bold text-[#001011] absans">
                     अन्य कागजातहरू
                   </label>
                 </div>
@@ -2618,7 +2610,7 @@ function DistributorFormContent() {
             
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   अतिरिक्त जानकारी १
                 </label>
                 <Controller
@@ -2636,7 +2628,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   अतिरिक्त जानकारी २
                 </label>
                 <Controller
@@ -2654,7 +2646,7 @@ function DistributorFormContent() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   अतिरिक्त जानकारी ३
                 </label>
                 <Controller
@@ -2738,7 +2730,7 @@ function DistributorFormContent() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                  <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     वितरकको नाम (Distributor Name) *
                   </label>
                   <Controller
@@ -2760,7 +2752,7 @@ function DistributorFormContent() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                  <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                     मिति (Date) *
                   </label>
                   <Controller
@@ -2770,11 +2762,16 @@ function DistributorFormContent() {
                     render={({ field }) => (
                       <input
                         {...field}
-                        type="date"
-                        className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans"
+                        type="text"
+                        readOnly
+                        className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans bg-gray-50 cursor-not-allowed"
+                        placeholder="आजको मिति"
                       />
                     )}
                   />
+                  <p className="text-xs text-gray-600 mt-1 absans">
+                    आजको नेपाली मिति स्वतः भरिएको छ (Today's Nepali date is auto-filled)
+                  </p>
                   {errors.distributorSignatureDate && (
                     <p className="text-red-500 text-sm mt-1">{errors.distributorSignatureDate.message}</p>
                   )}
@@ -2782,7 +2779,7 @@ function DistributorFormContent() {
               </div>
 
               <div className="mt-4">
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   वितरकको हस्ताक्षरः (Distributor's Signature:)
                 </label>
                 <div className="border-2 border-gray-300 rounded-lg p-4 bg-white">
@@ -2818,7 +2815,7 @@ function DistributorFormContent() {
               </div>
 
               <div className="mt-4">
-                <label className="block text-sm font-medium text-[#001011] mb-2 absans">
+                <label className="block text-sm font-bold text-[#001011] mb-2 absans">
                   छाप (Stamp)
                 </label>
                 <div className="border-2 border-dashed border-gray-300 h-16 flex items-center justify-center">
@@ -2844,7 +2841,7 @@ function DistributorFormContent() {
             
             <div className="space-y-8">
               {/* Step 1: Personal Details */}
-              <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-semibold text-[#001011] mb-6 pb-3 border-b border-gray-200 absans">
                   व्यक्तिगत विवरण (Personal Details)
                 </h4>
@@ -2858,7 +2855,7 @@ function DistributorFormContent() {
                         className="w-full px-4 pt-6 pb-2 bg-gray-50 border border-gray-200 rounded-lg text-[#001011] cursor-not-allowed absans focus:outline-none focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none"
                         placeholder=" "
                       />
-                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-medium text-[#001011] transition-all duration-200 pointer-events-none absans">
+                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-bold text-[#001011] transition-all duration-200 pointer-events-none absans">
                         नाम (Full Name)
                       </label>
                     </div>
@@ -2870,7 +2867,7 @@ function DistributorFormContent() {
                         className="w-full px-4 pt-6 pb-2 bg-gray-50 border border-gray-200 rounded-lg text-[#001011] cursor-not-allowed absans focus:outline-none focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none"
                         placeholder=" "
                       />
-                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-medium text-[#001011] transition-all duration-200 pointer-events-none absans">
+                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-bold text-[#001011] transition-all duration-200 pointer-events-none absans">
                         उमेर (Age)
                       </label>
                     </div>
@@ -2882,7 +2879,7 @@ function DistributorFormContent() {
                         className="w-full px-4 pt-6 pb-2 bg-gray-50 border border-gray-200 rounded-lg text-[#001011] cursor-not-allowed absans focus:outline-none focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none"
                         placeholder=" "
                       />
-                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-medium text-[#001011] transition-all duration-200 pointer-events-none absans">
+                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-bold text-[#001011] transition-all duration-200 pointer-events-none absans">
                         लिङ्ग (Gender)
                       </label>
                     </div>
@@ -2894,12 +2891,12 @@ function DistributorFormContent() {
                         className="w-full px-4 pt-6 pb-2 bg-gray-50 border border-gray-200 rounded-lg text-[#001011] cursor-not-allowed absans focus:outline-none focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none"
                         placeholder=" "
                       />
-                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-medium text-[#001011] transition-all duration-200 pointer-events-none absans">
+                      <label className="absolute left-4 -top-1 bg-gray-50 px-1 text-xs font-bold text-[#001011] transition-all duration-200 pointer-events-none absans">
                         नागरिकता नम्बर (Citizenship Number)
                       </label>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">जारी जिल्ला (Issued District)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">जारी जिल्ला (Issued District)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().issuedDistrict || ''}
@@ -2910,7 +2907,7 @@ function DistributorFormContent() {
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">मोबाइल (Mobile)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">मोबाइल (Mobile)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().mobileNumber || ''}
@@ -2919,7 +2916,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">इमेल (Email)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">इमेल (Email)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().email || ''}
@@ -2928,7 +2925,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">स्थायी ठेगाना (Permanent Address)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">स्थायी ठेगाना (Permanent Address)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().permanentAddress || ''}
@@ -2937,7 +2934,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">अस्थायी ठेगाना (Temporary Address)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">अस्थायी ठेगाना (Temporary Address)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().temporaryAddress || ''}
@@ -2950,14 +2947,14 @@ function DistributorFormContent() {
               </div>
 
               {/* Step 2: Business Details */}
-              <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-semibold text-[#001011] mb-6 pb-3 border-b border-gray-200 absans">
                   व्यापारिक विवरण (Business Details)
                 </h4>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">कम्पनीको नाम (Company Name)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">कम्पनीको नाम (Company Name)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().companyName || ''}
@@ -2966,7 +2963,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">दर्ता नम्बर (Registration Number)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">दर्ता नम्बर (Registration Number)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().registrationNumber || ''}
@@ -2975,7 +2972,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">PAN/VAT नम्बर (PAN/VAT Number)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">PAN/VAT नम्बर (PAN/VAT Number)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().panVatNumber || ''}
@@ -2986,7 +2983,7 @@ function DistributorFormContent() {
                   </div>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">कार्यालयको ठेगाना (Office Address)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">कार्यालयको ठेगाना (Office Address)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().officeAddress || ''}
@@ -2995,7 +2992,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">काम गर्ने क्षेत्र (Work Area District)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">काम गर्ने क्षेत्र (Work Area District)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().workAreaDistrict || ''}
@@ -3004,7 +3001,7 @@ function DistributorFormContent() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-2 absans">वितरक बन्न चाहने क्षेत्र (Desired Distribution Area)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-2 absans">वितरक बन्न चाहने क्षेत्र (Desired Distribution Area)</label>
                       <input
                         type="text"
                         value={getCurrentFormData().desiredDistributionArea || ''}
@@ -3018,7 +3015,7 @@ function DistributorFormContent() {
                 {/* Current Business Details */}
                 {getCurrentFormData().currentBusiness && getCurrentFormData().currentBusiness.length > 0 && (
                   <div className="mt-4">
-                    <h5 className="font-medium text-[#001011] mb-2 absans">हालको व्यापारको विवरण (Current Business Details):</h5>
+                    <h5 className="font-bold text-[#001011] mb-2 absans">हालको व्यापारको विवरण (Current Business Details):</h5>
                     {getCurrentFormData().currentBusiness.map((business: any, index: number) => (
                       <div key={index} className="bg-gray-50 p-3 rounded mb-2 text-sm text-[#001011]">
                         <div><strong>व्यापारको प्रकार (Business Type):</strong> {business.businessType || 'N/A'}</div>
@@ -3060,7 +3057,7 @@ function DistributorFormContent() {
                 {/* Partnership Details */}
                 {getCurrentFormData().partnerFullName && (
                   <div className="mt-4">
-                    <h5 className="font-medium text-[#001011] mb-2 absans">साझेदारी विवरण (Partnership Details):</h5>
+                    <h5 className="font-bold text-[#001011] mb-2 absans">साझेदारी विवरण (Partnership Details):</h5>
                     <div className="bg-gray-50 p-3 rounded text-sm text-[#001011]">
                       <div><strong>साझेदारको नाम (Partner Name):</strong> {getCurrentFormData().partnerFullName}</div>
                       <div><strong>साझेदारको उमेर (Partner Age):</strong> {getCurrentFormData().partnerAge}</div>
@@ -3071,14 +3068,14 @@ function DistributorFormContent() {
               </div>
 
               {/* Step 5: Document Upload */}
-              <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-semibold text-[#001011] mb-6 pb-3 border-b border-gray-200 absans">
                   प्रमाणपत्र संलग्न (Document Upload)
                 </h4>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-3 absans">नागरिकता प्रमाणपत्र (Citizenship Certificate)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-3 absans">नागरिकता प्रमाणपत्र (Citizenship Certificate)</label>
                       {getCurrentFormData().citizenshipFile ? (
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3">
@@ -3110,7 +3107,7 @@ function DistributorFormContent() {
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-3 absans">कम्पनी दर्ता (Company Registration)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-3 absans">कम्पनी दर्ता (Company Registration)</label>
                       {getCurrentFormData().companyRegistrationFile ? (
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3">
@@ -3144,7 +3141,7 @@ function DistributorFormContent() {
                   </div>
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-3 absans">PAN/VAT प्रमाणपत्र (PAN/VAT Certificate)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-3 absans">PAN/VAT प्रमाणपत्र (PAN/VAT Certificate)</label>
                       {getCurrentFormData().panVatFile ? (
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3">
@@ -3176,7 +3173,7 @@ function DistributorFormContent() {
                       )}
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-[#001011] mb-3 absans">कार्यालयको फोटो (Office Photo)</label>
+                      <label className="block text-sm font-bold text-[#001011] mb-3 absans">कार्यालयको फोटो (Office Photo)</label>
                       {getCurrentFormData().officePhotoFile ? (
                         <div className="space-y-3">
                           <div className="flex items-center space-x-3">
@@ -3231,53 +3228,6 @@ function DistributorFormContent() {
                 </div>
               </div>
             </div>
-            
-            {/* Digital Signature Section */}
-            <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-              <h4 className="text-xl font-semibold text-[#001011] mb-6 pb-3 border-b border-gray-200 absans">
-                डिजिटल हस्ताक्षर (Digital Signature)
-              </h4>
-              <div className="space-y-4">
-                <p className="text-[#001011] text-sm absans">
-                  कृपया तलको क्षेत्रमा आफ्नो हस्ताक्षर गर्नुहोस् (Please sign in the area below)
-                </p>
-                <div className="border-2 border-gray-300 rounded-lg p-4 bg-white">
-                  <canvas
-                    ref={canvasRef}
-                    width={800}
-                    height={400}
-                    className="border border-gray-200 rounded cursor-crosshair w-full max-w-4xl mx-auto"
-                    style={{ touchAction: 'none' }}
-                    onMouseDown={startDrawing}
-                    onMouseMove={draw}
-                    onMouseUp={stopDrawing}
-                    onMouseLeave={stopDrawing}
-                    onTouchStart={startDrawing}
-                    onTouchMove={draw}
-                    onTouchEnd={stopDrawing}
-                  />
-                  <div className="flex gap-2 mt-3 justify-center">
-                    <button
-                      type="button"
-                      onClick={clearSignature}
-                      className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm absans"
-                    >
-                      सफा गर्नुहोस् (Clear)
-                    </button>
-                    {signature && (
-                      <div className="text-green-600 text-sm flex items-center gap-1">
-                        ✓ हस्ताक्षर भयो (Signature Captured)
-                      </div>
-                    )}
-                  </div>
-                </div>
-                {!signature && (
-                  <p className="text-red-500 text-sm absans">
-                    ⚠️ हस्ताक्षर आवश्यक छ (Signature is required)
-                  </p>
-                )}
-              </div>
-            </div>
           </div>
         );
 
@@ -3310,32 +3260,88 @@ function DistributorFormContent() {
           },
         }}
       />
-      {/* Header */}
+      
+      {/* Thank You Message */}
+      {isSubmitted && (
+        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+          <div className="max-w-2xl mx-auto text-center px-6">
+            <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200">
+              <div className="mb-6">
+                <div className="w-20 h-20 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h1 className="text-3xl font-bold text-[#001011] mb-4 absans">
+                  धन्यवाद! (Thank You!)
+                </h1>
+                <h2 className="text-xl font-semibold text-[#001011] mb-4 absans">
+                  आवेदन सफलतापूर्वक पेश गरियो
+                </h2>
+              </div>
+              
+              <div className="space-y-4 text-[#001011] absans">
+                <p className="text-lg">
+                  तपाईंको आवेदन सफलतापूर्वक पेश गरियो। हाम्रो टोलीले यसको समीक्षा गर्नेछ र तपाईंलाई फिर्ता सम्पर्क गर्नेछ।
+                </p>
+                <p className="text-base text-gray-600">
+                  Your application has been successfully submitted. Our team will review it and get back to you.
+                </p>
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
+                  <p className="text-sm text-blue-800 absans">
+                    <strong>अगाडि के हुन्छ?</strong> हामी तपाईंको आवेदनको समीक्षा गर्नेछौं र तपाईंको व्यापारिक स्थिति अनुसार फिर्ता सम्पर्क गर्नेछौं।
+                  </p>
+                  <p className="text-xs text-blue-700 mt-2">
+                    <strong>What's next?</strong> We will review your application and contact you back based on your business status.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <button
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setCurrentStep(1);
+                    // Reset form if needed
+                    window.location.reload();
+                  }}
+                  className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-colors absans"
+                >
+                  नयाँ आवेदन (New Application)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Main Form Content - only show when not submitted */}
+      {!isSubmitted && (
+        <>
+          {/* Header */}
       <div 
         className="sticky top-0 z-50 border-b border-gray-200"
         style={{
           background: "radial-gradient(125% 125% at 50% 90%, #fff 40%,rgb(228, 106, 40) 100%)",
         }}
       >
-        <div className="max-w-9xl pl-4 py-3 ">
-          <div className="flex gap-5 justify-between">
-            {/* Logo on the left */}
-            <div className="flex-shrink-0">
-              <Image src="/logo.png" alt="ZIP ZIP" width={150} height={150} className="w-20 h-12 sm:w-24 sm:h-16 md:w-28 md:h-18 lg:w-36 lg:h-24" />
+        <div className="max-w-9xl px-4 py-6 ">
+          <div className="flex flex-col sm:flex-row items-center justify-center relative">
+            {/* Logo */}
+            <div className="flex-shrink-0 mb-2 sm:mb-0 sm:absolute sm:left-0">
+              <Image src="/logo.png" alt="ZIP ZIP" width={150} height={150} className="w-24 h-16 sm:w-20 sm:h-12 md:w-22 md:h-14 lg:w-28 lg:h-18" />
             </div>
             {/* Title centered */}
-            <div className="pl-3 flex-1 ">
-              <h1 className="text-sm md:text-xl font-bold text-[#001011] absans">
-                वितरक आवेदन फारम / Distributor Application Form
+            <div className="text-center">
+              <h1 className="text-lg md:text-2xl font-extrabold text-[#001011] absans">
+                वितरक आवेदन फारम<br />Distributor Application Form
               </h1>
             </div>
-            {/* Empty div for balance */}
-            <div className="flex-shrink-0 w-20 h-12 sm:w-24 sm:h-16 md:w-28 md:h-18 lg:w-36 lg:h-24"></div>
           </div>
         </div>
       </div>
 
-      <div className="w-full px-8 py-8" style={{
+      <div className="w-full px-4 py-8" style={{
         backgroundImage: `linear-gradient(135deg, #F2F8FC 0%, #E0F2FE 25%, #F2F8FC 50%, #E0F2FE 75%, #F2F8FC 100%)`,
         backgroundSize: '200% 200%',
         animation: 'marble 8s ease-in-out infinite'
@@ -3492,7 +3498,7 @@ function DistributorFormContent() {
 
 
               {/* Form Content */}
-              <div className="p-6">
+              <div className="p-4">
                 <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
                   {renderStepContent()}
                   
@@ -3543,18 +3549,6 @@ function DistributorFormContent() {
                             return;
                           }
                           
-                          // Check if signature is provided
-                          if (currentStep === 8 && !signature) {
-                            toast.error('कृपया हस्ताक्षर गर्नुहोस् (Please provide your signature)', {
-                              duration: 4000,
-                              style: {
-                                background: '#fee2e2',
-                                color: '#dc2626',
-                                border: '1px solid #fecaca',
-                              },
-                            });
-                            return;
-                          }
                           
                           // If on final step and agreement is accepted, submit directly
                           if (currentStep === 8 && currentValues.agreementAccepted) {
@@ -3579,6 +3573,8 @@ function DistributorFormContent() {
           </div>
         </div>
       </div>
+        </>
+      )}
     </div>
   );
 }

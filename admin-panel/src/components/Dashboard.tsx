@@ -13,7 +13,12 @@ import {
   CheckCircle,
   UserPlus,
   FileText,
-  BarChart3
+  BarChart3,
+  Calendar,
+  CreditCard,
+  Package,
+  UserCheck,
+  Activity
 } from 'lucide-react';
 import { formatCurrency } from '@/lib/utils';
 import { mockDashboardStats, mockOrders, mockVATBills } from '@/lib/mockData';
@@ -57,9 +62,43 @@ export default function Dashboard() {
     return `${greeting}, ${user?.firstName}!`;
   };
 
+  const getTodaysMetrics = () => {
+    return [
+      {
+        title: "Today's Revenue",
+        value: formatCurrency(mockDashboardStats.todayRevenue || 0),
+        icon: DollarSign,
+        color: 'bg-green-500',
+        trend: '+15% vs yesterday'
+      },
+      {
+        title: "Today's Orders",
+        value: mockDashboardStats.todayOrders || 0,
+        icon: ShoppingCart,
+        color: 'bg-blue-500',
+        trend: '+3 new orders'
+      },
+      {
+        title: "New Distributors",
+        value: mockDashboardStats.todayNewDistributors || 0,
+        icon: UserPlus,
+        color: 'bg-purple-500',
+        trend: '1 registered today'
+      },
+      {
+        title: "Completed Orders",
+        value: mockDashboardStats.todayCompletedOrders || 0,
+        icon: CheckCircle,
+        color: 'bg-emerald-500',
+        trend: '2 delivered today'
+      }
+    ];
+  };
+
   const getRoleSpecificStats = () => {
     switch (user?.role) {
-      case 'managerial':
+      case 'MANAGERIAL':
+      case 'ADMIN':
         return [
           {
             title: 'Total Orders',
@@ -89,7 +128,8 @@ export default function Dashboard() {
           }
         ];
 
-      case 'sales':
+      case 'SALES_MANAGER':
+      case 'SALES_REPRESENTATIVE':
         return [
           {
             title: 'Pending Orders',
@@ -110,9 +150,9 @@ export default function Dashboard() {
             color: 'bg-blue-500'
           },
           {
-            title: 'In Production',
-            value: mockDashboardStats.inProductionOrders,
-            icon: Factory,
+            title: 'Active Distributors',
+            value: mockDashboardStats.activeDistributors || 0,
+            icon: Users,
             color: 'bg-purple-500'
           }
         ];
@@ -194,17 +234,77 @@ export default function Dashboard() {
         </p>
       </div>
 
-      {/* Statistics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => (
-          <StatCard key={index} {...stat} />
-        ))}
+      {/* Today's Metrics */}
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">Today's Overview</h2>
+            <p className="text-sm text-gray-500">{new Date().toLocaleDateString('en-US', { 
+              weekday: 'long', 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</p>
+          </div>
+          <Calendar className="h-6 w-6 text-gray-400" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {getTodaysMetrics().map((metric, index) => (
+            <StatCard key={index} {...metric} />
+          ))}
+        </div>
+      </div>
+
+      {/* Role-specific Statistics Grid */}
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-6">Overall Statistics</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((stat, index) => (
+            <StatCard key={index} {...stat} />
+          ))}
+        </div>
+      </div>
+
+      {/* Today's Distributor Report */}
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
+          <h2 className="text-lg font-semibold text-gray-900">Today's Distributor Activity</h2>
+          <p className="text-sm text-gray-500">Real-time distributor performance and activity</p>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="bg-blue-100 rounded-full p-3 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                <UserCheck className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900">New Registrations</h3>
+              <p className="text-2xl font-bold text-blue-600">{mockDashboardStats.todayNewDistributors || 0}</p>
+              <p className="text-sm text-gray-500">distributors registered today</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                <Activity className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900">Active Today</h3>
+              <p className="text-2xl font-bold text-green-600">{mockDashboardStats.activeDistributors || 0}</p>
+              <p className="text-sm text-gray-500">distributors placing orders</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-purple-100 rounded-full p-3 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                <Package className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="font-semibold text-gray-900">Orders Today</h3>
+              <p className="text-2xl font-bold text-purple-600">{mockDashboardStats.todayOrders || 0}</p>
+              <p className="text-sm text-gray-500">orders placed by distributors</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Role-specific sections */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Orders (for sales, managerial) */}
-        {(user?.role === 'sales' || user?.role === 'managerial' || user?.role === 'production') && (
+        {(user?.role === 'SALES_MANAGER' || user?.role === 'SALES_REPRESENTATIVE' || user?.role === 'MANAGERIAL' || user?.role === 'ADMIN') && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
               <h2 className="text-lg font-semibold text-gray-900">Recent Orders</h2>
@@ -235,8 +335,36 @@ export default function Dashboard() {
           </div>
         )}
 
+        {/* Today's Payment Status */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200">
+          <div className="p-6 border-b border-gray-200">
+            <h2 className="text-lg font-semibold text-gray-900">Today's Payment Status</h2>
+            <p className="text-sm text-gray-500">Payment tracking and pending amounts</p>
+          </div>
+          <div className="p-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="text-center">
+                <div className="bg-yellow-100 rounded-full p-3 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                  <CreditCard className="h-8 w-8 text-yellow-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900">Pending Payments</h3>
+                <p className="text-2xl font-bold text-yellow-600">{formatCurrency(mockDashboardStats.todayPendingPayments || 0)}</p>
+                <p className="text-sm text-gray-500">awaiting payment confirmation</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-100 rounded-full p-3 w-16 h-16 mx-auto mb-3 flex items-center justify-center">
+                  <CheckCircle className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="font-semibold text-gray-900">Collected Today</h3>
+                <p className="text-2xl font-bold text-green-600">{formatCurrency(mockDashboardStats.todayRevenue || 0)}</p>
+                <p className="text-sm text-gray-500">revenue collected today</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Pending VAT Bills (for accounting, managerial) */}
-        {(user?.role === 'accounting' || user?.role === 'managerial') && (
+        {(user?.role === 'ADMIN' || user?.role === 'MANAGERIAL') && (
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
             <div className="p-6 border-b border-gray-200">
               <h2 className="text-lg font-semibold text-gray-900">Pending VAT Bills</h2>
@@ -271,7 +399,7 @@ export default function Dashboard() {
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {user?.role === 'managerial' && (
+          {(user?.role === 'MANAGERIAL' || user?.role === 'ADMIN') && (
             <>
               <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left">
                 <UserPlus className="h-6 w-6 text-indigo-600 mb-2" />
@@ -286,25 +414,25 @@ export default function Dashboard() {
             </>
           )}
           
-          {user?.role === 'accounting' && (
+          {(user?.role === 'SALES_MANAGER' || user?.role === 'SALES_REPRESENTATIVE') && (
             <>
               <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left">
-                <FileText className="h-6 w-6 text-blue-600 mb-2" />
-                <p className="font-medium text-gray-900">New VAT Bill</p>
-                <p className="text-sm text-gray-500">Record new transaction</p>
+                <UserPlus className="h-6 w-6 text-blue-600 mb-2" />
+                <p className="font-medium text-gray-900">Create Distributor</p>
+                <p className="text-sm text-gray-500">Register new distributor</p>
               </button>
               <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left">
-                <FileText className="h-6 w-6 text-purple-600 mb-2" />
-                <p className="font-medium text-gray-900">Journal Entry</p>
-                <p className="text-sm text-gray-500">Make accounting entry</p>
+                <ShoppingCart className="h-6 w-6 text-green-600 mb-2" />
+                <p className="font-medium text-gray-900">View Orders</p>
+                <p className="text-sm text-gray-500">Check today's orders</p>
               </button>
             </>
           )}
 
           <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left">
             <BarChart3 className="h-6 w-6 text-orange-600 mb-2" />
-            <p className="font-medium text-gray-900">Analytics</p>
-            <p className="text-sm text-gray-500">View detailed insights</p>
+            <p className="font-medium text-gray-900">Today's Analytics</p>
+            <p className="text-sm text-gray-500">View today's detailed insights</p>
           </button>
         </div>
       </div>

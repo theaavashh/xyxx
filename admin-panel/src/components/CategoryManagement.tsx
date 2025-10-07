@@ -66,6 +66,10 @@ export default function CategoryManagement() {
     title: '',
     message: ''
   });
+  const [deleteModal, setDeleteModal] = useState<{isOpen: boolean, category: Category | null}>({
+    isOpen: false,
+    category: null
+  });
 
   // Fetch categories
   const fetchCategories = async () => {
@@ -278,13 +282,18 @@ export default function CategoryManagement() {
     }
   };
 
-  // Handle delete
-  const handleDelete = async (category: Category) => {
-    if (!confirm(`Are you sure you want to delete "${category.title}"?`)) return;
+  // Handle delete confirmation
+  const handleDeleteClick = (category: Category) => {
+    setDeleteModal({ isOpen: true, category });
+  };
+
+  // Handle actual delete
+  const handleDeleteConfirm = async () => {
+    if (!deleteModal.category) return;
 
     try {
       const token = localStorage.getItem('admin_token');
-      const response = await fetch(`${config.apiUrl}/categories/${category.id}`, {
+      const response = await fetch(`${config.apiUrl}/categories/${deleteModal.category.id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -294,6 +303,7 @@ export default function CategoryManagement() {
 
       if (response.ok) {
         await fetchCategories();
+        setDeleteModal({ isOpen: false, category: null });
       } else {
         const errorData = await response.json();
         showError(
@@ -588,7 +598,7 @@ export default function CategoryManagement() {
                               <Edit className="h-5 w-5" />
                             </button>
                             <button
-                              onClick={() => handleDelete(category)}
+                              onClick={() => handleDeleteClick(category)}
                               className="p-3 text-red-600 hover:bg-red-50 rounded-xl transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                               title="Delete category"
                               disabled={!!(category._count?.products && category._count.products > 0)}
@@ -837,7 +847,7 @@ export default function CategoryManagement() {
 
       {/* Error Modal */}
       {errorModal.isOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-full max-w-md">
             <div className="flex items-center mb-4">
               <div className="flex-shrink-0">
@@ -862,6 +872,58 @@ export default function CategoryManagement() {
                 className="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
                 OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {deleteModal.isOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <div className="flex items-center mb-4">
+              <div className="flex-shrink-0">
+                <Trash2 className="h-6 w-6 text-red-600" />
+              </div>
+              <div className="ml-3">
+                <h3 className="text-lg font-medium text-gray-900">
+                  Delete Category
+                </h3>
+              </div>
+            </div>
+            
+            <div className="mb-6">
+              <p className="text-sm text-gray-700 mb-2">
+                Are you sure you want to delete this category?
+              </p>
+              <div className="bg-gray-50 p-3 rounded-md">
+                <p className="text-sm font-medium text-gray-900">
+                  {deleteModal.category?.title}
+                </p>
+                {deleteModal.category?._count?.products && deleteModal.category._count.products > 0 && (
+                  <p className="text-xs text-red-600 mt-1">
+                    This category has {deleteModal.category._count.products} product(s) associated with it.
+                  </p>
+                )}
+              </div>
+              <p className="text-xs text-gray-500 mt-2">
+                This action cannot be undone.
+              </p>
+            </div>
+
+            <div className="flex justify-end space-x-3">
+              <button
+                onClick={() => setDeleteModal({ isOpen: false, category: null })}
+                className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDeleteConfirm}
+                className="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              >
+                Delete
               </button>
             </div>
           </div>

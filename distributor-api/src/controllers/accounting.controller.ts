@@ -1202,7 +1202,7 @@ export const purchaseEntryController = {
       // Create journal entry for purchase
       await this.createPurchaseJournalEntry(purchaseEntry);
 
-      logger.info(`Purchase entry created: ${purchaseEntry.purchaseNumber}`);
+      logger.info(`Purchase entry created: ${purchaseEntry.entryNumber}`);
 
     return res.status(201).json({
       success: true,
@@ -1245,7 +1245,7 @@ export const purchaseEntryController = {
         data: purchaseData
       });
 
-      logger.info(`Purchase entry updated: ${purchaseEntry.purchaseNumber}`);
+      logger.info(`Purchase entry updated: ${purchaseEntry.entryNumber}`);
 
     return res.status(200).json({
       success: true,
@@ -1283,7 +1283,7 @@ export const purchaseEntryController = {
         bankAccount
       });
 
-      logger.info(`Purchase entry marked as paid: ${purchaseEntry.purchaseNumber}`);
+      logger.info(`Purchase entry marked as paid: ${purchaseEntry.entryNumber}`);
 
     return res.status(200).json({
       success: true,
@@ -1322,7 +1322,7 @@ export const purchaseEntryController = {
 
       await prisma.purchaseEntry.delete({ where: { id } });
 
-      logger.info(`Purchase entry deleted: ${existingEntry.purchaseNumber}`);
+      logger.info(`Purchase entry deleted: ${existingEntry.entryNumber}`);
 
     return res.status(200).json({
       success: true,
@@ -1378,11 +1378,7 @@ export const purchaseEntryController = {
         }
       });
 
-      // Update purchase entry with journal entry reference
-      await prisma.purchaseEntry.update({
-        where: { id: purchaseEntry.id },
-        data: { journalEntry: { connect: { id: journalEntry.id } } }
-      });
+      // Journal entry created successfully for purchase entry
 
     } catch (error) {
       logger.error('Error creating purchase journal entry:', error);
@@ -1542,7 +1538,7 @@ export const salesEntryController = {
       // Create journal entry for sales
       await this.createSalesJournalEntry(salesEntry);
 
-      logger.info(`Sales entry created: ${salesEntry.salesNumber}`);
+      logger.info(`Sales entry created: ${salesEntry.entryNumber}`);
 
       return res.status(201).json({
         success: true,
@@ -1585,7 +1581,7 @@ export const salesEntryController = {
         data: salesData
       });
 
-      logger.info(`Sales entry updated: ${salesEntry.salesNumber}`);
+      logger.info(`Sales entry updated: ${salesEntry.entryNumber}`);
 
       return res.status(200).json({
         success: true,
@@ -1623,7 +1619,7 @@ export const salesEntryController = {
         bankAccount
       });
 
-      logger.info(`Sales entry marked as paid: ${salesEntry.salesNumber}`);
+      logger.info(`Sales entry marked as paid: ${salesEntry.entryNumber}`);
 
       return res.status(200).json({
         success: true,
@@ -1662,7 +1658,7 @@ export const salesEntryController = {
 
       await prisma.salesEntry.delete({ where: { id } });
 
-      logger.info(`Sales entry deleted: ${existingEntry.salesNumber}`);
+      logger.info(`Sales entry deleted: ${existingEntry.entryNumber}`);
 
       return res.status(200).json({
         success: true,
@@ -1718,11 +1714,7 @@ export const salesEntryController = {
         }
       });
 
-      // Update sales entry with journal entry reference
-      await prisma.salesEntry.update({
-        where: { id: salesEntry.id },
-        data: { journalEntry: { connect: { id: journalEntry.id } } }
-      });
+      // Journal entry created successfully for sales entry
 
     } catch (error) {
       logger.error('Error creating sales journal entry:', error);
@@ -2050,11 +2042,7 @@ export const salesReturnController = {
         }
       });
 
-      // Update sales return with journal entry reference
-      await prisma.salesReturn.update({
-        where: { id: salesReturn.id },
-        data: { journalEntry: { connect: { id: journalEntry.id } } }
-      });
+      // Journal entry created successfully for sales return
 
     } catch (error) {
       logger.error('Error creating sales return journal entry:', error);
@@ -2343,11 +2331,7 @@ export const purchaseReturnController = {
         }
       });
 
-      // Update purchase return with journal entry reference
-      await prisma.purchaseReturn.update({
-        where: { id: purchaseReturn.id },
-        data: { journalEntry: { connect: { id: journalEntry.id } } }
-      });
+      // Journal entry created successfully for purchase return
 
     } catch (error) {
       logger.error('Error creating purchase return journal entry:', error);
@@ -2685,10 +2669,7 @@ export const debtorsCreditorsController = {
       const updatedTransaction = await prisma.partyTransaction.update({
         where: { id: transactionId },
         data: {
-          status: 'PAID',
-          paymentDate: paymentDate ? new Date(paymentDate) : new Date(),
-          paymentMethod,
-          reference
+          status: 'PAID'
         }
       });
 

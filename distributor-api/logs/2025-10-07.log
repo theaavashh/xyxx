@@ -1,0 +1,191 @@
+2025-10-07T00:56:54.106Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:01:14.607Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:01:38.435Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:01:50.402Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:02:48.535Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:04:42.386Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:05:30.648Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:06:00.768Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:06:05.413Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T01:06:05.416Z [INFO] 🌍 Environment: development
+2025-10-07T01:06:05.416Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T01:06:05.419Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T01:06:05.424Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T01:06:13.488Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:06:28.290Z [INFO] POST /api/auth/login - 200 - 454.456ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":454.456}
+2025-10-07T01:06:47.097Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:06:50.715Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T01:06:50.715Z [INFO] 🌍 Environment: development
+2025-10-07T01:06:50.715Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T01:06:50.716Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T01:06:50.716Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T01:07:03.161Z [INFO] Mailjet service initialized successfully
+2025-10-07T01:07:05.962Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-07T01:07:16.072Z [INFO] POST /api/auth/login - 200 - 218.541ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":218.541}
+2025-10-07T01:11:58.877Z [INFO] POST /api/auth/login - 200 - 100.391ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":100.391}
+2025-10-07T01:12:40.180Z [INFO] POST /api/auth/login - 200 - 178.904ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":178.904}
+2025-10-07T01:31:09.718Z [INFO] GET /api/categories - 200 - 225.452ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":225.452}
+2025-10-07T01:31:09.729Z [INFO] GET /api/categories - 304 - 4.29ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":4.29}
+2025-10-07T01:31:15.230Z [INFO] DELETE /api/categories/cmfsn9dpg0000vdht4fiu9sfv - 200 - 91.27ms | Data: {"method":"DELETE","url":"/api/categories/cmfsn9dpg0000vdht4fiu9sfv","statusCode":200,"responseTime":91.27}
+2025-10-07T01:31:15.247Z [INFO] GET /api/categories - 200 - 4.436ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":4.436}
+2025-10-07T01:31:28.245Z [INFO] DELETE /api/categories/cmfsnj4sk0000xg63e86735bi - 200 - 12.073ms | Data: {"method":"DELETE","url":"/api/categories/cmfsnj4sk0000xg63e86735bi","statusCode":200,"responseTime":12.073}
+2025-10-07T01:31:28.252Z [INFO] GET /api/categories - 200 - 2.394ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":2.394}
+2025-10-07T01:32:45.220Z [INFO] GET /api/categories - 304 - 10.507ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":10.507}
+2025-10-07T01:46:24.262Z [INFO] GET /api/auth/users - 200 - 479.708ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":479.708}
+2025-10-07T01:46:24.293Z [INFO] GET /api/auth/users - 304 - 13.82ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":13.82}
+2025-10-07T01:46:30.949Z [INFO] DELETE /api/auth/users/cmfsmlmjy0000giv0em6a29yd - 200 - 43.626ms | Data: {"method":"DELETE","url":"/api/auth/users/cmfsmlmjy0000giv0em6a29yd","statusCode":200,"responseTime":43.626}
+2025-10-07T01:46:34.443Z [INFO] DELETE /api/auth/users/cmfslyk2e0000xiv26hsdwg4f - 200 - 14.644ms | Data: {"method":"DELETE","url":"/api/auth/users/cmfslyk2e0000xiv26hsdwg4f","statusCode":200,"responseTime":14.644}
+2025-10-07T01:46:37.926Z [INFO] DELETE /api/auth/users/cmfs464pm0000b5yq5dw3743j - 200 - 24.862ms | Data: {"method":"DELETE","url":"/api/auth/users/cmfs464pm0000b5yq5dw3743j","statusCode":200,"responseTime":24.862}
+2025-10-07T01:46:41.167Z [INFO] DELETE /api/auth/users/cmfas1q9a00026voatdlvjwwi - 200 - 15.545ms | Data: {"method":"DELETE","url":"/api/auth/users/cmfas1q9a00026voatdlvjwwi","statusCode":200,"responseTime":15.545}
+2025-10-07T01:46:44.828Z [INFO] DELETE /api/auth/users/cmf6frnup0002ltxs3lx94v66 - 200 - 24.13ms | Data: {"method":"DELETE","url":"/api/auth/users/cmf6frnup0002ltxs3lx94v66","statusCode":200,"responseTime":24.13}
+2025-10-07T01:46:49.357Z [ERROR] DELETE /api/auth/users/cmf6frns10001ltxshkip9u52 - 400 - 11.115ms | Data: {"method":"DELETE","url":"/api/auth/users/cmf6frns10001ltxshkip9u52","statusCode":400,"responseTime":11.115}
+2025-10-07T01:46:50.914Z [ERROR] DELETE /api/auth/users/cmf6frns10001ltxshkip9u52 - 400 - 30.209ms | Data: {"method":"DELETE","url":"/api/auth/users/cmf6frns10001ltxshkip9u52","statusCode":400,"responseTime":30.209}
+2025-10-07T01:46:52.242Z [ERROR] DELETE /api/auth/users/cmf6frns10001ltxshkip9u52 - 400 - 7.589ms | Data: {"method":"DELETE","url":"/api/auth/users/cmf6frns10001ltxshkip9u52","statusCode":400,"responseTime":7.589}
+2025-10-07T01:46:58.869Z [INFO] DELETE /api/auth/users/cmf6frnp40000ltxsnl3yfzvq - 200 - 22.8ms | Data: {"method":"DELETE","url":"/api/auth/users/cmf6frnp40000ltxsnl3yfzvq","statusCode":200,"responseTime":22.8}
+2025-10-07T01:47:06.124Z [INFO] GET /api/orders - 200 - 92.439ms | Data: {"method":"GET","url":"/api/orders","statusCode":200,"responseTime":92.439}
+2025-10-07T01:47:06.134Z [INFO] GET /api/orders - 304 - 8.468ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":8.468}
+2025-10-07T01:47:14.462Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 110.392ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":110.392}
+2025-10-07T01:47:14.476Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.86ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.86}
+2025-10-07T01:47:14.504Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 34.921ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":34.921}
+2025-10-07T01:47:23.364Z [ERROR] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 401 - 3.269ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":401,"responseTime":3.269}
+2025-10-07T01:47:26.436Z [ERROR] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 401 - 1.031ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":401,"responseTime":1.031}
+2025-10-07T01:47:30.185Z [ERROR] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 401 - 1.891ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":401,"responseTime":1.891}
+2025-10-07T01:48:01.341Z [INFO] GET /api/sales/distributors - 200 - 172.446ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":200,"responseTime":172.446}
+2025-10-07T01:48:01.356Z [INFO] GET /api/sales/distributors - 304 - 4.252ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":4.252}
+2025-10-07T01:54:26.806Z [INFO] GET /api/categories - 304 - 57.314ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":57.314}
+2025-10-07T01:54:26.815Z [INFO] GET /api/categories - 304 - 3.827ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.827}
+2025-10-07T01:55:38.163Z [INFO] GET /api/categories - 304 - 1402.237ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":1402.237}
+2025-10-07T01:57:26.589Z [INFO] GET /api/categories - 304 - 19.202ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":19.202}
+2025-10-07T01:58:12.808Z [INFO] GET /api/categories - 304 - 39.738ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":39.738}
+2025-10-07T01:59:57.375Z [INFO] GET /api/categories - 304 - 134.185ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":134.185}
+2025-10-07T02:01:05.599Z [INFO] GET /api/categories - 304 - 22.242ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":22.242}
+2025-10-07T02:01:53.871Z [INFO] GET /api/categories - 304 - 35.574ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":35.574}
+2025-10-07T02:03:09.546Z [INFO] GET /api/categories - 304 - 2.095ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.095}
+2025-10-07T02:04:20.418Z [INFO] GET /api/categories - 304 - 14.859ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":14.859}
+2025-10-07T02:23:00.128Z [INFO] Mailjet service initialized successfully
+2025-10-07T02:23:08.954Z [INFO] GET /api/categories - 304 - 157.765ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":157.765}
+2025-10-07T02:23:17.757Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-07T02:23:27.808Z [INFO] GET /api/categories - 304 - 17.676ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":17.676}
+2025-10-07T02:25:34.044Z [INFO] GET /api/categories - 304 - 13.826ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":13.826}
+2025-10-07T02:27:30.205Z [INFO] GET /api/categories - 304 - 16.539ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":16.539}
+2025-10-07T02:28:47.570Z [INFO] GET /api/categories - 304 - 108.694ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":108.694}
+2025-10-07T02:29:53.557Z [INFO] GET /api/categories - 304 - 16.122ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":16.122}
+2025-10-07T02:30:36.511Z [INFO] GET /api/categories - 304 - 64.878ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":64.878}
+2025-10-07T02:30:55.695Z [INFO] GET /api/categories - 304 - 8.332ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":8.332}
+2025-10-07T02:31:51.446Z [INFO] GET /api/categories - 304 - 21.224ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":21.224}
+2025-10-07T02:32:06.597Z [INFO] GET /api/categories - 304 - 27.705ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":27.705}
+2025-10-07T02:52:36.802Z [INFO] Mailjet service initialized successfully
+2025-10-07T02:52:47.621Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-07T02:55:44.768Z [INFO] Mailjet service initialized successfully
+2025-10-07T02:55:49.784Z [INFO] Mailjet service initialized successfully
+2025-10-07T02:56:04.841Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T02:56:04.844Z [INFO] 🌍 Environment: development
+2025-10-07T02:56:04.844Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T02:56:04.844Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T02:56:04.844Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T02:56:05.074Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-07T02:57:53.476Z [INFO] Mailjet service initialized successfully
+2025-10-07T02:58:01.337Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-07T03:00:58.788Z [INFO] Mailjet service initialized successfully
+2025-10-07T03:01:11.726Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T03:01:11.732Z [INFO] 🌍 Environment: development
+2025-10-07T03:01:11.732Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T03:01:11.736Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T03:01:11.736Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T03:01:11.737Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-10-07T03:01:21.301Z [INFO] Mailjet service initialized successfully
+2025-10-07T03:01:34.825Z [INFO] Mailjet service initialized successfully
+2025-10-07T03:01:36.506Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T03:01:36.508Z [INFO] 🌍 Environment: development
+2025-10-07T03:01:36.508Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T03:01:36.508Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T03:01:36.508Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T03:01:36.511Z [ERROR] Uncaught Exception | Stack: Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at WriteStream.Socket._writeGeneric (node:net:966:11)
+    at WriteStream.Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+2025-10-07T03:01:45.802Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T03:01:45.803Z [INFO] 🌍 Environment: development
+2025-10-07T03:01:45.805Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T03:01:45.806Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T03:01:45.806Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T03:04:03.832Z [INFO] GET /api/categories - 200 - 146.505ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":146.505}
+2025-10-07T03:04:41.914Z [INFO] GET /api/categories - 200 - 9.275ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":9.275}
+2025-10-07T03:11:18.774Z [INFO] GET /api/categories - 304 - 40.082ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":40.082}
+2025-10-07T03:14:12.792Z [INFO] GET /api/categories - 304 - 20.704ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":20.704}
+2025-10-07T03:14:28.367Z [INFO] GET /api/categories - 304 - 36.166ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":36.166}
+2025-10-07T03:24:59.356Z [INFO] GET /api/categories - 304 - 64.967ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":64.967}
+2025-10-07T03:28:28.658Z [INFO] Mailjet service initialized successfully
+2025-10-07T03:28:34.352Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T03:28:34.352Z [INFO] 🌍 Environment: development
+2025-10-07T03:28:34.352Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T03:28:34.352Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T03:28:34.352Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T03:28:34.353Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-10-07T03:38:08.220Z [INFO] Mailjet service initialized successfully
+2025-10-07T03:38:17.789Z [INFO] 🚀 सर्भर पोर्ट 5000 मा सुरु भयो
+2025-10-07T03:38:17.790Z [INFO] 🌍 Environment: development
+2025-10-07T03:38:17.795Z [INFO] 📊 API Documentation: http://localhost:5000/api
+2025-10-07T03:38:17.797Z [INFO] 🏥 Health Check: http://localhost:5000/health
+2025-10-07T03:38:17.797Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-07T03:38:53.885Z [INFO] GET /api/categories - 200 - 699.976ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":699.976}
+2025-10-07T03:41:00.338Z [INFO] POST /api/applications/submit - 201 - 176.9ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":176.9}
+2025-10-07T03:41:04.016Z [INFO] GET /api/categories - 304 - 6.213ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.213}
+2025-10-07T03:42:25.195Z [INFO] GET /api/categories - 304 - 38.931ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":38.931}
+2025-10-07T03:42:41.257Z [INFO] GET /api/categories - 304 - 25.394ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":25.394}
+2025-10-07T03:43:28.238Z [INFO] GET /api/categories - 304 - 114.803ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":114.803}
+2025-10-07T03:44:21.077Z [INFO] GET /api/categories - 304 - 206.754ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":206.754}
+2025-10-07T03:46:18.318Z [INFO] GET /api/categories - 304 - 8.671ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":8.671}
+2025-10-07T03:48:54.605Z [INFO] POST /api/applications/submit - 201 - 119.015ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":119.015}
+2025-10-07T03:49:18.474Z [INFO] GET /api/categories - 304 - 9.615ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":9.615}
+2025-10-07T03:50:22.229Z [INFO] GET /api/categories - 304 - 103.639ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":103.639}

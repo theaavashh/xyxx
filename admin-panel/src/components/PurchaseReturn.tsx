@@ -451,7 +451,7 @@ export default function PurchaseReturn() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -706,7 +706,7 @@ export default function PurchaseReturn() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}

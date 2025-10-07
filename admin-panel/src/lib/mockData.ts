@@ -615,7 +615,15 @@ export const mockDashboardStats: DashboardStats = {
   lowStockProducts: 2,
   pendingVATBills: 3,
   totalDistributors: 3,
-  activeDistributors: 2
+  activeDistributors: 2,
+  // Today's specific metrics
+  todayRevenue: 8500,
+  todayOrders: 3,
+  todayNewDistributors: 1,
+  todayCompletedOrders: 2,
+  todayPendingPayments: 4500,
+  todayProductionOutput: 120,
+  todayEmployeeAttendance: 11
 };
 
 // Mock Purchase Entries

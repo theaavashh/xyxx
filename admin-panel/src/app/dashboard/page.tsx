@@ -163,7 +163,7 @@ export default function DashboardPage() {
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
           <ProductionPlanning /> : <div>Access Denied</div>;
       case 'configuration':
-        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
           <ConfigurationManagement /> : <div>Access Denied</div>;
       case 'production-orders':
         return user.role === 'ADMIN' ? 
