@@ -22,6 +22,7 @@ import {
 import { Distributor } from '@/types';
 import { DistributorApplication } from '@/lib/distributorApi';
 import { formatDate } from '@/lib/utils';
+import { config } from '@/lib/config';
 
 interface ViewDistributorModalProps {
   isOpen: boolean;
@@ -76,7 +77,7 @@ export default function ViewDistributorModal({
 
   const downloadDocument = (doc: any) => {
     // Construct full URL for the document
-    const fullUrl = doc.url.startsWith('http') ? doc.url : `http://localhost:5000/${doc.url}`;
+    const fullUrl = doc.url.startsWith('http') ? doc.url : `${config.apiUrl.replace('/api', '')}/${doc.url}`;
     
     // Create a temporary link element to trigger download
     const link = document.createElement('a');
@@ -101,7 +102,7 @@ export default function ViewDistributorModal({
     }
     
     // Construct full URL for the document
-    const fullUrl = doc.url.startsWith('http') ? doc.url : `http://localhost:5000/${doc.url}`;
+    const fullUrl = doc.url.startsWith('http') ? doc.url : `${config.apiUrl.replace('/api', '')}/${doc.url}`;
     
     console.log('Preview document:', {
       originalUrl: doc.url,

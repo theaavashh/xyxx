@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { config } from '@/lib/config';
 import { 
   ShoppingCart, 
   Search, 
@@ -79,7 +80,7 @@ export default function OrderManagement() {
       setRefreshing(true);
       const token = localStorage.getItem('admin_token');
       
-      const response = await fetch('http://localhost:5000/api/orders', {
+      const response = await fetch(`${config.apiUrl}/orders`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -130,7 +131,7 @@ export default function OrderManagement() {
     try {
       const token = localStorage.getItem('admin_token');
       
-      const response = await fetch(`http://localhost:5000/api/orders/${orderId}/status`, {
+      const response = await fetch(`${config.apiUrl}/orders/${orderId}/status`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import { UserPlus, Eye, EyeOff, Save, X } from 'lucide-react';
 import { CreateEmployeeForm, UserRole } from '@/types';
 import { generateEmployeeId, validateEmail, validatePhoneNumber } from '@/lib/utils';
+import { config } from '@/lib/config';
 import toast from 'react-hot-toast';
 
 const createEmployeeSchema = yup.object({
@@ -69,7 +70,7 @@ export default function CreateEmployee() {
       console.log('Creating user with data:', userData);
 
       // Call backend API to create user
-      const response = await fetch('http://localhost:5000/api/auth/register', {
+      const response = await fetch(`${config.apiUrl}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

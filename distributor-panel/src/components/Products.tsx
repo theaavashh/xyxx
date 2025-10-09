@@ -6,6 +6,8 @@ import { useAuth } from './AuthProvider';
 import { apiClient } from '@/lib/api';
 import toast from 'react-hot-toast';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+
 interface Category {
   id: string;
   title: string;
@@ -196,7 +198,7 @@ export default function Products() {
         notes: `Order submitted by ${user?.name || 'Distributor'}`
       };
 
-      const response = await fetch('http://localhost:5000/api/orders/submit', {
+      const response = await fetch(`${API_URL}/orders/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

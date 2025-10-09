@@ -15,6 +15,7 @@ import {
   Send,
   AlertCircle
 } from 'lucide-react';
+import { config } from '@/lib/config';
 import toast from 'react-hot-toast';
 
 interface Product {
@@ -67,7 +68,7 @@ export default function DistributorApprovalModal({
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch(`${config.apiUrl}/products`);
       if (response.ok) {
         const data = await response.json();
         setProducts(data.data || []);

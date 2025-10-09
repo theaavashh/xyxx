@@ -5,6 +5,8 @@ import { User } from '@/types';
 import toast from 'react-hot-toast';
 import { apiClient } from '@/lib/api';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+
 interface AuthContextType {
   user: User | null;
   token: string | null;
@@ -45,7 +47,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       setIsLoading(true);
       
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +65,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
 
         // Get user profile to get full user details
-        const profileResponse = await fetch('http://localhost:5000/api/auth/profile', {
+        const profileResponse = await fetch(`${API_URL}/auth/profile`, {
           headers: {
             'Authorization': `Bearer ${data.data.token}`,
             'Content-Type': 'application/json',

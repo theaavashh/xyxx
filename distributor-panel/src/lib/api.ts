@@ -3,7 +3,7 @@ export class ApiClient {
   private baseUrl: string;
   private token: string | null = null;
 
-  constructor(baseUrl: string = 'http://localhost:5000/api') {
+  constructor(baseUrl: string = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api') {
     this.baseUrl = baseUrl;
     this.token = typeof window !== 'undefined' ? localStorage.getItem('distributor_token') : null;
   }
@@ -73,6 +73,7 @@ export class ApiClient {
 
 // Create a singleton instance
 export const apiClient = new ApiClient();
+
 
 
 

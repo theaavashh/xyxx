@@ -155,7 +155,7 @@ export default function DistributorManagement() {
     if (!distributor) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/applications/send-offer-letter', {
+      const response = await fetch(`${config.apiUrl}/applications/send-offer-letter`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

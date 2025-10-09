@@ -20,6 +20,7 @@ import {
   XCircle
 } from 'lucide-react';
 import { DistributorApplication } from '@/lib/distributorApi';
+import { config } from '@/lib/config';
 import toast from 'react-hot-toast';
 
 interface Category {
@@ -87,7 +88,7 @@ export default function ApprovedDistributors() {
   const fetchCategories = async () => {
     try {
       setLoadingCategories(true);
-      const response = await fetch('http://localhost:5000/api/categories?isActive=true');
+      const response = await fetch(`${config.apiUrl}/categories?isActive=true`);
       if (response.ok) {
         const data = await response.json();
         setAvailableCategories(data.data || []);
@@ -103,7 +104,7 @@ export default function ApprovedDistributors() {
   const fetchApprovedDistributors = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/applications/dev?status=APPROVED');
+      const response = await fetch(`${config.apiUrl}/applications/dev?status=APPROVED`);
       if (response.ok) {
         const data = await response.json();
         const applications = data.data || [];
@@ -113,14 +114,14 @@ export default function ApprovedDistributors() {
           applications.map(async (application: any) => {
             try {
               // Use the new endpoint to find the corresponding User account
-              const userResponse = await fetch(`http://localhost:5000/api/distributors/find-by-application/${application.id}`);
+              const userResponse = await fetch(`${config.apiUrl}/distributors/find-by-application/${application.id}`);
               if (userResponse.ok) {
                 const userData = await userResponse.json();
                 const user = userData.data;
                 
                 if (user) { // Process all users (active and inactive)
                   // Fetch credentials for this user
-                  const credentialsResponse = await fetch(`http://localhost:5000/api/distributors/${user.id}/credentials`);
+                  const credentialsResponse = await fetch(`${config.apiUrl}/distributors/${user.id}/credentials`);
                   if (credentialsResponse.ok) {
                     const credentials = await credentialsResponse.json();
                     return {
@@ -166,7 +167,7 @@ export default function ApprovedDistributors() {
   // Fetch credentials for a distributor
   const fetchCredentials = async (distributorId: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/distributors/${distributorId}/credentials`);
+      const response = await fetch(`${config.apiUrl}/distributors/${distributorId}/credentials`);
       if (response.ok) {
         const credentials = await response.json();
         return credentials;
@@ -201,7 +202,7 @@ export default function ApprovedDistributors() {
       
       if (!userId) {
         try {
-          const findUserResponse = await fetch(`http://localhost:5000/api/distributors/find-by-application/${applicationId}`);
+          const findUserResponse = await fetch(`${config.apiUrl}/distributors/find-by-application/${applicationId}`);
           if (findUserResponse.ok) {
             const userData = await findUserResponse.json();
             userId = userData.data?.id;
@@ -213,7 +214,7 @@ export default function ApprovedDistributors() {
 
       // If no existing user found, create one
       if (!userId) {
-        const createUserResponse = await fetch('http://localhost:5000/api/distributors/dev', {
+        const createUserResponse = await fetch(`${config.apiUrl}/distributors/dev`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -251,7 +252,7 @@ export default function ApprovedDistributors() {
       }
 
       // Now save/update the credentials
-      const response = await fetch(`http://localhost:5000/api/distributors/${userId}/credentials`, {
+      const response = await fetch(`${config.apiUrl}/distributors/${userId}/credentials`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -335,7 +336,7 @@ export default function ApprovedDistributors() {
       
       // If userId is not available, try to find it using the find-by-application endpoint
       if (!userId) {
-        const findResponse = await fetch(`http://localhost:5000/api/distributors/find-by-application/${applicationId}`);
+        const findResponse = await fetch(`${config.apiUrl}/distributors/find-by-application/${applicationId}`);
         if (findResponse.ok) {
           const findData = await findResponse.json();
           userId = findData.data.id;
@@ -344,7 +345,7 @@ export default function ApprovedDistributors() {
 
       // If still no userId, try the old method as fallback
       if (!userId) {
-        const userResponse = await fetch(`http://localhost:5000/api/distributors?search=${safeDistributor.fullName}`);
+        const userResponse = await fetch(`${config.apiUrl}/distributors?search=${safeDistributor.fullName}`);
         if (!userResponse.ok) {
           throw new Error('Failed to find distributor account');
         }
@@ -362,7 +363,7 @@ export default function ApprovedDistributors() {
       }
 
       // Toggle the user account status
-      const response = await fetch(`http://localhost:5000/api/distributors/${userId}/${action}`, {
+      const response = await fetch(`${config.apiUrl}/distributors/${userId}/${action}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
