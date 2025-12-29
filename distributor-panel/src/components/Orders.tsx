@@ -1,21 +1,30 @@
 'use client';
 
 import { useState } from 'react';
-import { Eye, Filter, Calendar } from 'lucide-react';
+import { Eye, Filter, Calendar, Plus } from 'lucide-react';
 import { mockOrders } from '@/lib/mockData';
 import { formatCurrency, formatDate } from '@/lib/utils';
 import { Order } from '@/types';
+import PlaceOrderModal from './PlaceOrderModal';
 
 export default function Orders() {
-  const [orders] = useState<Order[]>(mockOrders);
+  const [orders, setOrders] = useState<Order[]>(mockOrders);
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  const [isPlaceOrderModalOpen, setIsPlaceOrderModalOpen] = useState(false);
 
   const statuses = ['all', 'pending', 'confirmed', 'processing', 'shipped', 'delivered', 'cancelled'];
 
   const filteredOrders = orders.filter(order => 
     statusFilter === 'all' || order.status === statusFilter
   );
+
+  const handleOrderPlaced = () => {
+    // Refresh orders or add the new order to the list
+    // For now, we'll just show a success message
+    // In a real app, you'd fetch the updated orders from the API
+    console.log('New order placed');
+  };
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -35,6 +44,13 @@ export default function Orders() {
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold text-gray-900">My Orders</h1>
           <div className="flex items-center space-x-4">
+            <button
+              onClick={() => setIsPlaceOrderModalOpen(true)}
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center font-medium"
+            >
+              <Plus className="h-4 w-4 mr-2" />
+              Place Order
+            </button>
             <Filter className="h-5 w-5 text-gray-400" />
             <select
               value={statusFilter}
@@ -182,6 +198,13 @@ export default function Orders() {
           </div>
         </div>
       </div>
+
+      {/* Place Order Modal */}
+      <PlaceOrderModal
+        isOpen={isPlaceOrderModalOpen}
+        onClose={() => setIsPlaceOrderModalOpen(false)}
+        onOrderPlaced={handleOrderPlaced}
+      />
     </div>
   );
 }

@@ -194,11 +194,7 @@ exports.ApplicationUpdateSchema = zod_1.z.object({
     status: exports.ApplicationStatusSchema,
     reviewNotes: zod_1.z.string()
         .max(1000, 'समीक्षा टिप्पणी १००० अक्षरभन्दा बढी हुन सक्दैन')
-        .optional(),
-    reviewedBy: zod_1.z.string()
-        .min(1, 'समीक्षाकर्ताको नाम आवश्यक छ')
-        .max(100, 'समीक्षाकर्ताको नाम १०० अक्षरभन्दा बढी हुन सक्दैन'),
-    reviewedAt: zod_1.z.date().default(() => new Date())
+        .optional()
 });
 exports.ApplicationUpdateDevSchema = zod_1.z.object({
     status: exports.ApplicationStatusSchema,

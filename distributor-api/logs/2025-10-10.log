@@ -1,0 +1,431 @@
+2025-10-10T00:10:20.874Z [INFO] Mailjet service initialized successfully
+2025-10-10T00:10:21.098Z [INFO] Mailjet service initialized successfully
+2025-10-10T00:10:25.958Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T00:10:25.958Z [INFO] 🌍 Environment: development
+2025-10-10T00:10:25.958Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T00:10:25.959Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T00:10:25.959Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T00:10:26.364Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-10T02:42:12.390Z [INFO] Mailjet service initialized successfully
+2025-10-10T02:42:16.013Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T02:42:16.014Z [INFO] 🌍 Environment: development
+2025-10-10T02:42:16.014Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T02:42:16.015Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T02:42:16.015Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T02:43:42.841Z [INFO] Mailjet service initialized successfully
+2025-10-10T02:44:01.738Z [INFO] Mailjet service initialized successfully
+2025-10-10T02:44:12.490Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T02:44:12.491Z [INFO] 🌍 Environment: development
+2025-10-10T02:44:12.493Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T02:44:12.494Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T02:44:12.496Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T02:44:36.117Z [INFO] POST /api/auth/login - 200 - 850.658ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":850.658}
+2025-10-10T02:45:13.881Z [INFO] GET /api/sales/distributors - 200 - 105.984ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":200,"responseTime":105.984}
+2025-10-10T02:45:13.887Z [INFO] GET /api/sales/distributors - 304 - 2.688ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":2.688}
+2025-10-10T02:45:22.721Z [INFO] GET /api/sales/distributors - 304 - 2.073ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":2.073}
+2025-10-10T02:45:22.731Z [INFO] GET /api/sales/distributors - 304 - 2.974ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":2.974}
+2025-10-10T02:48:21.783Z [INFO] GET /api/sales/distributors - 304 - 5.798ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":5.798}
+2025-10-10T02:48:21.802Z [INFO] GET /api/sales/distributors - 304 - 6.205ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":6.205}
+2025-10-10T02:50:27.305Z [INFO] Mailjet service initialized successfully
+2025-10-10T02:50:33.808Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T02:50:33.808Z [INFO] 🌍 Environment: development
+2025-10-10T02:50:33.810Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T02:50:33.810Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T02:50:33.810Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T02:51:02.167Z [INFO] GET /api/sales/distributors - 304 - 197.893ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":197.893}
+2025-10-10T02:51:02.174Z [INFO] GET /api/sales/distributors - 304 - 2.465ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":2.465}
+2025-10-10T02:51:04.699Z [INFO] GET /api/sales/distributors - 304 - 3.919ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":3.919}
+2025-10-10T02:51:04.718Z [INFO] GET /api/sales/distributors - 304 - 2.42ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":2.42}
+2025-10-10T03:14:32.764Z [INFO] GET /api/products - 304 - 192.408ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":192.408}
+2025-10-10T03:14:32.792Z [INFO] GET /api/products - 304 - 6.255ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.255}
+2025-10-10T03:16:34.450Z [INFO] GET /api/products - 304 - 32.621ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":32.621}
+2025-10-10T03:19:48.006Z [INFO] GET /api/sales/distributors - 304 - 34.611ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":34.611}
+2025-10-10T03:19:48.035Z [INFO] GET /api/sales/distributors - 304 - 3.383ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":3.383}
+2025-10-10T03:19:49.972Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 174.188ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":174.188}
+2025-10-10T03:19:49.978Z [INFO] GET /api/categories?isActive=true - 304 - 180.568ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":180.568}
+2025-10-10T03:19:50.013Z [INFO] GET /api/categories?isActive=true - 304 - 14.548ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":14.548}
+2025-10-10T03:19:50.033Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 41.888ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":41.888}
+2025-10-10T03:19:50.246Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 235.495ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":235.495}
+2025-10-10T03:19:50.280Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 255.236ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":255.236}
+2025-10-10T03:19:50.290Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 22.335ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":22.335}
+2025-10-10T03:19:50.299Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 250.897ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":250.897}
+2025-10-10T03:19:50.303Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 254.888ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":254.888}
+2025-10-10T03:19:50.310Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 42.446ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":42.446}
+2025-10-10T03:19:50.327Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 281.02ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":281.02}
+2025-10-10T03:19:50.364Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 46.838ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":46.838}
+2025-10-10T03:19:50.371Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 21.67ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":21.67}
+2025-10-10T03:19:50.389Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 48.398ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":48.398}
+2025-10-10T03:19:50.394Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 47.461ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":47.461}
+2025-10-10T03:19:50.405Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 24.42ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":24.42}
+2025-10-10T03:19:50.425Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 25.343ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":25.343}
+2025-10-10T03:19:50.444Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.135ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.135}
+2025-10-10T03:19:50.465Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 11.832ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":11.832}
+2025-10-10T03:19:50.494Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 14.065ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":14.065}
+2025-10-10T03:19:50.514Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 4.516ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":4.516}
+2025-10-10T03:19:50.531Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 10.639ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":10.639}
+2025-10-10T03:19:54.816Z [INFO] GET /api/sales/distributors - 304 - 2.071ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":2.071}
+2025-10-10T03:19:54.823Z [INFO] GET /api/sales/distributors - 304 - 3.072ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":3.072}
+2025-10-10T03:19:57.240Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 16.496ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":16.496}
+2025-10-10T03:19:57.275Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 14.875ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":14.875}
+2025-10-10T03:19:57.302Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 17.702ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":17.702}
+2025-10-10T03:20:04.649Z [ERROR] DELETE /api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6 - 401 - 4.005ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6","statusCode":401,"responseTime":4.005}
+2025-10-10T03:23:38.154Z [INFO] Mailjet service initialized successfully
+2025-10-10T03:23:42.938Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T03:23:42.938Z [INFO] 🌍 Environment: development
+2025-10-10T03:23:42.938Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T03:23:42.939Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T03:23:42.939Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T03:23:50.617Z [INFO] GET /api/applications/dev - 200 - 106.836ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":106.836}
+2025-10-10T03:24:09.897Z [ERROR] DELETE /api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6 - 400 - 5.563ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6","statusCode":400,"responseTime":5.563}
+2025-10-10T03:25:00.042Z [INFO] Mailjet service initialized successfully
+2025-10-10T03:25:04.348Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T03:25:04.348Z [INFO] 🌍 Environment: development
+2025-10-10T03:25:04.348Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T03:25:04.349Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T03:25:04.349Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T03:25:43.628Z [INFO] DELETE /api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6 - 200 - 163.32ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6","statusCode":200,"responseTime":163.32}
+2025-10-10T03:26:10.664Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 70.308ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":70.308}
+2025-10-10T03:26:10.727Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 27.97ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":27.97}
+2025-10-10T03:26:10.755Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.441ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.441}
+2025-10-10T03:26:21.096Z [INFO] PUT /api/applications/dev/cmft90iqe00005th5ebzeajnv/status - 200 - 90.684ms | Data: {"method":"PUT","url":"/api/applications/dev/cmft90iqe00005th5ebzeajnv/status","statusCode":200,"responseTime":90.684}
+2025-10-10T03:26:21.133Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 16.456ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":16.456}
+2025-10-10T03:26:27.403Z [INFO] DELETE /api/applications/dev/cmgg0iqd70000k7wfvpumbpo9 - 200 - 69.337ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0iqd70000k7wfvpumbpo9","statusCode":200,"responseTime":69.337}
+2025-10-10T03:26:32.564Z [INFO] DELETE /api/applications/dev/cmgg0iqd70000k7wfvpumbpo9 - 200 - 17.766ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0iqd70000k7wfvpumbpo9","statusCode":200,"responseTime":17.766}
+2025-10-10T03:26:32.640Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 19.774ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":19.774}
+2025-10-10T03:26:32.683Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 28.493ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":28.493}
+2025-10-10T03:26:36.101Z [INFO] DELETE /api/applications/dev/cmgg0iqd70000k7wfvpumbpo9 - 200 - 26.749ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0iqd70000k7wfvpumbpo9","statusCode":200,"responseTime":26.749}
+2025-10-10T03:26:40.348Z [INFO] DELETE /api/applications/dev/cmgg0iqd70000k7wfvpumbpo9 - 200 - 44.327ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0iqd70000k7wfvpumbpo9","statusCode":200,"responseTime":44.327}
+2025-10-10T03:26:43.314Z [INFO] DELETE /api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6 - 200 - 63.691ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6","statusCode":200,"responseTime":63.691}
+2025-10-10T03:26:46.859Z [INFO] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 200 - 54.997ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":54.997}
+2025-10-10T03:26:49.997Z [INFO] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 200 - 47.071ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":47.071}
+2025-10-10T03:26:54.551Z [INFO] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 200 - 23.75ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":23.75}
+2025-10-10T03:26:57.627Z [INFO] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 200 - 25.537ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":25.537}
+2025-10-10T03:27:00.888Z [INFO] DELETE /api/applications/dev/cmfsjf8mo0000iidtlj38h6nr - 200 - 28.167ms | Data: {"method":"DELETE","url":"/api/applications/dev/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":28.167}
+2025-10-10T03:27:11.971Z [INFO] Mailjet service initialized successfully
+2025-10-10T03:27:15.449Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T03:27:15.449Z [INFO] 🌍 Environment: development
+2025-10-10T03:27:15.449Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T03:27:15.450Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T03:27:15.450Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T03:27:24.908Z [INFO] GET /api/sales/distributors - 304 - 100.051ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":100.051}
+2025-10-10T03:27:24.919Z [INFO] GET /api/sales/distributors - 304 - 7.352ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":7.352}
+2025-10-10T03:27:26.268Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 133.797ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":133.797}
+2025-10-10T03:27:26.289Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.535ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.535}
+2025-10-10T03:27:26.310Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 17.602ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":17.602}
+2025-10-10T03:27:33.936Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 11.663ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":11.663}
+2025-10-10T03:27:33.971Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 24.997ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":24.997}
+2025-10-10T03:27:34.168Z [INFO] GET /api/categories?isActive=true - 304 - 241.09ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":241.09}
+2025-10-10T03:27:34.183Z [INFO] GET /api/categories?isActive=true - 304 - 9.594ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":9.594}
+2025-10-10T03:27:34.207Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 244.233ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":244.233}
+2025-10-10T03:27:34.237Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 16.698ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":16.698}
+2025-10-10T03:27:34.256Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 287.747ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":287.747}
+2025-10-10T03:27:34.280Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 17.477ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":17.477}
+2025-10-10T03:27:34.308Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 15.794ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":15.794}
+2025-10-10T03:27:34.331Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 12.03ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":12.03}
+2025-10-10T03:56:50.384Z [INFO] Mailjet service initialized successfully
+2025-10-10T03:56:57.154Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T03:56:57.154Z [INFO] 🌍 Environment: development
+2025-10-10T03:56:57.154Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T03:56:57.155Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T03:56:57.155Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T03:57:20.331Z [INFO] Mailjet service initialized successfully
+2025-10-10T03:57:29.621Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T03:57:29.622Z [INFO] 🌍 Environment: development
+2025-10-10T03:57:29.622Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T03:57:29.622Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T03:57:29.623Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T03:57:38.573Z [INFO] Mailjet service initialized successfully
+2025-10-10T03:57:43.129Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T03:57:43.129Z [INFO] 🌍 Environment: development
+2025-10-10T03:57:43.129Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T03:57:43.130Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T03:57:43.130Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T04:05:28.816Z [INFO] GET /api/applications/dev - 200 - 117.899ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":117.899}
+2025-10-10T04:08:31.270Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:08:37.179Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T04:08:37.179Z [INFO] 🌍 Environment: development
+2025-10-10T04:08:37.179Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T04:08:37.181Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T04:08:37.182Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T04:09:14.394Z [ERROR] POST /api/applications/dev - 404 - 23.298ms | Data: {"method":"POST","url":"/api/applications/dev","statusCode":404,"responseTime":23.298}
+2025-10-10T04:11:39.686Z [INFO] GET /api/applications/dev - 200 - 95.746ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":95.746}
+2025-10-10T04:12:52.047Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:12:55.456Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-10T04:13:05.213Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 35.537ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":35.537}
+2025-10-10T04:13:05.277Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 31.076ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":31.076}
+2025-10-10T04:13:05.346Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 23.071ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":23.071}
+2025-10-10T04:13:06.991Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 20.831ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":20.831}
+2025-10-10T04:13:08.059Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 14.086ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":14.086}
+2025-10-10T04:13:08.919Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 18.636ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":18.636}
+2025-10-10T04:13:09.613Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 16.132ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":16.132}
+2025-10-10T04:13:11.299Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 35.334ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":35.334}
+2025-10-10T04:13:11.422Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 87.284ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":87.284}
+2025-10-10T04:13:11.513Z [INFO] GET /api/categories?isActive=true - 200 - 272.256ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":272.256}
+2025-10-10T04:13:11.518Z [INFO] GET /api/categories?isActive=true - 304 - 1.991ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":1.991}
+2025-10-10T04:13:13.271Z [INFO] GET /api/sales/distributors - 200 - 304.456ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":200,"responseTime":304.456}
+2025-10-10T04:13:13.281Z [INFO] GET /api/sales/distributors - 304 - 4.908ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":4.908}
+2025-10-10T04:13:15.242Z [INFO] GET /api/products - 200 - 373.683ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":373.683}
+2025-10-10T04:13:15.256Z [INFO] GET /api/products - 304 - 10.034ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":10.034}
+2025-10-10T04:13:19.852Z [INFO] GET /api/categories - 200 - 16.657ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":16.657}
+2025-10-10T04:13:19.882Z [INFO] GET /api/categories - 304 - 11.152ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":11.152}
+2025-10-10T04:16:14.608Z [INFO] GET /api/ - 200 - 0.545ms | Data: {"method":"GET","url":"/api/","statusCode":200,"responseTime":0.545}
+2025-10-10T04:16:30.676Z [ERROR] POST /api/distributors/dev - 400 - 4.545ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":400,"responseTime":4.545}
+2025-10-10T04:18:27.414Z [INFO] POST /api/distributors/dev - 201 - 569.371ms | Data: {"method":"POST","url":"/api/distributors/dev","statusCode":201,"responseTime":569.371}
+2025-10-10T04:20:17.188Z [INFO] GET /api/categories - 304 - 75.395ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":75.395}
+2025-10-10T04:20:17.195Z [INFO] GET /api/categories - 304 - 2.752ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.752}
+2025-10-10T04:20:19.778Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 91.615ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":91.615}
+2025-10-10T04:20:19.791Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 3.654ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":3.654}
+2025-10-10T04:20:19.811Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.597ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.597}
+2025-10-10T04:20:21.732Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.506ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.506}
+2025-10-10T04:20:23.606Z [INFO] GET /api/categories?isActive=true - 304 - 10.752ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":10.752}
+2025-10-10T04:20:23.615Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 27.206ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":27.206}
+2025-10-10T04:20:23.656Z [INFO] GET /api/categories?isActive=true - 304 - 23.557ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":23.557}
+2025-10-10T04:20:23.667Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 25.804ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":25.804}
+2025-10-10T04:20:25.100Z [INFO] GET /api/sales/distributors - 200 - 102.998ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":200,"responseTime":102.998}
+2025-10-10T04:20:25.131Z [INFO] GET /api/sales/distributors - 304 - 12.094ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":12.094}
+2025-10-10T04:20:30.060Z [INFO] GET /api/categories - 304 - 10.658ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":10.658}
+2025-10-10T04:20:30.085Z [INFO] GET /api/categories - 304 - 12.866ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":12.866}
+2025-10-10T04:20:48.257Z [ERROR] POST /api/categories - 401 - 270.656ms | Data: {"method":"POST","url":"/api/categories","statusCode":401,"responseTime":270.656}
+2025-10-10T04:21:03.853Z [ERROR] POST /api/categories - 401 - 8.115ms | Data: {"method":"POST","url":"/api/categories","statusCode":401,"responseTime":8.115}
+2025-10-10T04:21:08.667Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:21:13.121Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-10T04:21:13.439Z [ERROR] POST /api/categories - 401 - 3.208ms | Data: {"method":"POST","url":"/api/categories","statusCode":401,"responseTime":3.208}
+2025-10-10T04:21:29.198Z [ERROR] POST /api/categories - 401 - 9.482ms | Data: {"method":"POST","url":"/api/categories","statusCode":401,"responseTime":9.482}
+2025-10-10T04:26:53.880Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:26:58.476Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T04:26:58.476Z [INFO] 🌍 Environment: development
+2025-10-10T04:26:58.476Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T04:26:58.477Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T04:26:58.477Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T04:27:25.512Z [INFO] POST /api/categories/dev - 201 - 212.739ms | Data: {"method":"POST","url":"/api/categories/dev","statusCode":201,"responseTime":212.739}
+2025-10-10T04:27:25.553Z [INFO] GET /api/categories - 200 - 35.213ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":35.213}
+2025-10-10T04:34:29.995Z [INFO] GET /api/categories - 304 - 153.355ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":153.355}
+2025-10-10T04:34:30.234Z [INFO] GET /api/products - 304 - 396.796ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":396.796}
+2025-10-10T04:35:01.216Z [ERROR] POST /api/products/dev - 400 - 6.324ms | Data: {"method":"POST","url":"/api/products/dev","statusCode":400,"responseTime":6.324}
+2025-10-10T04:35:08.272Z [INFO] GET /api/categories - 200 - 4.246ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":4.246}
+2025-10-10T04:35:17.141Z [ERROR] POST /api/products/dev - 400 - 25.861ms | Data: {"method":"POST","url":"/api/products/dev","statusCode":400,"responseTime":25.861}
+2025-10-10T04:35:26.008Z [ERROR] POST /api/products/dev - 429 - 0.808ms | Data: {"method":"POST","url":"/api/products/dev","statusCode":429,"responseTime":0.808}
+2025-10-10T04:36:08.169Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:36:08.181Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:36:17.135Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T04:36:17.170Z [INFO] 🌍 Environment: development
+2025-10-10T04:36:17.171Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T04:36:17.171Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T04:36:17.171Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T04:36:17.171Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-10T04:36:32.757Z [INFO] GET /api/health - 200 - 12.255ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":12.255}
+2025-10-10T04:36:42.904Z [INFO] POST /api/products/dev - 201 - 117.889ms | Data: {"method":"POST","url":"/api/products/dev","statusCode":201,"responseTime":117.889}
+2025-10-10T04:37:26.817Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:37:26.828Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:37:32.054Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T04:37:32.056Z [INFO] 🌍 Environment: development
+2025-10-10T04:37:32.057Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T04:37:32.057Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T04:37:32.058Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T04:37:32.163Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-10T04:38:43.323Z [INFO] GET /api/products - 200 - 268.182ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":268.182}
+2025-10-10T04:38:43.470Z [INFO] GET /api/products - 304 - 16.415ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":16.415}
+2025-10-10T04:38:44.819Z [INFO] GET /api/sales/distributors - 304 - 228.613ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":228.613}
+2025-10-10T04:38:44.833Z [INFO] GET /api/sales/distributors - 304 - 8.385ms | Data: {"method":"GET","url":"/api/sales/distributors","statusCode":304,"responseTime":8.385}
+2025-10-10T04:56:19.766Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:56:19.780Z [INFO] Mailjet service initialized successfully
+2025-10-10T04:56:25.789Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T04:56:25.796Z [INFO] 🌍 Environment: development
+2025-10-10T04:56:25.796Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T04:56:25.796Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T04:56:25.800Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T04:56:25.807Z [ERROR] Uncaught Exception | Stack: Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at WriteStream.Socket._writeGeneric (node:net:966:11)
+    at WriteStream.Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+2025-10-10T04:56:25.915Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-10T06:00:26.536Z [INFO] Mailjet service initialized successfully
+2025-10-10T06:01:04.386Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T06:01:04.415Z [INFO] 🌍 Environment: development
+2025-10-10T06:01:04.415Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T06:01:04.416Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T06:01:04.416Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T06:01:04.418Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2025-10-10T06:01:27.276Z [INFO] Mailjet service initialized successfully
+2025-10-10T06:01:27.409Z [INFO] Mailjet service initialized successfully
+2025-10-10T06:01:47.633Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T06:01:47.637Z [INFO] 🌍 Environment: development
+2025-10-10T06:01:47.640Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T06:01:47.640Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T06:01:47.640Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T06:01:47.647Z [ERROR] Uncaught Exception | Stack: Error: write EIO
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at WriteStream.Socket._writeGeneric (node:net:966:11)
+    at WriteStream.Socket._write (node:net:978:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at WriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+2025-10-10T06:02:05.025Z [INFO] Mailjet service initialized successfully
+2025-10-10T06:02:18.627Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T06:02:18.628Z [INFO] 🌍 Environment: development
+2025-10-10T06:02:18.631Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T06:02:18.632Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T06:02:18.632Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T06:04:19.708Z [ERROR] POST /api/auth/login - 401 - 917.839ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":917.839}
+2025-10-10T06:04:30.116Z [ERROR] POST /api/auth/login - 401 - 11.105ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":11.105}
+2025-10-10T06:04:55.386Z [ERROR] POST /api/auth/login - 401 - 18.875ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":18.875}
+2025-10-10T06:06:16.540Z [ERROR] POST /api/auth/login - 401 - 15.622ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":15.622}
+2025-10-10T06:07:29.359Z [INFO] POST /api/auth/login - 200 - 407.306ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":407.306}
+2025-10-10T06:07:36.321Z [INFO] GET /api/categories - 200 - 119.772ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":119.772}
+2025-10-10T06:07:36.330Z [INFO] GET /api/categories - 304 - 3.107ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.107}
+2025-10-10T06:07:42.979Z [INFO] GET /api/products - 304 - 253.976ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":253.976}
+2025-10-10T06:07:42.995Z [INFO] GET /api/products - 304 - 6.414ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.414}
+2025-10-10T06:08:18.698Z [INFO] GET /api/products - 304 - 9.05ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":9.05}
+2025-10-10T06:08:18.711Z [INFO] GET /api/categories - 304 - 20.647ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":20.647}
+2025-10-10T06:08:18.736Z [INFO] GET /api/products - 304 - 12.776ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":12.776}
+2025-10-10T06:08:18.750Z [INFO] GET /api/categories - 304 - 16.272ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":16.272}
+2025-10-10T06:08:24.711Z [INFO] GET /api/categories - 304 - 3.669ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.669}
+2025-10-10T06:08:24.725Z [INFO] GET /api/categories - 304 - 5.729ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":5.729}
+2025-10-10T06:08:34.938Z [INFO] GET /api/products - 304 - 10.299ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":10.299}
+2025-10-10T06:08:34.943Z [INFO] GET /api/categories - 304 - 12.244ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":12.244}
+2025-10-10T06:08:34.964Z [INFO] GET /api/products - 304 - 12.476ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":12.476}
+2025-10-10T06:08:34.972Z [INFO] GET /api/categories - 304 - 13.73ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":13.73}
+2025-10-10T06:08:37.873Z [INFO] GET /api/products - 304 - 3.593ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":3.593}
+2025-10-10T06:08:37.974Z [INFO] GET /api/products - 304 - 4.067ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.067}
+2025-10-10T06:08:41.836Z [INFO] GET /api/products - 304 - 18.049ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":18.049}
+2025-10-10T06:08:41.840Z [INFO] GET /api/categories - 304 - 29.122ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":29.122}
+2025-10-10T06:08:41.849Z [INFO] GET /api/products - 304 - 7.634ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":7.634}
+2025-10-10T06:08:41.853Z [INFO] GET /api/categories - 304 - 10.242ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":10.242}
+2025-10-10T06:11:03.021Z [INFO] GET /api/categories?isActive=true - 200 - 6.102ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":6.102}
+2025-10-10T06:11:03.035Z [INFO] GET /api/categories?isActive=true - 304 - 9.807ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":9.807}
+2025-10-10T06:11:03.135Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 129.279ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":129.279}
+2025-10-10T06:11:03.145Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 6.611ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":6.611}
+2025-10-10T06:11:04.586Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 4.207ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":4.207}
+2025-10-10T06:11:04.603Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.044ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.044}
+2025-10-10T06:11:04.613Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 5.117ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":5.117}
+2025-10-10T06:11:07.348Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.951ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.951}
+2025-10-10T06:11:09.281Z [INFO] GET /api/orders - 304 - 179.535ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":179.535}
+2025-10-10T06:11:09.293Z [INFO] GET /api/orders - 304 - 7.731ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":7.731}
+2025-10-10T06:16:01.146Z [INFO] GET / - 200 - 1.282ms | Data: {"method":"GET","url":"/","statusCode":200,"responseTime":1.282}
+2025-10-10T06:16:01.693Z [ERROR] GET /favicon.ico - 404 - 0.274ms | Data: {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":0.274}
+2025-10-10T06:17:01.835Z [INFO] GET /api/categories - 304 - 52.413ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":52.413}
+2025-10-10T06:19:03.372Z [INFO] POST /api/applications/submit - 201 - 538.958ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":538.958}
+2025-10-10T06:19:09.994Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 36.393ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":36.393}
+2025-10-10T06:19:10.004Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 6.708ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":6.708}
+2025-10-10T06:19:10.025Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.749ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.749}
+2025-10-10T06:19:26.570Z [INFO] GET /uploads/documents/citizenshipId-zswJp3Ja-1760077142867-779264737.jpeg - 200 - 7.179ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-zswJp3Ja-1760077142867-779264737.jpeg","statusCode":200,"responseTime":7.179}
+2025-10-10T06:19:30.113Z [INFO] GET /uploads/documents/companyRegistration-zipzip_logo-1760077142878-557254015.jpg - 200 - 1.165ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-zipzip_logo-1760077142878-557254015.jpg","statusCode":200,"responseTime":1.165}
+2025-10-10T06:19:36.911Z [INFO] GET /api/products - 304 - 36.134ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":36.134}
+2025-10-10T06:19:36.934Z [INFO] GET /api/products - 304 - 16.031ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":16.031}
+2025-10-10T06:20:37.702Z [INFO] Email sent successfully via Mailjet | Data: {"to":"aavash.ganeju@gmail.com","subject":"🎉 Distributor Application Approved - Login Credentials Included","messageId":"576460785186929569"}
+2025-10-10T06:20:37.708Z [INFO] PUT /api/applications/dev/cmgkghjio0000psyww634a9wd/status - 200 - 2531.08ms | Data: {"method":"PUT","url":"/api/applications/dev/cmgkghjio0000psyww634a9wd/status","statusCode":200,"responseTime":2531.08}
+2025-10-10T06:20:37.754Z [ERROR] POST /api/applications/send-offer-letter - 401 - 2.002ms | Data: {"method":"POST","url":"/api/applications/send-offer-letter","statusCode":401,"responseTime":2.002}
+2025-10-10T06:21:41.036Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 5.576ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":5.576}
+2025-10-10T06:21:41.044Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 5.691ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":5.691}
+2025-10-10T06:21:41.056Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.097ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.097}
+2025-10-10T06:22:32.184Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 15.834ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":15.834}
+2025-10-10T06:22:32.199Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 10.81ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":10.81}
+2025-10-10T06:22:32.226Z [INFO] GET /api/categories?isActive=true - 304 - 56.295ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":56.295}
+2025-10-10T06:22:32.241Z [INFO] GET /api/categories?isActive=true - 304 - 3.323ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":3.323}
+2025-10-10T06:22:32.312Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 200 - 94.898ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":200,"responseTime":94.898}
+2025-10-10T06:22:32.324Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 200 - 6.86ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":200,"responseTime":6.86}
+2025-10-10T06:22:32.349Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 34.687ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":34.687}
+2025-10-10T06:22:32.362Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 304 - 2.453ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":304,"responseTime":2.453}
+2025-10-10T06:23:01.825Z [INFO] Email sent successfully via Mailjet | Data: {"to":"aavash.ganeju@gmail.com","subject":"🎉 Distributor Application Approved - Login Credentials Included","messageId":"288230409033467451"}
+2025-10-10T06:23:01.829Z [INFO] POST /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 200 - 1125.126ms | Data: {"method":"POST","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":200,"responseTime":1125.126}
+2025-10-10T06:25:10.814Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 43.18ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":43.18}
+2025-10-10T06:25:10.829Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 6.212ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":6.212}
+2025-10-10T06:25:10.848Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.056ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.056}
+2025-10-10T06:25:29.782Z [INFO] GET /api/categories?isActive=true - 304 - 5.69ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":5.69}
+2025-10-10T06:25:29.788Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 13.879ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":13.879}
+2025-10-10T06:25:29.790Z [INFO] GET /api/categories?isActive=true - 304 - 3.966ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":3.966}
+2025-10-10T06:25:29.810Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 13.328ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":13.328}
+2025-10-10T06:25:29.818Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 11.183ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":11.183}
+2025-10-10T06:25:29.836Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 8.494ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":8.494}
+2025-10-10T06:25:29.837Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 200 - 5.8ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":200,"responseTime":5.8}
+2025-10-10T06:25:29.854Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 304 - 3.766ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":304,"responseTime":3.766}
+2025-10-10T06:27:04.733Z [INFO] GET /api/auth/users - 200 - 53.736ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":53.736}
+2025-10-10T06:27:04.748Z [INFO] GET /api/auth/users - 304 - 6.288ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":6.288}
+2025-10-10T06:27:46.633Z [INFO] GET /api/categories - 304 - 43.026ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":43.026}
+2025-10-10T06:27:46.640Z [INFO] GET /api/categories - 304 - 2.05ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.05}
+2025-10-10T06:27:49.577Z [INFO] GET /api/categories - 304 - 8.523ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":8.523}
+2025-10-10T06:27:49.586Z [INFO] GET /api/categories - 304 - 4.014ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":4.014}
+2025-10-10T06:27:49.611Z [INFO] GET /api/products - 304 - 43.053ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":43.053}
+2025-10-10T06:27:49.619Z [INFO] GET /api/products - 304 - 2.711ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.711}
+2025-10-10T07:06:27.517Z [INFO] GET /api/products - 304 - 47.283ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":47.283}
+2025-10-10T07:06:27.531Z [INFO] GET /api/products - 304 - 7.681ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":7.681}
+2025-10-10T07:07:01.224Z [INFO] GET /api/categories?isActive=true - 304 - 52.548ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":52.548}
+2025-10-10T07:07:01.235Z [INFO] GET /api/categories?isActive=true - 304 - 6.365ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":6.365}
+2025-10-10T07:07:01.236Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 67.783ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":67.783}
+2025-10-10T07:07:01.251Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 10.265ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":10.265}
+2025-10-10T07:07:01.278Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 28.217ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":28.217}
+2025-10-10T07:07:01.291Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 8.214ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":8.214}
+2025-10-10T07:07:01.298Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 304 - 9.043ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":304,"responseTime":9.043}
+2025-10-10T07:07:01.311Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 304 - 4.416ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":304,"responseTime":4.416}
+2025-10-10T07:07:12.301Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.423ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.423}
+2025-10-10T07:07:12.320Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 14.839ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":14.839}
+2025-10-10T07:07:12.334Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.835ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.835}
+2025-10-10T07:07:27.619Z [INFO] GET /uploads/documents/citizenshipId-zswJp3Ja-1760077142867-779264737.jpeg - 304 - 1.01ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-zswJp3Ja-1760077142867-779264737.jpeg","statusCode":304,"responseTime":1.01}
+2025-10-10T07:07:33.364Z [INFO] GET /api/orders - 304 - 62.482ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":62.482}
+2025-10-10T07:07:33.379Z [INFO] GET /api/orders - 304 - 12.844ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":12.844}
+2025-10-10T07:08:21.418Z [INFO] Mailjet service initialized successfully
+2025-10-10T07:08:27.146Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-10T07:08:27.147Z [INFO] 🌍 Environment: development
+2025-10-10T07:08:27.148Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-10T07:08:27.148Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-10T07:08:27.148Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-10T07:08:27.149Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

@@ -26,7 +26,7 @@ exports.generalLimiter = (0, express_rate_limit_1.default)({
 });
 exports.authLimiter = (0, express_rate_limit_1.default)({
     windowMs: 15 * 60 * 1000,
-    max: 5,
+    max: 50,
     message: {
         success: false,
         message: 'धेरै लगइन प्रयासहरू। १५ मिनेट पछि प्रयास गर्नुहोस्।',
@@ -44,7 +44,7 @@ exports.authLimiter = (0, express_rate_limit_1.default)({
 });
 exports.applicationLimiter = (0, express_rate_limit_1.default)({
     windowMs: 60 * 60 * 1000,
-    max: 3,
+    max: 100,
     message: {
         success: false,
         message: 'धेरै आवेदनहरू पठाइएको छ। १ घण्टा पछि प्रयास गर्नुहोस्।',

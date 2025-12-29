@@ -282,8 +282,6 @@ export interface UpdateProfileData {
 export interface ApplicationUpdate {
   status: ApplicationStatus;
   reviewNotes?: string;
-  reviewedBy: string;
-  reviewedAt?: Date;
 }
 
 // Distributor creation and management types

@@ -1,0 +1,75 @@
+2025-11-12T06:08:24.506Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:08:30.754Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-11-12T06:08:30.754Z [INFO] 🌍 Environment: development
+2025-11-12T06:08:30.755Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-11-12T06:08:30.755Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-11-12T06:08:30.755Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-11-12T06:08:33.117Z [INFO] POST /api/auth/login - 200 - 938.994ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":938.994}
+2025-11-12T06:13:20.617Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:13:27.677Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-11-12T06:13:27.678Z [INFO] 🌍 Environment: development
+2025-11-12T06:13:27.678Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-11-12T06:13:27.679Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-11-12T06:13:27.679Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-11-12T06:14:15.255Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:14:26.984Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:14:39.253Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:14:42.853Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-11-12T06:14:42.854Z [INFO] 🌍 Environment: development
+2025-11-12T06:14:42.854Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-11-12T06:14:42.854Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-11-12T06:14:42.854Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-11-12T06:14:47.857Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:14:50.420Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-11-12T06:14:50.421Z [INFO] 🌍 Environment: development
+2025-11-12T06:14:50.421Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-11-12T06:14:50.421Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-11-12T06:14:50.421Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-11-12T06:32:22.612Z [INFO] Mailjet service initialized successfully
+2025-11-12T06:32:25.917Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-11-12T06:32:25.917Z [INFO] 🌍 Environment: development
+2025-11-12T06:32:25.918Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-11-12T06:32:25.918Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-11-12T06:32:25.918Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-11-12T06:33:10.583Z [INFO] GET /api/categories - 304 - 391.589ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":391.589}
+2025-11-12T06:46:55.873Z [INFO] POST /api/auth/login - 200 - 415.925ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":415.925}
+2025-11-12T06:47:07.429Z [INFO] GET /api/categories - 304 - 35.381ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":35.381}
+2025-11-12T06:47:07.438Z [INFO] GET /api/categories - 304 - 4.585ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":4.585}
+2025-11-12T06:59:07.175Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 113.059ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":113.059}
+2025-11-12T06:59:07.206Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 15.385ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":15.385}
+2025-11-12T06:59:07.228Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.791ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.791}
+2025-11-12T06:59:17.877Z [INFO] GET /uploads/documents/citizenshipId-zswJp3Ja-1760077142867-779264737.jpeg - 200 - 27.868ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-zswJp3Ja-1760077142867-779264737.jpeg","statusCode":200,"responseTime":27.868}
+2025-11-12T06:59:31.963Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 25.873ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":25.873}
+2025-11-12T06:59:31.991Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 17.506ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":17.506}
+2025-11-12T06:59:31.994Z [INFO] GET /api/categories?isActive=true - 304 - 60.705ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":60.705}
+2025-11-12T06:59:32.006Z [INFO] GET /api/categories?isActive=true - 304 - 3.365ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":3.365}
+2025-11-12T06:59:32.051Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 71.278ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":71.278}
+2025-11-12T06:59:32.060Z [INFO] GET /api/distributors/find-by-application/cmgkghjio0000psyww634a9wd - 304 - 5.174ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgkghjio0000psyww634a9wd","statusCode":304,"responseTime":5.174}
+2025-11-12T06:59:32.068Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 304 - 5.105ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":304,"responseTime":5.105}
+2025-11-12T06:59:32.075Z [INFO] GET /api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials - 304 - 4.634ms | Data: {"method":"GET","url":"/api/distributors/cmgkgjihl0002psyw8gwn5v7z/credentials","statusCode":304,"responseTime":4.634}
+2025-11-12T06:59:45.396Z [INFO] GET /api/products - 304 - 84.937ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":84.937}
+2025-11-12T06:59:45.402Z [INFO] GET /api/products - 304 - 2.527ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.527}
+2025-11-12T07:15:55.939Z [INFO] POST /api/applications/submit - 201 - 90.599ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":90.599}
+2025-11-12T07:16:05.029Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 27.623ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":27.623}
+2025-11-12T07:16:05.040Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.725ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.725}
+2025-11-12T07:16:05.049Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 5.003ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":5.003}
+2025-11-12T07:16:17.927Z [INFO] GET /api/categories - 304 - 56.52ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":56.52}
+2025-11-12T07:30:19.680Z [INFO] GET /uploads/documents/citizenshipId-jewelry_model-1762931755869-989320047.jpg - 200 - 0.749ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-jewelry_model-1762931755869-989320047.jpg","statusCode":200,"responseTime":0.749}
+2025-11-12T07:30:26.778Z [INFO] GET /api/products - 304 - 37.667ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":37.667}
+2025-11-12T07:30:26.788Z [INFO] GET /api/products - 304 - 3.588ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":3.588}
+2025-11-12T07:55:35.668Z [INFO] Mailjet service initialized successfully
+2025-11-12T07:55:38.669Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-11-12T07:55:38.670Z [INFO] 🌍 Environment: development
+2025-11-12T07:55:38.670Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-11-12T07:55:38.670Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-11-12T07:55:38.670Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-11-12T07:55:38.670Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

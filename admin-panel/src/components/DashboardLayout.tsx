@@ -30,7 +30,8 @@ import {
   RotateCcw,
   ChevronDown,
   Key,
-  Bell
+  Bell,
+  Target
 } from 'lucide-react';
 import { getRoleDisplayName } from '@/lib/utils';
 import Breadcrumb, { getBreadcrumbItems } from './Breadcrumb';
@@ -137,6 +138,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'customers', label: 'Distributors', icon: Users },
         { id: 'approved-distributors', label: 'Approved Distributors', icon: UserCheck },
         { id: 'distributor-sales', label: 'Distributor Sales', icon: TrendingUp },
+        { id: 'sales-targets', label: 'Sales Targets', icon: Target },
         { id: 'categories', label: 'Categories', icon: FolderOpen },
         { id: 'products', label: 'Products', icon: Package },
         { id: 'create-distributor', label: 'Create Distributor', icon: UserPlus },

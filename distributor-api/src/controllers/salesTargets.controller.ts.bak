@@ -1,0 +1,221 @@
+import { Request, Response } from 'express';
+import { PrismaClient } from '@prisma/client';
+import { ApiResponse, AuthenticatedRequest } from '../types';
+import { asyncHandler } from '../middleware/error.middleware';
+
+const prisma = new PrismaClient();
+
+// Get all sales targets
+export const getSalesTargets = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+  const { month, year, province } = req.query;
+
+  const where: any = {};
+  
+  if (month) where.month = month;
+  if (year) where.year = parseInt(year as string);
+  if (province) where.province = province;
+
+  const targets = await prisma.salesTarget.findMany({
+    where,
+    orderBy: [
+      { year: 'desc' },
+      { month: 'asc' },
+      { province: 'asc' }
+    ]
+  });
+
+  const response: ApiResponse = {
+    success: true,
+    message: 'Sales targets retrieved successfully',
+    data: targets
+  };
+
+  res.status(200).json(response);
+});
+
+// Create a new sales target
+export const createSalesTarget = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+  const { month, year, province, targetAmount } = req.body;
+
+  // Validate required fields
+  if (!month || !year || !province || !targetAmount) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'All fields are required',
+      error: 'MISSING_REQUIRED_FIELDS'
+    };
+    res.status(400).json(response);
+    return;
+  }
+
+  // Check if target already exists for this month/province
+  const existingTarget = await prisma.salesTarget.findFirst({
+    where: {
+      month,
+      year: parseInt(year),
+      province
+    }
+  });
+
+  if (existingTarget) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'Sales target already exists for this month and province',
+      error: 'TARGET_ALREADY_EXISTS'
+    };
+    res.status(409).json(response);
+    return;
+  }
+
+  const target = await prisma.salesTarget.create({
+    data: {
+      month,
+      year: parseInt(year),
+      province,
+      targetAmount: parseFloat(targetAmount),
+      createdBy: req.user?.id || 'system'
+    }
+  });
+
+  const response: ApiResponse = {
+    success: true,
+    message: 'Sales target created successfully',
+    data: target
+  };
+
+  res.status(201).json(response);
+});
+
+// Update a sales target
+export const updateSalesTarget = asyncHandler(async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+  const { id } = req.params;
+  const { month, year, province, targetAmount } = req.body;
+
+  // Check if target exists
+  const existingTarget = await prisma.salesTarget.findUnique({
+    where: { id }
+  });
+
+  if (!existingTarget) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'Sales target not found',
+      error: 'TARGET_NOT_FOUND'
+    };
+    res.status(404).json(response);
+    return;
+  }
+
+  // Check if another target exists for the same month/province (excluding current one)
+  if (month && year && province) {
+    const duplicateTarget = await prisma.salesTarget.findFirst({
+      where: {
+        month,
+        year: parseInt(year),
+        province,
+        id: { not: id }
+      }
+    });
+
+    if (duplicateTarget) {
+      const response: ApiResponse = {
+        success: false,
+        message: 'Another sales target already exists for this month and province',
+        error: 'DUPLICATE_TARGET'
+      };
+      res.status(409).json(response);
+      return;
+    }
+  }
+
+  const updateData: any = {};
+  if (month) updateData.month = month;
+  if (year) updateData.year = parseInt(year);
+  if (province) updateData.province = province;
+  if (targetAmount) updateData.targetAmount = parseFloat(targetAmount);
+
+  const target = await prisma.salesTarget.update({
+    where: { id },
+    data: updateData
+  });
+
+  const response: ApiResponse = {
+    success: true,
+    message: 'Sales target updated successfully',
+    data: target
+  };
+
+  res.status(200).json(response);
+});
+
+// Delete a sales target
+export const deleteSalesTarget = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+  const { id } = req.params;
+
+  // Check if target exists
+  const existingTarget = await prisma.salesTarget.findUnique({
+    where: { id }
+  });
+
+  if (!existingTarget) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'Sales target not found',
+      error: 'TARGET_NOT_FOUND'
+    };
+    res.status(404).json(response);
+    return;
+  }
+
+  await prisma.salesTarget.delete({
+    where: { id }
+  });
+
+  const response: ApiResponse = {
+    success: true,
+    message: 'Sales target deleted successfully'
+  };
+
+  res.status(200).json(response);
+});
+
+// Get sales target statistics
+export const getSalesTargetStats = asyncHandler(async (req: Request, res: Response): Promise<void> => {
+  const { year } = req.query;
+  
+  const where: any = {};
+  if (year) where.year = parseInt(year as string);
+
+  const [totalTargets, totalAmount, provinceCount] = await Promise.all([
+    prisma.salesTarget.count({ where }),
+    prisma.salesTarget.aggregate({
+      where,
+      _sum: { targetAmount: true }
+    }),
+    prisma.salesTarget.groupBy({
+      by: ['province'],
+      where,
+      _count: { province: true }
+    })
+  ]);
+
+  const stats = {
+    totalTargets,
+    totalAmount: totalAmount._sum.targetAmount || 0,
+    uniqueProvinces: provinceCount.length,
+    averageTarget: totalTargets > 0 ? (totalAmount._sum.targetAmount || 0) / totalTargets : 0
+  };
+
+  const response: ApiResponse = {
+    success: true,
+    message: 'Sales target statistics retrieved successfully',
+    data: stats
+  };
+
+  res.status(200).json(response);
+});
+
+
+
+
+

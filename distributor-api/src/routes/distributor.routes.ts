@@ -7,7 +7,9 @@ import {
   updateApplicationStatusDev,
   deleteApplication,
   getApplicationStats,
-  sendOfferLetter
+  sendOfferLetter,
+  saveDraftApplication,
+  getApplicationByReference
 } from '@/controllers/distributor.controller';
 import { DistributorApplicationSchema, ApplicationUpdateSchema, ApplicationUpdateDevSchema } from '@/schemas/distributor.schema';
 import { validate, sanitizeInput } from '@/middleware/validation.middleware';
@@ -41,6 +43,18 @@ router.post('/submit',
   uploadLimiter,
   uploadDocuments,
   submitApplication
+);
+
+// Draft application routes
+router.post('/draft', 
+  applicationLimiter,
+  uploadLimiter,
+  uploadDocuments,
+  saveDraftApplication
+);
+
+router.get('/reference/:referenceNumber', 
+  getApplicationByReference
 );
 
 // Development routes - bypass authentication for testing

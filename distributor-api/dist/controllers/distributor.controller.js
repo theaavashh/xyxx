@@ -3,9 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.sendOfferLetter = exports.getApplicationStats = exports.deleteApplication = exports.updateApplicationStatusDev = exports.updateApplicationStatus = exports.getApplicationById = exports.getApplications = exports.submitApplication = void 0;
+exports.sendOfferLetter = exports.getApplicationByReference = exports.saveDraftApplication = exports.getApplicationStats = exports.deleteApplication = exports.updateApplicationStatusDev = exports.updateApplicationStatus = exports.getApplicationById = exports.getApplications = exports.submitApplication = void 0;
 const client_1 = require("@prisma/client");
-const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const error_middleware_1 = require("../middleware/error.middleware");
 const upload_middleware_1 = require("../middleware/upload.middleware");
 const mailjet_service_1 = __importDefault(require("../services/mailjet.service"));
@@ -187,10 +186,11 @@ exports.getApplications = (0, error_middleware_1.asyncHandler)(async (req, res) 
     if (reviewedBy) {
         where.reviewedById = reviewedBy;
     }
-    if (req.user?.role === 'SALES_REPRESENTATIVE') {
+    const authenticatedReq = req;
+    if (authenticatedReq.user?.role === 'SALES_REPRESENTATIVE') {
         where.OR = [
-            { createdById: req.user.id },
-            { reviewedById: req.user.id }
+            { createdById: authenticatedReq.user.id },
+            { reviewedById: authenticatedReq.user.id }
         ];
     }
     const [applications, total] = await Promise.all([
@@ -314,11 +314,7 @@ exports.updateApplicationStatus = (0, error_middleware_1.asyncHandler)(async (re
     if (updateData.status === 'APPROVED') {
         const application = await prisma.distributorApplication.findUnique({
             where: { id },
-            include: {
-                currentTransactions: true,
-                productsToDistribute: true,
-                areaCoverageDetails: true
-            }
+            select: { id: true, status: true }
         });
         if (!application) {
             const response = {
@@ -328,59 +324,6 @@ exports.updateApplicationStatus = (0, error_middleware_1.asyncHandler)(async (re
             };
             res.status(404).json(response);
             return;
-        }
-        const existingUser = await prisma.user.findFirst({
-            where: {
-                applicationId: application.id
-            }
-        });
-        if (!existingUser) {
-            const defaultUsername = `dist_${application.id.slice(-8)}`;
-            const defaultPassword = Math.random().toString(36).slice(-12);
-            const hashedPassword = await bcryptjs_1.default.hash(defaultPassword, 10);
-            await prisma.user.create({
-                data: {
-                    email: application.email || `${defaultUsername}@distributor.local`,
-                    username: defaultUsername,
-                    fullName: application.fullName,
-                    password: hashedPassword,
-                    role: 'DISTRIBUTOR',
-                    isActive: true,
-                    isVerified: true,
-                    address: application.permanentAddress,
-                    department: 'Distributor',
-                    position: 'Distributor',
-                    applicationId: application.id,
-                    distributorProfile: {
-                        create: {
-                            firstName: application.fullName.split(' ')[0] || 'Unknown',
-                            lastName: application.fullName.split(' ').slice(1).join(' ') || 'Distributor',
-                            phoneNumber: application.mobileNumber,
-                            address: application.permanentAddress,
-                            dateOfBirth: new Date(2000, 0, 1),
-                            nationalId: application.citizenshipNumber,
-                            companyName: application.companyName,
-                            companyType: application.businessType,
-                            registrationNumber: application.registrationNumber,
-                            panNumber: application.panVatNumber,
-                            vatNumber: application.panVatNumber,
-                            establishedDate: new Date(),
-                            companyAddress: application.officeAddress,
-                            website: '',
-                            description: `Distributor for ${application.desiredDistributorArea}`,
-                            status: 'ACTIVE',
-                            documents: JSON.stringify({
-                                citizenshipId: application.citizenshipId,
-                                companyRegistration: application.companyRegistration,
-                                panVatRegistration: application.panVatRegistration
-                            }),
-                            createdBy: req.user.id,
-                            approvedBy: req.user.id,
-                            approvedAt: new Date()
-                        }
-                    }
-                }
-            });
         }
     }
     const updatedApplication = await prisma.distributorApplication.update({
@@ -419,22 +362,6 @@ exports.updateApplicationStatus = (0, error_middleware_1.asyncHandler)(async (re
     });
     if (updateData.status === 'APPROVED') {
         try {
-            const createdUser = await prisma.user.findFirst({
-                where: { applicationId: id },
-                include: {
-                    assignedCategories: {
-                        include: {
-                            category: {
-                                select: {
-                                    id: true,
-                                    title: true,
-                                    description: true
-                                }
-                            }
-                        }
-                    }
-                }
-            });
             const emailData = {
                 applicationId: updatedApplication.id,
                 fullName: updatedApplication.fullName,
@@ -444,18 +371,7 @@ exports.updateApplicationStatus = (0, error_middleware_1.asyncHandler)(async (re
                 businessType: updatedApplication.businessType,
                 reviewNotes: updateData.reviewNotes
             };
-            if (createdUser) {
-                const credentials = {
-                    username: createdUser.username,
-                    email: createdUser.email,
-                    password: 'Temporary password - please change after first login',
-                    categories: createdUser.assignedCategories.map(ac => ac.category)
-                };
-                await mailjet_service_1.default.notifyDistributorApproved(emailData, credentials);
-            }
-            else {
-                await mailjet_service_1.default.notifyDistributorApproved(emailData);
-            }
+            await mailjet_service_1.default.notifyDistributorApproved(emailData);
         }
         catch (emailError) {
             console.error('Failed to send approval email:', emailError);
@@ -487,68 +403,16 @@ exports.updateApplicationStatusDev = (0, error_middleware_1.asyncHandler)(async 
     if (updateData.status === 'APPROVED') {
         const application = await prisma.distributorApplication.findUnique({
             where: { id },
-            include: {
-                currentTransactions: true,
-                productsToDistribute: true,
-                areaCoverageDetails: true
-            }
+            select: { id: true, status: true }
         });
-        if (application) {
-            const existingUser = await prisma.user.findFirst({
-                where: {
-                    OR: [
-                        { email: application.email || '' },
-                        { fullName: application.fullName }
-                    ]
-                }
-            });
-            if (!existingUser) {
-                const defaultUsername = `dist_${application.id.slice(-8)}`;
-                const defaultPassword = Math.random().toString(36).slice(-12);
-                const hashedPassword = await bcryptjs_1.default.hash(defaultPassword, 10);
-                await prisma.user.create({
-                    data: {
-                        email: application.email || `${defaultUsername}@distributor.local`,
-                        username: defaultUsername,
-                        fullName: application.fullName,
-                        password: hashedPassword,
-                        role: 'DISTRIBUTOR',
-                        isActive: true,
-                        isVerified: true,
-                        address: application.permanentAddress,
-                        department: 'Distributor',
-                        position: 'Distributor',
-                        distributorProfile: {
-                            create: {
-                                firstName: application.fullName.split(' ')[0] || 'Unknown',
-                                lastName: application.fullName.split(' ').slice(1).join(' ') || 'Distributor',
-                                phoneNumber: application.mobileNumber,
-                                address: application.permanentAddress,
-                                dateOfBirth: new Date(2000, 0, 1),
-                                nationalId: application.citizenshipNumber,
-                                companyName: application.companyName,
-                                companyType: application.businessType,
-                                registrationNumber: application.registrationNumber,
-                                panNumber: application.panVatNumber,
-                                vatNumber: application.panVatNumber,
-                                establishedDate: new Date(),
-                                companyAddress: application.officeAddress,
-                                website: '',
-                                description: `Distributor for ${application.desiredDistributorArea}`,
-                                status: 'ACTIVE',
-                                documents: JSON.stringify({
-                                    citizenshipId: application.citizenshipId,
-                                    companyRegistration: application.companyRegistration,
-                                    panVatRegistration: application.panVatRegistration
-                                }),
-                                createdBy: 'dev-user',
-                                approvedBy: 'dev-user',
-                                approvedAt: new Date()
-                            }
-                        }
-                    }
-                });
-            }
+        if (!application) {
+            const response = {
+                success: false,
+                message: 'आवेदन फेला परेन',
+                error: 'APPLICATION_NOT_FOUND'
+            };
+            res.status(404).json(response);
+            return;
         }
     }
     const updatedApplication = await prisma.distributorApplication.update({
@@ -586,27 +450,6 @@ exports.updateApplicationStatusDev = (0, error_middleware_1.asyncHandler)(async 
     });
     if (updateData.status === 'APPROVED') {
         try {
-            const createdUser = await prisma.user.findFirst({
-                where: {
-                    OR: [
-                        { email: updatedApplication.email || '' },
-                        { fullName: updatedApplication.fullName }
-                    ]
-                },
-                include: {
-                    assignedCategories: {
-                        include: {
-                            category: {
-                                select: {
-                                    id: true,
-                                    title: true,
-                                    description: true
-                                }
-                            }
-                        }
-                    }
-                }
-            });
             const emailData = {
                 applicationId: updatedApplication.id,
                 fullName: updatedApplication.fullName,
@@ -616,18 +459,7 @@ exports.updateApplicationStatusDev = (0, error_middleware_1.asyncHandler)(async 
                 businessType: updatedApplication.businessType,
                 reviewNotes: updateData.reviewNotes
             };
-            if (createdUser) {
-                const credentials = {
-                    username: createdUser.username,
-                    email: createdUser.email,
-                    password: 'Temporary password - please change after first login',
-                    categories: createdUser.assignedCategories.map(ac => ac.category)
-                };
-                await mailjet_service_1.default.notifyDistributorApproved(emailData, credentials);
-            }
-            else {
-                await mailjet_service_1.default.notifyDistributorApproved(emailData);
-            }
+            await mailjet_service_1.default.notifyDistributorApproved(emailData);
         }
         catch (emailError) {
             console.error('Failed to send approval email:', emailError);
@@ -641,7 +473,9 @@ exports.updateApplicationStatusDev = (0, error_middleware_1.asyncHandler)(async 
     res.status(200).json(response);
 });
 exports.deleteApplication = (0, error_middleware_1.asyncHandler)(async (req, res) => {
-    if (!req.user) {
+    const authenticatedReq = req;
+    const isDev = process.env.NODE_ENV === 'development';
+    if (!isDev && !authenticatedReq.user) {
         const response = {
             success: false,
             message: 'प्रमाणीकरण आवश्यक छ',
@@ -664,7 +498,8 @@ exports.deleteApplication = (0, error_middleware_1.asyncHandler)(async (req, res
         res.status(404).json(response);
         return;
     }
-    if (existingApplication.status !== 'PENDING') {
+    const isAdmin = authenticatedReq.user?.role === 'ADMIN' || authenticatedReq.user?.role === 'MANAGERIAL';
+    if (existingApplication.status !== 'PENDING' && !isDev && !isAdmin) {
         const response = {
             success: false,
             message: 'केवल पेन्डिङ आवेदनहरू मेटाउन सकिन्छ',
@@ -673,22 +508,25 @@ exports.deleteApplication = (0, error_middleware_1.asyncHandler)(async (req, res
         res.status(400).json(response);
         return;
     }
-    await prisma.distributorApplication.update({
-        where: { id },
-        data: {
-            status: 'REJECTED',
-            reviewNotes: 'आवेदन रद्द गरिएको',
-            reviewedBy: { connect: { id: req.user.id } },
-            reviewedAt: new Date(),
-            applicationHistory: {
-                create: {
-                    status: 'REJECTED',
-                    notes: 'आवेदन रद्द गरिएको',
-                    changedBy: req.user.fullName,
-                    changedAt: new Date()
-                }
+    const updateData = {
+        status: 'REJECTED',
+        reviewNotes: 'आवेदन रद्द गरिएको',
+        reviewedAt: new Date(),
+        applicationHistory: {
+            create: {
+                status: 'REJECTED',
+                notes: 'आवेदन रद्द गरिएको',
+                changedBy: authenticatedReq.user?.fullName || 'System',
+                changedAt: new Date()
             }
         }
+    };
+    if (authenticatedReq.user) {
+        updateData.reviewedBy = { connect: { id: authenticatedReq.user.id } };
+    }
+    await prisma.distributorApplication.update({
+        where: { id },
+        data: updateData
     });
     const response = {
         success: true,
@@ -754,6 +592,250 @@ exports.getApplicationStats = (0, error_middleware_1.asyncHandler)(async (req, r
         success: true,
         message: 'आवेदन तथ्याङ्क सफलतापूर्वक प्राप्त भयो',
         data: stats
+    };
+    res.status(200).json(response);
+});
+exports.saveDraftApplication = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    let applicationData;
+    try {
+        if (req.body.data) {
+            applicationData = JSON.parse(req.body.data);
+        }
+        else {
+            applicationData = req.body;
+        }
+    }
+    catch (error) {
+        const response = {
+            success: false,
+            message: 'अवैध डाटा ढाँचा',
+            error: 'INVALID_DATA_FORMAT'
+        };
+        res.status(400).json(response);
+        return;
+    }
+    const files = req.files;
+    const filePaths = files ? (0, upload_middleware_1.getFilePaths)(files) : {};
+    const referenceNumber = `DRAFT-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+    const application = await prisma.distributorApplication.upsert({
+        where: { referenceNumber },
+        update: {
+            fullName: applicationData.personalDetails.fullName,
+            age: applicationData.personalDetails.age,
+            gender: applicationData.personalDetails.gender,
+            citizenshipNumber: applicationData.personalDetails.citizenshipNumber,
+            issuedDistrict: applicationData.personalDetails.issuedDistrict,
+            mobileNumber: applicationData.personalDetails.mobileNumber,
+            email: applicationData.personalDetails.email,
+            permanentAddress: applicationData.personalDetails.permanentAddress,
+            temporaryAddress: applicationData.personalDetails.temporaryAddress,
+            companyName: applicationData.businessDetails.companyName,
+            registrationNumber: applicationData.businessDetails.registrationNumber,
+            panVatNumber: applicationData.businessDetails.panVatNumber,
+            officeAddress: applicationData.businessDetails.officeAddress,
+            operatingArea: applicationData.businessDetails.operatingArea,
+            desiredDistributorArea: applicationData.businessDetails.desiredDistributorArea,
+            currentBusiness: applicationData.businessDetails.currentBusiness,
+            businessType: applicationData.businessDetails.businessType,
+            salesManCount: applicationData.staffInfrastructure.salesManCount,
+            salesManExperience: applicationData.staffInfrastructure.salesManExperience,
+            deliveryStaffCount: applicationData.staffInfrastructure.deliveryStaffCount,
+            deliveryStaffExperience: applicationData.staffInfrastructure.deliveryStaffExperience,
+            accountAssistantCount: applicationData.staffInfrastructure.accountAssistantCount,
+            accountAssistantExperience: applicationData.staffInfrastructure.accountAssistantExperience,
+            otherStaffCount: applicationData.staffInfrastructure.otherStaffCount,
+            otherStaffExperience: applicationData.staffInfrastructure.otherStaffExperience,
+            warehouseSpace: applicationData.staffInfrastructure.warehouseSpace,
+            warehouseDetails: applicationData.staffInfrastructure.warehouseDetails,
+            truckCount: applicationData.staffInfrastructure.truckCount,
+            truckDetails: applicationData.staffInfrastructure.truckDetails,
+            fourWheelerCount: applicationData.staffInfrastructure.fourWheelerCount,
+            fourWheelerDetails: applicationData.staffInfrastructure.fourWheelerDetails,
+            twoWheelerCount: applicationData.staffInfrastructure.twoWheelerCount,
+            twoWheelerDetails: applicationData.staffInfrastructure.twoWheelerDetails,
+            cycleCount: applicationData.staffInfrastructure.cycleCount,
+            cycleDetails: applicationData.staffInfrastructure.cycleDetails,
+            thelaCount: applicationData.staffInfrastructure.thelaCount,
+            thelaDetails: applicationData.staffInfrastructure.thelaDetails,
+            productCategory: applicationData.businessInformation.productCategory,
+            yearsInBusiness: applicationData.businessInformation.yearsInBusiness,
+            monthlySales: applicationData.businessInformation.monthlySales,
+            storageFacility: applicationData.businessInformation.storageFacility,
+            preferredProducts: applicationData.retailerRequirements.preferredProducts,
+            monthlyOrderQuantity: applicationData.retailerRequirements.monthlyOrderQuantity,
+            paymentPreference: applicationData.retailerRequirements.paymentPreference,
+            creditDays: applicationData.retailerRequirements.creditDays,
+            deliveryPreference: applicationData.retailerRequirements.deliveryPreference,
+            partnerFullName: applicationData.partnershipDetails?.partnerFullName,
+            partnerAge: applicationData.partnershipDetails?.partnerAge,
+            partnerGender: applicationData.partnershipDetails?.partnerGender,
+            partnerCitizenshipNumber: applicationData.partnershipDetails?.partnerCitizenshipNumber,
+            partnerIssuedDistrict: applicationData.partnershipDetails?.partnerIssuedDistrict,
+            partnerMobileNumber: applicationData.partnershipDetails?.partnerMobileNumber,
+            partnerEmail: applicationData.partnershipDetails?.partnerEmail,
+            partnerPermanentAddress: applicationData.partnershipDetails?.partnerPermanentAddress,
+            partnerTemporaryAddress: applicationData.partnershipDetails?.partnerTemporaryAddress,
+            additionalInfo1: applicationData.additionalInformation?.additionalInfo1,
+            additionalInfo2: applicationData.additionalInformation?.additionalInfo2,
+            additionalInfo3: applicationData.additionalInformation?.additionalInfo3,
+            citizenshipId: filePaths.citizenshipId,
+            companyRegistration: filePaths.companyRegistration,
+            panVatRegistration: filePaths.panVatRegistration,
+            officePhoto: filePaths.officePhoto,
+            areaMap: filePaths.areaMap,
+            declaration: applicationData.declaration.declaration,
+            signature: applicationData.declaration.signature,
+            date: applicationData.declaration.date,
+            agreementAccepted: applicationData.agreement.agreementAccepted,
+            distributorSignatureName: applicationData.agreement.distributorSignatureName,
+            distributorSignatureDate: applicationData.agreement.distributorSignatureDate,
+            status: 'PENDING',
+            updatedAt: new Date()
+        },
+        create: {
+            referenceNumber,
+            fullName: applicationData.personalDetails.fullName,
+            age: applicationData.personalDetails.age,
+            gender: applicationData.personalDetails.gender,
+            citizenshipNumber: applicationData.personalDetails.citizenshipNumber,
+            issuedDistrict: applicationData.personalDetails.issuedDistrict,
+            mobileNumber: applicationData.personalDetails.mobileNumber,
+            email: applicationData.personalDetails.email,
+            permanentAddress: applicationData.personalDetails.permanentAddress,
+            temporaryAddress: applicationData.personalDetails.temporaryAddress,
+            companyName: applicationData.businessDetails.companyName,
+            registrationNumber: applicationData.businessDetails.registrationNumber,
+            panVatNumber: applicationData.businessDetails.panVatNumber,
+            officeAddress: applicationData.businessDetails.officeAddress,
+            operatingArea: applicationData.businessDetails.operatingArea,
+            desiredDistributorArea: applicationData.businessDetails.desiredDistributorArea,
+            currentBusiness: applicationData.businessDetails.currentBusiness,
+            businessType: applicationData.businessDetails.businessType,
+            salesManCount: applicationData.staffInfrastructure.salesManCount,
+            salesManExperience: applicationData.staffInfrastructure.salesManExperience,
+            deliveryStaffCount: applicationData.staffInfrastructure.deliveryStaffCount,
+            deliveryStaffExperience: applicationData.staffInfrastructure.deliveryStaffExperience,
+            accountAssistantCount: applicationData.staffInfrastructure.accountAssistantCount,
+            accountAssistantExperience: applicationData.staffInfrastructure.accountAssistantExperience,
+            otherStaffCount: applicationData.staffInfrastructure.otherStaffCount,
+            otherStaffExperience: applicationData.staffInfrastructure.otherStaffExperience,
+            warehouseSpace: applicationData.staffInfrastructure.warehouseSpace,
+            warehouseDetails: applicationData.staffInfrastructure.warehouseDetails,
+            truckCount: applicationData.staffInfrastructure.truckCount,
+            truckDetails: applicationData.staffInfrastructure.truckDetails,
+            fourWheelerCount: applicationData.staffInfrastructure.fourWheelerCount,
+            fourWheelerDetails: applicationData.staffInfrastructure.fourWheelerDetails,
+            twoWheelerCount: applicationData.staffInfrastructure.twoWheelerCount,
+            twoWheelerDetails: applicationData.staffInfrastructure.twoWheelerDetails,
+            cycleCount: applicationData.staffInfrastructure.cycleCount,
+            cycleDetails: applicationData.staffInfrastructure.cycleDetails,
+            thelaCount: applicationData.staffInfrastructure.thelaCount,
+            thelaDetails: applicationData.staffInfrastructure.thelaDetails,
+            productCategory: applicationData.businessInformation.productCategory,
+            yearsInBusiness: applicationData.businessInformation.yearsInBusiness,
+            monthlySales: applicationData.businessInformation.monthlySales,
+            storageFacility: applicationData.businessInformation.storageFacility,
+            preferredProducts: applicationData.retailerRequirements.preferredProducts,
+            monthlyOrderQuantity: applicationData.retailerRequirements.monthlyOrderQuantity,
+            paymentPreference: applicationData.retailerRequirements.paymentPreference,
+            creditDays: applicationData.retailerRequirements.creditDays,
+            deliveryPreference: applicationData.retailerRequirements.deliveryPreference,
+            partnerFullName: applicationData.partnershipDetails?.partnerFullName,
+            partnerAge: applicationData.partnershipDetails?.partnerAge,
+            partnerGender: applicationData.partnershipDetails?.partnerGender,
+            partnerCitizenshipNumber: applicationData.partnershipDetails?.partnerCitizenshipNumber,
+            partnerIssuedDistrict: applicationData.partnershipDetails?.partnerIssuedDistrict,
+            partnerMobileNumber: applicationData.partnershipDetails?.partnerMobileNumber,
+            partnerEmail: applicationData.partnershipDetails?.partnerEmail,
+            partnerPermanentAddress: applicationData.partnershipDetails?.partnerPermanentAddress,
+            partnerTemporaryAddress: applicationData.partnershipDetails?.partnerTemporaryAddress,
+            additionalInfo1: applicationData.additionalInformation?.additionalInfo1,
+            additionalInfo2: applicationData.additionalInformation?.additionalInfo2,
+            additionalInfo3: applicationData.additionalInformation?.additionalInfo3,
+            citizenshipId: filePaths.citizenshipId,
+            companyRegistration: filePaths.companyRegistration,
+            panVatRegistration: filePaths.panVatRegistration,
+            officePhoto: filePaths.officePhoto,
+            areaMap: filePaths.areaMap,
+            declaration: applicationData.declaration.declaration,
+            signature: applicationData.declaration.signature,
+            date: applicationData.declaration.date,
+            agreementAccepted: applicationData.agreement.agreementAccepted,
+            distributorSignatureName: applicationData.agreement.distributorSignatureName,
+            distributorSignatureDate: applicationData.agreement.distributorSignatureDate,
+            currentTransactions: {
+                create: applicationData.currentTransactions?.filter(ct => ct.company && ct.products).map(ct => ({
+                    company: ct.company,
+                    products: ct.products,
+                    turnover: ct.turnover
+                })) || []
+            },
+            productsToDistribute: {
+                create: applicationData.productsToDistribute?.filter(pd => pd.productName).map(pd => ({
+                    productName: pd.productName,
+                    monthlySalesCapacity: pd.monthlySalesCapacity
+                })) || []
+            },
+            areaCoverageDetails: {
+                create: applicationData.areaCoverageDetails?.filter(acd => acd.distributionArea).map(acd => ({
+                    distributionArea: acd.distributionArea,
+                    populationEstimate: acd.populationEstimate,
+                    competitorBrand: acd.competitorBrand
+                })) || []
+            },
+            applicationHistory: {
+                create: {
+                    status: 'PENDING',
+                    notes: 'Draft application saved',
+                    changedBy: 'System',
+                    changedAt: new Date()
+                }
+            }
+        },
+        include: {
+            currentTransactions: true,
+            productsToDistribute: true,
+            areaCoverageDetails: true,
+            applicationHistory: true
+        }
+    });
+    const response = {
+        success: true,
+        message: 'Draft application saved successfully',
+        data: {
+            application,
+            referenceNumber
+        }
+    };
+    res.status(201).json(response);
+});
+exports.getApplicationByReference = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { referenceNumber } = req.params;
+    const application = await prisma.distributorApplication.findUnique({
+        where: { referenceNumber },
+        include: {
+            currentTransactions: true,
+            productsToDistribute: true,
+            areaCoverageDetails: true,
+            applicationHistory: {
+                orderBy: { changedAt: 'desc' },
+                take: 5
+            }
+        }
+    });
+    if (!application) {
+        const response = {
+            success: false,
+            message: 'Draft application not found',
+            error: 'APPLICATION_NOT_FOUND'
+        };
+        res.status(404).json(response);
+        return;
+    }
+    const response = {
+        success: true,
+        message: 'Draft application retrieved successfully',
+        data: { application }
     };
     res.status(200).json(response);
 });

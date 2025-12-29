@@ -26,7 +26,7 @@ export const generalLimiter = rateLimit({
 // Strict rate limiting for authentication endpoints
 export const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // Limit each IP to 5 login requests per windowMs
+  max: 50, // Limit each IP to 50 login requests per windowMs (increased for development)
   message: {
     success: false,
     message: 'धेरै लगइन प्रयासहरू। १५ मिनेट पछि प्रयास गर्नुहोस्।',
@@ -46,7 +46,7 @@ export const authLimiter = rateLimit({
 // Rate limiting for application submission
 export const applicationLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 3, // Limit each IP to 3 application submissions per hour
+  max: 100, // Limit each IP to 100 application submissions per hour (increased for development)
   message: {
     success: false,
     message: 'धेरै आवेदनहरू पठाइएको छ। १ घण्टा पछि प्रयास गर्नुहोस्।',

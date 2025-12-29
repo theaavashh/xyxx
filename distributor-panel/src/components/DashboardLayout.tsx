@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   Building2, 
   LogOut, 
@@ -29,6 +29,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { useAuth } from './AuthProvider';
+import { useUIStore } from '@/stores/uiStore';
 import toast from 'react-hot-toast';
 
 interface NavigationItem {
@@ -47,7 +48,24 @@ interface DashboardLayoutProps {
 export default function DashboardLayout({ children, activeTab, onTabChange }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState<string[]>(['sales']);
+  const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
   const { user, logout } = useAuth();
+  const { addNotification } = useUIStore();
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
+        setProfileDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const getNavigationItems = (): NavigationItem[] => {
     const commonItems: NavigationItem[] = [
@@ -79,6 +97,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
   const handleLogout = () => {
     logout();
     toast.success('Logged out successfully');
+    setProfileDropdownOpen(false);
   };
 
   const toggleSection = (sectionId: string) => {
@@ -105,8 +124,10 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
         <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
-          <div className="flex items-center space-x-2">
-            <Building2 className="h-8 w-8 text-indigo-600" />
+          <div className="flex items-center space-x-3">
+            <div className="h-8 w-8 rounded-md bg-indigo-600 flex items-center justify-center">
+              <img src="/zipzip-logo.svg" alt="ZipZip Logo" className="h-6 w-6" />
+            </div>
             <span className="text-xl font-bold text-gray-900">Distributor Panel</span>
           </div>
           <button
@@ -118,22 +139,21 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         </div>
 
         {/* User Info */}
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
               <span className="text-indigo-600 font-semibold">
                 {user?.name?.[0] || 'D'}
               </span>
             </div>
-            <div>
-              <p className="text-sm font-medium text-gray-900">
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-gray-900 truncate">
                 {user?.name || 'Distributor'}
               </p>
-              <p className="text-xs text-gray-500">Distributor</p>
-              <p className="text-xs text-gray-500">{user?.email}</p>
+              <p className="text-xs text-gray-500 truncate">{user?.email}</p>
             </div>
           </div>
-          </div>
+        </div>
 
           {/* Navigation */}
           <nav className="flex-1 px-4 py-6 space-y-2">
@@ -229,8 +249,10 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
               >
                 <Menu className="h-6 w-6" />
               </button>
-            <div className="flex items-center space-x-2">
-              <Building2 className="h-6 w-6 text-indigo-600" />
+            <div className="flex items-center space-x-3">
+              <div className="h-6 w-6 rounded-md bg-indigo-600 flex items-center justify-center">
+                <img src="/zipzip-logo.svg" alt="ZipZip Logo" className="h-4 w-4" />
+              </div>
               <span className="font-semibold text-gray-900">Distributor Panel</span>
             </div>
             <div className="w-6" /> {/* Placeholder for symmetry */}
@@ -283,6 +305,35 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                     <Settings className="h-4 w-4" />
                   </button>
                 </div>
+                <div className="relative">
+                  <button 
+                    onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+                    className="flex items-center space-x-3 focus:outline-none"
+                  >
+                     <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center">
+                      <User className="h-4 w-4 text-indigo-600" />
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-medium text-gray-900">Hey, {user?.name || 'Distributor'}</p>
+                      <p className="text-xs text-gray-500">{user?.email}</p>
+                    </div>
+                   
+                  </button>
+                  
+                  {/* Dropdown Menu */}
+                  {profileDropdownOpen && (
+                    <div ref={profileDropdownRef} className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Account</a>
+                      <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Change Password</a>
+                      <button 
+                        onClick={handleLogout}
+                        className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Log Out
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -292,6 +343,36 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
             {children}
           </div>
         </main>
+
+        {/* Bottom Navigation for Mobile */}
+        <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+          <div className="flex justify-around items-center">
+            {navigationItems.filter(item => !item.children).map((item) => {
+              const Icon = item.icon;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    onTabChange(item.id);
+                    // Close any open sidebar
+                    setSidebarOpen(false);
+                  }}
+                  className={`flex flex-col items-center py-2 px-4 ${activeTab === item.id ? 'text-indigo-600' : 'text-gray-500'}`}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span className="text-xs mt-1">{item.label}</span>
+                </button>
+              );
+            })}
+            <button
+              onClick={() => setProfileDropdownOpen(!profileDropdownOpen)}
+              className={`flex flex-col items-center py-2 px-4 ${profileDropdownOpen ? 'text-indigo-600' : 'text-gray-500'}`}
+            >
+              <User className="h-5 w-5" />
+              <span className="text-xs mt-1">Profile</span>
+            </button>
+          </div>
+        </nav>
       </div>
     </div>
   );

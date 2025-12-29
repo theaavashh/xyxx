@@ -6,7 +6,7 @@ import { useAuth } from './AuthProvider';
 import { apiClient } from '@/lib/api';
 import toast from 'react-hot-toast';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api';
 
 interface Category {
   id: string;

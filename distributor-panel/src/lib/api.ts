@@ -3,7 +3,7 @@ export class ApiClient {
   private baseUrl: string;
   private token: string | null = null;
 
-  constructor(baseUrl: string = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api') {
+  constructor(baseUrl: string = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api') {
     this.baseUrl = baseUrl;
     this.token = typeof window !== 'undefined' ? localStorage.getItem('distributor_token') : null;
   }
@@ -73,6 +73,67 @@ export class ApiClient {
 
 // Create a singleton instance
 export const apiClient = new ApiClient();
+
+// Enhanced API services
+export const api = {
+  // Dashboard
+  async getDashboardStats() {
+    return apiClient.get('/analytics/dashboard');
+  },
+
+  // Products
+  async getProducts() {
+    return apiClient.get('/products');
+  },
+
+  async getDistributorProducts(distributorId: string) {
+    return apiClient.get(`/distributors/${distributorId}/products`);
+  },
+
+  // Orders
+  async getOrders() {
+    return apiClient.get('/orders');
+  },
+
+  async createOrder(orderData: any) {
+    return apiClient.post('/orders', orderData);
+  },
+
+  async updateOrderStatus(orderId: string, status: string) {
+    return apiClient.put(`/orders/${orderId}/status`, { status });
+  },
+
+  // Daily Sales Sheets
+  async getDailySalesSheets() {
+    return apiClient.get('/sales/daily-sheets');
+  },
+
+  async createDailySalesSheet(sheetData: any) {
+    return apiClient.post('/sales/daily-sheets', sheetData);
+  },
+
+  async updateDailySalesSheet(sheetId: string, data: any) {
+    return apiClient.put(`/sales/daily-sheets/${sheetId}`, data);
+  },
+
+  async submitDailySalesSheet(sheetId: string) {
+    return apiClient.post(`/sales/daily-sheets/${sheetId}/submit`);
+  },
+
+  async deleteDailySalesSheet(sheetId: string) {
+    return apiClient.delete(`/sales/daily-sheets/${sheetId}`);
+  },
+
+  // Transactions
+  async getTransactions() {
+    return apiClient.get('/transactions');
+  },
+
+  // Reports
+  async generateReport(type: string, params: any) {
+    return apiClient.post(`/reports/${type}`, params);
+  },
+};
 
 
 

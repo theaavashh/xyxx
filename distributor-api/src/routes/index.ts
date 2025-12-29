@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import authRoutes from './auth.routes';
+import distributorAuthRoutes from './distributor-auth.routes';
 import distributorRoutes from './distributor.routes';
 import distributorsRoutes from './distributors.routes';
 import categoriesRoutes from './categories.routes';
@@ -15,6 +16,7 @@ const router = Router();
 
 // API routes
 router.use('/auth', authRoutes);
+router.use('/distributor-auth', distributorAuthRoutes);
 router.use('/applications', distributorRoutes);
 router.use('/distributors', distributorsRoutes);
 router.use('/categories', categoriesRoutes);

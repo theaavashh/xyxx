@@ -10,6 +10,7 @@ import {
   Edit, 
   Trash2, 
   Download,
+  Printer,
   CheckCircle,
   XCircle,
   Clock,
@@ -121,8 +122,12 @@ export default function DistributorManagement() {
 
     try {
       await deleteApplication(distributorId);
+      // Success - the deleteApplication hook should handle the UI update
+      console.log('Application deleted successfully');
     } catch (error) {
       console.error('Failed to delete application:', error);
+      // Show user-friendly error message
+      alert('Failed to delete application. Please try again.');
     }
   };
 
@@ -138,14 +143,44 @@ export default function DistributorManagement() {
 
   const handleApprovalSubmit = async (distributorId: string, products: any[], additionalData: any) => {
     try {
-      // First approve the application
-      await approveApplication(distributorId, 'Approved with offer letter');
+      // First approve the application with coverage data
+      await approveApplicationWithCoverage(distributorId, 'Approved with offer letter', additionalData);
       
       // Then send the offer letter email
       await sendOfferLetter(distributorId, products, additionalData);
       
     } catch (error) {
       console.error('Failed to approve and send offer letter:', error);
+      throw error;
+    }
+  };
+
+  const approveApplicationWithCoverage = async (distributorId: string, notes: string, additionalData: any) => {
+    try {
+      const response = await fetch(`${config.apiUrl}/applications/dev/${distributorId}/status`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          status: 'APPROVED',
+          reviewNotes: notes,
+          // Include coverage data
+          assignedProvinces: additionalData.assignedProvinces,
+          assignedAreas: additionalData.assignedAreas,
+          coverageNotes: additionalData.coverageNotes
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to approve application');
+      }
+
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error('Error approving application with coverage:', error);
       throw error;
     }
   };
@@ -159,6 +194,7 @@ export default function DistributorManagement() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem(config.tokenKey)}`,
         },
         body: JSON.stringify({
           distributorId,
@@ -194,6 +230,444 @@ export default function DistributorManagement() {
       await rejectApplication(distributorId, reason);
     } catch (error) {
       console.error('Failed to reject application:', error);
+    }
+  };
+
+  // Function to handle printing distributor form
+  const handlePrintDistributorForm = (distributor: DistributorApplication) => {
+    // Create a new window for printing
+    const printWindow = window.open('', '_blank');
+    
+    if (!printWindow) {
+      toast.error('Failed to open print window. Please allow pop-ups.');
+      return;
+    }
+
+    // Create print-friendly HTML content
+    const printContent = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Distributor Application Form - ${distributor.fullName}</title>
+        <style>
+          body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #1f2937;
+            background: white;
+          }
+          .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #1f2937;
+            padding-bottom: 20px;
+          }
+          .logo {
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4f46e5;
+          }
+          .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+          }
+          .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1f2937;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 5px;
+            background: #f9fafb;
+            padding: 8px;
+            border-radius: 4px;
+          }
+          .field {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+          .field-label {
+            font-weight: 600;
+            min-width: 200px;
+            color: #374151;
+          }
+          .field-value {
+            flex: 1;
+            text-align: left;
+            word-wrap: break-word;
+          }
+          .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+          .status-approved { background: #d1fae5; color: #065f46; }
+          .status-pending { background: #fef3c7; color: #92400e; }
+          .status-rejected { background: #fee2e2; color: #991b1b; }
+          .status-under_review { background: #dbeafe; color: #1e40af; }
+          .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+          }
+          @media print {
+            body { margin: 15px; }
+            .no-print { display: none; }
+            .section { page-break-inside: avoid; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <div class="logo">ZIP ZIP</div>
+          <div class="title">Distributor Application Form</div>
+          <div>
+            Application ID: ${distributor.id.slice(-8)}<br>
+            Date: ${new Date(distributor.createdAt).toLocaleDateString()}<br>
+            Status: <span class="status-badge status-${distributor.status.toLowerCase()}">${distributor.status}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">👤 Personal Information</div>
+          <div class="field">
+            <span class="field-label">Full Name:</span>
+            <span class="field-value">${distributor.fullName || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Email:</span>
+            <span class="field-value">${distributor.email || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Mobile Number:</span>
+            <span class="field-value">${distributor.mobileNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Age:</span>
+            <span class="field-value">${distributor.age || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Gender:</span>
+            <span class="field-value">${distributor.gender || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Citizenship Number:</span>
+            <span class="field-value">${distributor.citizenshipNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Issued District:</span>
+            <span class="field-value">${distributor.issuedDistrict || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Permanent Address:</span>
+            <span class="field-value">${distributor.permanentAddress || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Temporary Address:</span>
+            <span class="field-value">${distributor.temporaryAddress || 'N/A'}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">🏢 Business Information</div>
+          <div class="field">
+            <span class="field-label">Company Name:</span>
+            <span class="field-value">${distributor.companyName || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Registration Number:</span>
+            <span class="field-value">${distributor.registrationNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">PAN/VAT Number:</span>
+            <span class="field-value">${distributor.panVatNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Office Address:</span>
+            <span class="field-value">${distributor.officeAddress || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Work Area District:</span>
+            <span class="field-value">${distributor.workAreaDistrict || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Desired Distribution Area:</span>
+            <span class="field-value">${distributor.desiredDistributorArea || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Business Type:</span>
+            <span class="field-value">${distributor.businessType?.replace('_', ' ') || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Current Business:</span>
+            <span class="field-value">${distributor.currentBusiness || 'N/A'}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">👥 Staff & Infrastructure</div>
+          <div class="field">
+            <span class="field-label">Sales Executives:</span>
+            <span class="field-value">${distributor.salesManCount || 0}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Sales Executive Experience:</span>
+            <span class="field-value">${distributor.salesManExperience || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Drivers:</span>
+            <span class="field-value">${distributor.driverCount || 0}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Driver Experience:</span>
+            <span class="field-value">${distributor.driverExperience || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Helpers:</span>
+            <span class="field-value">${distributor.helperCount || 0}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Helper Experience:</span>
+            <span class="field-value">${distributor.helperExperience || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Accountants:</span>
+            <span class="field-value">${distributor.accountantCount || 0}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Accountant Experience:</span>
+            <span class="field-value">${distributor.accountantExperience || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Storage Space:</span>
+            <span class="field-value">${distributor.storageSpace || 0} sq. ft.</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Storage Details:</span>
+            <span class="field-value">${distributor.storageDetails || 'N/A'}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">🚚 Vehicle Information</div>
+          <div class="field">
+            <span class="field-label">Trucks:</span>
+            <span class="field-value">${distributor.truckCount || 0} (${distributor.truckExperience || 'N/A'} experience)</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Four Wheelers:</span>
+            <span class="field-value">${distributor.fourWheelerCount || 0} (${distributor.fourWheelerExperience || 'N/A'} experience)</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Motorcycles:</span>
+            <span class="field-value">${distributor.motorcycleCount || 0} (${distributor.motorcycleExperience || 'N/A'} experience)</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Cycles:</span>
+            <span class="field-value">${distributor.cycleCount || 0} (${distributor.cycleExperience || 'N/A'} experience)</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Thelas:</span>
+            <span class="field-value">${distributor.thelaCount || 0} (${distributor.thelaExperience || 'N/A'} experience)</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">🤝 Partnership Information</div>
+          <div class="field">
+            <span class="field-label">Partner Full Name:</span>
+            <span class="field-value">${distributor.partnerFullName || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Age:</span>
+            <span class="field-value">${distributor.partnerAge || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Gender:</span>
+            <span class="field-value">${distributor.partnerGender || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Citizenship Number:</span>
+            <span class="field-value">${distributor.partnerCitizenshipNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Issued District:</span>
+            <span class="field-value">${distributor.partnerIssuedDistrict || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Mobile Number:</span>
+            <span class="field-value">${distributor.partnerMobileNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Email:</span>
+            <span class="field-value">${distributor.partnerEmail || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Permanent Address:</span>
+            <span class="field-value">${distributor.partnerPermanentAddress || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Partner Temporary Address:</span>
+            <span class="field-value">${distributor.partnerTemporaryAddress || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Credit Days:</span>
+            <span class="field-value">${distributor.creditDays || 0}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">📄 Additional Information</div>
+          <div class="field">
+            <span class="field-label">Additional Information:</span>
+            <span class="field-value">${distributor.additionalInfo || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Agreement Accepted:</span>
+            <span class="field-value">${distributor.agreementAccepted ? '✅ Yes' : '❌ No'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Application Status:</span>
+            <span class="field-value">
+              <span class="status-badge status-${distributor.status.toLowerCase()}">${distributor.status}</span>
+            </span>
+          </div>
+          <div class="field">
+            <span class="field-label">Submitted Date:</span>
+            <span class="field-value">${new Date(distributor.createdAt).toLocaleString()}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">Last Updated:</span>
+            <span class="field-value">${new Date(distributor.updatedAt).toLocaleString()}</span>
+          </div>
+        </div>
+
+        <div class="footer">
+          <p><strong>ZIP ZIP Distributor Application</strong></p>
+          <p>Application ID: ${distributor.id}</p>
+          <p>Generated on: ${new Date().toLocaleString()}</p>
+          <p>This is a computer-generated document and does not require a signature.</p>
+        </div>
+      </body>
+      </html>
+    `;
+
+    // Write content to the new window
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    
+    // Wait for content to load, then print
+    printWindow.onload = () => {
+      setTimeout(() => {
+        printWindow.print();
+        printWindow.close();
+        
+        toast.success('Distributor form printed successfully!');
+      }, 500);
+    };
+  };
+
+  // Function to handle downloading distributor form as PDF
+  const handleDownloadDistributorForm = async (distributor: DistributorApplication) => {
+    try {
+      // Create a temporary window for PDF generation
+      const pdfWindow = window.open('', '_blank');
+      
+      if (!pdfWindow) {
+        toast.error('Failed to open download window. Please allow pop-ups.');
+        return;
+      }
+
+      // Generate the same content as print but optimized for PDF
+      const pdfContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Distributor Application - ${distributor.fullName}</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.4; }
+            .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 20px; }
+            .section { margin-bottom: 20px; page-break-inside: avoid; }
+            .section-title { font-weight: bold; margin-bottom: 10px; background: #f5f5f5; padding: 8px; }
+            .field { margin-bottom: 8px; display: flex; justify-content: space-between; }
+            .field-label { font-weight: 600; min-width: 200px; }
+            .field-value { flex: 1; }
+            @media print { body { margin: 10px; } }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <h2>ZIP ZIP - Distributor Application</h2>
+            <p>Application ID: ${distributor.id.slice(-8)}</p>
+            <p>Date: ${new Date(distributor.createdAt).toLocaleDateString()}</p>
+            <p>Status: ${distributor.status}</p>
+          </div>
+          
+          <div class="section">
+            <div class="section-title">Personal Information</div>
+            <div class="field"><span class="field-label">Name:</span><span class="field-value">${distributor.fullName}</span></div>
+            <div class="field"><span class="field-label">Email:</span><span class="field-value">${distributor.email}</span></div>
+            <div class="field"><span class="field-label">Mobile:</span><span class="field-value">${distributor.mobileNumber}</span></div>
+            <div class="field"><span class="field-label">Address:</span><span class="field-value">${distributor.permanentAddress}</span></div>
+          </div>
+          
+          <div class="section">
+            <div class="section-title">Business Information</div>
+            <div class="field"><span class="field-label">Company:</span><span class="field-value">${distributor.companyName}</span></div>
+            <div class="field"><span class="field-label">Registration:</span><span class="field-value">${distributor.registrationNumber}</span></div>
+            <div class="field"><span class="field-label">PAN/VAT:</span><span class="field-value">${distributor.panVatNumber}</span></div>
+            <div class="field"><span class="field-label">Office Address:</span><span class="field-value">${distributor.officeAddress}</span></div>
+          </div>
+          
+          <div class="section">
+            <div class="section-title">Staff & Infrastructure</div>
+            <div class="field"><span class="field-label">Sales Executives:</span><span class="field-value">${distributor.salesManCount || 0}</span></div>
+            <div class="field"><span class="field-label">Drivers:</span><span class="field-value">${distributor.driverCount || 0}</span></div>
+            <div class="field"><span class="field-label">Storage Space:</span><span class="field-value">${distributor.storageSpace || 0} sq. ft.</span></div>
+          </div>
+          
+          <div style="margin-top: 30px; text-align: center; font-size: 12px; color: #666;">
+            <p>Generated by ZIP ZIP Distributor System</p>
+            <p>Application ID: ${distributor.id}</p>
+          </div>
+        </body>
+        </html>
+      `;
+
+      pdfWindow.document.write(pdfContent);
+      pdfWindow.document.close();
+      
+      // Wait for content to load, then trigger download
+      pdfWindow.onload = () => {
+        setTimeout(() => {
+          pdfWindow.print();
+          pdfWindow.close();
+          
+          toast.success('PDF download initiated! Check your downloads folder.');
+        }, 500);
+      };
+
+    } catch (error) {
+      console.error('Error downloading form:', error);
+      toast.error('Failed to download form. Please try again.');
     }
   };
 
@@ -322,6 +796,20 @@ export default function DistributorManagement() {
                     title="View Details"
                   >
                     <Eye className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => handlePrintDistributorForm(distributor)}
+                    className="p-1 text-gray-400 hover:text-green-600 transition-colors"
+                    title="Print Form"
+                  >
+                    <Printer className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => handleDownloadDistributorForm(distributor)}
+                    className="p-1 text-gray-400 hover:text-blue-600 transition-colors"
+                    title="Download PDF"
+                  >
+                    <Download className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => handleEditDistributor(distributor)}

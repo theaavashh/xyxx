@@ -35,6 +35,7 @@ import PurchaseReturn from '@/components/PurchaseReturn';
 import SalesReturn from '@/components/SalesReturn';
 import Invoice from '@/components/Invoice';
 import DistributorSalesViewer from '@/components/DistributorSalesViewer';
+import SalesTargets from '@/components/SalesTargets';
 
 // Placeholder components for modules not yet implemented
 function VATBillsComponent() {
@@ -212,6 +213,9 @@ export default function DashboardPage() {
       case 'distributor-sales':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
           <DistributorSalesViewer /> : <div>Access Denied</div>;
+      case 'sales-targets':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
+          <SalesTargets /> : <div>Access Denied</div>;
       
       default:
         return <Dashboard />;

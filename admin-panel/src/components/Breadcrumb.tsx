@@ -112,6 +112,10 @@ export function getBreadcrumbItems(activeTab: string): BreadcrumbItem[] {
     reports: [
       { label: 'Analytics', href: '/dashboard' },
       { label: 'Reports & Analytics', active: true }
+    ],
+    'sales-targets': [
+      { label: 'Sales', href: '/dashboard' },
+      { label: 'Sales Targets', active: true }
     ]
   };
 

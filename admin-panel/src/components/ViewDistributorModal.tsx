@@ -17,7 +17,23 @@ import {
   CheckCircle,
   XCircle,
   Clock,
-  AlertCircle
+  AlertCircle,
+  Briefcase,
+  Users,
+  Truck,
+  Handshake,
+  Award,
+  TrendingUp,
+  Shield,
+  Globe,
+  CreditCard,
+  Package,
+  Target,
+  Star,
+  ChevronRight,
+  Info,
+  FileCheck,
+  Building2
 } from 'lucide-react';
 import { Distributor } from '@/types';
 import { DistributorApplication } from '@/lib/distributorApi';
@@ -139,33 +155,37 @@ export default function ViewDistributorModal({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/40 z-[60]"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
           />
           
           {/* Modal */}
           <motion.div
-            initial={{ y: '100vh', opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: '100vh', opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed top-[2%] left-1/2 transform -translate-x-1/2 w-full max-w-4xl mx-4 bg-white rounded-2xl shadow-xl z-[70] max-h-[95vh] overflow-hidden flex flex-col"
+            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl mx-4 bg-white rounded-3xl shadow-2xl z-[70] max-h-[90vh] overflow-hidden flex flex-col"
           >
-            {/* Header */}
-            <div className="relative bg-white p-8 text-gray-900 border-b border-gray-200">
-              <div className="absolute inset-0 bg-gray-50/50"></div>
+            {/* Header with Gradient Background */}
+            <div className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
+              <div className="absolute inset-0 bg-black/20"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full -ml-24 -mb-24"></div>
+              
               <div className="relative flex items-center justify-between">
                 <div className="flex items-center space-x-6">
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center">
-                    <User className="h-8 w-8 text-gray-600" />
+                  <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border-2 border-white/30">
+                    <User className="h-10 w-10 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-1">
+                    <h2 className="text-3xl font-bold text-white mb-2">
                       {distributor.fullName}
                     </h2>
-                    <p className="text-gray-600 text-lg">
-                      {distributor.companyName}
-                    </p>
-                    <div className="flex items-center mt-2 space-x-4 text-sm text-gray-500">
+                    <div className="flex items-center space-x-3 text-white/90">
+                      <Building2 className="h-5 w-5" />
+                      <span className="text-lg font-medium">{distributor.companyName}</span>
+                    </div>
+                    <div className="flex items-center mt-3 space-x-6 text-white/80 text-sm">
                       <div className="flex items-center">
                         <Mail className="h-4 w-4 mr-2" />
                         {distributor.email}
@@ -178,13 +198,13 @@ export default function ViewDistributorModal({
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold ${getStatusColor(distributor.status)} border border-gray-200`}>
+                  <div className={`inline-flex items-center px-6 py-3 rounded-full text-sm font-bold bg-white/20 backdrop-blur-sm border-2 border-white/30`}>
                     {getStatusIcon(distributor.status)}
-                    <span className="ml-2">{distributor.status}</span>
+                    <span className="ml-2 text-white">{distributor.status}</span>
                   </div>
                   <button
                     onClick={onClose}
-                    className="p-3 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-all duration-200"
+                    className="p-3 text-white/80 hover:text-white hover:bg-white/20 rounded-xl transition-all duration-200 backdrop-blur-sm"
                   >
                     <X className="h-6 w-6" />
                   </button>
@@ -192,344 +212,357 @@ export default function ViewDistributorModal({
               </div>
             </div>
 
-            {/* Content */}
-            <div className="flex-1 overflow-y-auto p-8 space-y-8 bg-gray-50">
-              {/* Personal Details */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mr-4">
-                    <User className="h-5 w-5 text-gray-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900">Personal Information</h3>
-                    <div className="mt-2 border-b-4 border-b-gray-300 w-full"></div>
+{/* Content */}
+            <div className="flex-1 overflow-y-auto bg-gradient-to-br from-gray-50 to-gray-100">
+              {/* Quick Stats Cards */}
+              <div className="p-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-500 font-medium">Application ID</p>
+                      <p className="text-lg font-bold text-gray-900">{distributor.id.slice(-8).toUpperCase()}</p>
+                    </div>
+                    <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
+                      <Award className="h-6 w-6 text-indigo-600" />
+                    </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Full Name</label>
-                    <p className="text-lg text-gray-900 font-medium">
-                      {distributor.fullName}
-                    </p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Email</label>
-                    <div className="flex items-center">
-                      <Mail className="h-4 w-4 text-gray-400 mr-2" />
-                      <a 
-                        href={`mailto:${distributor.email}`}
-                        className="text-indigo-600 hover:text-indigo-800 font-medium"
-                      >
-                        {distributor.email}
-                      </a>
+                
+                <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-500 font-medium">Business Type</p>
+                      <p className="text-lg font-bold text-gray-900">{distributor.businessType?.replace('_', ' ') || 'N/A'}</p>
+                    </div>
+                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                      <Briefcase className="h-6 w-6 text-purple-600" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Phone Number</label>
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 text-gray-400 mr-2" />
-                      <a 
-                        href={`tel:${distributor.mobileNumber}`}
-                        className="text-indigo-600 hover:text-indigo-800 font-medium"
-                      >
-                        {distributor.mobileNumber}
-                      </a>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-500 font-medium">Staff Count</p>
+                      <p className="text-lg font-bold text-gray-900">{(distributor.salesManCount || 0) + (distributor.driverCount || 0) + (distributor.helperCount || 0)}</p>
+                    </div>
+                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                      <Users className="h-6 w-6 text-green-600" />
                     </div>
                   </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Age</label>
-                    <p className="text-lg text-gray-900 font-medium">
-                      {distributor.age} years
-                    </p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Gender</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.gender}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Citizenship Number</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.citizenshipNumber}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Issued District</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.issuedDistrict}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Permanent Address</label>
-                    <div className="flex items-start">
-                      <MapPin className="h-4 w-4 text-gray-400 mr-2 mt-1" />
-                      <p className="text-lg text-gray-900 font-medium">{distributor.permanentAddress}</p>
+                </div>
+                
+                <div className="bg-white rounded-2xl p-4 shadow-lg border border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm text-gray-500 font-medium">Storage Space</p>
+                      <p className="text-lg font-bold text-gray-900">{distributor.storageSpace || 0} sq ft</p>
                     </div>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Temporary Address</label>
-                    <div className="flex items-start">
-                      <MapPin className="h-4 w-4 text-gray-400 mr-2 mt-1" />
-                      <p className="text-lg text-gray-900 font-medium">{distributor.temporaryAddress || 'Not provided'}</p>
+                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                      <Package className="h-6 w-6 text-orange-600" />
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Company Details */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mr-4">
-                    <Building className="h-5 w-5 text-gray-900" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900">Company Information</h3>
-                    <div className="mt-2 border-b-4 border-b-gray-300 w-full"></div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Company Name</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.companyName}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Business Type</label>
-                    <p className="text-lg text-gray-900 font-medium">
-                      {distributor.businessType}
-                    </p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Registration Number</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.registrationNumber}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">PAN/VAT Number</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.panVatNumber}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Operating Area</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.operatingArea}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Desired Distributor Area</label>
-                    <p className="text-lg text-gray-900 font-medium">{distributor.desiredDistributorArea}</p>
-                  </div>
-                  <div className="space-y-1 md:col-span-2">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide">Office Address</label>
-                    <div className="flex items-start">
-                      <MapPin className="h-4 w-4 text-gray-400 mr-2 mt-1" />
-                      <p className="text-lg text-gray-900 font-medium">{distributor.officeAddress}</p>
+              {/* Main Content Grid */}
+              <div className="p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Personal Information Card */}
+                <div className="lg:col-span-1 bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <User className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Personal Info</h3>
+                        <p className="text-blue-100 text-sm">Applicant Details</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="space-y-1 md:col-span-2">
-                    <label className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-4 block">Business Information</label>
-                    <div className="overflow-hidden border border-gray-200 rounded-xl">
-                      <table className="w-full">
-                        <thead className="bg-gray-50">
-                          <tr>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Field</th>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Value</th>
-                          </tr>
-                        </thead>
-                        <tbody className="bg-white divide-y divide-gray-200">
-                          <tr>
-                            <td className="px-4 py-3 text-sm font-medium text-gray-500">Current Business</td>
-                            <td className="px-4 py-3 text-sm text-gray-900">{distributor.currentBusiness}</td>
-                          </tr>
-                          <tr>
-                            <td className="px-4 py-3 text-sm font-medium text-gray-500">Product Category</td>
-                            <td className="px-4 py-3 text-sm text-gray-900">{distributor.productCategory}</td>
-                          </tr>
-                          <tr>
-                            <td className="px-4 py-3 text-sm font-medium text-gray-500">Years in Business</td>
-                            <td className="px-4 py-3 text-sm text-gray-900">{distributor.yearsInBusiness} years</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <User className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Full Name</p>
+                        <p className="text-gray-900 font-semibold">{distributor.fullName}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Mail className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Email</p>
+                        <a href={`mailto:${distributor.email}`} className="text-blue-600 hover:text-blue-800 font-semibold">{distributor.email}</a>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Phone className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Phone</p>
+                        <a href={`tel:${distributor.mobileNumber}`} className="text-blue-600 hover:text-blue-800 font-semibold">{distributor.mobileNumber}</a>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Address</p>
+                        <p className="text-gray-900 font-semibold">{distributor.permanentAddress}</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium uppercase">Age</p>
+                        <p className="text-gray-900 font-semibold">{distributor.age} years</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-gray-500 font-medium uppercase">Gender</p>
+                        <p className="text-gray-900 font-semibold">{distributor.gender}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Business Information Card */}
+                <div className="lg:col-span-1 bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <Building2 className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Business Info</h3>
+                        <p className="text-purple-100 text-sm">Company Details</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <Building2 className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Company Name</p>
+                        <p className="text-gray-900 font-semibold">{distributor.companyName}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Briefcase className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Business Type</p>
+                        <p className="text-gray-900 font-semibold">{distributor.businessType?.replace('_', ' ') || 'N/A'}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <FileText className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Registration</p>
+                        <p className="text-gray-900 font-semibold">{distributor.registrationNumber || 'N/A'}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CreditCard className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">PAN/VAT</p>
+                        <p className="text-gray-900 font-semibold">{distributor.panVatNumber || 'N/A'}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="h-5 w-5 text-gray-400 mt-1" />
+                      <div className="flex-1">
+                        <p className="text-xs text-gray-500 font-medium uppercase">Office Address</p>
+                        <p className="text-gray-900 font-semibold">{distributor.officeAddress}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Operations & Infrastructure Card */}
+                <div className="lg:col-span-1 bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <TrendingUp className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Operations</h3>
+                        <p className="text-green-100 text-sm">Infrastructure</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div className="bg-gray-50 rounded-2xl p-4">
+                      <p className="text-xs text-gray-500 font-medium uppercase mb-3">Staff Team</p>
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Sales Executives</span>
+                          <span className="font-bold text-gray-900">{distributor.salesManCount || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Drivers</span>
+                          <span className="font-bold text-gray-900">{distributor.driverCount || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Helpers</span>
+                          <span className="font-bold text-gray-900">{distributor.helperCount || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Accountants</span>
+                          <span className="font-bold text-gray-900">{distributor.accountantCount || 0}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-2xl p-4">
+                      <p className="text-xs text-gray-500 font-medium uppercase mb-3">Vehicles</p>
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Trucks</span>
+                          <span className="font-bold text-gray-900">{distributor.truckCount || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Four Wheelers</span>
+                          <span className="font-bold text-gray-900">{distributor.fourWheelerCount || 0}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-gray-600">Motorcycles</span>
+                          <span className="font-bold text-gray-900">{distributor.motorcycleCount || 0}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-2xl p-4">
+                      <p className="text-xs text-gray-500 font-medium uppercase mb-1">Storage</p>
+                      <p className="text-2xl font-bold text-gray-900">{distributor.storageSpace || 0}</p>
+                      <p className="text-xs text-gray-500">square feet</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Documents */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mr-4">
-                    <FileText className="h-5 w-5 text-gray-900" />
+              {/* Documents Section */}
+              <div className="px-6 pb-6">
+                <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+                  <div className="bg-gradient-to-r from-orange-500 to-orange-600 p-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <FileText className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-white">Documents</h3>
+                        <p className="text-orange-100 text-sm">Application Files</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900">Documents</h3>
-                    <div className="mt-2 border-b-4 border-b-gray-300 w-full"></div>
+                  <div className="p-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {distributor.citizenshipId && (
+                        <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-4 border border-blue-200 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                              <Shield className="h-6 w-6 text-white" />
+                            </div>
+                            <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full font-medium">Required</span>
+                          </div>
+                          <h4 className="font-bold text-gray-900 mb-1">Citizenship</h4>
+                          <p className="text-sm text-gray-600 mb-3">Identity Document</p>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => previewDocument({ name: 'Citizenship Document', url: distributor.citizenshipId! })}
+                              className="flex-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-xl text-sm font-medium transition-colors flex items-center justify-center"
+                            >
+                              <Eye className="h-4 w-4 mr-1" /> Preview
+                            </button>
+                            <button
+                              onClick={() => downloadDocument({ name: 'Citizenship Document', url: distributor.citizenshipId })}
+                              className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 rounded-xl text-sm font-medium transition-colors flex items-center justify-center"
+                            >
+                              <Download className="h-4 w-4 mr-1" /> Download
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {distributor.companyRegistration && (
+                        <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-200 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center">
+                              <Building2 className="h-6 w-6 text-white" />
+                            </div>
+                            <span className="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full font-medium">Required</span>
+                          </div>
+                          <h4 className="font-bold text-gray-900 mb-1">Company Reg.</h4>
+                          <p className="text-sm text-gray-600 mb-3">Business Registration</p>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => previewDocument({ name: 'Company Registration', url: distributor.companyRegistration! })}
+                              className="flex-1 bg-purple-500 hover:bg-purple-600 text-white px-3 py-2 rounded-xl text-sm font-medium transition-colors flex items-center justify-center"
+                            >
+                              <Eye className="h-4 w-4 mr-1" /> Preview
+                            </button>
+                            <button
+                              onClick={() => downloadDocument({ name: 'Company Registration', url: distributor.companyRegistration })}
+                              className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 rounded-xl text-sm font-medium transition-colors flex items-center justify-center"
+                            >
+                              <Download className="h-4 w-4 mr-1" /> Download
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {distributor.panVatRegistration && (
+                        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200 hover:shadow-lg transition-all duration-200">
+                          <div className="flex items-center justify-between mb-3">
+                            <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                              <CreditCard className="h-6 w-6 text-white" />
+                            </div>
+                            <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium">Required</span>
+                          </div>
+                          <h4 className="font-bold text-gray-900 mb-1">PAN/VAT</h4>
+                          <p className="text-sm text-gray-600 mb-3">Tax Registration</p>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => previewDocument({ name: 'PAN/VAT Registration', url: distributor.panVatRegistration! })}
+                              className="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-xl text-sm font-medium transition-colors flex items-center justify-center"
+                            >
+                              <Eye className="h-4 w-4 mr-1" /> Preview
+                            </button>
+                            <button
+                              onClick={() => downloadDocument({ name: 'PAN/VAT Registration', url: distributor.panVatRegistration })}
+                              className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-2 rounded-xl text-sm font-medium transition-colors flex items-center justify-center"
+                            >
+                              <Download className="h-4 w-4 mr-1" /> Download
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {distributor.citizenshipId && (
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-md transition-all duration-200 border border-gray-200">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mr-4">
-                            {getFileTypeIcon(distributor.citizenshipId)}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900 text-lg">Citizenship Document</p>
-                            <p className="text-sm text-gray-500">Citizenship ID</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <button
-                            onClick={() => previewDocument({ name: 'Citizenship Document', url: distributor.citizenshipId! })}
-                            className="p-3 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
-                            title="Preview Document"
-                          >
-                            <Eye className="h-5 w-5" />
-                          </button>
-                          <button
-                            onClick={() => downloadDocument({ name: 'Citizenship Document', url: distributor.citizenshipId })}
-                            className="p-3 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-200"
-                            title="Download Document"
-                          >
-                            <Download className="h-5 w-5" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {distributor.companyRegistration && (
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-md transition-all duration-200 border border-gray-200">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mr-4">
-                            {getFileTypeIcon(distributor.companyRegistration)}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900 text-lg">Company Registration</p>
-                            <p className="text-sm text-gray-500">Registration Document</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <button
-                            onClick={() => previewDocument({ name: 'Company Registration', url: distributor.companyRegistration! })}
-                            className="p-3 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
-                            title="Preview Document"
-                          >
-                            <Eye className="h-5 w-5" />
-                          </button>
-                          <button
-                            onClick={() => downloadDocument({ name: 'Company Registration', url: distributor.companyRegistration })}
-                            className="p-3 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-200"
-                            title="Download Document"
-                          >
-                            <Download className="h-5 w-5" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  {distributor.panVatRegistration && (
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 hover:shadow-md transition-all duration-200 border border-gray-200">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center">
-                          <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mr-4">
-                            {getFileTypeIcon(distributor.panVatRegistration)}
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900 text-lg">PAN/VAT Registration</p>
-                            <p className="text-sm text-gray-500">Tax Document</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <button
-                            onClick={() => previewDocument({ name: 'PAN/VAT Registration', url: distributor.panVatRegistration! })}
-                            className="p-3 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
-                            title="Preview Document"
-                          >
-                            <Eye className="h-5 w-5" />
-                          </button>
-                          <button
-                            onClick={() => downloadDocument({ name: 'PAN/VAT Registration', url: distributor.panVatRegistration })}
-                            className="p-3 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all duration-200"
-                            title="Download Document"
-                          >
-                            <Download className="h-5 w-5" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               </div>
-
-              {/* Timeline */}
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mr-4">
-                    <Calendar className="h-5 w-5 text-gray-900" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900">Application Timeline</h3>
-                    <div className="mt-2 border-b-4 border-b-gray-300 w-full"></div>
-                  </div>
-                </div>
-                <div className="space-y-4 ml-6">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
-                      <User className="h-4 w-4 text-gray-600" />
-                    </div>
-                    <div className="ml-4">
-                      <p className="font-medium text-gray-900">Application Submitted</p>
-                      <p className="text-sm text-gray-500">
-                        {formatDate(new Date(distributor.createdAt))}
-                      </p>
-                    </div>
-                  </div>
-
-                  {distributor.status === 'APPROVED' && distributor.reviewedAt && (
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
-                        <CheckCircle className="h-4 w-4 text-gray-600" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-medium text-gray-900">Application Approved</p>
-                        <p className="text-sm text-gray-500">
-                          {formatDate(new Date(distributor.reviewedAt))}
-                          {distributor.reviewedBy && (
-                            <span className="ml-1">by {distributor.reviewedBy.fullName}</span>
-                          )}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {distributor.status === 'REJECTED' && distributor.reviewedAt && (
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center">
-                        <XCircle className="h-4 w-4 text-gray-600" />
-                      </div>
-                      <div className="ml-4">
-                        <p className="font-medium text-gray-900">Application Rejected</p>
-                        <p className="text-sm text-gray-500">
-                          {formatDate(new Date(distributor.reviewedAt))}
-                        </p>
-                        {distributor.reviewNotes && (
-                          <div className="mt-2 p-3 bg-red-50 border border-red-200 rounded-lg">
-                            <p className="text-sm text-red-800">
-                              <strong>Reason:</strong> {distributor.reviewNotes}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
+</div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-50 to-gray-100 border-t border-gray-200">
-              <div className="text-sm text-gray-500">
-                Application ID: {distributor.id.slice(-8).toUpperCase()}
+            <div className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-900 to-gray-800 border-t border-gray-700">
+              <div className="flex items-center space-x-4">
+                <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                  <Info className="h-5 w-5 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-400">Application ID</p>
+                  <p className="text-white font-bold">{distributor.id.slice(-8).toUpperCase()}</p>
+                </div>
               </div>
-              <button
-                onClick={onClose}
-                className="px-8 py-3 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                Close
-              </button>
+              <div className="flex items-center space-x-3">
+                <div className="text-right">
+                  <p className="text-xs text-gray-400">Submitted</p>
+                  <p className="text-sm text-white font-medium">{formatDate(new Date(distributor.createdAt))}</p>
+                </div>
+                <button
+                  onClick={onClose}
+                  className="px-8 py-3 text-sm font-bold text-white bg-gradient-to-r from-red-500 to-pink-500 rounded-xl hover:from-red-600 hover:to-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center space-x-2"
+                >
+                  <span>Close</span>
+                  <ChevronRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </motion.div>
 

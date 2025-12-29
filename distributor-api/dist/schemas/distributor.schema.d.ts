@@ -871,18 +871,12 @@ export declare const ApplicationStatusSchema: z.ZodEnum<["PENDING", "UNDER_REVIE
 export declare const ApplicationUpdateSchema: z.ZodObject<{
     status: z.ZodEnum<["PENDING", "UNDER_REVIEW", "APPROVED", "REJECTED", "REQUIRES_CHANGES"]>;
     reviewNotes: z.ZodOptional<z.ZodString>;
-    reviewedBy: z.ZodString;
-    reviewedAt: z.ZodDefault<z.ZodDate>;
 }, "strip", z.ZodTypeAny, {
     status: "PENDING" | "UNDER_REVIEW" | "APPROVED" | "REJECTED" | "REQUIRES_CHANGES";
-    reviewedAt: Date;
-    reviewedBy: string;
     reviewNotes?: string | undefined;
 }, {
     status: "PENDING" | "UNDER_REVIEW" | "APPROVED" | "REJECTED" | "REQUIRES_CHANGES";
-    reviewedBy: string;
     reviewNotes?: string | undefined;
-    reviewedAt?: Date | undefined;
 }>;
 export declare const ApplicationUpdateDevSchema: z.ZodObject<{
     status: z.ZodEnum<["PENDING", "UNDER_REVIEW", "APPROVED", "REJECTED", "REQUIRES_CHANGES"]>;

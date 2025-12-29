@@ -351,32 +351,54 @@ exports.saveDistributorCredentials = (0, error_middleware_1.asyncHandler)(async 
     }
     const { id } = req.params;
     const { username, email, password, categories = [] } = req.body;
-    const distributor = await prisma.user.findUnique({
+    let distributor = await prisma.user.findUnique({
         where: { id },
-        select: { id: true, role: true }
+        select: { id: true, role: true, applicationId: true }
     });
+    let isCreatingNewUser = false;
     if (!distributor) {
-        const response = {
-            success: false,
-            message: 'डिस्ट्रिब्युटर फेला परेन',
-            error: 'DISTRIBUTOR_NOT_FOUND'
-        };
-        res.status(404).json(response);
-        return;
+        const application = await prisma.distributorApplication.findUnique({
+            where: { id },
+            select: {
+                id: true,
+                status: true,
+                fullName: true,
+                email: true,
+                mobileNumber: true,
+                permanentAddress: true,
+                citizenshipNumber: true,
+                companyName: true,
+                businessType: true,
+                registrationNumber: true,
+                panVatNumber: true,
+                officeAddress: true,
+                desiredDistributorArea: true
+            }
+        });
+        if (!application) {
+            const response = {
+                success: false,
+                message: 'डिस्ट्रिब्युटर वा आवेदन फेला परेन',
+                error: 'DISTRIBUTOR_NOT_FOUND'
+            };
+            res.status(404).json(response);
+            return;
+        }
+        if (application.status !== 'APPROVED') {
+            const response = {
+                success: false,
+                message: 'आवेदन पहिले अनुमोदन हुनुपर्छ',
+                error: 'APPLICATION_NOT_APPROVED'
+            };
+            res.status(400).json(response);
+            return;
+        }
+        isCreatingNewUser = true;
     }
-    if (distributor.role !== 'DISTRIBUTOR') {
-        const response = {
-            success: false,
-            message: 'यो युजर डिस्ट्रिब्युटर होइन',
-            error: 'INVALID_USER_TYPE'
-        };
-        res.status(400).json(response);
-        return;
-    }
-    const existingUser = await prisma.user.findFirst({
+    const existingUserCheck = await prisma.user.findFirst({
         where: {
             AND: [
-                { id: { not: id } },
+                { id: { not: isCreatingNewUser ? id : undefined } },
                 {
                     OR: [
                         { username },
@@ -386,7 +408,7 @@ exports.saveDistributorCredentials = (0, error_middleware_1.asyncHandler)(async 
             ]
         }
     });
-    if (existingUser) {
+    if (existingUserCheck) {
         const response = {
             success: false,
             message: 'यो युजरनेम वा इमेल पहिले नै प्रयोग भएको छ',
@@ -396,48 +418,142 @@ exports.saveDistributorCredentials = (0, error_middleware_1.asyncHandler)(async 
         return;
     }
     const hashedPassword = await bcryptjs_1.default.hash(password, 10);
-    const result = await prisma.$transaction(async (tx) => {
-        const updatedDistributor = await tx.user.update({
-            where: { id },
-            data: {
-                username,
-                email,
-                password: hashedPassword,
-                updatedAt: new Date()
-            },
-            select: {
-                id: true,
-                username: true,
-                email: true,
-                isActive: true,
-                createdAt: true,
-                updatedAt: true
+    let result;
+    if (isCreatingNewUser) {
+        const application = await prisma.distributorApplication.findUnique({
+            where: { id }
+        });
+        if (!application) {
+            const response = {
+                success: false,
+                message: 'आवेदन फेला परेन',
+                error: 'APPLICATION_NOT_FOUND'
+            };
+            res.status(404).json(response);
+            return;
+        }
+        result = await prisma.$transaction(async (tx) => {
+            const newDistributor = await tx.user.create({
+                data: {
+                    email: email || application.email,
+                    username: username,
+                    fullName: application.fullName,
+                    password: hashedPassword,
+                    role: 'DISTRIBUTOR',
+                    isActive: true,
+                    isVerified: true,
+                    address: application.permanentAddress,
+                    department: 'Distributor',
+                    position: 'Distributor',
+                    applicationId: application.id,
+                    distributorProfile: {
+                        create: {
+                            firstName: application.fullName.split(' ')[0] || 'Unknown',
+                            lastName: application.fullName.split(' ').slice(1).join(' ') || 'Distributor',
+                            phoneNumber: application.mobileNumber,
+                            address: application.permanentAddress,
+                            dateOfBirth: new Date(2000, 0, 1),
+                            nationalId: application.citizenshipNumber,
+                            companyName: application.companyName,
+                            companyType: application.businessType,
+                            registrationNumber: application.registrationNumber,
+                            panNumber: application.panVatNumber,
+                            vatNumber: application.panVatNumber,
+                            establishedDate: new Date(),
+                            companyAddress: application.officeAddress,
+                            website: '',
+                            description: `Distributor for ${application.desiredDistributorArea}`,
+                            status: 'ACTIVE',
+                            documents: JSON.stringify({}),
+                            createdBy: req.user?.id || 'system',
+                            approvedBy: req.user?.id || 'system',
+                            approvedAt: new Date()
+                        }
+                    }
+                },
+                select: {
+                    id: true,
+                    username: true,
+                    email: true,
+                    isActive: true,
+                    createdAt: true,
+                    updatedAt: true
+                }
+            });
+            if (categories && categories.length > 0) {
+                const categoryAssignments = categories.map((categoryId) => ({
+                    distributorId: newDistributor.id,
+                    categoryId,
+                    assignedBy: req.user?.id || 'system'
+                }));
+                await tx.distributorCategory.createMany({
+                    data: categoryAssignments
+                });
             }
+            return newDistributor;
         });
-        await tx.distributorCategory.deleteMany({
-            where: { distributorId: id }
+    }
+    else {
+        if (!distributor || distributor.role !== 'DISTRIBUTOR') {
+            const response = {
+                success: false,
+                message: 'यो युजर डिस्ट्रिब्युटर होइन',
+                error: 'INVALID_USER_TYPE'
+            };
+            res.status(400).json(response);
+            return;
+        }
+        result = await prisma.$transaction(async (tx) => {
+            const updatedDistributor = await tx.user.update({
+                where: { id },
+                data: {
+                    username,
+                    email,
+                    password: hashedPassword,
+                    updatedAt: new Date()
+                },
+                select: {
+                    id: true,
+                    username: true,
+                    email: true,
+                    isActive: true,
+                    createdAt: true,
+                    updatedAt: true
+                }
+            });
+            await tx.distributorCategory.deleteMany({
+                where: { distributorId: id }
+            });
+            if (categories && categories.length > 0) {
+                const categoryAssignments = categories.map((categoryId) => ({
+                    distributorId: id,
+                    categoryId,
+                    assignedBy: req.user?.id || 'system'
+                }));
+                await tx.distributorCategory.createMany({
+                    data: categoryAssignments
+                });
+            }
+            return updatedDistributor;
         });
-        if (categories && categories.length > 0) {
-            const categoryAssignments = categories.map((categoryId) => ({
-                distributorId: id,
-                categoryId,
-                assignedBy: req.user?.id || 'system'
-            }));
-            await tx.distributorCategory.createMany({
-                data: categoryAssignments
+    }
+    try {
+        let application;
+        if (isCreatingNewUser) {
+            application = await prisma.distributorApplication.findUnique({
+                where: { id }
             });
         }
-        return updatedDistributor;
-    });
-    try {
-        const application = await prisma.distributorApplication.findFirst({
-            where: {
-                OR: [
-                    { email: result.email },
-                    { fullName: { contains: result.username, mode: 'insensitive' } }
-                ]
-            }
-        });
+        else {
+            application = await prisma.distributorApplication.findFirst({
+                where: {
+                    OR: [
+                        { email: result.email },
+                        { fullName: { contains: result.username, mode: 'insensitive' } }
+                    ]
+                }
+            });
+        }
         if (application) {
             const emailData = {
                 applicationId: application.id,

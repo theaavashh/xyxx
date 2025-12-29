@@ -7,7 +7,7 @@ export async function testApiConnection() {
     console.log('Testing API connection...');
     
     // Test health endpoint
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api';
     const healthResponse = await fetch(`${baseUrl}/health`);
     const healthData = await healthResponse.json();
     console.log('Health check:', healthData);

@@ -2,13 +2,16 @@
 
 import { useState } from 'react';
 import { AuthProvider, useAuth } from '@/components/AuthProvider';
-import LoginForm from '@/components/LoginForm';
+import { EnhancedLoginForm } from '@/components/EnhancedLoginForm';
 import DashboardLayout from '@/components/DashboardLayout';
-import Dashboard from '@/components/Dashboard';
-import Products from '@/components/Products';
+import { EnhancedDashboard } from '@/components/EnhancedDashboard';
+import { DailySalesLogBook } from '@/components/DailySalesLogBook';
+import { ProductOrdering } from '@/components/ProductOrdering';
 import Orders from '@/components/Orders';
 import Transactions from '@/components/Transactions';
 import CurrentSales from '@/components/CurrentSales';
+import ReportsPage from '@/components/ReportsPage';
+import SettingsPage from '@/components/SettingsPage';
 
 function AppContent() {
   const { user, isLoading } = useAuth();
@@ -23,15 +26,15 @@ function AppContent() {
   }
 
   if (!user) {
-    return <LoginForm />;
+    return <EnhancedLoginForm />;
   }
 
   const renderActiveComponent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <Dashboard />;
+        return <EnhancedDashboard />;
       case 'products':
-        return <Products />;
+        return <ProductOrdering />;
       case 'orders':
         return <Orders />;
       case 'transactions':
@@ -39,43 +42,13 @@ function AppContent() {
       case 'current-sales':
         return <CurrentSales />;
       case 'sales-log':
-        return (
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Sales Log</h1>
-              <p className="text-gray-600">Track your daily sales activities</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
-              <p className="text-gray-500">Sales log module coming soon...</p>
-            </div>
-          </div>
-        );
+        return <DailySalesLogBook />;
       case 'reports':
-        return (
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Reports</h1>
-              <p className="text-gray-600">View your performance reports</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
-              <p className="text-gray-500">Reports module coming soon...</p>
-            </div>
-          </div>
-        );
+        return <ReportsPage />;
       case 'settings':
-        return (
-          <div className="space-y-6">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Settings</h1>
-              <p className="text-gray-600">Manage your account settings</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
-              <p className="text-gray-500">Settings module coming soon...</p>
-            </div>
-          </div>
-        );
+        return <SettingsPage />;
       default:
-        return <Dashboard />;
+        return <EnhancedDashboard />;
     }
   };
 

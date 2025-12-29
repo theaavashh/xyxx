@@ -1,0 +1,309 @@
+2025-10-09T06:32:15.245Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:35:56.849Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:35:59.470Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T06:35:59.470Z [INFO] 🌍 Environment: development
+2025-10-09T06:35:59.471Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T06:35:59.471Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T06:37:16.685Z [ERROR] POST /api/auth/login - 500 - 807.933ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":500,"responseTime":807.933}
+2025-10-09T06:37:33.405Z [ERROR] POST /api/auth/login - 401 - 27.127ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":27.127}
+2025-10-09T06:39:43.487Z [ERROR] POST /api/auth/login - 500 - 430.496ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":500,"responseTime":430.496}
+2025-10-09T06:40:10.997Z [ERROR] POST /api/auth/login - 500 - 421.358ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":500,"responseTime":421.358}
+2025-10-09T06:40:37.390Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:40:40.045Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-09T06:41:23.283Z [ERROR] POST /api/auth/login - 500 - 406.37ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":500,"responseTime":406.37}
+2025-10-09T06:43:42.549Z [ERROR] POST /api/auth/login - 429 - 2.435ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":429,"responseTime":2.435}
+2025-10-09T06:44:06.317Z [ERROR] POST /api/auth/login - 429 - 2.905ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":429,"responseTime":2.905}
+2025-10-09T06:45:08.834Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:45:09.386Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:45:24.427Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:45:25.343Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:45:33.817Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T06:45:33.817Z [INFO] 🌍 Environment: development
+2025-10-09T06:45:33.818Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T06:45:33.819Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T06:45:33.825Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-09T06:45:40.387Z [INFO] POST /api/auth/login - 200 - 437.256ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":437.256}
+2025-10-09T06:45:54.512Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 258.512ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":258.512}
+2025-10-09T06:45:54.551Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 28.058ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":28.058}
+2025-10-09T06:45:54.666Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 89.965ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":89.965}
+2025-10-09T06:45:58.186Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 9.361ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":9.361}
+2025-10-09T06:46:04.763Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 25.196ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":25.196}
+2025-10-09T06:48:35.109Z [ERROR] GET /api/applications/dev - 401 - 0.744ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":401,"responseTime":0.744}
+2025-10-09T06:49:25.038Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:49:25.375Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:49:31.205Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T06:49:31.205Z [INFO] 🌍 Environment: development
+2025-10-09T06:49:31.206Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T06:49:31.206Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T06:49:31.604Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-09T06:49:41.727Z [INFO] POST /api/auth/login - 200 - 433.629ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":433.629}
+2025-10-09T06:49:45.564Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 280.344ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":280.344}
+2025-10-09T06:49:45.604Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 24.845ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":24.845}
+2025-10-09T06:49:45.667Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 43.22ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":43.22}
+2025-10-09T06:49:49.123Z [ERROR] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 404 - 22.788ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":404,"responseTime":22.788}
+2025-10-09T06:49:55.188Z [ERROR] GET /api/applications/dev - 401 - 0.253ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":401,"responseTime":0.253}
+2025-10-09T06:50:50.547Z [ERROR] GET /api/applications/dev - 401 - 1.551ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":401,"responseTime":1.551}
+2025-10-09T06:51:04.127Z [INFO] GET /api/health - 200 - 0.876ms | Data: {"method":"GET","url":"/api/health","statusCode":200,"responseTime":0.876}
+2025-10-09T06:51:10.213Z [INFO] GET /api/categories - 200 - 433.283ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":433.283}
+2025-10-09T06:52:43.326Z [ERROR] GET /api/applications/dev - 401 - 1.407ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":401,"responseTime":1.407}
+2025-10-09T06:53:09.658Z [INFO] GET /api - 200 - 0.575ms | Data: {"method":"GET","url":"/api","statusCode":200,"responseTime":0.575}
+2025-10-09T06:53:43.635Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:53:44.095Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:53:47.749Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T06:53:47.751Z [INFO] 🌍 Environment: development
+2025-10-09T06:53:47.752Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T06:53:47.752Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T06:53:47.752Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-09T06:53:47.959Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-09T06:54:13.331Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:54:19.397Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-09T06:55:51.417Z [INFO] GET /api/applications/dev - 200 - 247.309ms | Data: {"method":"GET","url":"/api/applications/dev","statusCode":200,"responseTime":247.309}
+2025-10-09T06:56:19.617Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 20.45ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":20.45}
+2025-10-09T06:56:19.643Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 11.976ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":11.976}
+2025-10-09T06:56:19.677Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 19.978ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":19.978}
+2025-10-09T06:56:33.111Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:56:33.163Z [INFO] Mailjet service initialized successfully
+2025-10-09T06:56:37.636Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T06:56:37.636Z [INFO] 🌍 Environment: development
+2025-10-09T06:56:37.637Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T06:56:37.637Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T06:56:37.637Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-09T06:56:37.786Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-10-09T06:56:37.999Z [INFO] GET /api/products - 200 - 225.63ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":225.63}
+2025-10-09T06:56:38.027Z [INFO] GET /api/products - 304 - 12.109ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":12.109}
+2025-10-09T06:57:11.681Z [INFO] GET /api/products - 200 - 3.617ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":3.617}
+2025-10-09T06:59:11.439Z [INFO] GET /api/products - 200 - 2.407ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":2.407}
+2025-10-09T06:59:20.084Z [INFO] GET /api/products - 304 - 5.413ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":5.413}
+2025-10-09T06:59:20.148Z [INFO] GET /api/products - 304 - 23.715ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":23.715}
+2025-10-09T06:59:42.170Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 99.336ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":99.336}
+2025-10-09T06:59:42.194Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 16.653ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":16.653}
+2025-10-09T06:59:42.249Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 42.986ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":42.986}
+2025-10-09T06:59:44.127Z [INFO] GET /api/products - 304 - 2.274ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.274}
+2025-10-09T06:59:44.131Z [INFO] GET /api/products - 304 - 1.89ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":1.89}
+2025-10-09T07:00:45.058Z [INFO] GET /api/products - 200 - 1.982ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":1.982}
+2025-10-09T07:03:10.718Z [INFO] GET /api/products - 200 - 47.114ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":47.114}
+2025-10-09T07:03:33.409Z [INFO] GET /api/products - 200 - 3.824ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":3.824}
+2025-10-09T07:03:33.418Z [INFO] GET /api/products - 304 - 3.033ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":3.033}
+2025-10-09T07:23:56.166Z [INFO] GET /api/products - 200 - 42.657ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":42.657}
+2025-10-09T07:28:07.374Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 44.993ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":44.993}
+2025-10-09T07:28:07.396Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 17.711ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":17.711}
+2025-10-09T07:28:07.415Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 14.016ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":14.016}
+2025-10-09T07:28:09.813Z [INFO] GET /api/products - 304 - 3.479ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":3.479}
+2025-10-09T07:28:09.820Z [INFO] GET /api/products - 304 - 2.851ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.851}
+2025-10-09T07:28:40.010Z [INFO] Email sent successfully via Mailjet | Data: {"to":"aavash@gmail.com","subject":"🎉 Distributor Application Approved - Login Credentials Included","messageId":"288230409012604159"}
+2025-10-09T07:28:40.013Z [INFO] PUT /api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6/status - 200 - 2588.586ms | Data: {"method":"PUT","url":"/api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6/status","statusCode":200,"responseTime":2588.586}
+2025-10-09T07:28:40.060Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 14.723ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":14.723}
+2025-10-09T07:28:40.150Z [ERROR] POST /api/applications/send-offer-letter - 401 - 4.271ms | Data: {"method":"POST","url":"/api/applications/send-offer-letter","statusCode":401,"responseTime":4.271}
+2025-10-09T07:28:40.284Z [INFO] GET /api/products - 304 - 4.363ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.363}
+2025-10-09T07:28:40.294Z [INFO] GET /api/products - 304 - 4.441ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.441}
+2025-10-09T07:28:48.442Z [INFO] Email sent successfully via Mailjet | Data: {"to":"aavash@gmail.com","subject":"🎉 Distributor Application Approved - Login Credentials Included","messageId":"1152921537470831504"}
+2025-10-09T07:28:48.451Z [INFO] PUT /api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6/status - 200 - 1045.537ms | Data: {"method":"PUT","url":"/api/applications/dev/cmgg0swaj0002k7wf7g9bhmi6/status","statusCode":200,"responseTime":1045.537}
+2025-10-09T07:28:48.535Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 41.616ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":41.616}
+2025-10-09T07:28:48.564Z [ERROR] POST /api/applications/send-offer-letter - 401 - 3.411ms | Data: {"method":"POST","url":"/api/applications/send-offer-letter","statusCode":401,"responseTime":3.411}
+2025-10-09T07:28:48.721Z [INFO] GET /api/products - 304 - 2.783ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.783}
+2025-10-09T07:28:48.733Z [INFO] GET /api/products - 304 - 5.747ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":5.747}
+2025-10-09T07:28:59.063Z [INFO] GET /api/products - 304 - 49.318ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":49.318}
+2025-10-09T07:28:59.072Z [INFO] GET /api/products - 304 - 5.662ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":5.662}
+2025-10-09T07:29:05.135Z [INFO] Email sent successfully via Mailjet | Data: {"to":"aavash@gmail.com","subject":"🎉 Distributor Application Approved - Login Credentials Included","messageId":"576460785166147385"}
+2025-10-09T07:29:05.138Z [INFO] PUT /api/applications/dev/cmgg0iqd70000k7wfvpumbpo9/status - 200 - 1020.463ms | Data: {"method":"PUT","url":"/api/applications/dev/cmgg0iqd70000k7wfvpumbpo9/status","statusCode":200,"responseTime":1020.463}
+2025-10-09T07:29:05.180Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 11.284ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":11.284}
+2025-10-09T07:29:05.200Z [ERROR] POST /api/applications/send-offer-letter - 401 - 0.361ms | Data: {"method":"POST","url":"/api/applications/send-offer-letter","statusCode":401,"responseTime":0.361}
+2025-10-09T07:29:05.372Z [INFO] GET /api/products - 304 - 4.026ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.026}
+2025-10-09T07:29:05.386Z [INFO] GET /api/products - 304 - 9.763ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":9.763}
+2025-10-09T07:29:10.364Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 33.298ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":33.298}
+2025-10-09T07:29:10.409Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 30.17ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":30.17}
+2025-10-09T07:29:10.549Z [INFO] GET /api/categories?isActive=true - 200 - 204.316ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":200,"responseTime":204.316}
+2025-10-09T07:29:10.615Z [INFO] GET /api/categories?isActive=true - 304 - 41.495ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":41.495}
+2025-10-09T07:29:10.631Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 200 - 198.402ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":200,"responseTime":198.402}
+2025-10-09T07:29:10.644Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 9.897ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":9.897}
+2025-10-09T07:29:10.688Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 200 - 238.437ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":200,"responseTime":238.437}
+2025-10-09T07:29:10.718Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 200 - 269.011ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":269.011}
+2025-10-09T07:29:10.756Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 200 - 358.097ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":200,"responseTime":358.097}
+2025-10-09T07:29:10.769Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 200 - 327.974ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":200,"responseTime":327.974}
+2025-10-09T07:29:10.776Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 200 - 40.173ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":200,"responseTime":40.173}
+2025-10-09T07:29:10.806Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 59.148ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":59.148}
+2025-10-09T07:29:10.852Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 64.788ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":64.788}
+2025-10-09T07:29:10.867Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 42.539ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":42.539}
+2025-10-09T07:29:10.870Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 304 - 37.188ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":304,"responseTime":37.188}
+2025-10-09T07:29:10.878Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 42.202ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":42.202}
+2025-10-09T07:29:10.899Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 10.394ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":10.394}
+2025-10-09T07:29:10.913Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 10.917ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":10.917}
+2025-10-09T07:29:10.927Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.137ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.137}
+2025-10-09T07:29:10.937Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 2.191ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":2.191}
+2025-10-09T07:29:10.957Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 4.956ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":4.956}
+2025-10-09T07:29:10.972Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 3.067ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":3.067}
+2025-10-09T07:29:10.991Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.39ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.39}
+2025-10-09T07:29:11.001Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 2.726ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":2.726}
+2025-10-09T07:29:25.823Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.731ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.731}
+2025-10-09T07:29:25.841Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.55ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.55}
+2025-10-09T07:29:25.859Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 11.227ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":11.227}
+2025-10-09T07:29:28.978Z [INFO] GET /api/categories?isActive=true - 304 - 7.201ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":7.201}
+2025-10-09T07:29:28.986Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 17.579ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":17.579}
+2025-10-09T07:29:28.991Z [INFO] GET /api/categories?isActive=true - 304 - 6.143ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":6.143}
+2025-10-09T07:29:29.048Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 35.301ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":35.301}
+2025-10-09T07:29:29.084Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 65.8ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":65.8}
+2025-10-09T07:29:29.086Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 59.965ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":59.965}
+2025-10-09T07:29:29.093Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 18.309ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":18.309}
+2025-10-09T07:29:29.103Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 13.671ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":13.671}
+2025-10-09T07:29:29.131Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 304 - 35.694ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":304,"responseTime":35.694}
+2025-10-09T07:29:29.151Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 39.056ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":39.056}
+2025-10-09T07:29:29.165Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 43.631ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":43.631}
+2025-10-09T07:29:29.166Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 42.646ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":42.646}
+2025-10-09T07:29:29.197Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 43.972ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":43.972}
+2025-10-09T07:29:29.231Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 82.809ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":82.809}
+2025-10-09T07:29:29.253Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 304 - 39.145ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":304,"responseTime":39.145}
+2025-10-09T07:29:29.263Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 14.456ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":14.456}
+2025-10-09T07:29:29.299Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 13.085ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":13.085}
+2025-10-09T07:29:29.330Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 17.331ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":17.331}
+2025-10-09T07:29:29.362Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 13.124ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":13.124}
+2025-10-09T07:29:29.385Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 15.782ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":15.782}
+2025-10-09T07:29:29.411Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 4.931ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":4.931}
+2025-10-09T07:29:29.429Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 9.111ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":9.111}
+2025-10-09T07:29:29.443Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.921ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.921}
+2025-10-09T07:29:29.458Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 7.86ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":7.86}
+2025-10-09T07:29:31.515Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 32.97ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":32.97}
+2025-10-09T07:29:31.605Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 55.041ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":55.041}
+2025-10-09T07:29:31.615Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 54.834ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":54.834}
+2025-10-09T07:29:31.630Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 62.9ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":62.9}
+2025-10-09T07:29:31.631Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 58.717ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":58.717}
+2025-10-09T07:29:31.632Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 304 - 49.256ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":304,"responseTime":49.256}
+2025-10-09T07:29:31.652Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 3.138ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":3.138}
+2025-10-09T07:29:31.697Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 7.376ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":7.376}
+2025-10-09T07:29:31.737Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 21.771ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":21.771}
+2025-10-09T07:29:31.760Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 7.083ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":7.083}
+2025-10-09T07:29:31.788Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 19.987ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":19.987}
+2025-10-09T07:29:43.390Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 8.609ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":8.609}
+2025-10-09T07:29:43.408Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.885ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.885}
+2025-10-09T07:29:43.443Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 20.689ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":20.689}
+2025-10-09T07:29:46.317Z [INFO] GET /api/products - 304 - 2.466ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.466}
+2025-10-09T07:29:46.323Z [INFO] GET /api/products - 304 - 2.7ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":2.7}
+2025-10-09T07:30:34.264Z [INFO] GET /api/categories?isActive=true - 304 - 5.186ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":5.186}
+2025-10-09T07:30:34.269Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 13.413ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":13.413}
+2025-10-09T07:30:34.279Z [INFO] GET /api/categories?isActive=true - 304 - 3.616ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":3.616}
+2025-10-09T07:30:34.294Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 8.359ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":8.359}
+2025-10-09T07:30:34.310Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 9.136ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":9.136}
+2025-10-09T07:30:34.347Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 15.009ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":15.009}
+2025-10-09T07:30:34.393Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 37.767ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":37.767}
+2025-10-09T07:30:34.417Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 51.274ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":51.274}
+2025-10-09T07:30:34.434Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 304 - 46.653ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":304,"responseTime":46.653}
+2025-10-09T07:30:34.455Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 34.619ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":34.619}
+2025-10-09T07:30:34.467Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 23.67ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":23.67}
+2025-10-09T07:30:34.472Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 24.237ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":24.237}
+2025-10-09T07:30:34.478Z [INFO] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 304 - 15.459ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":304,"responseTime":15.459}
+2025-10-09T07:30:34.480Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 18.819ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":18.819}
+2025-10-09T07:30:34.485Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 40.538ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":40.538}
+2025-10-09T07:30:34.507Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 10.516ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":10.516}
+2025-10-09T07:30:34.547Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 13.77ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":13.77}
+2025-10-09T07:30:34.587Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 7.616ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":7.616}
+2025-10-09T07:30:34.606Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 11.555ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":11.555}
+2025-10-09T07:30:34.632Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.462ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.462}
+2025-10-09T07:30:34.650Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 7.694ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":7.694}
+2025-10-09T07:30:34.671Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 5.756ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":5.756}
+2025-10-09T07:30:34.685Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 9.485ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":9.485}
+2025-10-09T07:30:34.694Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 3.497ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":3.497}
+2025-10-09T07:31:13.941Z [INFO] POST /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 200 - 241.647ms | Data: {"method":"POST","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":200,"responseTime":241.647}
+2025-10-09T07:31:27.223Z [INFO] GET /api/categories - 200 - 3.365ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":3.365}
+2025-10-09T07:31:27.241Z [INFO] GET /api/categories - 304 - 9.44ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":9.44}
+2025-10-09T07:31:47.272Z [INFO] GET /api/categories?isActive=true - 304 - 6.455ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":6.455}
+2025-10-09T07:31:47.291Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 20.062ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":20.062}
+2025-10-09T07:31:47.305Z [INFO] GET /api/categories?isActive=true - 304 - 24.267ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":24.267}
+2025-10-09T07:31:47.330Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 17.209ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":17.209}
+2025-10-09T07:31:47.381Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 200 - 24.306ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":200,"responseTime":24.306}
+2025-10-09T07:31:47.382Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 200 - 23.802ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":200,"responseTime":23.802}
+2025-10-09T07:31:47.408Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 200 - 24.684ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":200,"responseTime":24.684}
+2025-10-09T07:31:47.410Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 35.331ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":35.331}
+2025-10-09T07:31:47.430Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 200 - 46.337ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":200,"responseTime":46.337}
+2025-10-09T07:31:47.474Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 34.665ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":34.665}
+2025-10-09T07:31:47.475Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 30.944ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":30.944}
+2025-10-09T07:31:47.478Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 30.635ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":30.635}
+2025-10-09T07:31:47.489Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 26.821ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":26.821}
+2025-10-09T07:31:47.493Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 24.968ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":24.968}
+2025-10-09T07:31:47.496Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 200 - 8.097ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":200,"responseTime":8.097}
+2025-10-09T07:31:47.579Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 19.076ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":19.076}
+2025-10-09T07:31:47.629Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 19.354ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":19.354}
+2025-10-09T07:31:47.679Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 4.01ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":4.01}
+2025-10-09T07:31:47.708Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 9.577ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":9.577}
+2025-10-09T07:31:47.720Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 3.159ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":3.159}
+2025-10-09T07:31:47.731Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 3.055ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":3.055}
+2025-10-09T07:31:47.744Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 4.343ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":4.343}
+2025-10-09T07:32:02.116Z [INFO] GET /api/categories - 304 - 8.691ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":8.691}
+2025-10-09T07:32:02.143Z [INFO] GET /api/categories - 304 - 10.046ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":10.046}
+2025-10-09T07:32:09.924Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 7.785ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":7.785}
+2025-10-09T07:32:09.934Z [INFO] GET /api/categories?isActive=true - 304 - 12.83ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":12.83}
+2025-10-09T07:32:09.951Z [INFO] GET /api/categories?isActive=true - 304 - 10.933ms | Data: {"method":"GET","url":"/api/categories?isActive=true","statusCode":304,"responseTime":10.933}
+2025-10-09T07:32:09.957Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 21.803ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":21.803}
+2025-10-09T07:32:10.000Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 26.637ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":26.637}
+2025-10-09T07:32:10.047Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 55.286ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":55.286}
+2025-10-09T07:32:10.060Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 68.275ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":68.275}
+2025-10-09T07:32:10.080Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 104.206ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":104.206}
+2025-10-09T07:32:10.139Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 103.871ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":103.871}
+2025-10-09T07:32:10.142Z [ERROR] GET /api/distributors/find-by-application/cmfas03b300006voatrddhesu - 404 - 72.183ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfas03b300006voatrddhesu","statusCode":404,"responseTime":72.183}
+2025-10-09T07:32:10.146Z [INFO] GET /api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9 - 304 - 60.28ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0iqd70000k7wfvpumbpo9","statusCode":304,"responseTime":60.28}
+2025-10-09T07:32:10.148Z [INFO] GET /api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr - 304 - 61.169ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfsjf8mo0000iidtlj38h6nr","statusCode":304,"responseTime":61.169}
+2025-10-09T07:32:10.151Z [INFO] GET /api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6 - 304 - 19.306ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmgg0swaj0002k7wf7g9bhmi6","statusCode":304,"responseTime":19.306}
+2025-10-09T07:32:10.179Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 17.296ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":17.296}
+2025-10-09T07:32:10.191Z [INFO] GET /api/distributors/find-by-application/cmfasqsu200066voalb2naa7r - 304 - 17.242ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmfasqsu200066voalb2naa7r","statusCode":304,"responseTime":17.242}
+2025-10-09T07:32:10.206Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 5.138ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":5.138}
+2025-10-09T07:32:10.226Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.711ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.711}
+2025-10-09T07:32:10.242Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 8.498ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":8.498}
+2025-10-09T07:32:10.265Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 5.698ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":5.698}
+2025-10-09T07:32:10.301Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 13.269ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":13.269}
+2025-10-09T07:32:10.324Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 6.094ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":6.094}
+2025-10-09T07:32:10.334Z [INFO] GET /api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials - 304 - 6.49ms | Data: {"method":"GET","url":"/api/distributors/cmgj3j5pu0000kwkqzzfcj68d/credentials","statusCode":304,"responseTime":6.49}
+2025-10-09T07:32:13.304Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 26.34ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":26.34}
+2025-10-09T07:32:13.335Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 16.826ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":16.826}
+2025-10-09T07:32:13.353Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 13.187ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":13.187}
+2025-10-09T07:32:15.101Z [INFO] GET /api/orders - 200 - 187.156ms | Data: {"method":"GET","url":"/api/orders","statusCode":200,"responseTime":187.156}
+2025-10-09T07:32:15.121Z [INFO] GET /api/orders - 304 - 15.05ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":15.05}
+2025-10-09T07:38:51.691Z [INFO] Mailjet service initialized successfully
+2025-10-09T07:38:51.972Z [INFO] Mailjet service initialized successfully
+2025-10-09T07:39:17.777Z [INFO] Mailjet service initialized successfully
+2025-10-09T07:39:17.970Z [INFO] Mailjet service initialized successfully
+2025-10-09T07:39:27.645Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T07:39:27.725Z [INFO] 🌍 Environment: development
+2025-10-09T07:39:27.726Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T07:39:27.726Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T07:39:27.726Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-09T08:47:41.310Z [INFO] Mailjet service initialized successfully
+2025-10-09T08:47:41.329Z [INFO] Mailjet service initialized successfully
+2025-10-09T08:47:45.238Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-10-09T08:47:45.239Z [INFO] 🌍 Environment: development
+2025-10-09T08:47:45.241Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-10-09T08:47:45.241Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-10-09T08:47:45.242Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-10-09T08:47:45.305Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)

@@ -45,10 +45,11 @@ model User {
 
 // Distributor Application model
 model DistributorApplication {
-  id        String            @id @default(cuid())
-  status    ApplicationStatus @default(PENDING)
-  createdAt DateTime          @default(now())
-  updatedAt DateTime          @updatedAt
+  id              String            @id @default(cuid())
+  referenceNumber String?           @unique // Reference number for draft applications
+  status          ApplicationStatus @default(PENDING)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
 
   // Personal Details
   fullName           String
@@ -240,6 +241,11 @@ model DistributorProfile {
   // Status and Management
   status        DistributorStatus @default(ACTIVE)
   documents     String?  // JSON string of document paths
+
+  // Sales Coverage
+  assignedProvinces String? // JSON string of province IDs
+  assignedAreas     String? // JSON string of area names
+  coverageNotes     String? // Additional notes about coverage area
 
   // Administrative fields
   createdBy     String

@@ -257,11 +257,7 @@ export const ApplicationUpdateSchema = z.object({
   status: ApplicationStatusSchema,
   reviewNotes: z.string()
     .max(1000, 'समीक्षा टिप्पणी १००० अक्षरभन्दा बढी हुन सक्दैन')
-    .optional(),
-  reviewedBy: z.string()
-    .min(1, 'समीक्षाकर्ताको नाम आवश्यक छ')
-    .max(100, 'समीक्षाकर्ताको नाम १०० अक्षरभन्दा बढी हुन सक्दैन'),
-  reviewedAt: z.date().default(() => new Date())
+    .optional()
 });
 
 // Application Update Schema (for development - no auth required)

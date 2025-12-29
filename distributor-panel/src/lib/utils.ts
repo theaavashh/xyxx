@@ -12,6 +12,10 @@ export function formatCurrency(amount: number, currency: string = 'NPR'): string
   }).format(amount);
 }
 
+export function formatNumber(value: number): string {
+  return new Intl.NumberFormat('en-US').format(value);
+}
+
 export function formatDate(date: Date): string {
   return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',

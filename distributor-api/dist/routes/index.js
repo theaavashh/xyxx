@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const auth_routes_1 = __importDefault(require("./auth.routes"));
+const distributor_auth_routes_1 = __importDefault(require("./distributor-auth.routes"));
 const distributor_routes_1 = __importDefault(require("./distributor.routes"));
 const distributors_routes_1 = __importDefault(require("./distributors.routes"));
 const categories_routes_1 = __importDefault(require("./categories.routes"));
@@ -17,6 +18,7 @@ const sales_1 = __importDefault(require("./sales"));
 const test_controller_1 = require("../controllers/test.controller");
 const router = (0, express_1.Router)();
 router.use('/auth', auth_routes_1.default);
+router.use('/distributor-auth', distributor_auth_routes_1.default);
 router.use('/applications', distributor_routes_1.default);
 router.use('/distributors', distributors_routes_1.default);
 router.use('/categories', categories_routes_1.default);

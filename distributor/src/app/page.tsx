@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Image from 'next/image';
 import toast, { Toaster } from 'react-hot-toast';
-import NavigationTabs from '@/components/NavigationTabs';
+
 
 // Nepali date conversion function
 const convertToNepaliDate = (englishDate: Date): string => {
@@ -42,6 +42,7 @@ interface FormContextType {
   updateFormData: (stepData: any) => void;
   clearFormData: () => void;
   getCurrentFormData: () => any;
+  loadDraftData: (draftData: any) => void;  // Add this to load draft data
 }
 
 const FormDataContext = createContext<FormContextType | undefined>(undefined);
@@ -51,16 +52,16 @@ export function FormDataProvider({ children }: { children: ReactNode }) {
   const [allFormData, setAllFormData] = useState<any>({});
 
   const updateFormData = (stepData: any) => {
-    console.log('🔄 CONTEXT: Updating form data with:', stepData);
-    setAllFormData(prev => {
+    console.log('CONTEXT: Updating form data with:', stepData);
+    setAllFormData((prev: any) => {
       const updated = { ...prev, ...stepData };
-      ;
+      console.log('CONTEXT: Updated form data:', updated);
       return updated;
     });
   };
 
   const clearFormData = () => {
-   
+    console.log('🔄 CONTEXT: Clearing all form data');
     setAllFormData({});
   };
 
@@ -68,12 +69,19 @@ export function FormDataProvider({ children }: { children: ReactNode }) {
     return allFormData;
   };
 
+  // Add function to load draft data and replace current form data
+  const loadDraftData = (draftData: any) => {
+    console.log('🔄 CONTEXT: Loading draft data:', draftData);
+    setAllFormData(draftData);
+  };
+
   return (
     <FormDataContext.Provider value={{
       allFormData,
       updateFormData,
       clearFormData,
-      getCurrentFormData
+      getCurrentFormData,
+      loadDraftData  // Add this to the context
     }}>
       {children}
     </FormDataContext.Provider>
@@ -297,14 +305,20 @@ interface FormData {
   storageDetails?: string;
   truckCount?: number;
   truckExperience?: string;
+  truckDetails?: string;
   fourWheelerCount?: number;
   fourWheelerExperience?: string;
+  fourWheelerDetails?: string;
   motorcycleCount?: number;
   motorcycleExperience?: string;
+  twoWheelerCount?: number;
+  twoWheelerDetails?: string;
   cycleCount?: number;
   cycleExperience?: string;
+  cycleDetails?: string;
   thelaCount?: number;
   thelaExperience?: string;
+  thelaDetails?: string;
 
   // Current transactions
   currentTransactions?: any[];
@@ -383,6 +397,7 @@ interface FormData {
   agreementAccepted?: boolean;
   distributorSignatureName?: string;
   distributorSignatureDate?: string;
+  termsAndConditions?: string;
 }
 
 const steps = [
@@ -401,6 +416,9 @@ function DistributorFormContent() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [referenceNumber, setReferenceNumber] = useState<string | null>(null); // Add reference number state
+  const [showReferenceInput, setShowReferenceInput] = useState(false); // Add state to show reference input
+  const [inputReferenceNumber, setInputReferenceNumber] = useState(''); // Add state for input reference number
   
   // Digital signature state
   const [signature, setSignature] = useState<string | null>(null);
@@ -416,7 +434,588 @@ function DistributorFormContent() {
   
   
   // Use Context API instead of local state
-  const { allFormData, updateFormData, getCurrentFormData } = useFormData();
+  const { allFormData, updateFormData, getCurrentFormData, clearFormData, loadDraftData } = useFormData();
+
+  // Function to save draft application
+  const saveDraft = async () => {
+    try {
+      // Get current form data
+      const currentFormData = watch();
+      
+      // Structure data according to backend schema
+      const applicationData = {
+        personalDetails: {
+          fullName: currentFormData.fullName || '',
+          age: parseInt(currentFormData.age?.toString() || '18') || 18,
+          gender: currentFormData.gender || 'पुरुष',
+          citizenshipNumber: currentFormData.citizenshipNumber || '',
+          issuedDistrict: currentFormData.issuedDistrict || '',
+          mobileNumber: currentFormData.mobileNumber || '',
+          email: currentFormData.email || '',
+          permanentAddress: currentFormData.permanentAddress || '',
+          temporaryAddress: currentFormData.temporaryAddress || ''
+        },
+        businessDetails: {
+          companyName: currentFormData.companyName || '',
+          registrationNumber: currentFormData.registrationNumber || '',
+          panVatNumber: currentFormData.panVatNumber || '',
+          officeAddress: currentFormData.officeAddress || '',
+          operatingArea: currentFormData.workAreaDistrict || currentFormData.officeAddress || 'काठमाडौं',
+          desiredDistributorArea: currentFormData.desiredDistributionArea || currentFormData.workAreaDistrict || 'काठमाडौं',
+          currentBusiness: currentFormData.currentBusiness || '',
+          businessType: currentFormData.businessType || 'खुद्रा व्यापार'
+        },
+        staffInfrastructure: {
+          salesManCount: parseInt(currentFormData.salesManCount?.toString() || '0') || 0,
+          salesManExperience: currentFormData.salesManExperience || '',
+          deliveryStaffCount: parseInt(currentFormData.driverCount?.toString() || '0') || 0,
+          deliveryStaffExperience: currentFormData.driverExperience || '',
+          accountAssistantCount: parseInt(currentFormData.accountantCount?.toString() || '0') || 0,
+          accountAssistantExperience: currentFormData.accountantExperience || '',
+          otherStaffCount: parseInt(currentFormData.helperCount?.toString() || '0') || 0,
+          otherStaffExperience: currentFormData.helperExperience || '',
+          warehouseSpace: parseInt(currentFormData.storageSpace?.toString() || '0') || 0,
+          warehouseDetails: currentFormData.storageDetails || '',
+          truckCount: parseInt(currentFormData.truckCount?.toString() || '0') || 0,
+          truckDetails: currentFormData.truckDetails || '',
+          fourWheelerCount: parseInt(currentFormData.fourWheelerCount?.toString() || '0') || 0,
+          fourWheelerDetails: currentFormData.fourWheelerDetails || '',
+          twoWheelerCount: parseInt(currentFormData.motorcycleCount?.toString() || '0') || 0,
+          twoWheelerDetails: currentFormData.motorcycleExperience || '',
+          cycleCount: parseInt(currentFormData.cycleCount?.toString() || '0') || 0,
+          cycleDetails: currentFormData.cycleDetails || '',
+          thelaCount: parseInt(currentFormData.thelaCount?.toString() || '0') || 0,
+          thelaDetails: currentFormData.thelaDetails || ''
+        },
+        businessInformation: {
+          productCategory: currentFormData.productCategory || 'खाद्य वस्तु',
+          yearsInBusiness: parseInt(currentFormData.businessExperience?.toString() || '1') || 1,
+          monthlySales: currentFormData.monthlyIncome || '0',
+          storageFacility: currentFormData.storageFacility || 'आधारभूत भण्डारण'
+        },
+        retailerRequirements: {
+          preferredProducts: currentFormData.products?.map((p: any) => p.name).join(', ') || '',
+          monthlyOrderQuantity: currentFormData.products?.reduce((sum: number, p: any) => sum + parseInt(p.monthlySalesCapacity || 0), 0).toString() || '0',
+          paymentPreference: currentFormData.paymentPreference || 'नगद',
+          creditDays: parseInt(currentFormData.creditDays?.toString() || '0') || 0,
+          deliveryPreference: currentFormData.deliveryPreference || 'स्वयं उठाउने'
+        },
+        partnershipDetails: currentFormData.partnerFullName ? {
+          partnerFullName: currentFormData.partnerFullName,
+          partnerAge: parseInt(currentFormData.partnerAge?.toString() || '0') || 0,
+          partnerGender: currentFormData.partnerGender || '',
+          partnerCitizenshipNumber: currentFormData.partnerCitizenshipNumber || '',
+          partnerIssuedDistrict: currentFormData.partnerIssuedDistrict || '',
+          partnerMobileNumber: currentFormData.partnerMobileNumber || '',
+          partnerEmail: currentFormData.partnerEmail || '',
+          partnerPermanentAddress: currentFormData.partnerPermanentAddress || '',
+          partnerTemporaryAddress: currentFormData.partnerTemporaryAddress || ''
+        } : null,
+        additionalInformation: {
+          additionalInfo1: currentFormData.additionalInfo || '',
+          additionalInfo2: currentFormData.additionalInfo2 || '',
+          additionalInfo3: currentFormData.additionalInfo3 || ''
+        },
+        declaration: {
+          declaration: currentFormData.agreementAccepted === true,
+          signature: currentFormData.distributorSignatureName || currentFormData.fullName || '',
+          date: currentFormData.distributorSignatureDate || getTodayNepaliDate()
+        },
+        agreement: {
+          agreementAccepted: currentFormData.agreementAccepted === true,
+          distributorSignatureName: currentFormData.distributorSignatureName || currentFormData.fullName || '',
+          distributorSignatureDate: currentFormData.distributorSignatureDate || getTodayNepaliDate(),
+          digitalSignature: null // Signature removed from review section
+        },
+        currentTransactions: currentFormData.currentTransactions || [],
+        productsToDistribute: currentFormData.products || [],
+        areaCoverageDetails: currentFormData.areaCoverageDetails || []
+      };
+
+      // Handle file uploads separately
+      const formData = new FormData();
+      formData.append('data', JSON.stringify(applicationData));
+
+      // Add files if they exist
+      if (currentFormData.citizenshipFile) {
+        const file = currentFormData.citizenshipFile instanceof FileList
+          ? currentFormData.citizenshipFile[0]
+          : currentFormData.citizenshipFile;
+        if (file) {
+          formData.append('citizenshipId', file);
+        }
+      }
+      if (currentFormData.companyRegistrationFile) {
+        const file = currentFormData.companyRegistrationFile instanceof FileList
+          ? currentFormData.companyRegistrationFile[0]
+          : currentFormData.companyRegistrationFile;
+        if (file) {
+          formData.append('companyRegistration', file);
+        }
+      }
+      if (currentFormData.panVatFile) {
+        const file = currentFormData.panVatFile instanceof FileList
+          ? currentFormData.panVatFile[0]
+          : currentFormData.panVatFile;
+        if (file) {
+          formData.append('panVatRegistration', file);
+        }
+      }
+      if (currentFormData.officePhotoFile) {
+        const file = currentFormData.officePhotoFile instanceof FileList
+          ? currentFormData.officePhotoFile[0]
+          : currentFormData.officePhotoFile;
+        if (file) {
+          formData.append('officePhoto', file);
+        }
+      }
+      if (currentFormData.otherDocumentsFile) {
+        const file = currentFormData.otherDocumentsFile instanceof FileList
+          ? currentFormData.otherDocumentsFile[0]
+          : currentFormData.otherDocumentsFile;
+        if (file) {
+          formData.append('areaMap', file);
+        }
+      }
+
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444'}/api/applications/draft`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          // Don't set Content-Type header when using FormData - it will be set automatically
+        },
+      });
+
+      if (!response.ok) {
+        // Handle non-200 responses
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+        console.error('Draft save failed with status:', response.status, errorData);
+        toast.error('ड्राफ्ट सेभ गर्न असफल भयो। त्रुटि: ' + errorData.message, {
+          duration: 6000,
+          style: {
+            background: '#fee2e2',
+            color: '#dc2626',
+            border: '1px solid #fecaca',
+          },
+        });
+        return null;
+      }
+
+      const result = await response.json();
+      console.log('Draft saved successfully:', result);
+      setReferenceNumber(result.data.referenceNumber);
+      toast.success(`ड्राफ्ट सफलतापूर्वक सेभ भयो! आपूले यो नम्बर प्रयोग गरी फारम पूरा गर्न सक्नुहुन्छ: ${result.data.referenceNumber}`, {
+        duration: 8000,
+        style: {
+          background: '#d1fae5',
+          color: '#065f46',
+          border: '1px solid #86efac',
+        },
+      });
+      return result.data.referenceNumber;
+    } catch (error) {
+      console.error('Error saving draft:', error);
+      toast.error('ड्राफ्ट सेभ गर्न असफल भयो। नेटवर्क त्रुटि', {
+        duration: 6000,
+        style: {
+          background: '#fee2e2',
+          color: '#dc2626',
+          border: '1px solid #fecaca',
+        },
+      });
+      return null;
+    }
+  };
+
+  // Function to handle form printing
+  const handlePrintForm = () => {
+    // Create a new window for printing
+    const printWindow = window.open('', '_blank');
+    
+    if (!printWindow) {
+      toast.error('प्रिन्ट विन्डो खोल्न असफल भयो। कृपया पप-अप अनुमति दिनुहोस्।', {
+        duration: 4000,
+        style: {
+          background: '#fee2e2',
+          color: '#dc2626',
+          border: '1px solid #fecaca',
+        },
+      });
+      return;
+    }
+
+    // Get current form data
+    const currentFormData = watch();
+    
+    // Create print-friendly HTML content
+    const printContent = `
+      <!DOCTYPE html>
+      <html lang="ne">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>वितरक आवेदन फारम - Distributor Application Form</title>
+        <style>
+          body {
+            font-family: 'Absans', sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            color: #001011;
+          }
+          .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #001011;
+            padding-bottom: 20px;
+          }
+          .logo {
+            margin-bottom: 15px;
+          }
+          .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+          }
+          .section {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+          }
+          .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #001011;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+          }
+          .field {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+          }
+          .field-label {
+            font-weight: bold;
+            min-width: 200px;
+          }
+          .field-value {
+            flex: 1;
+            text-align: left;
+          }
+          .signature-section {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+          }
+          @media print {
+            body { margin: 15px; }
+            .no-print { display: none; }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <div class="logo">
+            <img src="/zipzip_logo.svg" alt="ZIP ZIP" style="width: 150px; height: auto;" />
+          </div>
+          <div class="title">
+            वितरक आवेदन फारम<br />
+            Distributor Application Form
+          </div>
+          <div>
+            मिति: ${getTodayNepaliDate()}<br />
+            Date: ${new Date().toLocaleDateString()}
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">१. व्यक्तिगत विवरण (Personal Details)</div>
+          <div class="field">
+            <span class="field-label">पूरा नाम (Full Name):</span>
+            <span class="field-value">${currentFormData.fullName || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">उमेर (Age):</span>
+            <span class="field-value">${currentFormData.age || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">लिंग (Gender):</span>
+            <span class="field-value">${currentFormData.gender || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">नागरिकता नम्बर (Citizenship No.):</span>
+            <span class="field-value">${currentFormData.citizenshipNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">जारी जिल्ला (Issued District):</span>
+            <span class="field-value">${currentFormData.issuedDistrict || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">मोबाइल नम्बर (Mobile):</span>
+            <span class="field-value">${currentFormData.mobileNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">इमेल (Email):</span>
+            <span class="field-value">${currentFormData.email || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">स्थायी ठेगाना (Permanent Address):</span>
+            <span class="field-value">${currentFormData.permanentAddress || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">अस्थायी ठेगाना (Temporary Address):</span>
+            <span class="field-value">${currentFormData.temporaryAddress || 'N/A'}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">२. व्यापारिक विवरण (Business Details)</div>
+          <div class="field">
+            <span class="field-label">कम्पनीको नाम (Company Name):</span>
+            <span class="field-value">${currentFormData.companyName || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">दर्ता नम्बर (Registration No.):</span>
+            <span class="field-value">${currentFormData.registrationNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">प्यान/भ्याट नम्बर (PAN/VAT No.):</span>
+            <span class="field-value">${currentFormData.panVatNumber || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">कार्यालय ठेगाना (Office Address):</span>
+            <span class="field-value">${currentFormData.officeAddress || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">कार्यक्षेत्र जिल्ला (Work Area District):</span>
+            <span class="field-value">${currentFormData.workAreaDistrict || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">इच्छित वितरण क्षेत्र (Desired Distribution Area):</span>
+            <span class="field-value">${currentFormData.desiredDistributionArea || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">वर्तमान व्यापार (Current Business):</span>
+            <span class="field-value">${currentFormData.currentBusiness || 'N/A'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">व्यापार प्रकार (Business Type):</span>
+            <span class="field-value">${currentFormData.businessType || 'N/A'}</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">३. कर्मचारी तथा पूर्वाधार (Staff & Infrastructure)</div>
+          <div class="field">
+            <span class="field-label">बिक्रीयता संख्या (Sales Executives):</span>
+            <span class="field-value">${currentFormData.salesManCount || '0'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">चालक संख्या (Drivers):</span>
+            <span class="field-value">${currentFormData.driverCount || '0'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">सहायक संख्या (Helpers):</span>
+            <span class="field-value">${currentFormData.helperCount || '0'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">लेखाकार संख्या (Accountants):</span>
+            <span class="field-value">${currentFormData.accountantCount || '0'}</span>
+          </div>
+          <div class="field">
+            <span class="field-label">भण्डारण स्थान (Storage Space):</span>
+            <span class="field-value">${currentFormData.storageSpace || '0'} sq. ft.</span>
+          </div>
+        </div>
+
+        <div class="signature-section">
+          <div class="section-title">४. हस्ताक्षर (Signature)</div>
+          <div style="height: 100px; border: 1px solid #ccc; margin-bottom: 20px; display: flex; align-items: center; justify-content: center;">
+            ${signature ? `<img src="${signature}" style="max-height: 80px; max-width: 200px;" />` : '<span style="color: #999;">(Digital Signature)</span>'}
+          </div>
+          <div style="text-align: center; margin-top: 40px;">
+            <div style="border-top: 1px solid #ccc; width: 200px; margin: 0 auto;"></div>
+            <div style="margin-top: 5px;">आवेदकको हस्ताक्षर (Applicant Signature)</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center; font-size: 12px; color: #666;">
+          <p>यो फारम ZIP ZIP वितरक प्रणालीबाट उत्पन्न भएको हो।</p>
+          <p>Generated by ZIP ZIP Distributor System</p>
+          <p>Reference: ${referenceNumber || 'N/A'}</p>
+        </div>
+      </body>
+      </html>
+    `;
+
+    // Write content to the new window
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    
+    // Wait for content to load, then print
+    printWindow.onload = () => {
+      setTimeout(() => {
+        printWindow.print();
+        printWindow.close();
+        
+        toast.success('फारम प्रिन्ट गर्न सफल भयो! (Form printed successfully!)', {
+          duration: 3000,
+          style: {
+            background: '#d1fae5',
+            color: '#065f46',
+            border: '1px solid #86efac',
+          },
+        });
+      }, 500);
+    };
+  };
+
+  // Function to load application by reference number
+  const loadApplicationByReference = async (refNumber: string) => {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444'}/api/applications/reference/${refNumber}`);
+      
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Application loaded by reference:', result);
+        
+        if (result.data && result.data.application) {
+          const application = result.data.application;
+          
+          // Transform the application data to match our form structure
+          const transformedData = {
+            // Personal Details
+            fullName: application.fullName,
+            age: application.age,
+            gender: application.gender,
+            citizenshipNumber: application.citizenshipNumber,
+            issuedDistrict: application.issuedDistrict,
+            mobileNumber: application.mobileNumber,
+            email: application.email,
+            permanentAddress: application.permanentAddress,
+            temporaryAddress: application.temporaryAddress,
+            
+            // Business Details
+            companyName: application.companyName,
+            registrationNumber: application.registrationNumber,
+            panVatNumber: application.panVatNumber,
+            officeAddress: application.officeAddress,
+            workAreaDistrict: application.operatingArea,
+            desiredDistributionArea: application.desiredDistributorArea,
+            currentBusiness: application.currentBusiness,
+            businessType: application.businessType,
+            
+            // Staff & Infrastructure
+            salesManCount: application.salesManCount,
+            salesManExperience: application.salesManExperience,
+            driverCount: application.deliveryStaffCount,
+            driverExperience: application.deliveryStaffExperience,
+            accountantCount: application.accountAssistantCount,
+            accountantExperience: application.accountAssistantExperience,
+            helperCount: application.otherStaffCount,
+            helperExperience: application.otherStaffExperience,
+            storageSpace: application.warehouseSpace,
+            storageDetails: application.warehouseDetails,
+            truckCount: application.truckCount,
+            truckDetails: application.truckDetails,
+            fourWheelerCount: application.fourWheelerCount,
+            fourWheelerDetails: application.fourWheelerDetails,
+            motorcycleCount: application.twoWheelerCount,
+            motorcycleExperience: application.twoWheelerDetails,
+            cycleCount: application.cycleCount,
+            cycleDetails: application.cycleDetails,
+            thelaCount: application.thelaCount,
+            thelaDetails: application.thelaDetails,
+            
+            // Business Information
+            productCategory: application.productCategory,
+            businessExperience: application.yearsInBusiness?.toString(),
+            monthlyIncome: application.monthlySales,
+            storageFacility: application.storageFacility,
+            paymentPreference: application.paymentPreference,
+            creditDays: application.creditDays,
+            deliveryPreference: application.deliveryPreference,
+            
+            // Partnership Details
+            partnerFullName: application.partnerFullName,
+            partnerAge: application.partnerAge,
+            partnerGender: application.partnerGender,
+            partnerCitizenshipNumber: application.partnerCitizenshipNumber,
+            partnerIssuedDistrict: application.partnerIssuedDistrict,
+            partnerMobileNumber: application.partnerMobileNumber,
+            partnerEmail: application.partnerEmail,
+            partnerPermanentAddress: application.partnerPermanentAddress,
+            partnerTemporaryAddress: application.partnerTemporaryAddress,
+            
+            // Additional Information
+            additionalInfo: application.additionalInfo1,
+            additionalInfo2: application.additionalInfo2,
+            additionalInfo3: application.additionalInfo3,
+            
+            // Agreement
+            agreementAccepted: application.agreementAccepted,
+            distributorSignatureName: application.distributorSignatureName,
+            distributorSignatureDate: application.distributorSignatureDate,
+            
+            // Current transactions, products, and area coverage
+            currentTransactions: application.currentTransactions,
+            products: application.productsToDistribute,
+            areaCoverageDetails: application.areaCoverageDetails
+          };
+          
+          // Load the data into the form context
+          loadDraftData(transformedData);
+          
+          toast.success('ड्राफ्ट डाटा सफलतापूर्वक लोड भयो!', {
+            duration: 4000,
+            style: {
+              background: '#d1fae5',
+              color: '#065f46',
+              border: '1px solid #86efac',
+            },
+          });
+          
+          // Close the reference input modal
+          setShowReferenceInput(false);
+          setInputReferenceNumber('');
+          
+          return true;
+        } else {
+          toast.error('सन्दर्भ नम्बर सँग मिल्ने डाटा भेटिएन।', {
+            duration: 4000,
+            style: {
+              background: '#fee2e2',
+              color: '#dc2626',
+              border: '1px solid #fecaca',
+            },
+          });
+          return false;
+        }
+      } else {
+        const errorData = await response.json().catch(() => ({ message: 'Unknown error' }));
+        console.error('Load application failed:', errorData);
+        toast.error('ड्राफ्ट डाटा लोड गर्न असफल भयो। त्रुटि: ' + errorData.message, {
+          duration: 6000,
+          style: {
+            background: '#fee2e2',
+            color: '#dc2626',
+            border: '1px solid #fecaca',
+          },
+        });
+        return false;
+      }
+    } catch (error) {
+      console.error('Error loading application by reference:', error);
+      toast.error('ड्राफ्ट डाटा लोड गर्न असफल भयो। नेटवर्क त्रुटि', {
+        duration: 6000,
+        style: {
+          background: '#fee2e2',
+          color: '#dc2626',
+          border: '1px solid #fecaca',
+        },
+      });
+      return false;
+    }
+  };
 
   // Fetch categories from API
   const fetchCategories = async () => {
@@ -425,7 +1024,7 @@ function DistributorFormContent() {
       console.log('Fetching categories from API...');
       
       // Use the backend API URL
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/categories`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api'}/categories`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -438,7 +1037,7 @@ function DistributorFormContent() {
         
         if (data.success && data.data && Array.isArray(data.data)) {
           // Parse categories and create subcategories from description
-          const categoriesWithSubcategories = data.data.flatMap(category => {
+          const categoriesWithSubcategories = data.data.flatMap((category: any) => {
             const result = [{ 
               id: category.id, 
               title: category.title,
@@ -450,9 +1049,9 @@ function DistributorFormContent() {
             if (category.description) {
               const subcategories = category.description
                 .split(',')
-                .map(sub => sub.trim())
-                .filter(sub => sub.length > 0)
-                .map((sub, index) => ({
+                .map((sub: any) => sub.trim())
+                .filter((sub: any) => sub.length > 0)
+                .map((sub: any, index: number) => ({
                   id: `${category.id}_sub_${index}`,
                   title: sub,
                   type: 'subcategory',
@@ -510,58 +1109,60 @@ function DistributorFormContent() {
       officeAddress: '',
       workAreaDistrict: '',
       desiredDistributionArea: '',
+      currentBusiness: '',
+      businessType: '',
       
       // Staff & Infrastructure
       salesManCount: 0,
       salesManExperience: '',
-      deliveryStaffCount: 0,
-      deliveryStaffExperience: '',
-      accountAssistantCount: 0,
-      accountAssistantExperience: '',
-      otherStaffCount: 0,
-      otherStaffExperience: '',
-      warehouseSpace: 0,
-      warehouseDetails: '',
+      driverCount: 0,
+      driverExperience: '',
+      helperCount: 0,
+      helperExperience: '',
+      accountantCount: 0,
+      accountantExperience: '',
+      storageSpace: 0,
+      storageDetails: '',
       truckCount: 0,
-      truckDetails: '',
+      truckExperience: '',
       fourWheelerCount: 0,
-      fourWheelerDetails: '',
-      twoWheelerCount: 0,
-      twoWheelerDetails: '',
+      fourWheelerExperience: '',
+      motorcycleCount: 0,
+      motorcycleExperience: '',
       cycleCount: 0,
-      cycleDetails: '',
+      cycleExperience: '',
       thelaCount: 0,
-      thelaDetails: '',
+      thelaExperience: '',
       
       // Products & Partnership
-      partnerName: '',
+      partnerFullName: '',
       partnerAge: 18,
-      partnerMobile: '',
-      partnerEmail: '',
+      partnerGender: '',
       partnerCitizenshipNumber: '',
       partnerIssuedDistrict: '',
+      partnerMobileNumber: '',
+      partnerEmail: '',
+      partnerPermanentAddress: '',
+      partnerTemporaryAddress: '',
       creditDays: 0,
       
       // Document Upload
-      citizenshipDocument: null,
-      companyRegistrationDocument: null,
-      panVatDocument: null,
-      digitalSignature: null,
+      citizenshipFile: undefined,
+      companyRegistrationFile: undefined,
+      panVatFile: undefined,
+      officePhotoFile: undefined,
+      otherDocumentsFile: undefined,
       
       // Additional Information
       additionalInfo: '',
-      termsAndConditions: '',
       
       // Agreement
       agreementAccepted: false,
-      distributorSignatureName: '',
-      distributorSignatureDate: getTodayNepaliDate(),
       
       // Dynamic Arrays
-      currentTransactions: [{ company: '', products: '', turnover: '' }],
-      products: [{ name: '', monthlySalesCapacity: '' }, { name: '', monthlySalesCapacity: '' }],
-      areaCoverageDetails: [],
-      currentBusiness: [{ businessType: '', products: '', turnover: '' }]
+      currentTransactions: [],
+      products: [],
+      areaCoverageDetails: []
     }
   });
 
@@ -581,11 +1182,6 @@ function DistributorFormContent() {
     name: 'areaCoverageDetails'
   });
 
-  const { fields: businessFields, append: appendBusiness, remove: removeBusiness } = useFieldArray({
-    control,
-    name: 'currentBusiness'
-  });
-
   // Manage form state when step changes
   useEffect(() => {
     const contextData = getCurrentFormData();
@@ -594,7 +1190,7 @@ function DistributorFormContent() {
     // Default empty form data
     const emptyFormData = {
       fullName: '',
-      age: '',
+      age: 18,
       gender: '',
       citizenshipNumber: '',
       issuedDistrict: '',
@@ -608,30 +1204,27 @@ function DistributorFormContent() {
       officeAddress: '',
       workAreaDistrict: '',
       desiredDistributionArea: '',
-      currentBusiness: '',
       businessType: '',
       salesManCount: 0,
       salesManExperience: '',
-      deliveryStaffCount: 0,
-      deliveryStaffExperience: '',
-      accountAssistantCount: 0,
-      accountAssistantExperience: '',
-      otherStaffCount: 0,
-      otherStaffExperience: '',
-      warehouseSpace: 0,
-      warehouseDetails: '',
+      driverCount: 0,
+      driverExperience: '',
+      helperCount: 0,
+      helperExperience: '',
+      accountantCount: 0,
+      accountantExperience: '',
+      storageSpace: 0,
+      storageDetails: '',
       truckCount: 0,
-      truckDetails: '',
+      truckExperience: '',
       fourWheelerCount: 0,
-      fourWheelerDetails: '',
-      twoWheelerCount: 0,
-      twoWheelerDetails: '',
+      fourWheelerExperience: '',
+      motorcycleCount: 0,
+      motorcycleExperience: '',
       cycleCount: 0,
-      cycleDetails: '',
+      cycleExperience: '',
       thelaCount: 0,
-      thelaDetails: '',
-      distributorSignatureName: '',
-      distributorSignatureDate: getTodayNepaliDate(),
+      thelaExperience: '',
       productCategory: '',
       businessExperience: '',
       monthlyIncome: '',
@@ -651,13 +1244,7 @@ function DistributorFormContent() {
       additionalInfo: '',
       additionalInfo2: '',
       additionalInfo3: '',
-      agreementAccepted: false,
-      distributorSignatureName: '',
-      distributorSignatureDate: getTodayNepaliDate(),
-      currentTransactions: [{ company: '', products: '', turnover: '' }],
-      products: [{ name: '', monthlySalesCapacity: '' }, { name: '', monthlySalesCapacity: '' }],
-      areaCoverageDetails: [],
-      currentBusiness: [{ businessType: '', products: '', turnover: '' }]
+      agreementAccepted: false
     };
     
     // Merge context data with empty form data (context data takes precedence)
@@ -817,6 +1404,13 @@ function DistributorFormContent() {
       setValue('distributorSignatureName', fullName);
     }
   }, [currentStep, watch, setValue]);
+
+  // Set current date for signature when on Step 7
+  useEffect(() => {
+    if (currentStep === 7) {
+      setValue('distributorSignatureDate', getTodayNepaliDate());
+    }
+  }, [currentStep, setValue]);
 
   const nextStep = async () => {
     // Get current form data and save it to Context
@@ -1120,7 +1714,7 @@ function DistributorFormContent() {
       // Digital signature removed from review section
       // No signature file upload needed
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/applications/submit`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api'}/applications/submit`, {
         method: 'POST',
         body: formData,
       });
@@ -1578,88 +2172,68 @@ function DistributorFormContent() {
                 </p>
                 
                 <div className="space-y-4">
-                  {businessFields.map((field, index) => (
-                    <div key={field.id} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
-                      <div className="flex justify-between items-center mb-3">
-                        <h4 className="text-sm font-bold text-[#001011] absans">
-                          व्यापार {index + 1} (Business {index + 1})
-                        </h4>
-                        {index > 0 && (
-                          <button
-                            type="button"
-                            onClick={() => removeBusiness(index)}
-                            className="px-3 py-1 bg-red-600 text-white rounded text-sm hover:bg-red-700 transition-colors absans"
-                          >
-                            हटाउनुहोस् (Remove)
-                          </button>
-                        )}
+                  <p className="text-sm text-[#001011] absans">हालको व्यापारको विवरण तल भर्नुहोस् (Fill current business details below):</p>
+                  <div className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-[#001011] mb-1 absans">
+                          व्यापारको प्रकार * (Business type *)
+                        </label>
+                        <Controller
+                          name="currentBusiness"
+                          control={control}
+                          render={({ field }) => (
+                            <input
+                              {...field}
+                              type="text"
+                              value={field.value || ''}
+                              onChange={(e) => field.onChange(e.target.value)}
+                              className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] text-sm absans"
+                              placeholder="जस्तै: खुद्रा व्यापार"
+                            />
+                          )}
+                        />
                       </div>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                          <label className="block text-xs font-bold text-[#001011] mb-1 absans">
-                            व्यापारको प्रकार * (Business type *)
-                </label>
-                <Controller
-                            name={`currentBusiness.${index}.businessType`}
-                  control={control}
-                  render={({ field }) => (
-                    <input
-                      {...field}
-                      type="text"
-                                className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] text-sm absans"
-                                placeholder="जस्तै: खुद्रा व्यापार"
-                    />
-                  )}
-                />
-              </div>
-                        
-                        <div>
-                          <label className="block text-xs font-bold text-[#001011] mb-1 absans">
-                            उत्पादनहरू * (Products *)
-                          </label>
-                          <Controller
-                            name={`currentBusiness.${index}.products`}
-                            control={control}
-                            render={({ field }) => (
-                              <input
-                                {...field}
-                                type="text"
-                                className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] text-sm absans"
-                                placeholder="जस्तै: खाद्य वस्तु, कपडा"
-                              />
-                            )}
-                          />
-                        </div>
-                        
-                        <div>
-                          <label className="block text-xs font-bold text-[#001011] mb-1 absans">
-                            वार्षिक टर्नओभर * (Annual turnover *)
-                          </label>
-                          <Controller
-                            name={`currentBusiness.${index}.turnover`}
-                            control={control}
-                            render={({ field }) => (
-                              <input
-                                {...field}
-                                type="text"
-                                className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] text-sm absans"
-                                placeholder="जस्तै: ५० लाख रुपैयाँ"
-                              />
-                            )}
-                          />
-                        </div>
+                      <div>
+                        <label className="block text-xs font-bold text-[#001011] mb-1 absans">
+                          बिक्री गरिने उत्पादनहरू * (Products sold *)
+                        </label>
+                        <Controller
+                          name="businessType"
+                          control={control}
+                          render={({ field }) => (
+                            <input
+                              {...field}
+                              type="text"
+                              value={field.value || ''}
+                              onChange={(e) => field.onChange(e.target.value)}
+                              className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] text-sm absans"
+                              placeholder="जस्तै: खाद्य वस्तु, कपडा"
+                            />
+                          )}
+                        />
+                      </div>
+                      
+                      <div>
+                        <label className="block text-xs font-bold text-[#001011] mb-1 absans">
+                          वार्षिक टर्नओभर * (Annual turnover *)
+                        </label>
+                        <Controller
+                          name="currentBusiness"
+                          control={control}
+                          render={({ field }) => (
+                            <input
+                              {...field}
+                              type="text"
+                              className="w-full px-6 py-4 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] text-sm absans"
+                              placeholder="जस्तै: ५० लाख रुपैयाँ"
+                            />
+                          )}
+                        />
                       </div>
                     </div>
-                  ))}
-                  
-                  <button
-                    type="button"
-                    onClick={() => appendBusiness({ businessType: '', products: '', turnover: '' })}
-                    className="w-full py-2 px-4 border-2 border-dashed border-gray-300 rounded-lg text-[#001011] hover:border-blue-500 hover:text-blue-500 transition-colors text-sm absans"
-                  >
-                    + अर्को व्यापार थप्नुहोस् (Add Another Business)
-                  </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1731,7 +2305,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                     <Controller
-                          name="deliveryStaffCount"
+                          name="driverCount"
                       control={control}
                       render={({ field }) => (
                         <input
@@ -1746,7 +2320,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="deliveryStaffExperience"
+                          name="driverExperience"
                           control={control}
                           render={({ field }) => (
                             <input
@@ -1767,7 +2341,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                     <Controller
-                          name="accountAssistantCount"
+                          name="accountantCount"
                       control={control}
                       render={({ field }) => (
                         <input
@@ -1782,7 +2356,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="accountAssistantExperience"
+                          name="accountantExperience"
                           control={control}
                           render={({ field }) => (
                             <input
@@ -1803,7 +2377,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                     <Controller
-                          name="otherStaffCount"
+                          name="helperCount"
                       control={control}
                       render={({ field }) => (
                         <input
@@ -1818,7 +2392,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="otherStaffExperience"
+                          name="helperExperience"
                           control={control}
                           render={({ field }) => (
                             <input
@@ -1839,7 +2413,7 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                     <Controller
-                          name="warehouseSpace"
+                          name="storageSpace"
                       control={control}
                       render={({ field }) => (
                         <input
@@ -1854,14 +2428,14 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="warehouseDetails"
+                          name="storageDetails"
                           control={control}
                           render={({ field }) => (
                             <input
                               {...field}
                               type="text"
                               className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans"
-                              placeholder="Warehouse details"
+                              placeholder="Storage details"
                             />
                           )}
                         />
@@ -1890,14 +2464,14 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="truckDetails"
+                          name="truckExperience"
                           control={control}
                           render={({ field }) => (
                             <input
                               {...field}
                               type="text"
                               className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans"
-                              placeholder="Truck details"
+                              placeholder="Truck experience"
                             />
                           )}
                         />
@@ -1926,14 +2500,14 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="fourWheelerDetails"
+                          name="fourWheelerExperience"
                           control={control}
                           render={({ field }) => (
                             <input
                               {...field}
                               type="text"
                               className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans"
-                              placeholder="Four wheeler details"
+                              placeholder="Four wheeler experience"
                             />
                           )}
                         />
@@ -1962,14 +2536,14 @@ function DistributorFormContent() {
                       </td>
                       <td className="px-4 py-3">
                         <Controller
-                          name="twoWheelerDetails"
+                          name="motorcycleExperience"
                           control={control}
                           render={({ field }) => (
                             <input
                               {...field}
                               type="text"
                               className="w-full px-4 py-2 border border-gray-300 rounded focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans"
-                              placeholder="Two wheeler details"
+                              placeholder="Motorcycle experience"
                             />
                           )}
                         />
@@ -2110,8 +2684,8 @@ function DistributorFormContent() {
                     <p className="text-xs text-gray-600 mt-1 absans">
                       सब-श्रेणीहरू केवल जानकारीका लागि देखाइएका छन्। मुख्य श्रेणी मात्र छान्नुहोस्।
                     </p>
-                    {errors.products?.[index]?.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.products[index]?.name?.message}</p>
+                    {errors.products && typeof errors.products[index] === 'object' && 'name' in errors.products[index] && (
+                      <p className="text-red-500 text-sm mt-1">{typeof errors.products?.[index]?.name?.message === 'string' ? errors.products[index]?.name?.message : 'Field error'}</p>
                     )}
                   </div>
 
@@ -2131,8 +2705,8 @@ function DistributorFormContent() {
                         />
                       )}
                     />
-                    {errors.products?.[index]?.monthlySalesCapacity && (
-                      <p className="text-red-500 text-sm mt-1">{errors.products[index]?.monthlySalesCapacity?.message}</p>
+                    {errors.products && typeof errors.products[index] === 'object' && 'monthlySalesCapacity' in errors.products[index] && (
+                      <p className="text-red-500 text-sm mt-1">{errors.products?.[index]?.monthlySalesCapacity?.message?.toString?.() || 'Field error'}</p>
                     )}
                   </div>
 
@@ -3320,20 +3894,17 @@ function DistributorFormContent() {
         <>
           {/* Header */}
       <div 
-        className="sticky top-0 z-50 border-b border-gray-200"
-        style={{
-          background: "radial-gradient(125% 125% at 50% 90%, #fff 40%,rgb(228, 106, 40) 100%)",
-        }}
+        className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-white"
       >
-        <div className="max-w-9xl px-4 py-6 ">
-          <div className="flex flex-col sm:flex-row items-center justify-center relative">
-            {/* Logo */}
-            <div className="flex-shrink-0 mb-2 sm:mb-0 sm:absolute sm:left-0">
-              <Image src="/logo.png" alt="ZIP ZIP" width={150} height={150} className="w-24 h-16 sm:w-20 sm:h-12 md:w-22 md:h-14 lg:w-28 lg:h-18" />
+        <div className="max-w-9xl px-4 py-3">
+          <div className="flex items-start justify-between relative">
+            {/* Logo - Top Left */}
+            <div className="flex-shrink-0">
+              <Image src="/zipzip_logo.svg" alt="ZIP ZIP" width={150} height={150} className="w-16 h-10 sm:w-20 sm:h-12 md:w-24 md:h-14 lg:w-28 lg:h-16" />
             </div>
             {/* Title centered */}
-            <div className="text-center">
-              <h1 className="text-lg md:text-2xl font-extrabold text-[#001011] absans">
+            <div className="text-center flex-1">
+              <h1 className="text-base sm:text-lg md:text-xl font-extrabold text-[#001011] absans">
                 वितरक आवेदन फारम<br />Distributor Application Form
               </h1>
             </div>
@@ -3341,158 +3912,45 @@ function DistributorFormContent() {
         </div>
       </div>
 
-      <div className="w-full px-4 py-8" style={{
-        backgroundImage: `linear-gradient(135deg, #F2F8FC 0%, #E0F2FE 25%, #F2F8FC 50%, #E0F2FE 75%, #F2F8FC 100%)`,
-        backgroundSize: '200% 200%',
-        animation: 'marble 8s ease-in-out infinite'
+      {/* Fixed Draft Actions Section */}
+      <div className="fixed top-20 right-4 z-40 flex flex-col gap-2">
+        <button
+          type="button"
+          onClick={saveDraft}
+          className="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm font-medium transition-colors absans shadow-lg"
+        >
+          ड्राफ्ट सेभ गर्नुहोस्
+        </button>
+        <button
+          type="button"
+          onClick={() => setShowReferenceInput(true)}
+          className="px-4 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-lg text-sm font-medium transition-colors absans shadow-lg"
+        >
+          ड्राफ्ट लोड गर्नुहोस्
+        </button>
+        <button
+          type="button"
+          onClick={handlePrintForm}
+          className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-medium transition-colors absans shadow-lg"
+        >
+          फारम प्रिन्ट गर्नुहोस्
+        </button>
+      </div>
+
+      <div className="w-full px-2 pt-16 pb-8" style={{
+        backgroundColor: '#edede9'
       }}>
-        <div className="lg:flex lg:gap-8">
-          {/* Progress Sidebar - Hidden on small screens */}
-          <div className="hidden lg:block lg:w-96 mb-8 lg:mb-0">
-            <div className="bg-white rounded-lg shadow-sm p-6 fixed top-24 left-8 z-10 max-h-[calc(100vh-8rem)] overflow-y-auto">
-              <h2 className="text-lg font-semibold text-[#001011] mb-6 absans">प्रगति</h2>
-              
-              {/* Progress Overview */}
-              <div className="mb-6">
-                <div className="flex justify-between text-sm text-[#001011] mb-2">
-                  <span>Step {currentStep} of {steps.length}</span>
-                  <span>{Math.round((currentStep / steps.length) * 100)}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-500 ease-out"
-                    style={{ width: `${(currentStep / steps.length) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-
-              {/* Step Tabs */}
-              <div className="space-y-12">
-                {steps.map((step, index) => (
-                  <div key={step.id} className="relative">
-                    {/* Connecting Line */}
-                    {index < steps.length - 1 && (
-                      <div className="absolute left-3 top-10 w-0.5 h-12 bg-gray-300 z-0"></div>
-                    )}
-                    
-                    <div
-                      className={`relative p-4 rounded-lg border transition-all duration-200 cursor-pointer z-10 ${
-                        currentStep === step.id
-                        ? 'bg-blue-50 border-blue-200 shadow-sm'
-                          : currentStep > step.id
-                        ? 'bg-green-50 border-green-200'
-                        : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
-                    }`}
-                    onClick={() => {
-                      if (currentStep > step.id) {
-                        setCurrentStep(step.id);
-                      }
-                    }}
-                  >
-                      <div className="flex items-center space-x-4">
-                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                        currentStep === step.id
-                          ? 'bg-blue-500 text-white'
-                          : currentStep > step.id
-                          ? 'bg-green-500 text-white'
-                            : 'bg-gray-300 text-[#001011]'
-                      }`}>
-                          {currentStep > step.id ? (
-                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                          ) : (
-                            step.id
-                          )}
-                    </div>
-                      <div className="flex-1 min-w-0">
-                        <p className={`text-sm font-medium ${
-                            currentStep === step.id ? 'text-blue-700' : currentStep > step.id ? 'text-green-700' : 'text-[#001011]'
-                        }`}>
-                        {step.title}
-                        </p>
-                          <p className="text-xs text-[#001011] mt-1">
-                        {step.subtitle}
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Progress - Modern Tab Design */}
-          <div className="lg:hidden mb-6">
-            <div className="bg-white rounded-lg shadow-sm p-4">
-              {/* Progress Overview */}
-              <div className="mb-4">
-                <div className="flex justify-between text-sm text-[#001011] mb-2">
-                  <span>Step {currentStep} of {steps.length}</span>
-                  <span>{Math.round((currentStep / steps.length) * 100)}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-500 ease-out"
-                    style={{ width: `${(currentStep / steps.length) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-
-              {/* Step Indicators */}
-              <div className="flex justify-evenly gap-12 overflow-x-auto relative">
-                {steps.map((step, index) => (
-                  <div key={step.id} className="flex flex-col items-center relative">
-                    {/* Connecting Line */}
-                    {index < steps.length - 1 && (
-                      <div className="absolute left-1/2 top-4 w-12 h-0.5 bg-gray-300 z-0 transform translate-x-4"></div>
-                    )}
-                    
-                      <div
-                      className={`relative w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium transition-all duration-300 z-10 ${
-                          currentStep === step.id
-                          ? 'bg-blue-500 text-white shadow-lg'
-                            : currentStep > step.id
-                          ? 'bg-green-500 text-white shadow-lg'
-                            : 'bg-gray-200 text-[#001011]'
-                        }`}
-                      >
-                        {currentStep > step.id ? (
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        ) : (
-                          step.id
-                        )}
-                      </div>
-                    <p className={`text-xs mt-1 text-center ${
-                          currentStep === step.id
-                        ? 'text-blue-600 font-medium'
-                            : currentStep > step.id
-                            ? 'text-green-600'
-                            : 'text-[#001011]'
-                    }`}>
-                        {step.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div>
 
           {/* Main Content */}
           <div className="flex-1">
-            <div className="bg-white rounded-lg shadow-sm">
+            <div className="bg-white rounded-lg shadow-sm mt-8 mx-2 sm:mx-6 md:mx-12 lg:mx-16 xl:mx-24">
               {/* Step Navigation */}
-              <div className="flex justify-between items-center p-6 border-b border-gray-200">
+              <div className="p-6 border-b border-gray-200">
                 <div>
                   <h2 className="text-lg font-semibold text-[#001011] absans">
-                    Step {currentStep} of {steps.length}
-                  </h2>
-                  <p className="text-sm text-[#001011] absans">
                     {steps.find(s => s.id === currentStep)?.title}
-                  </p>
+                  </h2>
                 </div>
               </div>
 
@@ -3503,19 +3961,22 @@ function DistributorFormContent() {
                   {renderStepContent()}
                   
                   {/* Navigation Buttons */}
-                  <div className="flex justify-between pt-6 border-t border-gray-200">
-                    <button
-                      type="button"
-                      onClick={prevStep}
-                      disabled={currentStep === 1}
-                      className={`px-6 py-3 rounded-lg text-sm font-medium transition-colors absans ${
-                        currentStep === 1
-                          ? 'bg-gray-100 text-[#001011] cursor-not-allowed'
-                          : 'bg-gray-200 text-[#001011] hover:bg-gray-300'
-                      }`}
-                    >
-                      पछाडि
-                    </button>
+                  <div className="flex flex-wrap justify-between gap-2 pt-6 border-t border-gray-200">
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={prevStep}
+                        disabled={currentStep === 1}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors absans ${
+                          currentStep === 1
+                            ? 'bg-gray-100 text-[#001011] cursor-not-allowed'
+                            : 'bg-gray-200 text-[#001011] hover:bg-gray-300'
+                        }`}
+                      >
+                        पछाडि
+                      </button>
+
+                    </div>
 
                     {currentStep < steps.length ? (
                       <button
@@ -3553,7 +4014,7 @@ function DistributorFormContent() {
                           // If on final step and agreement is accepted, submit directly
                           if (currentStep === 8 && currentValues.agreementAccepted) {
                             e.preventDefault();
-                            console.log('🚀 Submitting form from submit button');
+                            console.log('Submitting form from submit button');
                             await onSubmit(currentValues);
                           }
                         }}
@@ -3567,6 +4028,63 @@ function DistributorFormContent() {
                       </button>
                     )}
                   </div>
+                  
+                  {/* Reference Number Modal */}
+                  {showReferenceInput && (
+                    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                      <div className="bg-white rounded-lg p-6 w-full max-w-md">
+                        <h3 className="text-lg font-semibold text-[#001011] mb-4 absans">ड्राफ्ट लोड गर्नुहोस्</h3>
+                        <p className="text-sm text-[#001011] mb-4 absans">तपाईंले प्राप्त गरेको सन्दर्भ नम्बर दिनुहोस्:</p>
+                        
+                        <div className="mb-4">
+                          <input
+                            type="text"
+                            value={inputReferenceNumber}
+                            onChange={(e) => setInputReferenceNumber(e.target.value)}
+                            placeholder="सन्दर्भ नम्बर यहाँ लेख्नुहोस्"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] absans"
+                          />
+                        </div>
+                        
+                        <div className="flex gap-2 justify-end">
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setShowReferenceInput(false);
+                              setInputReferenceNumber('');
+                            }}
+                            className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-[#001011] rounded-lg text-sm font-medium transition-colors absans"
+                          >
+                            रद्द गर्नुहोस्
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => loadApplicationByReference(inputReferenceNumber)}
+                            disabled={!inputReferenceNumber.trim()}
+                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors absans ${
+                              !inputReferenceNumber.trim()
+                                ? 'bg-gray-300 text-[#001011] cursor-not-allowed'
+                                : 'bg-blue-500 hover:bg-blue-600 text-white'
+                            }`}
+                          >
+                            लोड गर्नुहोस्
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Reference Number Display */}
+                  {referenceNumber && (
+                    <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                      <p className="text-sm text-blue-800 absans">
+                        <strong>तपाईंको सन्दर्भ नम्बर:</strong> {referenceNumber}
+                      </p>
+                      <p className="text-xs text-blue-700 mt-1 absans">
+                        यो नम्बर लेखेर राख्नुहोस्। तपाईं यही नम्बर प्रयोग गरी फारम पूरा गर्न सक्नुहुन्छ।
+                      </p>
+                    </div>
+                  )}
                 </form>
               </div>
             </div>

@@ -26,7 +26,9 @@ async function addTestProducts() {
       category = await prisma.category.create({
         data: {
           title: 'Test Category',
-          description: 'Test products for distributor testing'
+          description: 'Test products for distributor testing',
+          slug: 'test-category',
+          createdBy: 'cmf6frns10001ltxshkip9u52' // Sales manager user ID
         }
       });
       console.log('✅ Created test category:', category.title);
@@ -36,33 +38,39 @@ async function addTestProducts() {
     const testProducts = [
       {
         name: 'Buff Achar',
-        units: '500gm',
-        packaging: 'Plastic Bottle',
-        distributorPrice: 500,
-        wholesalePrice: 525,
-        rate: 575,
-        mrp: 700,
-        categoryId: category.id
+        slug: 'buff-achar',
+        description: 'Delicious buffalo meat pickle - 500gm plastic bottle',
+        price: 575,
+        costPrice: 500,
+        stockQuantity: 100,
+        brand: 'ZipZip',
+        size: '500gm',
+        categoryId: category.id,
+        createdBy: 'cmf6frns10001ltxshkip9u52' // Sales manager user ID
       },
       {
         name: 'Pork Achar',
-        units: '250gm',
-        packaging: 'Glass Jar',
-        distributorPrice: 300,
-        wholesalePrice: 320,
-        rate: 350,
-        mrp: 400,
-        categoryId: category.id
+        slug: 'pork-achar',
+        description: 'Tasty pork meat pickle - 250gm glass jar',
+        price: 350,
+        costPrice: 300,
+        stockQuantity: 75,
+        brand: 'ZipZip',
+        size: '250gm',
+        categoryId: category.id,
+        createdBy: 'cmf6frns10001ltxshkip9u52' // Sales manager user ID
       },
       {
         name: 'Chicken Achar',
-        units: '1kg',
-        packaging: 'Plastic Container',
-        distributorPrice: 900,
-        wholesalePrice: 950,
-        rate: 1000,
-        mrp: 1100,
-        categoryId: category.id
+        slug: 'chicken-achar',
+        description: 'Flavorful chicken meat pickle - 1kg plastic container',
+        price: 1000,
+        costPrice: 900,
+        stockQuantity: 50,
+        brand: 'ZipZip',
+        size: '1kg',
+        categoryId: category.id,
+        createdBy: 'cmf6frns10001ltxshkip9u52' // Sales manager user ID
       }
     ];
 

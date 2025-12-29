@@ -247,8 +247,8 @@ export default function CategoryManagement() {
       console.log('Sending to API:', finalCategoryData); // Debug log
       
       const url = editingCategory 
-        ? `${config.apiUrl}/categories/${editingCategory.id}`
-        : `${config.apiUrl}/categories`;
+        ? `${config.apiUrl}/categories/dev/${editingCategory.id}`
+        : `${config.apiUrl}/categories/dev`;
       
       const method = editingCategory ? 'PUT' : 'POST';
 
@@ -293,7 +293,7 @@ export default function CategoryManagement() {
 
     try {
       const token = localStorage.getItem('admin_token');
-      const response = await fetch(`${config.apiUrl}/categories/${deleteModal.category.id}`, {
+      const response = await fetch(`${config.apiUrl}/categories/dev/${deleteModal.category.id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -370,7 +370,7 @@ export default function CategoryManagement() {
 
   const updateSortOrder = async (categoryId: string, newSortOrder: number) => {
     const token = localStorage.getItem('admin_token');
-    await fetch(`${config.apiUrl}/categories/${categoryId}`, {
+    await fetch(`${config.apiUrl}/categories/dev/${categoryId}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${token}`,

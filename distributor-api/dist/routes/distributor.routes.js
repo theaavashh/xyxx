@@ -24,6 +24,8 @@ const ApplicationIdParamSchema = zod_1.z.object({
     id: zod_1.z.string().min(1, 'आवेदन ID आवश्यक छ')
 });
 router.post('/submit', rate_limit_middleware_1.applicationLimiter, rate_limit_middleware_1.uploadLimiter, upload_middleware_1.uploadDocuments, distributor_controller_1.submitApplication);
+router.post('/draft', rate_limit_middleware_1.applicationLimiter, rate_limit_middleware_1.uploadLimiter, upload_middleware_1.uploadDocuments, distributor_controller_1.saveDraftApplication);
+router.get('/reference/:referenceNumber', distributor_controller_1.getApplicationByReference);
 if (process.env.NODE_ENV === 'development') {
     router.get('/dev', distributor_controller_1.getApplications);
     router.get('/dev/stats', distributor_controller_1.getApplicationStats);

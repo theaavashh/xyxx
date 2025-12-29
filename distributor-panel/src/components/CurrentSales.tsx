@@ -63,54 +63,73 @@ export default function CurrentSales() {
     return () => clearInterval(interval);
   }, []);
 
-  // Load existing data from API
+  // Always initialize with new sample data (for development)
   const loadExistingData = async () => {
-    if (!user?.id) return;
-
-    try {
-      const currentDate = new Date();
-      const year = currentDate.getFullYear();
-      const month = currentDate.getMonth() + 1;
-      
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/sales/distributors/${user.id}/sales/${year}/${month}`);
-      const result = await response.json();
-      
-      if (result.success && result.data.salesData) {
-        const loadedData: SheetData = {};
-        result.data.salesData.forEach((item: any) => {
-          loadedData[item.cellId] = {
-            value: item.value,
-            type: item.type,
-            formula: item.formula
-          };
-        });
-        setData(loadedData);
-      } else {
-        // If no data exists, initialize with sample data
-        initializeSampleData();
-      }
-    } catch (error) {
-      console.error('Error loading existing data:', error);
-      // Initialize with sample data if API fails
-      initializeSampleData();
-    }
+    // Clear any existing data and initialize with new sample data
+    initializeSampleData();
   };
 
   const initializeSampleData = () => {
     const sampleData: SheetData = {};
     
-    // Add some sample sales data for the first few days
-    const sampleSales = [
-      { day: 1, sales: 'S001', customer: 'ABC Corp', product: 'Product A', qty: '10', price: '150', status: 'Completed', payment: 'Bank' },
-      { day: 2, sales: 'S002', customer: 'XYZ Ltd', product: 'Product B', qty: '5', price: '200', status: 'Pending', payment: 'Cash' },
-      { day: 3, sales: 'S003', customer: 'DEF Inc', product: 'Product C', qty: '8', price: '175', status: 'Completed', payment: 'Card' },
-      { day: 5, sales: 'S004', customer: 'GHI Co', product: 'Product A', qty: '15', price: '150', status: 'Completed', payment: 'Bank' },
-      { day: 7, sales: 'S005', customer: 'JKL Corp', product: 'Product D', qty: '3', price: '300', status: 'Pending', payment: 'Card' }
+    // Sample sales data for each product across different days
+    // Product A (Opening Stock: 100)
+    const productASales = {
+      1: 5, 2: 3, 3: 7, 4: 2, 5: 8, 6: 4, 7: 6, 8: 9, 9: 3, 10: 5,
+      11: 7, 12: 4, 13: 8, 14: 2, 15: 6, 16: 5, 17: 9, 18: 3, 19: 7, 20: 4
+    };
+    
+    // Product B (Opening Stock: 150)
+    const productBSales = {
+      1: 8, 2: 6, 3: 9, 4: 4, 5: 7, 6: 5, 7: 8, 8: 12, 9: 6, 10: 9,
+      11: 10, 12: 7, 13: 11, 14: 5, 15: 8, 16: 9, 17: 12, 18: 6, 19: 10, 20: 8
+    };
+    
+    // Product C (Opening Stock: 200)
+    const productCSales = {
+      1: 12, 2: 8, 3: 15, 4: 6, 5: 10, 6: 7, 7: 14, 8: 18, 9: 9, 10: 12,
+      11: 16, 12: 10, 13: 19, 14: 8, 15: 13, 16: 14, 17: 20, 18: 11, 19: 17, 20: 15
+    };
+    
+    // Product D (Opening Stock: 75) - This will be over-sold
+    const productDSales = {
+      1: 10, 2: 8, 3: 12, 4: 5, 5: 9, 6: 7, 7: 11, 8: 15, 9: 8, 10: 12,
+      11: 14, 12: 9, 13: 16, 14: 6, 15: 13, 16: 15, 17: 18, 18: 10, 19: 17, 20: 20
+    };
+    
+    // Product E (Opening Stock: 120)
+    const productESales = {
+      1: 6, 2: 4, 3: 8, 4: 3, 5: 7, 6: 5, 7: 9, 8: 11, 9: 5, 10: 8,
+      11: 10, 12: 6, 13: 12, 14: 4, 15: 9, 16: 10, 17: 13, 18: 7, 19: 11, 20: 9
+    };
+    
+    // Fill the data for each product row
+    const allProductsSales = [
+      productASales, productBSales, productCSales, productDSales, productESales
     ];
     
-    sampleSales.forEach(sale => {
-      const cellId = `day_${sale.day}_1`;
-      sampleData[cellId] = { value: sale.sales, type: 'text' };
+    allProductsSales.forEach((productSales, rowIndex) => {
+      Object.entries(productSales).forEach(([day, sales]) => {
+        const cellId = `day_${day}_${rowIndex + 1}`;
+        sampleData[cellId] = {
+          value: sales.toString(),
+          type: 'number'
+        };
+      });
+    });
+    
+    // Add some zero sales days for variety
+    const zeroSalesDays = [
+      { day: 21, row: 1 }, { day: 22, row: 2 }, { day: 23, row: 3 },
+      { day: 24, row: 4 }, { day: 25, row: 5 }
+    ];
+    
+    zeroSalesDays.forEach(({ day, row }) => {
+      const cellId = `day_${day}_${row}`;
+      sampleData[cellId] = {
+        value: '0',
+        type: 'number'
+      };
     });
     
     setData(sampleData);
@@ -118,6 +137,9 @@ export default function CurrentSales() {
 
   // Initialize with existing data or sample data
   useEffect(() => {
+    // Clear any existing data first
+    setData({});
+    
     if (user?.id) {
       loadExistingData();
     }
@@ -143,10 +165,52 @@ export default function CurrentSales() {
   };
 
   const monthDates = generateMonthDates();
-  const columns = monthDates;
+  
+  // Fixed columns before dates (only Product and Opening Stock)
+  const fixedColumns = [
+    { id: 'product', label: 'Product', type: 'fixed' },
+    { id: 'opening_stock', label: 'Opening Stock', type: 'fixed' }
+  ];
+  
+  // Closing stock column after dates
+  const closingStockColumn = [
+    { id: 'closing_stock', label: 'Closing Stock', type: 'fixed' }
+  ];
+  
+  // All columns: Fixed columns + date columns + closing stock at the end
+  const columns = [...fixedColumns, ...monthDates, ...closingStockColumn];
   const rows = Array.from({ length: 50 }, (_, i) => i + 1);
 
-  const getCellId = (col: any, row: number) => `${col.id}_${row}`;
+  const getCellId = (col: any, row: number) => {
+  if (col.type === 'fixed') {
+    return `${col.id}_${row}`;
+  }
+  return `${col.id}_${row}`;
+};
+
+// Function to check row stock conditions
+const getRowStockStatus = (row: number) => {
+  const openingStocks = [100, 150, 200, 75, 120];
+  const openingStock = openingStocks[row - 1] || 0;
+  
+  // Sum up all daily sales for this product
+  let totalSold = 0;
+  for (let day = 1; day <= currentDate.getDate(); day++) {
+    const dayCellId = `day_${day}_${row}`;
+    const dayValue = parseFloat(data[dayCellId]?.value || '0');
+    totalSold += dayValue;
+  }
+  
+  const closingStock = openingStock - totalSold;
+  
+  return {
+    openingStock,
+    totalSold,
+    closingStock,
+    isOverSold: totalSold > openingStock,
+    hasPositiveClosing: closingStock > 0
+  };
+};
 
   const getCellValue = (cellId: string) => {
     const cell = data[cellId];
@@ -169,6 +233,11 @@ export default function CurrentSales() {
   };
 
   const canEditCell = (col: any, row: number) => {
+    if (col.type === 'fixed') {
+      // Only product column can be edited
+      return col.id === 'product';
+    }
+    
     if (isFutureDate(col)) return false;
     
     // Check if all previous columns in the same row are filled
@@ -184,6 +253,23 @@ export default function CurrentSales() {
   };
 
   const handleCellClick = (cellId: string, col: any, row: number) => {
+    if (col.type === 'fixed') {
+      if (col.id === 'product') {
+        // Allow editing product names
+        setActiveCell(cellId);
+        setIsEditing(true);
+        setEditValue(getCellValue(cellId));
+      } else {
+        // Show info for other fixed columns
+        if (col.id === 'opening_stock') {
+          toast('Opening stock is calculated from previous month closing stock');
+        } else if (col.id === 'closing_stock') {
+          toast('Closing stock is calculated automatically: Opening Stock - Total Sales');
+        }
+      }
+      return;
+    }
+    
     if (isFutureDate(col)) return;
     
     if (!canEditCell(col, row)) {
@@ -352,13 +438,62 @@ export default function CurrentSales() {
   const getCellStyle = (cellId: string, col: any, row: number) => {
     const isActive = activeCell === cellId;
     const isSelected = selectedRange.includes(cellId);
-    const isFuture = isFutureDate(col);
+    const isFixed = col.type === 'fixed';
+    const isFuture = !isFixed && isFutureDate(col);
     const canEdit = canEditCell(col, row);
     
+    if (isFixed) {
+      // Fixed columns have different styling
+      let baseStyle = 'w-32 h-8 border border-gray-300 text-xs flex items-center px-2';
+      
+      // Get row stock status for coloring
+      const stockStatus = getRowStockStatus(row);
+      const rowBgClass = stockStatus.isOverSold 
+        ? 'bg-red-100' 
+        : stockStatus.hasPositiveClosing 
+          ? 'bg-green-100' 
+          : 'bg-yellow-100';
+
+      if (col.id === 'product') {
+        baseStyle += ` text-blue-700 font-medium ${rowBgClass}`;
+        if (isActive && canEdit) {
+          baseStyle += ' bg-blue-100 border-blue-500';
+        }
+        if (canEdit) {
+          baseStyle += ' cursor-pointer hover:opacity-80';
+        } else {
+          baseStyle += ' cursor-not-allowed';
+        }
+      } else if (col.id === 'opening_stock') {
+        baseStyle += ` text-green-700 font-medium ${rowBgClass} cursor-not-allowed`;
+      } else if (col.id === 'closing_stock') {
+        const closingValue = parseFloat(getCellValue(cellId) || '0');
+        if (closingValue > 0) {
+          baseStyle += ' text-green-700 font-bold bg-green-100 border-l-4 border-l-green-500 cursor-not-allowed';
+        } else if (closingValue < 0) {
+          baseStyle += ' text-red-700 font-bold bg-red-100 border-l-4 border-l-red-500 cursor-not-allowed';
+        } else {
+          baseStyle += ' text-orange-700 font-medium bg-orange-50 border-l-4 border-l-orange-400 cursor-not-allowed';
+        }
+      } else {
+        baseStyle += ' text-gray-700 bg-gray-50 cursor-not-allowed';
+      }
+      
+      return baseStyle;
+    }
+    
+    // Get row stock status for coloring
+    const stockStatus = getRowStockStatus(row);
+    const rowBgClass = stockStatus.isOverSold 
+      ? 'bg-red-50' 
+      : stockStatus.hasPositiveClosing 
+        ? 'bg-green-50' 
+        : 'bg-yellow-50';
+
     return `
-      w-24 h-8 border border-gray-300 text-xs flex items-center px-2 text-black
-      ${isFuture ? 'cursor-not-allowed bg-gray-100' : 
-        canEdit ? 'cursor-pointer hover:bg-gray-50' : 'cursor-not-allowed bg-yellow-50'}
+      w-24 h-8 border border-gray-300 text-xs flex items-center px-2 text-black ${rowBgClass}
+      ${isFuture ? 'cursor-not-allowed opacity-60' : 
+        canEdit ? 'cursor-pointer hover:opacity-80' : 'cursor-not-allowed opacity-60'}
       ${isActive && !isFuture && canEdit ? 'bg-blue-100 border-blue-500' : ''}
       ${isSelected && !isFuture && canEdit ? 'bg-blue-50' : ''}
       ${isActive && isEditing && !isFuture && canEdit ? 'bg-white' : ''}
@@ -485,6 +620,30 @@ export default function CurrentSales() {
           <div className="flex">
             <div className="w-12 h-8 bg-gray-100 border border-gray-300 flex items-center justify-center text-xs font-medium text-gray-600"></div>
             {columns.map((col) => {
+              if (col.type === 'fixed') {
+                if (col.id === 'closing_stock') {
+                  // Special styling for closing stock (last column)
+                  return (
+                    <div 
+                      key={col.id} 
+                      className="w-32 h-8 bg-orange-50 border border-gray-300 flex items-center justify-center text-xs font-medium text-orange-700 font-semibold border-l-4 border-l-orange-400"
+                    >
+                      {col.label}
+                    </div>
+                  );
+                } else {
+                  // Product and Opening Stock columns
+                  return (
+                    <div 
+                      key={col.id} 
+                      className="w-32 h-8 bg-blue-50 border border-gray-300 flex items-center justify-center text-xs font-medium text-blue-700 font-semibold"
+                    >
+                      {col.label}
+                    </div>
+                  );
+                }
+              }
+              
               const isFuture = isFutureDate(col);
               return (
                 <div 
@@ -505,10 +664,24 @@ export default function CurrentSales() {
           </div>
 
           {/* Rows */}
-          {rows.map((row) => (
-            <div key={row} className="flex">
+          {rows.map((row) => {
+            const stockStatus = getRowStockStatus(row);
+            const rowColorClass = stockStatus.isOverSold 
+              ? 'bg-red-50' 
+              : stockStatus.hasPositiveClosing 
+                ? 'bg-green-50' 
+                : 'bg-yellow-50';
+            
+            return (
+            <div key={row} className={`flex ${rowColorClass}`}>
               {/* Row Header */}
-              <div className="w-12 h-8 bg-gray-100 border border-gray-300 flex items-center justify-center text-xs font-medium text-gray-600">
+              <div className={`w-12 h-8 border border-gray-300 flex items-center justify-center text-xs font-medium ${
+                stockStatus.isOverSold 
+                  ? 'text-red-700 bg-red-100' 
+                  : stockStatus.hasPositiveClosing 
+                    ? 'text-green-700 bg-green-100' 
+                    : 'text-yellow-700 bg-yellow-100'
+              }`}>
                 {row}
               </div>
               
@@ -516,7 +689,76 @@ export default function CurrentSales() {
               {columns.map((col) => {
                 const cellId = getCellId(col, row);
                 const isActive = activeCell === cellId;
-                const isFuture = isFutureDate(col);
+                const isFuture = col.type !== 'fixed' ? isFutureDate(col) : false;
+                const isFixedColumn = col.type === 'fixed';
+                
+                if (isFixedColumn) {
+                  // Special handling for fixed columns
+                  let cellContent = '';
+                  let cellClass = 'w-32 h-8 border border-gray-300 flex items-center px-2';
+                  
+                  if (col.id === 'product') {
+                    // Show product names for first few rows as examples
+                    const products = ['Product A', 'Product B', 'Product C', 'Product D', 'Product E'];
+                    cellContent = products[row - 1] || '';
+                    const stockStatus = getRowStockStatus(row);
+                    cellClass += ` text-blue-700 font-medium text-xs ${
+                      stockStatus.isOverSold 
+                        ? 'bg-red-100' 
+                        : stockStatus.hasPositiveClosing 
+                          ? 'bg-green-100' 
+                          : 'bg-yellow-100'
+                    }`;
+                  } else if (col.id === 'opening_stock') {
+                    // Show opening stock values
+                    const openingStocks = [100, 150, 200, 75, 120];
+                    cellContent = openingStocks[row - 1] ? openingStocks[row - 1].toString() : '';
+                    const stockStatus = getRowStockStatus(row);
+                    cellClass += ` text-green-700 font-medium text-xs ${
+                      stockStatus.isOverSold 
+                        ? 'bg-red-100' 
+                        : stockStatus.hasPositiveClosing 
+                          ? 'bg-green-100' 
+                          : 'bg-yellow-100'
+                    }`;
+                  } else if (col.id === 'closing_stock') {
+                    // Calculate closing stock based on daily sales
+                    let closingStock = '';
+                    const openingStocks = [100, 150, 200, 75, 120];
+                    const openingStock = openingStocks[row - 1] || 0;
+                    
+                    // Sum up all daily sales for this product
+                    let totalSold = 0;
+                    for (let day = 1; day <= currentDate.getDate(); day++) {
+                      const dayCellId = `day_${day}_${row}`;
+                      const dayValue = parseFloat(data[dayCellId]?.value || '0');
+                      totalSold += dayValue;
+                    }
+                    
+                    closingStock = (openingStock - totalSold).toString();
+                    const closingValue = parseFloat(closingStock);
+                    
+                    // Green styling when closing stock is positive
+                    if (closingValue > 0) {
+                      cellClass += ' text-green-700 font-bold text-xs bg-green-100 border-l-4 border-l-green-500';
+                    } else if (closingValue < 0) {
+                      cellClass += ' text-red-700 font-bold text-xs bg-red-100 border-l-4 border-l-red-500';
+                    } else {
+                      cellClass += ' text-orange-700 font-medium text-xs bg-orange-50 border-l-4 border-l-orange-400';
+                    }
+                  }
+                  
+                  return (
+                    <div
+                      key={cellId}
+                      className={cellClass}
+                      onClick={() => isFixedColumn && handleCellClick(cellId, col, row)}
+                      title={`${col.label} - Row ${row}`}
+                    >
+                      {cellContent}
+                    </div>
+                  );
+                }
                 
                 return (
                   <div
@@ -548,7 +790,8 @@ export default function CurrentSales() {
                 );
               })}
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

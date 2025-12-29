@@ -253,8 +253,6 @@ export interface UpdateProfileData {
 export interface ApplicationUpdate {
     status: ApplicationStatus;
     reviewNotes?: string;
-    reviewedBy: string;
-    reviewedAt?: Date;
 }
 export interface CreateDistributorData {
     firstName: string;

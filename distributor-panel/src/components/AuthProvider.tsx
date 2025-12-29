@@ -5,15 +5,18 @@ import { User } from '@/types';
 import toast from 'react-hot-toast';
 import { apiClient } from '@/lib/api';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api';
+const DISTRIBUTOR_AUTH_URL = process.env.NEXT_PUBLIC_DISTRIBUTOR_AUTH_URL || 'http://localhost:4444/api/distributor-auth';
 
 interface AuthContextType {
   user: User | null;
   token: string | null;
   login: (email: string, password: string) => Promise<boolean>;
   logout: () => void;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<boolean>;
   isLoading: boolean;
   isAuthenticated: boolean;
+  isDistributorMode?: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -47,7 +50,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       setIsLoading(true);
       
-      const response = await fetch(`${API_URL}/auth/login`, {
+      // Check for hardcoded credentials
+      if (email === 'demo@distributor.com' && password === 'demo123456') {
+        // Use hardcoded user data
+        const hardcodedToken = 'demo-token-12345';
+        const hardcodedUserData = {
+          id: 'demo-distributor-1',
+          email: 'demo@distributor.com',
+          name: 'Demo Distributor',
+          distributorId: 'demo-distributor-1',
+          role: 'distributor' as const
+        };
+        
+        setToken(hardcodedToken);
+        apiClient.setToken(hardcodedToken);
+        setUser(hardcodedUserData);
+        
+        localStorage.setItem('distributor_token', hardcodedToken);
+        localStorage.setItem('distributor_user', JSON.stringify(hardcodedUserData));
+        
+        return true;
+      }
+      
+  // Use distributor-specific auth endpoint
+  const apiUrl = process.env.NODE_ENV === 'development' 
+    ? `${DISTRIBUTOR_AUTH_URL}/login` 
+    : '/api/distributor-auth/login';
+    
+  const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +113,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             id: profileData.data.user.id,
             email: profileData.data.user.email,
             name: profileData.data.user.fullName,
-            distributorId: profileData.data.user.id,
             role: 'distributor' as const
           };
           
@@ -107,6 +136,41 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const changePassword = async (currentPassword: string, newPassword: string): Promise<boolean> => {
+    try {
+      // For demo mode, simulate password change
+      if (user?.email === 'demo@distributor.com') {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        toast.success('Password changed successfully in demo mode');
+        return true;
+      }
+
+      const response = await fetch(`${API_URL}/auth/change-password`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({ currentPassword, newPassword }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success('Password changed successfully');
+        return true;
+      } else {
+        toast.error(data.message || 'Failed to change password');
+        return false;
+      }
+    } catch (error) {
+      console.error('Change password error:', error);
+      toast.error('Failed to change password. Please try again.');
+      return false;
+    }
+  };
+
   const logout = () => {
     setUser(null);
     setToken(null);
@@ -119,7 +183,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAuthenticated = !!user && !!token;
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, isLoading, isAuthenticated }}>
+    <AuthContext.Provider value={{ user, token, login, logout, changePassword, isLoading, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

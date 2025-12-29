@@ -1049,7 +1049,7 @@ exports.purchaseEntryController = {
                 }
             });
             await this.createPurchaseJournalEntry(purchaseEntry);
-            logger_1.default.info(`Purchase entry created: ${purchaseEntry.purchaseNumber}`);
+            logger_1.default.info(`Purchase entry created: ${purchaseEntry.entryNumber}`);
             return res.status(201).json({
                 success: true,
                 message: 'Purchase entry created successfully',
@@ -1086,7 +1086,7 @@ exports.purchaseEntryController = {
                 where: { id },
                 data: purchaseData
             });
-            logger_1.default.info(`Purchase entry updated: ${purchaseEntry.purchaseNumber}`);
+            logger_1.default.info(`Purchase entry updated: ${purchaseEntry.entryNumber}`);
             return res.status(200).json({
                 success: true,
                 message: 'Purchase entry updated successfully',
@@ -1119,7 +1119,7 @@ exports.purchaseEntryController = {
                 referenceNumber,
                 bankAccount
             });
-            logger_1.default.info(`Purchase entry marked as paid: ${purchaseEntry.purchaseNumber}`);
+            logger_1.default.info(`Purchase entry marked as paid: ${purchaseEntry.entryNumber}`);
             return res.status(200).json({
                 success: true,
                 message: 'Purchase entry marked as paid successfully',
@@ -1152,7 +1152,7 @@ exports.purchaseEntryController = {
                 });
             }
             await prisma.purchaseEntry.delete({ where: { id } });
-            logger_1.default.info(`Purchase entry deleted: ${existingEntry.purchaseNumber}`);
+            logger_1.default.info(`Purchase entry deleted: ${existingEntry.entryNumber}`);
             return res.status(200).json({
                 success: true,
                 message: 'Purchase entry deleted successfully'
@@ -1203,10 +1203,6 @@ exports.purchaseEntryController = {
                         ]
                     }
                 }
-            });
-            await prisma.purchaseEntry.update({
-                where: { id: purchaseEntry.id },
-                data: { journalEntry: { connect: { id: journalEntry.id } } }
             });
         }
         catch (error) {
@@ -1345,7 +1341,7 @@ exports.salesEntryController = {
                 }
             });
             await this.createSalesJournalEntry(salesEntry);
-            logger_1.default.info(`Sales entry created: ${salesEntry.salesNumber}`);
+            logger_1.default.info(`Sales entry created: ${salesEntry.entryNumber}`);
             return res.status(201).json({
                 success: true,
                 message: 'Sales entry created successfully',
@@ -1382,7 +1378,7 @@ exports.salesEntryController = {
                 where: { id },
                 data: salesData
             });
-            logger_1.default.info(`Sales entry updated: ${salesEntry.salesNumber}`);
+            logger_1.default.info(`Sales entry updated: ${salesEntry.entryNumber}`);
             return res.status(200).json({
                 success: true,
                 message: 'Sales entry updated successfully',
@@ -1415,7 +1411,7 @@ exports.salesEntryController = {
                 referenceNumber,
                 bankAccount
             });
-            logger_1.default.info(`Sales entry marked as paid: ${salesEntry.salesNumber}`);
+            logger_1.default.info(`Sales entry marked as paid: ${salesEntry.entryNumber}`);
             return res.status(200).json({
                 success: true,
                 message: 'Sales entry marked as paid successfully',
@@ -1448,7 +1444,7 @@ exports.salesEntryController = {
                 });
             }
             await prisma.salesEntry.delete({ where: { id } });
-            logger_1.default.info(`Sales entry deleted: ${existingEntry.salesNumber}`);
+            logger_1.default.info(`Sales entry deleted: ${existingEntry.entryNumber}`);
             return res.status(200).json({
                 success: true,
                 message: 'Sales entry deleted successfully'
@@ -1499,10 +1495,6 @@ exports.salesEntryController = {
                         ]
                     }
                 }
-            });
-            await prisma.salesEntry.update({
-                where: { id: salesEntry.id },
-                data: { journalEntry: { connect: { id: journalEntry.id } } }
             });
         }
         catch (error) {
@@ -1790,10 +1782,6 @@ exports.salesReturnController = {
                     }
                 }
             });
-            await prisma.salesReturn.update({
-                where: { id: salesReturn.id },
-                data: { journalEntry: { connect: { id: journalEntry.id } } }
-            });
         }
         catch (error) {
             logger_1.default.error('Error creating sales return journal entry:', error);
@@ -2043,10 +2031,6 @@ exports.purchaseReturnController = {
                         ]
                     }
                 }
-            });
-            await prisma.purchaseReturn.update({
-                where: { id: purchaseReturn.id },
-                data: { journalEntry: { connect: { id: journalEntry.id } } }
             });
         }
         catch (error) {
@@ -2339,10 +2323,7 @@ exports.debtorsCreditorsController = {
             const updatedTransaction = await prisma.partyTransaction.update({
                 where: { id: transactionId },
                 data: {
-                    status: 'PAID',
-                    paymentDate: paymentDate ? new Date(paymentDate) : new Date(),
-                    paymentMethod,
-                    reference
+                    status: 'PAID'
                 }
             });
             const newBalance = Number(transaction.partyLedger.currentBalance) - Number(transaction.amount);

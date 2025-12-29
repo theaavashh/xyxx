@@ -1,0 +1,131 @@
+2025-12-29T04:00:42.712Z [INFO] Mailjet service initialized successfully
+2025-12-29T04:00:46.621Z [INFO] Mailjet service initialized successfully
+2025-12-29T04:00:51.175Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T04:00:51.178Z [INFO] 🌍 Environment: development
+2025-12-29T04:00:51.179Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T04:00:51.179Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T04:00:51.179Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T04:00:54.799Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T04:01:23.083Z [INFO] Mailjet service initialized successfully
+2025-12-29T04:01:27.751Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T04:01:45.829Z [INFO] POST /api/distributor-auth/login - 200 - 387.655ms | Data: {"method":"POST","url":"/api/distributor-auth/login","statusCode":200,"responseTime":387.655}
+2025-12-29T04:01:45.910Z [INFO] GET /api/auth/profile - 200 - 71.731ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":200,"responseTime":71.731}
+2025-12-29T04:02:43.213Z [INFO] Mailjet service initialized successfully
+2025-12-29T04:02:46.443Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T04:02:46.443Z [INFO] 🌍 Environment: development
+2025-12-29T04:02:46.443Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T04:02:46.444Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T04:02:46.444Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T04:02:47.314Z [INFO] SIGTERM received. Starting graceful shutdown...
+2025-12-29T04:02:47.315Z [INFO] HTTP server closed
+2025-12-29T05:00:31.312Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:01:08.766Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:01:12.474Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T05:01:12.475Z [INFO] 🌍 Environment: development
+2025-12-29T05:01:12.475Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T05:01:12.475Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T05:01:12.475Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T05:01:19.552Z [INFO] GET / - 200 - 3.603ms | Data: {"method":"GET","url":"/","statusCode":200,"responseTime":3.603}
+2025-12-29T05:01:20.782Z [ERROR] GET /favicon.ico - 404 - 0.595ms | Data: {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":0.595}
+2025-12-29T05:01:41.356Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:01:41.822Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:01:57.357Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:01:59.053Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:02:00.299Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:02:05.750Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T05:02:05.754Z [INFO] 🌍 Environment: development
+2025-12-29T05:02:05.755Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T05:02:05.755Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T05:02:05.755Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T05:02:06.385Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:02:06.966Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:02:35.213Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:02:35.458Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:02:38.994Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:02:42.786Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T05:02:42.787Z [INFO] 🌍 Environment: development
+2025-12-29T05:02:42.787Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T05:02:42.788Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T05:02:42.788Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T05:02:42.891Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:02:45.142Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:02:54.655Z [INFO] GET / - 200 - 2.667ms | Data: {"method":"GET","url":"/","statusCode":200,"responseTime":2.667}
+2025-12-29T05:03:16.994Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:03:29.432Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:03:30.121Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:03:38.343Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T05:03:38.344Z [INFO] 🌍 Environment: development
+2025-12-29T05:03:38.346Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T05:03:38.346Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T05:03:38.349Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T05:03:38.668Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:03:39.202Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:04:00.062Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:04:00.801Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:04:07.080Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2025-12-29T05:04:07.082Z [INFO] 🌍 Environment: development
+2025-12-29T05:04:07.085Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2025-12-29T05:04:07.086Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2025-12-29T05:04:07.086Z [INFO] 🔧 Development mode - detailed logging enabled
+2025-12-29T05:04:07.420Z [INFO] Mailjet service initialized successfully
+2025-12-29T05:04:08.207Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:04:10.034Z [ERROR] POST /api/distributor-auth/login - 401 - 176.539ms | Data: {"method":"POST","url":"/api/distributor-auth/login","statusCode":401,"responseTime":176.539}
+2025-12-29T05:04:11.994Z [ERROR] Uncaught Exception | Stack: Error: listen EADDRINUSE: address already in use :::4444
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Function.listen (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/express/lib/application.js:635:24)
+    at startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:157:24)
+2025-12-29T05:10:44.171Z [INFO] POST /api/distributor-auth/login - 200 - 128.679ms | Data: {"method":"POST","url":"/api/distributor-auth/login","statusCode":200,"responseTime":128.679}
+2025-12-29T05:10:44.292Z [INFO] GET /api/auth/profile - 304 - 87.396ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":304,"responseTime":87.396}
+2025-12-29T05:11:22.133Z [INFO] POST /api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales - 200 - 231.427ms | Data: {"method":"POST","url":"/api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales","statusCode":200,"responseTime":231.427}
+2025-12-29T05:11:46.084Z [INFO] POST /api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales - 200 - 27.881ms | Data: {"method":"POST","url":"/api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales","statusCode":200,"responseTime":27.881}
+2025-12-29T05:54:44.667Z [INFO] GET / - 200 - 4.822ms | Data: {"method":"GET","url":"/","statusCode":200,"responseTime":4.822}
+2025-12-29T05:58:28.516Z [INFO] POST /api/distributor-auth/login - 200 - 260.034ms | Data: {"method":"POST","url":"/api/distributor-auth/login","statusCode":200,"responseTime":260.034}
+2025-12-29T05:58:28.570Z [INFO] GET /api/auth/profile - 304 - 42.024ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":304,"responseTime":42.024}
+2025-12-29T06:17:40.194Z [INFO] POST /api/distributor-auth/login - 200 - 294.893ms | Data: {"method":"POST","url":"/api/distributor-auth/login","statusCode":200,"responseTime":294.893}
+2025-12-29T06:17:40.247Z [INFO] GET /api/auth/profile - 304 - 30.38ms | Data: {"method":"GET","url":"/api/auth/profile","statusCode":304,"responseTime":30.38}
+2025-12-29T06:18:44.981Z [INFO] GET /api/distributors/cmjq3emg3001341v4ok7e4sbg/credentials - 200 - 334.403ms | Data: {"method":"GET","url":"/api/distributors/cmjq3emg3001341v4ok7e4sbg/credentials","statusCode":200,"responseTime":334.403}
+2025-12-29T06:19:33.153Z [INFO] GET /api/distributors/cmjq3emg3001341v4ok7e4sbg/credentials - 304 - 10.987ms | Data: {"method":"GET","url":"/api/distributors/cmjq3emg3001341v4ok7e4sbg/credentials","statusCode":304,"responseTime":10.987}
+2025-12-29T06:20:11.160Z [INFO] POST /api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales - 200 - 160.82ms | Data: {"method":"POST","url":"/api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales","statusCode":200,"responseTime":160.82}
+2025-12-29T06:20:11.296Z [ERROR] POST /api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales - 500 - 303.122ms | Data: {"method":"POST","url":"/api/sales/distributors/cmjq3emg3001341v4ok7e4sbg/sales","statusCode":500,"responseTime":303.122}

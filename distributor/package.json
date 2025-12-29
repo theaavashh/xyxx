@@ -16,7 +16,8 @@
     "react-dom": "19.1.0",
     "react-hook-form": "^7.62.0",
     "react-hot-toast": "^2.6.0",
-    "yup": "^1.7.0"
+    "yup": "^1.7.0",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

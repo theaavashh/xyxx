@@ -10,7 +10,7 @@ export default function ApiTest() {
     setLoading(true);
     try {
       console.log('🧪 Testing API call...');
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api'}/applications/dev`);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api'}/applications/dev`);
       const data = await response.json();
       console.log('✅ API Response:', data);
       setResult(data);
