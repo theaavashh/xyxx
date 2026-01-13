@@ -186,7 +186,7 @@ export const EnhancedSidebar: React.FC<SidebarProps> = ({ className = '' }) => {
         >
           <div className="flex items-center">
             <Icon className="h-5 w-5 mr-3" />
-            <span className="text-sm font-medium">{item.title}</span>
+            <span className="text-3xl font-bold text-black">{item.title}</span>
           </div>
 
           <div className="flex items-center">
@@ -220,8 +220,8 @@ export const EnhancedSidebar: React.FC<SidebarProps> = ({ className = '' }) => {
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Distributor Panel</h2>
-            <p className="text-xs text-gray-600">{user?.companyName || 'Welcome'}</p>
+            <h2 className="text-xl font-bold text-gray-900">Distributor Panel</h2>
+            <p className="text-sm text-gray-600">{user?.companyName || 'Welcome'}</p>
           </div>
           <button
             onClick={toggleSidebar}
@@ -245,8 +245,8 @@ export const EnhancedSidebar: React.FC<SidebarProps> = ({ className = '' }) => {
               {user?.name?.charAt(0).toUpperCase() || 'U'}
             </div>
             <div className="ml-3">
-              <p className="text-sm font-medium text-gray-900">{user?.name}</p>
-              <p className="text-xs text-gray-600">{user?.email}</p>
+              <p className="text-base font-bold text-gray-900">{user?.name}</p>
+              <p className="text-sm text-gray-600">{user?.email}</p>
             </div>
           </div>
 
@@ -290,7 +290,7 @@ export const EnhancedSidebar: React.FC<SidebarProps> = ({ className = '' }) => {
         <div className="space-y-2">
           <Link
             href="/sales/daily-log"
-            className="flex items-center justify-center w-full px-3 py-2 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex items-center justify-center w-full px-3 py-2 bg-blue-600 text-white text-base font-bold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <Plus className="h-4 w-4 mr-2" />
             Add Daily Log
@@ -298,7 +298,7 @@ export const EnhancedSidebar: React.FC<SidebarProps> = ({ className = '' }) => {
 
           <Link
             href="/products"
-            className="flex items-center justify-center w-full px-3 py-2 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="flex items-center justify-center w-full px-3 py-2 bg-green-600 text-white text-base font-bold rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           >
             <ShoppingCart className="h-4 w-4 mr-2" />
             Order Products

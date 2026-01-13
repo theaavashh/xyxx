@@ -39,19 +39,26 @@ interface NavigationItem {
   children?: NavigationItem[];
 }
 
+import { TabType, TabConfig } from '@/app/page';
+
 interface DashboardLayoutProps {
   children: React.ReactNode;
-  activeTab: string;
-  onTabChange: (tab: string) => void;
+  activeTab: TabType;
+  onTabChange: (tab: TabType) => void;
+  tabs?: TabConfig[];
+  currentTabConfig?: TabConfig;
 }
 
-export default function DashboardLayout({ children, activeTab, onTabChange }: DashboardLayoutProps) {
+export default function DashboardLayout({ children, activeTab, onTabChange, tabs, currentTabConfig }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedSections, setExpandedSections] = useState<string[]>(['sales']);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const profileDropdownRef = useRef<HTMLDivElement>(null);
   const { user, logout } = useAuth();
   const { addNotification } = useUIStore();
+
+  // Use provided tabs or fallback to hardcoded navigation
+  const navigationTabs = tabs || [];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -92,7 +99,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
     return [...commonItems, ...distributorItems];
   };
 
-  const navigationItems = getNavigationItems();
+  const navigationItems = navigationTabs.length > 0 ? navigationTabs : getNavigationItems();
 
   const handleLogout = () => {
     logout();
@@ -123,13 +130,15 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
-        <div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
-          <div className="flex items-center space-x-3">
-            <div className="h-8 w-8 rounded-md bg-indigo-600 flex items-center justify-center">
-              <img src="/zipzip-logo.svg" alt="ZipZip Logo" className="h-6 w-6" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">Distributor Panel</span>
-          </div>
+<div className="flex items-center justify-between h-16 px-6 border-b border-gray-200">
+              <div className="flex items-center space-x-3">
+                <div className="h-8 w-8 rounded-md bg-indigo-600 flex items-center justify-center">
+                  <img src="/zipzip-logo.svg" alt="ZipZip Logo" className="h-6 w-6" />
+                </div>
+                <span className="text-xl font-bold text-gray-900">
+                  {currentTabConfig ? `${currentTabConfig.label} - Distributor Panel` : 'Distributor Panel'}
+                </span>
+              </div>
           <button
             onClick={() => setSidebarOpen(false)}
             className="lg:hidden"
@@ -157,10 +166,12 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
 
           {/* Navigation */}
           <nav className="flex-1 px-4 py-6 space-y-2">
-          {navigationItems.map((item) => {
+{navigationItems.map((item) => {
             const Icon = item.icon;
             const hasChildren = item.children && item.children.length > 0;
             const isExpanded = expandedSections.includes(item.id);
+            const isActive = activeTab === item.id;
+            const itemConfig = navigationTabs.find(tab => tab.id === item.id);
             
             return (
               <div key={item.id}>
@@ -175,15 +186,16 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                   }}
                   className={`
                     w-full flex items-center justify-between px-4 py-3 text-sm font-medium rounded-lg transition-colors
-                    ${activeTab === item.id
+                    ${isActive
                       ? 'bg-indigo-100 text-indigo-700 border-r-2 border-indigo-700'
                       : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                     }
                   `}
+                  title={itemConfig?.description || item.label}
                 >
                   <div className="flex items-center space-x-3">
-                    <Icon className="h-5 w-5" />
-                    <span>{item.label}</span>
+                    <span className="text-lg">{itemConfig?.icon || <Icon className="h-5 w-5" />}</span>
+                    <span className="text-3xl font-bold text-black">{itemConfig?.label || item.label}</span>
                   </div>
                   {hasChildren && (
                     isExpanded ? (
@@ -192,13 +204,15 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                       <ChevronRight className="h-4 w-4" />
                     )
                   )}
-              </button>
+                </button>
                 
                 {/* Sub-items */}
                 {hasChildren && isExpanded && item.children && (
                   <div className="ml-6 mt-1 space-y-1">
                     {item.children.map((child) => {
                       const ChildIcon = child.icon;
+                      const isChildActive = activeTab === child.id;
+                      const childConfig = navigationTabs.find(tab => tab.id === child.id);
                       return (
               <button
                           key={child.id}
@@ -208,14 +222,15 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                           }}
                           className={`
                             w-full flex items-center space-x-3 px-4 py-2 text-sm font-medium rounded-lg transition-colors
-                            ${activeTab === child.id
+                            ${isChildActive
                               ? 'bg-indigo-50 text-indigo-700'
                               : 'text-gray-500 hover:bg-gray-50 hover:text-gray-700'
                             }
                           `}
+                          title={childConfig?.description || child.label}
                         >
-                          <ChildIcon className="h-4 w-4" />
-                          <span>{child.label}</span>
+                          <span className="text-lg">{childConfig?.icon || <ChildIcon className="h-4 w-4" />}</span>
+                          <span className="text-2xl font-bold">{childConfig?.label || child.label}</span>
               </button>
                       );
                     })}
@@ -266,30 +281,10 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
             <div className="flex items-center justify-between">
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">
-                  {(() => {
-                    // Find the active tab in main items
-                    const mainItem = navigationItems.find(item => item.id === activeTab);
-                    if (mainItem) return mainItem.label;
-                    
-                    // Find the active tab in sub-items
-                    for (const item of navigationItems) {
-                      if (item.children) {
-                        const subItem = item.children.find(child => child.id === activeTab);
-                        if (subItem) return subItem.label;
-                      }
-                    }
-                    return 'Dashboard';
-                  })()}
+                  {currentTabConfig ? currentTabConfig.label : 'Dashboard'}
                 </h1>
                 <p className="text-gray-600">
-                  {activeTab === 'dashboard' 
-                    ? 'Welcome to your distributor dashboard' 
-                    : activeTab === 'current-sales'
-                    ? 'View your active sales and ongoing transactions'
-                    : activeTab === 'sales-log'
-                    ? 'Track your daily sales activities'
-                    : `Manage your ${activeTab.toLowerCase().replace('-', ' ')} here`
-                  }
+                  {currentTabConfig ? currentTabConfig.description : 'Welcome to your distributor dashboard'}
                 </p>
               </div>
               <div className="flex items-center space-x-4">
@@ -346,9 +341,12 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
 
         {/* Bottom Navigation for Mobile */}
         <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
-          <div className="flex justify-around items-center">
-            {navigationItems.filter(item => !item.children).map((item) => {
+          <div className="flex justify-around items-center overflow-x-auto">
+{navigationItems.filter(item => !item.children).map((item) => {
               const Icon = item.icon;
+              const isActive = activeTab === item.id;
+              const itemConfig = navigationTabs.find(tab => tab.id === item.id);
+              
               return (
                 <button
                   key={item.id}
@@ -357,10 +355,13 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                     // Close any open sidebar
                     setSidebarOpen(false);
                   }}
-                  className={`flex flex-col items-center py-2 px-4 ${activeTab === item.id ? 'text-indigo-600' : 'text-gray-500'}`}
+                  className={`flex flex-col items-center py-2 px-3 min-w-0 flex-shrink-0 transition-colors ${
+                    isActive ? 'text-indigo-600' : 'text-gray-500'
+                  }`}
+                  title={itemConfig?.description || item.label}
                 >
-                  <Icon className="h-5 w-5" />
-                  <span className="text-xs mt-1">{item.label}</span>
+                  <span className="text-lg">{itemConfig?.icon || <Icon className="h-5 w-5" />}</span>
+                  <span className="text-xs mt-1 font-medium">{itemConfig?.label || item.label}</span>
                 </button>
               );
             })}

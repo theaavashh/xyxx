@@ -240,7 +240,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-4 py-6 space-y-2">
+        <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto max-h-[calc(100vh-220px)]">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             return (

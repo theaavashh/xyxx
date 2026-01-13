@@ -12,18 +12,22 @@ import {
   Building2,
   Package,
   Cpu,
-  AlertCircle
+  AlertCircle,
+  CreditCard,
+  QrCode,
+  Globe
 } from 'lucide-react';
 import { 
   RawMaterialCategory, 
   WorkCenter, 
-  Machine 
+  Machine,
+  PaymentConfig
 } from '@/types';
 import { productionService } from '@/services/production.service';
 import toast from 'react-hot-toast';
 
 export default function ConfigurationManagement() {
-  const [activeTab, setActiveTab] = useState<'categories' | 'workcenters' | 'machines'>('categories');
+  const [activeTab, setActiveTab] = useState<'categories' | 'workcenters' | 'machines' | 'payment'>('categories');
   const [isLoading, setIsLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
@@ -35,6 +39,7 @@ export default function ConfigurationManagement() {
   const [categories, setCategories] = useState<RawMaterialCategory[]>([]);
   const [workCenters, setWorkCenters] = useState<WorkCenter[]>([]);
   const [machines, setMachines] = useState<Machine[]>([]);
+  const [paymentConfigs, setPaymentConfigs] = useState<PaymentConfig[]>([]);
 
   // Load data on component mount
   useEffect(() => {
@@ -44,15 +49,17 @@ export default function ConfigurationManagement() {
   const loadData = async () => {
     try {
       setIsLoading(true);
-      const [categoriesData, workCentersData, machinesData] = await Promise.all([
+      const [categoriesData, workCentersData, machinesData, paymentConfigsData] = await Promise.all([
         productionService.getRawMaterialCategories(),
         productionService.getWorkCenters(),
-        productionService.getMachines?.() || Promise.resolve([])
+        productionService.getMachines?.() || Promise.resolve([]),
+        import('@/services/paymentConfig.service').then(module => module.paymentConfigService.getPaymentConfigs())
       ]);
       
       setCategories(categoriesData);
       setWorkCenters(workCentersData);
       setMachines(machinesData);
+      setPaymentConfigs(paymentConfigsData);
     } catch (error) {
       console.error('Error loading configuration data:', error);
       toast.error('Failed to load configuration data');
@@ -62,9 +69,23 @@ export default function ConfigurationManagement() {
   };
 
   const handleAdd = () => {
-    setFormData({});
+    if (activeTab === 'payment') {
+      setFormData({
+        qrCodeUrl: '',
+        bankAccountNumber: '',
+        bankAccountName: '',
+        bankName: '',
+        branchName: '',
+        paymentGateway: '',
+        paymentGatewayApiKey: '',
+        paymentGatewaySecret: '',
+        isActive: true,
+      });
+    } else {
+      setFormData({});
+      setBulkCategories([{name: '', isActive: true}]);
+    }
     setSelectedItem(null);
-    setBulkCategories([{name: '', isActive: true}]);
     setShowAddModal(true);
   };
 
@@ -95,8 +116,8 @@ export default function ConfigurationManagement() {
       }
 
       // Create categories one by one to handle individual errors
-      const results = [];
-      const errors = [];
+      const results: RawMaterialCategory[] = [];
+      const errors: string[] = [];
       
       for (const category of validCategories) {
         try {
@@ -129,7 +150,25 @@ export default function ConfigurationManagement() {
 
   const handleEdit = (item: any) => {
     setSelectedItem(item);
-    setFormData(item);
+    
+    // Handle different types of items
+    if (activeTab === 'payment') {
+      // For payment configuration, set form data with proper defaults
+      setFormData({
+        qrCodeUrl: item.qrCodeUrl || '',
+        bankAccountNumber: item.bankAccountNumber || '',
+        bankAccountName: item.bankAccountName || '',
+        bankName: item.bankName || '',
+        branchName: item.branchName || '',
+        paymentGateway: item.paymentGateway || '',
+        paymentGatewayApiKey: item.paymentGatewayApiKey || '',
+        paymentGatewaySecret: item.paymentGatewaySecret || '',
+        isActive: item.isActive,
+      });
+    } else {
+      setFormData(item);
+    }
+    
     setShowEditModal(true);
   };
 
@@ -148,6 +187,11 @@ export default function ConfigurationManagement() {
           case 'machine':
             await productionService.deleteMachine?.(id);
             setMachines(prev => prev.filter(m => m.id !== id));
+            break;
+          case 'payment':
+            const { paymentConfigService } = await import('@/services/paymentConfig.service');
+            await paymentConfigService.deletePaymentConfig(id);
+            setPaymentConfigs(prev => prev.filter(pc => pc.id !== id));
             break;
         }
         toast.success(`${type} deleted successfully`);
@@ -175,6 +219,13 @@ export default function ConfigurationManagement() {
             const updatedMachine = await productionService.updateMachine?.(selectedItem.id, formData);
             setMachines(prev => prev.map(m => m.id === selectedItem.id ? updatedMachine : m));
             break;
+          case 'payment':
+            const { paymentConfigService } = await import('@/services/paymentConfig.service');
+            const updatedPaymentConfig = await paymentConfigService.updatePaymentConfig(selectedItem.id, formData);
+            if (updatedPaymentConfig) {
+              setPaymentConfigs(prev => prev.map(pc => pc.id === selectedItem.id ? updatedPaymentConfig : pc));
+            }
+            break;
         }
         toast.success(`${activeTab} updated successfully`);
       } else {
@@ -191,6 +242,13 @@ export default function ConfigurationManagement() {
           case 'machines':
             const newMachine = await productionService.createMachine?.(formData);
             setMachines(prev => [...prev, newMachine]);
+            break;
+          case 'payment':
+            const { paymentConfigService } = await import('@/services/paymentConfig.service');
+            const newPaymentConfig = await paymentConfigService.createPaymentConfig(formData);
+            if (newPaymentConfig) {
+              setPaymentConfigs(prev => [...prev, newPaymentConfig]);
+            }
             break;
         }
         toast.success(`${activeTab} added successfully`);
@@ -330,6 +388,100 @@ export default function ConfigurationManagement() {
               <button
                 onClick={() => handleDelete(machine.id, 'machine')}
                 className="p-2 text-gray-400 hover:text-red-600 transition-colors"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+
+  const renderPaymentConfigs = () => (
+    <div className="space-y-4">
+      {paymentConfigs.map((config) => (
+        <div key={config.id} className="bg-white rounded-lg border border-gray-200 p-6">
+          <div className="flex items-start justify-between">
+            <div className="flex-1">
+              <div className="flex items-center space-x-2 mb-2">
+                <h3 className="text-lg font-medium text-gray-900">
+                  {config.paymentGateway || config.bankName || 'Payment Configuration'}
+                </h3>
+                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                  config.isActive 
+                    ? 'bg-green-100 text-green-800' 
+                    : 'bg-red-100 text-red-800'
+                }`}>
+                  {config.isActive ? 'Active' : 'Inactive'}
+                </span>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                {config.qrCodeUrl && (
+                  <div className="flex items-center">
+                    <QrCode className="w-4 h-4 mr-2 text-gray-500" />
+                    <span>QR Code: </span>
+                    <a 
+                      href={config.qrCodeUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="ml-1 text-blue-600 hover:text-blue-800 underline"
+                    >
+                      View QR
+                    </a>
+                  </div>
+                )}
+                
+                {config.bankAccountNumber && (
+                  <div className="flex items-center">
+                    <CreditCard className="w-4 h-4 mr-2 text-gray-500" />
+                    <span>Account: {config.bankAccountNumber}</span>
+                  </div>
+                )}
+                
+                {config.bankAccountName && (
+                  <div className="flex items-center">
+                    <Building2 className="w-4 h-4 mr-2 text-gray-500" />
+                    <span>Account Name: {config.bankAccountName}</span>
+                  </div>
+                )}
+                
+                {config.bankName && (
+                  <div className="flex items-center">
+                    <Building2 className="w-4 h-4 mr-2 text-gray-500" />
+                    <span>Bank: {config.bankName}</span>
+                  </div>
+                )}
+                
+                {config.branchName && (
+                  <div className="flex items-center">
+                    <Building2 className="w-4 h-4 mr-2 text-gray-500" />
+                    <span>Branch: {config.branchName}</span>
+                  </div>
+                )}
+                
+                {config.paymentGateway && (
+                  <div className="flex items-center">
+                    <Globe className="w-4 h-4 mr-2 text-gray-500" />
+                    <span>Gateway: {config.paymentGateway}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <button
+                onClick={() => handleEdit(config)}
+                className="p-2 text-gray-400 hover:text-indigo-600 transition-colors"
+                title="Edit configuration"
+              >
+                <Edit className="w-4 h-4" />
+              </button>
+              <button
+                onClick={() => handleDelete(config.id, 'payment')}
+                className="p-2 text-gray-400 hover:text-red-600 transition-colors"
+                title="Delete configuration"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -632,6 +784,146 @@ export default function ConfigurationManagement() {
               </div>
             )}
 
+            {activeTab === 'payment' && (
+              <div className="space-y-4">
+                {/* QR Code Section */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    QR Code URL
+                  </label>
+                  <input
+                    type="url"
+                    value={formData.qrCodeUrl || ''}
+                    onChange={(e) => setFormData({ ...formData, qrCodeUrl: e.target.value })}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    placeholder="https://example.com/qr-code.png"
+                  />
+                  <p className="mt-1 text-sm text-gray-500">
+                    URL to the QR code image for payment
+                  </p>
+                </div>
+
+                {/* Bank Information Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Bank Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.bankName || ''}
+                      onChange={(e) => setFormData({ ...formData, bankName: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      placeholder="e.g., Nabil Bank"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Branch Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.branchName || ''}
+                      onChange={(e) => setFormData({ ...formData, branchName: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      placeholder="e.g., New Road Branch"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Account Number
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.bankAccountNumber || ''}
+                      onChange={(e) => setFormData({ ...formData, bankAccountNumber: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      placeholder="e.g., 1234567890"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Account Name
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.bankAccountName || ''}
+                      onChange={(e) => setFormData({ ...formData, bankAccountName: e.target.value })}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                      placeholder="e.g., Your Company Name"
+                    />
+                  </div>
+                </div>
+
+                {/* Payment Gateway Section */}
+                <div className="border-t border-gray-200 pt-6">
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">Payment Gateway</h3>
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Gateway Name
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.paymentGateway || ''}
+                        onChange={(e) => setFormData({ ...formData, paymentGateway: e.target.value })}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="e.g., eSewa, Khalti, IME Pay"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        API Key
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="password"
+                          value={formData.paymentGatewayApiKey || ''}
+                          onChange={(e) => setFormData({ ...formData, paymentGatewayApiKey: e.target.value })}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 pr-10"
+                          placeholder="Enter API key"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Secret Key
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="password"
+                          value={formData.paymentGatewaySecret || ''}
+                          onChange={(e) => setFormData({ ...formData, paymentGatewaySecret: e.target.value })}
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 pr-10"
+                          placeholder="Enter secret key"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Status */}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="isActive"
+                    checked={formData.isActive ?? true}
+                    onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
+                    className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="isActive" className="ml-2 block text-sm text-gray-900">
+                    Active
+                  </label>
+                </div>
+              </div>
+            )}
+
             <div className="flex justify-end space-x-3 mt-6">
               <button
                 onClick={() => {
@@ -701,7 +993,8 @@ export default function ConfigurationManagement() {
           {[
             { id: 'categories', name: 'Raw Material Categories', icon: Package },
             { id: 'workcenters', name: 'Work Centers', icon: Building2 },
-            { id: 'machines', name: 'Machines', icon: Cpu }
+            { id: 'machines', name: 'Machines', icon: Cpu },
+            { id: 'payment', name: 'Payment Configuration', icon: CreditCard }
           ].map((tab) => (
             <button
               key={tab.id}
@@ -724,6 +1017,7 @@ export default function ConfigurationManagement() {
         {activeTab === 'categories' && renderCategories()}
         {activeTab === 'workcenters' && renderWorkCenters()}
         {activeTab === 'machines' && renderMachines()}
+        {activeTab === 'payment' && renderPaymentConfigs()}
       </div>
 
       {/* Modals */}

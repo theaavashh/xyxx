@@ -351,7 +351,7 @@ export interface DistributorDocument {
   uploadedAt: string;
 }
 
-export interface Distributor {
+export interface DistributorApplication {
   id: string;
   personDetails: DistributorPersonDetails;
   companyDetails: DistributorCompanyDetails;
@@ -1130,4 +1130,43 @@ export interface BOMForm {
     isOptional: boolean;
     notes?: string;
   }[];
+}
+
+// Payment Configuration
+export type PaymentCompanyType = 'bank' | 'payment_gateway';
+
+export interface PaymentConfig {
+  id: string;
+  companyType: PaymentCompanyType;
+  
+  // Common fields
+  businessName: string;
+  businessId?: string; // Gateway ID or Bank ID
+  isActive: boolean;
+  
+  // Bank specific fields
+  bankName?: string;
+  branchName?: string;
+  bankAccountNumber?: string;
+  bankAccountName?: string;
+  swiftCode?: string;
+  
+  // Payment Gateway specific fields
+  gatewayName?: string; // e.g., eSewa, Khalti, IME Pay
+  supportedMethods?: string[]; // e.g., ['mobile', 'web', 'qr']
+  
+  // API Details (for payment gateways)
+  apiKey?: string;
+  secretKey?: string;
+  merchantId?: string;
+  webhookUrl?: string;
+  
+  // Manual Details
+  qrCodeUrl?: string;
+  paymentInstructions?: string;
+  contactPhone?: string;
+  contactEmail?: string;
+  
+  createdAt: Date;
+  updatedAt: Date;
 }

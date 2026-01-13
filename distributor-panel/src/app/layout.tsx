@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import { Manrope, Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
-const manrope = Manrope({
-  weight: ['300', '400', '500', '600', '700'],
-  variable: "--font-manrope",
+const inter = Inter({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-inter",
   subsets: ["latin"],
-});
-
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  variable: "--font-poppins",
-  subsets: ["latin"],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -28,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.variable} ${poppins.variable} antialiased`}
+        className={`${inter.variable} antialiased text-base title-regular`}
       >
         {children}
         <Toaster position="top-right" />

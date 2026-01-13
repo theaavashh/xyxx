@@ -1063,3 +1063,21 @@ model PurchaseReturnItem {
   
   @@map("purchase_return_items")
 }
+
+// Payment Configuration Model
+model PaymentConfig {
+  id                    String   @id @default(cuid())
+  qrCodeUrl             String?
+  bankAccountNumber     String?
+  bankAccountName       String?
+  bankName              String?
+  branchName            String?
+  paymentGateway        String?
+  paymentGatewayApiKey  String?
+  paymentGatewaySecret  String?
+  isActive              Boolean  @default(true)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  
+  @@map("payment_configs")
+}

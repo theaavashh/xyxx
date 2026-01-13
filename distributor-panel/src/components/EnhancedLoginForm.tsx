@@ -121,7 +121,7 @@ export const EnhancedLoginForm: React.FC<EnhancedLoginFormProps> = ({ onLoginSuc
                 <div className="ml-3">
                   <h3 className="text-sm font-medium">Login Failed</h3>
                   <p className="text-sm mt-1">{error}</p>
-                  <p className="text-xs mt-1">Please check your credentials and try again.</p>
+                  <p className="text-xs mt-1">Please fix server issue and try again.</p>
                 </div>
               </div>
             </div>
@@ -252,34 +252,7 @@ export const EnhancedLoginForm: React.FC<EnhancedLoginFormProps> = ({ onLoginSuc
           </p>
         </div>
 
-        {/* React Icon Between Form and Y-axis */}
-        <div className="mt-8 relative h-48">
-          {/* Floating Activity Icons */}
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-            <Activity className="w-6 h-6 text-blue-200 animate-pulse absolute top-2 left-4" />
-            <Activity className="w-5 h-5 text-blue-300 animate-pulse absolute top-8 left-8" style={{ animationDelay: '0.5s' }} />
-            <Activity className="w-4 h-4 text-blue-400 animate-pulse absolute top-16 right-8" style={{ animationDelay: '1s' }} />
-            <Activity className="w-6 h-6 text-blue-500 animate-pulse absolute top-24 right-4" style={{ animationDelay: '1.5s' }} />
-            <Activity className="w-5 h-5 text-blue-600 animate-pulse absolute bottom-16 left-6" style={{ animationDelay: '2s' }} />
-            <Activity className="w-4 h-4 text-blue-700 animate-pulse absolute bottom-8 right-8" style={{ animationDelay: '2.5s' }} />
-          </div>
-          
-          {/* Main React Icon */}
-          <div className="relative z-10 flex items-center justify-center h-full">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 animate-pulse">
-                  <svg className="w-16 h-16 text-white animate-bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M14.61 6.41l-3.83 3.83c-.28.27-.42.42-.42.42 0l-2.83-2.83c-.41-.41-.41-1.02 0-1.41l1.59-1.59c.41-.41.89-.42 1.42-.41l3.83-3.83c.28-.28.48-.42.42-.42zm-4.24 0c-.42 0-.83.28-1.41.42l-2.83 2.83c-.41.41-.41 1.02 0 1.41l1.59 1.59c.41.41.89.42 1.41.42l3.83-3.83c.28.28.48-.42.42-.42zm-2.24 10c-.42 0-.83.28-1.41.42l-2.83 2.83c-.41.41-.41 1.02 0 1.41l1.59 1.59c.41.41.89.42 1.41.42l3.83-3.83c.28.28.48-.42.42-.42zm-2.24 0c-.42 0-.83.28-1.41.42l-2.83 2.83c-.41.41-.41 1.02 0 1.41l1.59 1.59c.41.41.89.42 1.41.42l3.83-3.83c.28.28.48-.42.42-.42zm1.41 6l3.83-3.83c.28.28.48-.42.42-.42zm3.41 6l3.83-3.83c.28.28.48-.42.42-.42zm-2.24 0c-.42 0-.83.28-1.41.42l-2.83 2.83c-.41.41-.41 1.02 0 1.41l1.59 1.59c.41.41.89.42 1.41.42l3.83-3.83c.28.28.48-.42.42-.42zm0 8h8v4h-8v-4h8z"/>
-                  </svg>
-                </div>
-              </div>
-              <svg className="w-32 h-32 text-blue-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h2M3 3h18M3 17h18"/>
-              </svg>
-            </div>
-          </div>
-        </div>
+       
 
         {/* Additional Information */}
         <div className="mt-8 text-center">
@@ -301,21 +274,7 @@ export const EnhancedLoginForm: React.FC<EnhancedLoginFormProps> = ({ onLoginSuc
           </div>
         </div>
 
-        {/* Demo Account */}
-        <div className="mt-8 border-t border-gray-200 pt-6">
-          <p className="text-center text-sm text-gray-600">
-            For demo purposes, use the hardcoded credentials:
-          </p>
-          <div className="mt-2 bg-gray-50 rounded-md p-4">
-            <p className="text-xs text-gray-500 mb-1">Demo Account (Hardcoded)</p>
-            <p className="font-mono text-sm">
-              Email: demo@distributor.com (hardcoded)
-            </p>
-            <p className="font-mono text-sm">
-              Password: demo123456 (hardcoded)
-            </p>
-          </div>
-        </div>
+       
       </div>
     </div>
   );

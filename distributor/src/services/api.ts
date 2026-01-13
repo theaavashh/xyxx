@@ -85,7 +85,7 @@ class HttpClient {
     }
   }
 
-  private async parseError(response: Response): Promise<any> {
+  private async parseError(response: Response): Promise<any> { // Using any for flexibility with error response types
     try {
       return await response.json();
     } catch {

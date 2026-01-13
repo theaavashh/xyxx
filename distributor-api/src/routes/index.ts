@@ -10,6 +10,8 @@ import accountingRoutes from './accounting.routes';
 import accountingComprehensiveRoutes from './accounting-comprehensive.routes';
 import productionRoutes from './production.routes';
 import salesRoutes from './sales';
+import currentSalesRoutes from './currentSales.routes';
+import paymentConfigRoutes from './payment-config.routes';
 import { testEmail, testEmailWithoutCredentials } from '../controllers/test.controller';
 
 const router = Router();
@@ -26,6 +28,8 @@ router.use('/accounting', accountingRoutes);
 router.use('/accounting', accountingComprehensiveRoutes);
 router.use('/production', productionRoutes);
 router.use('/sales', salesRoutes);
+router.use('/current-sales', currentSalesRoutes);
+router.use('/payment-config', paymentConfigRoutes);
 
 // Test email endpoints (development only)
 if (process.env.NODE_ENV === 'development') {

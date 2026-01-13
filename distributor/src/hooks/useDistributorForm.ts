@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { useFormDataStore } from './formStore';
-import { useUIStore, useUISelectors } from './uiStore';
+import { useFormDataStore } from '@/stores/formStore';
+import { useUIStore, useUISelectors } from '@/stores/uiStore';
 import { DistributorFormData } from '@/types/application.types';
 
 // Combined hook for form operations
@@ -25,7 +25,7 @@ export const useDistributorForm = () => {
     const { isValid, errors } = validateCurrentStep(currentStep);
     const errorMap: Record<string, string> = {};
     
-    errors.forEach(error => {
+    errors.forEach((error: string) => {
       errorMap[error.toLowerCase().replace(/\s+/g, '_')] = error;
     });
     
@@ -179,7 +179,7 @@ export const useDistributorForm = () => {
 };
 
 // Helper function to transform loaded application data
-function transformLoadedApplication(application: any): Partial<DistributorFormData> {
+function transformLoadedApplication(application: any): Partial<DistributorFormData> { // Using any for application as it comes from API response
   return {
     personalDetails: {
       fullName: application.fullName || '',

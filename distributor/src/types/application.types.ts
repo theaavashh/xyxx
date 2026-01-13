@@ -121,6 +121,9 @@ export interface AreaCoverage {
 
 // Main form data interface
 export interface DistributorFormData {
+  // Initial fields
+  businessType: 'individual' | 'partnership';
+  contactNumber: string;
   // Step 1: Personal Details
   personalDetails: PersonalDetails;
   

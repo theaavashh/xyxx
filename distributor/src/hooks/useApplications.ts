@@ -184,7 +184,7 @@ export function useApplications(initialFilters: ApplicationFilters = {}) {
 
 // Hook for getting application statistics
 export function useApplicationStats() {
-  const [stats, setStats] = useState<any>(null);
+  const [stats, setStats] = useState<any>(null); // Using any for stats as type is complex
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

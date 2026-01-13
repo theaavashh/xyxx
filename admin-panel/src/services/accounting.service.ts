@@ -8,9 +8,10 @@ import {
   VATReport,
   TrialBalance,
   BalanceSheet,
-  DebtorsCreditors,
+  DebtorsCreditors as DebtorsCreditorsType,
   PurchaseSalesReport,
-  MISReport
+  MISReport,
+  PaymentConfig
 } from '@/types';
 
 // Base service class for common operations
@@ -60,7 +61,7 @@ class JournalEntryService extends BaseAccountingService {
     limit?: number;
   }): Promise<JournalEntry[]> {
     // The API returns data in a nested structure: { journalEntries: [...], pagination: {...} }
-    const response = await this.getAll<{ journalEntries: JournalEntry[]; pagination: any }>(params);
+    const response = await apiCall(() => httpClient.get<{ journalEntries: JournalEntry[]; pagination: any }>(this.endpoint, params));
     return response?.journalEntries || [];
   }
 
@@ -80,7 +81,12 @@ class JournalEntryService extends BaseAccountingService {
     status: 'DRAFT' | 'POSTED';
     createdById: string;
   }): Promise<JournalEntry | null> {
-    return this.create<JournalEntry>(entry);
+    // Convert date string to Date object if needed
+    const entryWithDate = {
+      ...entry,
+      date: typeof entry.date === 'string' ? new Date(entry.date) : entry.date
+    };
+    return this.create<JournalEntry>(entryWithDate);
   }
 
   async updateJournalEntry(id: string, entry: Partial<JournalEntry>): Promise<JournalEntry | null> {
@@ -300,7 +306,7 @@ class BalanceSheetService extends BaseAccountingService {
 }
 
 // Debtors & Creditors Service
-class DebtorsCreditors extends BaseAccountingService {
+class DebtorsCreditorsService extends BaseAccountingService {
   constructor() {
     super('/accounting/debtors-creditors');
   }
@@ -309,8 +315,8 @@ class DebtorsCreditors extends BaseAccountingService {
     type?: 'debtor' | 'creditor';
     overdueOnly?: boolean;
     search?: string;
-  }): Promise<DebtorsCreditors[]> {
-    return this.getAll<DebtorsCreditors>(params);
+  }): Promise<DebtorsCreditorsType[]> {
+    return this.getAll<DebtorsCreditorsType>(params);
   }
 
   async getAgingAnalysis(asOfDate?: string): Promise<{
@@ -389,7 +395,7 @@ export const purchaseEntryService = new PurchaseEntryService();
 export const vatReportService = new VATReportService();
 export const trialBalanceService = new TrialBalanceService();
 export const balanceSheetService = new BalanceSheetService();
-export const debtorsCreditors = new DebtorsCreditors();
+export const debtorsCreditors = new DebtorsCreditorsService();
 export const purchaseSalesReportsService = new PurchaseSalesReportsService();
 export const misReportService = new MISReportService();
 
@@ -410,4 +416,31 @@ export const accountingService = {
 
 export default accountingService;
 
+// Payment Configuration Service
+class PaymentConfigService extends BaseAccountingService {
+  constructor() {
+    super('/payment-config');
+  }
 
+  async getPaymentConfigs(): Promise<PaymentConfig[]> {
+    return this.getAll<PaymentConfig>();
+  }
+
+  async getPaymentConfig(id: string): Promise<PaymentConfig | null> {
+    return this.getById<PaymentConfig>(id);
+  }
+
+  async createPaymentConfig(config: Omit<PaymentConfig, 'id' | 'createdAt' | 'updatedAt'>): Promise<PaymentConfig | null> {
+    return this.create<PaymentConfig>(config);
+  }
+
+  async updatePaymentConfig(id: string, config: Partial<PaymentConfig>): Promise<PaymentConfig | null> {
+    return this.update<PaymentConfig>(id, config);
+  }
+
+  async deletePaymentConfig(id: string): Promise<boolean> {
+    return this.delete(id);
+  }
+}
+
+export const paymentConfigService = new PaymentConfigService();
