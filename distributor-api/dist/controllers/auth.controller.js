@@ -7,7 +7,7 @@ exports.updateUser = exports.deleteUser = exports.updateUserStatus = exports.get
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
-const error_middleware_1 = require("@/middleware/error.middleware");
+const error_middleware_1 = require("../middleware/error.middleware");
 const prisma = new client_1.PrismaClient();
 const generateToken = (userId, email, role) => {
     const jwtSecret = process.env.JWT_SECRET;

@@ -3,7 +3,7 @@
 import { Control, Controller, UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { districtsByProvince, nepalProvinces } from '../../constants/form.constants';
 
-import { FormData } from '@/types/form.types';
+import { FormData } from '@/types/formTypes';
 
 interface Step3BusinessDetailsProps {
   control: Control<FormData>;

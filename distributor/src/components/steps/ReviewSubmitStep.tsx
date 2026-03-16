@@ -12,11 +12,11 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
   const formData = watch();
 
   return (
-    <div className="text-center py-12">
+    <div className="text-center py-5">
       <h3 className="text-xl font-semibold text-black mb-4 absans">९. समीक्षा र पेश गर्नुहोस् (Review & Submit)</h3>
       <div className="text-left max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-black absans mb-3">१. व्यापार प्रकार र सम्पर्क विवरण</h4>
+          <h4 className="text-lg font-semibold text-black absans mb-3">व्यापार प्रकार र सम्पर्क विवरण </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">व्यापार प्रकार:</span>
@@ -30,7 +30,7 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
         </div>
 
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-black absans mb-3">२. व्यक्तिगत विवरण</h4>
+          <h4 className="text-lg font-semibold text-black absans mb-3"> व्यक्तिगत विवरण (Personal Information) </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">नाम:</span>
@@ -60,7 +60,7 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
           
           {/* Document Previews */}
           <div className="mt-6">
-            <h5 className="text-md font-semibold text-black absans mb-3">अपलोड गरिएका कागजातहरू</h5>
+            <h5 className="text-md font-semibold text-black absans mb-3">अपलोड गरिएका कागजातहरू (Upload Document) </h5>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="border rounded-lg p-3">
                 <p className="text-xs font-medium text-gray-600 absans mb-2">नागरिकता अगाडिल्लो भाग</p>
@@ -130,7 +130,7 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
         </div>
 
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-black absans mb-3">३. व्यापार विवरण</h4>
+          <h4 className="text-lg font-semibold text-black absans mb-3">व्यापार विवरण (Business Details)</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">कम्पनीको नाम:</span>
@@ -160,7 +160,7 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
         </div>
 
         <div className="mb-6">
-          <h4 className="text-lg font-semibold text-black absans mb-3">४. कर्मचारी र बुनियादी ढांचा</h4>
+          <h4 className="text-lg font-semibold text-black absans mb-3">कर्मचारी विवरण (Staff Details) </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">कर्मचारी प्रकार:</span>
@@ -181,8 +181,8 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
           </div>
         </div>
 
-        <div className="mb-6">
-          <h4 className="text-lg font-semibold text-black absans mb-3">५. हालको व्यापार विवरण</h4>
+        {/* <div className="mb-6">
+          <h4 className="text-lg font-semibold text-black absans mb-3">५. हालको व्यापार विवरण (Current Business Details) </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">व्यापार प्रकार:</span>
@@ -200,7 +200,7 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
           
           {/* Current Businesses */}
           <div className="mt-4">
-            <h5 className="text-md font-semibold text-black absans mb-2">हालका व्यापारहरू</h5>
+            <h5 className="text-md font-semibold text-black absans mb-2">हालका व्यापारहरू (Current Business Details) </h5>
             {formData.currentTransactions && formData.currentTransactions.length > 0 ? (
               <div className="space-y-3">
                 {formData.currentTransactions?.map((business: CurrentBusiness, index: number) => (
@@ -230,11 +230,11 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
               <p className="text-sm text-black absans">कुनै व्यापार विवरण छैन</p>
             )}
           </div>
-        </div>
+        {/* /* </div>  */}
 
         {formData.businessStructure === 'partnership' && (
           <div className="mb-6">
-            <h4 className="text-lg font-semibold text-black absans mb-3">६. साझेदारी विवरण</h4>
+            <h4 className="text-lg font-semibold text-black absans mb-3">साझेदारी विवरण</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="border-b pb-2">
                 <span className="font-medium text-gray-600 absans">साझेदारको पूरा नाम:</span>
@@ -264,17 +264,14 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
           </div>
         )}
 
-        <div className="mb-6">
-          <h4 className="text-lg font-semibold text-black absans mb-3">६/७. उत्पादन र अतिरिक्त जानकारी</h4>
+        <div className="mb-6 mt-4">
+          <h4 className="text-lg font-semibold text-black absans mb-3">उत्पादन र अतिरिक्त जानकारी</h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">उत्पादन श्रेणी:</span>
               <span className="ml-2 text-black absans">{formData.productCategory}</span>
             </div>
-            <div className="border-b pb-2">
-              <span className="font-medium text-gray-600 absans">व्यापार अनुभव:</span>
-              <span className="ml-2 text-black absans">{formData.businessExperience}</span>
-            </div>
+    
             <div className="border-b pb-2">
               <span className="font-medium text-gray-600 absans">मासिक आय:</span>
               <span className="ml-2 text-black absans">{formData.monthlyIncome}</span>
@@ -296,7 +293,7 @@ export const ReviewSubmitStep = ({ control, errors, watch }: ReviewSubmitStepPro
 
         <div className="mt-8 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
           <p className="text-sm text-black absans">
-            कृपया सबै जानकारी सही रहेको निश्चित गर्नुहोस्। यदि सबै ठीक छ भने, "आवेदन पेश गर्नुहोस्" बटनमा क्लिक गर्नुहोस्।
+            कृपया सबै जानकारी सही रहेको निश्चित गर्नुहोस्। यदि सबै ठीक छ भने, &quot;आवेदन पेश गर्नुहोस्&quot; बटनमा क्लिक गर्नुहोस्।
           </p>
         </div>
       </div>

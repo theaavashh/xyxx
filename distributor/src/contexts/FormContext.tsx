@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, createContext, useContext, ReactNode } from 'react';
-import { FormContextType } from '../types/form.types';
+import { FormContextType } from '../types/formTypes';
 
 const FormDataContext = createContext<FormContextType | undefined>(undefined);
 

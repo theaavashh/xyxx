@@ -13,7 +13,9 @@ import {
   BillOfMaterials,
   BOMForm,
   ProductionKPIs,
-  ProductionReport
+  ProductionReport,
+  ProductionChart,
+  ProductionChartForm
 } from '@/types';
 import { config } from '@/lib/config';
 
@@ -753,6 +755,200 @@ class ProductionService {
     if (!response.ok) {
       throw new Error('Failed to delete machine');
     }
+  }
+
+  // Production Chart APIs
+  async getProductionCharts(fromDate?: string, toDate?: string): Promise<ProductionChart[]> {
+    const params = new URLSearchParams();
+    if (fromDate) params.append('fromDate', fromDate);
+    if (toDate) params.append('toDate', toDate);
+    
+    const url = params.toString() 
+      ? `${API_BASE_URL}/production/charts?${params}` 
+      : `${API_BASE_URL}/production/charts`;
+    
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch production charts');
+    }
+    
+    return response.json();
+  }
+
+  async getProductionChart(id: string): Promise<ProductionChart> {
+    const response = await fetch(`${API_BASE_URL}/production/charts/${id}`, {
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch production chart');
+    }
+    
+    return response.json();
+  }
+
+  async createProductionChart(data: ProductionChartForm): Promise<ProductionChart> {
+    const response = await fetch(`${API_BASE_URL}/production/charts`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to create production chart');
+    }
+    
+    return response.json();
+  }
+
+  async updateProductionChart(id: string, data: Partial<ProductionChartForm>): Promise<ProductionChart> {
+    const response = await fetch(`${API_BASE_URL}/production/charts/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to update production chart');
+    }
+    
+    return response.json();
+  }
+
+  async deleteProductionChart(id: string): Promise<void> {
+    const response = await fetch(`${API_BASE_URL}/production/charts/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to delete production chart');
+    }
+  }
+
+  async getProductionChartSummary(fromDate?: string, toDate?: string): Promise<any> {
+    const params = new URLSearchParams();
+    if (fromDate) params.append('fromDate', fromDate);
+    if (toDate) params.append('toDate', toDate);
+    
+    const url = params.toString() 
+      ? `${API_BASE_URL}/production/charts/summary?${params}` 
+      : `${API_BASE_URL}/production/charts/summary`;
+    
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch production chart summary');
+    }
+    
+    return response.json();
+  }
+
+  // Raw Material Wastage APIs
+  async getWastageEntries(params?: { materialId?: string; fromDate?: string; toDate?: string; page?: number; limit?: number }): Promise<{ wastageEntries: any[]; pagination: any }> {
+    const queryParams = new URLSearchParams();
+    if (params?.materialId) queryParams.append('materialId', params.materialId);
+    if (params?.fromDate) queryParams.append('fromDate', params.fromDate);
+    if (params?.toDate) queryParams.append('toDate', params.toDate);
+    if (params?.page) queryParams.append('page', params.page.toString());
+    if (params?.limit) queryParams.append('limit', params.limit.toString());
+    
+    const url = queryParams.toString() 
+      ? `${API_BASE_URL}/production/wastage?${queryParams}` 
+      : `${API_BASE_URL}/production/wastage`;
+    
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch wastage entries');
+    }
+    
+    return response.json();
+  }
+
+  async createWastageEntry(data: any): Promise<any> {
+    const response = await fetch(`${API_BASE_URL}/production/wastage`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to create wastage entry');
+    }
+    
+    return response.json();
+  }
+
+  async getWastageReasons(): Promise<{ reasons: string[]; usage: any[] }> {
+    const response = await fetch(`${API_BASE_URL}/production/wastage/reasons`, {
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch wastage reasons');
+    }
+    
+    return response.json();
+  }
+
+  async getWastageSummary(params?: { fromDate?: string; toDate?: string; materialId?: string; categoryId?: string }): Promise<any> {
+    const queryParams = new URLSearchParams();
+    if (params?.fromDate) queryParams.append('fromDate', params.fromDate);
+    if (params?.toDate) queryParams.append('toDate', params.toDate);
+    if (params?.materialId) queryParams.append('materialId', params.materialId);
+    if (params?.categoryId) queryParams.append('categoryId', params.categoryId);
+    
+    const url = queryParams.toString() 
+      ? `${API_BASE_URL}/production/wastage/summary?${queryParams}` 
+      : `${API_BASE_URL}/production/wastage/summary`;
+    
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${getToken()}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error('Failed to fetch wastage summary');
+    }
+    
+    return response.json();
   }
 }
 

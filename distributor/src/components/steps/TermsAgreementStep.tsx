@@ -1,7 +1,7 @@
 import { Controller } from 'react-hook-form';
 
 import { Control } from 'react-hook-form';
-import { FormData } from '@/types/form.types';
+import { FormData } from '@/types/formTypes';
 
 interface TermsAgreementStepProps {
   control: Control<FormData>;

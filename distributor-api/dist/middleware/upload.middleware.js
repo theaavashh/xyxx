@@ -17,6 +17,8 @@ const storage = multer_1.default.diskStorage({
         let uploadPath = 'uploads/documents';
         switch (file.fieldname) {
             case 'citizenshipId':
+            case 'citizenshipBack':
+            case 'companyRegistration':
             case 'companyRegistration':
             case 'panVatRegistration':
                 uploadPath = 'uploads/documents';
@@ -44,13 +46,14 @@ const storage = multer_1.default.diskStorage({
 });
 const fileFilter = (req, file, cb) => {
     const allowedTypes = {
-        citizenshipId: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-        companyRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-        panVatRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-        officePhoto: ['image/jpeg', 'image/jpg', 'image/png'],
-        areaMap: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-        digitalSignature: ['image/png', 'image/jpeg', 'image/jpg'],
-        documents: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf']
+        citizenshipId: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+        citizenshipBack: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+        companyRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+        panVatRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+        officePhoto: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif'],
+        areaMap: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+        digitalSignature: ['image/png', 'image/jpeg', 'image/jpg', 'image/avif'],
+        documents: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf']
     };
     const fieldAllowedTypes = allowedTypes[file.fieldname];
     if (!fieldAllowedTypes) {
@@ -68,11 +71,12 @@ const upload = (0, multer_1.default)({
     fileFilter,
     limits: {
         fileSize: parseInt(process.env.MAX_FILE_SIZE || '5242880'),
-        files: 5
+        files: 10
     }
 });
 exports.uploadDocuments = upload.fields([
     { name: 'citizenshipId', maxCount: 1 },
+    { name: 'citizenshipBack', maxCount: 1 },
     { name: 'companyRegistration', maxCount: 1 },
     { name: 'panVatRegistration', maxCount: 1 },
     { name: 'officePhoto', maxCount: 1 },

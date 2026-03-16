@@ -64,10 +64,26 @@ export const formValidationSchema = yup.object().shape({
   registrationDocument: yup.mixed().required('कम्पनी दर्ता प्रमाणपत्र अपलोड गर्नुहोस्'),
 
   // Step 4: Staff and Infrastructure
-  selectedStaffType: yup.string().required('कर्मचारी प्रकार आवश्यक छ'),
-  staffQuantity: yup.number().positive('कर्मचारी संख्या धनात्मक हुनुपर्छ').default(0),
-  selectedInfrastructureType: yup.string().required('पूर्वाधार प्रकार आवश्यक छ'),
-  infrastructureQuantity: yup.number().positive('पूर्वाधार मात्रा धनात्मक हुनुपर्छ').default(0),
+  // Keep existing fields for backward compatibility - now truly optional
+  selectedStaffType: yup.string(),
+  staffQuantity: yup.number().nullable().transform((value) => (isNaN(value) ? null : value)),
+  selectedInfrastructureType: yup.string(),
+  infrastructureQuantity: yup.number().nullable().transform((value) => (isNaN(value) ? null : value)),
+  // New validation for multiple entries
+  staffDetails: yup.array().of(
+    yup.object().shape({
+      id: yup.string().required(),
+      staffType: yup.string().required('कर्मचारी प्रकार आवश्यक छ'),
+      quantity: yup.number().positive('कर्मचारी संख्या धनात्मक हुनुपर्छ').required('कर्मचारी संख्या आवश्यक छ')
+    })
+  ).default([]),
+  infrastructureDetails: yup.array().of(
+    yup.object().shape({
+      id: yup.string().required(),
+      infrastructureType: yup.string().required('पूर्वाधार प्रकार आवश्यक छ'),
+      quantity: yup.number().positive('पूर्वाधार मात्रा धनात्मक हुनुपर्छ').required('पूर्वाधार मात्रा आवश्यक छ')
+    })
+  ).default([]),
 
   // Step 5: Business Information and Products
   currentTransactions: yup.array().of(

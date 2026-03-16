@@ -18,8 +18,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-mono-sans);
+  --font-mono: var(--font-mono-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,33 +29,12 @@
   }
 }
 
-@font-face {
-  font-family: 'Absans';
-  src: url('/fonts/title-regular.f7f2da3f7d1f78b3f788.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gloock';
-  src: url('/fonts/Gloock-Regular.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-.absans {
-  font-family: 'Absans', sans-serif;
-}
-.gloock {
-  font-family: 'Gloock', sans-serif;
-}
-
 body {
   background: var(--background);
-  color: var(--background);
-  font-family: 'Absans', Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  font-family: var(--font-mono-sans), 'DM Mono', monospace;
 }
 
 * {
-  font-family: 'Absans', Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono-sans), 'DM Mono', monospace;
 }

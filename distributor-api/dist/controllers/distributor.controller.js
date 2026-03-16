@@ -33,8 +33,26 @@ exports.submitApplication = (0, error_middleware_1.asyncHandler)(async (req, res
     if (!applicationData.personalDetails?.fullName) {
         const response = {
             success: false,
-            message: 'व्यक्तिगत विवरण आवश्यक छ',
-            error: 'MISSING_PERSONAL_DETAILS'
+            message: 'पूरा नाम आवश्यक छ',
+            error: 'MISSING_FULL_NAME'
+        };
+        res.status(400).json(response);
+        return;
+    }
+    if (!applicationData.personalDetails?.email) {
+        const response = {
+            success: false,
+            message: 'इमेल आवश्यक छ',
+            error: 'MISSING_EMAIL'
+        };
+        res.status(400).json(response);
+        return;
+    }
+    if (!applicationData.personalDetails?.mobileNumber) {
+        const response = {
+            success: false,
+            message: 'सम्पर्क नम्बर आवश्यक छ',
+            error: 'MISSING_CONTACT_NUMBER'
         };
         res.status(400).json(response);
         return;
@@ -104,6 +122,7 @@ exports.submitApplication = (0, error_middleware_1.asyncHandler)(async (req, res
             additionalInfo2: applicationData.additionalInformation?.additionalInfo2,
             additionalInfo3: applicationData.additionalInformation?.additionalInfo3,
             citizenshipId: filePaths.citizenshipId,
+            citizenshipBack: filePaths.citizenshipBack,
             companyRegistration: filePaths.companyRegistration,
             panVatRegistration: filePaths.panVatRegistration,
             officePhoto: filePaths.officePhoto,
@@ -115,20 +134,20 @@ exports.submitApplication = (0, error_middleware_1.asyncHandler)(async (req, res
             distributorSignatureName: applicationData.agreement.distributorSignatureName,
             distributorSignatureDate: applicationData.agreement.distributorSignatureDate,
             currentTransactions: {
-                create: applicationData.currentTransactions?.filter(ct => ct.company && ct.products).map(ct => ({
+                create: applicationData.currentTransactions?.filter((ct) => ct.company && ct.products).map((ct) => ({
                     company: ct.company,
                     products: ct.products,
                     turnover: ct.turnover
                 })) || []
             },
             productsToDistribute: {
-                create: applicationData.productsToDistribute?.filter(pd => pd.productName).map(pd => ({
+                create: applicationData.productsToDistribute?.filter((pd) => pd.productName).map((pd) => ({
                     productName: pd.productName,
                     monthlySalesCapacity: pd.monthlySalesCapacity
                 })) || []
             },
             areaCoverageDetails: {
-                create: applicationData.areaCoverageDetails?.filter(acd => acd.distributionArea).map(acd => ({
+                create: applicationData.areaCoverageDetails?.filter((acd) => acd.distributionArea).map((acd) => ({
                     distributionArea: acd.distributionArea,
                     populationEstimate: acd.populationEstimate,
                     competitorBrand: acd.competitorBrand

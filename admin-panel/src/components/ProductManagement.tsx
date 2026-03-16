@@ -709,7 +709,7 @@ export default function ProductManagement() {
               <Package className="h-10 w-10 text-gray-400" />
             </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">No products found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or filters to find what you're looking for.</p>
+            <p className="text-gray-600 mb-6">Try adjusting your search or filters to find what you&apos;re looking for.</p>
             <button
               onClick={() => setIsModalOpen(true)}
               className="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors inline-flex items-center gap-2"
@@ -1084,7 +1084,7 @@ export default function ProductManagement() {
               <div className="text-center mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Delete Product?</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Are you sure you want to delete <span className="font-semibold text-red-600">"{deleteModal.product?.name}"</span>?
+                  Are you sure you want to delete <span className="font-semibold text-red-600">&quot;{deleteModal.product?.name}&quot;</span>?
                 </p>
                 <p className="text-gray-500 text-sm mt-2">
                   This action cannot be undone and all product data will be permanently removed.

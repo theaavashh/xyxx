@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ErrorBoundary } from './ErrorBoundary';
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
@@ -113,12 +114,12 @@ export const PageErrorBoundary: React.FC<{ children: React.ReactNode }> = ({ chi
             >
               पछि जानुहोस्
             </button>
-            <a
+            <Link
               href="/"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors absans inline-block"
             >
               गृह पृष्ठ
-            </a>
+            </Link>
           </div>
         </div>
       </div>

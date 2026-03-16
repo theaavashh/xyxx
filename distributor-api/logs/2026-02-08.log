@@ -1,0 +1,474 @@
+2026-02-08T04:10:05.072Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:10:16.033Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T04:10:16.043Z [INFO] 🌍 Environment: development
+2026-02-08T04:10:16.043Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T04:10:16.044Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T04:10:16.044Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T04:10:32.423Z [INFO] POST /api/auth/login - 200 - 528.026ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":528.026}
+2026-02-08T04:10:51.868Z [INFO] GET /api/production/charts - 304 - 460.565ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":460.565}
+2026-02-08T04:10:51.891Z [INFO] GET /api/production/charts - 304 - 11.938ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":11.938}
+2026-02-08T04:10:57.650Z [INFO] DELETE /api/production/charts/cmlcaumx30000btzav6z9kco3 - 200 - 34.697ms | Data: {"method":"DELETE","url":"/api/production/charts/cmlcaumx30000btzav6z9kco3","statusCode":200,"responseTime":34.697}
+2026-02-08T04:11:56.099Z [ERROR] Error creating production chart: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.productionChart.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:1156:48
+
+  1153 const { date, dayOfWeek, ingredients, outputs, subCharts, notes } = req.body;
+  1154 const userId = (req as any).user?.id || 'system';
+  1155 
+→ 1156 const chart = await prisma.productionChart.create(
+Foreign key constraint violated: `production_sub_charts_ingredientId_fkey (index)`
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createProductionChart (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:1156:19)
+2026-02-08T04:11:56.102Z [ERROR] POST /api/production/charts - 500 - 170.441ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":500,"responseTime":170.441}
+2026-02-08T04:13:26.467Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:13:32.708Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T04:13:32.708Z [INFO] 🌍 Environment: development
+2026-02-08T04:13:32.708Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T04:13:32.708Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T04:13:32.709Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T04:13:41.614Z [INFO] POST /api/production/charts - 201 - 140.748ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":201,"responseTime":140.748}
+2026-02-08T04:17:11.582Z [INFO] GET /api/production/orders - 304 - 25.886ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":25.886}
+2026-02-08T04:17:11.610Z [INFO] GET /api/production/orders - 304 - 17.172ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":17.172}
+2026-02-08T04:17:11.625Z [INFO] GET /api/production/schedules - 304 - 58.903ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":58.903}
+2026-02-08T04:17:11.634Z [INFO] GET /api/production/work-centers - 304 - 71.921ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":71.921}
+2026-02-08T04:17:11.654Z [INFO] GET /api/production/schedules - 304 - 10.644ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":10.644}
+2026-02-08T04:17:11.669Z [INFO] GET /api/production/work-centers - 304 - 6.27ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":6.27}
+2026-02-08T04:17:12.696Z [INFO] GET /api/production/orders - 304 - 31.2ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":31.2}
+2026-02-08T04:17:12.701Z [INFO] GET /api/production/records - 304 - 31.06ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":31.06}
+2026-02-08T04:17:12.718Z [INFO] GET /api/production/raw-materials - 304 - 38.069ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":38.069}
+2026-02-08T04:17:12.752Z [INFO] GET /api/production/records - 304 - 20.668ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":20.668}
+2026-02-08T04:17:12.759Z [INFO] GET /api/production/raw-materials - 304 - 20.963ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":20.963}
+2026-02-08T04:17:12.782Z [INFO] GET /api/production/orders - 304 - 47.477ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":47.477}
+2026-02-08T04:17:15.133Z [INFO] GET /api/production/raw-materials - 304 - 11.9ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.9}
+2026-02-08T04:17:15.159Z [INFO] GET /api/production/raw-materials/transactions - 304 - 15.254ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":15.254}
+2026-02-08T04:17:15.161Z [INFO] GET /api/production/raw-materials - 304 - 11.977ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.977}
+2026-02-08T04:17:15.174Z [INFO] GET /api/production/raw-materials/transactions - 304 - 7.795ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":7.795}
+2026-02-08T04:17:15.402Z [INFO] GET /api/production/raw-materials/categories - 304 - 262.951ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":262.951}
+2026-02-08T04:17:15.412Z [INFO] GET /api/production/raw-materials/categories - 304 - 5.119ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":5.119}
+2026-02-08T04:17:47.301Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:17:56.414Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:18:04.538Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:18:09.654Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T04:18:09.655Z [INFO] 🌍 Environment: development
+2026-02-08T04:18:09.655Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T04:18:09.657Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T04:18:09.657Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T04:18:15.018Z [INFO] GET /api/auth/users - 200 - 137.683ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":137.683}
+2026-02-08T04:18:15.031Z [INFO] GET /api/auth/users - 304 - 7.222ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":7.222}
+2026-02-08T04:18:17.993Z [INFO] GET /api/production/raw-materials/categories - 304 - 98.046ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":98.046}
+2026-02-08T04:18:18.013Z [INFO] GET /api/production/raw-materials/categories - 304 - 5.767ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":5.767}
+2026-02-08T04:18:18.024Z [INFO] GET /api/production/machines - 304 - 102.064ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":102.064}
+2026-02-08T04:18:18.042Z [INFO] GET /api/production/machines - 304 - 6.605ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":6.605}
+2026-02-08T04:18:18.053Z [INFO] GET /api/production/work-centers - 304 - 149.877ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":149.877}
+2026-02-08T04:18:18.079Z [INFO] GET /api/production/work-centers - 304 - 7.777ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":7.777}
+2026-02-08T04:18:18.081Z [INFO] GET /api/payment-config - 304 - 121.423ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":121.423}
+2026-02-08T04:18:18.093Z [INFO] GET /api/payment-config - 304 - 2.787ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":2.787}
+2026-02-08T04:18:30.840Z [INFO] GET /api/auth/users - 304 - 4.93ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":4.93}
+2026-02-08T04:18:30.853Z [INFO] GET /api/auth/users - 304 - 7.239ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":7.239}
+2026-02-08T04:18:32.032Z [INFO] GET /api/production/charts - 200 - 8.537ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":200,"responseTime":8.537}
+2026-02-08T04:18:32.044Z [INFO] GET /api/production/charts - 304 - 7.22ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":7.22}
+2026-02-08T04:18:35.377Z [INFO] GET /api/production/work-centers - 304 - 8.014ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":8.014}
+2026-02-08T04:18:35.383Z [INFO] GET /api/production/orders - 304 - 15.237ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":15.237}
+2026-02-08T04:18:35.399Z [INFO] GET /api/production/schedules - 304 - 25.551ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":25.551}
+2026-02-08T04:18:35.409Z [INFO] GET /api/production/work-centers - 304 - 22.41ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":22.41}
+2026-02-08T04:18:35.417Z [INFO] GET /api/production/schedules - 304 - 10.872ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":10.872}
+2026-02-08T04:18:35.420Z [INFO] GET /api/production/orders - 304 - 18.737ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":18.737}
+2026-02-08T04:18:37.231Z [INFO] GET /api/production/orders - 304 - 11.248ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":11.248}
+2026-02-08T04:18:37.233Z [INFO] GET /api/production/raw-materials - 304 - 8.083ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":8.083}
+2026-02-08T04:18:37.236Z [INFO] GET /api/production/records - 304 - 19.94ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":19.94}
+2026-02-08T04:18:37.258Z [INFO] GET /api/production/raw-materials - 304 - 9.615ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":9.615}
+2026-02-08T04:18:37.261Z [INFO] GET /api/production/records - 304 - 9.264ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":9.264}
+2026-02-08T04:18:37.262Z [INFO] GET /api/production/orders - 304 - 16.593ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":16.593}
+2026-02-08T04:18:38.930Z [INFO] GET /api/production/raw-materials - 304 - 11.63ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.63}
+2026-02-08T04:18:38.932Z [INFO] GET /api/production/raw-materials/categories - 304 - 8.664ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":8.664}
+2026-02-08T04:18:38.943Z [INFO] GET /api/production/raw-materials/transactions - 304 - 15.857ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":15.857}
+2026-02-08T04:18:38.966Z [INFO] GET /api/production/raw-materials - 304 - 18.31ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":18.31}
+2026-02-08T04:18:38.968Z [INFO] GET /api/production/raw-materials/categories - 304 - 16.431ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":16.431}
+2026-02-08T04:18:38.969Z [INFO] GET /api/production/raw-materials/transactions - 304 - 12.498ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":12.498}
+2026-02-08T04:18:41.278Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08 - 200 - 15.621ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08","statusCode":200,"responseTime":15.621}
+2026-02-08T04:18:41.295Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08 - 304 - 12.342ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08","statusCode":304,"responseTime":12.342}
+2026-02-08T04:18:41.311Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 46.796ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":46.796}
+2026-02-08T04:18:41.323Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 7.316ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":7.316}
+2026-02-08T04:18:51.416Z [INFO] GET /api/production/raw-materials - 304 - 14.592ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":14.592}
+2026-02-08T04:18:51.429Z [INFO] GET /api/production/raw-materials/transactions - 304 - 13.052ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":13.052}
+2026-02-08T04:18:51.449Z [INFO] GET /api/production/raw-materials - 304 - 15.37ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":15.37}
+2026-02-08T04:18:51.451Z [INFO] GET /api/production/raw-materials/categories - 304 - 43.226ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":43.226}
+2026-02-08T04:18:51.452Z [INFO] GET /api/production/raw-materials/transactions - 304 - 14.405ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":14.405}
+2026-02-08T04:18:51.484Z [INFO] GET /api/production/raw-materials/categories - 304 - 23.531ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":23.531}
+2026-02-08T04:19:02.407Z [INFO] GET /api/production/records - 304 - 9.03ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":9.03}
+2026-02-08T04:19:02.414Z [INFO] GET /api/production/raw-materials - 304 - 5.859ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":5.859}
+2026-02-08T04:19:02.425Z [INFO] GET /api/production/orders - 304 - 19.15ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":19.15}
+2026-02-08T04:19:02.457Z [INFO] GET /api/production/raw-materials - 304 - 13.752ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":13.752}
+2026-02-08T04:19:02.458Z [INFO] GET /api/production/records - 304 - 21.483ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":21.483}
+2026-02-08T04:19:02.463Z [INFO] GET /api/production/orders - 304 - 14.942ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":14.942}
+2026-02-08T04:19:03.594Z [INFO] GET /api/production/orders - 304 - 9.295ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":9.295}
+2026-02-08T04:19:03.598Z [INFO] GET /api/production/schedules - 304 - 7.777ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":7.777}
+2026-02-08T04:19:03.604Z [INFO] GET /api/production/work-centers - 304 - 15.494ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":15.494}
+2026-02-08T04:19:03.626Z [INFO] GET /api/production/orders - 304 - 15.418ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":15.418}
+2026-02-08T04:19:03.627Z [INFO] GET /api/production/schedules - 304 - 11.738ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":11.738}
+2026-02-08T04:19:03.628Z [INFO] GET /api/production/work-centers - 304 - 8.933ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":8.933}
+2026-02-08T04:19:04.815Z [INFO] GET /api/production/charts - 304 - 11.131ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":11.131}
+2026-02-08T04:19:04.831Z [INFO] GET /api/production/charts - 304 - 11.272ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":11.272}
+2026-02-08T04:19:27.522Z [INFO] GET /api/production/orders - 304 - 12.084ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":12.084}
+2026-02-08T04:19:27.523Z [INFO] GET /api/production/work-centers - 304 - 10.83ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":10.83}
+2026-02-08T04:19:27.528Z [INFO] GET /api/production/schedules - 304 - 8.614ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":8.614}
+2026-02-08T04:19:27.552Z [INFO] GET /api/production/orders - 304 - 18.152ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":18.152}
+2026-02-08T04:19:27.553Z [INFO] GET /api/production/work-centers - 304 - 17.436ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":17.436}
+2026-02-08T04:19:27.555Z [INFO] GET /api/production/schedules - 304 - 14.933ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":14.933}
+2026-02-08T04:19:30.539Z [INFO] GET /api/production/orders - 304 - 6.473ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":6.473}
+2026-02-08T04:19:30.547Z [INFO] GET /api/production/records - 304 - 14.676ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":14.676}
+2026-02-08T04:19:30.552Z [INFO] GET /api/production/raw-materials - 304 - 16.698ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":16.698}
+2026-02-08T04:19:30.581Z [INFO] GET /api/production/orders - 304 - 23.814ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":23.814}
+2026-02-08T04:19:30.584Z [INFO] GET /api/production/records - 304 - 22.74ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":22.74}
+2026-02-08T04:19:30.592Z [INFO] GET /api/production/raw-materials - 304 - 18.865ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":18.865}
+2026-02-08T04:20:19.540Z [INFO] GET /api/production/charts - 304 - 10.224ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":10.224}
+2026-02-08T04:20:19.554Z [INFO] GET /api/production/charts - 304 - 9.081ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":9.081}
+2026-02-08T04:23:04.765Z [INFO] GET /api/production/orders - 304 - 11.518ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":11.518}
+2026-02-08T04:23:04.796Z [INFO] GET /api/production/work-centers - 304 - 37.879ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":37.879}
+2026-02-08T04:23:04.799Z [INFO] GET /api/production/schedules - 304 - 40.544ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":40.544}
+2026-02-08T04:23:04.801Z [INFO] GET /api/production/orders - 304 - 20.141ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":20.141}
+2026-02-08T04:23:04.818Z [INFO] GET /api/production/work-centers - 304 - 6.997ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":6.997}
+2026-02-08T04:23:04.826Z [INFO] GET /api/production/schedules - 304 - 6.727ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":6.727}
+2026-02-08T04:23:06.234Z [INFO] GET /api/production/raw-materials/categories - 304 - 10.99ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":10.99}
+2026-02-08T04:23:06.236Z [INFO] GET /api/production/raw-materials - 304 - 16.944ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":16.944}
+2026-02-08T04:23:06.246Z [INFO] GET /api/production/raw-materials/transactions - 304 - 21.261ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":21.261}
+2026-02-08T04:23:06.249Z [INFO] GET /api/production/raw-materials/categories - 304 - 8.631ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":8.631}
+2026-02-08T04:23:06.254Z [INFO] GET /api/production/raw-materials - 304 - 11.229ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.229}
+2026-02-08T04:23:06.279Z [INFO] GET /api/production/raw-materials/transactions - 304 - 13.678ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":13.678}
+2026-02-08T04:23:08.234Z [INFO] GET /api/production/records - 304 - 14.147ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":14.147}
+2026-02-08T04:23:08.237Z [INFO] GET /api/production/orders - 304 - 13.459ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":13.459}
+2026-02-08T04:23:08.248Z [INFO] GET /api/production/raw-materials - 304 - 17.139ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":17.139}
+2026-02-08T04:23:08.257Z [INFO] GET /api/production/records - 304 - 12.935ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":12.935}
+2026-02-08T04:23:08.263Z [INFO] GET /api/production/orders - 304 - 12.436ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":12.436}
+2026-02-08T04:23:08.270Z [INFO] GET /api/production/raw-materials - 304 - 11.286ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.286}
+2026-02-08T04:23:09.599Z [INFO] GET /api/production/orders - 304 - 65.788ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":65.788}
+2026-02-08T04:23:09.613Z [INFO] GET /api/production/work-centers - 304 - 49.22ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":49.22}
+2026-02-08T04:23:09.627Z [INFO] GET /api/production/schedules - 304 - 34.941ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":34.941}
+2026-02-08T04:23:09.660Z [INFO] GET /api/production/orders - 304 - 29.198ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":29.198}
+2026-02-08T04:23:09.664Z [INFO] GET /api/production/work-centers - 304 - 24.909ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":24.909}
+2026-02-08T04:23:09.690Z [INFO] GET /api/production/schedules - 304 - 39.45ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":39.45}
+2026-02-08T04:27:14.853Z [INFO] GET /api/production/charts - 304 - 48.468ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":48.468}
+2026-02-08T04:27:14.868Z [INFO] GET /api/production/charts - 304 - 12.442ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":12.442}
+2026-02-08T04:27:31.239Z [INFO] GET /api/production/charts - 304 - 7.674ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":7.674}
+2026-02-08T04:27:31.258Z [INFO] GET /api/production/charts - 304 - 15.141ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":15.141}
+2026-02-08T04:27:49.972Z [INFO] GET /api/production/orders - 304 - 15.105ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":15.105}
+2026-02-08T04:27:49.982Z [INFO] GET /api/production/orders - 304 - 8.247ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":8.247}
+2026-02-08T04:27:50.000Z [INFO] GET /api/production/work-centers - 304 - 46.207ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":46.207}
+2026-02-08T04:27:50.018Z [INFO] GET /api/production/schedules - 304 - 62.505ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":62.505}
+2026-02-08T04:27:50.020Z [INFO] GET /api/production/work-centers - 304 - 12.432ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":12.432}
+2026-02-08T04:27:50.037Z [INFO] GET /api/production/schedules - 304 - 9.46ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":9.46}
+2026-02-08T04:27:51.326Z [INFO] GET /api/production/records - 304 - 11.173ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":11.173}
+2026-02-08T04:27:51.333Z [INFO] GET /api/production/orders - 304 - 13.827ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":13.827}
+2026-02-08T04:27:51.355Z [INFO] GET /api/production/records - 304 - 14.231ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":14.231}
+2026-02-08T04:27:51.358Z [INFO] GET /api/production/raw-materials - 304 - 35.356ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":35.356}
+2026-02-08T04:27:51.359Z [INFO] GET /api/production/orders - 304 - 11.9ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":11.9}
+2026-02-08T04:27:51.376Z [INFO] GET /api/production/raw-materials - 304 - 9.672ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":9.672}
+2026-02-08T04:27:52.499Z [INFO] GET /api/production/raw-materials - 304 - 10.372ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":10.372}
+2026-02-08T04:27:52.503Z [INFO] GET /api/production/raw-materials/categories - 304 - 12.901ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":12.901}
+2026-02-08T04:27:52.507Z [INFO] GET /api/production/raw-materials/transactions - 304 - 14.197ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":14.197}
+2026-02-08T04:27:52.526Z [INFO] GET /api/production/raw-materials - 304 - 14.309ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":14.309}
+2026-02-08T04:27:52.529Z [INFO] GET /api/production/raw-materials/categories - 304 - 9.608ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":9.608}
+2026-02-08T04:27:52.540Z [INFO] GET /api/production/raw-materials/transactions - 304 - 11.193ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":11.193}
+2026-02-08T04:28:03.581Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 7.584ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":7.584}
+2026-02-08T04:28:03.612Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 24.054ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":24.054}
+2026-02-08T04:28:03.616Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08 - 304 - 12.976ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08","statusCode":304,"responseTime":12.976}
+2026-02-08T04:28:03.633Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08 - 304 - 11.892ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-08&toDate=2026-02-08","statusCode":304,"responseTime":11.892}
+2026-02-08T04:28:05.655Z [INFO] GET /api/production/records - 304 - 15.831ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":15.831}
+2026-02-08T04:28:05.657Z [INFO] GET /api/production/orders - 304 - 14.105ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":14.105}
+2026-02-08T04:28:05.661Z [INFO] GET /api/production/raw-materials - 304 - 13.903ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":13.903}
+2026-02-08T04:28:05.689Z [INFO] GET /api/production/records - 304 - 19.771ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":19.771}
+2026-02-08T04:28:05.697Z [INFO] GET /api/production/orders - 304 - 21.666ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":21.666}
+2026-02-08T04:28:05.699Z [INFO] GET /api/production/raw-materials - 304 - 18.636ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":18.636}
+2026-02-08T04:28:08.065Z [INFO] GET /api/production/orders - 304 - 9.23ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":9.23}
+2026-02-08T04:28:08.069Z [INFO] GET /api/production/work-centers - 304 - 11.449ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":11.449}
+2026-02-08T04:28:08.082Z [INFO] GET /api/production/schedules - 304 - 22.04ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":22.04}
+2026-02-08T04:28:08.089Z [INFO] GET /api/production/orders - 304 - 15.172ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":15.172}
+2026-02-08T04:28:08.090Z [INFO] GET /api/production/work-centers - 304 - 12.683ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":12.683}
+2026-02-08T04:28:08.108Z [INFO] GET /api/production/schedules - 304 - 7.783ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":7.783}
+2026-02-08T04:28:10.101Z [INFO] GET /api/production/charts - 304 - 11.283ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":11.283}
+2026-02-08T04:28:10.116Z [INFO] GET /api/production/charts - 304 - 10.051ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":10.051}
+2026-02-08T04:29:00.890Z [INFO] GET /api/production/raw-materials - 304 - 8.533ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":8.533}
+2026-02-08T04:29:01.013Z [INFO] GET /api/production/raw-materials/categories - 304 - 128.721ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":128.721}
+2026-02-08T04:29:01.018Z [INFO] GET /api/production/raw-materials/transactions - 304 - 129.481ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":129.481}
+2026-02-08T04:29:01.033Z [INFO] GET /api/production/raw-materials - 304 - 13.676ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":13.676}
+2026-02-08T04:29:01.039Z [INFO] GET /api/production/raw-materials/categories - 304 - 17.976ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":17.976}
+2026-02-08T04:29:01.045Z [INFO] GET /api/production/raw-materials/transactions - 304 - 19.047ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":19.047}
+2026-02-08T04:29:03.218Z [INFO] GET /api/production/wastage - 200 - 30.169ms | Data: {"method":"GET","url":"/api/production/wastage","statusCode":200,"responseTime":30.169}
+2026-02-08T04:29:22.626Z [INFO] GET /api/production/orders - 304 - 11.226ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":11.226}
+2026-02-08T04:29:22.629Z [INFO] GET /api/production/raw-materials - 304 - 9.563ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":9.563}
+2026-02-08T04:29:22.631Z [INFO] GET /api/production/records - 304 - 18.129ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":18.129}
+2026-02-08T04:29:22.655Z [INFO] GET /api/production/orders - 304 - 19.471ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":19.471}
+2026-02-08T04:29:22.663Z [INFO] GET /api/production/raw-materials - 304 - 20.438ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":20.438}
+2026-02-08T04:29:22.666Z [INFO] GET /api/production/records - 304 - 24.574ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":24.574}
+2026-02-08T04:29:23.705Z [INFO] GET /api/production/orders - 304 - 20.957ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":20.957}
+2026-02-08T04:29:23.711Z [INFO] GET /api/production/work-centers - 304 - 21.218ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":21.218}
+2026-02-08T04:29:23.713Z [INFO] GET /api/production/schedules - 304 - 18.991ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":18.991}
+2026-02-08T04:29:23.739Z [INFO] GET /api/production/orders - 304 - 22.237ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":22.237}
+2026-02-08T04:29:23.746Z [INFO] GET /api/production/schedules - 304 - 11.317ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":11.317}
+2026-02-08T04:29:23.750Z [INFO] GET /api/production/work-centers - 304 - 16.467ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":16.467}
+2026-02-08T04:29:24.756Z [INFO] GET /api/production/charts - 304 - 15.049ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":15.049}
+2026-02-08T04:29:24.770Z [INFO] GET /api/production/charts - 304 - 7.314ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":7.314}
+2026-02-08T04:32:37.794Z [INFO] GET /api/production/charts - 304 - 367.235ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":367.235}
+2026-02-08T04:41:17.337Z [INFO] POST /api/production/charts - 201 - 403.702ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":201,"responseTime":403.702}
+2026-02-08T04:42:10.513Z [INFO] GET /api/production/charts - 200 - 39.428ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":200,"responseTime":39.428}
+2026-02-08T04:42:10.529Z [INFO] GET /api/production/charts - 304 - 12.167ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":12.167}
+2026-02-08T04:43:35.528Z [INFO] GET /api/auth/users - 304 - 53.12ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":53.12}
+2026-02-08T04:43:35.540Z [INFO] GET /api/auth/users - 304 - 6.063ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":6.063}
+2026-02-08T04:43:46.848Z [INFO] GET /api/production/charts - 304 - 12.316ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":12.316}
+2026-02-08T04:43:46.866Z [INFO] GET /api/production/charts - 304 - 14.197ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":14.197}
+2026-02-08T04:44:40.269Z [INFO] GET /api/auth/users - 304 - 5.908ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":5.908}
+2026-02-08T04:44:40.282Z [INFO] GET /api/auth/users - 304 - 8.026ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":8.026}
+2026-02-08T04:44:43.269Z [INFO] GET /api/production/raw-materials/categories - 304 - 15.91ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":15.91}
+2026-02-08T04:44:43.285Z [INFO] GET /api/production/work-centers - 304 - 23.416ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":23.416}
+2026-02-08T04:44:43.294Z [INFO] GET /api/production/raw-materials/categories - 304 - 16.502ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":16.502}
+2026-02-08T04:44:43.331Z [INFO] GET /api/production/machines - 304 - 67.512ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":67.512}
+2026-02-08T04:44:43.345Z [INFO] GET /api/production/work-centers - 304 - 20.784ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":20.784}
+2026-02-08T04:44:43.369Z [INFO] GET /api/production/machines - 304 - 6.449ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":6.449}
+2026-02-08T04:44:43.387Z [INFO] GET /api/payment-config - 304 - 83.194ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":83.194}
+2026-02-08T04:44:43.399Z [INFO] GET /api/payment-config - 304 - 6.202ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":6.202}
+2026-02-08T04:44:55.271Z [INFO] GET /api/auth/users - 304 - 4.691ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":4.691}
+2026-02-08T04:44:55.288Z [INFO] GET /api/auth/users - 304 - 8.214ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":8.214}
+2026-02-08T04:44:56.278Z [INFO] GET /api/production/charts - 304 - 11.353ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":11.353}
+2026-02-08T04:44:56.294Z [INFO] GET /api/production/charts - 304 - 7.804ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":7.804}
+2026-02-08T04:56:16.086Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:56:29.405Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:56:33.770Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T04:56:33.770Z [INFO] 🌍 Environment: development
+2026-02-08T04:56:33.770Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T04:56:33.771Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T04:56:33.771Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T04:56:51.862Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:56:58.034Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:57:02.272Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T04:57:02.273Z [INFO] 🌍 Environment: development
+2026-02-08T04:57:02.273Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T04:57:02.273Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T04:57:02.273Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T04:57:26.272Z [INFO] POST /api/auth/login - 200 - 457.844ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":457.844}
+2026-02-08T04:57:51.292Z [INFO] GET /api/sales-targets/distributors - 200 - 1.055ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":200,"responseTime":1.055}
+2026-02-08T04:57:51.649Z [INFO] GET /api/sales-targets/products/achar - 200 - 1.411ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":200,"responseTime":1.411}
+2026-02-08T04:57:51.662Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 1.092ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":1.092}
+2026-02-08T04:58:00.732Z [INFO] GET /api/sales-targets/distributors - 304 - 0.7ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.7}
+2026-02-08T04:58:00.767Z [INFO] GET /api/sales-targets/products/dry_meat - 200 - 0.811ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":200,"responseTime":0.811}
+2026-02-08T04:58:00.792Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 2.189ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":2.189}
+2026-02-08T04:58:01.955Z [INFO] GET /api/sales-targets/distributors - 304 - 0.383ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.383}
+2026-02-08T04:58:01.991Z [INFO] GET /api/sales-targets/products/spices - 200 - 1.386ms | Data: {"method":"GET","url":"/api/sales-targets/products/spices","statusCode":200,"responseTime":1.386}
+2026-02-08T04:58:02.084Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026 - 200 - 1.165ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026","statusCode":200,"responseTime":1.165}
+2026-02-08T04:58:03.336Z [INFO] GET /api/sales-targets/distributors - 304 - 0.461ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.461}
+2026-02-08T04:58:03.446Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 12.66ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":12.66}
+2026-02-08T04:58:03.466Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 3.97ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":3.97}
+2026-02-08T04:58:06.016Z [INFO] GET /api/sales-targets/distributors - 304 - 6.328ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":6.328}
+2026-02-08T04:58:06.052Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.362ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.362}
+2026-02-08T04:58:06.079Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.415ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.415}
+2026-02-08T04:58:26.956Z [INFO] GET /api/sales-targets/distributors - 304 - 0.316ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.316}
+2026-02-08T04:58:27.007Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 0.333ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":0.333}
+2026-02-08T04:58:27.035Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 0.454ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":0.454}
+2026-02-08T04:58:29.323Z [INFO] GET /api/sales-targets/distributors - 304 - 0.375ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.375}
+2026-02-08T04:58:29.354Z [INFO] GET /api/sales-targets/products/spices - 304 - 0.377ms | Data: {"method":"GET","url":"/api/sales-targets/products/spices","statusCode":304,"responseTime":0.377}
+2026-02-08T04:58:29.362Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026 - 200 - 0.468ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026","statusCode":200,"responseTime":0.468}
+2026-02-08T04:58:31.580Z [INFO] GET /api/sales-targets/distributors - 304 - 0.361ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.361}
+2026-02-08T04:58:31.613Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 0.271ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":0.271}
+2026-02-08T04:58:31.625Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 0.471ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":0.471}
+2026-02-08T04:58:34.312Z [INFO] GET /api/sales-targets/distributors - 304 - 0.408ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.408}
+2026-02-08T04:58:34.344Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.288ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.288}
+2026-02-08T04:58:34.353Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.466ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.466}
+2026-02-08T04:58:39.596Z [INFO] GET /api/sales-targets/distributors - 304 - 0.34ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.34}
+2026-02-08T04:58:39.632Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 1.074ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":1.074}
+2026-02-08T04:58:39.731Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 0.377ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":0.377}
+2026-02-08T04:58:45.116Z [INFO] GET /api/sales-targets/distributors - 304 - 0.4ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.4}
+2026-02-08T04:58:45.150Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.366ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.366}
+2026-02-08T04:58:45.159Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.369ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.369}
+2026-02-08T04:59:46.522Z [INFO] Mailjet service initialized successfully
+2026-02-08T04:59:51.352Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T04:59:51.352Z [INFO] 🌍 Environment: development
+2026-02-08T04:59:51.352Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T04:59:51.353Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T04:59:51.353Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T05:00:55.070Z [INFO] Mailjet service initialized successfully
+2026-02-08T05:01:14.101Z [INFO] GET /api/sales-targets/product-categories - 200 - 2.944ms | Data: {"method":"GET","url":"/api/sales-targets/product-categories","statusCode":200,"responseTime":2.944}
+2026-02-08T05:01:42.549Z [INFO] GET /api/sales-targets/distributors - 200 - 0.926ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":200,"responseTime":0.926}
+2026-02-08T05:02:17.543Z [INFO] GET /api/sales-targets/distributors - 304 - 1.316ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":1.316}
+2026-02-08T05:02:17.582Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 1.156ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":1.156}
+2026-02-08T05:02:17.629Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 3.121ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":3.121}
+2026-02-08T05:02:29.788Z [INFO] GET /api/sales-targets/products/achar - 200 - 0.534ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":200,"responseTime":0.534}
+2026-02-08T05:02:59.443Z [INFO] POST /api/sales-targets/distributor-targets - 200 - 0.83ms | Data: {"method":"POST","url":"/api/sales-targets/distributor-targets","statusCode":200,"responseTime":0.83}
+2026-02-08T05:08:23.189Z [INFO] GET /api/sales-targets/distributors - 304 - 0.531ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.531}
+2026-02-08T05:08:23.265Z [INFO] GET /api/sales-targets/products/achar - 304 - 2.127ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":2.127}
+2026-02-08T05:08:23.295Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.703ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.703}
+2026-02-08T05:09:00.352Z [INFO] Mailjet service initialized successfully
+2026-02-08T05:09:07.938Z [INFO] Mailjet service initialized successfully
+2026-02-08T05:09:12.394Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T05:09:12.394Z [INFO] 🌍 Environment: development
+2026-02-08T05:09:12.394Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T05:09:12.395Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T05:09:12.395Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T05:09:47.200Z [INFO] Mailjet service initialized successfully
+2026-02-08T05:09:52.077Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T05:09:52.077Z [INFO] 🌍 Environment: development
+2026-02-08T05:09:52.078Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T05:09:52.078Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T05:09:52.078Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T05:10:00.207Z [INFO] POST /api/sales-targets/distributors - 201 - 4.042ms | Data: {"method":"POST","url":"/api/sales-targets/distributors","statusCode":201,"responseTime":4.042}
+2026-02-08T05:10:27.183Z [INFO] GET /api/sales-targets/distributors - 200 - 1.259ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":200,"responseTime":1.259}
+2026-02-08T05:10:41.899Z [INFO] GET /api/sales-targets/distributors?province=Province%203 - 200 - 0.479ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%203","statusCode":200,"responseTime":0.479}
+2026-02-08T05:10:58.097Z [INFO] POST /api/sales-targets/distributor-targets - 200 - 1.428ms | Data: {"method":"POST","url":"/api/sales-targets/distributor-targets","statusCode":200,"responseTime":1.428}
+2026-02-08T05:14:48.458Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 200 - 0.406ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":200,"responseTime":0.406}
+2026-02-08T05:14:48.520Z [INFO] GET /api/sales-targets/products/spices - 304 - 1.154ms | Data: {"method":"GET","url":"/api/sales-targets/products/spices","statusCode":304,"responseTime":1.154}
+2026-02-08T05:14:48.545Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026 - 200 - 1.236ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026","statusCode":200,"responseTime":1.236}
+2026-02-08T05:14:51.751Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.484ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.484}
+2026-02-08T05:14:51.795Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 0.51ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":0.51}
+2026-02-08T05:14:51.812Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 0.76ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":0.76}
+2026-02-08T05:14:54.001Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.349ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.349}
+2026-02-08T05:14:54.048Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.405ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.405}
+2026-02-08T05:14:55.574Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.613ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.613}
+2026-02-08T05:15:23.378Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.282ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.282}
+2026-02-08T05:15:23.424Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 0.38ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":0.38}
+2026-02-08T05:15:23.440Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 2.941ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":2.941}
+2026-02-08T05:15:24.912Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.263ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.263}
+2026-02-08T05:15:24.953Z [INFO] GET /api/sales-targets/products/spices - 304 - 0.243ms | Data: {"method":"GET","url":"/api/sales-targets/products/spices","statusCode":304,"responseTime":0.243}
+2026-02-08T05:15:24.960Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026 - 200 - 0.504ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=spices&month=2&year=2026","statusCode":200,"responseTime":0.504}
+2026-02-08T05:15:53.457Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.399ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.399}
+2026-02-08T05:15:53.504Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.434ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.434}
+2026-02-08T05:15:53.521Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.991ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.991}
+2026-02-08T05:15:56.171Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.237ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.237}
+2026-02-08T05:15:56.208Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 0.417ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":0.417}
+2026-02-08T05:15:56.214Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 0.397ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":0.397}
+2026-02-08T05:15:57.434Z [INFO] GET /api/sales-targets/distributors?province=Province%204 - 304 - 0.349ms | Data: {"method":"GET","url":"/api/sales-targets/distributors?province=Province%204","statusCode":304,"responseTime":0.349}
+2026-02-08T05:15:57.471Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.384ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.384}
+2026-02-08T05:15:57.523Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.454ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.454}
+2026-02-08T05:17:07.847Z [INFO] GET /api/sales-targets/distributors - 200 - 0.276ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":200,"responseTime":0.276}
+2026-02-08T05:17:07.891Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.349ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.349}
+2026-02-08T05:17:07.908Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.376ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.376}
+2026-02-08T05:17:28.567Z [INFO] GET /api/sales-targets/distributors - 304 - 0.276ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.276}
+2026-02-08T05:17:28.605Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 0.341ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":0.341}
+2026-02-08T05:17:28.618Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 2.352ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":2.352}
+2026-02-08T05:17:31.249Z [INFO] GET /api/sales-targets/distributors - 304 - 0.304ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.304}
+2026-02-08T05:17:31.274Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.27ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.27}
+2026-02-08T05:17:31.285Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.906ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.906}
+2026-02-08T05:20:09.207Z [INFO] GET /api/sales-targets/distributors - 304 - 0.757ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.757}
+2026-02-08T05:20:09.250Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.31ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.31}
+2026-02-08T05:20:09.266Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.456ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.456}
+2026-02-08T05:50:07.879Z [INFO] GET /api/sales-targets/distributors - 304 - 3.281ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":3.281}
+2026-02-08T05:50:07.921Z [INFO] GET /api/sales-targets/products/achar - 304 - 1.177ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":1.177}
+2026-02-08T05:50:08.183Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 1.368ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":1.368}
+2026-02-08T05:50:21.595Z [INFO] GET /api/sales-targets/distributors - 304 - 0.262ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":0.262}
+2026-02-08T05:50:21.637Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 1.241ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":1.241}
+2026-02-08T05:50:21.646Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 0.914ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":0.914}
+2026-02-08T06:04:24.591Z [INFO] Mailjet service initialized successfully
+2026-02-08T06:04:39.014Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T06:04:39.016Z [INFO] 🌍 Environment: development
+2026-02-08T06:04:39.016Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T06:04:39.016Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T06:04:39.017Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T06:04:39.018Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2026-02-08T06:42:31.436Z [INFO] Mailjet service initialized successfully
+2026-02-08T06:42:34.913Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T06:42:34.913Z [INFO] 🌍 Environment: development
+2026-02-08T06:42:34.913Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T06:42:34.914Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T06:42:34.914Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T06:43:16.256Z [INFO] POST /api/auth/login - 200 - 651.102ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":651.102}
+2026-02-08T06:44:26.911Z [INFO] GET /api/production/charts - 304 - 497.532ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":497.532}
+2026-02-08T06:44:26.940Z [INFO] GET /api/production/charts - 304 - 14.759ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":14.759}
+2026-02-08T06:44:36.224Z [INFO] DELETE /api/production/charts/cmld99vwv0000keahuwplfxd0 - 200 - 13.707ms | Data: {"method":"DELETE","url":"/api/production/charts/cmld99vwv0000keahuwplfxd0","statusCode":200,"responseTime":13.707}
+2026-02-08T06:44:44.458Z [INFO] GET /api/sales-targets/distributors - 200 - 0.639ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":200,"responseTime":0.639}
+2026-02-08T06:44:44.508Z [INFO] GET /api/sales-targets/products/achar - 304 - 0.781ms | Data: {"method":"GET","url":"/api/sales-targets/products/achar","statusCode":304,"responseTime":0.781}
+2026-02-08T06:44:44.519Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026 - 200 - 0.822ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=achar&month=2&year=2026","statusCode":200,"responseTime":0.822}
+2026-02-08T06:46:08.512Z [INFO] POST /api/production/charts - 201 - 436.365ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":201,"responseTime":436.365}
+2026-02-08T06:50:26.357Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 200 - 97.115ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":200,"responseTime":97.115}
+2026-02-08T06:51:38.836Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 20.172ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":20.172}
+2026-02-08T06:53:05.808Z [INFO] GET /api/production/raw-materials/transactions - 304 - 41.998ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":41.998}
+2026-02-08T06:53:05.813Z [INFO] GET /api/production/raw-materials - 304 - 53.031ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":53.031}
+2026-02-08T06:53:05.814Z [INFO] GET /api/production/raw-materials/categories - 304 - 52.447ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":52.447}
+2026-02-08T06:53:05.839Z [INFO] GET /api/production/raw-materials/transactions - 304 - 19.494ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":19.494}
+2026-02-08T06:53:05.847Z [INFO] GET /api/production/raw-materials - 304 - 23.231ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":23.231}
+2026-02-08T06:53:05.853Z [INFO] GET /api/production/raw-materials/categories - 304 - 23.78ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":23.78}
+2026-02-08T06:53:47.917Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 10.969ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":10.969}
+2026-02-08T06:53:54.919Z [INFO] GET /api/accounting/journal-entries - 304 - 9.979ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":9.979}
+2026-02-08T06:53:54.937Z [INFO] GET /api/accounting/journal-entries - 304 - 9.918ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":9.918}
+2026-02-08T06:53:54.953Z [INFO] GET /api/accounting/accounts - 304 - 41.404ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":41.404}
+2026-02-08T06:53:54.972Z [INFO] GET /api/accounting/accounts - 304 - 15.132ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":15.132}
+2026-02-08T06:53:57.619Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-08 - 200 - 11.843ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-08","statusCode":200,"responseTime":11.843}
+2026-02-08T06:53:57.626Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-08 - 200 - 9.798ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-08","statusCode":200,"responseTime":9.798}
+2026-02-08T06:53:57.631Z [INFO] Aging analysis completed
+2026-02-08T06:53:57.633Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-08 - 200 - 18.447ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-08","statusCode":200,"responseTime":18.447}
+2026-02-08T06:53:57.635Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-08 - 304 - 6.065ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-08","statusCode":304,"responseTime":6.065}
+2026-02-08T06:53:57.653Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-08 - 304 - 9.925ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-08","statusCode":304,"responseTime":9.925}
+2026-02-08T06:53:57.659Z [INFO] Aging analysis completed
+2026-02-08T06:53:57.661Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-08 - 304 - 10.596ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-08","statusCode":304,"responseTime":10.596}
+2026-02-08T06:55:57.811Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-08 - 304 - 22.536ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-08","statusCode":304,"responseTime":22.536}
+2026-02-08T06:56:26.989Z [INFO] GET /api/production/charts - 200 - 8.795ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":200,"responseTime":8.795}
+2026-02-08T06:56:27.007Z [INFO] GET /api/production/charts - 304 - 13.449ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":13.449}
+2026-02-08T06:57:45.999Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 47.284ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":47.284}
+2026-02-08T06:57:49.113Z [INFO] GET /api/accounting/journal-entries - 304 - 9.114ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":9.114}
+2026-02-08T06:57:49.130Z [INFO] GET /api/accounting/journal-entries - 304 - 8.877ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":8.877}
+2026-02-08T06:57:49.141Z [INFO] GET /api/accounting/accounts - 304 - 34.72ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":34.72}
+2026-02-08T06:57:49.151Z [INFO] GET /api/accounting/accounts - 304 - 5.443ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":5.443}
+2026-02-08T06:58:12.775Z [INFO] GET /api/categories - 304 - 69.419ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":69.419}
+2026-02-08T06:58:12.782Z [INFO] GET /api/categories - 304 - 2.713ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.713}
+2026-02-08T06:59:34.759Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 83.397ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":83.397}
+2026-02-08T06:59:34.778Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 14.301ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":14.301}
+2026-02-08T06:59:34.814Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.63ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.63}
+2026-02-08T06:59:36.777Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 15.695ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":15.695}
+2026-02-08T06:59:36.794Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 10.937ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":10.937}
+2026-02-08T06:59:36.872Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 79.127ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":79.127}
+2026-02-08T06:59:36.884Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 7.397ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":7.397}
+2026-02-08T06:59:36.894Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 95.804ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":95.804}
+2026-02-08T06:59:36.901Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 3.828ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":3.828}
+2026-02-08T07:00:18.737Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 7.719ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":7.719}
+2026-02-08T07:00:18.759Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 15.42ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":15.42}
+2026-02-08T07:00:18.776Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.964ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.964}
+2026-02-08T07:00:20.428Z [INFO] GET /api/products - 304 - 105.453ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":105.453}
+2026-02-08T07:00:20.442Z [INFO] GET /api/products - 304 - 6.831ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.831}
+2026-02-08T07:00:46.984Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 5.872ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":5.872}
+2026-02-08T07:00:47.001Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 12.483ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":12.483}
+2026-02-08T07:00:47.011Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 11.663ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":11.663}
+2026-02-08T07:00:47.019Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 13.544ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":13.544}
+2026-02-08T07:00:47.037Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 8.89ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":8.89}
+2026-02-08T07:00:47.040Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 17.386ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":17.386}
+2026-02-08T07:00:48.627Z [INFO] GET /api/categories - 304 - 5.358ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":5.358}
+2026-02-08T07:00:48.636Z [INFO] GET /api/categories - 304 - 3.705ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.705}
+2026-02-08T07:00:50.999Z [INFO] GET /api/products - 304 - 3.518ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":3.518}
+2026-02-08T07:00:51.000Z [INFO] GET /api/categories - 304 - 2.999ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.999}
+2026-02-08T07:00:51.011Z [INFO] GET /api/products - 304 - 6.608ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.608}
+2026-02-08T07:00:51.014Z [INFO] GET /api/categories - 304 - 6.632ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.632}
+2026-02-08T07:00:53.886Z [INFO] GET /api/orders - 304 - 81.12ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":81.12}
+2026-02-08T07:00:53.895Z [INFO] GET /api/orders - 304 - 6.025ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":6.025}
+2026-02-08T07:02:09.999Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 64.856ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":64.856}
+2026-02-08T07:03:33.940Z [INFO] GET /api/production/raw-materials/categories - 304 - 43.79ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":43.79}
+2026-02-08T07:03:33.947Z [INFO] GET /api/production/raw-materials - 304 - 53.677ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":53.677}
+2026-02-08T07:03:33.955Z [INFO] GET /api/production/raw-materials/transactions - 304 - 56.486ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":56.486}
+2026-02-08T07:03:33.978Z [INFO] GET /api/production/raw-materials - 304 - 11.653ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":11.653}
+2026-02-08T07:03:33.979Z [INFO] GET /api/production/raw-materials/categories - 304 - 9.83ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":9.83}
+2026-02-08T07:03:33.982Z [INFO] GET /api/production/raw-materials/transactions - 304 - 9.758ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":9.758}
+2026-02-08T09:06:45.639Z [INFO] GET /api/sales-targets/distributors - 304 - 41.522ms | Data: {"method":"GET","url":"/api/sales-targets/distributors","statusCode":304,"responseTime":41.522}
+2026-02-08T09:06:45.673Z [INFO] GET /api/sales-targets/products/dry_meat - 304 - 3.547ms | Data: {"method":"GET","url":"/api/sales-targets/products/dry_meat","statusCode":304,"responseTime":3.547}
+2026-02-08T09:06:45.722Z [INFO] GET /api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026 - 200 - 12.301ms | Data: {"method":"GET","url":"/api/sales-targets/distributor-targets?categoryId=dry_meat&month=2&year=2026","statusCode":200,"responseTime":12.301}
+2026-02-08T09:11:17.892Z [INFO] Mailjet service initialized successfully
+2026-02-08T09:11:26.423Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-08T09:11:26.424Z [INFO] 🌍 Environment: development
+2026-02-08T09:11:26.425Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-08T09:11:26.425Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-08T09:11:26.425Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-08T09:11:26.426Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

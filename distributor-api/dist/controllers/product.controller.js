@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProductCategories = exports.getProductById = exports.getProducts = void 0;
-const error_middleware_1 = require("@/middleware/error.middleware");
+const error_middleware_1 = require("../middleware/error.middleware");
 const mockProducts = [
     {
         id: 'prod_1',

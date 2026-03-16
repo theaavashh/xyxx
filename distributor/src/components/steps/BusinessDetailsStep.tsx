@@ -121,21 +121,93 @@ export const BusinessDetailsStep = ({ control, errors, watch, setValue }: Busine
             <label className="block text-sm font-bold text-[#001011] mb-2 absans">
               वितरक बन्न चाहने क्षेत्र (Desired Distribution Area) *
             </label>
-            <Controller
-              name="desiredDistributionArea"
-              control={control}
-              rules={{ required: "वितरक बन्न चाहने क्षेत्र आवश्यक छ" }}
-              render={({ field }) => (
-                <input
-                  {...field}
-                  type="text"
-                  className={`w-full px-6 py-4 border rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans ${
-                    errors.desiredDistributionArea ? 'border-red-300' : field.value ? 'border-orange-400' : 'border-gray-300'
-                  }`}
-                  placeholder="वितरक बन्न चाहने क्षेत्र"
-                />
-              )}
-            />
+            {watch('workAreaDistrict') === 'काठमाडौं' ? (
+              <Controller
+                name="desiredDistributionArea"
+                control={control}
+                rules={{ required: "वितरक बन्न चाहने क्षेत्र आवश्यक छ" }}
+                render={({ field }) => (
+                  <select
+                    {...field}
+                    className={`w-full px-6 py-4 border rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] absans ${
+                      errors.desiredDistributionArea ? 'border-red-300' : field.value ? 'border-orange-400' : 'border-gray-300'
+                    }`}
+                  >
+                    <option value="">काठमाडौं क्षेत्र छान्नुहोस्</option>
+                    <option value="New Road, Indrachowk, Ason, Thamel, Chhetrapati, Khichhapokhari, Paropakar -- Khushbu Planning">New Road, Indrachowk, Ason, Thamel, Chhetrapati, Khichhapokhari, Paropakar -- Khushbu Planning</option>
+                    <option value="Dallu, Swoyambhu, Samkhushi Planning, Lainchaur, Chumati Planning">Dallu, Swoyambhu, Samkhushi Planning, Lainchaur, Chumati Planning</option>
+                    <option value="Lazimpath Teaching Hospital, Bhatbhateni, Bishalnagar, Dhumbarahi, Naxal">Lazimpath Teaching Hospital, Bhatbhateni, Bishalnagar, Dhumbarahi, Naxal</option>
+                    <option value="Bagbazaf, Putalisadak, Maitighar, Thapathali, Dillibazar, Maitidevi, Ghalekulo, Anamnagar">Bagbazaf, Putalisadak, Maitighar, Thapathali, Dillibazar, Maitidevi, Ghalekulo, Anamnagar</option>
+                    <option value="Bijuli Bazar, Shankhamul, New Baneshwor, Tinkune, Koteshwor">Bijuli Bazar, Shankhamul, New Baneshwor, Tinkune, Koteshwor</option>
+                    <option value="Sinamangal, Old Baneshwor, Gaushala, Chabahil, Battisputali, SIfal">Sinamangal, Old Baneshwor, Gaushala, Chabahil, Battisputali, SIfal</option>
+                    <option value="Narephat, Jadibuti, Pepsicola, Kadeghat, Mulpani">Narephat, Jadibuti, Pepsicola, Kadeghat, Mulpani</option>
+                    <option value="Jorpati, Nayabasti, Bouddha, Sundarijal">Jorpati, Nayabasti, Bouddha, Sundarijal</option>
+                    <option value="Kapan, Mandikatar, Budhanilkantha">Kapan, Mandikatar, Budhanilkantha</option>
+                    <option value="Bashundha, Tokha, Baniyatar, Gongabu, Manamaiju, Bypass">Bashundha, Tokha, Baniyatar, Gongabu, Manamaiju, Bypass</option>
+                    <option value="Balaju Chowk, Banasthali, Boharatar Thulo/Sano Bharyang, Halchowk, Sitapaila, Ramkoy">Balaju Chowk, Banasthali, Boharatar Thulo/Sano Bharyang, Halchowk, Sitapaila, Ramkoy</option>
+                    <option value="Kalanki to Nagdhunga">Kalanki to Nagdhunga</option>
+                    <option value="Balkhu to Dachinkali, Kirtipur">Balkhu to Dachinkali, Kirtipur</option>
+                    <option value="Kuleshwor Planning, Kalimati, Soaltimod, Rabibhawan, Tahachal, Chhaune, Tripureshwor">Kuleshwor Planning, Kalimati, Soaltimod, Rabibhawan, Tahachal, Chhaune, Tripureshwor</option>
+                  </select>
+                )}
+              />
+            ) : watch('workAreaDistrict') === 'ललितपुर' ? (
+              <Controller
+                name="desiredDistributionArea"
+                control={control}
+                rules={{ required: "वितरक बन्न चाहने क्षेत्र आवश्यक छ" }}
+                render={({ field }) => (
+                  <select
+                    {...field}
+                    className={`w-full px-6 py-4 border rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] absans ${
+                      errors.desiredDistributionArea ? 'border-red-300' : field.value ? 'border-orange-400' : 'border-gray-300'
+                    }`}
+                  >
+                    <option value="">ललितपुर क्षेत्र छान्नुहोस्</option>
+                    <option value="Nakhipot to Bungamati">Nakhipot to Bungamati</option>
+                    <option value="Gwarko to Lubhu">Gwarko to Lubhu</option>
+                    <option value="Lalitpur">Lalitpur</option>
+                    <option value="Ekantakuna to Bugamati">Ekantakuna to Bugamati</option>
+                    <option value="Satdobato to Godawari">Satdobato to Godawari</option>
+                    <option value="Inside Ringroad from Kopundol">Inside Ringroad from Kopundol</option>
+                  </select>
+                )}
+              />
+            ) : watch('workAreaDistrict') === 'भक्तपुर' ? (
+              <Controller
+                name="desiredDistributionArea"
+                control={control}
+                rules={{ required: "वितरक बन्न चाहने क्षेत्र आवश्यक छ" }}
+                render={({ field }) => (
+                  <select
+                    {...field}
+                    className={`w-full px-6 py-4 border rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] absans ${
+                      errors.desiredDistributionArea ? 'border-red-300' : field.value ? 'border-orange-400' : 'border-gray-300'
+                    }`}
+                  >
+                    <option value="">भक्तपुर क्षेत्र छान्नुहोस्</option>
+                    <option value="Lokanthali to Radhe Radhe">Lokanthali to Radhe Radhe</option>
+                    <option value="Srijanagar to Nagarkot">Srijanagar to Nagarkot</option>
+                  </select>
+                )}
+              />
+            ) : (
+              <Controller
+                name="desiredDistributionArea"
+                control={control}
+                rules={{ required: "वितरक बन्न चाहने क्षेत्र आवश्यक छ" }}
+                render={({ field }) => (
+                  <input
+                    {...field}
+                    type="text"
+                    className={`w-full px-6 py-4 border rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans ${
+                      errors.desiredDistributionArea ? 'border-red-300' : field.value ? 'border-orange-400' : 'border-gray-300'
+                    }`}
+                    placeholder="वितरक बन्न चाहने क्षेत्र"
+                  />
+                )}
+              />
+            )}
             {errors.desiredDistributionArea && (
               <p className="text-red-500 text-sm mt-1">{errors.desiredDistributionArea.message}</p>
             )}

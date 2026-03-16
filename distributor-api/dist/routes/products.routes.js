@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const products_controller_1 = require("@/controllers/products.controller");
-const products_schema_1 = require("@/schemas/products.schema");
-const validation_middleware_1 = require("@/middleware/validation.middleware");
-const auth_middleware_1 = require("@/middleware/auth.middleware");
-const upload_middleware_1 = require("@/middleware/upload.middleware");
-const rate_limit_middleware_1 = require("@/middleware/rate-limit.middleware");
+const products_controller_1 = require("../controllers/products.controller");
+const products_schema_1 = require("../schemas/products.schema");
+const validation_middleware_1 = require("../middleware/validation.middleware");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const upload_middleware_1 = require("../middleware/upload.middleware");
+const rate_limit_middleware_1 = require("../middleware/rate-limit.middleware");
 const router = (0, express_1.Router)();
 if (process.env.NODE_ENV === 'development') {
     router.post('/dev', rate_limit_middleware_1.applicationLimiter, upload_middleware_1.uploadDocuments, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(products_schema_1.CreateProductSchema), products_controller_1.createProduct);

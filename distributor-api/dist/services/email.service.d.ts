@@ -1,4 +1,4 @@
-import { EmailNotification } from '@/types';
+import { EmailNotification } from '../types';
 declare class EmailService {
     private transporter;
     constructor();

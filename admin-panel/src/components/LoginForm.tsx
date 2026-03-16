@@ -171,7 +171,7 @@ export default function LoginForm() {
           <div className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-md">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Reset Password</h3>
             <p className="text-gray-600 mb-6">
-              Enter your email address and we'll send you instructions to reset your password.
+              Enter your email address and we&apos;ll send you instructions to reset your password.
             </p>
             <form onSubmit={(e) => {
               e.preventDefault();

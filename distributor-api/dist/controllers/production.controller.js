@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.exportProductionReport = exports.getProductionReport = exports.getProductionKPIs = exports.getProductionSchedules = exports.deleteMachine = exports.updateMachine = exports.createMachine = exports.getMachines = exports.deleteWorkCenter = exports.updateWorkCenter = exports.createWorkCenter = exports.getWorkCenters = exports.createProductionRecord = exports.getProductionRecordById = exports.getProductionRecords = exports.deleteProductionOrder = exports.updateProductionOrderStatus = exports.updateProductionOrder = exports.createProductionOrder = exports.getProductionOrderById = exports.getProductionOrders = exports.getRawMaterialTransactions = exports.deleteRawMaterialCategory = exports.updateRawMaterialCategory = exports.createRawMaterialCategory = exports.getRawMaterialCategories = exports.deleteRawMaterial = exports.updateRawMaterial = exports.createRawMaterial = exports.getRawMaterialById = exports.getRawMaterials = void 0;
+exports.getWastageReasons = exports.getWastageSummary = exports.deleteWastageEntry = exports.updateWastageEntry = exports.getWastageEntryById = exports.getWastageEntries = exports.createWastageEntry = exports.getProductionChartSummary = exports.deleteProductionChart = exports.updateProductionChart = exports.createProductionChart = exports.getProductionChartById = exports.getProductionCharts = exports.exportProductionReport = exports.getProductionReport = exports.getProductionKPIs = exports.getProductionSchedules = exports.deleteMachine = exports.updateMachine = exports.createMachine = exports.getMachines = exports.deleteWorkCenter = exports.updateWorkCenter = exports.createWorkCenter = exports.getWorkCenters = exports.createProductionRecord = exports.getProductionRecordById = exports.getProductionRecords = exports.deleteProductionOrder = exports.updateProductionOrderStatus = exports.updateProductionOrder = exports.createProductionOrder = exports.getProductionOrderById = exports.getProductionOrders = exports.getRawMaterialTransactions = exports.deleteRawMaterialCategory = exports.updateRawMaterialCategory = exports.createRawMaterialCategory = exports.getRawMaterialCategories = exports.deleteRawMaterial = exports.updateRawMaterial = exports.createRawMaterial = exports.getRawMaterialById = exports.getRawMaterials = void 0;
 const client_1 = require("@prisma/client");
 const logger_1 = __importDefault(require("../utils/logger"));
 const prisma = new client_1.PrismaClient();
@@ -992,4 +992,678 @@ const exportProductionReport = async (req, res) => {
     }
 };
 exports.exportProductionReport = exportProductionReport;
+const getProductionCharts = async (req, res) => {
+    try {
+        const { fromDate, toDate } = req.query;
+        const where = {};
+        if (fromDate || toDate) {
+            where.date = {};
+            if (fromDate)
+                where.date.gte = new Date(fromDate);
+            if (toDate)
+                where.date.lte = new Date(toDate);
+        }
+        const charts = await prisma.productionChart.findMany({
+            where,
+            include: {
+                ingredients: true,
+                outputs: true,
+                subCharts: {
+                    include: {
+                        outputs: true
+                    }
+                }
+            },
+            orderBy: { date: 'desc' }
+        });
+        res.json(charts);
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching production charts:', error);
+        res.status(500).json({ error: 'Failed to fetch production charts' });
+    }
+};
+exports.getProductionCharts = getProductionCharts;
+const getProductionChartById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const chart = await prisma.productionChart.findUnique({
+            where: { id },
+            include: {
+                ingredients: true,
+                outputs: true,
+                subCharts: {
+                    include: {
+                        outputs: true
+                    }
+                }
+            }
+        });
+        if (!chart) {
+            res.status(404).json({ error: 'Production chart not found' });
+            return;
+        }
+        res.json(chart);
+        return;
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching production chart:', error);
+        res.status(500).json({ error: 'Failed to fetch production chart' });
+        return;
+    }
+};
+exports.getProductionChartById = getProductionChartById;
+const createProductionChart = async (req, res) => {
+    try {
+        const { date, dayOfWeek, ingredients, outputs, subCharts, notes } = req.body;
+        const userId = req.user?.id || 'system';
+        const chart = await prisma.productionChart.create({
+            data: {
+                date: new Date(date),
+                dayOfWeek,
+                notes,
+                createdBy: userId,
+                ingredients: {
+                    create: ingredients.map((ing) => ({
+                        name: ing.name,
+                        quantity: ing.quantity,
+                        unit: ing.unit,
+                        category: ing.category
+                    }))
+                },
+                outputs: {
+                    create: outputs.map((out) => ({
+                        productName: out.productName,
+                        quantity: out.quantity,
+                        unit: out.unit,
+                        batchNumber: out.batchNumber
+                    }))
+                }
+            },
+            include: {
+                ingredients: true,
+                outputs: true,
+                subCharts: {
+                    include: {
+                        outputs: true
+                    }
+                }
+            }
+        });
+        if (subCharts && subCharts.length > 0) {
+            const ingredientMap = new Map(chart.ingredients.map(ing => [ing.name, ing.id]));
+            for (const sub of subCharts) {
+                const ingredientId = ingredientMap.get(sub.ingredientName) || chart.ingredients[0]?.id;
+                if (ingredientId) {
+                    await prisma.productionSubChart.create({
+                        data: {
+                            productionChartId: chart.id,
+                            ingredientId: ingredientId,
+                            ingredientName: sub.ingredientName,
+                            notes: sub.notes,
+                            outputs: {
+                                create: sub.outputs.map((out) => ({
+                                    productName: out.productName,
+                                    quantity: out.quantity,
+                                    unit: out.unit,
+                                    batchNumber: out.batchNumber
+                                }))
+                            }
+                        }
+                    });
+                }
+            }
+            const updatedChart = await prisma.productionChart.findUnique({
+                where: { id: chart.id },
+                include: {
+                    ingredients: true,
+                    outputs: true,
+                    subCharts: {
+                        include: {
+                            outputs: true
+                        }
+                    }
+                }
+            });
+            res.status(201).json(updatedChart);
+            return;
+        }
+        res.status(201).json(chart);
+    }
+    catch (error) {
+        logger_1.default.error('Error creating production chart:', error);
+        res.status(500).json({ error: 'Failed to create production chart' });
+    }
+};
+exports.createProductionChart = createProductionChart;
+const updateProductionChart = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { date, dayOfWeek, ingredients, outputs, subCharts, notes } = req.body;
+        await prisma.productionSubChartOutput.deleteMany({
+            where: {
+                subChart: {
+                    productionChartId: id
+                }
+            }
+        });
+        await prisma.productionSubChart.deleteMany({
+            where: { productionChartId: id }
+        });
+        await prisma.productionChartOutput.deleteMany({
+            where: { productionChartId: id }
+        });
+        await prisma.productionChartIngredient.deleteMany({
+            where: { productionChartId: id }
+        });
+        const chart = await prisma.productionChart.update({
+            where: { id },
+            data: {
+                date: date ? new Date(date) : undefined,
+                dayOfWeek,
+                notes,
+                ingredients: {
+                    create: ingredients?.map((ing) => ({
+                        name: ing.name,
+                        quantity: ing.quantity,
+                        unit: ing.unit,
+                        category: ing.category
+                    }))
+                },
+                outputs: {
+                    create: outputs?.map((out) => ({
+                        productName: out.productName,
+                        quantity: out.quantity,
+                        unit: out.unit,
+                        batchNumber: out.batchNumber
+                    }))
+                },
+                subCharts: {
+                    create: subCharts?.map((sub) => ({
+                        ingredientId: sub.ingredientId,
+                        ingredientName: sub.ingredientName,
+                        notes: sub.notes,
+                        outputs: {
+                            create: sub.outputs.map((out) => ({
+                                productName: out.productName,
+                                quantity: out.quantity,
+                                unit: out.unit,
+                                batchNumber: out.batchNumber
+                            }))
+                        }
+                    })) || []
+                }
+            },
+            include: {
+                ingredients: true,
+                outputs: true,
+                subCharts: {
+                    include: {
+                        outputs: true
+                    }
+                }
+            }
+        });
+        res.json(chart);
+    }
+    catch (error) {
+        logger_1.default.error('Error updating production chart:', error);
+        res.status(500).json({ error: 'Failed to update production chart' });
+    }
+};
+exports.updateProductionChart = updateProductionChart;
+const deleteProductionChart = async (req, res) => {
+    try {
+        const { id } = req.params;
+        await prisma.productionChart.delete({
+            where: { id }
+        });
+        res.json({ message: 'Production chart deleted successfully' });
+    }
+    catch (error) {
+        logger_1.default.error('Error deleting production chart:', error);
+        res.status(500).json({ error: 'Failed to delete production chart' });
+    }
+};
+exports.deleteProductionChart = deleteProductionChart;
+const getProductionChartSummary = async (req, res) => {
+    try {
+        const { fromDate, toDate } = req.query;
+        const where = {};
+        if (fromDate || toDate) {
+            where.date = {};
+            if (fromDate)
+                where.date.gte = new Date(fromDate);
+            if (toDate)
+                where.date.lte = new Date(toDate);
+        }
+        const charts = await prisma.productionChart.findMany({
+            where,
+            include: {
+                ingredients: true,
+                outputs: true
+            }
+        });
+        const totalIngredients = charts.reduce((sum, chart) => sum + chart.ingredients.length, 0);
+        const totalOutputs = charts.reduce((sum, chart) => sum + chart.outputs.length, 0);
+        const ingredientUsage = charts.flatMap(c => c.ingredients).reduce((acc, ing) => {
+            const key = `${ing.name} (${ing.unit})`;
+            if (!acc[key]) {
+                acc[key] = { name: ing.name, unit: ing.unit, totalQuantity: 0 };
+            }
+            acc[key].totalQuantity += ing.quantity;
+            return acc;
+        }, {});
+        const outputSummary = charts.flatMap(c => c.outputs).reduce((acc, out) => {
+            const key = `${out.productName} (${out.unit})`;
+            if (!acc[key]) {
+                acc[key] = { productName: out.productName, unit: out.unit, totalQuantity: 0 };
+            }
+            acc[key].totalQuantity += out.quantity;
+            return acc;
+        }, {});
+        const summary = {
+            totalCharts: charts.length,
+            totalIngredients,
+            totalOutputs,
+            dateRange: {
+                from: fromDate || null,
+                to: toDate || null
+            },
+            ingredientUsage: Object.values(ingredientUsage),
+            outputSummary: Object.values(outputSummary)
+        };
+        res.json(summary);
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching production chart summary:', error);
+        res.status(500).json({ error: 'Failed to fetch production chart summary' });
+    }
+};
+exports.getProductionChartSummary = getProductionChartSummary;
+const createWastageEntry = async (req, res) => {
+    try {
+        const { materialId, quantity, reason, notes, batchNumber, location, wastageDate } = req.body;
+        const userId = req.user?.id || 'system';
+        const userName = req.user?.fullName || req.user?.username || 'System';
+        const material = await prisma.rawMaterial.findUnique({
+            where: { id: materialId }
+        });
+        if (!material) {
+            res.status(404).json({ error: 'Raw material not found' });
+            return;
+        }
+        if (material.currentStock < quantity) {
+            res.status(400).json({
+                error: 'Insufficient stock',
+                available: material.currentStock,
+                requested: quantity
+            });
+            return;
+        }
+        const unitCost = material.unitCost;
+        const totalCost = Number(unitCost) * quantity;
+        const result = await prisma.$transaction(async (tx) => {
+            const wastageEntry = await tx.rawMaterialWastage.create({
+                data: {
+                    materialId,
+                    quantity,
+                    unit: material.unit,
+                    unitCost,
+                    totalCost,
+                    reason,
+                    notes,
+                    batchNumber,
+                    location,
+                    wastageDate: wastageDate ? new Date(wastageDate) : new Date(),
+                    createdBy: userId,
+                    createdByName: userName
+                }
+            });
+            await tx.rawMaterial.update({
+                where: { id: materialId },
+                data: {
+                    currentStock: {
+                        decrement: quantity
+                    }
+                }
+            });
+            await tx.rawMaterialTransaction.create({
+                data: {
+                    materialId,
+                    transactionType: 'wastage',
+                    quantity: -quantity,
+                    unitCost,
+                    totalCost,
+                    referenceNumber: wastageEntry.id,
+                    referenceType: 'wastage',
+                    batchNumber,
+                    location,
+                    createdBy: userId
+                }
+            });
+            return wastageEntry;
+        });
+        res.status(201).json({
+            message: 'Wastage entry created successfully',
+            wastage: result
+        });
+    }
+    catch (error) {
+        logger_1.default.error('Error creating wastage entry:', error);
+        res.status(500).json({ error: 'Failed to create wastage entry' });
+    }
+};
+exports.createWastageEntry = createWastageEntry;
+const getWastageEntries = async (req, res) => {
+    try {
+        const { materialId, fromDate, toDate, reason, page = '1', limit = '20' } = req.query;
+        const pageNum = parseInt(page);
+        const limitNum = parseInt(limit);
+        const skip = (pageNum - 1) * limitNum;
+        const where = {};
+        if (materialId) {
+            where.materialId = materialId;
+        }
+        if (reason) {
+            where.reason = reason;
+        }
+        if (fromDate || toDate) {
+            where.wastageDate = {};
+            if (fromDate) {
+                where.wastageDate.gte = new Date(fromDate);
+            }
+            if (toDate) {
+                where.wastageDate.lte = new Date(toDate);
+            }
+        }
+        const [wastageEntries, total] = await Promise.all([
+            prisma.rawMaterialWastage.findMany({
+                where,
+                include: {
+                    material: {
+                        select: {
+                            materialName: true,
+                            materialCode: true,
+                            category: {
+                                select: {
+                                    name: true
+                                }
+                            }
+                        }
+                    }
+                },
+                orderBy: {
+                    wastageDate: 'desc'
+                },
+                skip,
+                take: limitNum
+            }),
+            prisma.rawMaterialWastage.count({ where })
+        ]);
+        res.json({
+            wastageEntries,
+            pagination: {
+                page: pageNum,
+                limit: limitNum,
+                total,
+                totalPages: Math.ceil(total / limitNum)
+            }
+        });
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching wastage entries:', error);
+        res.status(500).json({ error: 'Failed to fetch wastage entries' });
+    }
+};
+exports.getWastageEntries = getWastageEntries;
+const getWastageEntryById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const wastageEntry = await prisma.rawMaterialWastage.findUnique({
+            where: { id },
+            include: {
+                material: {
+                    select: {
+                        materialName: true,
+                        materialCode: true,
+                        unit: true,
+                        category: {
+                            select: {
+                                name: true
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        if (!wastageEntry) {
+            res.status(404).json({ error: 'Wastage entry not found' });
+            return;
+        }
+        res.json(wastageEntry);
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching wastage entry:', error);
+        res.status(500).json({ error: 'Failed to fetch wastage entry' });
+    }
+};
+exports.getWastageEntryById = getWastageEntryById;
+const updateWastageEntry = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { reason, notes, wastageDate } = req.body;
+        const wastageEntry = await prisma.rawMaterialWastage.findUnique({
+            where: { id }
+        });
+        if (!wastageEntry) {
+            res.status(404).json({ error: 'Wastage entry not found' });
+            return;
+        }
+        const updated = await prisma.rawMaterialWastage.update({
+            where: { id },
+            data: {
+                reason,
+                notes,
+                wastageDate: wastageDate ? new Date(wastageDate) : undefined
+            },
+            include: {
+                material: {
+                    select: {
+                        materialName: true,
+                        materialCode: true
+                    }
+                }
+            }
+        });
+        res.json({
+            message: 'Wastage entry updated successfully',
+            wastage: updated
+        });
+    }
+    catch (error) {
+        logger_1.default.error('Error updating wastage entry:', error);
+        res.status(500).json({ error: 'Failed to update wastage entry' });
+    }
+};
+exports.updateWastageEntry = updateWastageEntry;
+const deleteWastageEntry = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const wastageEntry = await prisma.rawMaterialWastage.findUnique({
+            where: { id }
+        });
+        if (!wastageEntry) {
+            res.status(404).json({ error: 'Wastage entry not found' });
+            return;
+        }
+        await prisma.$transaction(async (tx) => {
+            await tx.rawMaterial.update({
+                where: { id: wastageEntry.materialId },
+                data: {
+                    currentStock: {
+                        increment: wastageEntry.quantity
+                    }
+                }
+            });
+            await tx.rawMaterialTransaction.deleteMany({
+                where: {
+                    referenceNumber: id,
+                    referenceType: 'wastage'
+                }
+            });
+            await tx.rawMaterialWastage.delete({
+                where: { id }
+            });
+        });
+        res.json({
+            message: 'Wastage entry deleted successfully and stock restored'
+        });
+    }
+    catch (error) {
+        logger_1.default.error('Error deleting wastage entry:', error);
+        res.status(500).json({ error: 'Failed to delete wastage entry' });
+    }
+};
+exports.deleteWastageEntry = deleteWastageEntry;
+const getWastageSummary = async (req, res) => {
+    try {
+        const { fromDate, toDate, materialId, categoryId } = req.query;
+        const where = {};
+        if (materialId) {
+            where.materialId = materialId;
+        }
+        if (fromDate || toDate) {
+            where.wastageDate = {};
+            if (fromDate) {
+                where.wastageDate.gte = new Date(fromDate);
+            }
+            if (toDate) {
+                where.wastageDate.lte = new Date(toDate);
+            }
+        }
+        let categoryFilter = {};
+        if (categoryId) {
+            categoryFilter = {
+                material: {
+                    categoryId: categoryId
+                }
+            };
+        }
+        const wastageEntries = await prisma.rawMaterialWastage.findMany({
+            where: {
+                ...where,
+                ...categoryFilter
+            },
+            include: {
+                material: {
+                    select: {
+                        materialName: true,
+                        materialCode: true,
+                        categoryId: true,
+                        category: {
+                            select: {
+                                name: true
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        const summary = {
+            totalWastageQuantity: 0,
+            totalWastageCost: 0,
+            totalEntries: wastageEntries.length,
+            byMaterial: {},
+            byReason: {},
+            byCategory: {}
+        };
+        wastageEntries.forEach(entry => {
+            summary.totalWastageQuantity += entry.quantity;
+            summary.totalWastageCost += Number(entry.totalCost);
+            const materialKey = entry.materialId;
+            if (!summary.byMaterial[materialKey]) {
+                summary.byMaterial[materialKey] = {
+                    materialName: entry.material.materialName,
+                    materialCode: entry.material.materialCode,
+                    totalQuantity: 0,
+                    totalCost: 0,
+                    entries: 0
+                };
+            }
+            summary.byMaterial[materialKey].totalQuantity += entry.quantity;
+            summary.byMaterial[materialKey].totalCost += Number(entry.totalCost);
+            summary.byMaterial[materialKey].entries += 1;
+            if (!summary.byReason[entry.reason]) {
+                summary.byReason[entry.reason] = {
+                    quantity: 0,
+                    cost: 0,
+                    entries: 0
+                };
+            }
+            summary.byReason[entry.reason].quantity += entry.quantity;
+            summary.byReason[entry.reason].cost += Number(entry.totalCost);
+            summary.byReason[entry.reason].entries += 1;
+            const categoryName = entry.material.category?.name || 'Uncategorized';
+            if (!summary.byCategory[categoryName]) {
+                summary.byCategory[categoryName] = {
+                    quantity: 0,
+                    cost: 0,
+                    entries: 0
+                };
+            }
+            summary.byCategory[categoryName].quantity += entry.quantity;
+            summary.byCategory[categoryName].cost += Number(entry.totalCost);
+            summary.byCategory[categoryName].entries += 1;
+        });
+        res.json({
+            summary,
+            dateRange: {
+                from: fromDate || null,
+                to: toDate || null
+            }
+        });
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching wastage summary:', error);
+        res.status(500).json({ error: 'Failed to fetch wastage summary' });
+    }
+};
+exports.getWastageSummary = getWastageSummary;
+const getWastageReasons = async (req, res) => {
+    try {
+        const reasons = await prisma.rawMaterialWastage.groupBy({
+            by: ['reason'],
+            _count: {
+                reason: true
+            }
+        });
+        const commonReasons = [
+            'Expired',
+            'Damaged',
+            'Spoilage',
+            'Quality Issue',
+            'Pest Infestation',
+            'Storage Loss',
+            'Measurement Error',
+            'Production Waste',
+            'Theft',
+            'Other'
+        ];
+        const existingReasons = reasons.map(r => r.reason);
+        const allReasons = [...new Set([...commonReasons, ...existingReasons])];
+        res.json({
+            reasons: allReasons,
+            usage: reasons.map(r => ({
+                reason: r.reason,
+                count: r._count.reason
+            }))
+        });
+    }
+    catch (error) {
+        logger_1.default.error('Error fetching wastage reasons:', error);
+        res.status(500).json({ error: 'Failed to fetch wastage reasons' });
+    }
+};
+exports.getWastageReasons = getWastageReasons;
 //# sourceMappingURL=production.controller.js.map

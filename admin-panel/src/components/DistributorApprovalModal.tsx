@@ -68,7 +68,7 @@ interface DistributorInfo {
 interface DistributorApprovalModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onApprove: (distributorId: string, products: Product[], additionalData: any) => Promise<void>;
+  onApprove: (distributorId: string, products: Product[], additionalData: Record<string, unknown>) => Promise<void>;
   distributor: DistributorInfo | null;
 }
 

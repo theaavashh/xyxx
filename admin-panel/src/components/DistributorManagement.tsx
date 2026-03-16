@@ -59,7 +59,7 @@ export default function DistributorManagement() {
     getApplicationById,
   } = useDistributorApplications({
     search: searchTerm,
-    status: statusFilter === 'ALL' ? undefined : statusFilter as any,
+    status: statusFilter === 'ALL' ? undefined : statusFilter as 'PENDING' | 'APPROVED' | 'REJECTED' | 'SUSPENDED',
   });
 
 
@@ -92,7 +92,7 @@ export default function DistributorManagement() {
   useEffect(() => {
     updateFilters({
       search: searchTerm || undefined,
-      status: statusFilter === 'ALL' ? undefined : statusFilter as any,
+      status: statusFilter === 'ALL' ? undefined : statusFilter as 'PENDING' | 'APPROVED' | 'REJECTED' | 'SUSPENDED',
     });
   }, [searchTerm, statusFilter, updateFilters]);
 
@@ -141,7 +141,7 @@ export default function DistributorManagement() {
     }
   };
 
-  const handleApprovalSubmit = async (distributorId: string, products: any[], additionalData: any) => {
+  const handleApprovalSubmit = async (distributorId: string, products: Record<string, unknown>[], additionalData: Record<string, unknown>) => {
     try {
       // First approve the application with coverage data
       await approveApplicationWithCoverage(distributorId, 'Approved with offer letter', additionalData);
@@ -155,7 +155,7 @@ export default function DistributorManagement() {
     }
   };
 
-  const approveApplicationWithCoverage = async (distributorId: string, notes: string, additionalData: any) => {
+  const approveApplicationWithCoverage = async (distributorId: string, notes: string, additionalData: Record<string, unknown>) => {
     try {
       const response = await fetch(`${config.apiUrl}/applications/dev/${distributorId}/status`, {
         method: 'PUT',
@@ -185,7 +185,7 @@ export default function DistributorManagement() {
     }
   };
 
-  const sendOfferLetter = async (distributorId: string, products: any[], additionalData: any) => {
+  const sendOfferLetter = async (distributorId: string, products: Record<string, unknown>[], additionalData: Record<string, unknown>) => {
     const distributor = applications.find(app => app.id === distributorId);
     if (!distributor) return;
 
@@ -1002,14 +1002,14 @@ export default function DistributorManagement() {
         onClose={handleCloseCreateModal}
         onSuccess={handleCreateSuccess}
         editMode={isEditing}
-        initialData={selectedDistributor as any}
+        initialData={selectedDistributor as DistributorApplication | null}
       />
 
       <ViewDistributorModal
         key={`view-${selectedDistributor?.id || 'new'}`}
         isOpen={isViewModalOpen}
         onClose={handleCloseViewModal}
-        distributor={selectedDistributor as any}
+        distributor={selectedDistributor as DistributorApplication | null}
       />
 
       <DistributorApprovalModal

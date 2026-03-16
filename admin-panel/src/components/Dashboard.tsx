@@ -230,7 +230,7 @@ export default function Dashboard() {
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h1 className="text-2xl font-bold text-gray-900">{getWelcomeMessage()}</h1>
         <p className="text-gray-600 mt-1">
-          Welcome to your {user?.role} dashboard. Here's what's happening today.
+          Welcome to your {user?.role} dashboard. Here&apos;s what&apos;s happening today.
         </p>
       </div>
 
@@ -238,7 +238,7 @@ export default function Dashboard() {
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Today's Overview</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Today&apos;s Overview</h2>
             <p className="text-sm text-gray-500">{new Date().toLocaleDateString('en-US', { 
               weekday: 'long', 
               year: 'numeric', 
@@ -268,7 +268,7 @@ export default function Dashboard() {
       {/* Today's Distributor Report */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="p-6 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900">Today's Distributor Activity</h2>
+          <h2 className="text-lg font-semibold text-gray-900">Today&apos;s Distributor Activity</h2>
           <p className="text-sm text-gray-500">Real-time distributor performance and activity</p>
         </div>
         <div className="p-6">
@@ -338,7 +338,7 @@ export default function Dashboard() {
         {/* Today's Payment Status */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200">
           <div className="p-6 border-b border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900">Today's Payment Status</h2>
+            <h2 className="text-lg font-semibold text-gray-900">Today&apos;s Payment Status</h2>
             <p className="text-sm text-gray-500">Payment tracking and pending amounts</p>
           </div>
           <div className="p-6">
@@ -424,15 +424,15 @@ export default function Dashboard() {
               <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left">
                 <ShoppingCart className="h-6 w-6 text-green-600 mb-2" />
                 <p className="font-medium text-gray-900">View Orders</p>
-                <p className="text-sm text-gray-500">Check today's orders</p>
+                <p className="text-sm text-gray-500">Check today&apos;s orders</p>
               </button>
             </>
           )}
 
           <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left">
             <BarChart3 className="h-6 w-6 text-orange-600 mb-2" />
-            <p className="font-medium text-gray-900">Today's Analytics</p>
-            <p className="text-sm text-gray-500">View today's detailed insights</p>
+            <p className="font-medium text-gray-900">Today&apos;s Analytics</p>
+            <p className="text-sm text-gray-500">View today&apos;s detailed insights</p>
           </button>
         </div>
       </div>

@@ -427,5 +427,68 @@ export interface UpdateStockData {
     operation?: 'set' | 'add' | 'subtract';
     reason?: string;
 }
+export interface CurrentSalesEntry {
+    distributorId: string;
+    day: number;
+    row: number;
+    cellId: string;
+    value: string | number;
+    type?: 'text' | 'number' | 'date' | 'formula';
+    formula?: string;
+}
+export interface CurrentSalesSummary {
+    distributor: {
+        id: string;
+        name: string;
+        email: string;
+        companyName: string;
+    };
+    period: {
+        year: number;
+        month: number;
+        monthName: string;
+        currentDay: number;
+    };
+    summary: {
+        totalDays: number;
+        totalSales: number;
+        todaySales: number;
+        averageDailySales: number;
+    };
+    salesData: Array<{
+        id: string;
+        day: number;
+        row: number;
+        cellId: string;
+        value: string;
+        type: string;
+        formula?: string;
+    }>;
+}
+export interface CurrentSalesDashboard {
+    summary: {
+        currentMonthTotal: number;
+        previousMonthTotal: number;
+        growthPercentage: number;
+        daysInMonth: number;
+        averageDailySales: number;
+    };
+    dailyTrend: Array<{
+        day: number;
+        sales: number;
+    }>;
+    period: {
+        current: {
+            year: number;
+            month: number;
+            monthName: string;
+        };
+        previous: {
+            year: number;
+            month: number;
+            monthName: string;
+        };
+    };
+}
 export { User, DistributorApplication, ApplicationStatus, UserRole, Category, Product } from '@prisma/client';
 //# sourceMappingURL=index.d.ts.map

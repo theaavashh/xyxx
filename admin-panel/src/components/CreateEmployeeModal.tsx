@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useForm } from 'react-hook-form';
+import { useForm, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { X, User, Mail, Lock, MapPin, Building, Briefcase, Eye, EyeOff } from 'lucide-react';
@@ -46,7 +46,7 @@ const createEmployeeSchema = yup.object({
 interface CreateEmployeeModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSuccess?: (data?: any) => void;
+  onSuccess?: (data?: Record<string, unknown>) => void;
   editMode?: boolean;
   initialData?: Partial<CreateEmployeeFormData>;
 }
@@ -66,7 +66,7 @@ export default function CreateEmployeeModal({ isOpen, onClose, onSuccess, editMo
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<CreateEmployeeFormData>({
-    resolver: yupResolver(createEmployeeSchema) as any,
+    resolver: yupResolver(createEmployeeSchema) as Resolver<CreateEmployeeFormData>,
     context: { editMode },
     defaultValues: editMode ? initialData : undefined
   });

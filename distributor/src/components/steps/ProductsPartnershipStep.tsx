@@ -31,12 +31,9 @@ export const ProductsPartnershipStep = ({ control, errors, watch }: ProductsPart
                   }`}
                 >
                   <option value="">उत्पादन श्रेणी छान्नुहोस्</option>
-                  <option value="electronics">इलेक्ट्रोनिक्स (Electronics)</option>
-                  <option value="clothing">लुगा (Clothing)</option>
-                  <option value="food">खाद्य पदार्थ (Food Items)</option>
-                  <option value="beverages">पेय पदार्थ (Beverages)</option>
-                  <option value="cosmetics">सौन्दर्य प्रसाधन (Cosmetics)</option>
-                  <option value="household">घरेलु वस्तु (Household Items)</option>
+                  <option value="potato-chips">Zip Zip Potato Chips</option>
+             
+                 
                 </select>
               )}
             />

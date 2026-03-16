@@ -1,0 +1,109 @@
+2026-02-10T03:49:58.603Z [INFO] Mailjet service initialized successfully
+2026-02-10T03:50:04.558Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-10T03:50:04.559Z [INFO] 🌍 Environment: development
+2026-02-10T03:50:04.559Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-10T03:50:04.559Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-10T03:50:04.560Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-10T04:17:49.779Z [ERROR] POST /api/applications/submit - 400 - 648.74ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":648.74}
+2026-02-10T04:18:12.831Z [ERROR] POST /api/applications/submit - 400 - 56.8ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":56.8}
+2026-02-10T04:20:55.587Z [ERROR] POST /api/applications/submit - 400 - 73.028ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":73.028}
+2026-02-10T04:22:52.516Z [ERROR] POST /api/applications/submit - 400 - 13.762ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":13.762}
+2026-02-10T04:24:19.320Z [INFO] POST /api/applications/submit - 201 - 683.939ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":683.939}
+2026-02-10T04:26:18.928Z [INFO] POST /api/auth/login - 200 - 644.451ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":644.451}
+2026-02-10T04:27:02.941Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 45.861ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":45.861}
+2026-02-10T04:27:02.962Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 14.685ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":14.685}
+2026-02-10T04:27:02.983Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 8.043ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":8.043}
+2026-02-10T04:27:20.618Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 200 - 29.875ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":200,"responseTime":29.875}
+2026-02-10T04:27:24.781Z [INFO] GET /uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg - 200 - 1.217ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg","statusCode":200,"responseTime":1.217}
+2026-02-10T04:27:28.893Z [INFO] GET /uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg - 200 - 3.884ms | Data: {"method":"GET","url":"/uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg","statusCode":200,"responseTime":3.884}
+2026-02-10T04:43:28.281Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 304 - 19.261ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":304,"responseTime":19.261}
+2026-02-10T04:43:28.880Z [ERROR] GET /favicon.ico - 404 - 112.578ms | Data: {"method":"GET","url":"/favicon.ico","statusCode":404,"responseTime":112.578}
+2026-02-10T04:58:44.218Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 511.573ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":511.573}
+2026-02-10T04:58:44.533Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 228.467ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":228.467}
+2026-02-10T04:58:44.561Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 19.146ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":19.146}
+2026-02-10T05:00:33.814Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 304 - 30.947ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":304,"responseTime":30.947}
+2026-02-10T05:25:38.209Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 304 - 2.886ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":304,"responseTime":2.886}
+2026-02-10T05:25:38.280Z [INFO] GET /uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg - 304 - 71.984ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg","statusCode":304,"responseTime":71.984}
+2026-02-10T05:25:38.282Z [INFO] GET /uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg - 304 - 1.909ms | Data: {"method":"GET","url":"/uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg","statusCode":304,"responseTime":1.909}
+2026-02-10T05:25:43.382Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 304 - 2.393ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":304,"responseTime":2.393}
+2026-02-10T05:26:07.424Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 304 - 0.887ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":304,"responseTime":0.887}
+2026-02-10T05:26:07.439Z [INFO] GET /uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg - 304 - 5.053ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg","statusCode":304,"responseTime":5.053}
+2026-02-10T05:26:07.448Z [INFO] GET /uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg - 304 - 14.335ms | Data: {"method":"GET","url":"/uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg","statusCode":304,"responseTime":14.335}
+2026-02-10T06:05:49.747Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 759.871ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":759.871}
+2026-02-10T06:05:50.264Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 419.651ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":419.651}
+2026-02-10T06:05:50.658Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 689.923ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":689.923}
+2026-02-10T06:05:50.664Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 410.025ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":410.025}
+2026-02-10T06:05:50.700Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 12.271ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":12.271}
+2026-02-10T06:05:50.702Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 19.161ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":19.161}
+2026-02-10T06:05:52.435Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 43.589ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":43.589}
+2026-02-10T06:05:52.465Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 19.152ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":19.152}
+2026-02-10T06:05:52.503Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 23.888ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":23.888}
+2026-02-10T06:05:55.060Z [INFO] GET /api/orders - 304 - 684.038ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":684.038}
+2026-02-10T06:05:55.075Z [INFO] GET /api/orders - 304 - 11.579ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":11.579}
+2026-02-10T06:06:03.484Z [INFO] GET /api/auth/users - 304 - 63.239ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":63.239}
+2026-02-10T06:06:03.503Z [INFO] GET /api/auth/users - 304 - 10.322ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":10.322}
+2026-02-10T06:06:06.259Z [INFO] GET /api/production/work-centers - 304 - 206.504ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":206.504}
+2026-02-10T06:06:06.274Z [INFO] GET /api/production/raw-materials/categories - 304 - 229.373ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":229.373}
+2026-02-10T06:06:06.285Z [INFO] GET /api/production/work-centers - 304 - 19.819ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":19.819}
+2026-02-10T06:06:06.293Z [INFO] GET /api/production/raw-materials/categories - 304 - 13.368ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":13.368}
+2026-02-10T06:06:06.296Z [INFO] GET /api/production/machines - 304 - 233.259ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":233.259}
+2026-02-10T06:06:06.333Z [INFO] GET /api/production/machines - 304 - 6.925ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":6.925}
+2026-02-10T06:06:06.998Z [INFO] GET /api/payment-config - 304 - 220.426ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":220.426}
+2026-02-10T06:06:07.006Z [INFO] GET /api/payment-config - 304 - 3.128ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":3.128}
+2026-02-10T06:07:09.044Z [ERROR] POST /api/auth/login - 401 - 1021.433ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":1021.433}
+2026-02-10T06:07:21.463Z [INFO] POST /api/auth/login - 200 - 697.216ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":697.216}
+2026-02-10T06:07:36.153Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 528.732ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":528.732}
+2026-02-10T06:08:22.149Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10 - 200 - 1350.556ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10","statusCode":200,"responseTime":1350.556}
+2026-02-10T06:08:22.250Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 1160.627ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":1160.627}
+2026-02-10T06:08:22.291Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10 - 304 - 34.819ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10","statusCode":304,"responseTime":34.819}
+2026-02-10T06:08:22.360Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 89.955ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":89.955}
+2026-02-10T06:08:27.502Z [INFO] GET /api/production/raw-materials/categories - 304 - 1024.585ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":1024.585}
+2026-02-10T06:08:27.512Z [INFO] GET /api/production/raw-materials - 304 - 832.988ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":832.988}
+2026-02-10T06:08:27.517Z [INFO] GET /api/production/raw-materials/transactions - 304 - 815.484ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":815.484}
+2026-02-10T06:08:27.573Z [INFO] GET /api/production/raw-materials/categories - 304 - 8.927ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":8.927}
+2026-02-10T06:08:27.582Z [INFO] GET /api/production/raw-materials - 304 - 15.201ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":15.201}
+2026-02-10T06:08:27.583Z [INFO] GET /api/production/raw-materials/transactions - 304 - 14.001ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":14.001}
+2026-02-10T06:09:55.548Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 508.044ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":508.044}
+2026-02-10T06:09:55.567Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10 - 304 - 298.406ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10","statusCode":304,"responseTime":298.406}
+2026-02-10T06:09:55.649Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 64.862ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":64.862}
+2026-02-10T06:09:55.657Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10 - 304 - 67.967ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10","statusCode":304,"responseTime":67.967}
+2026-02-10T06:10:11.944Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 31.865ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":31.865}
+2026-02-10T06:10:12.074Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10 - 304 - 150.485ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10","statusCode":304,"responseTime":150.485}
+2026-02-10T06:10:12.112Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 67.258ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":67.258}
+2026-02-10T06:10:12.157Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10 - 304 - 59.978ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-10&toDate=2026-02-10","statusCode":304,"responseTime":59.978}
+2026-02-10T06:10:16.722Z [INFO] GET /api/production/raw-materials - 304 - 46.229ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":46.229}
+2026-02-10T06:10:16.725Z [INFO] GET /api/production/raw-materials/categories - 304 - 40.934ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":40.934}
+2026-02-10T06:10:16.732Z [INFO] GET /api/production/raw-materials/transactions - 304 - 25.386ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":25.386}
+2026-02-10T06:10:16.780Z [INFO] GET /api/production/raw-materials - 304 - 25.935ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":25.935}
+2026-02-10T06:10:16.792Z [INFO] GET /api/production/raw-materials/categories - 304 - 27.705ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":27.705}
+2026-02-10T06:10:16.798Z [INFO] GET /api/production/raw-materials/transactions - 304 - 20.134ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":20.134}
+2026-02-10T06:10:18.269Z [INFO] GET /api/production/charts - 304 - 128.693ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":128.693}
+2026-02-10T06:10:18.282Z [INFO] GET /api/production/charts - 304 - 10.072ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":10.072}
+2026-02-10T06:10:21.066Z [INFO] GET /api/production/work-centers - 304 - 57.014ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":57.014}
+2026-02-10T06:10:21.074Z [INFO] GET /api/production/orders - 304 - 54.06ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":54.06}
+2026-02-10T06:10:21.084Z [INFO] GET /api/production/schedules - 304 - 56.768ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":56.768}
+2026-02-10T06:10:21.134Z [INFO] GET /api/production/orders - 304 - 19.451ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":19.451}
+2026-02-10T06:10:21.137Z [INFO] GET /api/production/schedules - 304 - 12.45ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":12.45}
+2026-02-10T06:10:21.142Z [INFO] GET /api/production/work-centers - 304 - 41.62ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":41.62}
+2026-02-10T06:12:43.965Z [INFO] GET /api/production/raw-materials - 304 - 242.665ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":242.665}
+2026-02-10T06:12:44.077Z [INFO] GET /api/production/raw-materials - 304 - 29.283ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":29.283}
+2026-02-10T06:12:44.243Z [INFO] GET /api/production/raw-materials/categories - 304 - 383.302ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":383.302}
+2026-02-10T06:12:44.254Z [INFO] GET /api/production/raw-materials/transactions - 304 - 385.768ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":385.768}
+2026-02-10T06:12:44.261Z [INFO] GET /api/production/raw-materials/categories - 304 - 7.774ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":7.774}
+2026-02-10T06:12:44.325Z [INFO] GET /api/production/raw-materials/transactions - 304 - 57.867ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":57.867}
+2026-02-10T06:40:17.510Z [INFO] Mailjet service initialized successfully
+2026-02-10T06:40:25.783Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-10T06:40:25.786Z [INFO] 🌍 Environment: development
+2026-02-10T06:40:25.786Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-10T06:40:25.786Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-10T06:40:25.786Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-10T06:40:25.788Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

@@ -40,6 +40,23 @@ import {
   // Production Schedules
   getProductionSchedules,
   
+  // Production Charts
+  getProductionCharts,
+  getProductionChartById,
+  createProductionChart,
+  updateProductionChart,
+  deleteProductionChart,
+  getProductionChartSummary,
+  
+  // Wastage Management
+  createWastageEntry,
+  getWastageEntries,
+  getWastageEntryById,
+  updateWastageEntry,
+  deleteWastageEntry,
+  getWastageSummary,
+  getWastageReasons,
+  
   // Analytics
   getProductionKPIs,
   getProductionReport,
@@ -91,6 +108,23 @@ router.delete('/machines/:id', deleteMachine);
 
 // Production Schedule Routes
 router.get('/schedules', getProductionSchedules);
+
+// Production Chart Routes
+router.get('/charts', getProductionCharts);
+router.get('/charts/summary', getProductionChartSummary);
+router.get('/charts/:id', getProductionChartById);
+router.post('/charts', createProductionChart);
+router.put('/charts/:id', updateProductionChart);
+router.delete('/charts/:id', deleteProductionChart);
+
+// Raw Material Wastage Routes
+router.get('/wastage', getWastageEntries);
+router.get('/wastage/reasons', getWastageReasons);
+router.get('/wastage/summary', getWastageSummary);
+router.get('/wastage/:id', getWastageEntryById);
+router.post('/wastage', createWastageEntry);
+router.put('/wastage/:id', updateWastageEntry);
+router.delete('/wastage/:id', deleteWastageEntry);
 
 // Analytics Routes
 router.get('/analytics/kpis', getProductionKPIs);

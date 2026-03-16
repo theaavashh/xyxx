@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
+import { useAuth } from '@/components/AuthProvider';
 import { 
   Users, 
   FolderOpen, 
@@ -14,14 +15,16 @@ import {
   AlertCircle,
   RotateCcw,
   Receipt,
-  CreditCard
+  CreditCard,
+  Target
 } from 'lucide-react';
 
 interface NavigationItem {
   id: string;
   title: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   path: string;
+  roles: ('ADMIN' | 'MANAGERIAL' | 'SALES_MANAGER' | 'SALES_REPRESENTATIVE' | 'DISTRIBUTOR')[];
 }
 
 const navigationItems: NavigationItem[] = [
@@ -29,98 +32,128 @@ const navigationItems: NavigationItem[] = [
     id: 'employees',
     title: 'Employee Management',
     icon: Users,
-    path: '/dashboard/employees'
+    path: '/dashboard/employees',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER']
   },
   {
     id: 'distributors',
     title: 'Distributors',
     icon: Users,
-    path: '/dashboard/distributors'
+    path: '/dashboard/distributors',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER', 'SALES_REPRESENTATIVE']
   },
   {
     id: 'categories',
     title: 'Categories',
     icon: FolderOpen,
-    path: '/dashboard/categories'
+    path: '/dashboard/categories',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER']
   },
   {
     id: 'products',
     title: 'Products',
     icon: Package,
-    path: '/dashboard/products'
+    path: '/dashboard/products',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER']
   },
   {
     id: 'orders',
     title: 'All Orders',
     icon: ShoppingCart,
-    path: '/dashboard/orders'
+    path: '/dashboard/orders',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER', 'SALES_REPRESENTATIVE']
+  },
+  {
+    id: 'sales-targets',
+    title: 'Sales Targets',
+    icon: Target,
+    path: '/dashboard/sales-targets',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER']
+  },
+  {
+    id: 'target-report',
+    title: 'Target Report',
+    icon: BarChart3,
+    path: '/dashboard/target-report',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER']
   },
   {
     id: 'accounting',
     title: 'Accounting Dashboard',
     icon: Calculator,
-    path: '/dashboard/accounting'
+    path: '/dashboard/accounting',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'party-ledger',
     title: 'Party Ledger',
     icon: Users,
-    path: '/dashboard/accounting/party'
+    path: '/dashboard/accounting/party',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'purchase-entry',
     title: 'Purchase Entry',
     icon: ShoppingCart,
-    path: '/dashboard/accounting/purchase'
+    path: '/dashboard/accounting/purchase',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'purchase-return',
     title: 'Purchase Return',
     icon: RotateCcw,
-    path: '/dashboard/accounting/purchase-return'
+    path: '/dashboard/accounting/purchase-return',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'sales-return',
     title: 'Sales Return',
     icon: RotateCcw,
-    path: '/dashboard/accounting/sales-return'
+    path: '/dashboard/accounting/sales-return',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'invoice',
     title: 'Invoice',
     icon: Receipt,
-    path: '/dashboard/accounting/invoice'
+    path: '/dashboard/accounting/invoice',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'balance-sheet',
     title: 'Balance Sheet',
     icon: Calculator,
-    path: '/dashboard/accounting/balance'
+    path: '/dashboard/accounting/balance',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'trial-balance',
     title: 'Trial Balance',
     icon: Calculator,
-    path: '/dashboard/accounting/trial'
+    path: '/dashboard/accounting/trial',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'mis-report',
     title: 'MIS Report',
     icon: BarChart3,
-    path: '/dashboard/accounting/mis'
+    path: '/dashboard/accounting/mis',
+    roles: ['ADMIN', 'MANAGERIAL']
   },
   {
     id: 'reports',
     title: 'Reports',
     icon: FileText,
-    path: '/dashboard/reports'
+    path: '/dashboard/reports',
+    roles: ['ADMIN', 'MANAGERIAL', 'SALES_MANAGER']
   }
 ];
 
 export default function AccountingSidebar() {
   const router = useRouter();
   const pathname = usePathname();
-
+  const { user } = useAuth();
+  
   const handleNavigation = (path: string) => {
     router.push(path);
   };
@@ -129,12 +162,20 @@ export default function AccountingSidebar() {
     return pathname === path || pathname.startsWith(path + '/');
   };
 
+  // Filter navigation items based on user role
+  const filteredNavigationItems = navigationItems.filter(item => {
+    if (!user) return false;
+    // Debug: Show user role and item roles
+    console.log(`User role: ${user.role}, Item: ${item.id}, Required roles: ${item.roles}`);
+    return item.roles.includes(user.role);
+  });
+
   return (
     <div className="w-64 bg-white border-r border-gray-200 h-full flex flex-col">
       {/* Main Navigation */}
       <div className="flex-1 py-6">
         <nav className="space-y-2 px-4">
-          {navigationItems.map((item) => {
+          {filteredNavigationItems.map((item) => {
             const IconComponent = item.icon;
             const isActive = isActiveItem(item.path);
             

@@ -1,0 +1,113 @@
+2026-02-02T04:19:15.224Z [INFO] Mailjet service initialized successfully
+2026-02-02T04:19:30.211Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T04:19:30.215Z [INFO] 🌍 Environment: development
+2026-02-02T04:19:30.226Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T04:19:30.227Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T04:19:30.227Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T04:19:37.361Z [ERROR] POST /api/applications/submit - 500 - 144.798ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":500,"responseTime":144.798}
+2026-02-02T04:20:16.403Z [INFO] POST /api/auth/login - 200 - 697.148ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":697.148}
+2026-02-02T04:20:23.826Z [INFO] GET /api/products - 200 - 349.071ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":349.071}
+2026-02-02T04:20:23.849Z [INFO] GET /api/products - 304 - 13.156ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":13.156}
+2026-02-02T04:21:35.871Z [INFO] GET /api/products - 304 - 4.883ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.883}
+2026-02-02T04:21:35.894Z [INFO] GET /api/products - 304 - 13.153ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":13.153}
+2026-02-02T04:21:36.111Z [INFO] GET /api/categories - 200 - 245.713ms | Data: {"method":"GET","url":"/api/categories","statusCode":200,"responseTime":245.713}
+2026-02-02T04:21:36.121Z [INFO] GET /api/categories - 304 - 6.39ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.39}
+2026-02-02T04:21:46.447Z [INFO] GET /api/auth/users - 200 - 192.709ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":192.709}
+2026-02-02T04:21:46.463Z [INFO] GET /api/auth/users - 304 - 10.495ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":10.495}
+2026-02-02T04:21:49.778Z [INFO] GET /api/production/machines - 200 - 174.848ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":200,"responseTime":174.848}
+2026-02-02T04:21:49.787Z [INFO] GET /api/production/raw-materials/categories - 200 - 219.749ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":219.749}
+2026-02-02T04:21:49.791Z [INFO] GET /api/production/work-centers - 200 - 216.721ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":200,"responseTime":216.721}
+2026-02-02T04:21:49.817Z [INFO] GET /api/production/raw-materials/categories - 304 - 14.286ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":14.286}
+2026-02-02T04:21:49.820Z [INFO] GET /api/production/work-centers - 304 - 12.049ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":12.049}
+2026-02-02T04:21:49.822Z [INFO] GET /api/production/machines - 304 - 26.537ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":26.537}
+2026-02-02T04:21:50.111Z [INFO] GET /api/payment-config - 200 - 240.693ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":200,"responseTime":240.693}
+2026-02-02T04:21:50.125Z [INFO] GET /api/payment-config - 304 - 4.188ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":4.188}
+2026-02-02T04:21:53.397Z [INFO] GET /api/products - 304 - 4.549ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.549}
+2026-02-02T04:21:53.408Z [INFO] GET /api/products - 304 - 6.164ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.164}
+2026-02-02T04:21:53.516Z [INFO] GET /api/categories - 304 - 1.981ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":1.981}
+2026-02-02T04:21:53.522Z [INFO] GET /api/categories - 304 - 2.732ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.732}
+2026-02-02T04:21:55.143Z [INFO] GET /api/categories - 304 - 2.296ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":2.296}
+2026-02-02T04:21:55.150Z [INFO] GET /api/categories - 304 - 3.768ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":3.768}
+2026-02-02T04:21:56.385Z [INFO] GET /api/products - 304 - 4.189ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.189}
+2026-02-02T04:21:56.398Z [INFO] GET /api/products - 304 - 6.947ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.947}
+2026-02-02T04:31:01.571Z [INFO] GET /api/products - 304 - 199.14ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":199.14}
+2026-02-02T04:31:01.578Z [INFO] GET /api/products - 304 - 4.831ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.831}
+2026-02-02T04:33:21.463Z [ERROR] POST /api/applications/submit - 500 - 9.258ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":500,"responseTime":9.258}
+2026-02-02T04:34:02.625Z [INFO] Mailjet service initialized successfully
+2026-02-02T04:34:06.106Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T04:34:06.106Z [INFO] 🌍 Environment: development
+2026-02-02T04:34:06.106Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T04:34:06.107Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T04:34:06.107Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T04:34:08.784Z [ERROR] POST /api/applications/submit - 400 - 29.354ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":29.354}
+2026-02-02T04:34:12.481Z [ERROR] POST /api/applications/submit - 400 - 31.09ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":31.09}
+2026-02-02T04:36:53.879Z [INFO] Mailjet service initialized successfully
+2026-02-02T04:36:59.556Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T04:36:59.557Z [INFO] 🌍 Environment: development
+2026-02-02T04:36:59.557Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T04:36:59.558Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T04:36:59.558Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T04:38:37.013Z [ERROR] POST /api/applications/submit - 400 - 64.736ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":64.736}
+2026-02-02T04:39:40.713Z [INFO] Mailjet service initialized successfully
+2026-02-02T04:39:45.256Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T04:39:45.256Z [INFO] 🌍 Environment: development
+2026-02-02T04:39:45.257Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T04:39:45.257Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T04:39:45.257Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T04:39:45.257Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2026-02-02T04:44:38.102Z [INFO] Mailjet service initialized successfully
+2026-02-02T04:44:41.845Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T04:44:41.845Z [INFO] 🌍 Environment: development
+2026-02-02T04:44:41.845Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T04:44:41.845Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T04:44:41.845Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T04:44:41.846Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2026-02-02T04:51:22.637Z [INFO] Mailjet service initialized successfully
+2026-02-02T04:51:25.383Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T04:51:25.383Z [INFO] 🌍 Environment: development
+2026-02-02T04:51:25.383Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T04:51:25.384Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T04:51:25.384Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T04:51:27.692Z [INFO] SIGTERM received. Starting graceful shutdown...
+2026-02-02T04:51:27.695Z [INFO] HTTP server closed
+2026-02-02T05:12:43.714Z [INFO] Mailjet service initialized successfully
+2026-02-02T05:12:55.927Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T05:12:55.927Z [INFO] 🌍 Environment: development
+2026-02-02T05:12:55.927Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T05:12:55.928Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T05:12:55.928Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T05:13:01.538Z [ERROR] POST /api/applications/submit - 400 - 30.883ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":30.883}
+2026-02-02T05:28:13.009Z [INFO] GET /health - 200 - 1882.29ms | Data: {"method":"GET","url":"/health","statusCode":200,"responseTime":1882.29}
+2026-02-02T05:28:24.543Z [ERROR] POST /api/applications/submit - 400 - 1.2ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":1.2}
+2026-02-02T05:32:39.800Z [ERROR] POST /api/applications/submit - 500 - 1655.16ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":500,"responseTime":1655.16}
+2026-02-02T05:38:26.289Z [INFO] Mailjet service initialized successfully
+2026-02-02T05:38:30.717Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T05:38:30.717Z [INFO] 🌍 Environment: development
+2026-02-02T05:38:30.717Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T05:38:30.718Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T05:38:30.718Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-02T05:38:42.829Z [ERROR] POST /api/applications/submit - 400 - 278.943ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":278.943}
+2026-02-02T05:59:06.242Z [INFO] Mailjet service initialized successfully
+2026-02-02T05:59:10.260Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-02T05:59:10.260Z [INFO] 🌍 Environment: development
+2026-02-02T05:59:10.261Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-02T05:59:10.261Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-02T05:59:10.261Z [INFO] 🔧 Development mode - detailed logging enabled

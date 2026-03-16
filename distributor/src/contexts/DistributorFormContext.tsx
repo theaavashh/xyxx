@@ -1,5 +1,5 @@
 import { createContext, useContext, ReactNode, useState } from 'react';
-import { FormData } from '@/types/form.types';
+import { FormData } from '@/types/formTypes';
 
 interface FormContextType {
   allFormData: FormData;

@@ -4,7 +4,7 @@ import { Control, Controller } from 'react-hook-form';
 import { FileUpload } from '../FileUpload';
 import { nepalDistricts } from '../../constants/form.constants';
 
-import { FormData } from '@/types/form.types';
+import { FormData } from '@/types/formTypes';
 
 interface Step2PersonalDetailsProps {
   control: Control<FormData>;

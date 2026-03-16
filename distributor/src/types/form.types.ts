@@ -14,54 +14,56 @@ export interface AreaCoverage {
 export interface CurrentBusiness {
   id: string;
   businessType: string;
-  products: string;
+  productName: string;  // Added this property
   turnover: string;
+  experience: string;   // Added this property
 }
 
 export interface FormData {
   // Step 1: Business Type Selection
-  businessStructure: 'individual' | 'partnership';
-  contactNumber: string;
+  businessStructure?: 'individual' | 'partnership';
+  contactNumber?: string;
   
   // Step 2: Personal Details
-  fullName: string;
-  age: string;
-  gender: string;
-  citizenshipNumber: string;
-  issuedDistrict: string;
+  fullName?: string;
+  age?: string;
+  gender?: string;
+  citizenshipNumber?: string;
+  issuedDistrict?: string;
   mobileNumber?: string;
   email?: string;
   permanentAddress?: string;
   temporaryAddress?: string;
 
   // Step 3: Business Details
-  companyName: string;
-  registrationNumber: string;
-  panVatNumber: string;
-  officeAddress: string;
-  workAreaProvince: string;
-  workAreaDistrict: string;
-  workArea: string;
-  desiredDistributionArea: string;
-  panDocument: File;
-  registrationDocument: File;
+  companyName?: string;
+  registrationNumber?: string;
+  panVatNumber?: string;
+  officeAddress?: string;
+  workAreaProvince?: string;
+  workAreaDistrict?: string;
+  workArea?: string;
+  desiredDistributionArea?: string;
+  panDocument?: File;
+  registrationDocument?: File;
   businessType?: string;
-  currentBusiness?: string;
+  currentTransactions?: CurrentBusiness[];
+  turnover?: string;
 
   // Step 4: Staff and Infrastructure
-  selectedStaffType: string;
-  staffQuantity: number;
-  selectedInfrastructureType: string;
-  infrastructureQuantity: number;
+  selectedStaffType?: string;
+  staffQuantity?: number;
+  selectedInfrastructureType?: string;
+  infrastructureQuantity?: number;
 
   // Step 5: Business Information
   productCategory?: string;
   businessExperience?: string;
   monthlyIncome?: string;
   storageFacility?: string;
-  paymentPreference: string;
+  paymentPreference?: string;
   creditDays?: number;
-  deliveryPreference: string;
+  deliveryPreference?: string;
 
   // Products to distribute
   products?: Product[];
@@ -77,9 +79,6 @@ export interface FormData {
   partnerPermanentAddress?: string;
   partnerTemporaryAddress?: string;
 
-  // Current transactions
-  currentTransactions: CurrentBusiness[];
-
   // Area Coverage
   areaCoverageDetails?: AreaCoverage[];
 
@@ -91,8 +90,8 @@ export interface FormData {
   // Step 6: Document Upload
   citizenshipCertificate?: boolean;
   citizenshipFile?: File | null;
-  citizenshipFrontFile: File | null;
-  citizenshipBackFile: File | null;
+  citizenshipFrontFile?: File | null;
+  citizenshipBackFile?: File | null;
   companyRegistration?: boolean;
   companyRegistrationFile?: File | null;
   panVat?: boolean;
@@ -103,7 +102,7 @@ export interface FormData {
   otherDocumentsFile?: FileList;
   
   // Step 7: Agreement and signature
-  agreementAccepted: boolean;
+  agreementAccepted?: boolean;
   distributorSignatureName?: string;
   distributorSignatureDate?: string;
 }

@@ -31,8 +31,8 @@ export default function ConfigurationManagement() {
   const [isLoading, setIsLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<any>(null);
-  const [formData, setFormData] = useState<any>({});
+  const [selectedItem, setSelectedItem] = useState<RawMaterialCategory | WorkCenter | Machine | PaymentConfig | null>(null);
+  const [formData, setFormData] = useState<Record<string, unknown>>({});
   const [bulkCategories, setBulkCategories] = useState<Array<{name: string, isActive: boolean}>>([{name: '', isActive: true}]);
 
   // Data states
@@ -148,7 +148,7 @@ export default function ConfigurationManagement() {
     }
   };
 
-  const handleEdit = (item: any) => {
+  const handleEdit = (item: RawMaterialCategory | WorkCenter | Machine | PaymentConfig) => {
     setSelectedItem(item);
     
     // Handle different types of items
@@ -998,7 +998,7 @@ export default function ConfigurationManagement() {
           ].map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => setActiveTab(tab.id as 'categories' | 'workcenters' | 'machines' | 'payment')}
               className={`${
                 activeTab === tab.id
                   ? 'border-indigo-500 text-indigo-600'

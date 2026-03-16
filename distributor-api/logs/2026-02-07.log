@@ -1,0 +1,78 @@
+2026-02-07T12:28:02.199Z [INFO] Mailjet service initialized successfully
+2026-02-07T12:32:19.118Z [INFO] Mailjet service initialized successfully
+2026-02-07T12:33:15.689Z [INFO] Mailjet service initialized successfully
+2026-02-07T12:33:20.612Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-07T12:33:20.612Z [INFO] 🌍 Environment: development
+2026-02-07T12:33:20.612Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-07T12:33:20.612Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-07T12:33:20.613Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-07T12:33:39.681Z [INFO] SIGTERM received. Starting graceful shutdown...
+2026-02-07T12:33:39.682Z [INFO] HTTP server closed
+2026-02-07T12:35:53.827Z [INFO] Mailjet service initialized successfully
+2026-02-07T12:35:57.171Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-07T12:35:57.171Z [INFO] 🌍 Environment: development
+2026-02-07T12:35:57.171Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-07T12:35:57.172Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-07T12:35:57.172Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-07T12:36:12.510Z [INFO] POST /api/auth/login - 200 - 559.95ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":559.95}
+2026-02-07T12:36:37.675Z [INFO] GET /api/production/charts - 200 - 256.92ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":200,"responseTime":256.92}
+2026-02-07T12:36:37.705Z [INFO] GET /api/production/charts - 304 - 21.883ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":21.883}
+2026-02-07T12:37:39.179Z [INFO] POST /api/production/charts - 201 - 360.485ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":201,"responseTime":360.485}
+2026-02-07T12:37:57.870Z [INFO] GET /api/production/charts - 200 - 7.954ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":200,"responseTime":7.954}
+2026-02-07T12:37:57.888Z [INFO] GET /api/production/charts - 304 - 13.434ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":13.434}
+2026-02-07T12:45:31.975Z [INFO] GET /api/production/work-centers - 304 - 81.012ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":81.012}
+2026-02-07T12:45:31.980Z [INFO] GET /api/production/schedules - 304 - 82.534ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":82.534}
+2026-02-07T12:45:31.984Z [INFO] GET /api/production/orders - 304 - 93.518ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":93.518}
+2026-02-07T12:45:32.003Z [INFO] GET /api/production/schedules - 304 - 12.447ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":12.447}
+2026-02-07T12:45:32.006Z [INFO] GET /api/production/orders - 304 - 12.299ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":12.299}
+2026-02-07T12:45:32.009Z [INFO] GET /api/production/work-centers - 304 - 22.592ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":22.592}
+2026-02-07T12:45:34.290Z [INFO] GET /api/production/orders - 304 - 8.779ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":8.779}
+2026-02-07T12:45:34.315Z [INFO] GET /api/production/records - 304 - 19.774ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":19.774}
+2026-02-07T12:45:34.324Z [INFO] GET /api/production/orders - 304 - 11.925ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":11.925}
+2026-02-07T12:45:34.327Z [INFO] GET /api/production/raw-materials - 304 - 25.77ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":25.77}
+2026-02-07T12:45:34.337Z [INFO] GET /api/production/records - 304 - 15.654ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":15.654}
+2026-02-07T12:45:34.343Z [INFO] GET /api/production/raw-materials - 304 - 10.168ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":10.168}
+2026-02-07T12:45:35.597Z [INFO] GET /api/production/raw-materials - 304 - 13.396ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":13.396}
+2026-02-07T12:45:35.612Z [INFO] GET /api/production/raw-materials/categories - 200 - 19.125ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":19.125}
+2026-02-07T12:45:35.613Z [INFO] GET /api/production/raw-materials/transactions - 200 - 18.096ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":200,"responseTime":18.096}
+2026-02-07T12:45:35.638Z [INFO] GET /api/production/raw-materials - 304 - 33.094ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":33.094}
+2026-02-07T12:45:35.648Z [INFO] GET /api/production/raw-materials/categories - 304 - 22.077ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":22.077}
+2026-02-07T12:45:35.650Z [INFO] GET /api/production/raw-materials/transactions - 304 - 25.569ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":25.569}
+2026-02-07T12:45:37.004Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-07&toDate=2026-02-07 - 200 - 9.757ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-07&toDate=2026-02-07","statusCode":200,"responseTime":9.757}
+2026-02-07T12:45:37.029Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 15.717ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":15.717}
+2026-02-07T12:45:37.032Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-07&toDate=2026-02-07 - 304 - 14.093ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-07&toDate=2026-02-07","statusCode":304,"responseTime":14.093}
+2026-02-07T12:45:37.048Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 11.632ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":11.632}
+2026-02-07T12:49:40.199Z [INFO] GET /api/production/charts - 304 - 10.543ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":10.543}
+2026-02-07T12:49:40.213Z [INFO] GET /api/production/charts - 304 - 10.305ms | Data: {"method":"GET","url":"/api/production/charts","statusCode":304,"responseTime":10.305}
+2026-02-07T14:46:11.007Z [ERROR] Error creating production chart: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.productionChart.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:1156:48
+
+  1153 const { date, dayOfWeek, ingredients, outputs, subCharts, notes } = req.body;
+  1154 const userId = (req as any).user?.id || 'system';
+  1155 
+→ 1156 const chart = await prisma.productionChart.create(
+Foreign key constraint violated: `production_sub_charts_ingredientId_fkey (index)`
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createProductionChart (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:1156:19)
+2026-02-07T14:46:11.011Z [ERROR] POST /api/production/charts - 500 - 1710.288ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":500,"responseTime":1710.288}
+2026-02-07T14:46:11.013Z [ERROR] Error creating production chart: | Stack: PrismaClientKnownRequestError: 
+Invalid `prisma.productionChart.create()` invocation in
+/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:1156:48
+
+  1153 const { date, dayOfWeek, ingredients, outputs, subCharts, notes } = req.body;
+  1154 const userId = (req as any).user?.id || 'system';
+  1155 
+→ 1156 const chart = await prisma.productionChart.create(
+Foreign key constraint violated: `production_sub_charts_ingredientId_fkey (index)`
+    at $n.handleRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:7315)
+    at $n.handleAndLogRequestError (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6623)
+    at $n.request (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:121:6307)
+    at async l (/home/theaavashh/workplace/new/analytics/distributor-api/node_modules/@prisma/client/runtime/library.js:130:9633)
+    at async createProductionChart (/home/theaavashh/workplace/new/analytics/distributor-api/src/controllers/production.controller.ts:1156:19)
+2026-02-07T14:46:11.014Z [ERROR] POST /api/production/charts - 500 - 513.325ms | Data: {"method":"POST","url":"/api/production/charts","statusCode":500,"responseTime":513.325}
+2026-02-07T14:46:35.352Z [INFO] SIGINT received. Starting graceful shutdown...
+2026-02-07T14:46:35.352Z [INFO] HTTP server closed

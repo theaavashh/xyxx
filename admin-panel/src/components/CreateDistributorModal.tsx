@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useForm } from 'react-hook-form';
+import { useForm, Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { 
@@ -31,7 +31,7 @@ import toast from 'react-hot-toast';
 interface CreateDistributorModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSuccess?: (data?: any) => void;
+  onSuccess?: (data?: Record<string, unknown>) => void;
   editMode?: boolean;
   initialData?: DistributorApplication | null;
 }
@@ -165,7 +165,7 @@ const CreateDistributorModal = React.memo(function CreateDistributorModal({
         dateOfBirth: '',
         nationalId: safeInitialData.citizenshipNumber || '',
         companyName: safeInitialData.companyName || '',
-        companyType: (safeInitialData.businessType as any) || '',
+        companyType: (safeInitialData.businessType as 'SOLE_PROPRIETORSHIP' | 'PARTNERSHIP' | 'PRIVATE_LIMITED' | 'PUBLIC_LIMITED') || '',
         registrationNumber: safeInitialData.registrationNumber || '',
         panNumber: safeInitialData.panVatNumber || '',
         vatNumber: safeInitialData.panVatNumber || '',
@@ -185,7 +185,7 @@ const CreateDistributorModal = React.memo(function CreateDistributorModal({
   }, [editMode, initialData, isOpen]);
 
   const { register, handleSubmit, formState: { errors }, reset, watch, getValues, setValue } = useForm<CreateDistributorFormData>({
-    resolver: yupResolver(createDistributorSchema) as any,
+    resolver: yupResolver(createDistributorSchema) as Resolver<CreateDistributorFormData>,
     context: { editMode },
     defaultValues
   });

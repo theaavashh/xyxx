@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
-import { 
-  ApiResponse, 
-  AuthenticatedRequest, 
+import {
+  ApiResponse,
+  AuthenticatedRequest,
   ApplicationSubmissionData,
   DistributorApplicationWithRelations,
   PaginatedResponse,
@@ -20,8 +20,8 @@ const prisma = new PrismaClient();
 // Submit distributor application
 export const submitApplication = asyncHandler(async (req: Request, res: Response): Promise<void> => {
   // Parse JSON data from FormData
-  let applicationData: ApplicationSubmissionData;
-  
+  let applicationData: any;
+
   try {
     if (req.body.data) {
       // Data sent as JSON string in FormData
@@ -45,12 +45,32 @@ export const submitApplication = asyncHandler(async (req: Request, res: Response
   // Get file paths if files were uploaded
   const filePaths = files ? getFilePaths(files) : {};
 
-  // Validate required fields
+  // Validate required fields (checking frontend flat structure)
   if (!applicationData.personalDetails?.fullName) {
     const response: ApiResponse = {
       success: false,
-      message: 'व्यक्तिगत विवरण आवश्यक छ',
-      error: 'MISSING_PERSONAL_DETAILS'
+      message: 'पूरा नाम आवश्यक छ',
+      error: 'MISSING_FULL_NAME'
+    };
+    res.status(400).json(response);
+    return;
+  }
+
+  if (!applicationData.personalDetails?.email) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'इमेल आवश्यक छ',
+      error: 'MISSING_EMAIL'
+    };
+    res.status(400).json(response);
+    return;
+  }
+
+  if (!applicationData.personalDetails?.mobileNumber) {
+    const response: ApiResponse = {
+      success: false,
+      message: 'सम्पर्क नम्बर आवश्यक छ',
+      error: 'MISSING_CONTACT_NUMBER'
     };
     res.status(400).json(response);
     return;
@@ -139,6 +159,7 @@ export const submitApplication = asyncHandler(async (req: Request, res: Response
 
       // Documents
       citizenshipId: filePaths.citizenshipId,
+      citizenshipBack: filePaths.citizenshipBack,
       companyRegistration: filePaths.companyRegistration,
       panVatRegistration: filePaths.panVatRegistration,
       officePhoto: filePaths.officePhoto,
@@ -148,7 +169,7 @@ export const submitApplication = asyncHandler(async (req: Request, res: Response
       declaration: applicationData.declaration.declaration,
       signature: applicationData.declaration.signature,
       date: applicationData.declaration.date,
-      
+
       // Agreement
       agreementAccepted: applicationData.agreement.agreementAccepted,
       distributorSignatureName: applicationData.agreement.distributorSignatureName,
@@ -156,20 +177,20 @@ export const submitApplication = asyncHandler(async (req: Request, res: Response
 
       // Relations
       currentTransactions: {
-        create: applicationData.currentTransactions?.filter(ct => ct.company && ct.products).map(ct => ({
+        create: applicationData.currentTransactions?.filter((ct: any) => ct.company && ct.products).map((ct: any) => ({
           company: ct.company,
           products: ct.products,
           turnover: ct.turnover
         })) || []
       },
       productsToDistribute: {
-        create: applicationData.productsToDistribute?.filter(pd => pd.productName).map(pd => ({
+        create: applicationData.productsToDistribute?.filter((pd: any) => pd.productName).map((pd: any) => ({
           productName: pd.productName,
           monthlySalesCapacity: pd.monthlySalesCapacity
         })) || []
       },
       areaCoverageDetails: {
-        create: applicationData.areaCoverageDetails?.filter(acd => acd.distributionArea).map(acd => ({
+        create: applicationData.areaCoverageDetails?.filter((acd: any) => acd.distributionArea).map((acd: any) => ({
           distributionArea: acd.distributionArea,
           populationEstimate: acd.populationEstimate,
           competitorBrand: acd.competitorBrand
@@ -587,10 +608,10 @@ export const updateApplicationStatusDev = asyncHandler(async (req: Request, res:
 // Delete application (soft delete by setting status to cancelled)
 export const deleteApplication = asyncHandler(async (req: AuthenticatedRequest | Request, res: Response): Promise<void> => {
   const authenticatedReq = req as AuthenticatedRequest;
-  
+
   // In development mode without authentication, allow deletion
   const isDev = process.env.NODE_ENV === 'development';
-  
+
   if (!isDev && !authenticatedReq.user) {
     const response: ApiResponse = {
       success: false,
@@ -621,7 +642,7 @@ export const deleteApplication = asyncHandler(async (req: AuthenticatedRequest |
 
   // Only allow deletion of pending applications (except in dev mode or for admins)
   const isAdmin = authenticatedReq.user?.role === 'ADMIN' || authenticatedReq.user?.role === 'MANAGERIAL';
-  
+
   if (existingApplication.status !== 'PENDING' && !isDev && !isAdmin) {
     const response: ApiResponse = {
       success: false,
@@ -747,7 +768,7 @@ export const getApplicationStats = asyncHandler(async (req: Request, res: Respon
 export const saveDraftApplication = asyncHandler(async (req: Request, res: Response): Promise<void> => {
   // Parse JSON data from FormData
   let applicationData: ApplicationSubmissionData;
-  
+
   try {
     if (req.body.data) {
       // Data sent as JSON string in FormData
@@ -788,7 +809,7 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       email: applicationData.personalDetails.email,
       permanentAddress: applicationData.personalDetails.permanentAddress,
       temporaryAddress: applicationData.personalDetails.temporaryAddress,
-      
+
       // Business Details
       companyName: applicationData.businessDetails.companyName,
       registrationNumber: applicationData.businessDetails.registrationNumber,
@@ -798,7 +819,7 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       desiredDistributorArea: applicationData.businessDetails.desiredDistributorArea,
       currentBusiness: applicationData.businessDetails.currentBusiness,
       businessType: applicationData.businessDetails.businessType,
-      
+
       // Staff and Infrastructure
       salesManCount: applicationData.staffInfrastructure.salesManCount,
       salesManExperience: applicationData.staffInfrastructure.salesManExperience,
@@ -820,20 +841,20 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       cycleDetails: applicationData.staffInfrastructure.cycleDetails,
       thelaCount: applicationData.staffInfrastructure.thelaCount,
       thelaDetails: applicationData.staffInfrastructure.thelaDetails,
-      
+
       // Business Information
       productCategory: applicationData.businessInformation.productCategory,
       yearsInBusiness: applicationData.businessInformation.yearsInBusiness,
       monthlySales: applicationData.businessInformation.monthlySales,
       storageFacility: applicationData.businessInformation.storageFacility,
-      
+
       // Retailer Requirements
       preferredProducts: applicationData.retailerRequirements.preferredProducts,
       monthlyOrderQuantity: applicationData.retailerRequirements.monthlyOrderQuantity,
       paymentPreference: applicationData.retailerRequirements.paymentPreference,
       creditDays: applicationData.retailerRequirements.creditDays,
       deliveryPreference: applicationData.retailerRequirements.deliveryPreference,
-      
+
       // Partnership Details (optional)
       partnerFullName: applicationData.partnershipDetails?.partnerFullName,
       partnerAge: applicationData.partnershipDetails?.partnerAge,
@@ -844,29 +865,29 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       partnerEmail: applicationData.partnershipDetails?.partnerEmail,
       partnerPermanentAddress: applicationData.partnershipDetails?.partnerPermanentAddress,
       partnerTemporaryAddress: applicationData.partnershipDetails?.partnerTemporaryAddress,
-      
+
       // Additional Information
       additionalInfo1: applicationData.additionalInformation?.additionalInfo1,
       additionalInfo2: applicationData.additionalInformation?.additionalInfo2,
       additionalInfo3: applicationData.additionalInformation?.additionalInfo3,
-      
+
       // Documents
       citizenshipId: filePaths.citizenshipId,
       companyRegistration: filePaths.companyRegistration,
       panVatRegistration: filePaths.panVatRegistration,
       officePhoto: filePaths.officePhoto,
       areaMap: filePaths.areaMap,
-      
+
       // Declaration
       declaration: applicationData.declaration.declaration,
       signature: applicationData.declaration.signature,
       date: applicationData.declaration.date,
-      
+
       // Agreement
       agreementAccepted: applicationData.agreement.agreementAccepted,
       distributorSignatureName: applicationData.agreement.distributorSignatureName,
       distributorSignatureDate: applicationData.agreement.distributorSignatureDate,
-      
+
       // Update status to DRAFT
       status: 'PENDING', // Draft applications remain in PENDING status until submitted
       updatedAt: new Date()
@@ -883,7 +904,7 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       email: applicationData.personalDetails.email,
       permanentAddress: applicationData.personalDetails.permanentAddress,
       temporaryAddress: applicationData.personalDetails.temporaryAddress,
-      
+
       // Business Details
       companyName: applicationData.businessDetails.companyName,
       registrationNumber: applicationData.businessDetails.registrationNumber,
@@ -893,7 +914,7 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       desiredDistributorArea: applicationData.businessDetails.desiredDistributorArea,
       currentBusiness: applicationData.businessDetails.currentBusiness,
       businessType: applicationData.businessDetails.businessType,
-      
+
       // Staff and Infrastructure
       salesManCount: applicationData.staffInfrastructure.salesManCount,
       salesManExperience: applicationData.staffInfrastructure.salesManExperience,
@@ -915,20 +936,20 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       cycleDetails: applicationData.staffInfrastructure.cycleDetails,
       thelaCount: applicationData.staffInfrastructure.thelaCount,
       thelaDetails: applicationData.staffInfrastructure.thelaDetails,
-      
+
       // Business Information
       productCategory: applicationData.businessInformation.productCategory,
       yearsInBusiness: applicationData.businessInformation.yearsInBusiness,
       monthlySales: applicationData.businessInformation.monthlySales,
       storageFacility: applicationData.businessInformation.storageFacility,
-      
+
       // Retailer Requirements
       preferredProducts: applicationData.retailerRequirements.preferredProducts,
       monthlyOrderQuantity: applicationData.retailerRequirements.monthlyOrderQuantity,
       paymentPreference: applicationData.retailerRequirements.paymentPreference,
       creditDays: applicationData.retailerRequirements.creditDays,
       deliveryPreference: applicationData.retailerRequirements.deliveryPreference,
-      
+
       // Partnership Details (optional)
       partnerFullName: applicationData.partnershipDetails?.partnerFullName,
       partnerAge: applicationData.partnershipDetails?.partnerAge,
@@ -939,29 +960,29 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
       partnerEmail: applicationData.partnershipDetails?.partnerEmail,
       partnerPermanentAddress: applicationData.partnershipDetails?.partnerPermanentAddress,
       partnerTemporaryAddress: applicationData.partnershipDetails?.partnerTemporaryAddress,
-      
+
       // Additional Information
       additionalInfo1: applicationData.additionalInformation?.additionalInfo1,
       additionalInfo2: applicationData.additionalInformation?.additionalInfo2,
       additionalInfo3: applicationData.additionalInformation?.additionalInfo3,
-      
+
       // Documents
       citizenshipId: filePaths.citizenshipId,
       companyRegistration: filePaths.companyRegistration,
       panVatRegistration: filePaths.panVatRegistration,
       officePhoto: filePaths.officePhoto,
       areaMap: filePaths.areaMap,
-      
+
       // Declaration
       declaration: applicationData.declaration.declaration,
       signature: applicationData.declaration.signature,
       date: applicationData.declaration.date,
-      
+
       // Agreement
       agreementAccepted: applicationData.agreement.agreementAccepted,
       distributorSignatureName: applicationData.agreement.distributorSignatureName,
       distributorSignatureDate: applicationData.agreement.distributorSignatureDate,
-      
+
       // Relations
       currentTransactions: {
         create: applicationData.currentTransactions?.filter(ct => ct.company && ct.products).map(ct => ({
@@ -1003,7 +1024,7 @@ export const saveDraftApplication = asyncHandler(async (req: Request, res: Respo
   const response: ApiResponse = {
     success: true,
     message: 'Draft application saved successfully',
-    data: { 
+    data: {
       application,
       referenceNumber // Return the reference number so user can continue later
     }

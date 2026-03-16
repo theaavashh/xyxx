@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+import { useState, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import toast, { Toaster } from 'react-hot-toast';
@@ -9,9 +10,9 @@ import Image from 'next/image';
 // Import existing context and utilities
 import { FormDataProvider } from '@/contexts/DistributorFormContext';
 import { FormData } from '@/types/formTypes';
-import { 
-  formSteps, 
-  getTodayNepaliDate 
+import {
+  formSteps,
+  getTodayNepaliDate
 } from '@/constants/form.constants';
 import { formValidationSchema } from '@/validation/form.schema';
 import { apiService } from '@/services/api.service';
@@ -29,7 +30,6 @@ import { ReviewSubmitStep } from '@/components/steps/ReviewSubmitStep';
 // Main Form Component
 function DistributorFormContent() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showReferenceInput, setShowReferenceInput] = useState(false);
 
@@ -60,19 +60,20 @@ function DistributorFormContent() {
       turnover: '',
       businessExperience: '',
       selectedStaffType: '',
-      staffQuantity: 0,
+      staffQuantity: undefined,
       selectedInfrastructureType: '',
-      infrastructureQuantity: 0,
+      infrastructureQuantity: undefined,
       agreementAccepted: false,
     }
   });
 
 
 
+
   const nextStep = async () => {
     // Validate current step
     let fieldsToValidate: string[] = [];
-    
+
     switch (currentStep) {
       case 1:
         fieldsToValidate = ['businessStructure', 'contactNumber'];
@@ -84,7 +85,7 @@ function DistributorFormContent() {
         fieldsToValidate = ['companyName', 'registrationNumber', 'panVatNumber', 'officeAddress', 'workAreaProvince', 'workAreaDistrict', 'workArea', 'desiredDistributionArea', 'panDocument', 'registrationDocument'];
         break;
       case 4:
-        fieldsToValidate = ['selectedStaffType', 'staffQuantity', 'selectedInfrastructureType', 'infrastructureQuantity'];
+        fieldsToValidate = [];
         break;
       case 5:
         fieldsToValidate = ['currentTransactions'];
@@ -105,6 +106,29 @@ function DistributorFormContent() {
         // Terms & Conditions step - validate agreement acceptance
         fieldsToValidate = ['agreementAccepted'];
         break;
+      case 9: {
+        // Review step - validate ALL required fields before submission
+        fieldsToValidate = [
+          'businessStructure', 'contactNumber',
+          'fullName', 'age', 'gender', 'citizenshipNumber', 'issuedDistrict',
+          'citizenshipFrontFile', 'citizenshipBackFile',
+          'companyName', 'registrationNumber', 'panVatNumber',
+          'officeAddress', 'workAreaProvince', 'workAreaDistrict', 'workArea',
+          'desiredDistributionArea', 'panDocument', 'registrationDocument',
+          'currentTransactions',
+          'agreementAccepted'
+        ];
+        
+        // If partnership, also validate partner fields
+        const businessStructure = watch('businessStructure');
+        if (businessStructure === 'partnership') {
+          fieldsToValidate.push(
+            'partnerFullName', 'partnerAge', 'partnerGender', 
+            'partnerCitizenshipNumber', 'partnerIssuedDistrict', 'partnerMobileNumber'
+          );
+        }
+        break;
+      }
       // Add validation for other steps as they are implemented
       default:
         fieldsToValidate = [];
@@ -112,7 +136,7 @@ function DistributorFormContent() {
 
     if (fieldsToValidate.length > 0) {
       const isValid = await trigger(fieldsToValidate as any);
-      
+
       if (!isValid) {
         toast.error(`कृपया आवश्यक फिल्डहरू भर्नुहोस्।`, {
           duration: 5000,
@@ -137,11 +161,10 @@ function DistributorFormContent() {
     }
   };
 
-  const saveDraft = async () => {
-    try {
+  const { mutate: mutateSaveDraft, isPending: isSavingDraft } = useMutation({
+    mutationFn: async () => {
       const currentFormData = watch();
-      
-      // Structure data for draft save
+
       const draftData = {
         personalDetails: {
           fullName: currentFormData.fullName || '',
@@ -170,9 +193,7 @@ function DistributorFormContent() {
         }
       };
 
-      // Save draft to API
       const response = await apiService.saveDraft(draftData, {
-        // Include any uploaded files here
         panDocument: currentFormData.panDocument || null,
         registrationDocument: currentFormData.registrationDocument || null,
         citizenshipFrontFile: currentFormData.citizenshipFrontFile || null,
@@ -181,41 +202,38 @@ function DistributorFormContent() {
         otherDocumentsFile: currentFormData.otherDocumentsFile || null,
       });
 
-      if (response.ok) {
-        toast.success('ड्राफ्ट सफलतापूर्वक सेभ भयो!');
-      } else {
-        toast.error('ड्राफ्ट सेभ गर्न असफल भयो।');
+      if (!response.ok) {
+        throw new Error('Draft save failed');
       }
-    } catch (error) {
-      console.error('Error saving draft:', error);
-      toast.error('ड्राफ्ट सेभ गर्न असफल                                                                                                                                                                                                                                                                                                     भयो। नेटवर्क त्रुटि');
+      return response;
+    },
+    onSuccess: () => {
+      toast.success('ड्राफ्ट सफलतापूर्वक सेभ भयो!');
+    },
+    onError: (error) => {
+      toast.error('ड्राफ्ट सेभ गर्न असफल भयो।');
     }
+  });
+
+  const saveDraft = () => {
+    mutateSaveDraft();
   };
 
-  const onSubmit = async (data: FormData) => {
-    console.log('onSubmit function called with data:', data);
-    console.log('Full form data from watch():', watch());
-    setIsSubmitting(true);
-    
-    try {
+  const { mutate: mutateSubmitApplication, isPending: isSubmitting } = useMutation({
+    mutationFn: async (data: FormData) => {
       const currentFormData = watch();
       
-      // Structure data for backend using the transformation method
-      const applicationData = apiService.transformFormDataForBackend(currentFormData);
-      
-      console.log('Submitting form data to backend:', applicationData);
-      console.log('Files being sent:', {
-        citizenshipFrontFile: currentFormData.citizenshipFrontFile,
-        citizenshipBackFile: currentFormData.citizenshipBackFile,
-        panDocument: currentFormData.panDocument,
-        registrationDocument: currentFormData.registrationDocument,
-        officePhotoFile: currentFormData.officePhotoFile,
-        otherDocumentsFile: currentFormData.otherDocumentsFile,
+      // Debug: Log what's being sent
+      console.log('Submitting raw form data:', currentFormData);
+      console.log('Files:', {
+        citizenshipFrontFile: currentFormData.citizenshipFrontFile ? 'Present' : 'Missing',
+        citizenshipBackFile: currentFormData.citizenshipBackFile ? 'Present' : 'Missing',
+        panDocument: currentFormData.panDocument ? 'Present' : 'Missing',
+        registrationDocument: currentFormData.registrationDocument ? 'Present' : 'Missing',
       });
 
-      // Submit to API using service
-      const response = await apiService.submitApplication(applicationData, {
-        // Include any uploaded files here
+      // submitApplication will handle the transformation
+      const response = await apiService.submitApplication(currentFormData, {
         citizenshipFrontFile: currentFormData.citizenshipFrontFile || null,
         citizenshipBackFile: currentFormData.citizenshipBackFile || null,
         panDocument: currentFormData.panDocument || null,
@@ -224,28 +242,79 @@ function DistributorFormContent() {
         otherDocumentsFile: currentFormData.otherDocumentsFile || null,
       });
 
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Application submitted successfully:', result);
-        setIsSubmitted(true);
-        toast.success('आवेदन सफलतापूर्वक पेश भयो!');
-      } else {
-        const errorText = await response.text();
-        console.error('Submission error response:', errorText);
-        console.log('Response status:', response.status);
-        toast.error('आवेदन पेश गर्न असफल भयो।');
+      if (!response.ok) {
+        let errorMessage = 'आवेदन पेश गर्न असफल भयो।';
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorData.error || JSON.stringify(errorData);
+        } catch {
+          const errorText = await response.text();
+          errorMessage = errorText || errorMessage;
+        }
+        throw new Error(errorMessage);
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast.error('आवेदन पेश गर्न असफल भयो। नेटवर्क त्रुटि');
-    } finally {
-      setIsSubmitting(false);
+      return await response.json();
+    },
+    onSuccess: (result) => {
+      setIsSubmitted(true);
+      toast.success('आवेदन सफलतापूर्वक पेश भयो!');
+    },
+    onError: (error: any) => {
+      // Show the actual error message from server
+      const errorMessage = error?.message || error?.response?.data?.message || 'आवेदन पेश गर्न असफल भयो।';
+      toast.error(errorMessage, {
+        duration: 6000,
+        style: {
+          background: '#fee2e2',
+          color: '#dc2626',
+          border: '1px solid #fecaca',
+          maxWidth: '500px',
+          wordWrap: 'break-word'
+        },
+      });
     }
+  });
+
+  const onSubmit = (data: FormData) => {
+    console.log('Form data being submitted:', data);
+    console.log('Full Name:', data.fullName);
+    console.log('Age:', data.age);
+    console.log('Gender:', data.gender);
+    mutateSubmitApplication(data);
   };
 
-  const onError = (errors: any) => { // Keeping as any since React Hook Form errors structure is complex
-    console.log('Form validation errors:', errors);
-    toast.error('कृपया सबै आवश्यक फिल्डहरू भर्नुहोस्।');
+  const onError = (errors: any) => {
+    // Get all error field names
+    const errorFields = Object.keys(errors);
+    
+    // Log errors for debugging
+    console.log('Validation errors:', errors);
+    console.log('Error fields:', errorFields);
+    
+    if (errorFields.length === 0) {
+      toast.error('कृपया सबै आवश्यक फिल्डहरू भर्नुहोस्।');
+      return;
+    }
+    
+    // Show specific field errors with their messages
+    const errorMessages = errorFields.map(field => {
+      const error = errors[field];
+      return error?.message || field;
+    }).filter(Boolean);
+    
+    // Show first few errors
+    const displayMessage = errorMessages.slice(0, 3).join(', ');
+    const remainingCount = errorMessages.length - 3;
+    
+    if (remainingCount > 0) {
+      toast.error(`${displayMessage} र अन्य ${remainingCount} ओटा फिल्डमा समस्या छ`, {
+        duration: 6000,
+      });
+    } else {
+      toast.error(`कृपया यी फिल्डहरू सच्याउनुहोस्: ${displayMessage}`, {
+        duration: 5000,
+      });
+    }
   };
 
   // Render step content based on current step
@@ -258,7 +327,7 @@ function DistributorFormContent() {
       case 3:
         return <BusinessDetailsStep control={control} errors={errors} watch={watch} setValue={setValue} />;
       case 4:
-        return <StaffInfrastructureStep control={control} errors={errors} />;
+        return <StaffInfrastructureStep control={control} errors={errors} setValue={setValue} watch={watch} />;
       case 5:
         return <ProductsPartnershipStepNew control={control} errors={errors} watch={watch} setValue={setValue} />;
       case 6:
@@ -306,43 +375,32 @@ function DistributorFormContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#fff8f4] to-[#f0f4f8]">
       <Toaster />
-      
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <Image 
-                src="/zipzip_logo.svg" 
-                alt="ZipZip Logo" 
-                width={40} 
+              <Image
+                src="/zipzip_logo.svg"
+                alt="ZipZip Logo"
+                width={40}
                 height={40}
                 className="w-10 h-10"
               />
-              <h1 className="text-xl font-bold text-[#001011] absans">वितरक आवेदन फारम</h1>
+              <h1 className="text-xl font-bold text-[#001011] absans text-center">वितरक आवेदन फारम</h1>
             </div>
-             <div className="flex items-center space-x-4">
-              <button
-                type="button"
-                onClick={saveDraft}
-                className="text-sm text-gray-600 hover:text-[#FF6B35] absans"
-              >
-                ड्राफ्ट सेभ गर्नुहोस्
-              </button>
-            </div>
+            
           </div>
         </div>
       </header>
 
-    
-     
+
+
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <form onSubmit={(e) => {
-          console.log('Form submit event triggered');
-          console.log('Current form state:', watch());
-          console.log('Form errors:', errors);
           handleSubmit(onSubmit, onError)(e);
         }}>
           {/* Form Content */}
@@ -356,11 +414,10 @@ function DistributorFormContent() {
               type="button"
               onClick={prevStep}
               disabled={currentStep === 1}
-              className={`px-6 py-3 rounded-lg font-medium absans ${
-                currentStep === 1
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
+              className={`px-6 py-3 rounded-lg font-medium absans ${currentStep === 1
+                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
             >
               पछिल्लो (Previous)
             </button>

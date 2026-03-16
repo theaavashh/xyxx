@@ -13,7 +13,7 @@ export const TermsConditionsStep = ({ control, errors }: TermsConditionsStepProp
       <div className="text-left max-w-3xl mx-auto">
         <div className="bg-gray-100 p-6 rounded-lg max-h-96 overflow-y-auto">
           <p className="text-sm text-gray-700 absans mb-4">
-            यो वितरक सम्झौता ("सम्झौता") तपाईं, वितरक ("आप") र ZipZip ("कम्पनी") बीचको कानूनी बाध्यता भएको सम्झौता हो।
+            यो वितरक सम्झौता (&quot;सम्झौता&quot;) तपाईं, वितरक (&quot;आप&quot;) र ZipZip (&quot;कम्पनी&quot;) बीचको कानूनी बाध्यता भएको सम्झौता हो।
           </p>
           <p className="text-sm text-gray-700 absans mb-4">
             १. <strong>सम्झौताको दायरा:</strong> यो सम्झौता कम्पनीको उत्पादनहरू वितरण गर्न आपको अधिकार र दायित्वहरू निर्धारित गर्दछ।

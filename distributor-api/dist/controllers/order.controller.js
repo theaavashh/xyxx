@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOrderDetails = exports.updateOrderStatus = exports.getDistributorOrders = exports.getAllOrders = exports.submitOrder = void 0;
 const client_1 = require("@prisma/client");
-const error_middleware_1 = require("@/middleware/error.middleware");
+const error_middleware_1 = require("../middleware/error.middleware");
 const prisma = new client_1.PrismaClient();
 exports.submitOrder = (0, error_middleware_1.asyncHandler)(async (req, res) => {
     const { items, notes } = req.body;

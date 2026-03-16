@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { User, AuthContextType } from '@/types';
+import { User, AuthContextType, UserRole } from '@/types';
 import { authService } from '@/lib/auth';
 import { config } from '@/lib/config';
 
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           email: email, // Use the email from login form
           firstName: username,
           lastName: '',
-          role: role as any,
+          role: role as UserRole,
           department: 'Management', // Default value
           employeeId: username,
           isActive: true,

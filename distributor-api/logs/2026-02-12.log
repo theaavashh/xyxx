@@ -1,0 +1,49 @@
+2026-02-12T03:34:20.920Z [INFO] Mailjet service initialized successfully
+2026-02-12T03:34:25.418Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-12T03:34:25.418Z [INFO] 🌍 Environment: development
+2026-02-12T03:34:25.418Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-12T03:34:25.419Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-12T03:34:25.419Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-12T03:37:39.176Z [INFO] POST /api/auth/login - 200 - 592.368ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":592.368}
+2026-02-12T04:29:25.568Z [INFO] Mailjet service initialized successfully
+2026-02-12T04:29:30.648Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-12T04:29:30.648Z [INFO] 🌍 Environment: development
+2026-02-12T04:29:30.649Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-12T04:29:30.649Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-12T04:29:30.649Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-12T04:30:55.126Z [INFO] POST /api/auth/login - 200 - 773.074ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":773.074}
+2026-02-12T04:38:14.679Z [INFO] Mailjet service initialized successfully
+2026-02-12T04:38:18.006Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-12T04:38:18.008Z [INFO] 🌍 Environment: development
+2026-02-12T04:38:18.008Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-12T04:38:18.008Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-12T04:38:18.008Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-12T04:38:18.009Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2026-02-12T06:02:41.280Z [INFO] Mailjet service initialized successfully
+2026-02-12T06:02:51.435Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-12T06:02:51.435Z [INFO] 🌍 Environment: development
+2026-02-12T06:02:51.436Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-12T06:02:51.437Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-12T06:02:51.438Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-12T06:03:14.360Z [INFO] POST /api/auth/login - 200 - 1441.261ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":1441.261}
+2026-02-12T06:05:40.117Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 200 - 1233.023ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":200,"responseTime":1233.023}
+2026-02-12T06:05:40.452Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 14.055ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":14.055}
+2026-02-12T06:05:58.387Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 15.169ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":15.169}
+2026-02-12T06:06:01.309Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 36.024ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":36.024}
+2026-02-12T06:06:12.090Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 24.964ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":24.964}
+2026-02-12T06:22:13.644Z [INFO] GET /api/production/raw-materials - 200 - 450.134ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":450.134}
+2026-02-12T06:22:13.673Z [INFO] GET /api/production/raw-materials/categories - 200 - 446.607ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":446.607}
+2026-02-12T06:22:13.716Z [INFO] GET /api/production/raw-materials/transactions - 200 - 475.027ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":200,"responseTime":475.027}
+2026-02-12T06:22:13.727Z [INFO] GET /api/production/raw-materials - 304 - 61.869ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":61.869}
+2026-02-12T06:22:13.751Z [INFO] GET /api/production/raw-materials/categories - 304 - 55.867ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":55.867}
+2026-02-12T06:22:13.781Z [INFO] GET /api/production/raw-materials/transactions - 304 - 26.493ms | Data: {"method":"GET","url":"/api/production/raw-materials/transactions","statusCode":304,"responseTime":26.493}
+2026-02-12T06:22:16.304Z [INFO] GET /api/production/wastage - 200 - 33.217ms | Data: {"method":"GET","url":"/api/production/wastage","statusCode":200,"responseTime":33.217}

@@ -1,181 +1,190 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSalesTargetStats = exports.deleteSalesTarget = exports.updateSalesTarget = exports.createSalesTarget = exports.getSalesTargets = void 0;
-const client_1 = require("@prisma/client");
+exports.addDistributor = exports.saveDistributorTargets = exports.getDistributorTargets = exports.getProductsByCategory = exports.getProductCategories = exports.getDistributors = void 0;
 const error_middleware_1 = require("../middleware/error.middleware");
-const prisma = new client_1.PrismaClient();
-exports.getSalesTargets = (0, error_middleware_1.asyncHandler)(async (req, res) => {
-    const { month, year, province } = req.query;
-    const where = {};
-    if (month)
-        where.month = month;
-    if (year)
-        where.year = parseInt(year);
-    if (province)
-        where.province = province;
-    const targets = await prisma.salesTarget.findMany({
-        where,
-        orderBy: [
-            { year: 'desc' },
-            { month: 'asc' },
-            { province: 'asc' }
-        ]
-    });
+const mockDistributors = [
+    { id: 'dist_1', name: 'Kathmandu Distributors', email: 'kathmandu@dist.com', province: 'Province 3' },
+    { id: 'dist_2', name: 'Pokhara Traders', email: 'pokhara@dist.com', province: 'Province 4' },
+    { id: 'dist_3', name: 'Biratnagar Suppliers', email: 'biratnagar@dist.com', province: 'Province 1' },
+    { id: 'dist_4', name: 'Nepal Wholesale', email: 'wholesale@dist.com', province: 'Province 2' },
+    { id: 'dist_5', name: 'Himalaya Traders', email: 'himalaya@dist.com', province: 'Province 5' }
+];
+const mockProductCategories = [
+    { id: 'achar', name: 'Achar', description: 'Traditional Nepali pickles' },
+    { id: 'dry_meat', name: 'Dry Meat', description: 'Dried meat products' },
+    { id: 'spices', name: 'Spices', description: 'Various spices and seasonings' }
+];
+const mockProducts = {
+    achar: [
+        { id: 'prod_achar_1', name: 'Buff Achar', units: '500 gm' },
+        { id: 'prod_achar_2', name: 'Pork Achar', units: '500 gm' },
+        { id: 'prod_achar_3', name: 'Chicken Achar', units: '500 gm' },
+        { id: 'prod_achar_4', name: 'Mixed Achar', units: '750 gm' }
+    ],
+    dry_meat: [
+        { id: 'prod_dry_1', name: 'Buff Sukuti', units: '500 gm' },
+        { id: 'prod_dry_2', name: 'Pork Sukuti', units: '500 gm' },
+        { id: 'prod_dry_3', name: 'Chicken Sukuti', units: '500 gm' }
+    ],
+    spices: [
+        { id: 'prod_spice_1', name: 'Turmeric Powder', units: '250 gm' },
+        { id: 'prod_spice_2', name: 'Cumin Powder', units: '250 gm' },
+        { id: 'prod_spice_3', name: 'Coriander Powder', units: '250 gm' },
+        { id: 'prod_spice_4', name: 'Chili Powder', units: '250 gm' }
+    ]
+};
+exports.getDistributors = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { province, search } = req.query;
+    let filteredDistributors = [...mockDistributors];
+    if (province && typeof province === 'string') {
+        filteredDistributors = filteredDistributors.filter(distributor => distributor.province.toLowerCase().includes(province.toLowerCase()));
+    }
+    if (search && typeof search === 'string') {
+        const searchTerm = search.toLowerCase();
+        filteredDistributors = filteredDistributors.filter(distributor => distributor.name.toLowerCase().includes(searchTerm) ||
+            distributor.email.toLowerCase().includes(searchTerm) ||
+            distributor.province.toLowerCase().includes(searchTerm));
+    }
     const response = {
         success: true,
-        message: 'Sales targets retrieved successfully',
-        data: targets
+        message: 'Distributors retrieved successfully',
+        data: {
+            distributors: filteredDistributors,
+            total: filteredDistributors.length
+        }
     };
     res.status(200).json(response);
 });
-exports.createSalesTarget = (0, error_middleware_1.asyncHandler)(async (req, res) => {
-    const { month, year, province, targetAmount } = req.body;
-    if (!month || !year || !province || !targetAmount) {
+exports.getProductCategories = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const response = {
+        success: true,
+        message: 'Product categories retrieved successfully',
+        data: mockProductCategories
+    };
+    res.status(200).json(response);
+});
+exports.getProductsByCategory = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { categoryId } = req.params;
+    const products = mockProducts[categoryId] || [];
+    const response = {
+        success: true,
+        message: 'Products retrieved successfully',
+        data: {
+            products,
+            categoryId,
+            total: products.length
+        }
+    };
+    res.status(200).json(response);
+});
+exports.getDistributorTargets = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { categoryId, month, year, distributorId } = req.query;
+    const mockTargets = mockDistributors.map(distributor => ({
+        distributorId: distributor.id,
+        distributorName: distributor.name,
+        categoryId: categoryId || 'achar',
+        month: parseInt(month) || new Date().getMonth() + 1,
+        year: parseInt(year) || new Date().getFullYear(),
+        totalTarget: Math.floor(Math.random() * 1000) + 100,
+        totalAchieved: Math.floor(Math.random() * 800) + 50,
+        items: (mockProducts[categoryId] || mockProducts.achar).map(product => ({
+            productId: product.id,
+            productName: product.name,
+            targetValue: Math.floor(Math.random() * 200) + 10,
+            achievedValue: Math.floor(Math.random() * 150) + 5
+        }))
+    }));
+    let filteredTargets = mockTargets;
+    if (distributorId && typeof distributorId === 'string') {
+        filteredTargets = filteredTargets.filter(target => target.distributorId === distributorId);
+    }
+    const response = {
+        success: true,
+        message: 'Distributor targets retrieved successfully',
+        data: {
+            targets: filteredTargets,
+            filters: {
+                categoryId,
+                month,
+                year,
+                distributorId
+            }
+        }
+    };
+    res.status(200).json(response);
+});
+exports.saveDistributorTargets = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { categoryId, month, year, targets } = req.body;
+    if (!categoryId || !month || !year || !targets || !Array.isArray(targets)) {
         const response = {
             success: false,
-            message: 'All fields are required',
-            error: 'MISSING_REQUIRED_FIELDS'
+            message: 'Missing required fields',
+            error: 'INVALID_INPUT'
         };
         res.status(400).json(response);
         return;
     }
-    const existingTarget = await prisma.salesTarget.findFirst({
-        where: {
-            month,
-            year: parseInt(year),
-            province
-        }
+    console.log('Saving distributor targets:', {
+        categoryId,
+        month,
+        year,
+        targetsCount: targets.length
     });
-    if (existingTarget) {
+    const response = {
+        success: true,
+        message: 'Distributor targets saved successfully',
+        data: {
+            categoryId,
+            month,
+            year,
+            savedTargets: targets.length
+        }
+    };
+    res.status(200).json(response);
+});
+exports.addDistributor = (0, error_middleware_1.asyncHandler)(async (req, res) => {
+    const { name, email, province } = req.body;
+    if (!name || !email || !province) {
         const response = {
             success: false,
-            message: 'Sales target already exists for this month and province',
-            error: 'TARGET_ALREADY_EXISTS'
+            message: 'Missing required fields: name, email, and province are required',
+            error: 'INVALID_INPUT'
+        };
+        res.status(400).json(response);
+        return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        const response = {
+            success: false,
+            message: 'Invalid email format',
+            error: 'INVALID_EMAIL'
+        };
+        res.status(400).json(response);
+        return;
+    }
+    const existingDistributor = mockDistributors.find(d => d.email === email);
+    if (existingDistributor) {
+        const response = {
+            success: false,
+            message: 'Distributor with this email already exists',
+            error: 'DUPLICATE_EMAIL'
         };
         res.status(409).json(response);
         return;
     }
-    const target = await prisma.salesTarget.create({
-        data: {
-            month,
-            year: parseInt(year),
-            province,
-            targetAmount: parseFloat(targetAmount),
-            createdBy: req.user?.id || 'system'
-        }
-    });
+    const newDistributor = {
+        id: `dist_${Date.now()}`,
+        name,
+        email,
+        province
+    };
+    mockDistributors.push(newDistributor);
     const response = {
         success: true,
-        message: 'Sales target created successfully',
-        data: target
+        message: 'Distributor added successfully',
+        data: newDistributor
     };
     res.status(201).json(response);
-});
-exports.updateSalesTarget = (0, error_middleware_1.asyncHandler)(async (req, res) => {
-    const { id } = req.params;
-    const { month, year, province, targetAmount } = req.body;
-    const existingTarget = await prisma.salesTarget.findUnique({
-        where: { id }
-    });
-    if (!existingTarget) {
-        const response = {
-            success: false,
-            message: 'Sales target not found',
-            error: 'TARGET_NOT_FOUND'
-        };
-        res.status(404).json(response);
-        return;
-    }
-    if (month && year && province) {
-        const duplicateTarget = await prisma.salesTarget.findFirst({
-            where: {
-                month,
-                year: parseInt(year),
-                province,
-                id: { not: id }
-            }
-        });
-        if (duplicateTarget) {
-            const response = {
-                success: false,
-                message: 'Another sales target already exists for this month and province',
-                error: 'DUPLICATE_TARGET'
-            };
-            res.status(409).json(response);
-            return;
-        }
-    }
-    const updateData = {};
-    if (month)
-        updateData.month = month;
-    if (year)
-        updateData.year = parseInt(year);
-    if (province)
-        updateData.province = province;
-    if (targetAmount)
-        updateData.targetAmount = parseFloat(targetAmount);
-    const target = await prisma.salesTarget.update({
-        where: { id },
-        data: updateData
-    });
-    const response = {
-        success: true,
-        message: 'Sales target updated successfully',
-        data: target
-    };
-    res.status(200).json(response);
-});
-exports.deleteSalesTarget = (0, error_middleware_1.asyncHandler)(async (req, res) => {
-    const { id } = req.params;
-    const existingTarget = await prisma.salesTarget.findUnique({
-        where: { id }
-    });
-    if (!existingTarget) {
-        const response = {
-            success: false,
-            message: 'Sales target not found',
-            error: 'TARGET_NOT_FOUND'
-        };
-        res.status(404).json(response);
-        return;
-    }
-    await prisma.salesTarget.delete({
-        where: { id }
-    });
-    const response = {
-        success: true,
-        message: 'Sales target deleted successfully'
-    };
-    res.status(200).json(response);
-});
-exports.getSalesTargetStats = (0, error_middleware_1.asyncHandler)(async (req, res) => {
-    const { year } = req.query;
-    const where = {};
-    if (year)
-        where.year = parseInt(year);
-    const [totalTargets, totalAmount, provinceCount] = await Promise.all([
-        prisma.salesTarget.count({ where }),
-        prisma.salesTarget.aggregate({
-            where,
-            _sum: { targetAmount: true }
-        }),
-        prisma.salesTarget.groupBy({
-            by: ['province'],
-            where,
-            _count: { province: true }
-        })
-    ]);
-    const stats = {
-        totalTargets,
-        totalAmount: totalAmount._sum.targetAmount || 0,
-        uniqueProvinces: provinceCount.length,
-        averageTarget: totalTargets > 0 ? (totalAmount._sum.targetAmount || 0) / totalTargets : 0
-    };
-    const response = {
-        success: true,
-        message: 'Sales target statistics retrieved successfully',
-        data: stats
-    };
-    res.status(200).json(response);
 });
 //# sourceMappingURL=salesTargets.controller.js.map

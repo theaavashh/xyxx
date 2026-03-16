@@ -1,11 +1,21 @@
-import { Category } from '../types/form.types';
+import { Category } from '../types/formTypes';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4444/api';
 
 export const apiService = {
   // Transform frontend form data to backend schema
   transformFormDataForBackend(applicationData: any) { // Using any since the transformation involves complex mapping
-    return {
+    console.log('Transforming application data:', applicationData);
+    console.log('fullName value:', applicationData.fullName);
+    console.log('personalDetails before:', {
+      fullName: applicationData.fullName,
+      age: applicationData.age,
+      gender: applicationData.gender,
+      citizenshipNumber: applicationData.citizenshipNumber,
+      issuedDistrict: applicationData.issuedDistrict,
+    });
+    
+    const transformed = {
       personalDetails: {
         fullName: applicationData.fullName || '',
         age: applicationData.age ? parseInt(applicationData.age) : 18,
@@ -92,6 +102,11 @@ export const apiService = {
         distributorSignatureDate: applicationData.distributorSignatureDate || '',
       }
     };
+    
+    console.log('Transformed data:', transformed);
+    console.log('personalDetails.fullName:', transformed.personalDetails.fullName);
+    
+    return transformed;
   },
 
   // Submit application
@@ -103,49 +118,65 @@ export const apiService = {
     formData.append('data', JSON.stringify(transformedData));
 
     // Add files if they exist
-    if (files.citizenshipFrontFile) {
+    if (files && files.citizenshipFrontFile) {
       const file = files.citizenshipFrontFile instanceof FileList
         ? files.citizenshipFrontFile[0]
         : files.citizenshipFrontFile;
       if (file) formData.append('citizenshipId', file);
     }
-    if (files.citizenshipBackFile) {
+    if (files && files.citizenshipBackFile) {
       const file = files.citizenshipBackFile instanceof FileList
         ? files.citizenshipBackFile[0]
         : files.citizenshipBackFile;
       if (file) formData.append('citizenshipBack', file);
     }
-    if (files.panDocument) {
+    if (files && files.panDocument) {
       const file = files.panDocument instanceof FileList
         ? files.panDocument[0]
         : files.panDocument;
       if (file) formData.append('panVatRegistration', file);
     }
-    if (files.registrationDocument) {
+    if (files && files.registrationDocument) {
       const file = files.registrationDocument instanceof FileList
         ? files.registrationDocument[0]
         : files.registrationDocument;
       if (file) formData.append('companyRegistration', file);
     }
-    if (files.officePhotoFile) {
+    if (files && files.officePhotoFile) {
       const file = files.officePhotoFile instanceof FileList
         ? files.officePhotoFile[0]
         : files.officePhotoFile;
       if (file) formData.append('officePhoto', file);
     }
-    if (files.otherDocumentsFile) {
+    if (files && files.otherDocumentsFile) {
       const file = files.otherDocumentsFile instanceof FileList
         ? files.otherDocumentsFile[0]
         : files.otherDocumentsFile;
       if (file) formData.append('areaMap', file);
     }
 
-    const response = await fetch(`${API_URL}/applications/submit`, {
-      method: 'POST',
-      body: formData,
-    });
+    try {
+      const response = await fetch(`${API_URL}/applications/submit`, {
+        method: 'POST',
+        body: formData,
+      });
 
-    return response;
+      if (!response.ok) {
+        let errorMessage = 'Server error';
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message || errorData.error || `HTTP ${response.status}: ${response.statusText}`;
+        } catch {
+          errorMessage = await response.text() || `HTTP ${response.status}: ${response.statusText}`;
+        }
+        throw new Error(errorMessage);
+      }
+
+      return response;
+    } catch (error) {
+      console.error('API Error:', error);
+      throw error;
+    }
   },
 
   // Save draft application
@@ -157,39 +188,39 @@ export const apiService = {
     formData.append('data', JSON.stringify(transformedData));
 
     // Add document files if they exist
-    if (files.panDocument) {
+    if (files && files.panDocument) {
       const file = files.panDocument instanceof FileList
         ? files.panDocument[0]
         : files.panDocument;
       if (file) formData.append('panVatRegistration', file);
     }
     
-    if (files.registrationDocument) {
+    if (files && files.registrationDocument) {
       const file = files.registrationDocument instanceof FileList
         ? files.registrationDocument[0]
         : files.registrationDocument;
       if (file) formData.append('companyRegistration', file);
     }
     
-    if (files.citizenshipFrontFile) {
+    if (files && files.citizenshipFrontFile) {
       const file = files.citizenshipFrontFile instanceof FileList
         ? files.citizenshipFrontFile[0]
         : files.citizenshipFrontFile;
       if (file) formData.append('citizenshipId', file);
     }
-    if (files.citizenshipBackFile) {
+    if (files && files.citizenshipBackFile) {
       const file = files.citizenshipBackFile instanceof FileList
         ? files.citizenshipBackFile[0]
         : files.citizenshipBackFile;
       if (file) formData.append('citizenshipBack', file);
     }
-    if (files.officePhotoFile) {
+    if (files && files.officePhotoFile) {
       const file = files.officePhotoFile instanceof FileList
         ? files.officePhotoFile[0]
         : files.officePhotoFile;
       if (file) formData.append('officePhoto', file);
     }
-    if (files.otherDocumentsFile) {
+    if (files && files.otherDocumentsFile) {
       const file = files.otherDocumentsFile instanceof FileList
         ? files.otherDocumentsFile[0]
         : files.otherDocumentsFile;

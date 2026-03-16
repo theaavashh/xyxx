@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormData } from '@/types/form.types';
+import { FormData } from '@/types/formTypes';
 
 interface NavigationButtonsProps {
   currentStep: number;

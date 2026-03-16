@@ -1170,3 +1170,125 @@ export interface PaymentConfig {
   createdAt: Date;
   updatedAt: Date;
 }
+
+// Raw Material Wastage Types
+export interface RawMaterialWastage {
+  id: string;
+  materialId: string;
+  quantity: number;
+  unit: string;
+  unitCost: number;
+  totalCost: number;
+  reason: string;
+  notes?: string;
+  batchNumber?: string;
+  location?: string;
+  wastageDate: string;
+  createdBy: string;
+  createdByName: string;
+  createdAt: string;
+  updatedAt: string;
+  material: {
+    materialName: string;
+    materialCode: string;
+    category?: {
+      name: string;
+    };
+  };
+}
+
+export interface RawMaterialWastageForm {
+  materialId: string;
+  quantity: number;
+  reason: string;
+  notes?: string;
+  batchNumber?: string;
+  location?: string;
+  wastageDate?: string;
+}
+
+export interface WastageSummary {
+  totalWastageQuantity: number;
+  totalWastageCost: number;
+  totalEntries: number;
+  byMaterial: Record<string, {
+    materialName: string;
+    materialCode: string;
+    totalQuantity: number;
+    totalCost: number;
+    entries: number;
+  }>;
+  byReason: Record<string, {
+    quantity: number;
+    cost: number;
+    entries: number;
+  }>;
+  byCategory: Record<string, {
+    quantity: number;
+    cost: number;
+    entries: number;
+  }>;
+}
+
+// Product SKU Management
+export interface ProductSKU {
+  id: string;
+  sku: string;
+  productId: string;
+  product?: {
+    id: string;
+    name: string;
+    category?: {
+      id: string;
+      title: string;
+    };
+  };
+  variantName: string;
+  attributes: SKUAttribute[];
+  price: number;
+  costPrice: number;
+  stockQuantity: number;
+  minStockLevel: number;
+  maxStockLevel: number;
+  barcode?: string;
+  weight?: number;
+  dimensions?: {
+    length: number;
+    width: number;
+    height: number;
+  };
+  isActive: boolean;
+  images?: string[];
+  notes?: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface SKUAttribute {
+  id?: string;
+  name: string;
+  value: string;
+}
+
+export interface ProductSKUForm {
+  sku: string;
+  productId: string;
+  productName: string;
+  variantName: string;
+  attributes: SKUAttribute[];
+  price: number;
+  costPrice: number;
+  stockQuantity: number;
+  minStockLevel: number;
+  maxStockLevel: number;
+  barcode?: string;
+  weight?: number;
+  dimensions?: {
+    length: number;
+    width: number;
+    height: number;
+  };
+  isActive: boolean;
+  images?: string[];
+  notes?: string;
+}

@@ -41,7 +41,7 @@ export const ThankYouMessage = ({
                 <strong>अगाडि के हुन्छ?</strong> हामी तपाईंको आवेदनको समीक्षा गर्नेछौं र तपाईंको व्यापारिक स्थिति अनुसार फिर्ता सम्पर्क गर्नेछौं।
               </p>
               <p className="text-xs text-blue-700 mt-2">
-                <strong>What's next?</strong> We will review your application and contact you back based on your business status.
+                <strong>What&apos;s next?</strong> We will review your application and contact you back based on your business status.
               </p>
             </div>
           </div>

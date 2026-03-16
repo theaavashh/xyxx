@@ -5,6 +5,17 @@
   --foreground: #171717;
 }
 
+@font-face {
+  font-family: 'title-regular';
+  src: url('/fonts/title-regular.f7f2da3f7d1f78b3f788.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title-regular {
+  font-family: 'title-regular', sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,6 +33,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   font-size: 1.125rem;
 }

@@ -2,7 +2,7 @@
 
 import { Control, Controller } from 'react-hook-form';
 
-import { FormData } from '@/types/form.types';
+import { FormData } from '@/types/formTypes';
 
 interface FileUploadProps {
   name: keyof FormData;

@@ -254,7 +254,7 @@ export default function AccountingDemo() {
               A reusable component that provides search, filtering, and selection functionality for parties.
             </p>
             <div className="bg-gray-100 rounded-lg p-3 font-mono text-sm">
-              <code>&lt;PartyAutoComplete type="customer" onChange={handleChange} /&gt;</code>
+              <code>&lt;PartyAutoComplete type=&quot;customer&quot; onChange={handleChange} /&gt;</code>
             </div>
           </div>
           

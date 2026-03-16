@@ -1,4 +1,4 @@
-import { FormStep } from '../types/form.types';
+import { FormStep } from '../types/formTypes';
 
 // Nepali date conversion function
 export const convertToNepaliDate = (englishDate: Date): string => {

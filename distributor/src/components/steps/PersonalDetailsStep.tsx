@@ -142,7 +142,7 @@ export const PersonalDetailsStep = ({ control, errors, setValue, watch }: Person
                   className={`w-full px-6 py-4 border rounded-lg focus:ring-0 focus:border-gray-400 focus:bg-gray-100 focus:outline-none text-[#001011] placeholder-[#001011] absans ${
                     errors.email ? 'border-red-300' : field.value ? 'border-orange-400' : 'border-gray-300'
                   }`}
-                  placeholder="you@example.com"
+                  placeholder="distributor@email.com"
                 />
               )}
             />

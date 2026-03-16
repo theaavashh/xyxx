@@ -15,10 +15,12 @@ const ensureDirectoryExists = (dirPath: string): void => {
 const storage = multer.diskStorage({
   destination: (req: Request, file: Express.Multer.File, cb) => {
     let uploadPath = 'uploads/documents';
-    
+
     // Determine upload path based on field name
     switch (file.fieldname) {
       case 'citizenshipId':
+      case 'citizenshipBack':
+      case 'companyRegistration':
       case 'companyRegistration':
       case 'panVatRegistration':
         uploadPath = 'uploads/documents';
@@ -33,18 +35,18 @@ const storage = multer.diskStorage({
       default:
         uploadPath = 'uploads/misc';
     }
-    
+
     ensureDirectoryExists(uploadPath);
     cb(null, uploadPath);
   },
-  
+
   filename: (req: Request, file: Express.Multer.File, cb) => {
     // Generate unique filename
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
     const extension = path.extname(file.originalname);
     const baseName = path.basename(file.originalname, extension);
     const sanitizedBaseName = baseName.replace(/[^a-zA-Z0-9]/g, '_');
-    
+
     cb(null, `${file.fieldname}-${sanitizedBaseName}-${uniqueSuffix}${extension}`);
   }
 });
@@ -53,17 +55,18 @@ const storage = multer.diskStorage({
 const fileFilter = (req: Request, file: Express.Multer.File, cb: multer.FileFilterCallback): void => {
   // Define allowed file types for each field
   const allowedTypes: Record<string, string[]> = {
-    citizenshipId: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-    companyRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-    panVatRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-    officePhoto: ['image/jpeg', 'image/jpg', 'image/png'],
-    areaMap: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'],
-    digitalSignature: ['image/png', 'image/jpeg', 'image/jpg'], // Digital signature files
-    documents: ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'] // Allow generic documents
+    citizenshipId: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+    citizenshipBack: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+    companyRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+    panVatRegistration: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+    officePhoto: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif'],
+    areaMap: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'],
+    digitalSignature: ['image/png', 'image/jpeg', 'image/jpg', 'image/avif'], // Digital signature files
+    documents: ['image/jpeg', 'image/jpg', 'image/png', 'image/avif', 'application/pdf'] // Allow generic documents
   };
 
   const fieldAllowedTypes = allowedTypes[file.fieldname];
-  
+
   if (!fieldAllowedTypes) {
     cb(new Error(`अनुमति नभएको फिल्ड: ${file.fieldname}`));
     return;
@@ -83,13 +86,14 @@ const upload = multer({
   fileFilter,
   limits: {
     fileSize: parseInt(process.env.MAX_FILE_SIZE || '5242880'), // 5MB default
-    files: 5 // Maximum 5 files
+    files: 10 // Maximum 10 files
   }
 });
 
 // Middleware for distributor application document uploads
 export const uploadDocuments = upload.fields([
   { name: 'citizenshipId', maxCount: 1 },
+  { name: 'citizenshipBack', maxCount: 1 },
   { name: 'companyRegistration', maxCount: 1 },
   { name: 'panVatRegistration', maxCount: 1 },
   { name: 'officePhoto', maxCount: 1 },
@@ -102,13 +106,13 @@ export const uploadDocuments = upload.fields([
 export const uploadSingle = (fieldName: string) => upload.single(fieldName);
 
 // Middleware for multiple files upload
-export const uploadMultiple = (fieldName: string, maxCount: number = 5) => 
+export const uploadMultiple = (fieldName: string, maxCount: number = 5) =>
   upload.array(fieldName, maxCount);
 
 // Helper function to get file paths from multer files
 export const getFilePaths = (files: { [fieldname: string]: Express.Multer.File[] } | Express.Multer.File[]): Record<string, string> => {
   const filePaths: Record<string, string> = {};
-  
+
   if (Array.isArray(files)) {
     // Handle array of files (from upload.array())
     files.forEach((file, index) => {
@@ -123,7 +127,7 @@ export const getFilePaths = (files: { [fieldname: string]: Express.Multer.File[]
       }
     });
   }
-  
+
   return filePaths;
 };
 

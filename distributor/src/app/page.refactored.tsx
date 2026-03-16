@@ -260,7 +260,7 @@ function DistributorFormContent() {
       case 3:
         return <BusinessDetailsStep control={control} errors={errors} watch={watch} setValue={setValue} />;
       case 4:
-        return <StaffInfrastructureStep control={control} errors={errors} />;
+        return <StaffInfrastructureStep control={control} errors={errors} setValue={setValue} watch={watch} />;
       case 5:
         return <ProductsPartnershipStepNew control={control} errors={errors} watch={watch} setValue={setValue} />;
       case 6:

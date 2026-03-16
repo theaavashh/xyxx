@@ -36,6 +36,11 @@ import SalesReturn from '@/components/SalesReturn';
 import Invoice from '@/components/Invoice';
 import DistributorSalesViewer from '@/components/DistributorSalesViewer';
 import SalesTargets from '@/components/SalesTargets';
+import TargetReport from '@/components/TargetReport';
+import ProductionChart from '@/components/ProductionChart';
+import ProductionChartTable from '@/components/ProductionChartTable';
+import ProductionAnalytics from '@/components/ProductionAnalytics';
+import SKUManagement from '@/components/SKUManagement';
 
 // Placeholder components for modules not yet implemented
 function VATBillsComponent() {
@@ -144,6 +149,9 @@ export default function DashboardPage() {
       case 'products':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
           <ProductManagement /> : <div>Access Denied</div>;
+      case 'product-skus':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+          <SKUManagement /> : <div>Access Denied</div>;
       
       // Accounting role components
       case 'accounting':
@@ -163,6 +171,12 @@ export default function DashboardPage() {
       case 'production-planning':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
           <ProductionPlanning /> : <div>Access Denied</div>;
+      case 'production-chart':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+          <ProductionChartTable /> : <div>Access Denied</div>;
+      case 'production-analytics':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL') ? 
+          <ProductionAnalytics /> : <div>Access Denied</div>;
       case 'configuration':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
           <ConfigurationManagement /> : <div>Access Denied</div>;
@@ -216,6 +230,9 @@ export default function DashboardPage() {
       case 'sales-targets':
         return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
           <SalesTargets /> : <div>Access Denied</div>;
+      case 'target-report':
+        return (user.role === 'ADMIN' || user.role === 'MANAGERIAL' || user.role === 'SALES_MANAGER') ? 
+          <TargetReport /> : <div>Access Denied</div>;
       
       default:
         return <Dashboard />;

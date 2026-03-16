@@ -39,6 +39,7 @@ model User {
   assignedCategories   DistributorCategory[]
   salesData           SalesData[]
   orders              Order[]
+  distributorTargets  DistributorTarget[]
 
   @@map("users")
 }
@@ -125,6 +126,7 @@ model DistributorApplication {
 
   // Documents (file paths)
   citizenshipId       String?
+  citizenshipBack     String?
   companyRegistration String?
   panVatRegistration  String?
   officePhoto         String?
@@ -343,8 +345,36 @@ model Product {
   // Relations
   category       Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   categoryId     String
+  skus           ProductSKU[]
   
   @@map("products")
+}
+
+// Product SKU (Stock Keeping Unit) for product variants
+model ProductSKU {
+  id             String   @id @default(cuid())
+  sku            String   @unique // Unique SKU code
+  productId      String
+  product        Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  variantName    String   // e.g., "500gm", "Red - Large"
+  attributes     String?  // JSON string for variant attributes [{"name": "Size", "value": "500gm"}]
+  price          Decimal  @db.Decimal(10, 2) // Selling price
+  costPrice      Decimal  @db.Decimal(10, 2) // Cost price
+  stockQuantity  Int      @default(0)
+  minStockLevel  Int      @default(0)
+  maxStockLevel  Int      @default(0)
+  barcode        String?  // Barcode/UPC
+  weight         Float?   // Weight in kg
+  dimensions     String?  // JSON string for dimensions
+  isActive       Boolean  @default(true)
+  images         String?  // JSON array of image paths
+  notes          String?  // Additional notes
+  
+  // Timestamps
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  
+  @@map("product_skus")
 }
 
 enum ProductStatus {
@@ -590,6 +620,7 @@ model RawMaterial {
   category        RawMaterialCategory @relation(fields: [categoryId], references: [id])
   transactions    RawMaterialTransaction[]
   materialUsage   ProductionMaterialUsage[]
+  wastageEntries  RawMaterialWastage[]
   
   @@map("raw_materials")
 }
@@ -613,6 +644,30 @@ model RawMaterialTransaction {
   material        RawMaterial @relation(fields: [materialId], references: [id], onDelete: Cascade)
   
   @@map("raw_material_transactions")
+}
+
+// Raw Material Wastage - For admin to allocate wastage from raw materials
+model RawMaterialWastage {
+  id              String   @id @default(cuid())
+  materialId      String
+  quantity        Float    // Amount wasted
+  unit            String   // Unit of measurement
+  unitCost        Decimal  @db.Decimal(10, 2)  // Cost per unit at time of wastage
+  totalCost       Decimal  @db.Decimal(10, 2)  // Total cost of wastage
+  reason          String   // Reason for wastage (expired, damaged, spoilage, etc.)
+  notes           String?  // Additional notes
+  batchNumber     String?  // Batch number if applicable
+  location        String?  // Storage location
+  wastageDate     DateTime @default(now())
+  createdBy       String   // Admin user ID who created the entry
+  createdByName   String   // Admin user name
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  material        RawMaterial @relation(fields: [materialId], references: [id], onDelete: Cascade)
+  
+  @@map("raw_material_wastage")
 }
 
 // Work Center
@@ -1080,4 +1135,162 @@ model PaymentConfig {
   updatedAt           DateTime @updatedAt
   
   @@map("payment_configs")
+}
+
+// Production Chart Model
+model ProductionChart {
+  id          String   @id @default(cuid())
+  date        DateTime
+  dayOfWeek   String
+  notes       String?
+  createdBy   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  ingredients ProductionChartIngredient[]
+  outputs     ProductionChartOutput[]
+  subCharts   ProductionSubChart[]
+  
+  @@map("production_charts")
+}
+
+model ProductionChartIngredient {
+  id              String   @id @default(cuid())
+  productionChartId String
+  name            String
+  quantity        Float
+  unit            String
+  category        String?
+  
+  // Relations
+  productionChart ProductionChart @relation(fields: [productionChartId], references: [id], onDelete: Cascade)
+  subCharts       ProductionSubChart[]
+  
+  @@map("production_chart_ingredients")
+}
+
+model ProductionChartOutput {
+  id              String   @id @default(cuid())
+  productionChartId String
+  productName     String
+  quantity        Float
+  unit            String
+  batchNumber     String?
+  
+  // Relations
+  productionChart ProductionChart @relation(fields: [productionChartId], references: [id], onDelete: Cascade)
+  
+  @@map("production_chart_outputs")
+}
+
+model ProductionSubChart {
+  id                String   @id @default(cuid())
+  productionChartId String
+  ingredientId      String
+  ingredientName    String
+  notes             String?
+  
+  // Relations
+  productionChart   ProductionChart @relation(fields: [productionChartId], references: [id], onDelete: Cascade)
+  ingredient        ProductionChartIngredient @relation(fields: [ingredientId], references: [id], onDelete: Cascade)
+  outputs           ProductionSubChartOutput[]
+  
+  @@map("production_sub_charts")
+}
+
+model ProductionSubChartOutput {
+  id              String   @id @default(cuid())
+  subChartId      String
+  productName     String
+  quantity        Float
+  unit            String
+  batchNumber     String?
+  
+  // Relations
+  subChart        ProductionSubChart @relation(fields: [subChartId], references: [id], onDelete: Cascade)
+  
+  @@map("production_sub_chart_outputs")
+}
+
+// Distributor Target Management Models
+
+// Product Category for target assignment
+model ProductCategory {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  products    ProductTarget[]
+  distributorTargets DistributorTarget[]
+  
+  @@map("product_categories")
+}
+
+// Product for target assignment
+model ProductTarget {
+  id          String   @id @default(cuid())
+  name        String
+  units       String
+  description String?
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  categoryId  String
+  category    ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  targetItems DistributorTargetItem[]
+  
+  @@unique([categoryId, name])
+  @@map("product_targets")
+}
+
+// Distributor Target assignment
+model DistributorTarget {
+  id              String   @id @default(cuid())
+  distributorId   String
+  distributorName String
+  categoryId      String
+  month           Int
+  year            Int
+  totalTarget     Int      @default(0)
+  totalAchieved   Int      @default(0)
+  status          String   @default("ACTIVE") // ACTIVE, INACTIVE, COMPLETED
+  notes           String?
+  createdBy       String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  distributor     User     @relation(fields: [distributorId], references: [id], onDelete: Cascade)
+  category        ProductCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  items           DistributorTargetItem[]
+  
+  @@unique([distributorId, categoryId, month, year])
+  @@map("distributor_targets")
+}
+
+// Individual product target for a distributor
+model DistributorTargetItem {
+  id              String   @id @default(cuid())
+  targetId        String
+  productId       String
+  targetValue     Int      @default(0)
+  achievedValue   Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  target          DistributorTarget @relation(fields: [targetId], references: [id], onDelete: Cascade)
+  product         ProductTarget @relation(fields: [productId], references: [id], onDelete: Cascade)
+  
+  @@unique([targetId, productId])
+  @@map("distributor_target_items")
 }

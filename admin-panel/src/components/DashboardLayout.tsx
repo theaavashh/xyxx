@@ -31,7 +31,10 @@ import {
   ChevronDown,
   Key,
   Bell,
-  Target
+  Target,
+  TrendingUp as ChartIcon,
+  BarChart2,
+  Tag
 } from 'lucide-react';
 import { getRoleDisplayName } from '@/lib/utils';
 import Breadcrumb, { getBreadcrumbItems } from './Breadcrumb';
@@ -84,6 +87,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'approved-distributors', label: 'Approved Distributors', icon: UserCheck },
         { id: 'categories', label: 'Categories', icon: FolderOpen },
         { id: 'products', label: 'Products', icon: Package },
+        { id: 'product-skus', label: 'Product SKUs', icon: Tag },
         { id: 'orders', label: 'All Orders', icon: ShoppingCart },
         { id: 'accounting', label: 'Accounting Dashboard', icon: Calculator },
         { id: 'journal', label: 'Journal Entries', icon: BookOpen },
@@ -103,6 +107,8 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'raw-materials', label: 'Raw Materials', icon: Package },
         { id: 'production-records', label: 'Production Records', icon: ClipboardList },
         { id: 'production-planning', label: 'Production Planning', icon: Factory },
+        { id: 'production-chart', label: 'Production Chart', icon: ChartIcon },
+        { id: 'production-analytics', label: 'Production Analytics', icon: BarChart2 },
         { id: 'employees', label: 'Employee Management', icon: Users },
         { id: 'configuration', label: 'Configuration', icon: Settings },
       ],
@@ -111,6 +117,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'approved-distributors', label: 'Approved Distributors', icon: UserCheck },
         { id: 'categories', label: 'Categories', icon: FolderOpen },
         { id: 'products', label: 'Products', icon: Package },
+        { id: 'product-skus', label: 'Product SKUs', icon: Tag },
         { id: 'orders', label: 'All Orders', icon: ShoppingCart },
         { id: 'accounting', label: 'Accounting Dashboard', icon: Calculator },
         { id: 'journal', label: 'Journal Entries', icon: BookOpen },
@@ -130,6 +137,8 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'raw-materials', label: 'Raw Materials', icon: Package },
         { id: 'production-records', label: 'Production Records', icon: ClipboardList },
         { id: 'production-planning', label: 'Production Planning', icon: Factory },
+        { id: 'production-chart', label: 'Production Chart', icon: ChartIcon },
+        { id: 'production-analytics', label: 'Production Analytics', icon: BarChart2 },
         { id: 'employees', label: 'Employee Management', icon: Users },
         { id: 'configuration', label: 'Configuration', icon: Settings },
       ],
@@ -139,6 +148,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
         { id: 'approved-distributors', label: 'Approved Distributors', icon: UserCheck },
         { id: 'distributor-sales', label: 'Distributor Sales', icon: TrendingUp },
         { id: 'sales-targets', label: 'Sales Targets', icon: Target },
+        { id: 'target-report', label: 'Target Report', icon: BarChart3 },
         { id: 'categories', label: 'Categories', icon: FolderOpen },
         { id: 'products', label: 'Products', icon: Package },
         { id: 'create-distributor', label: 'Create Distributor', icon: UserPlus },
@@ -319,6 +329,7 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                   '/raw-materials': 'raw-materials',
                   '/production-records': 'production-records',
                   '/production-planning': 'production-planning',
+                  '/production-chart': 'production-chart',
                   '/configuration': 'configuration',
                   '/distributor-sales': 'distributor-sales',
                   '/reports': 'reports'
@@ -401,13 +412,13 @@ export default function DashboardLayout({ children, activeTab, onTabChange }: Da
                 >
                   <div className="text-right hidden md:block">
                     <p className="text-sm font-medium text-black">
-                      {user?.fullName || `${user?.firstName || ''} ${user?.lastName || ''}`}
+                      {`${user?.firstName || ''} ${user?.lastName || ''}`.trim() || 'User'}
                     </p>
                     <p className="text-xs text-black">{getRoleDisplayName(user?.role || '')}</p>
                   </div>
                   <div className="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
                     <span className="text-indigo-600 font-semibold text-sm">
-                      {(user?.fullName?.[0] || user?.firstName?.[0] || 'U')}{(user?.fullName?.split(' ')[1]?.[0] || user?.lastName?.[0] || '')}
+                      {(user?.firstName?.[0] || 'U')}{(user?.lastName?.[0] || '')}
                     </span>
                   </div>
                   <ChevronDown className="h-4 w-4 text-black" />

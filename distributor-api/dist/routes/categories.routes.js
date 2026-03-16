@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const categories_controller_1 = require("@/controllers/categories.controller");
-const categories_schema_1 = require("@/schemas/categories.schema");
-const validation_middleware_1 = require("@/middleware/validation.middleware");
-const auth_middleware_1 = require("@/middleware/auth.middleware");
-const rate_limit_middleware_1 = require("@/middleware/rate-limit.middleware");
+const categories_controller_1 = require("../controllers/categories.controller");
+const categories_schema_1 = require("../schemas/categories.schema");
+const validation_middleware_1 = require("../middleware/validation.middleware");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const rate_limit_middleware_1 = require("../middleware/rate-limit.middleware");
 const router = (0, express_1.Router)();
 if (process.env.NODE_ENV === 'development') {
     router.post('/dev', rate_limit_middleware_1.applicationLimiter, validation_middleware_1.sanitizeInput, (0, validation_middleware_1.validate)(categories_schema_1.CreateCategorySchema), categories_controller_1.createCategory);

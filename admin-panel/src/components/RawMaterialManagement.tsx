@@ -18,13 +18,17 @@ import {
   BarChart3,
   RefreshCw,
   Download,
-  Upload
+  Upload,
+  Trash,
+  AlertCircle
 } from 'lucide-react';
 import { 
   RawMaterial, 
   RawMaterialCategory, 
   RawMaterialTransaction, 
-  RawMaterialForm 
+  RawMaterialForm,
+  RawMaterialWastage,
+  RawMaterialWastageForm
 } from '@/types';
 import { formatDate, formatCurrency } from '@/lib/utils';
 import { productionService } from '@/services/production.service';
@@ -56,6 +60,21 @@ export default function RawMaterialManagement() {
     supplierId: '',
     location: '',
     shelfLife: 0
+  });
+
+  // Wastage management state
+  const [showWastageModal, setShowWastageModal] = useState(false);
+  const [showWastageListModal, setShowWastageListModal] = useState(false);
+  const [wastageEntries, setWastageEntries] = useState<RawMaterialWastage[]>([]);
+  const [wastageReasons, setWastageReasons] = useState<string[]>([]);
+  const [wastageFormData, setWastageFormData] = useState<RawMaterialWastageForm>({
+    materialId: '',
+    quantity: 0,
+    reason: '',
+    notes: '',
+    batchNumber: '',
+    location: '',
+    wastageDate: new Date().toISOString().split('T')[0]
   });
 
   // Load data on component mount
@@ -205,6 +224,75 @@ export default function RawMaterialManagement() {
     setShowTransactionModal(true);
   };
 
+  const handleOpenWastageModal = (material: RawMaterial) => {
+    setSelectedMaterial(material);
+    setWastageFormData({
+      materialId: material.id,
+      quantity: 0,
+      reason: '',
+      notes: '',
+      batchNumber: material.batchNumber || '',
+      location: material.location || '',
+      wastageDate: new Date().toISOString().split('T')[0]
+    });
+    loadWastageReasons();
+    setShowWastageModal(true);
+  };
+
+  const loadWastageReasons = async () => {
+    try {
+      const data = await productionService.getWastageReasons();
+      setWastageReasons(data.reasons);
+    } catch (error) {
+      console.error('Error loading wastage reasons:', error);
+    }
+  };
+
+  const loadWastageEntries = async () => {
+    try {
+      const params = selectedMaterial ? { materialId: selectedMaterial.id } : {};
+      const data = await productionService.getWastageEntries(params);
+      setWastageEntries(data.wastageEntries);
+    } catch (error) {
+      console.error('Error loading wastage entries:', error);
+      toast.error('Failed to load wastage entries');
+    }
+  };
+
+  const handleSaveWastage = async () => {
+    if (!selectedMaterial) return;
+    
+    if (!wastageFormData.reason) {
+      toast.error('Please select a wastage reason');
+      return;
+    }
+    
+    if (wastageFormData.quantity <= 0) {
+      toast.error('Please enter a valid quantity');
+      return;
+    }
+    
+    if (wastageFormData.quantity > selectedMaterial.currentStock) {
+      toast.error(`Insufficient stock. Available: ${selectedMaterial.currentStock}`);
+      return;
+    }
+
+    try {
+      await productionService.createWastageEntry(wastageFormData);
+      toast.success('Wastage entry created successfully');
+      setShowWastageModal(false);
+      loadData(); // Refresh materials to show updated stock
+    } catch (error) {
+      console.error('Error creating wastage entry:', error);
+      toast.error('Failed to create wastage entry');
+    }
+  };
+
+  const handleViewWastageList = () => {
+    loadWastageEntries();
+    setShowWastageListModal(true);
+  };
+
   const getStockStatus = (material: RawMaterial) => {
     if (material.currentStock <= material.reorderPoint) {
       return { status: 'low', color: 'text-red-600', bgColor: 'bg-red-100' };
@@ -249,6 +337,13 @@ export default function RawMaterialManagement() {
           <p className="text-gray-600 mt-1">Track and manage raw materials inventory</p>
         </div>
         <div className="mt-4 sm:mt-0 flex items-center space-x-2">
+          <button
+            onClick={handleViewWastageList}
+            className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center"
+          >
+            <Trash className="h-4 w-4 mr-2" />
+            View Wastage
+          </button>
           <button
             onClick={() => setShowTransactionModal(true)}
             className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 flex items-center"
@@ -505,6 +600,13 @@ export default function RawMaterialManagement() {
                           title="View Transactions"
                         >
                           <Eye className="h-4 w-4" />
+                        </button>
+                        <button
+                          onClick={() => handleOpenWastageModal(material)}
+                          className="text-orange-600 hover:text-orange-900"
+                          title="Record Wastage"
+                        >
+                          <Trash className="h-4 w-4" />
                         </button>
                         <button
                           onClick={() => handleEditMaterial(material)}
@@ -864,6 +966,238 @@ export default function RawMaterialManagement() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Wastage Entry Modal */}
+      {showWastageModal && selectedMaterial && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-lg w-full">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-gray-900">
+                  Record Wastage - {selectedMaterial.materialName}
+                </h2>
+                <button
+                  onClick={() => {
+                    setShowWastageModal(false);
+                    setSelectedMaterial(null);
+                  }}
+                  className="text-gray-400 hover:text-gray-600"
+                >
+                  ×
+                </button>
+              </div>
+
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                <div className="flex items-start">
+                  <AlertCircle className="h-5 w-5 text-yellow-600 mt-0.5 mr-2" />
+                  <div>
+                    <p className="text-sm text-yellow-800 font-medium">Current Stock</p>
+                    <p className="text-lg font-bold text-yellow-900">
+                      {selectedMaterial.currentStock} {selectedMaterial.unit}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Wastage Quantity *
+                  </label>
+                  <input
+                    type="number"
+                    step="0.01"
+                    value={wastageFormData.quantity || ''}
+                    onChange={(e) => setWastageFormData(prev => ({ ...prev, quantity: parseFloat(e.target.value) || 0 }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder={`Enter quantity in ${selectedMaterial.unit}`}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Reason *
+                  </label>
+                  <select
+                    value={wastageFormData.reason}
+                    onChange={(e) => setWastageFormData(prev => ({ ...prev, reason: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  >
+                    <option value="">Select a reason</option>
+                    {wastageReasons.map((reason) => (
+                      <option key={reason} value={reason}>{reason}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Notes
+                  </label>
+                  <textarea
+                    value={wastageFormData.notes}
+                    onChange={(e) => setWastageFormData(prev => ({ ...prev, notes: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    rows={2}
+                    placeholder="Additional details about the wastage"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Batch Number
+                  </label>
+                  <input
+                    type="text"
+                    value={wastageFormData.batchNumber}
+                    onChange={(e) => setWastageFormData(prev => ({ ...prev, batchNumber: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                    placeholder="Batch number (optional)"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Date
+                  </label>
+                  <input
+                    type="date"
+                    value={wastageFormData.wastageDate}
+                    onChange={(e) => setWastageFormData(prev => ({ ...prev, wastageDate: e.target.value }))}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </div>
+
+                {wastageFormData.quantity > 0 && (
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-sm text-gray-600">Estimated Cost:</p>
+                    <p className="text-lg font-bold text-gray-900">
+                      Rs. {(wastageFormData.quantity * selectedMaterial.unitCost).toFixed(2)}
+                    </p>
+                  </div>
+                )}
+
+                <div className="flex justify-end space-x-3 pt-4">
+                  <button
+                    onClick={() => {
+                      setShowWastageModal(false);
+                      setSelectedMaterial(null);
+                    }}
+                    className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleSaveWastage}
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                  >
+                    Record Wastage
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Wastage List Modal */}
+      {showWastageListModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white rounded-lg shadow-xl max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-xl font-bold text-gray-900">
+                  Wastage Records
+                </h2>
+                <button
+                  onClick={() => {
+                    setShowWastageListModal(false);
+                    setSelectedMaterial(null);
+                  }}
+                  className="text-gray-400 hover:text-gray-600"
+                >
+                  ×
+                </button>
+              </div>
+
+              {wastageEntries.length === 0 ? (
+                <div className="text-center py-12">
+                  <Trash className="mx-auto h-12 w-12 text-gray-400" />
+                  <h3 className="mt-2 text-sm font-medium text-gray-900">No wastage records found</h3>
+                  <p className="mt-1 text-sm text-gray-500">
+                    No wastage has been recorded yet.
+                  </p>
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Date
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Material
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Quantity
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Cost
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Reason
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Notes
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Recorded By
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {wastageEntries.map((entry) => (
+                        <tr key={entry.id}>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {formatDate(entry.wastageDate)}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <div>
+                              <p className="font-medium">{entry.material.materialName}</p>
+                              <p className="text-xs text-gray-500">{entry.material.materialCode}</p>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {entry.quantity} {entry.unit}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            <div>
+                              <p className="font-medium">{formatCurrency(entry.totalCost)}</p>
+                              <p className="text-xs text-gray-500">{formatCurrency(entry.unitCost)}/{entry.unit}</p>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                              {entry.reason}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 max-w-xs truncate">
+                            {entry.notes || '-'}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                            {entry.createdByName}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           </div>
         </div>

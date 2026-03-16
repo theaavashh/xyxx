@@ -48,6 +48,15 @@ class AuthService {
         body: JSON.stringify({ email, password }),
       });
 
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({ message: 'Login failed' }));
+        return {
+          success: false,
+          message: errorData.message || `HTTP error! status: ${response.status}`,
+          error: 'LOGIN_FAILED'
+        };
+      }
+
       const data: LoginResponse = await response.json();
 
       if (data.success && data.data) {

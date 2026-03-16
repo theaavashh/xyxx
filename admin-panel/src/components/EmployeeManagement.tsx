@@ -58,7 +58,7 @@ export default function EmployeeManagement() {
         
         if (result.success && result.data) {
           // Transform the user data to match Employee interface
-          const transformedEmployees = result.data.map((user: any) => ({
+          const transformedEmployees = result.data.map((user: { id: string; fullName: string; email: string; username: string; department: string; position: string; role: string; address: string; createdAt: string; isActive: boolean }) => ({
             id: user.id,
             firstName: user.fullName.split(' ')[0] || '',
             lastName: user.fullName.split(' ').slice(1).join(' ') || '',
@@ -154,7 +154,7 @@ export default function EmployeeManagement() {
     }
   };
 
-  const handleUpdateEmployee = async (updatedData: any) => {
+  const handleUpdateEmployee = async (updatedData: Record<string, unknown>) => {
     if (!selectedEmployee) return;
 
     try {

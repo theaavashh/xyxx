@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const distributor_controller_1 = require("@/controllers/distributor.controller");
-const distributor_schema_1 = require("@/schemas/distributor.schema");
-const validation_middleware_1 = require("@/middleware/validation.middleware");
-const auth_middleware_1 = require("@/middleware/auth.middleware");
-const upload_middleware_1 = require("@/middleware/upload.middleware");
-const rate_limit_middleware_1 = require("@/middleware/rate-limit.middleware");
+const distributor_controller_1 = require("../controllers/distributor.controller");
+const distributor_schema_1 = require("../schemas/distributor.schema");
+const validation_middleware_1 = require("../middleware/validation.middleware");
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const upload_middleware_1 = require("../middleware/upload.middleware");
+const rate_limit_middleware_1 = require("../middleware/rate-limit.middleware");
 const zod_1 = require("zod");
 const router = (0, express_1.Router)();
 const GetApplicationsQuerySchema = zod_1.z.object({

@@ -1,0 +1,201 @@
+2026-02-13T03:29:12.877Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:29:21.102Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-13T03:29:21.102Z [INFO] 🌍 Environment: development
+2026-02-13T03:29:21.102Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-13T03:29:21.102Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-13T03:29:21.102Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-13T03:29:57.714Z [INFO] POST /api/auth/login - 200 - 609.603ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":609.603}
+2026-02-13T03:30:15.587Z [ERROR] GET /api/product-skus - 404 - 1.022ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":404,"responseTime":1.022}
+2026-02-13T03:30:15.593Z [ERROR] GET /api/product-skus - 404 - 2.782ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":404,"responseTime":2.782}
+2026-02-13T03:30:15.735Z [INFO] GET /api/products - 200 - 152.772ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":152.772}
+2026-02-13T03:30:15.752Z [INFO] GET /api/products - 304 - 5.873ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":5.873}
+2026-02-13T03:35:22.195Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:35:26.379Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-13T03:35:26.379Z [INFO] 🌍 Environment: development
+2026-02-13T03:35:26.379Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-13T03:35:26.379Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-13T03:35:26.380Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-13T03:35:34.639Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:35:38.852Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-13T03:35:38.852Z [INFO] 🌍 Environment: development
+2026-02-13T03:35:38.852Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-13T03:35:38.852Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-13T03:35:38.852Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-13T03:35:50.748Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:54:22.544Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:54:35.974Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-13T03:54:35.975Z [INFO] 🌍 Environment: development
+2026-02-13T03:54:35.975Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-13T03:54:35.975Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-13T03:54:35.975Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-13T03:54:41.895Z [ERROR] POST /api/product-skus - 400 - 1385.424ms | Data: {"method":"POST","url":"/api/product-skus","statusCode":400,"responseTime":1385.424}
+2026-02-13T03:56:07.512Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:58:38.522Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:58:38.552Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:58:43.936Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-13T03:58:43.946Z [INFO] 🌍 Environment: development
+2026-02-13T03:58:43.946Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-13T03:58:43.946Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-13T03:58:43.947Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-13T03:59:21.844Z [ERROR] POST /api/product-skus - 401 - 2.921ms | Data: {"method":"POST","url":"/api/product-skus","statusCode":401,"responseTime":2.921}
+2026-02-13T03:59:27.001Z [ERROR] POST /api/auth/login - 401 - 60.979ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":401,"responseTime":60.979}
+2026-02-13T03:59:46.273Z [INFO] Mailjet service initialized successfully
+2026-02-13T03:59:50.795Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-13T03:59:50.795Z [INFO] 🌍 Environment: development
+2026-02-13T03:59:50.796Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-13T03:59:50.796Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-13T03:59:50.796Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-13T03:59:56.257Z [INFO] POST /api/product-skus/dev - 201 - 337.627ms | Data: {"method":"POST","url":"/api/product-skus/dev","statusCode":201,"responseTime":337.627}
+2026-02-13T03:59:58.751Z [INFO] Mailjet service initialized successfully
+2026-02-13T04:00:32.710Z [INFO] GET /api/product-skus - 200 - 23.123ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":200,"responseTime":23.123}
+2026-02-13T04:00:32.727Z [INFO] GET /api/product-skus - 304 - 11.47ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":11.47}
+2026-02-13T04:00:32.878Z [INFO] GET /api/products - 200 - 183.49ms | Data: {"method":"GET","url":"/api/products","statusCode":200,"responseTime":183.49}
+2026-02-13T04:00:32.900Z [INFO] GET /api/products - 304 - 10.558ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":10.558}
+2026-02-13T04:01:48.737Z [INFO] GET /api/product-skus - 304 - 7.784ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":7.784}
+2026-02-13T04:01:48.741Z [INFO] GET /api/products - 304 - 8.455ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":8.455}
+2026-02-13T04:01:48.756Z [INFO] GET /api/product-skus - 304 - 8.777ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":8.777}
+2026-02-13T04:01:48.763Z [INFO] GET /api/products - 304 - 5.722ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":5.722}
+2026-02-13T04:02:29.093Z [INFO] GET /api/product-skus - 304 - 12.376ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":12.376}
+2026-02-13T04:02:29.111Z [INFO] GET /api/products - 304 - 28.188ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":28.188}
+2026-02-13T04:02:29.112Z [INFO] GET /api/product-skus - 304 - 13.569ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":13.569}
+2026-02-13T04:02:29.132Z [INFO] GET /api/products - 304 - 7ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":7}
+2026-02-13T04:12:26.068Z [INFO] GET /api/product-skus - 304 - 212.552ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":212.552}
+2026-02-13T04:13:34.318Z [INFO] GET /api/product-skus - 304 - 13.031ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":13.031}
+2026-02-13T04:17:04.692Z [INFO] GET /api/product-skus - 304 - 39.956ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":39.956}
+2026-02-13T04:43:17.203Z [INFO] GET /api/product-skus - 304 - 8348.698ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":8348.698}
+2026-02-13T04:43:17.291Z [INFO] GET /api/product-skus - 304 - 23.459ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":23.459}
+2026-02-13T04:45:19.098Z [INFO] GET /api/product-skus - 304 - 1907.115ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":1907.115}
+2026-02-13T05:41:09.820Z [INFO] GET /api/product-skus - 304 - 594.495ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":594.495}
+2026-02-13T05:41:09.843Z [INFO] GET /api/products - 304 - 551.446ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":551.446}
+2026-02-13T05:41:09.870Z [INFO] GET /api/product-skus - 304 - 16.052ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":16.052}
+2026-02-13T05:41:09.881Z [INFO] GET /api/products - 304 - 22.471ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":22.471}
+2026-02-13T05:45:07.800Z [INFO] GET /api/product-skus - 304 - 8.831ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":8.831}
+2026-02-13T05:45:07.830Z [INFO] GET /api/product-skus - 304 - 19.476ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":19.476}
+2026-02-13T05:46:04.078Z [INFO] GET /api/product-skus - 304 - 35.999ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":35.999}
+2026-02-13T05:46:04.105Z [INFO] GET /api/products - 304 - 47.844ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":47.844}
+2026-02-13T05:46:04.144Z [INFO] GET /api/product-skus - 304 - 28.243ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":28.243}
+2026-02-13T05:46:04.169Z [INFO] GET /api/products - 304 - 21.74ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":21.74}
+2026-02-13T05:47:03.120Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-13 - 200 - 937.71ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-13","statusCode":200,"responseTime":937.71}
+2026-02-13T05:47:03.164Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-13 - 304 - 32.954ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-13","statusCode":304,"responseTime":32.954}
+2026-02-13T05:47:03.182Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 200 - 1177.257ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":200,"responseTime":1177.257}
+2026-02-13T05:47:03.216Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 8.465ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":8.465}
+2026-02-13T05:47:03.259Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 23.717ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":23.717}
+2026-02-13T05:47:03.329Z [INFO] Aging analysis completed
+2026-02-13T05:47:03.332Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-13 - 200 - 1133.145ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-13","statusCode":200,"responseTime":1133.145}
+2026-02-13T05:47:03.351Z [INFO] Aging analysis completed
+2026-02-13T05:47:03.353Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-13 - 304 - 15.218ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-13","statusCode":304,"responseTime":15.218}
+2026-02-13T05:47:58.875Z [INFO] GET /api/accounting/journal-entries - 200 - 111.11ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":111.11}
+2026-02-13T05:47:58.907Z [INFO] GET /api/accounting/accounts - 200 - 132.841ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":132.841}
+2026-02-13T05:47:58.922Z [INFO] GET /api/accounting/journal-entries - 304 - 36.174ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":36.174}
+2026-02-13T05:47:58.942Z [INFO] GET /api/accounting/accounts - 304 - 16.069ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":16.069}
+2026-02-13T05:49:00.085Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 309.892ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":309.892}
+2026-02-13T05:49:00.179Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 72.88ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":72.88}
+2026-02-13T05:49:00.271Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 64.772ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":64.772}
+2026-02-13T05:49:07.925Z [INFO] GET /uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg - 200 - 57.257ms | Data: {"method":"GET","url":"/uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg","statusCode":200,"responseTime":57.257}
+2026-02-13T05:49:07.939Z [INFO] GET /uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg - 200 - 62.455ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg","statusCode":200,"responseTime":62.455}
+2026-02-13T05:49:07.950Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 200 - 78.713ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":200,"responseTime":78.713}
+2026-02-13T05:49:18.775Z [INFO] GET /uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg - 304 - 4.13ms | Data: {"method":"GET","url":"/uploads/documents/citizenshipId-EARRING_26-1770697458636-688881800.jpg","statusCode":304,"responseTime":4.13}
+2026-02-13T05:49:18.789Z [INFO] GET /uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg - 304 - 7.066ms | Data: {"method":"GET","url":"/uploads/documents/companyRegistration-EARRING_16-1770697458666-546583001.jpg","statusCode":304,"responseTime":7.066}
+2026-02-13T05:49:18.795Z [INFO] GET /uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg - 304 - 7.351ms | Data: {"method":"GET","url":"/uploads/documents/panVatRegistration-EARRING_18-1770697458656-256905759.jpg","statusCode":304,"responseTime":7.351}
+2026-02-13T05:51:23.901Z [INFO] GET /api/product-skus - 304 - 36.219ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":36.219}
+2026-02-13T05:51:23.916Z [INFO] GET /api/product-skus - 304 - 7.103ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":7.103}
+2026-02-13T05:52:50.853Z [INFO] GET /api/payment-config - 200 - 159.215ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":200,"responseTime":159.215}
+2026-02-13T05:52:50.858Z [INFO] GET /api/production/machines - 200 - 256.867ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":200,"responseTime":256.867}
+2026-02-13T05:52:50.887Z [INFO] GET /api/production/work-centers - 200 - 304.176ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":200,"responseTime":304.176}
+2026-02-13T05:52:50.891Z [INFO] GET /api/payment-config - 304 - 19.895ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":19.895}
+2026-02-13T05:52:50.901Z [INFO] GET /api/production/raw-materials/categories - 200 - 337.328ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":200,"responseTime":337.328}
+2026-02-13T05:52:50.903Z [INFO] GET /api/production/machines - 304 - 24.431ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":24.431}
+2026-02-13T05:52:50.939Z [INFO] GET /api/production/work-centers - 304 - 28.508ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":28.508}
+2026-02-13T05:52:50.951Z [INFO] GET /api/production/raw-materials/categories - 304 - 14.583ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":14.583}
+2026-02-13T05:53:20.429Z [INFO] GET /api/auth/users - 200 - 219.07ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":200,"responseTime":219.07}
+2026-02-13T05:53:20.440Z [INFO] GET /api/auth/users - 304 - 6.773ms | Data: {"method":"GET","url":"/api/auth/users","statusCode":304,"responseTime":6.773}
+2026-02-13T05:56:32.812Z [INFO] GET /api/production/work-centers - 304 - 34.3ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":34.3}
+2026-02-13T05:56:32.833Z [INFO] GET /api/production/raw-materials/categories - 304 - 31.9ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":31.9}
+2026-02-13T05:56:32.851Z [INFO] GET /api/production/machines - 304 - 27.633ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":27.633}
+2026-02-13T05:56:32.861Z [INFO] GET /api/payment-config - 304 - 11.537ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":11.537}
+2026-02-13T05:56:32.950Z [INFO] GET /api/payment-config - 304 - 13.778ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":13.778}
+2026-02-13T05:56:32.956Z [INFO] GET /api/production/work-centers - 304 - 84.262ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":84.262}
+2026-02-13T05:56:32.957Z [INFO] GET /api/production/raw-materials/categories - 304 - 69.376ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":69.376}
+2026-02-13T05:56:32.964Z [INFO] GET /api/production/machines - 304 - 36.968ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":36.968}
+2026-02-13T05:57:16.571Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 200 - 139.533ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":200,"responseTime":139.533}
+2026-02-13T05:57:24.707Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 19.436ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":19.436}
+2026-02-13T05:59:56.585Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 91.605ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":91.605}
+2026-02-13T06:00:51.811Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 15.383ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":15.383}
+2026-02-13T06:01:32.918Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 16.81ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":16.81}
+2026-02-13T06:01:37.296Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 11.768ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":11.768}
+2026-02-13T06:02:15.683Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 19.654ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":19.654}
+2026-02-13T06:03:06.975Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 129.176ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":129.176}
+2026-02-13T06:03:10.192Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 10.467ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":10.467}
+2026-02-13T06:06:14.538Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 88.851ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":88.851}
+2026-02-13T06:06:40.980Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 17.65ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":17.65}
+2026-02-13T06:08:04.563Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 34.718ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":34.718}
+2026-02-13T06:09:51.977Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 107.427ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":107.427}
+2026-02-13T06:09:53.796Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 11.224ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":11.224}
+2026-02-13T06:14:46.644Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 89.51ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":89.51}
+2026-02-13T06:14:49.588Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 22.378ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":22.378}
+2026-02-13T06:14:59.593Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 170.693ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":170.693}
+2026-02-13T06:15:14.015Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 8.114ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":8.114}
+2026-02-13T06:17:26.358Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 447.025ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":447.025}
+2026-02-13T06:17:26.401Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13 - 200 - 478.847ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13","statusCode":200,"responseTime":478.847}
+2026-02-13T06:17:26.475Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 57.626ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":57.626}
+2026-02-13T06:17:26.500Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13 - 304 - 68.971ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13","statusCode":304,"responseTime":68.971}
+2026-02-13T06:17:39.717Z [INFO] GET /api/product-skus - 304 - 61.983ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":61.983}
+2026-02-13T06:17:39.733Z [INFO] GET /api/product-skus - 304 - 4.407ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":4.407}
+2026-02-13T06:17:53.210Z [INFO] GET /api/product-skus - 304 - 6.879ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":6.879}
+2026-02-13T06:17:53.233Z [INFO] GET /api/product-skus - 304 - 7.044ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":7.044}
+2026-02-13T06:17:53.282Z [INFO] GET /api/products - 304 - 75.102ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":75.102}
+2026-02-13T06:17:53.292Z [INFO] GET /api/products - 304 - 4.52ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":4.52}
+2026-02-13T06:22:44.524Z [INFO] GET /api/product-skus - 304 - 34.056ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":34.056}
+2026-02-13T06:22:44.535Z [INFO] GET /api/product-skus - 304 - 6.188ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":6.188}
+2026-02-13T06:24:34.008Z [INFO] GET /api/production/orders - 200 - 69.528ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":200,"responseTime":69.528}
+2026-02-13T06:24:34.114Z [INFO] GET /api/production/work-centers - 304 - 158.502ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":158.502}
+2026-02-13T06:24:34.117Z [INFO] GET /api/production/schedules - 200 - 153.188ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":200,"responseTime":153.188}
+2026-02-13T06:24:34.134Z [INFO] GET /api/production/work-centers - 304 - 9.318ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":9.318}
+2026-02-13T06:24:34.137Z [INFO] GET /api/production/schedules - 304 - 8.059ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":8.059}
+2026-02-13T06:24:34.140Z [INFO] GET /api/production/orders - 304 - 19.949ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":19.949}
+2026-02-13T06:25:05.575Z [INFO] GET /api/production/orders - 304 - 12.433ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":12.433}
+2026-02-13T06:25:05.576Z [INFO] GET /api/production/records - 200 - 16.795ms | Data: {"method":"GET","url":"/api/production/records","statusCode":200,"responseTime":16.795}
+2026-02-13T06:25:05.579Z [INFO] GET /api/production/raw-materials - 200 - 12.542ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":12.542}
+2026-02-13T06:25:05.608Z [INFO] GET /api/production/orders - 304 - 20.059ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":20.059}
+2026-02-13T06:25:05.611Z [INFO] GET /api/production/records - 304 - 22.16ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":22.16}
+2026-02-13T06:25:05.613Z [INFO] GET /api/production/raw-materials - 304 - 21.556ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":21.556}
+2026-02-13T06:25:19.900Z [INFO] GET /api/product-skus - 304 - 2.632ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":2.632}
+2026-02-13T06:25:19.907Z [INFO] GET /api/product-skus - 304 - 3.66ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":3.66}
+2026-02-13T07:30:28.218Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 136.216ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":136.216}
+2026-02-13T07:30:28.235Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 10.95ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":10.95}
+2026-02-13T07:30:28.249Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13 - 304 - 162.81ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13","statusCode":304,"responseTime":162.81}
+2026-02-13T07:30:28.277Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13 - 304 - 14.371ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-13&toDate=2026-02-13","statusCode":304,"responseTime":14.371}
+2026-02-13T07:31:44.333Z [INFO] GET /api/production/orders - 304 - 15.817ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":15.817}
+2026-02-13T07:31:44.347Z [INFO] GET /api/production/records - 304 - 24.104ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":24.104}
+2026-02-13T07:31:44.350Z [INFO] GET /api/production/raw-materials - 304 - 23.945ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":23.945}
+2026-02-13T07:31:44.361Z [INFO] GET /api/production/orders - 304 - 20.507ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":20.507}
+2026-02-13T07:31:44.378Z [INFO] GET /api/production/records - 304 - 23.191ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":23.191}
+2026-02-13T07:31:44.389Z [INFO] GET /api/production/raw-materials - 304 - 21.216ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":21.216}
+2026-02-13T07:31:52.021Z [INFO] GET /api/production/orders - 304 - 22.311ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":22.311}
+2026-02-13T07:31:52.047Z [INFO] GET /api/production/work-centers - 304 - 31.027ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":31.027}
+2026-02-13T07:31:52.065Z [INFO] GET /api/production/schedules - 304 - 31.98ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":31.98}
+2026-02-13T07:31:52.068Z [INFO] GET /api/production/orders - 304 - 28.011ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":28.011}
+2026-02-13T07:31:52.083Z [INFO] GET /api/production/work-centers - 304 - 23.126ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":23.126}
+2026-02-13T07:31:52.089Z [INFO] GET /api/production/schedules - 304 - 13.19ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":13.19}
+2026-02-13T07:31:56.840Z [INFO] GET /api/product-skus - 304 - 78.669ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":78.669}
+2026-02-13T07:31:56.869Z [INFO] GET /api/product-skus - 304 - 23.451ms | Data: {"method":"GET","url":"/api/product-skus","statusCode":304,"responseTime":23.451}
+2026-02-13T07:44:51.405Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 165.495ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":165.495}
+2026-02-13T07:45:26.938Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 12.265ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":12.265}
+2026-02-13T07:45:28.838Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 27.417ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":27.417}
+2026-02-13T07:46:13.457Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 13.245ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":13.245}
+2026-02-13T07:46:18.353Z [INFO] GET /api/accounting/party-ledger?page=1&limit=100&isActive=true - 304 - 20.714ms | Data: {"method":"GET","url":"/api/accounting/party-ledger?page=1&limit=100&isActive=true","statusCode":304,"responseTime":20.714}
+2026-02-13T07:51:37.499Z [INFO] GET /api/accounting/journal-entries - 304 - 104ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":104}
+2026-02-13T07:51:37.519Z [INFO] GET /api/accounting/accounts - 304 - 115.034ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":115.034}
+2026-02-13T07:51:37.531Z [INFO] GET /api/accounting/journal-entries - 304 - 26.261ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":26.261}
+2026-02-13T07:51:37.545Z [INFO] GET /api/accounting/accounts - 304 - 22.121ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":22.121}
+2026-02-13T08:02:32.595Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 50.176ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":50.176}
+2026-02-13T08:02:32.599Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-13 - 304 - 49.681ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-13","statusCode":304,"responseTime":49.681}
+2026-02-13T08:02:32.611Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 6.945ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":6.945}
+2026-02-13T08:02:32.615Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-13 - 304 - 8.053ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-13","statusCode":304,"responseTime":8.053}
+2026-02-13T08:02:32.672Z [INFO] Aging analysis completed
+2026-02-13T08:02:32.673Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-13 - 304 - 118.085ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-13","statusCode":304,"responseTime":118.085}
+2026-02-13T08:02:32.688Z [INFO] Aging analysis completed
+2026-02-13T08:02:32.691Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-13 - 304 - 7.959ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-13","statusCode":304,"responseTime":7.959}
+2026-02-13T08:04:32.839Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 15.599ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":15.599}
+2026-02-13T08:06:33.060Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 8.309ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":8.309}
+2026-02-13T08:08:33.401Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-13 - 304 - 72.151ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-13","statusCode":304,"responseTime":72.151}

@@ -58,7 +58,7 @@ export default function ApprovedDistributors() {
         
         // For each approved application, check if it has a corresponding User account
         const distributorsWithCredentials = await Promise.all(
-          applications.map(async (application: any) => {
+          applications.map(async (application: DistributorApplication) => {
             try {
               // Use new endpoint to find the corresponding User account
               const userResponse = await fetch(`${config.apiUrl}/distributors/find-by-application/${application.id}`, {

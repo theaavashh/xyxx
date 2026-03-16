@@ -1,0 +1,196 @@
+2026-02-04T06:07:10.566Z [INFO] Mailjet service initialized successfully
+2026-02-04T06:07:16.365Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T06:07:16.366Z [INFO] 🌍 Environment: development
+2026-02-04T06:07:16.366Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T06:07:16.367Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T06:07:16.367Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T06:07:25.847Z [INFO] POST /api/auth/login - 200 - 711.347ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":711.347}
+2026-02-04T06:34:51.118Z [INFO] GET /api/categories - 304 - 466.193ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":466.193}
+2026-02-04T06:34:51.129Z [INFO] GET /api/categories - 304 - 6.916ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.916}
+2026-02-04T06:34:59.120Z [INFO] GET /api/products - 304 - 98.415ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":98.415}
+2026-02-04T06:34:59.127Z [INFO] GET /api/products - 304 - 3.591ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":3.591}
+2026-02-04T06:35:39.372Z [INFO] GET /api/applications/dev?status=APPROVED - 200 - 185.267ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":200,"responseTime":185.267}
+2026-02-04T06:35:39.395Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 16.701ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":16.701}
+2026-02-04T06:35:39.528Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 200 - 112.552ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":200,"responseTime":112.552}
+2026-02-04T06:35:39.543Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 8.887ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":8.887}
+2026-02-04T06:35:39.558Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 200 - 138.039ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":200,"responseTime":138.039}
+2026-02-04T06:35:39.571Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 7.754ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":7.754}
+2026-02-04T06:35:47.079Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 200 - 20.843ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":200,"responseTime":20.843}
+2026-02-04T06:35:47.110Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 10.634ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":10.634}
+2026-02-04T06:35:47.132Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 12.204ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":12.204}
+2026-02-04T06:35:51.962Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 13.305ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":13.305}
+2026-02-04T06:35:51.982Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 16.275ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":16.275}
+2026-02-04T06:35:51.989Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 11.286ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":11.286}
+2026-02-04T06:35:51.994Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 10.453ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":10.453}
+2026-02-04T06:35:52.013Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 6.337ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":6.337}
+2026-02-04T06:35:52.016Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 15.532ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":15.532}
+2026-02-04T06:36:04.718Z [INFO] GET /api/orders - 200 - 192.571ms | Data: {"method":"GET","url":"/api/orders","statusCode":200,"responseTime":192.571}
+2026-02-04T06:36:04.730Z [INFO] GET /api/orders - 304 - 6.744ms | Data: {"method":"GET","url":"/api/orders","statusCode":304,"responseTime":6.744}
+2026-02-04T06:36:16.084Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 8.838ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":8.838}
+2026-02-04T06:36:16.103Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 15.381ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":15.381}
+2026-02-04T06:36:16.113Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 6.973ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":6.973}
+2026-02-04T06:37:43.859Z [INFO] GET /api/production/work-centers - 304 - 99.645ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":99.645}
+2026-02-04T06:37:43.872Z [INFO] GET /api/production/machines - 304 - 109.146ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":109.146}
+2026-02-04T06:37:43.889Z [INFO] GET /api/production/raw-materials/categories - 304 - 131.442ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":131.442}
+2026-02-04T06:37:43.899Z [INFO] GET /api/production/work-centers - 304 - 31.4ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":31.4}
+2026-02-04T06:37:43.935Z [INFO] GET /api/production/machines - 304 - 25.399ms | Data: {"method":"GET","url":"/api/production/machines","statusCode":304,"responseTime":25.399}
+2026-02-04T06:37:43.945Z [INFO] GET /api/production/raw-materials/categories - 304 - 22.531ms | Data: {"method":"GET","url":"/api/production/raw-materials/categories","statusCode":304,"responseTime":22.531}
+2026-02-04T06:37:44.109Z [INFO] GET /api/payment-config - 304 - 104.955ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":104.955}
+2026-02-04T06:37:44.120Z [INFO] GET /api/payment-config - 304 - 2.667ms | Data: {"method":"GET","url":"/api/payment-config","statusCode":304,"responseTime":2.667}
+2026-02-04T06:39:31.026Z [INFO] POST /api/production/raw-materials/categories - 201 - 16.265ms | Data: {"method":"POST","url":"/api/production/raw-materials/categories","statusCode":201,"responseTime":16.265}
+2026-02-04T06:48:24.448Z [INFO] POST /api/auth/login - 200 - 388.227ms | Data: {"method":"POST","url":"/api/auth/login","statusCode":200,"responseTime":388.227}
+2026-02-04T06:48:29.278Z [INFO] GET /api/production/records - 200 - 297.597ms | Data: {"method":"GET","url":"/api/production/records","statusCode":200,"responseTime":297.597}
+2026-02-04T06:48:29.286Z [INFO] GET /api/production/orders - 200 - 299.293ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":200,"responseTime":299.293}
+2026-02-04T06:48:29.288Z [INFO] GET /api/production/raw-materials - 200 - 295.438ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":200,"responseTime":295.438}
+2026-02-04T06:48:29.311Z [INFO] GET /api/production/records - 304 - 15.915ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":15.915}
+2026-02-04T06:48:29.312Z [INFO] GET /api/production/orders - 304 - 13.298ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":13.298}
+2026-02-04T06:48:29.316Z [INFO] GET /api/production/raw-materials - 304 - 13.699ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":13.699}
+2026-02-04T06:49:12.204Z [INFO] GET /api/production/orders - 304 - 17.047ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":17.047}
+2026-02-04T06:49:12.209Z [INFO] GET /api/production/schedules - 200 - 17.335ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":200,"responseTime":17.335}
+2026-02-04T06:49:12.211Z [INFO] GET /api/production/work-centers - 304 - 17.156ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":17.156}
+2026-02-04T06:49:12.226Z [INFO] GET /api/production/orders - 304 - 12.86ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":12.86}
+2026-02-04T06:49:12.233Z [INFO] GET /api/production/work-centers - 304 - 12.828ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":12.828}
+2026-02-04T06:49:12.235Z [INFO] GET /api/production/schedules - 304 - 11.869ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":11.869}
+2026-02-04T06:53:14.374Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 11.834ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":11.834}
+2026-02-04T06:53:14.416Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 14.093ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":14.093}
+2026-02-04T06:53:14.436Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04 - 200 - 69.247ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04","statusCode":200,"responseTime":69.247}
+2026-02-04T06:53:14.466Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04 - 304 - 12.405ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04","statusCode":304,"responseTime":12.405}
+2026-02-04T06:53:54.552Z [INFO] GET /api/production/orders - 304 - 48.057ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":48.057}
+2026-02-04T06:53:54.570Z [INFO] GET /api/production/orders - 304 - 13.716ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":13.716}
+2026-02-04T06:53:54.602Z [INFO] GET /api/production/raw-materials - 304 - 89.575ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":89.575}
+2026-02-04T06:53:54.604Z [INFO] GET /api/production/records - 304 - 95.691ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":95.691}
+2026-02-04T06:53:54.624Z [INFO] GET /api/production/raw-materials - 304 - 12.062ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":12.062}
+2026-02-04T06:53:54.628Z [INFO] GET /api/production/records - 304 - 12.689ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":12.689}
+2026-02-04T06:54:03.087Z [INFO] GET /api/production/orders - 304 - 8.253ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":8.253}
+2026-02-04T06:54:03.097Z [INFO] GET /api/production/work-centers - 304 - 14.608ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":14.608}
+2026-02-04T06:54:03.112Z [INFO] GET /api/production/orders - 304 - 19.332ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":19.332}
+2026-02-04T06:54:03.120Z [INFO] GET /api/production/work-centers - 304 - 14.343ms | Data: {"method":"GET","url":"/api/production/work-centers","statusCode":304,"responseTime":14.343}
+2026-02-04T06:54:03.126Z [INFO] GET /api/production/schedules - 304 - 8.645ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":8.645}
+2026-02-04T06:54:03.137Z [INFO] GET /api/production/schedules - 304 - 6.786ms | Data: {"method":"GET","url":"/api/production/schedules","statusCode":304,"responseTime":6.786}
+2026-02-04T06:54:24.015Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-04 - 200 - 14.007ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-04","statusCode":200,"responseTime":14.007}
+2026-02-04T06:54:24.018Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-04 - 200 - 13.639ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-04","statusCode":200,"responseTime":13.639}
+2026-02-04T06:54:24.037Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-04 - 304 - 9.475ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-04","statusCode":304,"responseTime":9.475}
+2026-02-04T06:54:24.039Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-04 - 304 - 6.59ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-04","statusCode":304,"responseTime":6.59}
+2026-02-04T06:54:24.114Z [INFO] Aging analysis completed
+2026-02-04T06:54:24.115Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-04 - 200 - 106.243ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-04","statusCode":200,"responseTime":106.243}
+2026-02-04T06:54:24.127Z [INFO] Aging analysis completed
+2026-02-04T06:54:24.128Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-04 - 304 - 9.392ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-04","statusCode":304,"responseTime":9.392}
+2026-02-04T06:57:51.500Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 70.645ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":70.645}
+2026-02-04T06:57:51.533Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 21.393ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":21.393}
+2026-02-04T06:57:51.554Z [INFO] GET /api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc - 304 - 9.308ms | Data: {"method":"GET","url":"/api/applications/dev?page=1&limit=10&sortBy=createdAt&sortOrder=desc","statusCode":304,"responseTime":9.308}
+2026-02-04T06:58:01.396Z [INFO] GET /api/categories - 304 - 49.712ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":49.712}
+2026-02-04T06:58:01.407Z [INFO] GET /api/categories - 304 - 6.637ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":6.637}
+2026-02-04T06:58:01.411Z [INFO] GET /api/products - 304 - 69.898ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":69.898}
+2026-02-04T06:58:01.420Z [INFO] GET /api/products - 304 - 6.387ms | Data: {"method":"GET","url":"/api/products","statusCode":304,"responseTime":6.387}
+2026-02-04T06:58:03.763Z [INFO] GET /api/categories - 304 - 5.059ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":5.059}
+2026-02-04T06:58:03.773Z [INFO] GET /api/categories - 304 - 5.559ms | Data: {"method":"GET","url":"/api/categories","statusCode":304,"responseTime":5.559}
+2026-02-04T06:58:05.759Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 12.358ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":12.358}
+2026-02-04T06:58:05.785Z [INFO] GET /api/applications/dev?status=APPROVED - 304 - 12.08ms | Data: {"method":"GET","url":"/api/applications/dev?status=APPROVED","statusCode":304,"responseTime":12.08}
+2026-02-04T06:58:05.831Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 51.689ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":51.689}
+2026-02-04T06:58:05.837Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 48.228ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":48.228}
+2026-02-04T06:58:05.848Z [INFO] GET /api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc - 304 - 13.109ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjq3egxe000r41v40vojbwmc","statusCode":304,"responseTime":13.109}
+2026-02-04T06:58:05.854Z [INFO] GET /api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin - 304 - 9.49ms | Data: {"method":"GET","url":"/api/distributors/find-by-application/cmjprcu4t0000dvx22op12xin","statusCode":304,"responseTime":9.49}
+2026-02-04T06:58:07.499Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-04 - 304 - 8.663ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-04","statusCode":304,"responseTime":8.663}
+2026-02-04T06:58:07.502Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-04 - 304 - 7.117ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-04","statusCode":304,"responseTime":7.117}
+2026-02-04T06:58:07.505Z [INFO] Aging analysis completed
+2026-02-04T06:58:07.507Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-04 - 304 - 10.138ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-04","statusCode":304,"responseTime":10.138}
+2026-02-04T06:58:07.542Z [INFO] GET /api/accounting/mis-reports/kpis?asOfDate=2026-02-04 - 304 - 24.729ms | Data: {"method":"GET","url":"/api/accounting/mis-reports/kpis?asOfDate=2026-02-04","statusCode":304,"responseTime":24.729}
+2026-02-04T06:58:07.560Z [INFO] GET /api/accounting/trial-balance?asOfDate=2026-02-04 - 304 - 27.786ms | Data: {"method":"GET","url":"/api/accounting/trial-balance?asOfDate=2026-02-04","statusCode":304,"responseTime":27.786}
+2026-02-04T06:58:07.568Z [INFO] Aging analysis completed
+2026-02-04T06:58:07.574Z [INFO] GET /api/accounting/debtors-creditors/aging?asOfDate=2026-02-04 - 304 - 38.296ms | Data: {"method":"GET","url":"/api/accounting/debtors-creditors/aging?asOfDate=2026-02-04","statusCode":304,"responseTime":38.296}
+2026-02-04T06:58:10.922Z [INFO] GET /api/accounting/accounts - 200 - 30.545ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":200,"responseTime":30.545}
+2026-02-04T06:58:10.952Z [INFO] GET /api/accounting/accounts - 304 - 14.302ms | Data: {"method":"GET","url":"/api/accounting/accounts","statusCode":304,"responseTime":14.302}
+2026-02-04T06:58:10.962Z [INFO] GET /api/accounting/journal-entries - 200 - 66.849ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":200,"responseTime":66.849}
+2026-02-04T06:58:10.973Z [INFO] GET /api/accounting/journal-entries - 304 - 7.697ms | Data: {"method":"GET","url":"/api/accounting/journal-entries","statusCode":304,"responseTime":7.697}
+2026-02-04T06:58:13.108Z [INFO] GET /api/production/records - 304 - 16.715ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":16.715}
+2026-02-04T06:58:13.115Z [INFO] GET /api/production/orders - 304 - 18.54ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":18.54}
+2026-02-04T06:58:13.129Z [INFO] GET /api/production/records - 304 - 8.31ms | Data: {"method":"GET","url":"/api/production/records","statusCode":304,"responseTime":8.31}
+2026-02-04T06:58:13.135Z [INFO] GET /api/production/orders - 304 - 8.653ms | Data: {"method":"GET","url":"/api/production/orders","statusCode":304,"responseTime":8.653}
+2026-02-04T06:58:13.145Z [INFO] GET /api/production/raw-materials - 304 - 42.308ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":42.308}
+2026-02-04T06:58:13.157Z [INFO] GET /api/production/raw-materials - 304 - 6.498ms | Data: {"method":"GET","url":"/api/production/raw-materials","statusCode":304,"responseTime":6.498}
+2026-02-04T06:58:14.891Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 40.219ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":40.219}
+2026-02-04T06:58:14.906Z [INFO] GET /api/production/analytics/kpis?period=monthly - 200 - 12.255ms | Data: {"method":"GET","url":"/api/production/analytics/kpis?period=monthly","statusCode":200,"responseTime":12.255}
+2026-02-04T06:58:14.913Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04 - 304 - 58.782ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04","statusCode":304,"responseTime":58.782}
+2026-02-04T06:58:14.924Z [INFO] GET /api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04 - 304 - 7.425ms | Data: {"method":"GET","url":"/api/production/analytics/reports?reportType=monthly&fromDate=2026-02-04&toDate=2026-02-04","statusCode":304,"responseTime":7.425}
+2026-02-04T07:00:12.895Z [INFO] Mailjet service initialized successfully
+2026-02-04T07:00:19.960Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T07:00:19.960Z [INFO] 🌍 Environment: development
+2026-02-04T07:00:19.961Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T07:00:19.961Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T07:00:19.961Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T07:00:19.962Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2026-02-04T08:21:31.108Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:21:35.923Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T08:21:35.923Z [INFO] 🌍 Environment: development
+2026-02-04T08:21:35.924Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T08:21:35.924Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T08:21:35.924Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T08:21:35.924Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)
+2026-02-04T08:24:34.705Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:26:05.112Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:26:10.963Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T08:26:10.963Z [INFO] 🌍 Environment: development
+2026-02-04T08:26:10.964Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T08:26:10.964Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T08:26:10.964Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T08:26:48.088Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:26:51.853Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T08:26:51.854Z [INFO] 🌍 Environment: development
+2026-02-04T08:26:51.854Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T08:26:51.855Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T08:26:51.855Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T08:28:34.368Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:28:39.048Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T08:28:39.049Z [INFO] 🌍 Environment: development
+2026-02-04T08:28:39.049Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T08:28:39.049Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T08:28:39.050Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T08:30:09.361Z [ERROR] POST /api/applications/submit - 413 - 149.211ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":413,"responseTime":149.211}
+2026-02-04T08:30:36.820Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:30:41.257Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T08:30:41.257Z [INFO] 🌍 Environment: development
+2026-02-04T08:30:41.258Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T08:30:41.258Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T08:30:41.259Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T08:31:07.252Z [ERROR] POST /api/applications/submit - 400 - 26.359ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":400,"responseTime":26.359}
+2026-02-04T08:31:46.003Z [INFO] Mailjet service initialized successfully
+2026-02-04T08:31:51.510Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T08:31:51.512Z [INFO] 🌍 Environment: development
+2026-02-04T08:31:51.512Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T08:31:51.513Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T08:31:51.513Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T08:32:26.196Z [INFO] POST /api/applications/submit - 201 - 497.684ms | Data: {"method":"POST","url":"/api/applications/submit","statusCode":201,"responseTime":497.684}
+2026-02-04T09:53:49.854Z [INFO] Mailjet service initialized successfully
+2026-02-04T09:54:03.717Z [INFO] 🚀 सर्भर पोर्ट 4444 मा सुरु भयो
+2026-02-04T09:54:03.719Z [INFO] 🌍 Environment: development
+2026-02-04T09:54:03.720Z [INFO] 📊 API Documentation: http://localhost:4444/api
+2026-02-04T09:54:03.720Z [INFO] 🏥 Health Check: http://localhost:4444/health
+2026-02-04T09:54:03.721Z [INFO] 🔧 Development mode - detailed logging enabled
+2026-02-04T09:54:03.722Z [ERROR] Uncaught Exception | Stack: Error: EIO: i/o error, write
+    at writeSync (node:fs:923:3)
+    at SyncWriteStream._write (node:internal/fs/sync_write_stream:27:5)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at SyncWriteStream.Writable.write (node:internal/streams/writable:510:10)
+    at console.value (node:internal/console/constructor:298:16)
+    at console.log (node:internal/console/constructor:384:26)
+    at connectDatabase (/home/theaavashh/workplace/new/analytics/distributor-api/src/utils/database.ts:27:13)
+    at async startServer (/home/theaavashh/workplace/new/analytics/distributor-api/src/index.ts:147:7)

@@ -19,6 +19,19 @@ export interface CurrentBusiness {
   experience: string;
 }
 
+// New interfaces for staff and infrastructure details
+export interface StaffDetail {
+  id: string;
+  staffType: string;
+  quantity: number;
+}
+
+export interface InfrastructureDetail {
+  id: string;
+  infrastructureType: string;
+  quantity: number;
+}
+
 export interface FormData {
   // Step 1: Business Type Selection
   businessStructure?: 'individual' | 'partnership';
@@ -55,6 +68,9 @@ export interface FormData {
   staffQuantity?: number;
   selectedInfrastructureType?: string;
   infrastructureQuantity?: number;
+  // New fields for multiple entries
+  staffDetails?: StaffDetail[];
+  infrastructureDetails?: InfrastructureDetail[];
 
   // Step 5: Business Information
   productCategory?: string;
@@ -79,7 +95,6 @@ export interface FormData {
   partnerPermanentAddress?: string;
   partnerTemporaryAddress?: string;
 
-
   // Area Coverage
   areaCoverageDetails?: AreaCoverage[];
 
@@ -101,9 +116,30 @@ export interface FormData {
   officePhotoFile?: File | null;
   otherDocuments?: boolean;
   otherDocumentsFile?: FileList;
-
+  
   // Step 7: Agreement and signature
   agreementAccepted?: boolean;
   distributorSignatureName?: string;
   distributorSignatureDate?: string;
+}
+
+export interface FormContextType {
+  allFormData: FormData;
+  updateFormData: (stepData: Partial<FormData>) => void;
+  clearFormData: () => void;
+  getCurrentFormData: () => FormData;
+  loadDraftData: (draftData: FormData) => void;
+}
+
+export interface FormStep {
+  id: number;
+  title: string;
+  subtitle: string;
+}
+
+export interface Category {
+  id: string;
+  title: string;
+  type: 'category' | 'subcategory';
+  parentId?: string | null;
 }

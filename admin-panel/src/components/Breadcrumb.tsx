@@ -109,6 +109,14 @@ export function getBreadcrumbItems(activeTab: string): BreadcrumbItem[] {
       { label: 'Production', href: '/dashboard' },
       { label: 'Production Planning', active: true }
     ],
+    'production-chart': [
+      { label: 'Production', href: '/dashboard' },
+      { label: 'Production Chart', active: true }
+    ],
+    'production-analytics': [
+      { label: 'Production', href: '/dashboard' },
+      { label: 'Production Analytics', active: true }
+    ],
     reports: [
       { label: 'Analytics', href: '/dashboard' },
       { label: 'Reports & Analytics', active: true }
